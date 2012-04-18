@@ -11,21 +11,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div class="container">
+    <div id="session" class="container">
+      <div class="row">
+        <div class="span3">
+          <% if current_user %>
+            <%= link_to current_user.name, current_user %>
+          <% else %>
+            <%= link_to 'Entrar' %>
+          <% end %>
+        </div>
+        <div class="span6">
+          <%= link_to 'Colectivos', groups_path %>
+        </div>
+        <div class="span3">
+          <%= link_to 'ES', url_for(locale: 'es') %> |
+          <%= link_to 'CA', url_for(locale: 'ca') %>
+        </div>
+      </div>
+    </div>
+
+    <div id="flashes" class="container">
       <% flash.each do |name, msg| %>
         <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
           <a class="close" data-dismiss="alert">×</a>
           <%= msg %>
         </div>
       <% end %>
-
-
-      <div class="row">
-        <div class="span9"><%= yield %></div>
-        <div class="span3">
-          <h2>About Us</h2>
-        </div>
-      </div>
     </div>
+
+    <div id="main" class="container">
+      <%= yield %>
+    </div>
+
   </body>
 </html>

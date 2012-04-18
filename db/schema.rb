@@ -15,10 +15,17 @@ ActiveRecord::Schema.define(:version => 20120418130219) do
 
   create_table "agents", :force => true do |t|
     t.string   "name"
+    t.string   "slug"
     t.text     "description"
     t.string   "type",                   :limit => 32
-    t.string   "email",                                :default => "", :null => false
-    t.string   "encrypted_password",                   :default => "", :null => false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "city"
+    t.string   "country"
+    t.string   "lang"
+    t.boolean  "admin",                                :default => false
+    t.string   "email",                                :default => "",    :null => false
+    t.string   "encrypted_password",                   :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -32,13 +39,14 @@ ActiveRecord::Schema.define(:version => 20120418130219) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.string   "authentication_token"
-    t.datetime "created_at",                                           :null => false
-    t.datetime "updated_at",                                           :null => false
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
   end
 
   add_index "agents", ["authentication_token"], :name => "index_agents_on_authentication_token", :unique => true
-  add_index "agents", ["email"], :name => "index_agents_on_email", :unique => true
+  add_index "agents", ["email"], :name => "index_agents_on_email"
   add_index "agents", ["name"], :name => "index_agents_on_name", :unique => true
   add_index "agents", ["reset_password_token"], :name => "index_agents_on_reset_password_token", :unique => true
+  add_index "agents", ["slug"], :name => "index_agents_on_slug", :unique => true
 
 end

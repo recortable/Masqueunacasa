@@ -11,6 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :city
       t.string :country
       t.string :lang
+      t.boolean :admin, default: false
 
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
@@ -51,9 +52,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
     end
 
-    add_index :agents, :email,                :unique => true
+    add_index :agents, :email
     add_index :agents, :reset_password_token, :unique => true
     add_index :agents, :name,                 :unique => true
+    add_index :agents, :slug,                 :unique => true
 
     # add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true
