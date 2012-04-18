@@ -1,6 +1,17 @@
 class DeviseCreateUsers < ActiveRecord::Migration
   def change
-    create_table(:users) do |t|
+    create_table(:agents) do |t|
+      ## Basic information
+      t.string :name
+      t.string :slug
+      t.text   :description
+      t.string :type, limit: 32
+      t.float  :latitude
+      t.float  :longitude
+      t.string :city
+      t.string :country
+      t.string :lang
+
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
@@ -38,16 +49,14 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.timestamps
 
-      t.text :description
-      t.string :name
     end
 
-    add_index :users, :email,                :unique => true
-    add_index :users, :reset_password_token, :unique => true
-    add_index :users, :name,                 :unique => true
+    add_index :agents, :email,                :unique => true
+    add_index :agents, :reset_password_token, :unique => true
+    add_index :agents, :name,                 :unique => true
 
     # add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true
-    # add_index :users, :authentication_token, :unique => true
+    add_index :agents, :authentication_token, :unique => true
   end
 end

@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<%= ie_conditional_tag :html do %>
+<html>
   <head>
-    <title>Masqueunacasa</title>
+    <title><%= content_for(:title) %> :: Masqueunacasa</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="container">
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+          <a class="close" data-dismiss="alert">×</a>
+          <%= msg %>
+        </div>
+      <% end %>
 
+
+      <div class="row">
+        <div class="span9"><%= yield %></div>
+        <div class="span3">
+          <h2>About Us</h2>
+        </div>
+      </div>
+    </div>
   </body>
-<% end %>
+</html>

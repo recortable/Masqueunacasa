@@ -1,0 +1,46 @@
+es:
+  simple_form:
+    "yes": 'Sí'
+    "no": 'No'
+    required:
+      text: 'requerido'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Some errors were found, please take a look:"
+
+    labels:
+      defaults:
+        title: 'Título'
+        name: 'Nombre'
+        author: 'Autorxs'
+        published_at: 'Fecha de publicación'
+        body: 'Texto en castellano'
+        content_type: 'Tipo de texto'
+        url: 'Enlace'
+        title_ca: 'Título can catalán'
+        body_ca: 'Texto en catalán'
+      post:
+        title: 'Título en castellano'
+      page:
+        title: 'Título en castellano'
+      user:
+        role: 'rol'
+        password: 'contraseña'
+        password_confirmation: 'repite contraseña'
+      media_item:
+        position: 'Posición'
+        width: 'Ancho'
+        height: 'Alto'
+        file: 'Fichero'
+        embed_code: 'Código html'
+
+
+
+    hints:
+      media_item:
+        url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'
+
+

@@ -1,0 +1,44 @@
+ca:
+  simple_form:
+    "yes": 'Sí'
+    "no": 'No'
+    required:
+      text: 'requerit'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "S'han trobat alguns errors, dóna una ullada:"
+
+    labels:
+      defaults:
+        title: 'Títol'
+        name: 'Nom'
+        author: 'Autors o autores'
+        published_at: 'Data de publicació'
+        body: 'Text'
+        content_type: 'Tipus de text'
+        url: 'Enlace'
+        title_ca: 'Títol en català'
+        body_ca: 'Text en català'
+      post:
+        title: 'Títol en castellà'
+        body: 'Text en castellà'
+      page:
+        title: 'Títol en castellà'
+        body: 'Text en castellà'
+      user:
+        role: 'rol'
+        password: 'contrasenya'
+        password_confirmation: 'repeteix la contrasenya'
+      media_item:
+        position: 'Posición'
+        width: 'Ancho'
+        height: 'Alto'
+        file: 'Fichero'
+        embed_code: 'Código html'
+
+    hints:
+      media_item:
+        url: "Si l'enllaç acaba en .jpg, .png o .gif serà tractat com una imatge"

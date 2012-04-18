@@ -15,6 +15,7 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'bootstrap-sass'
 end
 
 gem 'jquery-rails'
@@ -39,6 +40,11 @@ gem 'http_accept_language'
 gem 'unicorn'
 gem 'capistrano'
 
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+group :test do
+  gem 'minitest'
+  gem 'capybara'
+  gem 'turn'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  #gem 'ruby-debug19', :require => 'ruby-debug'
+end
