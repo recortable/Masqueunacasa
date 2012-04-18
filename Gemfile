@@ -31,6 +31,7 @@ gem 'redcarpet'
 gem 'friendly_id'
 gem 'paper_trail'
 gem 'acts_as_list'
+gem 'cambelt'
 
 gem 'carrierwave'
 
