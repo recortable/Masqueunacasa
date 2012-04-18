@@ -1,0 +1,16 @@
+.sass-cache
+.DS_Store
+.idea
+.project
+.bundle
+config/database.yml
+config/amazon_s3.yml
+db/*.sqlite3
+log/**
+tmp/**/*
+tmp/**
+public/uploads/**
+public/assets/**
+public/system
+*.swp
+vim
