@@ -82,6 +82,9 @@ GEM
     friendly_id (4.0.4)
     highline (1.6.11)
     hike (1.2.1)
+    hoptoad_notifier (2.4.11)
+      activesupport
+      builder
     http_accept_language (1.0.2)
     i18n (0.6.0)
     ie_conditional_tag (0.5.0)
@@ -204,6 +207,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   friendly_id
+  hoptoad_notifier
   http_accept_language
   ie_conditional_tag
   jbuilder

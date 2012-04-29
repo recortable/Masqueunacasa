@@ -38,6 +38,8 @@ gem 'carrierwave'
 gem 'rails-translate-routes'
 gem 'http_accept_language'
 
+gem 'hoptoad_notifier'
+
 gem 'unicorn'
 gem 'capistrano'
 
