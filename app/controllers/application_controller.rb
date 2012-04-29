@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   private
 
   def set_locale
-    I18n.locale = params[:locale] || ((lang = request.env['HTTP_ACCEPT_LANGUAGE']) && lang[/^[a-z]{2}/])
+    locale = params[:locale] || ((lang = request.env['HTTP_ACCEPT_LANGUAGE']) && lang[/^[a-z]{2}/])
+    locale = 'es' unless ['es', 'ca'].include? locale
+    I18n.locale = locale
   end
 end
