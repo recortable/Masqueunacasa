@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120418130219) do
+ActiveRecord::Schema.define(:version => 20120430074728) do
 
   create_table "agents", :force => true do |t|
     t.string   "name"
     t.string   "slug"
-    t.text     "description"
+    t.string   "description"
     t.string   "type",                   :limit => 32
     t.float    "latitude"
     t.float    "longitude"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120418130219) do
     t.string   "country"
     t.string   "lang"
     t.boolean  "admin",                                :default => false
+    t.string   "settings"
     t.string   "email",                                :default => "",    :null => false
     t.string   "encrypted_password",                   :default => "",    :null => false
     t.string   "reset_password_token"
@@ -48,5 +49,29 @@ ActiveRecord::Schema.define(:version => 20120418130219) do
   add_index "agents", ["name"], :name => "index_agents_on_name", :unique => true
   add_index "agents", ["reset_password_token"], :name => "index_agents_on_reset_password_token", :unique => true
   add_index "agents", ["slug"], :name => "index_agents_on_slug", :unique => true
+  add_index "agents", ["type"], :name => "index_agents_on_type"
+
+  create_table "contents", :force => true do |t|
+    t.string   "title_es"
+    t.string   "title_ca"
+    t.string   "title_en"
+    t.string   "slug"
+    t.string   "type",           :limit => 32
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.date     "published_at"
+    t.text     "body_es"
+    t.text     "body_ca"
+    t.text     "body_en"
+    t.integer  "comments_count"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "contents", ["group_id"], :name => "index_contents_on_group_id"
+  add_index "contents", ["published_at"], :name => "index_contents_on_published_at"
+  add_index "contents", ["slug"], :name => "index_contents_on_slug"
+  add_index "contents", ["type"], :name => "index_contents_on_type"
+  add_index "contents", ["user_id"], :name => "index_contents_on_user_id"
 
 end

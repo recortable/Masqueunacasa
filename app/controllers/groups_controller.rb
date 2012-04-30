@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    respond_with group
+    redirect_to root_url(subdomain: group.slug)
   end
 
   def new

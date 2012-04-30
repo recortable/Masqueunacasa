@@ -1,0 +1,6 @@
+<%= title 'Usuarias' %>
+
+<% users.each do |user| %>
+<%= link_to user.name, user %>
+<%= user.email %>
+<% end %>

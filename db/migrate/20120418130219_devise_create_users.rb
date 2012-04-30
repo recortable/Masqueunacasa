@@ -4,7 +4,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Basic information
       t.string :name
       t.string :slug
-      t.text   :description
+      t.string :description
       t.string :type, limit: 32
       t.float  :latitude
       t.float  :longitude
@@ -12,6 +12,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :country
       t.string :lang
       t.boolean :admin, default: false
+      t.string :settings
 
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
@@ -56,6 +57,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_index :agents, :reset_password_token, :unique => true
     add_index :agents, :name,                 :unique => true
     add_index :agents, :slug,                 :unique => true
+    add_index :agents, :type
 
     # add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true

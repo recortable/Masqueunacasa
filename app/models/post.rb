@@ -1,0 +1,4 @@
+
+class Post < Content
+
+end

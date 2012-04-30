@@ -17,11 +17,12 @@
           <% if current_user %>
             <%= link_to current_user.name, current_user %>
           <% else %>
-            <%= link_to 'Entrar' %>
+            <%= link_to 'Entrar', new_user_session_path %>
           <% end %>
         </div>
         <div class="span6">
           <%= link_to 'Colectivos', groups_path %>
+          <%= link_to 'Usuarios', users_path %>
         </div>
         <div class="span3">
           <%= link_to 'ES', url_for(locale: 'es') %> |

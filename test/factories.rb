@@ -13,4 +13,10 @@ FactoryGirl.define do
 
   factory :group, parent: :agent, class: Group do
   end
+
+  factory :content do
+    sequence(:title) {|n| "Content #{n}" }
+    user
+    group
+  end
 end
