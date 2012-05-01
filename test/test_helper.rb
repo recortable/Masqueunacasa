@@ -33,7 +33,12 @@ class IntegrationTest < MiniTest::Spec
   register_spec_type(/integration$/, self)
 
   before :each do
-    Capybara.app_host = 'http://lvh.me'
+    subdomain(nil)
+  end
+
+  def subdomain(subdomain)
+    host = subdomain.present? ? "http://#{subdomain}.lvh.me" : "http://lvh.me"
+    Capybara.app_host = host
   end
 
   def login_with(user)

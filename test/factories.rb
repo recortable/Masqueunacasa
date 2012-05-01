@@ -19,4 +19,7 @@ FactoryGirl.define do
     user
     group
   end
+
+  factory :post, parent: :content, class: Post do
+  end
 end

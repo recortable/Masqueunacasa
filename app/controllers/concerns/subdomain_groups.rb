@@ -18,6 +18,7 @@ module SubdomainGroups
     else
       @space = Group.find_by_slug(request.subdomain)
       if @space.blank?
+        puts "Subdomain #{request.subdomain}"
         raise ActionController::RoutingError.new('Not Found')
       end
     end
