@@ -1,5 +1,6 @@
 <% title 'Procesos colectivos de vivienda' %>
 <div class="intro row">
+  <div class="corner span12"></div>
   <div class="span12">
     <%= image_tag('logo-inicio-1170px.png', alt: 'Procesos colectivos de vivienda',
                   class: 'responsive') %>
@@ -10,15 +11,21 @@
 </div>
 <div class="info row">
   <div class="span4">
-    <h2>Qué</h2>
-    <%= markdown Site::QUE %>
+    <div class="content">
+      <h2>Qué</h2>
+      <%= markdown Site::QUE %>
+    </div>
   </div>
   <div class="span4">
-    <h2>Cómo</h2>
-    <%= markdown Site::COMO %>
+    <div class="content">
+      <h2>Cómo</h2>
+      <%= markdown Site::COMO %>
+    </div>
   </div>
   <div class="span4">
-    <h2>Quiénes</h2>
-    <%= markdown Site::QUIENES %>
+    <div class="content">
+      <h2>Quiénes</h2>
+      <%= markdown Site::QUIENES %>
+    </div>
   </div>
 </div>
