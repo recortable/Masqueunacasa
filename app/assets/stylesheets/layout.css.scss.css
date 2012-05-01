@@ -18,4 +18,10 @@ div#session {
   background-color: $fondo;
   margin-bottom: 20px;
   padding: 10px 0;
+
+  a {
+    padding: 2px 5px;
+    text-transform: uppercase;
+    background-color: $fondo;
+  }
 }
