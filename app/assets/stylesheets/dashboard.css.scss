@@ -51,8 +51,20 @@ body.dashboard {
       }
 
       .video {
-        margin: 3.75em 0 1.563em;
-        text-align: center;
+        height: 0;
+        position: relative;
+        margin-top: 3.75em;
+        margin-bottom: 1.563em;
+        padding-bottom: 28.5%;
+        overflow: hidden;
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
 
