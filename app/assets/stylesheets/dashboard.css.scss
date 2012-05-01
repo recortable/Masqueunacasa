@@ -3,7 +3,13 @@
 
 div#main.dashboard {
   .intro {
+    background-color: $fondo;
     h1 {
+    }
+  }
+  .info {
+    .span4 {
+      background-color: $fondo;
     }
   }
 }
