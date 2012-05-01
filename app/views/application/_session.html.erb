@@ -1,17 +1,19 @@
 <div id="session" class="container">
   <div class="row">
-    <div class="span3">
+    <div class="span4">
+    <% unless current_page? root_path %>
+      <%= link_to 'Masqueunacasa.org', root_url(subodmain: nil) %>
+    <% end %>
+    <%= link_to 'Blog' %>
+    </div>
+    <div class="span3 offset4">
       <% if current_user %>
         <%= link_to current_user.name, current_user %>
       <% else %>
         <%= link_to 'Entrar', new_user_session_path %>
       <% end %>
     </div>
-    <div class="span6">
-      <%= link_to 'Colectivos', groups_path %>
-      <%= link_to 'Usuarios', users_path %>
-    </div>
-    <div class="span3">
+    <div class="span1">
       <%= link_to 'ES', url_for(locale: 'es') %> |
       <%= link_to 'CA', url_for(locale: 'ca') %>
     </div>

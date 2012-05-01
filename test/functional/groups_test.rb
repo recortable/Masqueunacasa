@@ -1,1 +1,1 @@
-require 'test-he
+require 'test-helper'

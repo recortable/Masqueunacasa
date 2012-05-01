@@ -4,8 +4,23 @@ html, body {
   background-color: $fondo;
   background-image: image_url('fondos/textura01.png');
 }
-
-div.header-image {
-  img { width: 100%;}
+div#session {
+  margin-bottom: 20px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
+
+/* Imágenes que se adaptan al ancho del layout */
 img.responsive { width: 100%; }
+
+/* Bloques de color blanco */
+div.bloc {
+  background-color: $fondo;
+}
+
+
+div#session {
+  background-color: $fondo;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}

@@ -4,18 +4,56 @@
 body.dashboard {
   div#session {
     background-color: $verde;
-    margin-bottom: 20px;
+
+    .blog-button {
+      
+    }
   }
 
   div#main {
     .intro.row {
       margin-bottom: 20px;
       .span12 {background-color: $fondo;}
+
+      .corner {
+        height: 31px;
+        background: transparent url(Esquina_Intro.png) no-repeat;
+      }
+
+      .video {
+        margin: 3.75em 0 1.563em;
+        text-align: center;
+      }
     }
 
     .info {
+      overflow: hidden;
+      margin-bottom: 4em;
+
       .span4 {
         background-color: $fondo;
+        padding-bottom: 99999px;
+        margin-bottom: -99999px;
+
+
+        .content {
+          padding: 1em;
+
+          * {
+            font-family: LucidaGrande, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 17px;
+          }
+
+          h2 {
+            width: 124px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            font-family: Georgia, serif;
+            font-size: 60px;
+            line-height: normal;
+            border-bottom: 2px solid $verde;
+          }
+        }
       }
     }
   }
