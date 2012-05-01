@@ -50,13 +50,17 @@ body.dashboard {
         background: transparent url(Esquina_Intro.png) no-repeat;
       }
 
+      #video-container {
+        padding-bottom: 1.563em;
+      }
+
       .video {
         width: 47.5%;
         min-width: 286px;
         height: 0;
         position: relative;
-        margin: 3.75em auto 1.563em;
-        padding-bottom: 28.5%;
+        margin: 3.75em auto 0;
+        padding-bottom: 27.5%;
         overflow: hidden;
 
         iframe {
