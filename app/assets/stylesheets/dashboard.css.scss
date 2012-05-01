@@ -51,10 +51,11 @@ body.dashboard {
       }
 
       .video {
+        width: 47.5%;
+        min-width: 286px;
         height: 0;
         position: relative;
-        margin-top: 3.75em;
-        margin-bottom: 1.563em;
+        margin: 3.75em auto 1.563em;
         padding-bottom: 28.5%;
         overflow: hidden;
 
