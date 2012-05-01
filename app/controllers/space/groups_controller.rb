@@ -3,7 +3,7 @@ class Space::GroupsController < ApplicationController
   include HasSpace
 
   def show
-    respond_with group
+    redirect_to posts_path
   end
 
 end

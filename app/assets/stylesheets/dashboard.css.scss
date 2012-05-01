@@ -3,14 +3,14 @@
 
 body.dashboard {
   div#session {
-    background-color: $verde;
+    background-color: $azul;
   }
 
   div#main {
     .intro.row {
       margin-bottom: 20px;
-      .span12 {background-color: $fondo;}
 
+      .span12 {background-color: $fondo;}
       .corner {
         height: 31px;
         background: transparent url(Esquina_Intro.png) no-repeat;
@@ -47,7 +47,7 @@ body.dashboard {
             font-family: Georgia, serif;
             font-size: 60px;
             line-height: normal;
-            border-bottom: 2px solid $verde;
+            border-bottom: 2px solid $azul;
           }
         }
       }

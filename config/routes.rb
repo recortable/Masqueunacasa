@@ -1,16 +1,21 @@
 Masqueunacasa::Application.routes.draw do
 
-  constraints subdomain: /.+/ do
-    match '', to: 'space/groups#show'
-    namespace :space do
-      root to: 'groups#show'
-    end
-  end
 
   devise_for :users
-  resources :groups
-  resources :users
 
+  # Rutas que se pueden acceder tanto desde un subdominio como sin él
+  resources :users
+  resources :posts
+
+  # Rutas que se pueden acceder desde el subdominio
+  constraints subdomain: /^$/ do
+    resources :groups
+  end
+
+  # Rutas que sólo se puede acceder desde un subdominio
+  constraints subdomain: /.+/ do
+    match '', to: 'space/groups#show'
+  end
   root to: 'dashboard#index'
 
   ActionDispatch::Routing::Translator.translate_from_file(
