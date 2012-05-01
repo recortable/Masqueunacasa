@@ -4,6 +4,40 @@
 body.dashboard {
   div#session {
     background-color: $azul;
+
+    .links .link-wrapper {
+      padding: 0 0 0 12px;
+      background: transparent url(Boton_Blog01-01.png) no-repeat;
+      overflow: hidden;
+
+      a {
+        padding-left: 0;
+        padding-right: 12px;
+      }
+    }
+
+    .session .link-wrapper {
+
+      .side {
+        width: 12px;
+        height: 20px;
+        float: left;        
+      }
+
+      a {
+        float: left;
+        padding-right: 27px;
+        padding-left: 27px;
+      }
+
+      .left-side {
+        background: transparent url(IniciarSesion_01-01.png) left top no-repeat;
+      }
+
+      .right-side {
+        background: transparent url(IniciarSesion_01-01.png) right top no-repeat;
+      }
+    }
   }
 
   div#main {
