@@ -14,7 +14,7 @@ Masqueunacasa::Application.routes.draw do
 
   # Rutas que sólo se puede acceder desde un subdominio
   constraints subdomain: /.+/ do
-    match '', to: 'space/groups#show'
+    match '', to: 'posts#index'
   end
   root to: 'dashboard#index'
 
