@@ -20,8 +20,12 @@ div#session {
   padding: 10px 0;
 
   a {
-    padding: 2px 5px;
-    text-transform: uppercase;
+    display: inline-block;
+    padding: 2px 5px 0;
     background-color: $fondo;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #333;
+    text-transform: uppercase;
   }
 }

@@ -1,19 +1,25 @@
 <div id="session" class="container">
   <div class="row">
-    <div class="span4 offset1">
+    <div class="span4 offset1 links">
     <% unless current_page? root_path %>
       <%= link_to 'Masqueunacasa.org', root_url(host: request.domain) %>
     <% end %>
-    <%= link_to 'Blog' %>
+      <div class="link-wrapper">
+        <%= link_to 'Blog' %>
+      </div>
     </div>
-    <div class="span3 offset3">
+    <div class="span3 offset3 session">
       <% if current_user %>
         <%= link_to current_user.name, current_user %>
       <% else %>
-        <%= link_to 'Entrar', new_user_session_path %>
+        <div class="link-wrapper">
+          <div class="side left-side"></div>
+          <%= link_to 'Iniciar sesión', new_user_session_path, class: "login" %>
+          <div class="side right-side"></div>
+        </div>
       <% end %>
     </div>
-    <div class="span1">
+    <div class="span1 lang-selector">
       <%= link_to 'ES', url_for(locale: 'es') %>
       <%= link_to 'CA', url_for(locale: 'ca') %>
     </div>
