@@ -32,6 +32,10 @@ class IntegrationTest < MiniTest::Spec
 
   register_spec_type(/integration$/, self)
 
+  before :each do
+    Capybara.app_host = 'http://lvh.me'
+  end
+
   def login_with(user)
     if user.present?
       visit enter_path(user)
