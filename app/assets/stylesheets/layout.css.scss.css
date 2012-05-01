@@ -8,3 +8,4 @@ html, body {
 div.header-image {
   img { width: 100%;}
 }
+img.responsive { width: 100%; }
