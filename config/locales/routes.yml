@@ -1,6 +1,9 @@
 es:
+  users: 'participantes'
   groups: 'colectivos'
   new: 'nueva'
+  sign_in: 'entrar'
+  sign_up: 'alta'
 
 ca:
   groups: 'colectius'
