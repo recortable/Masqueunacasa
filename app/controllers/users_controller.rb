@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   respond_to :html
-  before_filter :group_or_site_from_subdomain
+  before_filter :load_subdomain_group
 
   expose(:users) { group.all }
   expose(:user)

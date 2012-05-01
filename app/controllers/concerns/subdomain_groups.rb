@@ -1,6 +1,6 @@
-# HasSpace
+# SubdomainGroups
 #
-module HasSpace
+module SubdomainGroups
   extend ActiveSupport::Concern
 
   included do
@@ -12,13 +12,13 @@ module HasSpace
   end
 
   protected
-  def group_or_site_from_subdomain
+  def load_subdomain_group
     if request.subdomain.blank?
       @space = Site.new
     else
       @space = Group.find_by_slug(request.subdomain)
       if @space.blank?
-        redirect_to error_url, :status => 404
+        raise ActionController::RoutingError.new('Not Found')
       end
     end
   end
