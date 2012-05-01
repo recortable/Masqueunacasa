@@ -5,6 +5,7 @@ class Ability
     if user.blank?
       can :create, User
     else
+      can :manage, Post
       can :manage, User
       can :manage, Group
     end

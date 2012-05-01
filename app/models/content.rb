@@ -7,6 +7,7 @@ class Content < ActiveRecord::Base
   belongs_to :group
 
   attr_accessible :user_id, :group_id
+  attr_accessible :title, :body
   attr_accessible :title_es, :title_ca, :title_en
   attr_accessible :body_es, :body_ca, :body_en
 

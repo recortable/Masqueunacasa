@@ -1,5 +1,9 @@
 # Masqueunacasa
 
+### TAREAS
++ Hacer el vídeo de introducción 'elástico': http://webdesignerwall.com/tutorials/css-elastic-videos
++ Que se pueda añadir un post
+
 ## 1/05/2012
 - Update gems
 - Dashboard
