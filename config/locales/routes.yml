@@ -2,6 +2,9 @@ es:
   posts: 'blog'
   users: 'participantes'
   groups: 'colectivos'
+  profile: 'perfil'
+
+  edit: 'editar'
   new: 'nueva'
   sign_in: 'entrar'
   sign_up: 'alta'

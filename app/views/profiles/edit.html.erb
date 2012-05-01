@@ -1,0 +1,7 @@
+<%= title 'Editar perfil' %>
+
+<%= simple_form_for current_group, url: profile_path do |form| %>
+  <%= form.input :name %>
+  <%= form.input :description %>
+  <%= form.button :submit %>
+<% end %>

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   respond_to :html
   before_filter :load_subdomain_group
 
-  expose(:users) { group.users }
+  expose(:users) { current_group.users }
   expose(:user)
 
   def index

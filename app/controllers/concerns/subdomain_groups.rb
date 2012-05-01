@@ -4,20 +4,16 @@ module SubdomainGroups
   extend ActiveSupport::Concern
 
   included do
-    expose(:group) { @space }
-  end
-
-  def group
-    @space
+    expose(:current_group) { @current_group }
   end
 
   protected
   def load_subdomain_group
     if request.subdomain.blank?
-      @space = Site.new
+      @current_group = Site.new
     else
-      @space = Group.find_by_slug(request.subdomain)
-      if @space.blank?
+      @current_group = Group.find_by_slug(request.subdomain)
+      if @current_group.blank?
         puts "Subdomain #{request.subdomain}"
         raise ActionController::RoutingError.new('Not Found')
       end

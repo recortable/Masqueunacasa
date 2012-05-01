@@ -5,12 +5,14 @@
 + Que se pueda añadir un post
 
 ## 1/05/2012
-- Update gems
-- Dashboard
+- Se puede editar el perfil de un grupo
+- Se puede añadir una entrada al blog de un grupo
+- Actualizar algunas gemas
+- Implementar la pantalla de inicio: que, como, quien
 
 ## 30/04/2012
-- Group subdomains setup
-- Content model
+- Preparar para el uso de subdominios
+- Modelo 'content'
 
 ## 18/04/2012
 - Create rails app
