@@ -11,36 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div id="session" class="container">
-      <div class="row">
-        <div class="span3">
-          <% if current_user %>
-            <%= link_to current_user.name, current_user %>
-          <% else %>
-            <%= link_to 'Entrar', new_user_session_path %>
-          <% end %>
-        </div>
-        <div class="span6">
-          <%= link_to 'Colectivos', groups_path %>
-          <%= link_to 'Usuarios', users_path %>
-        </div>
-        <div class="span3">
-          <%= link_to 'ES', url_for(locale: 'es') %> |
-          <%= link_to 'CA', url_for(locale: 'ca') %>
-        </div>
-      </div>
-    </div>
+    <%= render 'session' %>
+    <%= render 'flashes' %>
 
-    <div id="flashes" class="container">
-      <% flash.each do |name, msg| %>
-        <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
-          <a class="close" data-dismiss="alert">×</a>
-          <%= msg %>
-        </div>
-      <% end %>
-    </div>
-
-    <div id="main" class="container">
+    <div id="main" class="container <%= controller.class.name[0..-11].downcase %>">
       <%= yield %>
     </div>
 

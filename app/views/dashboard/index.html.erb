@@ -1,2 +1,23 @@
-<h1>Dashboard</h1>
-
+<% title 'Procesos colectivos de vivienda' %>
+<div class="intro row">
+  <div class="span12">
+    <h1 class="logo">Masqueunacasa.org - Procesos colectivos de vivienda</h1>
+    <div class="video">
+      <iframe src="http://player.vimeo.com/video/37086987?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    </div>
+  </div>
+</div>
+<div class="info row">
+  <div class="span4">
+    <h2>Qué</h2>
+    <%= markdown Site::QUE %>
+  </div>
+  <div class="span4">
+    <h2>Cómo</h2>
+    <%= markdown Site::COMO %>
+  </div>
+  <div class="span4">
+    <h2>Quiénes</h2>
+    <%= markdown Site::QUIENES %>
+  </div>
+</div>

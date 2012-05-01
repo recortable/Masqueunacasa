@@ -1,3 +1,8 @@
+@import "variables";
+
+html, body {
+  background-color: $fondo;
+}
 
 div.header-image {
   img { width: 100%;}
