@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120502160153) do
+ActiveRecord::Schema.define(:version => 20120502204334) do
 
   create_table "contents", :force => true do |t|
     t.string   "title_es"
@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(:version => 20120502160153) do
     t.integer "user_id"
     t.string  "name"
     t.string  "slug"
-    t.string  "description_es"
-    t.string  "description_ca"
-    t.string  "description_en"
+    t.string  "description_es", :limit => 1024
+    t.string  "description_ca", :limit => 1024
+    t.string  "description_en", :limit => 1024
     t.string  "banner_image"
     t.string  "avatar_image"
     t.float   "latitude"
@@ -54,6 +54,9 @@ ActiveRecord::Schema.define(:version => 20120502160153) do
     t.string  "country"
     t.string  "lang"
     t.string  "settings"
+    t.string  "website"
+    t.string  "twitter"
+    t.string  "facebook"
   end
 
   add_index "groups", ["name"], :name => "index_groups_on_name", :unique => true
