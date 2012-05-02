@@ -4,10 +4,7 @@
       <%= simple_form_for user_session, html: {class: 'clearfix'} do |form| %>
         <%= form.input :email %>
         <%= form.input :password %>
-        <div class="submit-wrapper">
-          <%= form.button :submit, value: 'Entrar' %>
-          <div class="side-right"></div>
-        </div>
+        <%= submit_button form, text='Entrar' %>
       <% end %>
   <% end %>
   <%= corner_span('span4', color = "negro") do %>
