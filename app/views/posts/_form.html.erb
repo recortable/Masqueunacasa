@@ -3,7 +3,7 @@
     <%= simple_form_for post do |form| %>
       <div class="span6">
         <%= form.input :title %>
-        <%= form.input :body, as: :text %>
+        <%= form.input :body, :as => :ckeditor, :label => false, :input_html => { :toolbar => 'Basic' } %>
         <%= form.button :submit %>
       </div>
       <div class="span4">
