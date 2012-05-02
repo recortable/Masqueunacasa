@@ -2,6 +2,18 @@
 class Site
   attr_reader :name, :description
 
+  def id
+    nil
+  end
+
+  def site?
+    true
+  end
+
+  def latest_groups
+    Group.scoped.limit(10)
+  end
+
   def posts
     Post.scoped
   end

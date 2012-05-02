@@ -3,6 +3,6 @@
   <%= form.input :email %>
   <%= form.input :password %>
   <%= form.input :password_confirmation %>
-  <%= form.input :admin if current_user %>
+  <%= form.input :admin, wrapper: :checkbox if current_user && current_user.admin? %>
   <%= form.button :submit %>
 <% end %>

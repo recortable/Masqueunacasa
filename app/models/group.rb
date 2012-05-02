@@ -18,6 +18,10 @@ class Group < ActiveRecord::Base
 
   after_create :create_owner_membership
 
+  def site?
+    false
+  end
+
   def should_generate_new_friendly_id?
     new_record?
   end

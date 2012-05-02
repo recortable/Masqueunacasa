@@ -20,4 +20,12 @@ describe User do
     user.groups.must_include owned
     user.groups.must_include group
   end
+
+  it 'can check membership' do
+    user = create(:user)
+    group = create(:group)
+    group.add_member(user)
+    user.member?(group).must_equal true
+    group.user.member?(group).must_equal true
+  end
 end

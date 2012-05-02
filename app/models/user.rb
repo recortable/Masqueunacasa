@@ -27,4 +27,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true, on: :create,
             length: {minimum: 3, maximum: 60},
             confirmation: true
+
+  def member?(group)
+    Membership.where(group_id: group.id, user_id: self.id).first.present?
+  end
 end
