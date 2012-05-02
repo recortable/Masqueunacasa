@@ -4,7 +4,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Basic information
       t.string :name
       t.string :slug
-      t.string :description
+      t.text :description
       t.string :type, limit: 32
       t.float  :latitude
       t.float  :longitude
@@ -16,7 +16,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
-      t.string :encrypted_password, :null => false, :default => ""
+      t.string :password_digest,    :null => false, :default => ""
 
       ## Recoverable
       t.string   :reset_password_token
@@ -26,11 +26,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.datetime :remember_created_at
 
       ## Trackable
-      t.integer  :sign_in_count, :default => 0
-      t.datetime :current_sign_in_at
-      t.datetime :last_sign_in_at
-      t.string   :current_sign_in_ip
-      t.string   :last_sign_in_ip
+      t.integer  :login_count, :default => 0
+      t.datetime :last_login_at
 
       ## Encryptable
       # t.string :password_salt
@@ -41,14 +38,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.datetime :confirmation_sent_at
       t.string   :unconfirmed_email # Only if using reconfirmable
 
-      ## Lockable
-      # t.integer  :failed_attempts, :default => 0 # Only if lock strategy is :failed_attempts
-      # t.string   :unlock_token # Only if unlock strategy is :email or :both
-      # t.datetime :locked_at
-
-      ## Token authenticatable
-      t.string :authentication_token
-
       t.timestamps
 
     end
@@ -58,9 +47,5 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_index :agents, :name,                 :unique => true
     add_index :agents, :slug,                 :unique => true
     add_index :agents, :type
-
-    # add_index :users, :confirmation_token,   :unique => true
-    # add_index :users, :unlock_token,         :unique => true
-    add_index :agents, :authentication_token, :unique => true
   end
 end
