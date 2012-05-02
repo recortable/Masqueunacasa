@@ -1,6 +1,6 @@
 @import "variables";
 
-html, body {
+body {
   background-color: $fondo;
   background-image: asset-data-url('fondos/textura01.png');
 }
