@@ -1,8 +1,31 @@
-<%= title 'Editar perfil' %>
+<%= render 'groups/header' %>
 
-<%= simple_form_for current_group, url: profile_path do |form| %>
-  <%= form.input :name %>
-  <%= form.input :slug %>
-  <%= form.input :description %>
-  <%= form.button :submit %>
-<% end %>
+
+<div class="row profile-editor editor">
+  <div class="span10">
+    <div class="corner colored"></div>
+    <div class="content">
+      <%= title 'Editar perfil' %>
+    </div>
+
+    <div class="bloc">
+      <%= simple_form_for current_group, url: profile_path do |form| %>
+        <div class="row">
+          <div class="span6">
+            <div class="content">
+              <%= form.input :name %>
+              <%= form.input :slug %>
+              <%= form.input :description %>
+              <%= form.button :submit %>
+            </div>
+          </div>
+          <div class="span4">
+            <div class="content">
+              <%= form.input :banner_image %>
+              <%= form.input :avatar_image %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :set_locale_from_url
 
-  expose(:themes) { 'textura02 cyan' }
+  expose(:themes) { 'textura02 naranja' }
 
   private
 
