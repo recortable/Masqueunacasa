@@ -10,6 +10,7 @@ class Content < ActiveRecord::Base
   attr_accessible :title, :body
   attr_accessible :title_es, :title_ca, :title_en
   attr_accessible :body_es, :body_ca, :body_en
+  attr_accessible :published_at
 
   translates :title, :body
 

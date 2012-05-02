@@ -22,6 +22,7 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jbuilder'
 gem 'ie_conditional_tag'
+gem 'truncate_html'
 
 #gem 'devise'
 gem 'simple_form'

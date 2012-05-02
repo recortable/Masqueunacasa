@@ -17,9 +17,13 @@ class PostsController < ApplicationController
     authorize! :new, Post
   end
 
+  def edit
+    respond_with post
+  end
+
   def create
     post.user = current_user
-    post.group = group
+    post.group = current_group
     authorize! :create, post
     flash[:notice] = t('notice.posts.created') if post.save
     respond_with post

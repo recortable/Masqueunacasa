@@ -19,7 +19,7 @@
           <%= link_to post.title, post %>
         </div>
         <div class="bloc span6">
-          <%= post.body %>
+          <%= raw truncate_html(post.body, length: 500) %>
         </div>
       </div>
     <% end %>

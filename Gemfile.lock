@@ -168,6 +168,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    truncate_html (0.5.5)
     turn (0.9.5)
       ansi
     tzinfo (0.3.33)
@@ -211,6 +212,7 @@ DEPENDENCIES
   redcarpet
   sass-rails (~> 3.2.3)
   simple_form
+  truncate_html
   turn
   uglifier (>= 1.0.3)
   unicorn

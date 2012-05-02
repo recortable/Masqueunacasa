@@ -2,6 +2,7 @@
 <div class="row">
   <div class="bloc span12">
     <%= link_to 'Volver', posts_path %>
+    <%= link_to 'Editar', edit_post_path(post) %>
   </div>
 </div>
 <div class="row">
@@ -9,7 +10,7 @@
     <%= title post.title %>
   </div>
   <div class="bloc span6">
-    <%= post.body %>
+    <%= raw post.body %>
   </div>
 </div>
 
