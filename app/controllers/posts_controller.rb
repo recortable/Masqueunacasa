@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_filter :load_subdomain_group
 
   expose(:themes) { 'textura02 naranja' }
-  expose(:posts) { current_group.posts }
+  expose(:posts) { current_group.posts.order('created_at DESC').limit(10) }
   expose(:post)
 
   def index

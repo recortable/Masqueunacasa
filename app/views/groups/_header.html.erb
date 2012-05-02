@@ -10,7 +10,7 @@
       <div class="margin">
       </div>
       <div class="name">
-        <h2><%= link_to current_group.name, root_path %></h2>
+        <h2><%= link_to_unless_current current_group.name, root_path %></h2>
         <div class="shape"></div>
       </div>
     </div>

@@ -17,13 +17,7 @@
   <div class="body span6">
     <div class="corner orange"></div>
     <div class="content">
-      <% if post.embed? %>
-        <div class="embed-container">
-          <%= raw post.embed %>
-        </div>
-      <% elsif post.image? %>
-        <%= image_tag post.image_url %>
-      <% end %>
+      <%= render_post_media(post) %>
       <%= raw post.body %>
     </div>
   </div>
