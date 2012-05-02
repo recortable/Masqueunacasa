@@ -41,7 +41,7 @@ class IntegrationTest < MiniTest::Spec
     Capybara.app_host = host
   end
 
-  def login_with(user)
+  def login_user(user)
     if user.present?
       visit enter_path(user)
     else
