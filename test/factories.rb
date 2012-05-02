@@ -1,17 +1,17 @@
 require 'factory_girl'
 
 FactoryGirl.define do
-  factory :agent do
-    sequence(:name) {|n| "Agent#{n}"}
-  end
 
-  factory :user, parent: :agent, class: User do
+  factory :user do
+    sequence(:name) {|n| "User#{n}"}
     email { "#{name}@email.com" }
     password { "#{name}-secret"}
     password_confirmation { "#{name}-secret"}
   end
 
-  factory :group, parent: :agent, class: Group do
+  factory :group do
+    sequence(:name) {|n| "Group#{n}" }
+    user
   end
 
   factory :content do

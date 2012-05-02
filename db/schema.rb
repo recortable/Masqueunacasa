@@ -11,40 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120430074728) do
-
-  create_table "agents", :force => true do |t|
-    t.string   "name"
-    t.string   "slug"
-    t.text     "description"
-    t.string   "type",                   :limit => 32
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "city"
-    t.string   "country"
-    t.string   "lang"
-    t.boolean  "admin",                                :default => false
-    t.string   "settings"
-    t.string   "email",                                :default => "",    :null => false
-    t.string   "password_digest",                      :default => "",    :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "login_count",                          :default => 0
-    t.datetime "last_login_at"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.datetime "created_at",                                              :null => false
-    t.datetime "updated_at",                                              :null => false
-  end
-
-  add_index "agents", ["email"], :name => "index_agents_on_email"
-  add_index "agents", ["name"], :name => "index_agents_on_name", :unique => true
-  add_index "agents", ["reset_password_token"], :name => "index_agents_on_reset_password_token", :unique => true
-  add_index "agents", ["slug"], :name => "index_agents_on_slug", :unique => true
-  add_index "agents", ["type"], :name => "index_agents_on_type"
+ActiveRecord::Schema.define(:version => 20120502160153) do
 
   create_table "contents", :force => true do |t|
     t.string   "title_es"
@@ -58,12 +25,12 @@ ActiveRecord::Schema.define(:version => 20120430074728) do
     t.text     "body_es"
     t.text     "body_ca"
     t.text     "body_en"
-    t.integer  "comments_count"
+    t.integer  "comments_count",               :default => 0
     t.text     "embed"
     t.string   "image"
     t.string   "link_url"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
   end
 
   add_index "contents", ["group_id"], :name => "index_contents_on_group_id"
@@ -71,5 +38,67 @@ ActiveRecord::Schema.define(:version => 20120430074728) do
   add_index "contents", ["slug"], :name => "index_contents_on_slug"
   add_index "contents", ["type"], :name => "index_contents_on_type"
   add_index "contents", ["user_id"], :name => "index_contents_on_user_id"
+
+  create_table "groups", :force => true do |t|
+    t.integer "user_id"
+    t.string  "name"
+    t.string  "slug"
+    t.string  "description_es"
+    t.string  "description_ca"
+    t.string  "description_en"
+    t.string  "banner_image"
+    t.string  "avatar_image"
+    t.float   "latitude"
+    t.float   "longitude"
+    t.string  "city"
+    t.string  "country"
+    t.string  "lang"
+    t.string  "settings"
+  end
+
+  add_index "groups", ["name"], :name => "index_groups_on_name", :unique => true
+  add_index "groups", ["slug"], :name => "index_groups_on_slug", :unique => true
+
+  create_table "memberships", :force => true do |t|
+    t.integer  "group_id"
+    t.integer  "user_id"
+    t.string   "state",      :limit => 20
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  add_index "memberships", ["group_id"], :name => "index_memberships_on_group_id"
+  add_index "memberships", ["user_id"], :name => "index_memberships_on_user_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.text     "description"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "city"
+    t.string   "country"
+    t.string   "lang"
+    t.boolean  "admin",                  :default => false
+    t.string   "settings"
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "password_digest",        :default => "",    :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "login_count",            :default => 0
+    t.datetime "last_login_at"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["name"], :name => "index_users_on_name", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["slug"], :name => "index_users_on_slug", :unique => true
 
 end

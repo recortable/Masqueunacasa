@@ -12,7 +12,7 @@ class CreateContents < ActiveRecord::Migration
       t.text :body_es
       t.text :body_ca
       t.text :body_en
-      t.integer :comments_count
+      t.integer :comments_count, default: 0
       t.text :embed
       t.string :image
       t.string :link_url
