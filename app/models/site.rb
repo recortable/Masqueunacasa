@@ -10,6 +10,10 @@ class Site
     true
   end
 
+  def banner_image?
+    false
+  end
+
   def latest_groups
     Group.scoped.limit(10)
   end

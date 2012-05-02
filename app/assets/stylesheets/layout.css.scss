@@ -22,7 +22,7 @@ a { text-decoration: underline; }
 img.responsive { width: 100%; }
 
 /* Bloques de color blanco */
-div.bloc .content {
+div.bloc, div.content {
   background-color: $fondo;
 }
 
@@ -35,4 +35,6 @@ div.bloc .content {
   padding: 3px 30px 30px 30px;
   background-color: $fondo;
 }
+
+.editor {margin-top: 20px;}
 
