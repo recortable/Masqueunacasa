@@ -9,7 +9,7 @@
       <div class="span4">
         <%= form.input :image %>
         <%= form.input :embed %>
-        <%= form.input :published_at %>
+        <%= form.input :published_at if current_user.admin? %>
       </div>
     <% end %>
   </div>

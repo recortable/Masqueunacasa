@@ -47,6 +47,7 @@
           <%= render_post_media(post) %>
           <%= raw truncate_html(post.body, length: 500) %>
           <%= link_to 'leer más...', post %>
+          <%= link_to 'editar', [:edit, post] if can? :edit, post %>
         </div>
       </div>
     <% end %>
