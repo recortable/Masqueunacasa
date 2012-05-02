@@ -36,6 +36,7 @@
             <%= link_to content_tag(:h3, post.title), post_url(post, subdomain: post.group.slug) %>
             Por: <%= link_to post.group.name, post.group %>
           <%= l post.published_at %>
+          <%= link_to group_avatar(post.group), post.group if current_group.site? %>
           <div class="comments">
             <%= link_to "#{post.comments_count} comentarios", post %>
           </div>
