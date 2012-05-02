@@ -4,7 +4,10 @@ html {
   background-color: $fondo;
 }
 
-body {background: transparent;}
+body {
+  background: transparent;
+  padding-bottom: 60px;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $titulos;

@@ -71,9 +71,9 @@ html.dashboard {
 
     .info {
       overflow: hidden;
-      margin-bottom: 4em;
 
       .span4 {
+        background-color: $fondo;
         padding-bottom: 99999px;
         margin-bottom: -99999px;
 
