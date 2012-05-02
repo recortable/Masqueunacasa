@@ -1,11 +1,10 @@
-class DeviseCreateUsers < ActiveRecord::Migration
+class CreateUsers < ActiveRecord::Migration
   def change
-    create_table(:agents) do |t|
+    create_table(:users) do |t|
       ## Basic information
       t.string :name
       t.string :slug
       t.text :description
-      t.string :type, limit: 32
       t.float  :latitude
       t.float  :longitude
       t.string :city
@@ -42,10 +41,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
     end
 
-    add_index :agents, :email
-    add_index :agents, :reset_password_token, :unique => true
-    add_index :agents, :name,                 :unique => true
-    add_index :agents, :slug,                 :unique => true
-    add_index :agents, :type
+    add_index :users, :email
+    add_index :users, :reset_password_token, :unique => true
+    add_index :users, :name,                 :unique => true
+    add_index :users, :slug,                 :unique => true
   end
 end

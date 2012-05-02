@@ -17,6 +17,7 @@ class GroupsController < ApplicationController
   end
 
   def create
+    group.user = current_user
     authorize! :create, group
     flash[:notice] = t('.created') if group.save
     respond_with group

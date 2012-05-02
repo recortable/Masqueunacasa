@@ -8,6 +8,6 @@ class ProfilesController < ApplicationController
 
   def update
    current_group.update_attributes(params[:group])
-   respond_with current_group, location: root_path
+   redirect_to root_url(subdomain: current_group.slug)
   end
 end

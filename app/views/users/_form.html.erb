@@ -3,6 +3,7 @@
   <%= form.input :email %>
   <%= form.input :password %>
   <%= form.input :password_confirmation %>
+  <%= form.input :admin if current_user %>
   <div class="submit-wrapper clearfix">
     <%= form.button :submit, value: 'Crear cuenta' %>
     <div class="side-right"></div>
