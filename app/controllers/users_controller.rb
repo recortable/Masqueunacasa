@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   respond_to :html
   before_filter :load_subdomain_group
 
+  expose(:themes) { 'textura04 azul' }
   expose(:users) { current_group.users }
   expose(:user)
 
