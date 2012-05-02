@@ -14,7 +14,7 @@
           <div class="span6">
             <div class="content">
               <%= form.input :name %>
-              <%= form.input :description, as: :text %>
+              <%= form.input :description, :as => :ckeditor, :label => false, :input_html => { :toolbar => 'Basic' } %>
               <%= form.button :submit %>
             </div>
           </div>
