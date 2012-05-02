@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   respond_to :html
   before_filter :load_subdomain_group
 
+  expose(:themes) { 'textura02 naranja' }
   expose(:posts) { current_group.posts }
   expose(:post)
 
@@ -26,6 +27,11 @@ class PostsController < ApplicationController
     post.group = current_group
     authorize! :create, post
     flash[:notice] = t('notice.posts.created') if post.save
+    respond_with post
+  end
+
+  def update
+    flash[:notice] = t('notice.posts.updated') if post.update_attributes(params[:post])
     respond_with post
   end
 

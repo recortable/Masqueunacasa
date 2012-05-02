@@ -34,7 +34,9 @@ gem 'paper_trail'
 gem 'acts_as_list'
 gem 'cambelt'
 
+gem 'fog'
 gem 'carrierwave'
+gem 'cloudinary'
 
 gem 'rails-translate-routes'
 gem 'http_accept_language'

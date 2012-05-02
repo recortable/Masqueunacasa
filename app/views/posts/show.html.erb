@@ -1,16 +1,25 @@
+<% title post.title %>
 <%= render 'header' %>
 <div class="row">
-  <div class="bloc span12">
+  <div class="controls bloc span12">
     <%= link_to 'Volver', posts_path %>
     <%= link_to 'Editar', edit_post_path(post) %>
   </div>
 </div>
-<div class="row">
-  <div class="bloc span2">
-    <%= title post.title %>
+<%= div_for post, class: 'row' do %>
+  <div class="info span2">
+    <div class="corner none"></div>
+    <div class="content">
+      <h3><%= post.title %></h3>
+    </div>
   </div>
-  <div class="bloc span6">
-    <%= raw post.body %>
+  <div class="body span6">
+    <div class="corner orange"></div>
+    <div class="content">
+      <div class="embed-container">
+          <%= raw post.embed %>
+      </div>
+      <%= raw post.body %>
+    </div>
   </div>
-</div>
-
+<% end %>

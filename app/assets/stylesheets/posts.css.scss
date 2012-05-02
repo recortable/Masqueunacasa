@@ -1,3 +1,66 @@
-body.posts {
+@import "variables";
+
+html.posts {
   background-image: image_url('fondos/textura02.png');
+
+  .header {
+    .banner {
+      width: 100%;
+      h2 {display: none}
+      
+      .margin {
+        position: absolute;
+        left: 0; right: 0; top: 0; bottom: 0;
+        border: 5px solid $fondo;
+      }
+    }
+  }
+
+  .controls {
+    margin-bottom: 20px;
+  }
+
+  .corner {
+    height: 30px;
+    width: 100%;
+    background: image-url('pl-1170.png') no-repeat;
+
+    &.none { background-position: 0 0;}
+    &.orange { background-position: 0 -90px;}
+  }
+  .content {
+    padding: 3px 30px 30px 30px;
+    background-color: $fondo;
+  }
+
+  .embed-container {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 30px;
+
+    iframe, object, embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .sidebar {
+    .description {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+div.post.row {
+  overflow: hidden;
+  margin-bottom: 20px;
+  .info, .content {
+    padding-bottom: 99999px;
+    margin-bottom: -99999px;
+  }
 }

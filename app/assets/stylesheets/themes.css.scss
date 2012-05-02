@@ -1,0 +1,12 @@
+@import 'variables';
+
+html.textura01 { background-image: asset-data-url('fondos/textura01.png'); }
+html.textura02 { background-image: asset-data-url('fondos/textura02.png'); }
+
+
+html.naranja {
+  a, h1, h2, h3, h4, h5, h6 {
+    color: $rojo;
+  }
+  .corner.colored { background-position: 0 -90px; }
+}

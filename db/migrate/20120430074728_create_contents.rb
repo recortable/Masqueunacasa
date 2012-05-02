@@ -13,6 +13,9 @@ class CreateContents < ActiveRecord::Migration
       t.text :body_ca
       t.text :body_en
       t.integer :comments_count
+      t.text :embed
+      t.string :image
+      t.string :link_url
       t.timestamps
     end
 

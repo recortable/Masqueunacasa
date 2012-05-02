@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(:version => 20120430074728) do
     t.text     "body_ca"
     t.text     "body_en"
     t.integer  "comments_count"
+    t.text     "embed"
+    t.string   "image"
+    t.string   "link_url"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
   end

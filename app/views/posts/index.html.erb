@@ -1,3 +1,4 @@
+<% title "Blog #{current_group.name}" %>
 <%= render 'header' %>
 <div class="row">
   <div class="controls bloc span12">
@@ -14,22 +15,27 @@
 <div class="row">
   <div class="center span8">
     <% posts.each do |post| %>
-      <div class="post row">
-        <div class="bloc span2">
-          <%= link_to post.title, post %>
+      <%= div_for post, class: 'row' do %>
+        <div class="span2">
+          <div class="corner none"></div>
+          <div class="content">
+            <%= link_to content_tag(:h3, post.title), post %>
+            Por: <%= link_to post.group.name, post.group %>
+          <%= l post.published_at %>
+          <div class="comments">
+            <%= link_to "#{post.comments_count} comentarios", post %>
+          </div>
         </div>
-        <div class="bloc span6">
+      </div>
+      <div class="span6">
+        <div class="corner colored"></div>
+        <div class="content">
           <%= raw truncate_html(post.body, length: 500) %>
         </div>
       </div>
     <% end %>
-  </div>
-  <div class="sidebar span4">
-    <div class="bloc description">
-      <p>
-      <%= current_group.description %>
-      </p>
-    </div>
-  </div>
+  <% end %>
+</div>
+<%= render 'sidebar' %>
 </div>
 
