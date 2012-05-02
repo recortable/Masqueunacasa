@@ -4,7 +4,7 @@ html.usersessions {
   #main {
     .bloc {
       .content {
-        padding: 0 36px 36px;
+        padding: 10px 32px 32px;
 
         h1, h2 {
           font-weight: bold;
@@ -15,6 +15,8 @@ html.usersessions {
           font-family: Helvetica, Arial, sans-serif;
           
           input {
+            width: 298px;
+            height: 20px;
             border: 1px solid $negro;
             border-radius: 0;
             background: $fondo;
@@ -28,6 +30,7 @@ html.usersessions {
             overflow: hidden;
 
             input {
+              width: auto;
               height: 100%;
               float: left;
               padding: 0 2px;
