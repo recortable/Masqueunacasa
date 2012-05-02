@@ -17,7 +17,23 @@ div.bloc {
 div#session {
   background-color: $fondo;
   margin-bottom: 20px;
-  padding: 10px 0;
+  padding: 10px 0 0;
+
+  .links {
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 10px;
+  }
+
+  .session, .lang-selector {
+    float: right;
+    margin-right: 18%;
+    margin-bottom: 10px;
+  }
+
+  .lang-selector {
+    margin-right: 1%;
+  }
 
   a {
     display: inline-block;

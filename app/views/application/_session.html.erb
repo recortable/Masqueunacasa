@@ -1,6 +1,6 @@
 <div id="session" class="container">
   <div class="row">
-    <div class="span4 offset1 links">
+    <div class="links">
     <% unless current_page? root_path %>
       <%= link_to 'Masqueunacasa.org', root_url(host: request.domain) %>
     <% end %>
@@ -8,7 +8,11 @@
         <%= link_to 'Blog', posts_url(host: request.domain) %>
       </div>
     </div>
-    <div class="span3 offset3 session">
+    <div class="lang-selector">
+      <%= link_to 'ES', url_for(locale: 'es') %>
+      <%= link_to 'CA', url_for(locale: 'ca') %>
+    </div>
+    <div class="session">
       <% if current_user %>
         <%= link_to current_user.name, current_user %>
       <% else %>
@@ -18,10 +22,6 @@
           <div class="side right-side"></div>
         </div>
       <% end %>
-    </div>
-    <div class="span1 lang-selector">
-      <%= link_to 'ES', url_for(locale: 'es') %>
-      <%= link_to 'CA', url_for(locale: 'ca') %>
     </div>
   </div>
 </div>
