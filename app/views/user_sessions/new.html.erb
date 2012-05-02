@@ -1,6 +1,5 @@
 <div class="row">
-  <div class="bloc span4">
-    <div class="corner colored"></div>
+  <%= corner_span('bloc span4') do %>
     <div class="content clearfix">
       <%= title('Iniciar sesión')  %>
       <%= simple_form_for user_session, html: {class: 'clearfix'} do |form| %>
@@ -12,13 +11,12 @@
         </div>
       <% end %>
     </div>
-  </div>
-  <div class="bloc span4">
-    <div class="corner negro"></div>
+  <% end %>
+  <%= corner_span('bloc span4', color = "negro") do %>
     <div class="content clearfix">
       <h2>Crear una nueva cuenta</h2>
       <%= render 'users/form' %>
       <div class="side-right"></div>
     </div>
-  </div>
+  <% end %>
 </div>
