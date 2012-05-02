@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   # ATTRIBUTES
   attr_accessible :name, :description
   attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :admin
 
   validates :name, presence: true, uniqueness: true
 
