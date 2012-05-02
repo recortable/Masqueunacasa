@@ -6,14 +6,17 @@
     min-height: 100px;
     position: relative;
 
-    .name {
+    .overlay {
       position: absolute;
       left: 0; top: 0;
       width: 100%; overflow: hidden;
+
       h2 { 
-        margin: 10px 0 0 10px;
+        margin: 0px 0 0 0px;
         padding: 10px 40px;
         float: left; background-color: $fondo; 
+
+        &.black {background-color: $negro; color: $fondo;}
       }
 
     }

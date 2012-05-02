@@ -1,5 +1,17 @@
 <% title "Blog #{current_group.name}" %>
-<%= render 'groups/header' %>
+<% if current_group.site? %>
+  <div class="group-header row">
+    <div class="banner span12">
+      <%= image_tag('logo-inicio-1170px.png', alt: 'Masqueunacasa Blog') %>
+      <div class="overlay">
+        <h2 class="black"><%= link_to_unless_current 'Blog', posts_path %></h2>
+        <div class="shape"></div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <%= render 'groups/header' %>
+<% end %>
 
 <div class="row">
   <div class="controls bloc span12">
