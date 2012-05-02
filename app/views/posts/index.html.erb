@@ -19,7 +19,7 @@
         <div class="span2">
           <div class="corner none"></div>
           <div class="content">
-            <%= link_to content_tag(:h3, post.title), post %>
+            <%= link_to content_tag(:h3, post.title), post_url(post, subdomain: post.group.slug) %>
             Por: <%= link_to post.group.name, post.group %>
           <%= l post.published_at %>
           <div class="comments">
