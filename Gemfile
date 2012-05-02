@@ -23,7 +23,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jbuilder'
 gem 'ie_conditional_tag'
 
-gem 'devise'
+#gem 'devise'
 gem 'simple_form'
 gem 'decent_exposure'
 gem 'cancan'

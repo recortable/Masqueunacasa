@@ -2,7 +2,7 @@
 
 body {
   background-color: $fondo;
-  background-image: image_url('fondos/textura01.png');
+  background-image: asset-data-url('fondos/textura01.png');
 }
 
 /* Imágenes que se adaptan al ancho del layout */

@@ -1,15 +1,15 @@
 # encoding: utf-8
 class Info
   QUE =<<-'TEXT'
-masqueunacasa es una plataforma web de procesos colectivos de vivienda que pretende ofrecer herramientas para fomentar la participación y autogestión en la construcción de nuestras viviendas y entornos.
+*Masqueunacasa* es una plataforma web de procesos colectivos de vivienda que pretende ofrecer herramientas para fomentar la participación y autogestión en la construcción de nuestras viviendas y entornos.
 
 Es un soporte online para ofrecer y debatir alternativas al modelo dominante de vivienda actual, proponiendo experiencias construidas y guías de asesoría que nos ayuden a ver otra manera de hacer las cosas más cooperativa.
 
-Nos imaginamos masquenacasa como una comunidad de aprendizaje y práctica, donde compartir experiencias, y poder desarrollar conocimiento y acciones de manera colaborativa para proponer otro modelo colectivo de vivienda que sea...
+Nos imaginamos *masquenacasa* como una comunidad de aprendizaje y práctica, donde compartir experiencias, y poder desarrollar conocimiento y acciones de manera colaborativa para proponer otro modelo colectivo de vivienda que sea...
   TEXT
   COMO =<<-'TEXT'
 Llevamos trabajando desde el año pasado, y en febrero lanzamos el blog inicial donde intentamos abrir el proceso del nombre.
-masqueunacasa fué el más votado de los nuevos que se propusieron.
+*Masqueunacasa* fué el más votado de los nuevos que se propusieron.
 
 Actualmente estamos elaborando la estructura de contenidos iniciales que se subirán a principio de Julio a la plataforma. Pero hemos decidido empezar de momento ampliando algunas funciones del blog para que otros colectivos puedan ir usándolo ya.
 
@@ -19,6 +19,6 @@ Actualmente estamos elaborando la estructura de contenidos iniciales que se subi
 Es un proyecto abierto a todas aquellas personas, colectivos y entidades que esten interesados en promover procesos cooperativos y colaborativos en torno a la vivienda colectiva.
 ¿Cómo puedo participar?
 
-masqueunacasa es un proyecto iniciado por lapanaderia y desarrollado en colaboración con sostrecivic y otros colaboradores...
+*Masqueunacasa* es un proyecto iniciado por lapanaderia y desarrollado en colaboración con sostrecivic y otros colaboradores...
   TEXT
 end

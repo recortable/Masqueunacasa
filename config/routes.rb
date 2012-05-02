@@ -1,9 +1,10 @@
 Masqueunacasa::Application.routes.draw do
-  devise_for :users
-
   # Rutas que se pueden acceder tanto desde un subdominio como sin él
   resources :users
   resources :posts
+  match '/entrar' => 'user_sessions#new', as: :login
+  match '/salir' => 'user_sessions#destroy', as: :logout
+  resources :user_sessions, only: [:new, :create, :destroy]
 
 
   # Rutas que sólo se puede acceder desde un subdominio
@@ -11,7 +12,7 @@ Masqueunacasa::Application.routes.draw do
     match '', to: 'posts#index'
     resource :profile
   end
-  
+
   # Rutas sólo accesibles desde el dominio principal 
   constraints subdomain: /^$/ do
     resources :groups

@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="bloc span4">
+    <%= title('Entrar')  %>
+    <%= simple_form_for user_session do |form| %>
+      <%= form.input :email %>
+      <%= form.input :password %>
+      <%= form.button :submit, value: 'Entrar' %>
+    <% end %>
+  </div>
+  <div class="bloc span4">
+    <h2>Crear una nueva cuenta</h2>
+    <%= render 'users/form' %>
+  </div>
+</div>
