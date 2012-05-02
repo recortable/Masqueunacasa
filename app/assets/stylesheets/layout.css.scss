@@ -1,0 +1,33 @@
+@import "variables";
+
+html {
+  background-color: $fondo;
+}
+
+body {background: transparent;}
+
+h1, h2, h3, h4, h5, h6 {
+ font-family: $titulos;
+ font-weight: normal;
+} 
+
+h1, h2 {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+
+a { text-decoration: underline; }
+
+/* Imágenes que se adaptan al ancho del layout */
+img.responsive { width: 100%; }
+
+/* Bloques de color blanco */
+div.bloc {
+  background-color: $fondo;
+}
+
+.corner {
+  height: 30px;
+  background: image-url('pl-1170.png') no-repeat;
+  background-color: transparent !important;
+}

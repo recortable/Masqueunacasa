@@ -1,25 +1,4 @@
-@import "variables";
-
-html {
-  background-color: $fondo;
-}
-
-body {background: transparent;}
-
-h1, h2, h3, h4, h5, h6 {
- font-family: $titulos;
- font-weight: normal;
-} 
-a { text-decoration: underline; }
-
-/* Imágenes que se adaptan al ancho del layout */
-img.responsive { width: 100%; }
-
-/* Bloques de color blanco */
-div.bloc {
-  background-color: $fondo;
-}
-
+@import 'variables';
 
 div#session {
   background-color: $fondo;

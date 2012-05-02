@@ -1,0 +1,16 @@
+@import "variables";
+
+html.usersessions {
+  #main {
+    .bloc {
+      .content {
+        padding: 36px;
+
+        h1, h2 {
+          font-weight: bold;
+          border-bottom: 2px solid $azul_neon;
+        }
+      }
+    }
+  }
+}

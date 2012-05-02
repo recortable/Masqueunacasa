@@ -3,7 +3,7 @@
 
 html.dashboard {
   div#session {
-    background-color: $azul;
+    background-color: $verde_neon;
 
     .links .link-wrapper {
       padding: 0 0 0 12px;
@@ -45,10 +45,6 @@ html.dashboard {
       margin-bottom: 20px;
 
       .span12 {background-color: $fondo;}
-      .corner {
-        height: 31px;
-        background: transparent url(Esquina_Intro.png) no-repeat;
-      }
 
       #video-container {
         padding-bottom: 1.563em;
@@ -98,7 +94,7 @@ html.dashboard {
             font-family: Georgia, serif;
             font-size: 60px;
             line-height: normal;
-            border-bottom: 2px solid $azul;
+            border-bottom: 2px solid $verde_neon;
           }
         }
       }

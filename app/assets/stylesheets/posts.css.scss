@@ -1,8 +1,7 @@
 @import "variables";
 
 html.posts {
-  background-image: image_url('fondos/textura02.png');
-
+  
   .header {
     .banner {
       width: 100%;
@@ -31,15 +30,7 @@ html.posts {
   .controls {
     margin-bottom: 20px;
   }
-
-  .corner {
-    height: 30px;
-    width: 100%;
-    background: image-url('pl-1170.png') no-repeat;
-
-    &.none { background-position: 0 0;}
-    &.orange { background-position: 0 -90px;}
-  }
+  
   .content {
     padding: 3px 30px 30px 30px;
     background-color: $fondo;
