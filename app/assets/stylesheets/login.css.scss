@@ -4,11 +4,66 @@ html.usersessions {
   #main {
     .bloc {
       .content {
-        padding: 36px;
+        padding: 0 36px 36px;
 
         h1, h2 {
           font-weight: bold;
-          border-bottom: 2px solid $azul_neon;
+          border-bottom: 2px solid $azul_gris;
+        }
+
+        form {
+          font-family: Helvetica, Arial, sans-serif;
+          
+          input {
+            border: 1px solid $negro;
+            border-radius: 0;
+            background: $fondo;
+          }
+
+          .submit-wrapper {
+            height: 31px;
+            float: left;
+            padding: 0 0 0 10px;
+            background: transparent url(Entrar-01-sides.png) no-repeat;
+            overflow: hidden;
+
+            input {
+              height: 100%;
+              float: left;
+              padding: 0 2px;
+              border: 0;
+              background: transparent url(Entrar-01-middle.png) repeat-x;
+              font-size: 12px;
+              color: $fondo;
+              text-transform: uppercase;
+              text-shadow: 0 0;
+
+              &:hover {
+                -moz-transition: none; /* Firefox 4 */
+                -webkit-transition: none; /* Safari and Chrome */
+                -o-transition: none; /* Opera */
+              }
+            }
+
+            .side-right {
+              width: 10px;
+              height: 31px;
+              float: left;
+              background: transparent url(Entrar-01-sides.png) no-repeat right top;
+            }
+
+            &:hover {
+              background-position: left bottom;
+
+              input {
+                background-position: center bottom;
+              }
+
+              .side-right {
+                background-position: right bottom;
+              }
+            }
+          }
         }
       }
     }

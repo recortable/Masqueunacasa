@@ -1,18 +1,24 @@
 <div class="row">
   <div class="bloc span4">
-    <div class="content">
+    <div class="corner colored"></div>
+    <div class="content clearfix">
       <%= title('Iniciar sesión')  %>
-      <%= simple_form_for user_session do |form| %>
+      <%= simple_form_for user_session, html: {class: 'clearfix'} do |form| %>
         <%= form.input :email %>
         <%= form.input :password %>
-        <%= form.button :submit, value: 'Entrar' %>
+        <div class="submit-wrapper">
+          <%= form.button :submit, value: 'Entrar' %>
+          <div class="side-right"></div>
+        </div>
       <% end %>
     </div>
   </div>
   <div class="bloc span4">
-    <div class="content">
+    <div class="corner negro"></div>
+    <div class="content clearfix">
       <h2>Crear una nueva cuenta</h2>
       <%= render 'users/form' %>
+      <div class="side-right"></div>
     </div>
   </div>
 </div>

@@ -1,7 +1,10 @@
-<%= simple_form_for user do |form| %>
+<%= simple_form_for user, html: {class: 'clearfix'} do |form| %>
   <%= form.input :name %>
   <%= form.input :email %>
   <%= form.input :password %>
   <%= form.input :password_confirmation %>
-  <%= form.button :submit %>
+  <div class="submit-wrapper clearfix">
+    <%= form.button :submit, value: 'Crear cuenta' %>
+    <div class="side-right"></div>
+  </div>
 <% end %>
