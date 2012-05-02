@@ -12,6 +12,7 @@ class UserSession
   attr_accessor :email, :password
   attr_reader :user
   validates :name, presence: true
+  validates :password, presence: true
   validates :email, presence: true
 
   def initialize(attributes = {})
