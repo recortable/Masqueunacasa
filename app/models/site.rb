@@ -15,7 +15,7 @@ class Site
   end
 
   def latest_groups
-    Group.scoped.limit(10)
+    Group.scoped.limit(6)
   end
 
   def posts

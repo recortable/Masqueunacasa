@@ -1,0 +1,12 @@
+    <%= div_for group, class: 'card' do %>
+      <div class="corner none"></div>
+      <div class="card-content">
+        <div class="avatar">
+          <%= group_avatar group %>
+        </div>
+        <div class="info">
+          <%= link_to group.name, group %>
+        </div>
+      </div>
+    <% end %>
+

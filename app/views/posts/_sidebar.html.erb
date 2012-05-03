@@ -1,11 +1,10 @@
 <div class="sidebar span4">
   <% if current_group.site? %>
-    <%= corner_span('group-list', :none) do %>
-      <h3>Colectivos</h3>
+    <div class="cards">
       <% current_group.latest_groups.each do |group| %>
-        <%= link_to group_avatar(group), group %>
+        <%= render group %>
       <% end %>
-    <% end %>
+    </div>
   <% else %>
     <%= corner_span('description', :none) do %>
       <h3>Quiénes</h3>

@@ -7,11 +7,8 @@
     </div>
   </div>
 <% end %>
-<div class="groups row">
+<div class="groups cards">
   <% groups.each_with_index do |group| %>
-    <%= div_for group, class: 'bloc span2' do %>
-      <%= group_avatar group %>
-      <%= link_to group.name, group %>
-    <% end %>
+    <%= render group %>
   <% end %>
 </div>

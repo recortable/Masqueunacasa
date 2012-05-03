@@ -1,4 +1,7 @@
-<div class="row">
+<%= current_group.site? ? render_banner('Participantes', users_path) : 
+  render('groups/header') %>
+
+<%= div_for user, class: 'row' do %>
   <%= corner_span('info span4') do %> 
     <%= title user.name %>
     <%= content_tag(:p, 'Administrador(a) de masqueunacasa.org') if user.admin? %>
@@ -6,4 +9,4 @@
     <%= link_to 'Cerrar sesión', logout_path %>
     <%= link_to 'Editar', [:edit, user] if can? :edit, user %>
   <% end %>
-</div>
+<% end %>
