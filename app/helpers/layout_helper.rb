@@ -10,4 +10,11 @@ module LayoutHelper
            <div class='side-right'></div>
          </div>"
   end
+
+  def link_box(text, url, css_class = '')
+    raw "<div class='link-wrapper clearfix #{css_class}'>
+           #{ link_to text, url }
+           <div class='side right-side'></div>
+         </div>"
+  end
 end

@@ -3,39 +3,73 @@
 
 html.dashboard {
   div#session {
+    height: 41px;
     background-color: $verde_neon;
 
-    .links .link-wrapper {
-      padding: 0 0 0 12px;
-      background: transparent url(Boton_Blog01-01.png) no-repeat;
-      overflow: hidden;
+    .links {
+      margin-left: 10%;
 
-      a {
-        padding-left: 0;
-        padding-right: 12px;
+      .link-wrapper {
+        background: transparent url(link_con_muesca-opac.png) no-repeat;
+        overflow: hidden;
+
+        a, .right-side {
+          background: $fondo;
+        }
+
+        &:hover {
+          background-position: left -21px;
+
+          a, .right-side {
+          background: $negro;
+        }
+        }
       }
     }
 
-    .session .link-wrapper {
+    .session {
+      .link-wrapper {
+        background: url(caja_link_puntas-opac.png) no-repeat;
+        padding: 0 0 0 10px;
 
-      .side {
-        width: 12px;
-        height: 20px;
-        float: left;        
+        a {
+          background-color: $fondo;
+          height: 16px;
+        }
+
+        .right-side {
+          width: 10px;
+          background: url(caja_link_puntas-opac.png) no-repeat right -42px;
+        }
+
+        &:hover {
+          background: $negro url(caja_link_puntas-opac.png) no-repeat left -21px;
+
+          a {
+            background-color: transparent;
+            background-image: none;
+          }
+
+          .right-side {
+            background: transparent url(caja_link_puntas-opac.png) no-repeat right -63px;
+          }
+        }
       }
+    }
 
-      a {
-        float: left;
-        padding-right: 27px;
-        padding-left: 27px;
-      }
+    .lang-selector {
+      .link-wrapper {
+        background-image: none;
+        background-color: $fondo;
 
-      .left-side {
-        background: transparent url(IniciarSesion_01-01.png) left top no-repeat;
-      }
+        a, .right-side {
+          background-image: none;
+          background-color: transparent;
+        }
 
-      .right-side {
-        background: transparent url(IniciarSesion_01-01.png) right top no-repeat;
+        &:hover {
+          background-color: $negro;
+        }
       }
     }
   }

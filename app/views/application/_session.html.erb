@@ -1,26 +1,20 @@
 <div id="session" class="container">
   <div class="row">
-    <div class="links">
     <% unless current_page? root_path %>
-      <%= link_to 'Masqueunacasa.org', root_url(host: request.domain) %>
+      <%= link_to image_tag('Logo_Mquc.png', alt: 'Logo masqueunacasa'), root_url(host: request.domain), id: 'logo' %>
     <% end %>
-      <div class="link-wrapper">
-        <%= link_to 'Blog', posts_url(host: request.domain) %>
-      </div>
+    <div class="links">
+      <%= link_box 'Blog', posts_url(host: request.domain) %>
     </div>
     <div class="lang-selector">
-      <%= link_to 'ES', url_for(locale: 'es') %>
-      <%= link_to 'CA', url_for(locale: 'ca') %>
+      <%= link_box 'ES', url_for(locale: 'es') %>
+      <%= link_box 'CA', url_for(locale: 'ca') %>
     </div>
     <div class="session">
       <% if current_user %>
-        <%= link_to current_user.name, current_user %>
+        <%= link_box current_user.name, current_user %>
       <% else %>
-        <div class="link-wrapper">
-          <div class="side left-side"></div>
-          <%= link_to 'Iniciar sesión', login_path, class: "login" %>
-          <div class="side right-side"></div>
-        </div>
+        <%= link_box 'Iniciar sesión', login_path %>
       <% end %>
     </div>
   </div>

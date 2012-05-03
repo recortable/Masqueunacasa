@@ -2,7 +2,7 @@
 class UserSessionsController < ApplicationController
   expose(:user_session)
   expose(:user) { User.new }
-  expose(:themes) { 'textura04 azul' }
+  expose(:themes) { 'textura04 azul_gris' }
 
   def new
     authorize! :new, user_session

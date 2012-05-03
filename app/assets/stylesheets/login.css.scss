@@ -1,6 +1,10 @@
 @import "variables";
 
 html.usersessions {
+  #session .session {
+    display: none;
+  }
+
   #main {
     .content {
       padding: 10px 32px 32px;

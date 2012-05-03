@@ -3,31 +3,123 @@
 div#session {
   background-color: $fondo;
   margin-bottom: 20px;
-  padding: 10px 0 0;
+
+  #logo {
+    float: left;
+    margin-left: 30px;
+    padding: 0;
+
+    img {
+      vertical-align: middle;
+    }
+  }
 
   .links {
     float: left;
-    margin-left: 5%;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 2%;
+
+    .link-wrapper {
+      height: 21px;
+      padding: 0 0 0 11px;
+      background: url(link_con_muesca-transp.png) no-repeat;
+
+      a, .right-side {
+        height: 21px;
+        background: transparent url(link_con_muesca-transp.png) no-repeat;
+        float: left;
+      }
+
+      a {
+        background-position: left -42px;
+        background-repeat: repeat-x;
+      }
+
+      .right-side {
+        width: 11px;
+        background-position: left -84px;
+      }
+
+      &:hover {
+        background-position: left -21px;
+
+        a {
+          background-position: left -63px;
+          background-repeat: repeat-x;
+        }
+
+        .right-side {
+          width: 11px;
+          background-position: left -105px;
+        }
+      }
+    }
   }
 
   .session, .lang-selector {
     float: right;
+    margin-top: 10px;
     margin-right: 18%;
-    margin-bottom: 10px;
+
+    .link-wrapper {
+      height: 21px;
+      float: left;
+      padding: 0 0 0 4px;
+      background: url(caja_link-transp.png) no-repeat;
+
+      a, .right-side {
+        height: 21px;
+        background: transparent url(caja_link-transp.png) no-repeat;
+        float: left;
+      }
+
+      a {
+        background-position: left -42px;
+        background-repeat: repeat-x;
+      }
+
+      .right-side {
+        width: 4px;
+        background-position: left -84px;
+      }
+
+      &:hover {
+        background-position: left -21px;
+
+        a {
+          background-position: left -63px;
+        }
+
+        .right-side {
+          background-position: left -105px;
+        }
+      }
+    }
   }
 
   .lang-selector {
     margin-right: 1%;
+
+    .link-wrapper {
+      margin-left: 3px;
+    }
+  }
+
+  .session .link-wrapper a {
+    padding: 2px 5px;
   }
 
   a {
     display: inline-block;
-    padding: 2px 5px 0;
-    background-color: $fondo;
+    padding: 2px 2px;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 12px;
     color: #333;
     text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .link-wrapper:hover a {
+    color: $fondo;
   }
 }
