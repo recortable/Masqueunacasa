@@ -9,11 +9,11 @@
   <div class="controls bloc span12">
     <div class="row">
       <div class="span6 offset2">
-        <%= link_to 'Añadir entrada', new_post_path if current_user &&
+        <%= link_box 'Añadir entrada', new_post_path, css_class = 'highlight' if current_user &&
           current_user.member?(current_group) %>
       </div>
       <div class="span4">
-        <%= link_to 'Editar perfil', edit_profile_path, rel: 'edit-profile' if can? :edit, current_group %>
+        <%= link_box 'Editar perfil', edit_profile_path, rel: 'edit-profile' if can? :edit, current_group %>
       </div>
     </div>
   </div>
@@ -34,13 +34,17 @@
           </div>
         </div>
       </div>
-      <div class="span6">
+      <div class="span6 post-teaser">
         <div class="corner colored"></div>
         <div class="content">
           <%= render_post_media(post) %>
           <%= raw truncate_html(post.body, length: 500) %>
-          <%= link_to 'leer más...', post %>
-          <%= link_to 'editar', [:edit, post] if can? :edit, post %>
+          <div class="links">
+            <%= link_to 'leer más...', post, class: 'read-more' %>
+          </div>
+        </div>
+        <div class="controls clearfix">
+          <%= link_box 'Editar', [:edit, post] if can? :edit, post %>
         </div>
       </div>
     <% end %>

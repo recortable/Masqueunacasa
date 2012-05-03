@@ -1,0 +1,66 @@
+@import 'variables';
+
+.controls {
+  &.span12.bloc .link-wrapper {
+    margin-left: 10px;
+  }
+
+  .link-wrapper {
+    height: 20px;
+    float: left;
+    margin-bottom: 6px;
+    padding: 0 0 0 10px;
+    overflow: hidden;
+    background: transparent url(link-etiqueta-transp.png) no-repeat;
+
+    a, .right-side {
+      display: block;
+      float: left;
+    }
+
+    a {
+      height: 18px;
+      padding: 1px 0;
+      background: transparent url(link-etiqueta-transp.png) repeat-x left -40px;
+    }
+
+    .right-side {
+      width: 10px;
+      height: 20px;
+      background: transparent url(link-etiqueta-transp.png) repeat-x left -60px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-position: left -20px;
+
+      a {
+        background-image: none;
+        color: $fondo !important;
+      }
+
+      .right-side {
+        background-position: left -80px;
+      }
+    }
+
+    &.highlight {
+      background-position: left -20px;
+      background-color: $verde_neon;
+
+      a {
+        background-image: none;
+      }
+
+      .right-side {
+        background-position: left -80px;
+      }
+    }
+  }
+
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $negro !important;
+  }
+}

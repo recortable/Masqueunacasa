@@ -34,6 +34,18 @@ div.post.row {
   margin-bottom: 20px;
   .info, .content {
     padding-bottom: 99999px;
-    margin-bottom: -99974px;
+    margin-bottom: -99999px;
+  }
+
+  .post-teaser {
+
+    .links {
+      margin: 15px 0;
+    }
+
+    .controls {
+      margin: 0 30px 15px;
+    }
   }
 }
+

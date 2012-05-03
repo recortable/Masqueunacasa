@@ -3,8 +3,15 @@
 
 <div class="row">
   <div class="controls bloc span12">
-    <%= link_to 'Volver', posts_path %>
-    <%= link_to 'Editar', edit_post_path(post) %>
+    <div class="row">
+      <div class="span2">
+        <%= link_box 'Volver', posts_path %>
+      </div>
+      <div class="span6">
+        <%= link_box 'Editar', edit_post_path(post), css_class = 'highlight' if current_user &&
+            current_user.member?(current_group) %>
+      </div>
+    </div>
   </div>
 </div>
 <%= div_for post, class: 'row' do %>
