@@ -1,31 +1,3 @@
 @import 'variables';
 
-.group-header {
-  .banner {
-    width: 100%;
-    min-height: 100px;
-    position: relative;
-
-    .overlay {
-      position: absolute;
-      left: 0; top: 0;
-      width: 100%; overflow: hidden;
-
-      h2 { 
-        margin: 0px 0 0 0px;
-        padding: 10px 40px;
-        float: left; background-color: $fondo; 
-
-        &.black {background-color: $negro; color: $fondo;}
-      }
-
-    }
-    .margin {
-      position: absolute;
-      left: 0; right: 0; top: 0; bottom: 0;
-      border: 10px solid $fondo;
-    }
-  }
-}
-
 .groups.cards { margin-top: 20px;  }

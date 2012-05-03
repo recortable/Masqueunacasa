@@ -1,18 +1,16 @@
-<div class="row">
-  <div class="group-header bloc span12">
-    <div class="banner">
-        <% if current_group.banner_image? %>
-          <%= image_tag(current_group.banner_image_url, class: 'responsive', alt: current_group.name) %>
-        <% else %>
-          <%= placeholder_image_tag({text: '1170x200px', width: 1170, height: 200}, {class: 'responsive'}) %>
-        <% end %>
+<div class="main-header group row">
+  <div class="banner span12">
+    <% if current_group.banner_image? %>
+      <%= image_tag(current_group.banner_image_url, class: 'responsive', alt: current_group.name) %>
+    <% else %>
+      <%= placeholder_image_tag({text: '1170x200px', width: 1170, height: 200}, {class: 'responsive'}) %>
+    <% end %>
 
-      <div class="margin">
-      </div>
-      <div class="overlay">
-        <h2><%= link_to_unless_current current_group.name, root_path %></h2>
-        <div class="shape"></div>
-      </div>
+    <div class="margin">
+    </div>
+    <div class="overlay">
+      <h2><%= link_to_unless_current current_group.name, root_path %></h2>
+      <div class="shape"></div>
     </div>
   </div>
 </div>

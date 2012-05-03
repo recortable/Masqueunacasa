@@ -14,7 +14,10 @@ class MessagesController < ApplicationController
   def create
     message.group = current_group
     message.user = current_user
-    flash[:notice] = 'notice.messages.created' if message.save
+    if message.save
+      flash[:notice] = 'notice.messages.created' 
+      GroupMailer.message_email(message).deliver
+    end
     respond_with message, location: messages_path
   end
 
