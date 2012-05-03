@@ -11,6 +11,7 @@ Masqueunacasa::Application.routes.draw do
   constraints subdomain: /.+/ do
     match '', to: 'posts#index'
     resource :profile
+    resources :messages
   end
 
   # Rutas sólo accesibles desde el dominio principal 

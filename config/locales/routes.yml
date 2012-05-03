@@ -3,6 +3,7 @@ es:
   users: 'participantes'
   groups: 'colectivos'
   profile: 'perfil'
+  messages: 'mensajes'
 
   edit: 'editar'
   new: 'nueva'
