@@ -1,6 +1,6 @@
 @import "variables";
 
-html.usersessions {
+html.usersessions, html.users {
   #session .session {
     display: none;
   }
@@ -10,6 +10,7 @@ html.usersessions {
       padding: 10px 32px 32px;
 
       h1, h2 {
+        font-size: 30px;
         font-weight: bold;
         border-bottom: 2px solid $azul_gris;
       }

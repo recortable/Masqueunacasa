@@ -2,78 +2,7 @@
 @import "variables";
 
 html.dashboard {
-  div#session {
-    height: 41px;
-    background-color: $verde_neon;
-
-    .links {
-      margin-left: 10%;
-
-      .link-wrapper {
-        background: transparent url(link_con_muesca-opac.png) no-repeat;
-        overflow: hidden;
-
-        a, .right-side {
-          background: $fondo;
-        }
-
-        &:hover {
-          background-position: left -21px;
-
-          a, .right-side {
-          background: $negro;
-        }
-        }
-      }
-    }
-
-    .session {
-      .link-wrapper {
-        background: url(caja_link_puntas-opac.png) no-repeat;
-        padding: 0 0 0 10px;
-
-        a {
-          background-color: $fondo;
-          height: 16px;
-        }
-
-        .right-side {
-          width: 10px;
-          background: url(caja_link_puntas-opac.png) no-repeat right -42px;
-        }
-
-        &:hover {
-          background: $negro url(caja_link_puntas-opac.png) no-repeat left -21px;
-
-          a {
-            background-color: transparent;
-            background-image: none;
-          }
-
-          .right-side {
-            background: transparent url(caja_link_puntas-opac.png) no-repeat right -63px;
-          }
-        }
-      }
-    }
-
-    .lang-selector {
-      .link-wrapper {
-        background-image: none;
-        background-color: $fondo;
-
-        a, .right-side {
-          background-image: none;
-          background-color: transparent;
-        }
-
-        &:hover {
-          background-color: $negro;
-        }
-      }
-    }
-  }
-
+  
   div#main {
     .intro.row {
       margin-bottom: 20px;

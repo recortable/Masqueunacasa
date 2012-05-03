@@ -1,8 +1,8 @@
 <div id="session" class="container">
   <div class="row">
-    <% unless current_page? root_path %>
+    <% # unless current_page? root_path %>
       <%= link_to image_tag('Logo_Mquc.png', alt: 'Logo masqueunacasa'), root_url(host: request.domain), id: 'logo' %>
-    <% end %>
+    <% # end %>
     <div class="links">
       <%= link_box 'Blog', posts_url(host: request.domain) %>
     </div>
@@ -12,9 +12,10 @@
     </div>
     <div class="session">
       <% if current_user %>
-        <%= link_box current_user.name, current_user %>
+        <%= link_box "¡Hola #{current_user.name}!", current_user, css_class = 'user' %>
+        <%= link_box 'Cerrar sesión', logout_path %>
       <% else %>
-        <%= link_box 'Iniciar sesión', login_path %>
+        <%= link_box 'Iniciar sesión', login_path, css_class: 'login' %>
       <% end %>
     </div>
   </div>
