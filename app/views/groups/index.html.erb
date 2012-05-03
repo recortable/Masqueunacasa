@@ -1,9 +1,17 @@
-<%= title t('.title', default: 'Colectivos') %>
-<%= link_to t('.new_group', default: 'Añadir grupo'), 
-  new_group_path if can? :create, Group %>
-<div class="groups">
-  <% groups.each do |group| %>
-    <%= div_for group do %>
+<%= render_banner 'Colectivos', groups_path %>
+<% if current_user %>
+  <div class="row">
+    <div class="controls span12">
+      <%= link_to t('.new_group', default: 'Añadir grupo'), 
+        new_group_path if can? :create, Group %>
+    </div>
+  </div>
+<% end %>
+<div class="groups row">
+  <% groups.each_with_index do |group| %>
+    <%= div_for group, class: 'bloc span2' do %>
+      <%= group_avatar group %>
       <%= link_to group.name, group %>
     <% end %>
   <% end %>
+</div>

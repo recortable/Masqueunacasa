@@ -7,4 +7,9 @@ module ApplicationHelper
   def controller_class
     controller.class.name[0..-11].downcase.gsub(/:/, '-')
   end
+
+  def render_banner(title, path)
+    render partial: 'application/banner', locals: 
+      {title: title, path: path}
+  end
 end
