@@ -48,6 +48,10 @@ gem 'hoptoad_notifier'
 gem 'unicorn'
 gem 'capistrano'
 
+group :development do
+  gem 'letter_opener'
+end
+
 group :test do
   gem 'minitest'
   gem 'capybara'
