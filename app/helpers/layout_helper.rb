@@ -4,9 +4,10 @@ module LayoutHelper
     raw "<div class='#{css_class}'><div class='corner #{color}'></div><div class='content'>#{content}</div></div>"
   end
 
-  def submit_button(form, text = 'Enviar', color = 'negro')
+  def submit_button_for(form, text = nil, color = 'negro')
+    options = text ? {value: text} : {}
     raw "<div class='submit-wrapper #{color}'>
-           #{form.button :submit, value: text}
+           #{form.button :submit, options}
            <div class='side-right'></div>
          </div>"
   end

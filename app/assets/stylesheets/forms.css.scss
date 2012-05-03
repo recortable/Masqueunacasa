@@ -3,13 +3,13 @@
 form {
   font-family: Helvetica, Arial, sans-serif;
 
-  input {
+  input, textarea {
     width: 97.5%;
-    height: 20px;
     border: 1px solid $negro;
     border-radius: 0;
     background: $fondo;
   }
+  input { height: 20px;}
 
   .submit-wrapper {
     height: 31px;
@@ -17,6 +17,7 @@ form {
     padding: 0 0 0 10px;
     background: transparent url(Entrar-01-sides.png) no-repeat;
     overflow: hidden;
+    margin-bottom: 20px;
 
     input {
       width: auto;

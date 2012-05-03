@@ -1,17 +1,23 @@
 <div class="bloc">
-  <div class="row">
-    <%= simple_form_for post do |form| %>
-      <div class="span6">
-        <%= form.input :title %>
-        <%= form.input :body, as: :text %>
-        <%= form.input :body, :as => :ckeditor, :label => false, :input_html => { :toolbar => 'Basic' } %>
-        <%= form.button :submit %>
-      </div>
-      <div class="span4">
-        <%= form.input :image %>
-        <%= form.input :embed %>
-        <%= form.input :published_at if current_user.admin? %>
+  <%= simple_form_for post do |form| %>
+    <div class="row">
+      <div class="span8"><div class="content">
+          <%= form.input :title %>
+          <%= form.input :body, as: :text %>
+          <%#= form.input :body, :as => :ckeditor, :label => false, :input_html => { :toolbar => 'Basic' } %>
+          <%= submit_button_for form %>
+      </div></div>
+      <div class="span4"><div class="content">
+          <%= form.input :image %>
+          <%= form.input :embed %>
+      </div></div>
+    </div>
+    <% if current_user.admin? %>
+      <div class="content">
+        <br><br>
+        <h3>Cambiar fecha de publicación</h3>
+        <%= form.input :published_at %>
       </div>
     <% end %>
-  </div>
+  <% end %>
 </div>

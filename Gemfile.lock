@@ -35,6 +35,8 @@ GEM
     bcrypt-ruby (3.0.1)
     blankslate (2.1.2.4)
     bootstrap-sass (2.0.2)
+    bootstrap-wysihtml5-rails (0.2.8)
+      railties (>= 3.0)
     builder (3.0.0)
     cambelt (0.1.1)
     cancan (1.6.7)
@@ -56,9 +58,6 @@ GEM
       activesupport (>= 3.2.0)
     childprocess (0.3.2)
       ffi (~> 1.0.6)
-    ckeditor (3.7.0.rc3)
-      mime-types (~> 1.17.2)
-      orm_adapter (~> 0.0.6)
     cloudinary (1.0.18)
       rest-client
     coffee-rails (3.2.2)
@@ -127,7 +126,6 @@ GEM
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
     nokogiri (1.5.2)
-    orm_adapter (0.0.7)
     paper_trail (2.6.3)
       activerecord (~> 3.0)
       railties (~> 3.0)
@@ -210,12 +208,12 @@ DEPENDENCIES
   acts_as_list
   bcrypt-ruby (~> 3.0.0)
   bootstrap-sass
+  bootstrap-wysihtml5-rails
   cambelt
   cancan
   capistrano
   capybara
   carrierwave
-  ckeditor (= 3.7.0.rc3)
   cloudinary
   coffee-rails (~> 3.2.1)
   database_cleaner

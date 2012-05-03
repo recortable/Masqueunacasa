@@ -2,7 +2,7 @@
 
 
 <div class="row profile-editor editor">
-  <div class="span10">
+  <div class="span12">
     <div class="corner colored"></div>
     <div class="content">
       <%= title 'Editar perfil' %>
@@ -11,12 +11,11 @@
     <div class="bloc">
       <%= simple_form_for current_group, url: profile_path do |form| %>
         <div class="row">
-          <div class="span6">
+          <div class="span8">
             <div class="content">
               <%= form.input :name %>
               <%= form.input :description, as: :text %>
-              <%= form.input :description, :as => :ckeditor, :label => false, :input_html => { :toolbar => 'Basic' } %>
-              <%= form.button :submit %>
+              <%= submit_button_for form %>
             </div>
           </div>
           <div class="span4">
