@@ -19,6 +19,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "ckeditor", "3.7.0.rc3"
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jbuilder'
 gem 'ie_conditional_tag'

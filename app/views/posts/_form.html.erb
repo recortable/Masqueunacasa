@@ -1,8 +1,17 @@
-<%= simple_form_for post do |form| %>
-  <%= form.input :title %>
-  <%= form.input :image %>
-  <%= form.input :embed %>
-  <%= form.input :body, as: :text %>
-  <%= form.input :published_at %>
-  <%= form.button :submit %>
-<% end %>
+<div class="bloc">
+  <div class="row">
+    <%= simple_form_for post do |form| %>
+      <div class="span6">
+        <%= form.input :title %>
+        <%= form.input :body, as: :text %>
+        <%= form.input :body, :as => :ckeditor, :label => false, :input_html => { :toolbar => 'Basic' } %>
+        <%= form.button :submit %>
+      </div>
+      <div class="span4">
+        <%= form.input :image %>
+        <%= form.input :embed %>
+        <%= form.input :published_at if current_user.admin? %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -14,6 +14,10 @@ class UsersController < ApplicationController
     respond_with user
   end
 
+  def new
+    respond_with user
+  end
+
   def edit
     respond_with user
   end

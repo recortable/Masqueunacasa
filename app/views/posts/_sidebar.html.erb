@@ -3,20 +3,14 @@
     <%= corner_span('group-list', :none) do %>
       <h3>Colectivos</h3>
       <% current_group.latest_groups.each do |group| %>
-        <%= link_to group do %>
-          <% if group.avatar_image? %>
-            <%= image_tag(group.avatar_image_url, alt: group.name) %>
-          <% else %>
-            <%= placeholder_image_tag(text: '', width: 120, height: 120) %>
-          <% end %>
-        <% end %>
+        <%= link_to group_avatar(group), group %>
       <% end %>
     <% end %>
   <% else %>
     <%= corner_span('description', :none) do %>
       <h3>Quiénes</h3>
       <p>
-      <%= current_group.description %>
+      <%= raw current_group.description %>
       </p>
     <% end %>
   <% end %>

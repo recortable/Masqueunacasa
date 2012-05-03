@@ -49,35 +49,5 @@ namespace :deploy do
   end
   before "deploy", "deploy:check_revision"
 end
-namespace :backup do
-  desc "Backup the database"
-  task :db, :roles => :db do
-    run "mkdir -p #{current_path}/backups"
-    run "cd #{current_path}; pg_dump -U #{user} #{application}_production -f backups/#{Time.now.utc.strftime('%Y%m%d%H%M%S')}.sql"
-  end
 
-  desc "Backup the database and download the script"
-  task :download, :roles => :app do
-    db
-    timestamp = Time.now.utc.strftime('%Y%m%d%H%M%S') 
-    run "mkdir -p backups"
-    run "cd #{current_path}; tar -cvzpf #{timestamp}_backup.tar.gz backups"
-    get "#{current_path}/#{timestamp}_backup.tar.gz", "#{timestamp}_backup.tar.gz"
-  end
-
-  desc "Dumps target database into development db"
-  task :sync_db do
-    env   = ENV['RAILS_ENV'] || ENV['DB'] || 'production'
-    file  = "#{application}.sql.bz2"
-    remote_file = "#{shared_path}/log/#{file}"
-    run "pg_dump --clean --no-owner --no-privileges -U#{db_user} -h#{db_host} #{db_name}_#{env} | bzip2 > #{file}" do |ch, stream, out|
-      ch.send_data "#{db_password}\n" if out =~ /^Password:/
-      puts out
-    end
-    puts rsync = "rsync #{user}@#{domain}:#{file} tmp"
-    `#{rsync}`
-    puts depackage = "bzcat tmp/#{file} | psql #{local_db_dev}"
-    `#{depackage}`
-  end
-end
-
+load 'config/deploy/postgres'

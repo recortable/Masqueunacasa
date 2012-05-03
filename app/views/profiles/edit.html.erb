@@ -14,13 +14,14 @@
           <div class="span6">
             <div class="content">
               <%= form.input :name %>
-              <%= form.input :slug %>
-              <%= form.input :description %>
+              <%= form.input :description, as: :text %>
+              <%= form.input :description, :as => :ckeditor, :label => false, :input_html => { :toolbar => 'Basic' } %>
               <%= form.button :submit %>
             </div>
           </div>
           <div class="span4">
             <div class="content">
+              <%= form.input :slug %>
               <%= form.input :banner_image %>
               <%= form.input :avatar_image %>
             </div>

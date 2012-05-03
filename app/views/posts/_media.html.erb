@@ -1,0 +1,8 @@
+<% if post.embed? %>
+  <div class="embed-container">
+    <%= raw post.embed %>
+  </div>
+<% elsif post.image? %>
+  <%= image_tag post.image_url, class: 'responsive' %>
+<% end %>
+

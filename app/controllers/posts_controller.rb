@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
   respond_to :html
   before_filter :load_subdomain_group
+  before_filter :require_user, except: [:index, :show]
 
-  expose(:themes) { 'textura02 naranja' }
-  expose(:posts) { current_group.posts }
+  expose(:themes) { current_group.site? ? 'textura03 azul' : 'textura02 naranja' }
+  expose(:posts) { current_group.posts.order('created_at DESC').limit(10) }
   expose(:post)
 
   def index
