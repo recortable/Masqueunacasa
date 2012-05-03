@@ -7,6 +7,10 @@ module ApplicationHelper
   def controller_class
     controller.class.name[0..-11].downcase.gsub(/:/, '-')
   end
+  
+  def subdomain_class
+    request.subdomain.present? ? 'subdomain' : 'main_domain'
+  end
 
   def render_banner(title, path)
     render partial: 'application/banner', locals: 

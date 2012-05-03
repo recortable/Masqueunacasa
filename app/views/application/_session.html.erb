@@ -1,10 +1,10 @@
 <div id="session" class="container">
   <div class="row">
-    <% # unless current_page? root_path %>
-      <%= link_to image_tag('Logo_Mquc.png', alt: 'Logo masqueunacasa'), root_url(host: request.domain), id: 'logo' %>
-    <% # end %>
+    <%= link_to image_tag('Logo_Mquc.png', alt: 'Logo masqueunacasa'), root_url(host: request.domain), id: 'logo' %>
     <div class="links">
+      <%= link_box 'Inicio', root_url(host: request.domain) unless request.subdomain.present? %>
       <%= link_box 'Blog', posts_url(host: request.domain) %>
+      <%= link_box 'Colectivos', groups_url(host: request.domain) %>
     </div>
     <div class="lang-selector">
       <%= link_box 'ES', url_for(locale: 'es') %>

@@ -21,8 +21,10 @@ div#session {
     margin-left: 2%;
 
     .link-wrapper {
+      float: left;
       height: 21px;
       padding: 0 0 0 11px;
+      margin-right: 5px;
       background: url(link_con_muesca-transp.png) no-repeat;
 
       a, .right-side {
@@ -177,15 +179,7 @@ div#session {
  * REESCRIBIR ESTILOS PARA ALGUNAS PÁGINAS CON BARRA DE SESIÓN ESPECIAL
  */
 
-html.dashboard, html.posts.masq1casa {
-
-  &.verde_neon div#session {
-    background-color: $verde_neon;
-  }
-
-  &.azul_gris div#session {
-    background-color: $azul_gris;
-  }
+html.main_domain {
 
   div#session {
 

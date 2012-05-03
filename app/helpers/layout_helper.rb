@@ -7,15 +7,17 @@ module LayoutHelper
   def submit_button_for(form, text = nil, color = 'negro')
     options = text ? {value: text} : {}
     raw "<div class='submit-wrapper #{color}'>
-           #{form.button :submit, options}
+    #{form.button :submit, options}
            <div class='side-right'></div>
          </div>"
   end
 
   def link_box(text, url, css_class = '')
-    raw "<div class='link-wrapper clearfix #{css_class}'>
-           #{ link_to text, url }
+    unless current_page?(url)
+      raw "<div class='link-wrapper clearfix #{css_class}'>
+      #{ link_to text, url }
            <div class='side right-side'></div>
          </div>"
+    end
   end
 end
