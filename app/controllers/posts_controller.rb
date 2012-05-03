@@ -36,4 +36,10 @@ class PostsController < ApplicationController
     respond_with post
   end
 
+  def destroy
+    authorize! :delete, post
+    flash[:notice] = 'Borrado' if post.destroy
+    respond_with post, location: posts_path
+  end
+
 end

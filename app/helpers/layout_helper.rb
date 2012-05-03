@@ -12,10 +12,10 @@ module LayoutHelper
          </div>"
   end
 
-  def link_box(text, url, css_class = '')
+  def link_box(text, url, options = {})
     unless current_page?(url)
-      raw "<div class='link-wrapper clearfix #{css_class}'>
-      #{ link_to text, url }
+      raw "<div class='link-wrapper clearfix #{options[:class]}'>
+      #{ link_to text, url, options.except(:class) }
            <div class='side right-side'></div>
          </div>"
     end

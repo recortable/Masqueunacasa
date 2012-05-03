@@ -4,8 +4,11 @@
       <div class="span8"><div class="content">
           <%= form.input :title %>
           <%= form.input :body, as: :text %>
-          <%#= form.input :body, :as => :ckeditor, :label => false, :input_html => { :toolbar => 'Basic' } %>
           <%= submit_button_for form %>
+          <div class="form-controls">
+            <%= link_box 'Cancelar', post %>
+            <%= link_box 'Borrar', post, method: :delete, confirm: '¿Estás seguro? Esta acción no se puede deshacer' if post.persisted? %>
+          </div>
       </div></div>
       <div class="span4"><div class="content">
           <%= form.input :image %>

@@ -8,7 +8,7 @@
         <%= link_box 'Volver', posts_path %>
       </div>
       <div class="span6">
-        <%= link_box 'Editar', edit_post_path(post), css_class = 'highlight' if current_user &&
+        <%= link_box 'Editar', edit_post_path(post), class: 'highlight' if current_user &&
             current_user.member?(current_group) %>
       </div>
     </div>
