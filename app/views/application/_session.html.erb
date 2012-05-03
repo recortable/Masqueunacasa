@@ -13,9 +13,9 @@
     <div class="session">
       <% if current_user %>
         <%= link_box "¡Hola #{current_user.name}!", current_user, css_class = 'user' %>
-        <%= link_box 'Cerrar sesión', logout_path %>
+        <%= link_box 'Cerrar sesión', logout_url(host: request.domain) %>
       <% else %>
-        <%= link_box 'Iniciar sesión', login_path, css_class: 'login' %>
+        <%= link_box 'Iniciar sesión', login_url(host: request.domain, from: request.path), css_class: 'login' %>
       <% end %>
     </div>
   </div>
