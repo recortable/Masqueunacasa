@@ -3,16 +3,8 @@
 
 <div class="users cards">
   <% users.each do |user| %>
-    <%= div_for user, class: 'card' do %>
-      <div class="corner none"></div>
-      <div class="card-content">
-        <div class="avatar">
-          <%= placeholder_image_tag(width: 120, height: 120) %>
-        </div> 
-        <div class="info">
-          <%= link_to user.name, user %>
-        </div>
-      </div>
+    <%= user_card(user) do %>
+      <%= link_to user.name, user_url(user, host: request.domain) %>
     <% end %>
   <% end %>
 </div>

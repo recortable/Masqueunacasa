@@ -4,6 +4,7 @@ es:
   groups: 'colectivos'
   profile: 'perfil'
   messages: 'mensajes'
+  memberships: 'participantes'
 
   edit: 'editar'
   new: 'nueva'
