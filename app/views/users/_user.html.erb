@@ -2,7 +2,10 @@
   <div class="corner none"></div>
   <div class="card-content">
     <div class="avatar">
-      <%= link_to placeholder_image_tag(width: 140, height: 140), user_url(user, host: request.domain) %>
+      <%= link_to user_url(user, host: request.domain) do %>
+        <%= placeholder_image_tag(width: 140, height: 140) %>
+        <%= user.name %>
+      <% end %>
     </div> 
     <div class="info">
       <%= info %>

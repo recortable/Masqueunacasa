@@ -8,7 +8,10 @@
 <div class="users cards">
   <% memberships.each do |member| %>
     <%= user_card(member.user) do %>
-      <%= link_to member.user.name, user_url(member.user, host: request.domain) %>
+      <%= t("membership.states.#{member.state}") %>
+      <div class="controls">
+        <%= link_box 'Editar', [:edit, member] %>
+      </div>
     <% end %>
   <% end %>
 </div>

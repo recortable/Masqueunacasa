@@ -3,8 +3,6 @@
 
 <div class="users cards">
   <% users.each do |user| %>
-    <%= user_card(user) do %>
-      <%= link_to user.name, user_url(user, host: request.domain) %>
-    <% end %>
+    <%= user_card(user) %>
   <% end %>
 </div>

@@ -14,6 +14,9 @@ class MembershipsController < ApplicationController
   def new
   end
 
+  def edit
+  end
+
   def create
     user = User.find params[:u]
     if current_group.member?(user)
@@ -25,6 +28,16 @@ class MembershipsController < ApplicationController
       flash[:notice] = 'Añadido!' if membership.save
       respond_with membership, location: memberships_path
     end
+  end
+
+  def update
+    flash[:notice] = t('memberships.notices.updated') if membership.update_attributes(params[:membership])
+    respond_with membership, location: memberships_path
+  end
+
+  def destroy
+    membership.destroy
+    respond_with membership, location: memberships_path
   end
 
 end

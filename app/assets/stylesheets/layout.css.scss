@@ -24,6 +24,8 @@ a { text-decoration: underline; }
 /* Imágenes que se adaptan al ancho del layout */
 img.responsive { width: 100%; }
 
+.row.space { margin-top: 20px; }
+
 /* Bloques de color blanco */
 div.bloc, div.content {
   background-color: $fondo;
@@ -41,22 +43,3 @@ div.bloc, div.content {
 
 .editor {margin-top: 20px;}
 
-/** Sirve para colectivos y usuarios **/
-.cards {
-  width: 100%; overflow: hidden;
-  .card {
-    width: 160px; float: left;
-    margin: 0px 20px 20px 0;
-
-    .card-content {background-color: $fondo;}
-
-    .avatar, .info {
-      max-width: 120px;
-      margin: 0px auto;
-      text-align: center;
-
-      img {width: 100%; margin-top: -10px; margin-bottom: 20px;}
-    }
-    .info {padding-bottom: 10px;}
-  }
-}
