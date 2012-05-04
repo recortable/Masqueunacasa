@@ -1,0 +1,19 @@
+<%= render 'groups/header' %>
+<div class="row">
+  <div class="bloc controls span12">
+    <%= link_box 'Añadir participante', new_membership_path %>
+  </div>
+</div>
+
+<div class="users cards">
+  <% memberships.each do |member| %>
+    <%= user_card(member.user) do %>
+      <%= t("membership.states.#{member.state}") %>
+      <div class="controls">
+        <%= link_box 'Editar', [:edit, member] %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+

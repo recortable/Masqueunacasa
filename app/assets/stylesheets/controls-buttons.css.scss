@@ -1,6 +1,7 @@
 @import 'variables';
 
 .controls {
+  overflow: hidden;
   &.span12.bloc .link-wrapper {
     margin-left: 10px;
   }
@@ -9,6 +10,7 @@
     height: 20px;
     float: left;
     margin-bottom: 6px;
+    margin-right: 2px;
     padding: 0 0 0 10px;
     overflow: hidden;
     background: transparent url(link-etiqueta-transp.png) no-repeat;

@@ -12,6 +12,12 @@ module ApplicationHelper
     request.subdomain.present? ? 'subdomain' : 'main_domain'
   end
 
+  # Translate collection
+  # Used in forms (see views/memberships/edit)
+  def tc(prefix, collection)
+    collection.map {|item| [I18n.t("#{prefix}.#{item}"), item] }
+  end
+
   def render_banner(title, path)
     render partial: 'application/banner', locals: 
       {title: title, path: path}

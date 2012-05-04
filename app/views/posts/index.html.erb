@@ -9,8 +9,7 @@
   <div class="controls bloc span12">
     <div class="row">
       <div class="span6 offset2">
-        <%= link_box 'Añadir entrada', new_post_path, class: 'highlight' if current_user &&
-          current_user.member?(current_group) %>
+        <%= link_box 'Añadir entrada', new_post_path, class: 'highlight' if can? :edit, current_group %>
       </div>
       <div class="span4">
         <%= link_box 'Editar perfil', edit_profile_path, rel: 'edit-profile' if can? :edit, current_group %>

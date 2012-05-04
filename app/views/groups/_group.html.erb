@@ -1,12 +1,12 @@
-    <%= div_for group, class: 'card' do %>
-      <div class="corner none"></div>
-      <div class="card-content">
-        <div class="avatar">
-          <%= link_to group_avatar(group), group %>
-        </div>
-        <div class="info">
-          <%= link_to group.name, group %>
-        </div>
-      </div>
-    <% end %>
+<%= div_for group, class: 'card' do %>
+  <div class="corner none"></div>
+  <div class="card-content">
+    <div class="avatar">
+      <%= link_to group_avatar(group), group %>
+      <%= link_to group.name, group %>
+    </div>
+    <div class="info">
+    </div>
+  </div>
+<% end %>
 

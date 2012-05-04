@@ -1,12 +1,14 @@
 <%= current_group.site? ? render_banner('Participantes', users_path) : 
   render('groups/header') %>
 
-<%= div_for user, class: 'row' do %>
+<%= div_for user, class: 'row space' do %>
   <%= corner_span('info span4') do %> 
     <%= title user.name %>
     <%= content_tag(:p, 'Administrador(a) de masqueunacasa.org') if user.admin? %>
     <%= raw user.description %>
-    <%= link_to 'Cerrar sesión', logout_path %>
-    <%= link_to 'Editar', [:edit, user] if can? :edit, user %>
+    <div class="controls">
+      <%= link_box 'Cerrar sesión', logout_path %>
+      <%= link_box 'Editar', [:edit, user] if can? :edit, user %>
+    </div>
   <% end %>
 <% end %>

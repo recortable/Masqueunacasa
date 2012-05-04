@@ -1,0 +1,12 @@
+es:
+  membership:
+    states:
+      owner: 'Administrador de grupo'
+      member: 'Participante en el grupo'
+      request: 'Quiere participar'
+      follower: 'Sigue'
+
+ca:
+  
+en:
+

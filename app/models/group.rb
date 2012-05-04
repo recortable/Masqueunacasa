@@ -34,6 +34,10 @@ class Group < ActiveRecord::Base
     Membership.create!(group: self, user: user, state: 'member')
   end
 
+  def member?(user)
+    Membership.where(group_id: self.id, user_id: user.id).first.present?
+  end
+
   private
   def create_owner_membership
     Membership.create!(group: self, user: self.user, state: 'owner')

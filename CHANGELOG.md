@@ -1,8 +1,24 @@
 # Masqueunacasa
 
-### TAREAS
-+ Hacer el vídeo de introducción 'elástico': http://webdesignerwall.com/tutorials/css-elastic-videos
-+ Que se pueda añadir un post
+## 4/05/2012
+- Se pueden añadir participantes a un grupo
+- La página de participantes de un grupo muestra los memberships
+- Se pueden eliminar participantes
+- Se puede editar el nivel de participación de cada participante
+
+## 3/05/2012
+- Página de colectivos
+- Página de participantes
+- Se pueden añadir mensajes a un grupo
+- Estilos, estilos, estilos!
+- Favicon
+- Empezando un mailer
+
+## 2/05/2012
+- Rich text editor para el perfil y los posts
+- Se pueden subir imágenes al post
+- Se pueden subir imágenes al perfil
+- Estilos, estilos, estilos!
 
 ## 1/05/2012
 - Se puede editar el perfil de un grupo

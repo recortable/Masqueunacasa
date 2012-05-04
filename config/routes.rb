@@ -1,6 +1,5 @@
 Masqueunacasa::Application.routes.draw do
   # Rutas que se pueden acceder tanto desde un subdominio como sin él
-  resources :users
   resources :posts
   match '/entrar' => 'user_sessions#new', as: :login
   match '/salir' => 'user_sessions#destroy', as: :logout
@@ -12,12 +11,14 @@ Masqueunacasa::Application.routes.draw do
     match '', to: 'posts#index'
     resource :profile
     resources :messages
+    resources :memberships
   end
 
   # Rutas sólo accesibles desde el dominio principal 
   constraints subdomain: /^$/ do
     resources :groups
     resources :posts
+    resources :users
   end
   root to: 'dashboard#index'
   match "/enter/:id" => "users#enter", as: :enter unless Rails.env.production?  
