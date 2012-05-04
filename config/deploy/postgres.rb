@@ -27,7 +27,8 @@ namespace :db do
     end
     puts rsync = "rsync #{user}@masqueunacasa.net:#{file} tmp"
     `#{rsync}`
-    puts depackage = "bzcat tmp/#{file} | psql Masqueunacasa"
+    development = db['development']
+    puts depackage = "bzcat tmp/#{file} | psql -U#{development['username']} Masqueunacasa"
     `#{depackage}`
   end
 end
