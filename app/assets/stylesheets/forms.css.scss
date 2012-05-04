@@ -2,9 +2,13 @@
 
 form {
   font-family: Helvetica, Arial, sans-serif;
+  
+  .controls {
+    overflow: visible;
+  }
 
   input, textarea {
-    width: 97.5%;
+    width: 97%;
     border: 1px solid $negro;
     border-radius: 0;
     background: $fondo;

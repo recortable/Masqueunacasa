@@ -5,7 +5,7 @@ html.textura02 { background-image: asset-data-url('fondos/textura02.png'); }
 html.textura03 { background-image: asset-data-url('fondos/textura03.png'); }
 html.textura04 { background-image: asset-data-url('fondos/textura04.png'); }
 html.textura05 { background-image: asset-data-url('fondos/textura05.png'); }
-
+html.textura07 { background-image: asset-data-url('fondos/textura07.png'); }
 
 html.naranja {
   a, h1, h2, h3, h4, h5, h6 {
@@ -60,6 +60,27 @@ html.azul_gris {
   }
 
   .corner.colored { background-position: 0 -120px; }
+}
+
+html.negro {
+  a, h1, h2, h3, h4, h5, h6 {
+    color: $negro;
+  }
+
+  #session {
+    background-color: $negro;
+    .links, .session, .lang-selector {
+      .link-wrapper {
+        background-color: $negro;
+      }
+    }
+  }
+
+  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
+    background-color: $rojo;
+  }
+
+  .corner.colored { background-position: 0 -60px; }
 }
 
 .corner.negro { background-position: 0 -60px; }

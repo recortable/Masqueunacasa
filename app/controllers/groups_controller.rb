@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
 
   expose(:groups) { Group.all }
   expose(:group)
+  expose(:themes) {'textura07 negro'}
 
   def index
     respond_with groups
