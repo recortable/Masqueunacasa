@@ -59,8 +59,43 @@
   }
 
   a {
-    text-transform: uppercase;
-    text-decoration: none;
     color: $negro !important;
   }
+}
+
+.form-controls {
+  float: right;
+
+  .link-wrapper {
+    height: 31px;
+    float: left;
+    margin-left: 15px;
+    padding: 0 0 0 10px;
+    background: $negro url(submit-transp.png) no-repeat;
+    overflow: hidden;
+    cursor: pointer;
+
+    a, .right-side {
+      height: 31px;
+      display: block;
+      float: left;
+    }
+
+    a {
+      background: transparent url(submit-transp.png) repeat-x left -31px;
+      color: $fondo !important;
+      font-size: 12px;
+      line-height: 31px;
+    }
+
+    .right-side {
+      width: 10px;
+      background: transparent url(submit-transp.png) no-repeat left -62px;
+    }
+  }
+}
+
+.controls a, .form-controls a {
+  text-transform: uppercase;
+  text-decoration: none;
 }

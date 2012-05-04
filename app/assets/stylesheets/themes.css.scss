@@ -21,7 +21,7 @@ html.naranja {
     }
   }
 
-  .controls .link-wrapper:hover {
+  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
     background-color: $rojo;
   }
 
@@ -38,6 +38,10 @@ html.verde_neon {
     }
   }
 
+  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
+    background-color: $verde_neon;
+  }
+
   .corner.colored { background-position: 0 -30px; }
 }
 
@@ -49,6 +53,10 @@ html.azul_gris {
         background-color: $azul_gris;
       }
     }
+  }
+
+  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
+    background-color: $azul_gris;
   }
 
   .corner.colored { background-position: 0 -120px; }
