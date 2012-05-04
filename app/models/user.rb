@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # RELATIONS
   has_many :posts
-  has_many :owned_groups, class_name: 'Group', foreign_key: 'user_id'
+  has_many :created_groups, class_name: 'Group', foreign_key: 'user_id'
   has_many :memberships, dependent: :destroy
   has_many :groups, through: :memberships
 

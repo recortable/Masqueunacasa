@@ -1,10 +1,14 @@
 # Masqueunacasa
 
 ## 4/05/2012
+- Mejores tests
 - Se pueden añadir participantes a un grupo
 - La página de participantes de un grupo muestra los memberships
 - Se pueden eliminar participantes
 - Se puede editar el nivel de participación de cada participante
+- Estilos!
+- Cambio de imágen de cabecera
+
 
 ## 3/05/2012
 - Página de colectivos
