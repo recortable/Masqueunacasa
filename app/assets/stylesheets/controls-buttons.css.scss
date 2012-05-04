@@ -1,6 +1,7 @@
 @import 'variables';
 
 .controls {
+  overflow: hidden;
   &.span12.bloc .link-wrapper {
     margin-left: 10px;
   }
