@@ -28,6 +28,24 @@ html.naranja {
   .corner.colored { background-position: 0 -90px; }
 }
 
+html.azul_neon {
+  #session {
+    background-color: $azul_neon;
+    .links, .session, .lang-selector {
+      .link-wrapper {
+        background-color: $azul_neon;
+      }
+    }
+  }
+
+  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
+    background-color: $azul_neon;
+  }
+
+  .corner.colored { background-position: 0 -30px; }
+}
+
+
 html.verde_neon {
   #session {
     background-color: $verde_neon;

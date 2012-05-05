@@ -44,17 +44,13 @@ html.dashboard {
         .content {
           padding: 1em;
 
-          * {
-            font-family: LucidaGrande, "Helvetica Neue", Helvetica, Arial, sans-serif;
-            line-height: 17px;
-          }
-
           h2 {
             width: 124px;
             margin-bottom: 30px;
+            margin-top: 10px;
             padding-bottom: 30px;
-            font-family: Georgia, serif;
-            font-size: 60px;
+            font-size: 36px;
+            font-weight: bold;
             line-height: normal;
             border-bottom: 2px solid $verde_neon;
           }

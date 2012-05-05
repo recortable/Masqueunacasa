@@ -6,10 +6,10 @@ describe User do
     user.must_be :present?
   end
 
-  it 'has owned groups' do
+  it 'has created groups' do
     user = create(:user)
     group = create(:group, user: user)
-    user.owned_groups.must_include group
+    user.created_groups.must_include group
   end
 
   it 'has groups' do
