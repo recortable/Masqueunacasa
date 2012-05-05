@@ -6,7 +6,7 @@
           <%= form.input :body, as: :text %>
           <%= submit_button_for form %>
           <div class="form-controls">
-            <%= link_box 'Cancelar', post %>
+            <%= link_box 'Cancelar', request.referrer %>
             <%= link_box 'Borrar', post, method: :delete, confirm: '¿Estás seguro? Esta acción no se puede deshacer' if post.persisted? %>
           </div>
       </div></div>

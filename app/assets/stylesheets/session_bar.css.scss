@@ -110,9 +110,9 @@ div#session {
   }
 
   .session .link-wrapper {
-    height: 19px;
-    border: 1px solid $negro;
-    background: url(caja_link_puntas-opac.png) no-repeat left -1px;
+    height: 21px;
+    border: 0;
+    background: url(caja_link_puntas-opac.png) no-repeat left 0px;
     background-color: $fondo !important;
     padding: 0 0 0 10px;
 
@@ -125,11 +125,11 @@ div#session {
     .right-side {
       height: 19px;
       width: 10px;
-      background: transparent url(caja_link_puntas-opac.png) no-repeat right -43px;
+      background: transparent url(caja_link_puntas-opac.png) no-repeat right -42px;
     }
 
     &:hover {
-      background: $negro url(caja_link_puntas-opac.png) no-repeat left -22px;
+      background: $negro url(caja_link_puntas-opac.png) no-repeat left -21px;
       background-color: $negro !important;
 
       a {
@@ -139,7 +139,7 @@ div#session {
       }
 
       .right-side {
-        background: transparent url(caja_link_puntas-opac.png) no-repeat right -64px;
+        background: transparent url(caja_link_puntas-opac.png) no-repeat right -63px;
       }
     }
 

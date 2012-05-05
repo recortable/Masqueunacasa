@@ -28,14 +28,16 @@ es:
         title: 'Título en castellano'
       user:
         role: 'rol'
-        password: 'contraseña'
-        password_confirmation: 'repite contraseña'
+        password: 'Contraseña'
+        password_confirmation: 'Repite contraseña'
       media_item:
         position: 'Posición'
         width: 'Ancho'
         height: 'Alto'
         file: 'Fichero'
         embed_code: 'Código html'
+      user_session:
+        password: Contraseña
 
 
 
