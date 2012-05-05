@@ -12,10 +12,11 @@ module LayoutHelper
          </div>"
   end
 
-  def link_box(text, url, options = {})
-    unless current_page?(url)
-      raw "<div class='link-wrapper clearfix #{options[:class]}'>
-      #{ link_to text, url, options.except(:class) }
+  def link_box(text, url, opt = {})
+    opt.reverse_merge!({show_if_current: true})
+    unless current_page?(url) && !opt[:show_if_current]
+      raw "<div class='link-wrapper clearfix #{opt[:class]}'>
+      #{ link_to text, url, opt.slice(:method, :confirm) }
            <div class='side right-side'></div>
          </div>"
     end

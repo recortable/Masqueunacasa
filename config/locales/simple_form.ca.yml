@@ -30,14 +30,16 @@ ca:
         body: 'Text en castellà'
       user:
         role: 'rol'
-        password: 'contrasenya'
-        password_confirmation: 'repeteix la contrasenya'
+        password: 'Contrasenya'
+        password_confirmation: 'Repeteix la contrasenya'
       media_item:
         position: 'Posición'
         width: 'Ancho'
         height: 'Alto'
         file: 'Fichero'
         embed_code: 'Código html'
+      user_session:
+        password: 'Contrasenya'
 
     hints:
       media_item:
