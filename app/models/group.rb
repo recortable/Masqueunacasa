@@ -35,7 +35,7 @@ class Group < ActiveRecord::Base
   end
 
   def member?(user)
-    memberships_for(user).present?
+    membership_for(user).present?
   end
 
   def membership_for(user)
