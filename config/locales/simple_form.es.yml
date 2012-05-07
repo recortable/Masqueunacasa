@@ -5,11 +5,8 @@ es:
     required:
       text: 'requerido'
       mark: '*'
-      # You can uncomment the line below if you need to overwrite the whole required html.
-      # When using html, text and mark won't be used.
-      # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Some errors were found, please take a look:"
+      default_message: "Hay errores en el formulario, por favor echa un vistazo:"
 
     labels:
       defaults:
@@ -17,32 +14,42 @@ es:
         name: 'Nombre'
         author: 'Autorxs'
         published_at: 'Fecha de publicación'
-        body: 'Texto en castellano'
+        body: 'Texto'
         content_type: 'Tipo de texto'
         url: 'Enlace'
         title_ca: 'Título can catalán'
         body_ca: 'Texto en catalán'
+
+      group:
+        slug: 'Subdominio'
+        banner_image: 'Imágen de cabecera'
+        avatar_image: 'Imágen de grupo'
+        description: 'Breve resúmen'
+
       post:
-        title: 'Título en castellano'
-      page:
-        title: 'Título en castellano'
+        image: 'Imágen principal'
+        embed: 'Vídeo'
+
       user:
         role: 'rol'
         password: 'Contraseña'
         password_confirmation: 'Repite contraseña'
-      media_item:
-        position: 'Posición'
-        width: 'Ancho'
-        height: 'Alto'
-        file: 'Fichero'
-        embed_code: 'Código html'
+
       user_session:
         password: Contraseña
 
-
-
     hints:
+      post:
+        image: 'Esta imágen aparecerá al principio del post. Debe tener un ancho de 510px'
+        embed: 'En este espacio puedes pegar el código de insertar vídeo de youtube, vimeo, etcétera... Otros códigos iframe también sirven'
+
       media_item:
         url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'
+
+  helpers:
+    submit:
+      group:
+        create: 'Crear grupo'
+        update: 'Guardar perfil'
 
 
