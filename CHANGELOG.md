@@ -1,5 +1,9 @@
 # Masqueunacasa
 
+## 7/05/2012
+- Quitar restricción al tamaño de las imágenes del post
+- Añadir logos de panadería y sostrecivic
+
 ## 4/05/2012
 - Mejores tests
 - Se pueden añadir participantes a un grupo

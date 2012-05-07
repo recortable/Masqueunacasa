@@ -1,8 +1,7 @@
 class PostImageUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
-  process tags: ['post'], 
-    resize_to_limit: [1170, 400]
+  process tags: ['post']
 
   version :thumb do
     process :resize_to_fit => [360,100]
