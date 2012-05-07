@@ -9,7 +9,7 @@
   <div class="controls bloc span12">
     <div class="row">
       <div class="span6 offset2">
-        <%= link_box 'Añadir entrada', new_post_path, class: 'highlight' if can? :edit, current_group %>
+        <%= link_box 'Añadir entrada', new_post_path, rel: 'new-post', class: 'highlight' if can? :new, Post %>
       </div>
       <div class="span4">
         <%= link_box 'Editar perfil', edit_profile_path, rel: 'edit-profile' if can? :edit, current_group %>
@@ -21,16 +21,13 @@
   <div class="center span8">
     <% posts.each do |post| %>
       <%= div_for post, class: 'row' do %>
-        <div class="span2">
+        <div class="span2 post-info">
           <div class="corner none"></div>
           <div class="content">
             <%= link_to content_tag(:h3, post.title), post_url(post, subdomain: post.group.slug) %>
             Por: <%= link_to post.group.name, post.group %>
           <%= l post.published_at %>
           <%= link_to group_avatar(post.group), post_url(post, subdomain: post.group.slug) if current_group.site? %>
-          <div class="comments">
-            <%= link_to "#{post.comments_count} comentarios", post %>
-          </div>
         </div>
       </div>
       <div class="span6 post-teaser">
@@ -38,7 +35,7 @@
         <div class="content">
           <%= render_post_media(post) %>
           <%= raw truncate_html(post.body, length: 500) %>
-          <div class="links">
+          <div class="links";
             <%= link_to 'leer más...', post, class: 'read-more' %>
           </div>
         </div>

@@ -34,4 +34,16 @@ describe 'Posts integration' do
     post.title.must_equal 'First post'
     post.body.must_equal 'Post body'
   end
+
+  it 'member can create posts' do
+    group = create(:group)
+    user = create(:user)
+    group.add_member(user)
+
+    login_user(user)
+    subdomain(group.slug)
+    visit posts_path
+    page.find('a[rel="new-post"]').click
+    page.current_path.must_equal new_post_path
+  end
 end

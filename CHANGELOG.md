@@ -1,6 +1,12 @@
 # Masqueunacasa
 
 ## 7/05/2012
+- Limpiando link_box
+- Bug: la cabecera no era responsive
+- Eliminar archivo de la barra lateral de los grupos
+- Eliminar comentarios de la información del post
+- Quitar cancan e implementar nuestro sistema de autorizaciones
+- Añadir authorizations
 - Limpiar has_current_group
 - Añadir auth_role
 - Quitar restricción al tamaño de las imágenes del post

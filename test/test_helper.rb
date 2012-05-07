@@ -34,6 +34,7 @@ class IntegrationTest < MiniTest::Spec
 
   before :each do
     subdomain(nil)
+    login_user nil
   end
 
   def subdomain(subdomain)

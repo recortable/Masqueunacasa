@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     I18n.locale = locale
   end
 
-  rescue_from CanCan::AccessDenied do |exception|
+  rescue_from Authorizations::AccessDenied do |exception|
     redirect_to root_url, notice: 'No puedes hacer eso...'
   end
   

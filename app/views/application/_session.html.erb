@@ -12,7 +12,7 @@
     </div>
     <div class="session">
       <% if current_user %>
-        <%= link_box "¡Hola #{current_user.name}!", current_user, class: 'user' %>
+        <%= link_box "¡Hola #{current_user.name}!", user_url(current_user, host: request.domain), class: 'user' %>
         <%= link_box 'Cerrar sesión', logout_url(host: request.domain) %>
       <% else %>
         <%= link_box 'Iniciar sesión', login_url(host: request.domain, from: request.path), class: 'login' %>
