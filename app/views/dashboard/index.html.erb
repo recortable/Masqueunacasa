@@ -29,9 +29,12 @@
                   <h2>Quiénes</h2>
                   <%= markdown Info::QUIENES %>
                   <div id="dashboard-logos">
-                    <%= image_tag 'inicio-logo-panaderia.png' %><br>
-                    <%= image_tag 'inicio-logo-sostrecivic.png' %>
-                  </div>
-                </div>
-              </div>
-            </div>
+                    <%= link_to image_tag('inicio-logo-panaderia.png'),
+                      'http://despachodepan.com' %><br>
+                      <%= link_to(image_tag('inicio-logo-sostrecivic.png'),
+                                  'http://www.sostrecivic.org') %>
+                                <br>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
