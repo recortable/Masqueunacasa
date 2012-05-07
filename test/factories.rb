@@ -6,7 +6,7 @@ FactoryGirl.define do
     sequence(:name) {|n| "User#{n}"}
     email { "#{name}@email.com" }
     password { "#{name}-secret"}
-    password_confirmation { "#{name}-secret"}
+    password_confirmation { password }
   end
 
   factory :group do
