@@ -1,6 +1,7 @@
 # Masqueunacasa
 
 ## 7/05/2012
+- Página de error en castellano
 - Bug fix: check membership (group)
 - Limpiando link_box
 - Bug: la cabecera no era responsive
