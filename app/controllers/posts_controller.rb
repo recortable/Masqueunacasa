@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   respond_to :html
-  before_filter :load_subdomain_group
   before_filter :require_user, except: [:index, :show]
 
   expose(:themes) { current_group.site? ? 'textura03 azul_gris masq1casa' : 'textura02 naranja group' }

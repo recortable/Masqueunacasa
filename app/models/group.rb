@@ -35,7 +35,11 @@ class Group < ActiveRecord::Base
   end
 
   def member?(user)
-    Membership.where(group_id: self.id, user_id: user.id).first.present?
+    memberships_for(user).present?
+  end
+
+  def membership_for(user)
+    Membership.where(group_id: self.id, user_id: user.id).first
   end
 
   private

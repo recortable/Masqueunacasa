@@ -1,6 +1,5 @@
 class MessagesController < ApplicationController
   respond_to :html
-  before_filter :load_subdomain_group
   before_filter :require_user
 
   expose(:messages) { current_group.messages }

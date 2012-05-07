@@ -1,6 +1,8 @@
 # Masqueunacasa
 
 ## 7/05/2012
+- Limpiar has_current_group
+- Añadir auth_role
 - Quitar restricción al tamaño de las imágenes del post
 - Añadir logos de panadería y sostrecivic
 

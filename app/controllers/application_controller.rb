@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include CurrentUser
-  include SubdomainGroups
+  include HasCurrentGroup
+  include HasAuthRole
   protect_from_forgery
   
   before_filter :set_locale
