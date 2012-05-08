@@ -5,7 +5,6 @@
 - Redireccionar al entrar la sesión si el parámetro 'from' está
   disponible
 - Bug fix: post-info no tenía el tamaño adecuado
-- Subscriptions model
 
 ## 7/05/2012
 - Página de error en castellano

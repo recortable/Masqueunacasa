@@ -1,7 +1,7 @@
-<%= render 'groups/header' %>
+<%= group_header 'Participantes' %>
 <div class="row">
   <div class="bloc controls span12">
-    <%= link_box 'Añadir participante', new_membership_path %>
+    <%= link_box 'Añadir participante', new_membership_path if can? :new, Membership %>
   </div>
 </div>
 
@@ -10,7 +10,7 @@
     <%= user_card(member.user) do %>
       <%= t("membership.states.#{member.state}") %>
       <div class="controls">
-        <%= link_box 'Editar', [:edit, member] %>
+        <%= link_box 'Editar', [:edit, member] if can? :edit, member %>
       </div>
     <% end %>
   <% end %>

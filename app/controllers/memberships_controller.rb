@@ -8,7 +8,7 @@ class MembershipsController < ApplicationController
   expose(:membership)
 
   def index
-    authorize! :index, memberships
+    authorize! :index, Membership
     respond_with memberships
   end
 

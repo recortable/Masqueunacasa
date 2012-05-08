@@ -39,6 +39,7 @@ GEM
       railties (>= 3.0)
     builder (3.0.0)
     cambelt (0.1.1)
+    cancan (1.6.7)
     capistrano (2.12.0)
       highline
       net-scp (>= 1.0.0)
@@ -213,6 +214,7 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap-wysihtml5-rails
   cambelt
+  cancan
   capistrano
   capybara
   carrierwave

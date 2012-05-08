@@ -5,6 +5,7 @@ module GroupsHelper
   end
 
   def group_header(title)
+    title(title)
     render 'groups/header'
   end
 

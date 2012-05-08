@@ -1,5 +1,6 @@
 class Group < ActiveRecord::Base
   include Translatable
+  include HasMemberships
   extend FriendlyId
   friendly_id :name, use: :slugged
 
@@ -14,13 +15,9 @@ class Group < ActiveRecord::Base
   belongs_to :user
   has_many :posts
   has_many :messages
-  has_many :memberships
-  has_many :users, through: :memberships
 
   mount_uploader :banner_image, GroupBannerUploader
   mount_uploader :avatar_image, GroupAvatarUploader
-
-  after_create :create_owner_membership
 
   def site?
     false
@@ -30,20 +27,4 @@ class Group < ActiveRecord::Base
     new_record?
   end
 
-  def add_member(user)
-    Membership.create!(group: self, user: user, state: 'member')
-  end
-
-  def member?(user)
-    membership_for(user).present?
-  end
-
-  def membership_for(user)
-    Membership.where(group_id: self.id, user_id: user.id).first
-  end
-
-  private
-  def create_owner_membership
-    Membership.create!(group: self, user: self.user, state: 'owner')
-  end
 end

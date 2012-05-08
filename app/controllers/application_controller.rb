@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   include CurrentUser
   include HasCurrentGroup
-  include HasAuthRole
   protect_from_forgery
   
   before_filter :set_locale
@@ -21,8 +20,8 @@ class ApplicationController < ActionController::Base
     I18n.locale = locale
   end
 
-  rescue_from Authorizations::AccessDenied do |exception|
-    redirect_to root_url, notice: 'No puedes hacer eso...'
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, alert: exception.message
   end
   
 end
