@@ -1,5 +1,12 @@
 # Masqueunacasa
 
+## 8/05/2012
+- Añadir botón de "entrar para participar" a los grupos
+- Redireccionar al entrar la sesión si el parámetro 'from' está
+  disponible
+- Bug fix: post-info no tenía el tamaño adecuado
+- Subscriptions model
+
 ## 7/05/2012
 - Página de error en castellano
 - Bug fix: check membership (group)

@@ -11,7 +11,7 @@ class UserSessionsController < ApplicationController
   def create
     if user_session.create
       login_user(user_session.user)
-      redirect_to root_path, notice: 'Bienvenidx'
+      redirect_to path_or_default(params[:from]), notice: 'Bienvenidx'
     else
       flash.now.notice = "Los datos no corresponden con nadie."
       render "new"

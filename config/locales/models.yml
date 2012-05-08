@@ -1,10 +1,10 @@
 es:
   membership:
     states:
-      owner: 'Administrador de grupo'
-      member: 'Participante en el grupo'
-      request: 'Quiere participar'
-      follower: 'Sigue'
+      owner: 'Administrador'
+      member: 'Participante'
+      request: 'Solicita participar'
+      follow: 'Sigue'
 
 ca:
   

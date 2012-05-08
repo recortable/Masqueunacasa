@@ -25,7 +25,8 @@ class MembershipsController < ApplicationController
     else
       membership.user = user
       membership.group = current_group
-      membership.state = 'member'
+      membership.state = params[:l] if ['member', 'request', 'follow'].include? params[:l]
+      membership.state ||= 'member'
       flash[:notice] = 'Añadido!' if membership.save
       respond_with membership, location: memberships_path
     end

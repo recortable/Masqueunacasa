@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def path_or_default(path)
+    path.present? ? path : root_path
+  end
+
   def set_locale
     locale = params[:locale] || ((lang = request.env['HTTP_ACCEPT_LANGUAGE']) && lang[/^[a-z]{2}/])
     locale = 'es' unless ['es', 'ca'].include? locale

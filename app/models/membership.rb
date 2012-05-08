@@ -5,7 +5,7 @@ class Membership < ActiveRecord::Base
   attr_accessible :group_id, :user_id, :state
   attr_accessible :group, :user
 
-  STATES = ['owner', 'member', 'request']
+  STATES = ['owner', 'member', 'request', 'follow']
 
   validates :group_id, presence: true
   validates :user_id, presence: true
