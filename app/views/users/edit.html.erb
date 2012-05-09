@@ -1,6 +1,24 @@
 <div class="row">
   <%= corner_span('user_editor span12') do %>
     <%= title "Editar #{user.name}" %>
-    <%= render 'form' %>
+    <%= simple_form_for user, html: {class: 'clearfix'} do |form| %>
+      <div class="row">
+        <div class="span4">
+          <%= form.input :name %>
+          <%= form.input :email %>
+          <%= form.input :password %>
+          <%= form.input :password_confirmation %>
+          <%= form.input :admin, wrapper: :checkbox if current_user && current_user.admin? %>
+        </div>
+        <div class="span7">
+          <%= form.input :avatar_image %>
+          <%= form.input :description, input_html: {class: 'rte'} %>
+        </div>
+      </div>
+      <div class="submit-wrapper clearfix">
+        <%= form.button :submit %>
+        <div class="side-right"></div>
+      </div>
+    <% end %>
   <% end %>
 </div>
