@@ -9,8 +9,7 @@
   <div class="member_bar row">
     <div class="controls bloc span12">
       <div class="membership_level">
-        Eres <%= t("membership.states.#{current_membership.state}").downcase %> 
-      en '<%= current_group.name %>'
+        <%= t('you_are') + " " + t("membership.states.#{current_membership.state}").downcase + " " + t('in') + " '" + current_group.name %>'
     </div>
 
     <%= link_box t('.add_post'), new_post_path, rel: 'new-post', class: 'highlight' if can? :edit, current_group %>
@@ -27,7 +26,7 @@
           <div class="corner none"></div>
           <div class="content">
             <%= link_to content_tag(:h3, post.title), post_url(post, subdomain: post.group.slug) %>
-            Por: <%= link_to post.group.name, post.group %>
+            <%= t('posts.by') %>: <%= link_to post.group.name, post.group %>
           <%= l post.published_at %>
           <%= link_to avatar_image(post.group), post_url(post, subdomain: post.group.slug) if current_group.site? %>
         </div>

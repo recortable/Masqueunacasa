@@ -5,6 +5,8 @@ es:
   cancel: 'Cancelar'
   delete: Borrar
   confirm: '¿Estás seguro? Esta acción no se puede deshacer'
+  you_are: Eres
+  in: en
 
   application:
     session:
@@ -32,3 +34,5 @@ es:
 
     form:
       change_published_on: 'Cambiar fecha de publicación'
+
+    by: Por

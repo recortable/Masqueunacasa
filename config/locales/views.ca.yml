@@ -5,6 +5,8 @@ ca:
   cancel: 'Cancel·lar'
   delete: Esborrar
   confirm: "N'estàs segur? Aquesta acció no es pot desfer."
+  you_are: Ets
+  in: a
 
   application:
     session:
@@ -32,3 +34,5 @@ ca:
 
     form:
       change_published_on: 'Canviar la data de publicació'
+
+    by: Per
