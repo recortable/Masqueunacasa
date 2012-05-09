@@ -1,6 +1,7 @@
 # Masqueunacasa
 
-## 9/05/2012
+## 9/05/201a
+- Bug fix: al crear un usuario no aparece todo el formulario
 - Adiós al modelo mensaje y hola modelo página
 - Los usuarios pueden añadir su avatar
 - Become funciona para admin

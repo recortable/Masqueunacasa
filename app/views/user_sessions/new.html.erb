@@ -1,12 +1,12 @@
 <div class="row">
   <%= corner_span('span4') do %>
-      <%= title('Iniciar sesión')  %>
-      <%= simple_form_for user_session, html: {class: 'clearfix'} do |form| %>
-        <%= hidden_field_tag :from, params[:from] %>
-        <%= form.input :email %>
-        <%= form.input :password %>
-        <%= submit_button_for form, text='Entrar' %>
-      <% end %>
+    <%= title('Iniciar sesión')  %>
+    <%= simple_form_for user_session, html: {class: 'clearfix'} do |form| %>
+      <%= hidden_field_tag :from, params[:from] %>
+      <%= form.input :email %>
+      <%= form.input :password %>
+      <%= submit_button_for form, text='Entrar' %>
+    <% end %>
   <% end %>
   <%= corner_span('span4', color = "negro") do %>
     <h2>Crear una cuenta</h2>

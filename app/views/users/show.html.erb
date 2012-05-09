@@ -9,7 +9,7 @@
     <%= content_tag(:p, 'Administrador(a) de masqueunacasa.org') if user.admin? %>
     <div class="controls">
       <%= link_box 'Cerrar sesión', logout_path %>
-      <%= link_box 'Editar', [:edit, user] if can? :edit, user %>
+      <%= link_box 'Editar perfil', [:edit, user] if can? :edit, user %>
     </div>
   <% end %>
   <%= corner_span('groups span4') do %>
