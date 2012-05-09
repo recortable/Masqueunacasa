@@ -10,7 +10,6 @@ Masqueunacasa::Application.routes.draw do
   constraints subdomain: /.+/ do
     match '', to: 'posts#index'
     resource :profile
-    resources :messages
     resources :memberships
   end
 

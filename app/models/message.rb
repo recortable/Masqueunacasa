@@ -1,3 +1,0 @@
-class Message < Content
-
-end

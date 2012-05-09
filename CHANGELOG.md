@@ -1,6 +1,7 @@
 # Masqueunacasa
 
 ## 9/05/2012
+- Adiós al modelo mensaje y hola modelo página
 - Los usuarios pueden añadir su avatar
 - Become funciona para admin
 
