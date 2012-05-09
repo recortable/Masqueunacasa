@@ -1,4 +1,34 @@
 es:
+  who: Quiénes
+  go_back: Volver
+  edit: Editar
+  cancel: 'Cancelar'
+  delete: Borrar
+  confirm: '¿Estás seguro? Esta acción no se puede deshacer'
+
+  application:
+    session:
+      home: Inicio
+      session_start: 'Iniciar sesión'
+      session_end: 'Salir'
+      groups: Colectivos
+
   groups:
     new:
       title: 'Añadir colectivo'
+
+    index:
+      title: 'Colectivos'
+      new_group: 'Añadir colectivo'
+
+  user_sessions:
+    new:
+      title: 'Iniciar sesión'
+      create_account: 'Crea una cuenta'
+
+  posts:
+    index:
+      add_post: 'Añadir entrada'
+
+    form:
+      change_published_on: 'Cambiar fecha de publicación'

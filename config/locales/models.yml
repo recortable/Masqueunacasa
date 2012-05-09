@@ -11,6 +11,16 @@ es:
       follow: 'Seguidor/a'
 
 ca:
+  activerecord:
+    models:
+      user: 'perfil'
+
+  membership:
+    states:
+      owner: 'Administrador/a'
+      member: 'Participant'
+      request: 'Futur/a participant'
+      follow: 'Seguidor/a'
   
 en:
 

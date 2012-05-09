@@ -5,10 +5,10 @@
   <div class="controls bloc span12">
     <div class="row">
       <div class="span2">
-        <%= link_box 'Volver', posts_path %>
+        <%= link_box t('go_back'), posts_path %>
       </div>
       <div class="span6">
-        <%= link_box 'Editar', edit_post_path(post), class: 'highlight' if current_user &&
+        <%= link_box t('edit'), edit_post_path(post), class: 'highlight' if current_user &&
             current_user.member?(current_group) %>
       </div>
     </div>

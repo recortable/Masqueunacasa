@@ -13,7 +13,7 @@
       en '<%= current_group.name %>'
     </div>
 
-    <%= link_box 'Añadir entrada', new_post_path, rel: 'new-post', class: 'highlight' if can? :edit, current_group %>
+    <%= link_box t('.add_post'), new_post_path, rel: 'new-post', class: 'highlight' if can? :edit, current_group %>
     <%= link_box 'Editar perfil', edit_profile_path, rel: 'edit-profile' if can? :edit, current_group %>
   </div>
 </div>

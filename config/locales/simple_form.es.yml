@@ -49,8 +49,9 @@ es:
         url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'
       
       user:
-        password: 'Déjalo vacío si no quieres cambiarla'
-        password_confirmation: 'Déjalo vacío si no quieres cambiar la contraseña'
+        edit:
+          password: 'Déjalo vacío si no quieres cambiarla'
+          password_confirmation: 'Déjalo vacío si no quieres cambiar la contraseña'
 
   helpers:
     submit:
