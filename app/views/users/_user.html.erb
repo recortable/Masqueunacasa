@@ -3,7 +3,7 @@
   <div class="card-content">
     <div class="avatar">
       <%= link_to user_url(user, host: request.domain) do %>
-        <%= placeholder_image_tag(width: 140, height: 140) %>
+        <%= avatar_image(user) %>
         <%= user.name %>
       <% end %>
     </div> 

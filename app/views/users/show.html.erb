@@ -4,8 +4,9 @@
 <%= div_for user, class: 'row space' do %>
   <%= corner_span('info span4') do %> 
     <%= title user.name %>
-    <%= content_tag(:p, 'Administrador(a) de masqueunacasa.org') if user.admin? %>
     <%= raw user.description %>
+    <%= avatar_image(user) %>
+    <%= content_tag(:p, 'Administrador(a) de masqueunacasa.org') if user.admin? %>
     <div class="controls">
       <%= link_box 'Cerrar sesión', logout_path %>
       <%= link_box 'Editar', [:edit, user] if can? :edit, user %>

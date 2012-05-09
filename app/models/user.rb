@@ -9,9 +9,10 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
   has_secure_password
+  mount_uploader :avatar_image, UserAvatarUploader
 
   # ATTRIBUTES
-  attr_accessible :name, :description
+  attr_accessible :name, :description, :avatar_image
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :admin
 

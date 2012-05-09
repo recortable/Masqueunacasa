@@ -1,4 +1,8 @@
 es:
+  activerecord:
+    models:
+      user: 'perfil'
+
   membership:
     states:
       owner: 'Administrador/a'

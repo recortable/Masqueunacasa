@@ -1,6 +1,7 @@
 # Masqueunacasa
 
 ## 9/05/2012
+- Los usuarios pueden añadir su avatar
 - Become funciona para admin
 
 ## 8/05/2012

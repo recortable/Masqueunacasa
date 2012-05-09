@@ -22,4 +22,9 @@ module ApplicationHelper
     render partial: 'application/banner', locals: 
       {title: title, path: path}
   end
+
+  def avatar_image(model)
+    model.avatar_image? ? image_tag(model.avatar_image_url, alt: model.name, class: 'responsive') :
+      placeholder_image_tag(text: '', width: 140, height: 140, class: 'responsive')
+  end
 end
