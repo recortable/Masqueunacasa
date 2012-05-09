@@ -12,7 +12,17 @@ es:
   sign_up: 'alta'
 
 ca:
-  groups: 'colectius'
+  posts: 'blog'
+  users: 'usuaris'
+  groups: 'collectius'
+  profile: 'perfil'
+  messages: 'missatges'
+  memberships: 'participants'
+
+  edit: 'editar'
+  new: 'nova'
+  sign_in: 'entrar'
+  sign_up: 'alta'
 
 en:
   groups: 'groups'

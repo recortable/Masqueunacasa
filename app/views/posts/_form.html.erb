@@ -6,8 +6,8 @@
           <%= form.input :body, as: :text %>
           <%= submit_button_for form %>
           <div class="form-controls">
-            <%= link_box 'Cancelar', request.referrer %>
-            <%= link_box 'Borrar', post, method: :delete, confirm: '¿Estás seguro? Esta acción no se puede deshacer' if post.persisted? %>
+            <%= link_box t('cancel'), post %>
+            <%= link_box t('delete'), post, method: :delete, confirm: t('confirm') if post.persisted? %>
           </div>
       </div></div>
       <div class="span4"><div class="content">
@@ -18,7 +18,7 @@
     <% if current_user.admin? %>
       <div class="content">
         <br><br>
-        <h3>Cambiar fecha de publicación</h3>
+        <h3><%= t('.change_published_on') %></h3>
         <%= form.input :published_at %>
       </div>
     <% end %>

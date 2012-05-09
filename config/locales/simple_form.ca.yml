@@ -5,9 +5,6 @@ ca:
     required:
       text: 'requerit'
       mark: '*'
-      # You can uncomment the line below if you need to overwrite the whole required html.
-      # When using html, text and mark won't be used.
-      # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "S'han trobat alguns errors, dóna una ullada:"
 
@@ -19,28 +16,60 @@ ca:
         published_at: 'Data de publicació'
         body: 'Text'
         content_type: 'Tipus de text'
-        url: 'Enlace'
+        url: 'Enllaç'
         title_ca: 'Títol en català'
         body_ca: 'Text en català'
+
+      group:
+        slug: 'Subdomini'
+        banner_image: 'Imatge de capçalera'
+        avatar_image: 'Imatge de grup'
+        description: 'Breu resum'
+
       post:
-        title: 'Títol en castellà'
-        body: 'Text en castellà'
+        title: 'Títol'
+        body: 'Text'
+        image: 'Imatge principal'
+        embed: 'Vídeo'
+
       page:
         title: 'Títol en castellà'
         body: 'Text en castellà'
+
       user:
         role: 'rol'
         password: 'Contrasenya'
         password_confirmation: 'Repeteix la contrasenya'
+        description: 'Breu biografia'
+        avatar_image: 'Imatge'
+
       media_item:
-        position: 'Posición'
-        width: 'Ancho'
-        height: 'Alto'
-        file: 'Fichero'
-        embed_code: 'Código html'
+        position: 'Posició'
+        width: 'Amplada'
+        height: 'Alçada'
+        file: 'Arxiu'
+        embed_code: 'Codi html'
+
       user_session:
         password: 'Contrasenya'
 
     hints:
+      post:
+        image: "Aquesta imatge apareixerà al principi del post. Ha de tenir 510 píxels d'amplada"
+        embed: 'En aquest espai hi pots enganxar el codi per inserir vídeo de youtube, vimeo, etcètera... altres codis iframe també serveixen'
+
       media_item:
         url: "Si l'enllaç acaba en .jpg, .png o .gif serà tractat com una imatge"
+    
+      user:
+        edit:
+          password: 'Deixa-ho buit si no vols canviar-la'
+          password_confirmation: 'Deixa-ho buit si no vols canviar la contrasenya'
+
+  helpers:
+    submit:
+      group:
+        create: 'Crear grup'
+        update: 'Desar perfil'
+      
+
