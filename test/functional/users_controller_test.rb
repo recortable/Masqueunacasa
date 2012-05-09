@@ -10,7 +10,7 @@ describe 'Users integration' do
   it 'create users' do
     admin = create(:user, admin: true)
     login_user(admin)
-    visit new_users_path
+    visit new_user_path
     page.fill_in 'user_name', with: 'NewUser'
     page.fill_in 'user_email', with: 'user@email.com'
     page.fill_in 'user_password', with: 'secret'

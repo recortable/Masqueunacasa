@@ -1,3 +1,12 @@
 @import 'variables';
 
 .groups.cards { margin-top: 20px;  }
+
+.member_bar.row {
+  .controls {
+    padding-top: 10px;
+    
+    .membership_level { float: left; margin: 0 10px 10px 10px;}
+  }
+}
+

@@ -10,6 +10,10 @@ class Site
     true
   end
 
+  def membership_for(user) 
+    nil
+  end
+
   def banner_image?
     false
   end

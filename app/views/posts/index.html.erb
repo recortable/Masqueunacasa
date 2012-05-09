@@ -5,18 +5,20 @@
   <%= render 'groups/header' %>
 <% end %>
 
-<div class="row">
-  <div class="controls bloc span12">
-    <div class="row">
-      <div class="span6 offset2">
-        <%= link_box 'Añadir entrada', new_post_path, rel: 'new-post', class: 'highlight' if can? :new, Post %>
-      </div>
-      <div class="span4">
-        <%= link_box 'Editar perfil', edit_profile_path, rel: 'edit-profile' if can? :edit, current_group %>
-      </div>
+<% if current_membership %>
+  <div class="member_bar row">
+    <div class="controls bloc span12">
+      <div class="membership_level">
+        Eres <%= t("membership.states.#{current_membership.state}").downcase %> 
+      en '<%= current_group.name %>'
     </div>
+
+    <%= link_box 'Añadir entrada', new_post_path, rel: 'new-post', class: 'highlight' if can? :edit, current_group %>
+    <%= link_box 'Editar perfil', edit_profile_path, rel: 'edit-profile' if can? :edit, current_group %>
   </div>
 </div>
+<% end %>
+
 <div class="row">
   <div class="center span8">
     <% posts.each do |post| %>

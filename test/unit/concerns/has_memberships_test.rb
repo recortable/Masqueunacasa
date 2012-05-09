@@ -53,6 +53,11 @@ describe HasMemberships do
     group.membership_for(group.user).must_be :present?
   end
 
+  it "has not membership for no user" do
+    group = create(:group)
+    group.membership_for(nil).must_equal nil
+  end
+
   it "check membership" do
     group = create(:group)
     user = create(:user)

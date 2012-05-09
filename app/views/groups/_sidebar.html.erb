@@ -15,7 +15,6 @@
         <% if current_user %>
           <% m = current_group.membership_for(current_user) %>
           <% if m.present? %>
-            Eres <%= t("membership.states.#{m.state}") %> en '<%= current_group.name %>'
         <% else %>
           <%= link_box 'Seguir', create_membership_path(current_user, 'follow'), method: :post %>
           <%= link_box 'Quiero participar', create_membership_path(current_user, 'request'), method: :post %>

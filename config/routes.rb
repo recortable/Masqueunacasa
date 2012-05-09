@@ -21,7 +21,7 @@ Masqueunacasa::Application.routes.draw do
     resources :users
   end
   root to: 'dashboard#index'
-  match "/enter/:id" => "users#enter", as: :enter unless Rails.env.production?  
+  match "/enter/:id" => "users#enter", as: :enter 
 
   ActionDispatch::Routing::Translator.translate_from_file(
     'config/locales/routes.yml', prefix_on_default_locale: false )

@@ -11,4 +11,10 @@
       <%= link_box 'Editar', [:edit, user] if can? :edit, user %>
     </div>
   <% end %>
+  <%= corner_span('groups span4') do %>
+    <h2>Colectivos</h2>
+    <% user.memberships.each do |m| %>
+      <%= link_to m.group.name, m.group %>
+    <% end %>
+  <% end %>
 <% end %>

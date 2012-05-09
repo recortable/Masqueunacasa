@@ -5,6 +5,7 @@ module HasCurrentGroup
 
   included do
     expose(:current_group) { load_subdomain_group }
+    expose(:current_membership) { current_group.membership_for(current_user) }
   end
 
   protected

@@ -1,5 +1,8 @@
 # Masqueunacasa
 
+## 9/05/2012
+- Become funciona para admin
+
 ## 8/05/2012
 - Añadir botón de "entrar para participar" a los grupos
 - Redireccionar al entrar la sesión si el parámetro 'from' está

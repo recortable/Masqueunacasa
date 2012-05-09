@@ -1,10 +1,10 @@
 es:
   membership:
     states:
-      owner: 'Administrador'
+      owner: 'Administrador/a'
       member: 'Participante'
-      request: 'Solicita participar'
-      follow: 'Sigue'
+      request: 'Futurx participante'
+      follow: 'Seguidor/a'
 
 ca:
   

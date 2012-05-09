@@ -33,6 +33,7 @@ module HasMemberships
   end
 
   def membership_for(user)
+    return nil if user.blank?
     Membership.where(group_id: self.id, user_id: user.id).first
   end
 
