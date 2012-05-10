@@ -36,8 +36,8 @@
         <div class="content">
           <%= render_post_media(post) %>
           <%= raw truncate_html(post.body, length: 500) %>
-          <div class="links";
-            <%= link_to 'leer más...', post, class: 'read-more' %>
+          <div class="links">
+            <%= link_to t('read_more'), post_url(post, subdomain: post.group.slug), class: 'read-more' %>
           </div>
         </div>
         <div class="controls clearfix">
