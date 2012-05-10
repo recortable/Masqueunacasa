@@ -57,3 +57,14 @@ div.post.row {
   }
 }
 
+div.archive {
+  ul {
+    list-style: circle outside;
+    margin: 0 16px;
+
+    li {
+      margin-top: 5px;
+    }
+  }
+}
+
