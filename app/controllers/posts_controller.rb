@@ -5,6 +5,9 @@ class PostsController < ApplicationController
   expose(:themes) { current_group.site? ? 'textura03 azul_gris masq1casa' : 'textura02 naranja group' }
   expose(:posts) { current_group.posts.order('created_at DESC').limit(10) }
   expose(:post)
+  expose(:post_archive) do 
+    current_group.posts.select(Post::ARCHIVE_COLUMNS).group_by { |post| post.published_at.beginning_of_month }
+  end
 
   def index
     respond_with posts

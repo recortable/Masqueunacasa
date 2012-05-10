@@ -32,6 +32,12 @@ es:
     index:
       add_post: 'Añadir entrada'
 
+    new:
+      title: 'Añadir entrada'
+
+    archive:
+      archive: Archivo
+
     form:
       change_published_on: 'Cambiar fecha de publicación'
 

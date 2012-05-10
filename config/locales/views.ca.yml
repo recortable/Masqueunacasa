@@ -32,6 +32,12 @@ ca:
     index:
       add_post: 'Afegir entrada'
 
+    new:
+      title: 'Afegir entrada'
+
+    archive:
+      archive: Arxiu
+
     form:
       change_published_on: 'Canviar la data de publicació'
 
