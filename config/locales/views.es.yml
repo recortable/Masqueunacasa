@@ -43,3 +43,7 @@ es:
       change_published_on: 'Cambiar fecha de publicación'
 
     by: Por
+
+  pages:
+    new:
+      title: 'Nueva página de la wiki'

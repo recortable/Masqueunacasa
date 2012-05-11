@@ -33,8 +33,10 @@ ca:
         embed: 'Vídeo'
 
       page:
-        title: 'Títol en castellà'
-        body: 'Text en castellà'
+        title: 'Títol'
+        body: 'Text'
+        image: 'Imatge principal'
+        embed: 'Vídeo'
 
       user:
         role: 'rol'
@@ -54,9 +56,17 @@ ca:
         password: 'Contrasenya'
 
     hints:
+      
       post:
         image: "Aquesta imatge apareixerà al principi del post. Ha de tenir 510 píxels d'amplada"
-        embed: 'En aquest espai hi pots enganxar el codi per inserir vídeo de youtube, vimeo, etcètera... altres codis iframe també serveixen'
+        embed: 'En aquest espai hi pots enganxar el codi per inserir vídeo 
+                de youtube, vimeo, etcètera... altres codis iframe també serveixen'
+
+      page:
+        image: "Aquesta imatge apareixerà al principi de la pàgina. Ha de tenir 510 píxels d'amplada"
+        embed: 'En aquest espai hi pots enganxar el codi per inserir vídeo 
+                de youtube, vimeo, etcètera... altres codis iframe també serveixen'
+
 
       media_item:
         url: "Si l'enllaç acaba en .jpg, .png o .gif serà tractat com una imatge"

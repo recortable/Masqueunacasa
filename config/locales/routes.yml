@@ -1,5 +1,6 @@
 es:
   posts: 'blog'
+  pages: 'wiki'
   users: 'usuarixs'
   groups: 'colectivos'
   profile: 'perfil'
@@ -13,6 +14,7 @@ es:
 
 ca:
   posts: 'blog'
+  pages: 'wiki'
   users: 'usuaris'
   groups: 'collectius'
   profile: 'perfil'

@@ -18,6 +18,11 @@ class Ability
         group = post.group
         group.member_level?(user, [:owner, :member])
       end
+
+      can :manage, Page do |page|
+        group = page.group
+        group.member_level?(user, [:owner, :member])
+      end
     end
   end
 end

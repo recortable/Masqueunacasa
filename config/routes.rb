@@ -11,6 +11,7 @@ Masqueunacasa::Application.routes.draw do
     match '', to: 'posts#index'
     resource :profile
     resources :memberships
+    resources :pages
   end
 
   # Rutas sólo accesibles desde el dominio principal 

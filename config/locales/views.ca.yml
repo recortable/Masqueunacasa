@@ -43,3 +43,7 @@ ca:
       change_published_on: 'Canviar la data de publicació'
 
     by: Per
+
+  pages:
+    new:
+      title: 'Nova pàgina del wiki'

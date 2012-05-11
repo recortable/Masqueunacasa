@@ -30,6 +30,10 @@ es:
         image: 'Imágen principal'
         embed: 'Vídeo'
 
+      page:
+        image: 'Imágen principal'
+        embed: 'Vídeo'
+
       user:
         role: 'rol'
         password: 'Contraseña'
@@ -43,6 +47,10 @@ es:
     hints:
       post:
         image: 'Esta imágen aparecerá al principio del post. Debe tener un ancho de 510px'
+        embed: 'En este espacio puedes pegar el código de insertar vídeo de youtube, vimeo, etcétera... Otros códigos iframe también sirven'
+
+      page:
+        image: 'Esta imágen aparecerá al principio de la página. Debe tener un ancho de 510px'
         embed: 'En este espacio puedes pegar el código de insertar vídeo de youtube, vimeo, etcétera... Otros códigos iframe también sirven'
 
       media_item:

@@ -14,6 +14,7 @@ class Group < ActiveRecord::Base
 
   belongs_to :user
   has_many :posts
+  has_many :pages
   has_many :messages
 
   mount_uploader :banner_image, GroupBannerUploader
