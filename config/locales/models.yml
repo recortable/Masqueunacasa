@@ -2,6 +2,7 @@ es:
   activerecord:
     models:
       user: 'perfil'
+      page: página
 
   membership:
     states:
@@ -14,6 +15,7 @@ ca:
   activerecord:
     models:
       user: 'perfil'
+      page: pàgina
 
   membership:
     states:

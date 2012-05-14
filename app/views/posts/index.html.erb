@@ -27,10 +27,10 @@
           <div class="content">
             <%= link_to content_tag(:h3, post.title), post_url(post, subdomain: post.group.slug) %>
             <%= t('posts.by') %>: <%= link_to post.group.name, post.group %>
-          <%= l post.published_at %>
-          <%= link_to avatar_image(post.group), post_url(post, subdomain: post.group.slug) if current_group.site? %>
+            <%= l post.published_at %>
+            <%= link_to avatar_image(post.group), post_url(post, subdomain: post.group.slug) if current_group.site? %>
+          </div>
         </div>
-      </div>
       <div class="span6 post-teaser">
         <div class="corner colored"></div>
         <div class="content">
@@ -47,7 +47,7 @@
     <% end %>
   <% end %>
   &nbsp;
-</div>
-<%= render 'groups/sidebar' %>
+  </div>
+  <%= render 'groups/sidebar' %>
 </div>
 

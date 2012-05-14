@@ -1,0 +1,48 @@
+<% title "Wiki #{current_group.name}" %>
+
+<%= render 'groups/header' %>
+
+<% if current_membership %>
+  <div class="member_bar row">
+    <div class="controls bloc span12">
+      <div class="membership_level">
+        <%= t('you_are') + " " + t("membership.states.#{current_membership.state}").downcase + " " + t('in') + " '" + current_group.name %>'
+    </div>
+    <%= link_box t('.add_page'), new_page_path, rel: 'new-page', 
+        class: 'highlight' if can? :create, page %>
+    <%= link_box 'Editar perfil', edit_profile_path, 
+        rel: 'edit-profile' if can? :edit, current_group %>
+  </div>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="center span8">
+    <% pages.each do |page| %>
+      <%= div_for page, class: 'row' do %>
+        <div class="span2 page-info">
+          <div class="corner none"></div>
+          <div class="content">
+            <%= link_to content_tag(:h3, page.title), page_url(page, subdomain: page.group.slug) %>
+            <%= l page.published_at %>
+            <%= link_to avatar_image(post.group), page_url(page, subdomain: page.group.slug) if current_group.site? %>
+          </div>
+        </div>
+      <div class="span6 post-teaser">
+        <div class="corner colored"></div>
+        <div class="content">
+          <%= render_post_media(page) %>
+          <%= raw truncate_html(page.body, length: 500) %>
+          <div class="links">
+            <%= link_to t('read_more'), page_url(page, subdomain: page.group.slug), class: 'read-more' %>
+          </div>
+        </div>
+        <div class="controls clearfix">
+          <%= link_box 'Editar', edit_page_url(page, subdomain: page.group.slug) if can? :edit, page %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  &nbsp;
+  </div>
+</div>
