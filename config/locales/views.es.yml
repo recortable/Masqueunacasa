@@ -24,6 +24,10 @@ es:
       title: 'Colectivos'
       new_group: 'Añadir colectivo'
 
+  users:
+    new:
+      title: Nueva usuaria
+
   user_sessions:
     new:
       title: 'Iniciar sesión'
@@ -47,7 +51,7 @@ es:
   pages:
     index: 
       add_page: 'Crear una página'
-      
+
     new:
       title: 'Nueva página de la wiki'
 

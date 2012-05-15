@@ -24,6 +24,10 @@ ca:
       title: 'Col·lectius'
       new_group: 'Afegir col·lectiu'
 
+  user:
+    new:
+      title: Nuevo usuario
+
   user_sessions:
     new:
       title: 'Iniciar sessió'
@@ -50,6 +54,6 @@ ca:
 
     new:
       title: 'Nova pàgina del wiki'
-      
+
     edit:
       title: Editar %{page_title}
