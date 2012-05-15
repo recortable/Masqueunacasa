@@ -2,4 +2,9 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrap-wysihtml5-all
-//= require editor
+//= require_self
+
+jQuery(function() {
+  $('textarea.rte').wysihtml5();
+});
+

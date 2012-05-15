@@ -1,6 +1,14 @@
 # Masqueunacasa
 
-## 9/05/201a
+## 11/05/2012
+- Refactor editor.js
+
+## 10/05/2012
+- Refactorización de groups/_sidebar.html.erb
+- Los grupos tienen wiki (Pages)
+- Bug fix: "read more..." links
+
+## 9/05/2012
 - Bug fix: al crear un usuario no aparece todo el formulario
 - Adiós al modelo mensaje y hola modelo página
 - Los usuarios pueden añadir su avatar
