@@ -1,5 +1,5 @@
 <%= simple_form_for group do |form| %>
   <%= form.input :name %>
-  <%= form.input :description, as: :text %>
+  <%= form.input :description, as: :text, input_html: {class: 'rte'} %>
   <%= form.button :submit %>
 <% end %>
