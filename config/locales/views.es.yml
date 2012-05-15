@@ -52,4 +52,5 @@ es:
       title: 'Nueva página de la wiki'
 
     edit:
-      title: Editar %{page_title}
+      title: 'Editar %{title}'
+

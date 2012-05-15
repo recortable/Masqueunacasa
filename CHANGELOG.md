@@ -1,7 +1,7 @@
 # Masqueunacasa
 
 ## 11/05/2012
-- Refactor editor.js
+- Refactor editor.ja
 
 ## 10/05/2012
 - Refactorización de groups/_sidebar.html.erb
