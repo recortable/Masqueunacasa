@@ -47,5 +47,9 @@ es:
   pages:
     index: 
       add_page: 'Crear una página'
+      
     new:
       title: 'Nueva página de la wiki'
+
+    edit:
+      title: Editar %{page_title}
