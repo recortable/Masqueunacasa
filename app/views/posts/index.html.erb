@@ -14,6 +14,7 @@
 
     <%= link_box t('.add_post'), new_post_path, rel: 'new-post', class: 'highlight' if can? :edit, current_group %>
     <%= link_box 'editar perfil', edit_profile_path, rel: 'edit-profile' if can? :edit, current_group %>
+    <%= link_box 'Gestionar participantes', memberships_path, rel: 'manage-users' if can? :edit, current_group %>
   </div>
 </div>
 <% end %>

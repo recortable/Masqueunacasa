@@ -2,6 +2,7 @@
 
 ## 12/05/2012
 - Crear las fases
+- Las tarjetas de participantes tienen una altura fija
 
 ## 11/05/2012
 - Refactor editor.ja
