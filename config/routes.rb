@@ -1,4 +1,6 @@
 Masqueunacasa::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   # Rutas que se pueden acceder tanto desde un subdominio como sin él
   resources :posts
   match '/entrar' => 'user_sessions#new', as: :login

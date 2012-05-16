@@ -1,5 +1,8 @@
 # Masqueunacasa
 
+## 16/05/2012
+- Sustituido el editor de texto enriquecido: CKEditor en lugar de bootstrap-wysihtml5-rails
+
 ## 12/05/2012
 - Versiones en posts
 - Versiones en proposals
