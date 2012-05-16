@@ -1,12 +1,18 @@
-<%= render_banner t('.title'), groups_path %>
+<%= render_banner t('.title'), proposals_path %>
 <div class="row">
-  <%= corner_span 'span12' do %>
+  <%= corner_span 'span8' do %>
+    <% proposals.each do |proposal| %>
+      <%= div_for proposal do %>
+        <h3><%= proposal.title %></h3>
+        <div>
+          <%= raw proposal.description %>
+        </div>
+        <%= link_to t('read_more'), proposal %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= corner_span 'span4' do %>
     <p>Estas son propuestas para buscar maneras de habitar diferentes</p>
     <%= link_to 'Añadir propuesta', new_proposal_path, rel: 'new-proposal' if can? :new, Proposal %>
   <% end %>
-  <div class="span12 cards">
-    <% proposals.each do |proposal| %>
-      <%= render proposal %>
-    <% end %>
-  </div>
 </div>

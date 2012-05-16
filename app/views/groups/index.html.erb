@@ -1,11 +1,9 @@
 <%= render_banner t('.title'), groups_path %>
 <% if current_user %>
-  <div class="row">
-    <div class="controls bloc span12">
+    <div class="controls member_bar">
       <%= link_box t('.new_group', default: 'Añadir grupo'), 
         new_group_path, class: 'highlight' if can? :create, Group %>
     </div>
-  </div>
 <% end %>
 <div class="groups cards">
   <% groups.each do |group| %>

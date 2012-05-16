@@ -59,4 +59,9 @@ es:
   proposals:
     index:
       title: 'Propuestas'
+    show:
+      title: 'Propuesta'
+    notices:
+      updated: 'Propuesta actualizada. ¡Gracias!'
+      created: 'Tenemos una nueva propuesta, ¡gracias!'
 

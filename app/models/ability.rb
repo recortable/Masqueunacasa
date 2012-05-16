@@ -10,8 +10,11 @@ class Ability
     elsif user.admin?
       can :manage, :all
     else
-      can :new, Proposal
-      can :create, Proposal
+      can :manage, Proposal
+      can :delete, Proposal do |proposal|
+        proposal.user_id == user.id
+      end
+
       can :read, Membership
       cannot :new, UserSession
 

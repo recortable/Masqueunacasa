@@ -6,17 +6,13 @@
 <% end %>
 
 <% if current_membership %>
-  <div class="member_bar row">
-    <div class="controls bloc span12">
-      <div class="membership_level">
-        <%= t('you_are') + " " + t("membership.states.#{current_membership.state}").downcase + " " + t('in') + " '" + current_group.name %>'
-    </div>
+  <div class="member_bar controls">
+    <%= t('you_are') + " " + t("membership.states.#{current_membership.state}").downcase + " " + t('in') + " '" + current_group.name %>'
 
     <%= link_box t('.add_post'), new_post_path, rel: 'new-post', class: 'highlight' if can? :edit, current_group %>
     <%= link_box 'editar perfil', edit_profile_path, rel: 'edit-profile' if can? :edit, current_group %>
     <%= link_box 'Gestionar participantes', memberships_path, rel: 'manage-users' if can? :edit, current_group %>
   </div>
-</div>
 <% end %>
 
 <div class="row">
@@ -32,22 +28,22 @@
             <%= link_to avatar_image(post.group), post_url(post, subdomain: post.group.slug) if current_group.site? %>
           </div>
         </div>
-      <div class="span6 post-teaser">
-        <div class="corner colored"></div>
-        <div class="content">
-          <%= render_post_media(post) %>
-          <%= raw truncate_html(post.body, length: 500) %>
-          <div class="links">
-            <%= link_to t('read_more'), post_url(post, subdomain: post.group.slug), class: 'read-more' %>
+        <div class="span6 post-teaser">
+          <div class="corner colored"></div>
+          <div class="content">
+            <%= render_post_media(post) %>
+            <%= raw truncate_html(post.body, length: 500) %>
+            <div class="links">
+              <%= link_to t('read_more'), post_url(post, subdomain: post.group.slug), class: 'read-more' %>
+            </div>
+          </div>
+          <div class="controls clearfix">
+            <%= link_box 'editar', edit_post_url(post, subdomain: post.group.slug) if can? :edit, post %>
           </div>
         </div>
-        <div class="controls clearfix">
-          <%= link_box 'editar', edit_post_url(post, subdomain: post.group.slug) if can? :edit, post %>
-        </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
-  &nbsp;
+    &nbsp;
   </div>
   <%= render 'groups/sidebar' %>
 </div>
