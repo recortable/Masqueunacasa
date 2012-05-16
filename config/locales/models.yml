@@ -2,8 +2,9 @@ es:
   activerecord:
     models:
       user: 'perfil'
-      page: página
+      page: 'página'
       phase: 'fase'
+      group: 'colectivo'
 
   membership:
     states:

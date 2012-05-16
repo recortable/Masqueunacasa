@@ -1,3 +1,7 @@
-<%= title t('.title', default: 'Añadir colectivo') %>
-
-<%= render 'form' %>
+<%= render_banner t('.title'), groups_path %>
+<div class="row">
+  <%= corner_span 'span12' do %>
+    <h1><%= t '.title' %></h1>
+    <%= render 'form' %>
+  <% end %>
+</div>

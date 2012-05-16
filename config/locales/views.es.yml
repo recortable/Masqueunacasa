@@ -17,7 +17,6 @@ es:
   groups:
     new:
       title: 'Añadir colectivo'
-
     index:
       title: 'Colectivos'
       new_group: 'Añadir colectivo'

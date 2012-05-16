@@ -70,7 +70,6 @@ es:
   helpers:
     submit:
       group:
-        create: 'Crear grupo'
         update: 'Guardar perfil'
 
 

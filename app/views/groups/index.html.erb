@@ -2,7 +2,7 @@
 <% if current_user %>
     <div class="controls member_bar">
       <%= link_box t('.new_group', default: 'Añadir grupo'), 
-        new_group_path, class: 'highlight' if can? :create, Group %>
+        new_group_path, class: 'highlight', rel: 'new-group' if can? :create, Group %>
     </div>
 <% end %>
 <div class="groups cards">
