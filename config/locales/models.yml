@@ -10,6 +10,7 @@ es:
       member: 'Participante'
       request: 'Futurx participante'
       follow: 'Seguidor/a'
+    status: "Eres %{state} en el grupo '%{group}'"
 
 ca:
   activerecord:
@@ -23,6 +24,7 @@ ca:
       member: 'Participant'
       request: 'Futur/a participant'
       follow: 'Seguidor/a'
+    status: "Ets %{state} al grup '%{group}'"
   
 en:
 
