@@ -24,6 +24,9 @@ FactoryGirl.define do
   factory :post, parent: :content, class: Post do
   end
 
+  factory :page, parent: :content, class: Page do
+  end
+
   factory :phase do
     sequence(:name_es) {|n| "Fase es #{n}"}
     sequence(:name_ca) {|n| "Fase ca #{n}"}
