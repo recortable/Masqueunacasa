@@ -5,6 +5,7 @@ require "capybara/rails"
 require "active_support/testing/setup_and_teardown"
 
 DatabaseCleaner.strategy = :truncation
+
 class MiniTest::Unit::TestCase
   include FactoryGirl::Syntax::Methods
 
@@ -17,6 +18,7 @@ end
 
 class MiniTest::Spec
   include FactoryGirl::Syntax::Methods
+
   before :each do
     DatabaseCleaner.clean
   end
@@ -34,7 +36,11 @@ class IntegrationTest < MiniTest::Spec
 
   before :each do
     subdomain(nil)
-    login_user nil
+    visit logout_path
+  end
+
+  after :each do
+    visit logout_path
   end
 
   def subdomain(subdomain)

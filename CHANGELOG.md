@@ -1,6 +1,9 @@
 # Masqueunacasa
 
 ## 12/05/2012
+- Versiones en posts
+- Versiones en proposals
+- Actividad (versions_controller)
 - Empezamos con las propuestas
 - Crear las fases
 - Las tarjetas de participantes tienen una altura fija

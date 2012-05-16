@@ -8,6 +8,7 @@ es:
   memberships: 'participantes'
   phases: 'fases'
   proposals: 'propuestas'
+  versions: 'actividad'
 
   edit: 'editar'
   new: 'nueva'

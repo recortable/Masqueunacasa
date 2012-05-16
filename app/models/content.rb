@@ -2,6 +2,7 @@ class Content < ActiveRecord::Base
   include Translatable
   extend FriendlyId
   friendly_id :title, use: :slugged
+  has_paper_trail meta: {title: :title, group_id: :group_id }
 
   belongs_to :user
   belongs_to :group

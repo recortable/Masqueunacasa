@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120516103212) do
+ActiveRecord::Schema.define(:version => 20120516193703) do
 
   create_table "contents", :force => true do |t|
     t.string   "title_es"
@@ -142,12 +142,15 @@ ActiveRecord::Schema.define(:version => 20120516103212) do
   add_index "users", ["slug"], :name => "index_users_on_slug", :unique => true
 
   create_table "versions", :force => true do |t|
-    t.string   "item_type",  :null => false
-    t.integer  "item_id",    :null => false
-    t.string   "event",      :null => false
+    t.string   "item_type",                 :null => false
+    t.integer  "item_id",                   :null => false
+    t.string   "event",                     :null => false
     t.string   "whodunnit"
     t.text     "object"
     t.datetime "created_at"
+    t.string   "user_name",  :limit => 50
+    t.string   "title",      :limit => 200
+    t.integer  "group_id"
   end
 
   add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"

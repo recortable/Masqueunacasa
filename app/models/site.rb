@@ -29,4 +29,8 @@ class Site
   def users
     User.scoped
   end
+
+  def versions
+    Version.scoped
+  end
 end

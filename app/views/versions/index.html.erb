@@ -1,0 +1,12 @@
+<div class="row">
+  <%= corner_span 'span12' do %>
+    <%= title 'Actividad' %>
+    <% versions.each do |version| %>
+      <%= div_for version do %>
+        <%= version.user_name? ? version.user_name : 'Anónimx' %> ha
+        <%= version.event %>
+        <%= version.title %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

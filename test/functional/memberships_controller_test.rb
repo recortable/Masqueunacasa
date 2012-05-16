@@ -2,8 +2,8 @@ require 'test_helper'
 
 describe 'Memberships integration' do
   it 'list group memberships' do
-    group = create(:group)
     member = create(:user)
+    group = create(:group)
     group.add_member(member)
     nonmember = create(:user)
 

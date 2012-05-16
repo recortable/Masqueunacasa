@@ -15,5 +15,6 @@ public/assets/**
 public/system
 *.swp
 vim
+.rvmrc
 
 Masqueunacasa.sublime-*

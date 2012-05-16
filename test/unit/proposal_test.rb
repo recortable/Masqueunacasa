@@ -19,4 +19,12 @@ describe Proposal do
     Proposal.published.count.must_equal 1
     Proposal.published.first.must_equal published
   end
+
+  it 'create versions' do
+    proposal = create(:proposal, group: create(:group))
+    Version.count.must_equal 1
+    v = Version.last
+    v.title.must_equal proposal.title
+    v.group_id.must_equal proposal.group_id
+  end
 end
