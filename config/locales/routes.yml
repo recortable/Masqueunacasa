@@ -6,6 +6,7 @@ es:
   profile: 'perfil'
   messages: 'mensajes'
   memberships: 'participantes'
+  phases: 'fases'
 
   edit: 'editar'
   new: 'nueva'
@@ -20,6 +21,7 @@ ca:
   profile: 'perfil'
   messages: 'missatges'
   memberships: 'participants'
+  phases: 'fases'
 
   edit: 'editar'
   new: 'nova'
@@ -27,5 +29,4 @@ ca:
   sign_up: 'alta'
 
 en:
-  groups: 'groups'
 

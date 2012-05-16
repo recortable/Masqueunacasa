@@ -1,5 +1,8 @@
 # Masqueunacasa
 
+## 12/05/2012
+- Crear las fases
+
 ## 11/05/2012
 - Refactor editor.ja
 

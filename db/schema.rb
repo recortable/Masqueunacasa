@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120515140755) do
+ActiveRecord::Schema.define(:version => 20120516082926) do
 
   create_table "contents", :force => true do |t|
     t.string   "title_es"
@@ -72,6 +72,21 @@ ActiveRecord::Schema.define(:version => 20120515140755) do
 
   add_index "memberships", ["group_id"], :name => "index_memberships_on_group_id"
   add_index "memberships", ["user_id"], :name => "index_memberships_on_user_id"
+
+  create_table "phases", :force => true do |t|
+    t.string   "name_es",        :limit => 50
+    t.string   "name_ca",        :limit => 50
+    t.text     "description_es"
+    t.text     "description_ca"
+    t.string   "slug_es",        :limit => 50
+    t.string   "slug_ca",        :limit => 50
+    t.integer  "position"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "phases", ["slug_ca"], :name => "index_phases_on_slug_ca"
+  add_index "phases", ["slug_es"], :name => "index_phases_on_slug_es"
 
   create_table "users", :force => true do |t|
     t.string   "name"

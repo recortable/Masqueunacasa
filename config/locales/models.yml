@@ -3,6 +3,7 @@ es:
     models:
       user: 'perfil'
       page: página
+      phase: 'fase'
 
   membership:
     states:

@@ -2,6 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    can :view, Phase
     if user.blank?
       can :new, UserSession 
     elsif user.admin?
@@ -12,7 +13,6 @@ class Ability
       can :edit, Group do |group|
         group.member_level?(user, [:owner, :member])
       end
-
 
       can :manage, Post do |post|
         group = post.group
