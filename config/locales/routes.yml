@@ -7,6 +7,7 @@ es:
   messages: 'mensajes'
   memberships: 'participantes'
   phases: 'fases'
+  proposals: 'propuestas'
 
   edit: 'editar'
   new: 'nueva'
@@ -22,6 +23,7 @@ ca:
   messages: 'missatges'
   memberships: 'participants'
   phases: 'fases'
+  proposals: 'propuestas'
 
   edit: 'editar'
   new: 'nova'

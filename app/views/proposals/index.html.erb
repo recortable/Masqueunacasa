@@ -1,0 +1,12 @@
+<%= render_banner t('.title'), groups_path %>
+<div class="row">
+  <%= corner_span 'span12' do %>
+    <p>Estas son propuestas para buscar maneras de habitar diferentes</p>
+    <%= link_to 'Añadir propuesta', new_proposal_path, rel: 'new-proposal' if can? :new, Proposal %>
+  <% end %>
+  <div class="span12 cards">
+    <% proposals.each do |proposal| %>
+      <%= render proposal %>
+    <% end %>
+  </div>
+</div>

@@ -20,6 +20,7 @@ Masqueunacasa::Application.routes.draw do
     resources :posts
     resources :users
     resources :phases
+    resources :proposals
   end
   root to: 'dashboard#index'
   match "/enter/:id" => "users#enter", as: :enter 

@@ -1,6 +1,7 @@
 # Masqueunacasa
 
 ## 12/05/2012
+- Empezamos con las propuestas
 - Crear las fases
 - Las tarjetas de participantes tienen una altura fija
 

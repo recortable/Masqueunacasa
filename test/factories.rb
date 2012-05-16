@@ -30,4 +30,10 @@ FactoryGirl.define do
     description_es { "#{name_es} descripción" }
     description_ca { "#{name_ca} descripciò" }
   end
+
+  factory :proposal do
+    sequence(:title) {|n| "Proposal #{n}"}
+    body { "#{title} body" }
+    user
+  end
 end
