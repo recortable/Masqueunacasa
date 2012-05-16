@@ -23,15 +23,31 @@ describe 'Proposals integration' do
   it 'creates proposals' do
     user = create(:user)
     login_user user
+    phase = create(:phase)
     visit new_proposal_path
     page.fill_in 'proposal_title', with: 'My proposal'
+    page.fill_in 'proposal_description', with: 'My proposal description'
     page.fill_in 'proposal_body', with: 'My proposal body'
+    page.select phase.name, from: 'proposal_phase_id'
     click_submit
     Proposal.count.must_equal 1
     proposal = Proposal.last
     proposal.user.must_equal user
     proposal.title.must_equal 'My proposal'
+    proposal.description.must_equal 'My proposal description'
     proposal.body.must_equal 'My proposal body'
+    proposal.phase.must_equal phase
+  end
+
+  it 'updates proposals' do
+    user = create(:user)
+    login_user user
+    proposal = create(:proposal, user: user)
+    visit edit_proposal_path(proposal)
+    page.fill_in 'proposal_title', with: 'New title'
+    click_submit
+    proposal.reload
+    proposal.title.must_equal 'New title'
   end
 
 end

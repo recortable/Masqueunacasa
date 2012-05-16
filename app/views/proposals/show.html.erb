@@ -1,6 +1,16 @@
+<%= render_banner t('.title'), proposals_path %>
+<div class="member_bar controls">
+  <%= link_box t('go_back'), proposals_path %>
+  <%= link_box t('edit'), [:edit, proposal], rel: "edit-proposal-#{proposal.id}" if can? :edit, proposal %>
+</div>
 <div class="row">
-  <%= corner_span 'span12' do %>
+  <%= corner_span 'span8' do %>
     <%= title proposal.title %>
+    <%= raw proposal.description %>
     <%= raw proposal.body %>
   <% end %>
+  <%= corner_span 'span4' do %>
+    <h3>Propuesta</h3>
+    Fase: <%= proposal.phase.name %>
+<% end %>
 </div>

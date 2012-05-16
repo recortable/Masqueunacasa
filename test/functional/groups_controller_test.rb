@@ -9,6 +9,13 @@ describe 'Groups integration' do
     page.text.must_include g2.name
   end
 
+  it 'can create group' do
+    user = create(:user)
+    login_user user
+    visit groups_path
+    page.find 'a[rel="new-group"]'
+  end
+
   it 'create group' do
     user = create(:user, admin: true)
     login_user(user)

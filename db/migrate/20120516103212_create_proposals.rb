@@ -9,6 +9,8 @@ class CreateProposals < ActiveRecord::Migration
       t.integer :phase_id
       t.integer :group_id
       t.boolean :published, default: true
+      t.string :description_es, limit: 1000
+      t.string :description_ca, limit: 1000
       t.text :body_es
       t.text :body_ca
       t.text :settings

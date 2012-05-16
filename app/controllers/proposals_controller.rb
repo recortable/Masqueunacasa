@@ -26,5 +26,11 @@ class ProposalsController < ApplicationController
     respond_with proposal
   end
 
+  def update
+    authorize! :update, proposal
+    flash[:notice] = t('proposals.notices.updated') if proposal.update_attributes(params[:proposal])
+    respond_with proposal
+  end
+
 
 end

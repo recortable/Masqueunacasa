@@ -44,6 +44,10 @@ es:
       user_session:
         password: Contraseña
 
+      proposal:
+        description: 'Resúmen'
+        phase: 'Fase en la que se incluye'
+
     hints:
       post:
         image: 'Esta imágen aparecerá al principio del post. Debe tener un ancho de 510px'
@@ -60,11 +64,12 @@ es:
         edit:
           password: 'Déjalo vacío si no quieres cambiarla'
           password_confirmation: 'Déjalo vacío si no quieres cambiar la contraseña'
+      proposal:
+        phase: 'En qué fase se podría aplicar ésta propuesta'
 
   helpers:
     submit:
       group:
-        create: 'Crear grupo'
         update: 'Guardar perfil'
 
 

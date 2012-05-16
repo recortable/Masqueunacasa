@@ -4,7 +4,7 @@ class PhasesController < ApplicationController
   expose(:phase)
 
   def index
-    authorize! :view, Phase
+    authorize! :read, Phase
     respond_with phases
   end
 

@@ -38,5 +38,6 @@ FactoryGirl.define do
     sequence(:title) {|n| "Proposal #{n}"}
     body { "#{title} body" }
     user
+    phase
   end
 end

@@ -3,7 +3,8 @@ require 'test_helper'
 describe Proposal do
   it 'creates titles and slugs for every lang' do
     user = create(:user)
-    proposal = Proposal.new(title: 'Title', user: user)
+    phase = create(:phase)
+    proposal = Proposal.new(title: 'Title', user: user, phase: phase)
     proposal.save.must_equal true
     proposal.title.must_equal 'Title'
     proposal.title_es.must_be :present?

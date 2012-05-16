@@ -49,9 +49,7 @@ ca:
   pages:
     index: 
       add_page: 'Crear una pàgina'
-
     new:
       title: 'Nova pàgina del wiki'
-
     edit:
       title: Editar %{page_title}
