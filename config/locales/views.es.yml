@@ -5,8 +5,6 @@ es:
   cancel: 'Cancelar'
   delete: Borrar
   confirm: '¿Estás seguro? Esta acción no se puede deshacer'
-  you_are: Eres
-  in: en
   read_more: 'Leer más...'
 
   application:
@@ -64,4 +62,3 @@ es:
     notices:
       updated: 'Propuesta actualizada. ¡Gracias!'
       created: 'Tenemos una nueva propuesta, ¡gracias!'
-

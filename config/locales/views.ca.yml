@@ -5,8 +5,6 @@ ca:
   cancel: 'Cancel·lar'
   delete: Esborrar
   confirm: "N'estàs segur? Aquesta acció no es pot desfer."
-  you_are: Ets
-  in: a
   read_more: 'Llegir més...'
 
   application:

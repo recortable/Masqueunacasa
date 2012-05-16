@@ -15,7 +15,7 @@ class PagesController < ApplicationController
   end
 
   def new
-    authorize! :new, page
+    authorize! :new, Page
   end
 
   def edit
