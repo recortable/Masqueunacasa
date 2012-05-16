@@ -14,7 +14,7 @@
           <div class="span8">
             <div class="content">
               <%= form.input :name %>
-              <%= form.input :description, as: :text %>
+              <%= form.input :description, as: :text, input_html: {class: 'rte'} %>
               <%= submit_button_for form %>
             </div>
           </div>

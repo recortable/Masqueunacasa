@@ -1,7 +1,12 @@
 # Masqueunacasa
 
+## 12/05/2012
+- Empezamos con las propuestas
+- Crear las fases
+- Las tarjetas de participantes tienen una altura fija
+
 ## 11/05/2012
-- Refactor editor.js
+- Refactor editor.ja
 
 ## 10/05/2012
 - Refactorización de groups/_sidebar.html.erb

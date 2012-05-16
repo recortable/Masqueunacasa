@@ -1,6 +1,6 @@
-<% title "Blog #{current_group.name}" %>
+<% title "blog #{current_group.name}" %>
 <% if current_group.site? %>
-  <%= render_banner 'Blog', posts_path %>
+  <%= render_banner 'blog', posts_path %>
 <% else %>
   <%= render 'groups/header' %>
 <% end %>
@@ -13,7 +13,8 @@
     </div>
 
     <%= link_box t('.add_post'), new_post_path, rel: 'new-post', class: 'highlight' if can? :edit, current_group %>
-    <%= link_box 'Editar perfil', edit_profile_path, rel: 'edit-profile' if can? :edit, current_group %>
+    <%= link_box 'editar perfil', edit_profile_path, rel: 'edit-profile' if can? :edit, current_group %>
+    <%= link_box 'Gestionar participantes', memberships_path, rel: 'manage-users' if can? :edit, current_group %>
   </div>
 </div>
 <% end %>
@@ -41,7 +42,7 @@
           </div>
         </div>
         <div class="controls clearfix">
-          <%= link_box 'Editar', edit_post_url(post, subdomain: post.group.slug) if can? :edit, post %>
+          <%= link_box 'editar', edit_post_url(post, subdomain: post.group.slug) if can? :edit, post %>
         </div>
       </div>
     <% end %>

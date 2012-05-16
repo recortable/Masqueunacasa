@@ -1,0 +1,15 @@
+<div class="row">
+  <%= corner_span('span12') do %>
+    <%= title 'Fases' %>
+
+    <%= link_box 'Añadir fase', new_phase_path, rel: 'new-phase' if can? :new, Phase %>
+
+    <% phases.each do |phase| %>
+      <%= div_for phase do %>
+        <%= phase.name %>
+        <%= phase.description %>
+        <%= link_to 'Editar', [:edit, phase], rel: "edit-phase-#{phase.id}" if can? :edit, Phase %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

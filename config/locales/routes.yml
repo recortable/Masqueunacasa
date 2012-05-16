@@ -1,11 +1,13 @@
 es:
   posts: 'blog'
   pages: 'wiki'
-  users: 'usuarixs'
+  users: 'personas'
   groups: 'colectivos'
   profile: 'perfil'
   messages: 'mensajes'
   memberships: 'participantes'
+  phases: 'fases'
+  proposals: 'propuestas'
 
   edit: 'editar'
   new: 'nueva'
@@ -20,6 +22,8 @@ ca:
   profile: 'perfil'
   messages: 'missatges'
   memberships: 'participants'
+  phases: 'fases'
+  proposals: 'propuestas'
 
   edit: 'editar'
   new: 'nova'
@@ -27,5 +31,4 @@ ca:
   sign_up: 'alta'
 
 en:
-  groups: 'groups'
 

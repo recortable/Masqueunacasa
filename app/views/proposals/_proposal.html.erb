@@ -1,0 +1,13 @@
+<%= div_for proposal, class: 'card' do %>
+  <div class="corner none"></div>
+  <div class="card-content">
+    <div class="avatar">
+      <%= link_to proposal_url(proposal, host: request.domain) do %>
+        <%= avatar_image(proposal) %>
+        <%= proposal.title %>
+      <% end %>
+    </div>
+    <div class="info">
+    </div>
+  </div>
+<% end %>
