@@ -2,18 +2,10 @@
 
 <%= render 'groups/header' %>
 
-<div class="member_bar row">
-  <div class="controls bloc span12">
-    <div class="row">
-      <div class="span2">
-        <%= link_box t('go_back'), pages_path %>
-      </div>
-      <div class="span6">
-        <%= link_box t('edit'), edit_page_path(page), class: 'highlight' if current_user &&
+<div class="member_bar controls">
+  <%= link_box t('go_back'), pages_path %>
+  <%= link_box t('edit'), edit_page_path(page), class: 'highlight' if current_user &&
             current_user.member?(current_group) %>
-      </div>
-    </div>
-  </div>
 </div>
 <div class="row">
   <div class="center span8">

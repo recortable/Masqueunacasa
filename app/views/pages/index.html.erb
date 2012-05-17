@@ -3,17 +3,13 @@
 <%= render 'groups/header' %>
 
 <% if current_membership %>
-  <div class="member_bar row">
-    <div class="controls bloc span12">
-      <div class="membership_level">
-        <%= t('membership.status', state: t("membership.states.#{current_membership.state}"), group: current_group.name) %>'
-    </div>
+  <div class="member_bar controls">
+    <%= t('membership.status', state: t("membership.states.#{current_membership.state}"), group: current_group.name) %>'
     <%= link_box t('.add_page'), new_page_path, rel: 'new-page', 
         class: 'highlight' if can? :edit, current_group %>
     <%= link_box 'Editar perfil', edit_profile_path, 
         rel: 'edit-profile' if can? :edit, current_group %>
   </div>
-</div>
 <% end %>
 
 <div class="row">

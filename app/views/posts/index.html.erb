@@ -6,6 +6,7 @@
 <% end %>
 
 <% if current_membership %>
+  <div class="member_bar controls">
     <%= t('membership.status', state: t("membership.states.#{current_membership.state}"), group: current_group.name) %>
     <%= link_box t('.add_post'), new_post_path, rel: 'new-post', class: 'highlight' if can? :edit, current_group %>
     <%= link_box 'editar perfil', edit_profile_path, rel: 'edit-profile' if can? :edit, current_group %>
