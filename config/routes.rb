@@ -1,5 +1,9 @@
 Masqueunacasa::Application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor'
+namespace :ckeditor do
+  resources :pictures, :only => [:index, :create, :destroy]
+  resources :attachment_files, :only => [:index, :create, :destroy]
+  resources :attachments, :only => [:index, :create, :destroy]
+end
 
   # Rutas que se pueden acceder tanto desde un subdominio como sin él
   resources :posts
