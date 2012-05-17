@@ -1,0 +1,22 @@
+<% title '(404) La página que buscas no existe...' %>
+
+<% content_for :head do %>
+  <style>
+    html {
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAMCAYAAABm%2BU3GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQtJREFUeNpi%2Bfjx%2BQQGBgYDBuqCBSxQQ%2B2pbPABJpxS379DMAzcusvA8OQZYXVQgNvg%2FukMDI%2BfIdgnTjMwbNnJwLB6I251BA1etIKB4RvUFSBXcnIwMMRFMDBkJDIwXLyCcCFIHQ7AgiECchkIWJoigkBWGiEvLARxISxY9HVwGLzvkATDxasQnpkRA8PS1QwM3m4QA9%2B%2BY2CQksDU9foNA8Oajajqfv1iYNh9ACIvL2vAwuBk9wKI1eGarM2hjF0MDKrKQBcKQsLRyRYSPCBDQGrQ1akBsY4mzJQLLDgDCWQgFyfE6z5uEMNBABTW2NShAUZgBjlAg3TcyMRAIwAKigWgnELtnAcQYAA%2FD1nXl%2FIsywAAAABJRU5ErkJggg%3D%3D);
+    }
+
+    a#cuatro {
+      display: block; overflow: hidden;
+      text-indent: -1000px;
+      margin: 50px auto;
+      width: 454px; height: 454px;
+      background-image: url('/error404.png');
+    }
+    a#cuatro:hover { background-position: 0 -454px;}
+  </style>
+<% end %>
+
+
+<a href="http://masqueunacasa.org" id="cuatro">La página que buscas no existe.</a>
+

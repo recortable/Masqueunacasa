@@ -28,6 +28,9 @@ Masqueunacasa::Application.routes.draw do
   root to: 'dashboard#index'
   match "/enter/:id" => "users#enter", as: :enter 
 
+  match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'
+  match '/quinientos' => 'dashboard#quinientos'
+
   ActionDispatch::Routing::Translator.translate_from_file(
     'config/locales/routes.yml', prefix_on_default_locale: false )
 end

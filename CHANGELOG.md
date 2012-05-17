@@ -1,9 +1,11 @@
 # Masqueunacasa
 
 ## 16/05/2012
+- Página de error 500
+- Página de error 404
 - Sustituido el editor de texto enriquecido: CKEditor en lugar de bootstrap-wysihtml5-rails
 
-## 12/05/2012
+## 15/05/2012
 - Versiones en posts
 - Versiones en proposals
 - Actividad (versions_controller)
@@ -11,7 +13,7 @@
 - Crear las fases
 - Las tarjetas de participantes tienen una altura fija
 
-## 11/05/2012
+## 14/05/2012
 - Refactor editor.ja
 
 ## 10/05/2012

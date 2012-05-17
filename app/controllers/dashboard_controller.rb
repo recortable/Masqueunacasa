@@ -4,4 +4,13 @@ class DashboardController < ApplicationController
 
   def index
   end
+
+  def cuatrocerocuatro
+    render action: 'cuatrocerocuatro', layout: 'static'
+  end
+
+  def quinientos
+    render action: 'quinientos', layout: 'static'
+  end
+
 end
