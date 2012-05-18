@@ -1,17 +1,17 @@
 class User < ActiveRecord::Base
+  # EXTENSIONS
+  include ReceiveMessages
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+  has_secure_password
+  mount_uploader :avatar_image, UserAvatarUploader
+
   # RELATIONS
   has_many :posts
   has_many :created_groups, class_name: 'Group', foreign_key: 'user_id'
   has_many :memberships, dependent: :destroy
   has_many :groups, through: :memberships
 
-  has_many :received_messages, class_name: 'Message', as: :resource, order: 'created_at DESC'
-
-  # EXTENSIONS
-  extend FriendlyId
-  friendly_id :name, use: :slugged
-  has_secure_password
-  mount_uploader :avatar_image, UserAvatarUploader
 
   # ATTRIBUTES
   attr_accessible :name, :description, :avatar_image
@@ -35,8 +35,4 @@ class User < ActiveRecord::Base
     Membership.where(group_id: group.id, user_id: self.id).first.present?
   end
 
-  def receive_message(message)
-    message.resource = self
-    message.save
-  end
 end

@@ -4,6 +4,7 @@ class Ability
   def initialize(user)
     can :read, Phase
     can :read, Proposal
+    can :read, Group
 
     if user.blank?
       can :new, UserSession 

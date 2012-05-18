@@ -18,6 +18,10 @@ class Site
     false
   end
 
+  def groups
+    Group.order('updated_at DESC')
+  end
+
   def latest_groups
     Group.scoped.limit(6)
   end
@@ -27,7 +31,7 @@ class Site
   end
   
   def users
-    User.scoped
+    User.order('updated_at DESC')
   end
 
   def versions

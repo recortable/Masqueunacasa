@@ -1,4 +1,4 @@
-<%= current_group.site? ? render_banner('Participantes', users_path) : 
+<%= current_group.site? ? render_banner(t('.title'), users_path) : 
   render('groups/header') %>
 
 <div class="users cards">

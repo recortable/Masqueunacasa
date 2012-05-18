@@ -1,8 +1,12 @@
 class DashboardController < ApplicationController
   #before_filter :authenticate_user!
   expose (:themes) { 'textura01 azul_neon'}
+  expose(:site) { Site.new }
 
   def index
+  end
+
+  def community
   end
 
   def cuatrocerocuatro

@@ -1,0 +1,16 @@
+<%= render_banner t('.title'), root_path %>
+
+<div class="groups cards">
+  <% site.groups.limit(10).each do |group| %>
+    <%= group_card(group) %>
+  <% end %>
+</div>
+<div><%= link_to t('more'), groups_path %></div>
+
+<div class="users cards">
+  <% site.users.limit(20).each do |group| %>
+    <%= user_card(group) %>
+  <% end %>
+</div>
+<div><%= link_to t('more'), users_path %></div>
+

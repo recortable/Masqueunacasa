@@ -7,7 +7,7 @@ module ApplicationHelper
   def controller_class
     controller.class.name[0..-11].downcase.gsub(/:/, '-')
   end
-  
+
   def subdomain_class
     request.subdomain.present? ? 'subdomain' : 'main_domain'
   end
@@ -23,8 +23,13 @@ module ApplicationHelper
       {title: title, path: path}
   end
 
-  def avatar_image(model)
-    model.avatar_image? ? image_tag(model.avatar_image_url, alt: model.name, class: 'responsive') :
-      placeholder_image_tag(text: '', width: 140, height: 140, class: 'responsive')
+  def avatar_image(model, options = {})
+    options.reverse_merge! class: 'responsive'
+
+    if model.avatar_image? 
+      image_tag(model.avatar_image_url, alt: model.name, class: options[:class])
+    else
+      placeholder_image_tag(text: '', width: 140, height: 140, class: options[:class])
+    end
   end
 end

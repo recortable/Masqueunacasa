@@ -13,9 +13,11 @@
     </div>
   <% end %>
   <%= corner_span('messages span4', :none) do %>
-    <h2>Ponte en contacto</h2>
-    <p>Desde aquí puedes enviar un mensaje a esta persona</p>
-    <%= render 'messages/form' %>
+    <h2>Mensajes</h2>
+    <% if current_user and current_user != user %>
+      <p>Desde aquí puedes enviar un mensaje a esta persona</p>
+      <%= render 'messages/form' %>
+    <% end %>
     <div class="messages clearfix">
       <%= render user.received_messages %>
     </div>

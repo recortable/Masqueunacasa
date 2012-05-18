@@ -1,6 +1,14 @@
 # Masqueunacasa
 
+TAREAS
+- Forzar que la cabecera de los grupos tenga 200 pixels de alto
+- Añadir el modelo Question (las propuestas *pueden* estar asociadas a
+  una pregunta)
+- Enviar emails cuando se envíen mensajes
+
 ## 17/06/2012
+- No todos los grupos tienen herramientas
+- Dashboard de comunidad
 - Mensajes a personas
 
 ## 16/05/2012

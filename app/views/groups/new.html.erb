@@ -2,6 +2,10 @@
 <div class="row">
   <%= corner_span 'span12' do %>
     <h1><%= t '.title' %></h1>
-    <%= render 'form' %>
+    <%= simple_form_for group do |form| %>
+      <%= form.input :name %>
+      <%= form.input :description, as: :text, input_html: {class: 'rte'} %>
+      <%= form.button :submit %>
+    <% end %>
   <% end %>
 </div>

@@ -4,7 +4,7 @@
     <div class="links">
       <%= link_box t('.home'), root_url(host: request.domain), show_if_current: false unless request.subdomain.present? %>
       <%= link_box 'Blog', posts_url(host: request.domain), show_if_current: false %>
-      <%= link_box t('.groups'), groups_url(host: request.domain), show_if_current: false %>
+      <%= link_box t('.community'), community_url(host: request.domain), show_if_current: false %>
     </div>
     <div class="lang-selector">
       <%= link_box 'ES', url_for(locale: 'es') %>

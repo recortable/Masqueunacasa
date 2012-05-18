@@ -9,6 +9,7 @@ es:
   phases: 'fases'
   proposals: 'propuestas'
   versions: 'actividad'
+  community: 'comunidad'
 
   edit: 'editar'
   new: 'nueva'

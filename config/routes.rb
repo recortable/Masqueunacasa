@@ -11,9 +11,10 @@ Masqueunacasa::Application.routes.draw do
   # Rutas que sólo se puede acceder desde un subdominio
   constraints subdomain: /.+/ do
     match '', to: 'posts#index'
-    resource :profile
+    resource :profile, only: [:show, :edit]
     resources :memberships
     resources :pages
+    resources :groups, only: [:update, :show]
   end
 
   # Rutas sólo accesibles desde el dominio principal 
@@ -26,11 +27,12 @@ Masqueunacasa::Application.routes.draw do
     resources :versions
   end
   root to: 'dashboard#index'
-  match "/enter/:id" => "users#enter", as: :enter 
 
+  match '/community' => 'dashboard#community', as: :community
   match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'
   match '/quinientos' => 'dashboard#quinientos'
 
+  match "/enter/:id" => "users#enter", as: :enter 
   namespace :ckeditor do
     resources :pictures, :only => [:index, :create, :destroy]
     resources :attachment_files, :only => [:index, :create, :destroy]

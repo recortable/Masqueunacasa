@@ -1,0 +1,21 @@
+
+<%= div_for group, class: 'row space' do %>
+  <%= corner_span('info span4') do %> 
+    <%= title group.name %>
+    <%= avatar_image(group, class: 'fixed') %>
+    <%= raw group.description %>
+    <div class="controls">
+      <%= link_box 'Editar datos', [:edit, group] if can? :edit, group%>
+    </div>
+  <% end %>
+  <%= corner_span('messages span4', :none) do %>
+    <h2>Ponte en contacto</h2>
+    <p>Desde aquí puedes enviar un mensaje a este grupo</p>
+    <%= render 'messages/form' %>
+    <div class="messages clearfix">
+      <%= render group.received_messages %>
+    </div>
+  <% end %>
+<% end %>
+
+

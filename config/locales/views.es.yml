@@ -6,6 +6,7 @@ es:
   delete: Borrar
   confirm: '¿Estás seguro? Esta acción no se puede deshacer'
   read_more: 'Leer más...'
+  more: 'Más...'
 
   application:
     session:
@@ -13,6 +14,11 @@ es:
       session_start: 'Iniciar sesión'
       session_end: 'Salir'
       groups: Colectivos
+      community: 'Comunidad'
+
+  dashboard:
+    community:
+      title: 'Comunidad'
 
   groups:
     new:
@@ -20,14 +26,22 @@ es:
     index:
       title: 'Colectivos'
       new_group: 'Añadir colectivo'
+    notices:
+      created: 'Colectivo añadido.'
+      updated: 'Datos del coletivo actualizados. Gracias'
 
   messages:
     notices:
       created: 'Mensaje enviado. ¡Gracias!'
 
   users:
+    index:
+      title: 'Personas'
     new:
-      title: Nueva usuaria
+      title: 'Darse de alta'
+    notices:
+      created: '¡Bienvenidx a Masqueunacasa!'
+      updated: 'Tus datos han sido guardados. Gracias'
 
   user_sessions:
     new:

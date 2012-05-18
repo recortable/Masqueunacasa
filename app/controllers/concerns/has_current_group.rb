@@ -13,7 +13,7 @@ module HasCurrentGroup
     if request.subdomain.blank?
       Site.new
     else
-      current_group = Group.find_by_slug(request.subdomain)
+      current_group = Group.find_by_subdomain(request.subdomain)
       if current_group.blank?
         puts "Subdomain #{request.subdomain}"
         raise ActionController::RoutingError.new("Group in subdomain #{request.subdomain} not found")

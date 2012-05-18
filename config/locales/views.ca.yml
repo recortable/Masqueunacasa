@@ -5,6 +5,7 @@ ca:
   cancel: 'Cancel·lar'
   delete: Esborrar
   confirm: "N'estàs segur? Aquesta acció no es pot desfer."
+  more: 'Més...'
   read_more: 'Llegir més...'
 
   application:

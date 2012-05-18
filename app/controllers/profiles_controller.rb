@@ -1,12 +1,13 @@
 class ProfilesController < ApplicationController
   respond_to :html
+  expose(:group) { current_group }
+  expose(:message) { Message.new(resource: group) }
 
-  def edit
-    respond_with current_group
+  def show
+    respond_with group
   end
 
-  def update
-   current_group.update_attributes(params[:group])
-   redirect_to root_url(subdomain: current_group.slug)
+  def edit
+    respond_with group
   end
 end

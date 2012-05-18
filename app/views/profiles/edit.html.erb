@@ -9,23 +9,6 @@
     </div>
 
     <div class="bloc">
-      <%= simple_form_for current_group, url: profile_path do |form| %>
-        <div class="row">
-          <div class="span8">
-            <div class="content">
-              <%= form.input :name %>
-              <%= form.input :description, as: :text, input_html: {class: 'rte'} %>
-              <%= submit_button_for form %>
-            </div>
-          </div>
-          <div class="span4">
-            <div class="content">
-              <%= form.input :slug %>
-              <%= form.input :banner_image %>
-              <%= form.input :avatar_image %>
-            </div>
-          </div>
-        <% end %>
-      </div>
+      <%= render 'groups/form' %>
     </div>
   </div>

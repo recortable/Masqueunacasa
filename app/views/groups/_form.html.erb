@@ -1,5 +1,19 @@
 <%= simple_form_for group do |form| %>
-  <%= form.input :name %>
-  <%= form.input :description, as: :text, input_html: {class: 'rte'} %>
-  <%= form.button :submit %>
+  <div class="row">
+    <div class="span8">
+      <div class="content">
+        <%= form.input :name %>
+        <%= form.input :description, as: :text, input_html: {class: 'rte'} %>
+        <%= submit_button_for form %>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="content">
+        <%= form.input :subdomain if current_user.admin? %>
+        <%= form.input :domain if current_user.admin? %>
+        <%= form.input :banner_image %>
+        <%= form.input :avatar_image %>
+      </div>
+    </div>
+  </div>
 <% end %>

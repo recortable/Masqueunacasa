@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120518085413) do
+ActiveRecord::Schema.define(:version => 20120518113459) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -56,23 +56,28 @@ ActiveRecord::Schema.define(:version => 20120518085413) do
   add_index "contents", ["user_id"], :name => "index_contents_on_user_id"
 
   create_table "groups", :force => true do |t|
-    t.integer "user_id"
-    t.string  "name"
-    t.string  "slug"
-    t.string  "description_es", :limit => 1024
-    t.string  "description_ca", :limit => 1024
-    t.string  "description_en", :limit => 1024
-    t.string  "banner_image"
-    t.string  "avatar_image"
-    t.float   "latitude"
-    t.float   "longitude"
-    t.string  "city"
-    t.string  "country"
-    t.string  "lang"
-    t.string  "settings"
-    t.string  "website"
-    t.string  "twitter"
-    t.string  "facebook"
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "slug"
+    t.string   "description_es",    :limit => 1024
+    t.string   "description_ca",    :limit => 1024
+    t.string   "description_en",    :limit => 1024
+    t.string   "banner_image"
+    t.string   "avatar_image"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "city"
+    t.string   "country"
+    t.string   "lang"
+    t.string   "settings"
+    t.string   "website"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.datetime "updated_at"
+    t.datetime "created_at"
+    t.string   "domain",            :limit => 100
+    t.string   "subdomain",         :limit => 100
+    t.integer  "memberships_count",                 :default => 0
   end
 
   add_index "groups", ["name"], :name => "index_groups_on_name", :unique => true

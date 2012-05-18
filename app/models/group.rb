@@ -1,4 +1,5 @@
 class Group < ActiveRecord::Base
+  include ReceiveMessages
   include Translatable
   include HasMemberships
   extend FriendlyId
@@ -8,6 +9,7 @@ class Group < ActiveRecord::Base
   attr_accessible :name, :description, :slug
   attr_accessible :banner_image, :avatar_image
   attr_accessible :user_id
+  attr_accessible :subdomain, :domain
 
   validates :name, presence: true, uniqueness: true
   validates :user_id, presence: true
@@ -23,9 +25,4 @@ class Group < ActiveRecord::Base
   def site?
     false
   end
-
-  def should_generate_new_friendly_id?
-    new_record?
-  end
-
 end
