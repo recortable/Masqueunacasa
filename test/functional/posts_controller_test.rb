@@ -5,7 +5,7 @@ describe 'Posts integration' do
     group = create(:group)
     post = create(:post, group: group)
     other = create(:post)
-    subdomain group.slug
+    subdomain group.subdomain
     visit posts_path
     page.text.must_include post.title
     page.text.wont_include other.title
@@ -25,7 +25,7 @@ describe 'Posts integration' do
     group.add_member(user)
     login_user(user)
 
-    subdomain(group.slug)
+    subdomain(group.subdomain)
     visit new_post_path
     fill_in 'post_title', with: 'First post'
     fill_in 'post_body', with: 'Post body'
@@ -41,7 +41,7 @@ describe 'Posts integration' do
     group.add_member(user)
 
     login_user(user)
-    subdomain(group.slug)
+    subdomain(group.subdomain)
     visit posts_path
     page.find('a[rel="new-post"]').click
     page.current_path.must_equal new_post_path

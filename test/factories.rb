@@ -12,6 +12,7 @@ FactoryGirl.define do
 
   factory :group do
     sequence(:name) {|n| "Group#{n}" }
+    subdomain  { name.parameterize }
     user
   end
 

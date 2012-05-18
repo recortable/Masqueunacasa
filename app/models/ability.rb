@@ -1,13 +1,15 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  # Usemos solo :read, :create, :update, :destroy
+  # NO USEMOS: :index, :view, :edit, :new
+  def initialize(user, current_group)
     can :read, Phase
     can :read, Proposal
     can :read, Group
 
     if user.blank?
-      can :new, UserSession 
+      can :create, UserSession 
     elsif user.admin?
       can :manage, :all
     else
@@ -19,9 +21,9 @@ class Ability
       end
 
       can :read, Membership
-      cannot :new, UserSession
+      cannot :update, UserSession
 
-      can :edit, Group do |group|
+      can :update, Group do |group|
         group.member_level?(user, [:owner, :member])
       end
 

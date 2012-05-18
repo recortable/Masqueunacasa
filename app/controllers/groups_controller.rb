@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    authorize! :edit, group
+    authorize! :update, group
     respond_with group
   end
 

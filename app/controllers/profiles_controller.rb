@@ -4,10 +4,12 @@ class ProfilesController < ApplicationController
   expose(:message) { Message.new(resource: group) }
 
   def show
+    authorize! :read, group
     respond_with group
   end
 
   def edit
+    authorize! :edit, group
     respond_with group
   end
 end

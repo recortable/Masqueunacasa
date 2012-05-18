@@ -21,10 +21,10 @@
         <div class="span2 post-info">
           <div class="corner none"></div>
           <div class="content">
-            <%= link_to content_tag(:h3, post.title), post_url(post, subdomain: post.group.slug) %>
+            <%= link_to content_tag(:h3, post.title), post_url(post, subdomain: post.group.subdomain) %>
             <%= t('posts.by') %>: <%= link_to post.group.name, post.group %>
             <%= l post.published_at %>
-            <%= link_to avatar_image(post.group), post_url(post, subdomain: post.group.slug) if current_group.site? %>
+            <%= link_to avatar_image(post.group), post_url(post, subdomain: post.group.subdomain) if current_group.site? %>
           </div>
         </div>
         <div class="span6 post-teaser">
@@ -33,11 +33,11 @@
             <%= render_post_media(post) %>
             <%= raw truncate_html(post.body, length: 500) %>
             <div class="links">
-              <%= link_to t('read_more'), post_url(post, subdomain: post.group.slug), class: 'read-more' %>
+              <%= link_to t('read_more'), post_url(post, subdomain: post.group.subdomain), class: 'read-more' %>
             </div>
           </div>
           <div class="controls clearfix">
-            <%= link_box 'editar', edit_post_url(post, subdomain: post.group.slug) if can? :edit, post %>
+            <%= link_box 'editar', edit_post_url(post, subdomain: post.group.subdomain) if can? :edit, post %>
           </div>
         </div>
       <% end %>

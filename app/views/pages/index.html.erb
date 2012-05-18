@@ -19,9 +19,9 @@
         <div class="span2 page-info">
           <div class="corner none"></div>
           <div class="content">
-            <%= link_to content_tag(:h3, page.title), page_url(page, subdomain: page.group.slug) %>
+            <%= link_to content_tag(:h3, page.title), page %>
             <%= l page.published_at %>
-            <%= link_to avatar_image(post.group), page_url(page, subdomain: page.group.slug) if current_group.site? %>
+            <%= link_to avatar_image(page.group), page %>
           </div>
         </div>
       <div class="span6 post-teaser">
@@ -30,11 +30,11 @@
           <%= render_post_media(page) %>
           <%= raw truncate_html(page.body, length: 500) %>
           <div class="links">
-            <%= link_to t('read_more'), page_url(page, subdomain: page.group.slug), class: 'read-more' %>
+            <%= link_to t('read_more'), page, class: 'read-more' %>
           </div>
         </div>
         <div class="controls clearfix">
-          <%= link_box 'Editar', edit_page_url(page, subdomain: page.group.slug) if can? :edit, page %>
+          <%= link_box 'Editar', page if can? :edit, page %>
         </div>
       </div>
     <% end %>

@@ -8,13 +8,18 @@ class ApplicationController < ActionController::Base
 
   expose(:themes) { 'textura02 naranja' }
 
-  private
+  protected
   # TODO: no se por qué falla en test (sospecho que algo
   # de los dominios, subdominios y la sesión)
   unless Rails.env.test?
     def info_for_paper_trail
       { user_name: (current_user.present? ? current_user.name : nil) }
     end
+  end
+
+  # Sobreescribimos el current_ability https://github.com/ryanb/cancan/wiki/Changing-Defaults
+  def current_ability
+    @current_ability ||= Ability.new(current_user, current_group)
   end
 
   def path_or_default(path)

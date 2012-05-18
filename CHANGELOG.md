@@ -7,6 +7,8 @@ TAREAS
 - Enviar emails cuando se envíen mensajes
 
 ## 17/06/2012
+- Ahora usamos 'subdomain' en vez de 'slug' para los subdominios de los
+  grupos
 - No todos los grupos tienen herramientas
 - Dashboard de comunidad
 - Mensajes a personas

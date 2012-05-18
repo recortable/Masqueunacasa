@@ -5,7 +5,7 @@ describe 'Pages integration' do
     group = create(:group)
     a_page = create(:page, group: group)
     other = create(:page)
-    subdomain group.slug
+    subdomain group.subdomain
     visit pages_path
     page.text.must_include a_page.title
     page.text.wont_include other.title
@@ -17,7 +17,7 @@ describe 'Pages integration' do
     group.add_member(user)
     login_user(user)
 
-    subdomain(group.slug)
+    subdomain(group.subdomain)
     visit new_page_path
     fill_in 'page_title', with: 'First page'
     fill_in 'page_body', with: 'Page body'
@@ -33,7 +33,7 @@ describe 'Pages integration' do
     group.add_member(user)
 
     login_user(user)
-    subdomain(group.slug)
+    subdomain(group.subdomain)
     visit pages_path
     page.find('a[rel="new-page"]').click
     page.current_path.must_equal new_page_path

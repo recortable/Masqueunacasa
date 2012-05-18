@@ -12,7 +12,7 @@
         <%= link_box 'Quiero participar', create_membership_path(current_user, 'request'), method: :post %>
       <% end %>
     <% else %>
-      <%= link_box 'Entra para participar', login_url(host: request.domain, from: root_url(subdomain: current_group.slug)) %>
+      <%= link_box 'Entra para participar', login_url(host: request.domain, from: root_url(subdomain: current_group.subdomain)) %>
     <% end %>
   </div>
 <% end %>

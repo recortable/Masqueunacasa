@@ -44,6 +44,7 @@ class IntegrationTest < MiniTest::Spec
   end
 
   def subdomain(subdomain)
+    puts "MOVE TO SUBDOMAIN #{subdomain}"
     host = subdomain.present? ? "http://#{subdomain}.lvh.me" : "http://lvh.me"
     Capybara.app_host = host
   end

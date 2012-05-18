@@ -8,7 +8,7 @@ describe 'Memberships integration' do
     nonmember = create(:user)
 
     login_user(member)
-    subdomain(group.slug)
+    subdomain(group.subdomain)
     visit memberships_path
     page.text.must_include member.name
     page.text.wont_include nonmember.name
