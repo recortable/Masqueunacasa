@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   expose(:themes) { 'textura04 azul_gris' }
   expose(:users) { current_group.users }
   expose(:user)
+  expose(:message) { Message.new(resource: user) }
 
   def index
     respond_with users

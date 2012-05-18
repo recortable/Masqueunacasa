@@ -1,6 +1,7 @@
 @import 'variables';
 
 form {
+  overflow: hidden;
   font-family: Helvetica, Arial, sans-serif;
   
   .controls {
@@ -65,3 +66,6 @@ form {
     }
   }
 }
+
+// CASOS ESPECIALES
+#message_body {height: 6em;}

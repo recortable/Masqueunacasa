@@ -71,5 +71,7 @@ es:
     submit:
       group:
         update: 'Guardar perfil'
+      message:
+        create: 'Enviar mensaje'
 
 

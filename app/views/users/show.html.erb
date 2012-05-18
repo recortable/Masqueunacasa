@@ -8,11 +8,20 @@
     <%= avatar_image(user) %>
     <%= content_tag(:p, 'Administrador(a) de masqueunacasa.org') if user.admin? %>
     <div class="controls">
-      <%= link_box 'Cerrar sesión', logout_path %>
+      <%= link_box 'Cerrar sesión', logout_path if user == current_user %>
       <%= link_box 'Editar perfil', [:edit, user] if can? :edit, user %>
     </div>
   <% end %>
-  <%= corner_span('groups span4') do %>
+  <%= corner_span('messages span4', :none) do %>
+    <h2>Ponte en contacto</h2>
+    <p>Desde aquí puedes enviar un mensaje a esta persona</p>
+    <%= render 'messages/form' %>
+    <div class="messages clearfix">
+      <%= render user.received_messages %>
+    </div>
+
+  <% end %>
+  <%= corner_span('groups span4', :none) do %>
     <h2>Colectivos</h2>
     <% user.memberships.each do |m| %>
       <%= link_to m.group.name, m.group %>

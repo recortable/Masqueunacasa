@@ -5,6 +5,7 @@ Masqueunacasa::Application.routes.draw do
   match '/entrar' => 'user_sessions#new', as: :login
   match '/salir' => 'user_sessions#destroy', as: :logout
   resources :user_sessions, only: [:new, :create, :destroy]
+  resources :messages, only: [:create, :show]
 
 
   # Rutas que sólo se puede acceder desde un subdominio

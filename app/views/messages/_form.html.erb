@@ -1,0 +1,9 @@
+<%= simple_form_for message do |form| %>
+  <%= form.input :user_id, as: :hidden %>
+  <%= form.input :group_id, as: :hidden %>
+  <%= form.input :resource_type, as: :hidden %>
+  <%= form.input :resource_id, as: :hidden %>
+  <%= form.input :reply_to_id, as: :hidden %>
+  <%= form.input :body, label: false %>
+  <%= submit_button_for form %>
+<% end %>

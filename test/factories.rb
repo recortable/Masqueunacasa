@@ -40,4 +40,9 @@ FactoryGirl.define do
     user
     phase
   end
+
+  factory :message do
+    sequence(:body) {|n| "Message body #{n}" }
+    user
+  end
 end

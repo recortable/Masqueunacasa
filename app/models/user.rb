@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_many :memberships, dependent: :destroy
   has_many :groups, through: :memberships
 
+  has_many :received_messages, class_name: 'Message', as: :resource, order: 'created_at DESC'
+
   # EXTENSIONS
   extend FriendlyId
   friendly_id :name, use: :slugged
@@ -31,5 +33,10 @@ class User < ActiveRecord::Base
 
   def member?(group)
     Membership.where(group_id: group.id, user_id: self.id).first.present?
+  end
+
+  def receive_message(message)
+    message.resource = self
+    message.save
   end
 end

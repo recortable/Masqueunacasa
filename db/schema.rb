@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120516201314) do
+ActiveRecord::Schema.define(:version => 20120518085413) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -88,6 +88,22 @@ ActiveRecord::Schema.define(:version => 20120516201314) do
 
   add_index "memberships", ["group_id"], :name => "index_memberships_on_group_id"
   add_index "memberships", ["user_id"], :name => "index_memberships_on_user_id"
+
+  create_table "messages", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.integer  "reply_to_id"
+    t.text     "body"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "messages", ["group_id"], :name => "index_messages_on_group_id"
+  add_index "messages", ["reply_to_id"], :name => "index_messages_on_reply_to_id"
+  add_index "messages", ["resource_id", "resource_type"], :name => "index_messages_on_resource_id_and_resource_type"
+  add_index "messages", ["user_id"], :name => "index_messages_on_user_id"
 
   create_table "phases", :force => true do |t|
     t.string   "name_es",        :limit => 50

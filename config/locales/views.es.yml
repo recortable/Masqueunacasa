@@ -21,6 +21,10 @@ es:
       title: 'Colectivos'
       new_group: 'Añadir colectivo'
 
+  messages:
+    notices:
+      created: 'Mensaje enviado. ¡Gracias!'
+
   users:
     new:
       title: Nueva usuaria

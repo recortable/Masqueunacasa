@@ -1,5 +1,8 @@
 # Masqueunacasa
 
+## 17/06/2012
+- Mensajes a personas
+
 ## 16/05/2012
 - Página de error 500
 - Página de error 404
