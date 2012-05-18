@@ -8,6 +8,7 @@ FactoryGirl.define do
     email { "#{name}@email.com" }
     password { "#{name}-secret"}
     password_confirmation { password }
+    admin false
   end
 
   factory :group do
