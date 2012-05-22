@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120518113459) do
+ActiveRecord::Schema.define(:version => 20120522135030) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -54,6 +54,21 @@ ActiveRecord::Schema.define(:version => 20120518113459) do
   add_index "contents", ["slug"], :name => "index_contents_on_slug"
   add_index "contents", ["type"], :name => "index_contents_on_type"
   add_index "contents", ["user_id"], :name => "index_contents_on_user_id"
+
+  create_table "experiencies", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.string   "title_es",        :limit => 300
+    t.string   "title_ca",        :limit => 300
+    t.string   "slug_es",         :limit => 300
+    t.string   "slug_ca",         :limit => 300
+    t.text     "body_es"
+    t.text     "body_ca"
+    t.boolean  "published",                      :default => true
+    t.integer  "proposals_count"
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
+  end
 
   create_table "groups", :force => true do |t|
     t.integer  "user_id"

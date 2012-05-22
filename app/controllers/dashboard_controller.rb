@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
   expose (:themes) { 'textura01 azul_neon'}
   expose(:site) { Site.new }
 
-  def index
+  def welcome
   end
 
   def community

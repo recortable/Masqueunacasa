@@ -5,6 +5,12 @@ TAREAS
 - Añadir el modelo Question (las propuestas *pueden* estar asociadas a
   una pregunta)
 - Enviar emails cuando se envíen mensajes
+- Añadir .atom a los blog (tanto al general como a los de grupos) -> http://railscasts.com/episodes/87-generating-rss-feeds
+- La posibilidad de grupos cerrados (no te puedes apuntar)
+
+## 22/06/2012
+- Modelo y controlador para experiencias
+- El título muestra el grupo actual
 
 ## 17/06/2012
 - Ahora usamos 'subdomain' en vez de 'slug' para los subdominios de los

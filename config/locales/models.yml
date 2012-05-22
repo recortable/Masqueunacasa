@@ -5,6 +5,8 @@ es:
       page: 'página'
       phase: 'fase'
       group: 'colectivo'
+      proposal: 'propuesta'
+      experiencie: 'experiencia' 
 
   membership:
     states:

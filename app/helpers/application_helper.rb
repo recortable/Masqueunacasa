@@ -23,6 +23,11 @@ module ApplicationHelper
       {title: title, path: path}
   end
 
+  def render_card(&block)
+    content = block_given? ? capture(&block) : ''
+    render partial: 'application/card', locals: {content: content}
+  end
+
   def avatar_image(model, options = {})
     options.reverse_merge! class: 'responsive'
 

@@ -5,7 +5,7 @@ class Proposal < ActiveRecord::Base
   friendly_id :title, use: :simple_i18n
   has_paper_trail meta: {title: :title, group_id: :group_id }
 
-  before_validation :clone_locale
+  before_validation :prepare_i18n
 
   attr_accessible :title_es, :body_es, :description_es
   attr_accessible :title_ca, :body_ca, :description_ca
@@ -27,11 +27,4 @@ class Proposal < ActiveRecord::Base
     false
   end
 
-  protected
-  def clone_locale
-    self.title_es ||= self.title
-    self.title_ca ||= self.title
-    self.slug_es ||= self.slug
-    self.slug_ca ||= self.slug
-  end
 end

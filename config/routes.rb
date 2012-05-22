@@ -25,8 +25,10 @@ Masqueunacasa::Application.routes.draw do
     resources :phases
     resources :proposals
     resources :versions
+    resources :experiencies
   end
-  root to: 'dashboard#index'
+
+  root to: 'dashboard#welcome'
 
   match '/community' => 'dashboard#community', as: :community
   match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'

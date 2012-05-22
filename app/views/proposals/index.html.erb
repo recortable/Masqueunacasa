@@ -13,6 +13,8 @@
   <% end %>
   <%= corner_span 'span4' do %>
     <p>Estas son propuestas para buscar maneras de habitar diferentes</p>
-    <%= link_to 'Añadir propuesta', new_proposal_path, rel: 'new-proposal' if can? :new, Proposal %>
+    <div class="controls">
+      <%= link_box 'Añadir propuesta', new_proposal_path, rel: 'new-proposal' if can? :new, Proposal %>
+    </div>
   <% end %>
 </div>

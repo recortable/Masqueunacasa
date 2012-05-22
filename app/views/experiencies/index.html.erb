@@ -1,0 +1,16 @@
+<% title 'Experiencias' %>
+<%= render_banner 'Experiencias', experiencies_path %>
+
+<div class="experiencies cards">
+  <%= render_card do %>
+    <div class="avatar">
+      <img alt="Añadir experiencia" src="//cambelt.co/140x140/E%2B?font=Questrial&amp;font_size=48&amp;color=#cccccc,#333333">
+    </div>
+    <div class="info">
+      <%= link_to 'Añadir experiencia', new_experiencie_path %>
+    </div>
+  <% end %>
+
+  <%= render experiencies %>
+</div>
+

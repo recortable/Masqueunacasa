@@ -1,0 +1,5 @@
+<%= simple_form_for experiencie do |form| %>
+  <%= form.input :title %>
+  <%= form.input :body, as: :text, input_html: {class: 'rte'}  %>
+  <%= submit_button_for form %>
+<% end %>

@@ -1,0 +1,11 @@
+<%= render_banner 'Experiencias', experiencies_path %>
+
+<div class="row">
+<%= corner_span 'span12' do %>
+  <%= title experiencie.title %>
+  <div class="controls">
+    <%= link_box 'Editar', [:edit, experiencie] if can? :update, experiencie %>
+  </div>
+  <%= raw experiencie.body %>
+<% end %>
+</div>

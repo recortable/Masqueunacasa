@@ -5,6 +5,13 @@
 module Translatable
   extend ActiveSupport::Concern
 
+  def prepare_i18n
+    self.title_es ||= self.title
+    self.title_ca ||= self.title
+    self.slug_es ||= self.slug
+    self.slug_ca ||= self.slug
+  end
+
   module ClassMethods
     def translates(*columns)
       columns.each do |column|

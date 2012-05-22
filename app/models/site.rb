@@ -6,6 +6,10 @@ class Site
     nil
   end
 
+  def name
+    'Masqueunacasa'
+  end
+
   def site?
     true
   end
