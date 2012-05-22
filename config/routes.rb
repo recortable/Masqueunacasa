@@ -30,6 +30,7 @@ Masqueunacasa::Application.routes.draw do
 
   root to: 'dashboard#welcome'
 
+  match '/inicio' => 'dashboard#dashboard'
   match '/community' => 'dashboard#community', as: :community
   match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'
   match '/quinientos' => 'dashboard#quinientos'

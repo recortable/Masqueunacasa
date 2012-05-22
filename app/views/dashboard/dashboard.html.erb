@@ -1,0 +1,17 @@
+<% title 'Bienvenidx' %>
+<%= render_banner 'Masqueunacasa', root_path %>
+
+<div class="row">
+<%= corner_span 'span6' do %>
+  <h2>Habitapedia</h2>
+  <%= link_to 'Propuestas', proposals_path %>
+  <%= link_to 'Experiencias', experiencies_path %>
+  <%= link_to 'Agentes', groups_path %>
+<% end %>
+<%= corner_span 'span6' do %>
+  <h2>Comunidad</h2>
+  <%= link_to 'Blog', posts_path %>
+  <%= link_to 'Colectivos', groups_path %>
+  <%= link_to 'Personas', users_path %>
+<% end %>
+</div>

@@ -3,6 +3,9 @@ class DashboardController < ApplicationController
   expose (:themes) { 'textura01 azul_neon'}
   expose(:site) { Site.new }
 
+  def dashboard
+  end
+
   def welcome
   end
 
