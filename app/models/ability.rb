@@ -4,9 +4,11 @@ class Ability
   # Usemos solo :read, :create, :update, :destroy
   # NO USEMOS: :index, :view, :edit, :new
   def initialize(user, current_group)
+    # Any user
     can :read, Phase
     can :read, Proposal
     can :read, Group
+    can [:read, :index], Experiencie
 
     if user.blank?
       can :create, UserSession 
@@ -14,6 +16,8 @@ class Ability
       can :manage, :all
     else
       can :create, Group
+
+      can [:create, :update], Experiencie
 
       can :manage, Proposal
       can :delete, Proposal do |proposal|

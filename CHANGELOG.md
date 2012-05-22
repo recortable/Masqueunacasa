@@ -9,6 +9,7 @@ TAREAS
 - La posibilidad de grupos cerrados (no te puedes apuntar)
 
 ## 22/06/2012
+- Algunos test de integración para las experiencias
 - Modelo y controlador para experiencias
 - El título muestra el grupo actual
 

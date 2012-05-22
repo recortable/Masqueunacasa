@@ -13,5 +13,10 @@ class CreateExperiencies < ActiveRecord::Migration
       t.integer :proposals_count
       t.timestamps
     end
+
+    add_index :experiencies, :user_id
+    add_index :experiencies, :group_id
+    add_index :experiencies, :slug_es, uniqe: true
+    add_index :experiencies, :slug_ca, uniqe: true
   end
 end

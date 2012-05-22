@@ -16,6 +16,8 @@ class Experiencie < ActiveRecord::Base
   belongs_to :group
 
   validates_presence_of :title, :user
+  validates_uniqueness_of :title_es, :title_ca
+
   scope :published, where(published: true)
 
 end

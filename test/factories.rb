@@ -43,6 +43,12 @@ FactoryGirl.define do
     phase
   end
 
+  factory :experiencie do
+    sequence(:title) {|n| "Experiencie #{n}" }
+    body { "#{title} body" }
+    user
+  end
+
   factory :message do
     sequence(:body) {|n| "Message body #{n}" }
     user

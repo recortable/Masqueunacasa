@@ -70,6 +70,11 @@ ActiveRecord::Schema.define(:version => 20120522135030) do
     t.datetime "updated_at",                                       :null => false
   end
 
+  add_index "experiencies", ["group_id"], :name => "index_experiencies_on_group_id"
+  add_index "experiencies", ["slug_ca"], :name => "index_experiencies_on_slug_ca"
+  add_index "experiencies", ["slug_es"], :name => "index_experiencies_on_slug_es"
+  add_index "experiencies", ["user_id"], :name => "index_experiencies_on_user_id"
+
   create_table "groups", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
