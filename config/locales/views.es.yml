@@ -16,6 +16,11 @@ es:
       groups: Colectivos
       community: 'Comunidad'
 
+  categories:
+    notices:
+      created: 'Pregunta añadida.'
+      updated: 'Pregunta modificada.'
+
   dashboard:
     community:
       title: 'Comunidad'

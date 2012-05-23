@@ -11,6 +11,8 @@
   <% end %>
   <%= corner_span 'span4' do %>
     <h3>Propuesta</h3>
-    Fase: <%= proposal.phase.name %>
+    Fase: <%= link_to proposal.phase.name, proposal.phase %>
+  <br>
+    En <%= link_to proposal.category.title, [proposal.category.phase, proposal.category] if proposal.category_id? %>
 <% end %>
 </div>

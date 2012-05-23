@@ -9,14 +9,15 @@ class Proposal < ActiveRecord::Base
 
   attr_accessible :title_es, :body_es, :description_es
   attr_accessible :title_ca, :body_ca, :description_ca
-  attr_accessible :user_id, :phase_id, :group_id
-  attr_accessible :user, :phase, :group
+  attr_accessible :user_id, :phase_id, :group_id, :category_id
+  attr_accessible :user, :phase, :group, :category
   attr_accessible :title, :body, :description
   attr_accessible :published
 
   belongs_to :user
   belongs_to :group
   belongs_to :phase
+  belongs_to :category
 
   validates_presence_of :title, :title_es, :title_ca, :user, :phase
   

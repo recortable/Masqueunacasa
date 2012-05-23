@@ -1,5 +1,4 @@
 <%= simple_form_for [phase, category] do |form| %>
-  <%= form.association :phase, include_blank: false %>
   <%= form.input :title %>
   <%= form.input :question %>
   <%= form.input :body, as: :text, input_html: {class: 'rte'} %>

@@ -1,0 +1,19 @@
+<%= render_banner 'Pregunta', phase_path(phase) %>
+
+<div class="controls member_bar">
+  <%= link_box 'Editar pregunta', [:edit, phase, category] if can? :edit, category %>
+</div>
+<div class="row">
+  <%= corner_span 'span12' do %>
+    <h2><%= link_to phase.name, phase %></h2>
+    <%= title category.question %>
+    <%= raw category.body %>
+    <br>
+    <h3>Alternativas</h3>
+    <ul>
+      <% category.proposals.each do |proposal| %>
+        <li><%= link_to proposal.title, proposal %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

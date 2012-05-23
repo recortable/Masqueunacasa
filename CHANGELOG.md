@@ -8,6 +8,9 @@ TAREAS
 - La posibilidad de grupos cerrados (no te puedes apuntar)
 
 ## 23/06/2012
+- Enlace desde la propuesta a la pregunta
+- Enlace desde las preguntas a las propuestas
+- Test funcionales para category_controller
 - Test para el modelo Category
 - Modelo Category: es lo que anteriormente llamábamos Question
 
