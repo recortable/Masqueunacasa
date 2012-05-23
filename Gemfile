@@ -48,6 +48,7 @@ gem 'hoptoad_notifier'
 
 gem 'unicorn'
 gem 'capistrano'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'letter_opener'
