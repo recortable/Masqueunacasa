@@ -1,10 +1,11 @@
 class Experiencie < ActiveRecord::Base
   include Translatable
   extend FriendlyId
-  translates :title, :body, :slug
-  before_validation :prepare_i18n
   friendly_id :title, use: :simple_i18n
   has_paper_trail meta: { title: :title, group_id: :group_id }
+
+  translates :title, :body, :slug
+  translation_required :title, :slug
 
   attr_accessible :title, :body, :slug
   attr_accessible :user_id, :group_id, :user, :group

@@ -26,14 +26,14 @@ describe 'Phases integration' do
     phase.name_ca.must_equal 'Nom'
   end
 
-  it 'can edit phases' do
+  it 'can edit phase' do
     login_user create(:user, admin: true)
     phase = create(:phase)
     visit phases_path
     page.find("a[rel='edit-phase-#{phase.id}']")
   end
 
-  it 'updates phases' do
+  it 'update a phase' do
     login_user create(:user, admin: true)
     phase = create(:phase)
     visit edit_phase_path(phase)

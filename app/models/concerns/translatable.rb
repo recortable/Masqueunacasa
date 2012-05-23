@@ -5,13 +5,6 @@
 module Translatable
   extend ActiveSupport::Concern
 
-  def prepare_i18n
-    self.title_es ||= self.title
-    self.title_ca ||= self.title
-    self.slug_es ||= self.slug
-    self.slug_ca ||= self.slug
-  end
-
   # Copia el valor de la columna a las traducciones que no tienen nada
   def propagate_translation(column)
     value = send(column)

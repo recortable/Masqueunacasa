@@ -1,11 +1,11 @@
 class Proposal < ActiveRecord::Base
   include Translatable
   extend FriendlyId
-  translates :title, :body, :slug, :description
   friendly_id :title, use: :simple_i18n
   has_paper_trail meta: {title: :title, group_id: :group_id }
 
-  before_validation :prepare_i18n
+  translates :title, :body, :slug, :description
+  translation_required :title, :slug
 
   attr_accessible :title_es, :body_es, :description_es
   attr_accessible :title_ca, :body_ca, :description_ca

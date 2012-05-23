@@ -28,14 +28,18 @@ Masqueunacasa::Application.routes.draw do
     resources :groups
     resources :posts
     resources :users
-    resources :phases, only: [:show, :update, :destroy], path: '' do
-      resources :categories, except: [:index]
-    end
-    resources :phases, except: [:show, :update, :destroy]
-
     resources :proposals
     resources :versions
     resources :experiencies
+
+    # Esto es un truco para mostrar el nombre de las fases
+    # sin el prefijo, es decir, en vez de "fases/mi_fase" 
+    # se verá "mi_fase"
+    resources :phases, except: [:show, :update, :destroy]
+    resources :phases, only: [:show, :update, :destroy], path: '' do
+      resources :categories, except: [:index]
+    end
+
   end
 
 

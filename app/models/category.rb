@@ -2,7 +2,6 @@ class Category < ActiveRecord::Base
   include Translatable
   extend FriendlyId
   friendly_id :title, use: :simple_i18n
-  before_validation :prepare_i18n
 
   translates :title, :slug, :question, :body
   translation_required :title, :slug, :question
