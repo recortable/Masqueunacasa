@@ -11,6 +11,7 @@ es:
   versions: 'actividad'
   community: 'comunidad'
   experiencies: 'experiencias'
+  categories: 'preguntas'
 
   edit: 'editar'
   new: 'nueva'

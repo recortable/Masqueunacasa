@@ -22,6 +22,10 @@ class Site
     false
   end
 
+  def phases
+    Phase.order('position ASC')
+  end
+
   def groups
     Group.order('updated_at DESC')
   end

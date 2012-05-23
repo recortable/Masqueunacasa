@@ -53,4 +53,11 @@ FactoryGirl.define do
     sequence(:body) {|n| "Message body #{n}" }
     user
   end
+
+  factory :category do
+    sequence(:title) {|n| "Category #{n}" }
+    question { "#{title} question" }
+    user
+    phase
+  end
 end

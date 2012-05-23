@@ -2,11 +2,14 @@
 
 TAREAS
 - Forzar que la cabecera de los grupos tenga 200 pixels de alto
-- Añadir el modelo Question (las propuestas *pueden* estar asociadas a
   una pregunta)
 - Enviar emails cuando se envíen mensajes
 - Añadir .atom a los blog (tanto al general como a los de grupos) -> http://railscasts.com/episodes/87-generating-rss-feeds
 - La posibilidad de grupos cerrados (no te puedes apuntar)
+
+## 23/06/2012
+- Test para el modelo Category
+- Modelo Category: es lo que anteriormente llamábamos Question
 
 ## 22/06/2012
 - Algunos test de integración para las experiencias

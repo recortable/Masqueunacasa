@@ -1,0 +1,17 @@
+<%= render_banner phase.name, phase %>
+
+<div class="controls bloc">
+  <%= link_to 'Editar fase', [:edit, phase] if can? :update, phase %>
+  <%= link_to 'Añadir pregunta', [:new, phase, :category] if can? :create, Category %>
+</div>
+
+<div class="row">
+  <%= corner_span 'span12' do %>
+    <%= title phase.name %>
+    <% phase.categories.each do |category| %>
+      <%= link_to category.question, [phase, category] %>
+    <% end %>
+  <% end %>
+</div>
+
+

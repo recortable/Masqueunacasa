@@ -34,6 +34,11 @@ es:
       created: 'Colectivo añadido.'
       updated: 'Datos del coletivo actualizados. Gracias'
 
+  phases:
+    notices:
+      created: 'Fase añadida.'
+      updated: 'Fase modificada.'
+
   messages:
     notices:
       created: 'Mensaje enviado. ¡Gracias!'

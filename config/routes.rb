@@ -17,23 +17,27 @@ Masqueunacasa::Application.routes.draw do
     resources :groups, only: [:update, :show]
   end
 
+  root to: 'dashboard#welcome'
+  match '/inicio' => 'dashboard#dashboard'
+  match '/community' => 'dashboard#community', as: :community
+  match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'
+  match '/quinientos' => 'dashboard#quinientos'
+
   # Rutas sólo accesibles desde el dominio principal 
   constraints subdomain: /^$/ do
     resources :groups
     resources :posts
     resources :users
-    resources :phases
+    resources :phases, only: [:show, :update, :destroy], path: '' do
+      resources :categories, except: [:index]
+    end
+    resources :phases, except: [:show, :update, :destroy]
+
     resources :proposals
     resources :versions
     resources :experiencies
   end
 
-  root to: 'dashboard#welcome'
-
-  match '/inicio' => 'dashboard#dashboard'
-  match '/community' => 'dashboard#community', as: :community
-  match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'
-  match '/quinientos' => 'dashboard#quinientos'
 
   match "/enter/:id" => "users#enter", as: :enter 
   namespace :ckeditor do

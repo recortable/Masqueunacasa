@@ -4,12 +4,13 @@ class PhasesController < ApplicationController
   expose(:phase)
 
   def index
-    authorize! :read, Phase
+    authorize! :index, Phase
     respond_with phases
   end
 
   def show
-    redirect_to phases_path
+    authorize! :read, phase
+    respond_with phase
   end
 
   def new

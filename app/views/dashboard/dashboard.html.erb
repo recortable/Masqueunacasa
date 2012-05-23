@@ -4,6 +4,11 @@
 <div class="row">
 <%= corner_span 'span6' do %>
   <h2>Habitapedia</h2>
+  <ul>
+    <% site.phases.each do |phase| %>
+      <li><%= link_to phase.name, phase %></li>
+    <% end %>
+  </ul>
   <%= link_to 'Propuestas', proposals_path %>
   <%= link_to 'Experiencias', experiencies_path %>
   <%= link_to 'Agentes', groups_path %>

@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120522135030) do
+ActiveRecord::Schema.define(:version => 20120523105600) do
+
+  create_table "categories", :force => true do |t|
+    t.integer  "phase_id"
+    t.integer  "user_id"
+    t.string   "title_es",    :limit => 100
+    t.string   "title_ca",    :limit => 100
+    t.string   "slug_es",     :limit => 100
+    t.string   "slug_ca",     :limit => 100
+    t.string   "question_es", :limit => 300
+    t.string   "question_ca", :limit => 300
+    t.text     "body_ca"
+    t.text     "body_es"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "categories", ["phase_id"], :name => "index_categories_on_phase_id"
+  add_index "categories", ["slug_ca"], :name => "index_categories_on_slug_ca", :unique => true
+  add_index "categories", ["slug_es"], :name => "index_categories_on_slug_es", :unique => true
+  add_index "categories", ["user_id"], :name => "index_categories_on_user_id"
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -161,8 +181,10 @@ ActiveRecord::Schema.define(:version => 20120522135030) do
     t.text     "settings"
     t.datetime "created_at",                                       :null => false
     t.datetime "updated_at",                                       :null => false
+    t.integer  "category_id"
   end
 
+  add_index "proposals", ["category_id"], :name => "index_proposals_on_category_id"
   add_index "proposals", ["slug_ca"], :name => "index_proposals_on_slug_ca"
   add_index "proposals", ["slug_es"], :name => "index_proposals_on_slug_es"
 
