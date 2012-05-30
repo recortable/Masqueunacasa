@@ -38,6 +38,9 @@ es:
     notices:
       created: 'Colectivo añadido.'
       updated: 'Datos del coletivo actualizados. Gracias'
+    show:
+      get_in_touch: Ponte en contacto
+      you_can_send_message: Desde aquí puedes enviar un mensaje a este grupo
 
   phases:
     notices:

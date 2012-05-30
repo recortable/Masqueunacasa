@@ -7,6 +7,9 @@ TAREAS
 - Añadir .atom a los blog (tanto al general como a los de grupos) -> http://railscasts.com/episodes/87-generating-rss-feeds
 - La posibilidad de grupos cerrados (no te puedes apuntar)
 
+## 30/06/2012
+  - Algo de investigación con GroupMailer. Solo development. No estilos. Con letter_opener 
+
 ## 23/06/2012
 - Enlace desde la propuesta a la pregunta
 - Enlace desde las preguntas a las propuestas
