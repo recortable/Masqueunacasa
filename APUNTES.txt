@@ -1,0 +1,60 @@
+/**************************************
+********* TIPOS DE GRUPOS *************
+**************************************/
+
+ACTIVOS ABIERTOS:
+  - Tienen subdominio
+  - Tienen wiki
+  - Tienen mensajes internos
+  - Se puede mandar peticiones para implicarse en el grupo
+  - Se pueden mandar mensajes al grupo sin pertenecer a él
+
+ACTIVOS CERRADOS:
+  - Tienen subdominio
+  - Tienen wiki
+  - Tienen mensajes internos
+  - NO se puede mandar peticiones para implicarse en el grupo
+  - NO se pueden mandar mensajes al grupo sin pertenecer a él
+
+INACTIVOS:
+  - NO tienen subdominio
+  - NO tienen wiki
+  - NO tienen mensajes internos
+  - NO se puede mandar peticiones para implicarse en el grupo
+  - NO se pueden mandar mensajes al grupo sin pertenecer a él
+
+
+/**************************************
+********* TIPOS DE MENSAJES ***********
+**************************************/
+
+EXTERNO A UN GRUPO
+  - Se manda desde la página de perfil del grupo
+  - Reciben mail todos los admin y los member del grupo destinatario
+  - user_id: null
+  - group_id: id del grupo destinatario
+  - resource_type: group
+  - resource_id: id del grupo destinatario
+
+INTERNO DE UN GRUPO
+  - Se manda desde ??
+  - Reciben email todos los admin y member del grupo.
+  - user_id: id del remitente
+  - group_id: id del current_group?
+  - resource_type: group
+  - resource_id: id de current_group?
+
+COMENTARIO EN UN CONTENIDO:
+  - Reciben email todos los admin y member del grupo.
+  - user_id: id del remitente si está logueado?
+  - group_id: grupo al que pertenece el contenido
+  - resource_type: tipo de contenido
+  - resource_id: id del contenido
+
+MENSAJE A UN USUARIO:
+  - Se manda desde página de perfil del usuario
+  - Recibe mail el usuario destinatario
+  - user_id: remitente del mensaje si está logueado
+  - group_id: ??
+  - resource_type: user
+  - resource_id: id del destinatario
