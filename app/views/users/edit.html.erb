@@ -9,6 +9,10 @@
           <%= form.input :password %>
           <%= form.input :password_confirmation %>
           <%= form.input :admin, wrapper: :checkbox if current_user && current_user.admin? %>
+          <div class="row">
+            <div id="map_canvas" class="span" style="width:300px; height:300px">
+            </div>
+          </div>
         </div>
         <div class="span7">
           <%= form.input :avatar_image %>

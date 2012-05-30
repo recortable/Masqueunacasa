@@ -3,6 +3,7 @@
 //= require bootstrap
 //= require ckeditor/init
 //= require_self
+//= require maps
 
 CKEDITOR.replaceClass = 'rte';
 
