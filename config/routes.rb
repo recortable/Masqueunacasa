@@ -31,6 +31,7 @@ Masqueunacasa::Application.routes.draw do
     resources :proposals
     resources :versions
     resources :experiencies
+    resources :announcements
 
     # Esto es un truco para mostrar el nombre de las fases
     # sin el prefijo, es decir, en vez de "fases/mi_fase" 

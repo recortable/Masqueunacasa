@@ -60,4 +60,11 @@ FactoryGirl.define do
     user
     phase
   end
+
+  factory :announcement do
+    sequence(:title) {|n| "Announcement #{n}" }
+    body { "#{title} body" }
+    user
+    group
+  end
 end
