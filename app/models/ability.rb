@@ -9,6 +9,7 @@ class Ability
     can :read, Proposal
     can :read, Group
     can [:read, :index], Experiencie
+    can :read, Category
 
     if user.blank?
       can :create, UserSession 

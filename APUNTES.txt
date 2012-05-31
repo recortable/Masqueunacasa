@@ -1,3 +1,26 @@
+/*************************************
+****** MODELOS HABITAPEDIA ***********
+**************************************/
+FASES
+  - Grupos de categorías
+
+CATEGORIAS (aka Preguntas)
+  - Antes conocidos como preguntas
+  - Sirven para categorizar las propuestas
+
+PROPUESTAS
+  - Documentación de una manera de habitar
+  - Pueden estar asociadas a una o más experiencias
+  - Pueden estar asociadas a uno o más recursos
+
+EXPERIENCIAS
+  - Documentan un ejemplo de manera de habitar
+  - Puede estar asociada a una o más propuestas
+
+RECURSOS
+  - Algún tipo de documentación externa a masqueunacasa.org que
+    complementa la información de ésta
+
 /**************************************
 ********* TIPOS DE GRUPOS *************
 **************************************/
