@@ -16,6 +16,11 @@ es:
       groups: Colectivos
       community: 'Comunidad'
 
+  announcement:
+    notices:
+      created: 'Mensaje colectivo preparado.'
+      updated: 'Mensaje colectivo modificado.'
+
   categories:
     notices:
       created: 'Pregunta añadida.'

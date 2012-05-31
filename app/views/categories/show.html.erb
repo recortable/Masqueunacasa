@@ -1,6 +1,7 @@
 <%= render_banner 'Pregunta', phase_path(phase) %>
 
 <div class="controls member_bar">
+  <%= link_box 'Volver', phase %>
   <%= link_box 'Editar pregunta', [:edit, phase, category] if can? :edit, category %>
 </div>
 <div class="row">

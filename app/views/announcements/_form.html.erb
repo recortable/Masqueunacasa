@@ -1,0 +1,6 @@
+<%= simple_form_for announcement do |form| %>
+  <%= form.input :title %>
+  <%= form.input :scope, collection: tc('announcement.scopes', announcement_scopes), include_blank: false %>
+  <%= form.input :body %>
+  <%= submit_button_for form %>
+<% end %>

@@ -18,6 +18,7 @@ class Group < ActiveRecord::Base
   has_many :posts
   has_many :pages
   has_many :messages
+  has_many :announcements
 
   mount_uploader :banner_image, GroupBannerUploader
   mount_uploader :avatar_image, GroupAvatarUploader

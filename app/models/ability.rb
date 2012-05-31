@@ -28,19 +28,15 @@ class Ability
       can :read, Membership
       cannot :update, UserSession
 
-      can :update, Group do |group|
-        group.member_level?(user, [:owner, :member])
-      end
-
-      can :manage, Post do |post|
-        group = post.group
-        group.member_level?(user, [:owner, :member])
-      end
-
-      can :manage, Page do |page|
-        group = page.group
-        group.member_level?(user, [:owner, :member])
-      end
+      can(:update, Group) {|group| participant?(group, user) }
+      can(:manage, Post) {|post| participant?(post.group, user) }
+      can(:manage, Page) {|page| participant?(page.group, user) }
+      can(:manage, Announcement) {|ann| participant?(ann.group, user) }
     end
+  end
+
+  protected
+  def participant?(group, user)
+    group.member_level?(user, [:owner, :member])
   end
 end

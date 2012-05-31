@@ -1,0 +1,20 @@
+
+<%= current_group.site? ? render_banner('Correo', announcements_path) : group_header('Correo') %>
+
+<% if current_membership %>
+  <div class="member_bar controls">
+    <%= link_box 'Nuevo correo', new_announcement_path, rel: 'new-announcement' if can? :new, Announcement %>
+  </div>
+<% end %>
+
+<div class="row">
+  <%= corner_span 'span8' do %>
+<%= title "Correo de #{current_group.name}" %>
+    <% announcements.each do |ann| %>
+      <%= div_for ann do %>
+        <%= link_to ann.title, ann %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+

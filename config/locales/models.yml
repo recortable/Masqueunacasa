@@ -1,6 +1,7 @@
 es:
   activerecord:
     models:
+      announcement: 'mensaje colectivo'
       user: 'perfil'
       page: 'página'
       phase: 'fase'
@@ -15,6 +16,11 @@ es:
       request: 'Futurx participante'
       follow: 'Seguidor/a'
     status: "Eres %{state} en el grupo '%{group}'"
+
+  announcement:
+    scopes:
+      members: 'Los participantes del grupo'
+      all: 'Los participantes y los seguidores del grupo'
 
 ca:
   activerecord:

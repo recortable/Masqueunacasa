@@ -10,7 +10,7 @@ class Announcement < ActiveRecord::Base
   attr_accessible :scope, :title, :body
 
   before_validation :set_default_scope
-  validates_presence_of :user_id, :group_id, :scope, :title
+  validates_presence_of :user_id, :group_id, :scope, :title, :body
 
   # Define a quién se envía el mensaje
   SCOPES = [
@@ -26,6 +26,6 @@ class Announcement < ActiveRecord::Base
 
   protected
   def set_default_scope
-    self.scope ||= :all
+    self.scope ||= 'all'
   end
 end

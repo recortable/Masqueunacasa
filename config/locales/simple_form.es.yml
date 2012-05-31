@@ -20,6 +20,9 @@ es:
         title_ca: 'Título can catalán'
         body_ca: 'Texto en catalán'
 
+      announcement:
+        scope: 'Quién recibirá el correo'
+
       group:
         slug: 'Subdominio'
         banner_image: 'Imágen de cabecera'

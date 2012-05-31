@@ -61,6 +61,10 @@ class IntegrationTest < MiniTest::Spec
   def click_submit(name = 'commit')
     page.find("input[name=\"#{name}\"]").click
   end
+
+  def find_link(rel)
+    page.find("a[rel='#{rel}']")
+  end
 end
 
 class HelperTest < MiniTest::Spec

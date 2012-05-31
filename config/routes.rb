@@ -15,6 +15,11 @@ Masqueunacasa::Application.routes.draw do
     resources :memberships
     resources :pages
     resources :groups, only: [:update, :show]
+    resources :announcements do
+      put :send_email, on: :member
+      put :probe, on: :member
+    end
+
   end
 
   root to: 'dashboard#welcome'
@@ -31,7 +36,6 @@ Masqueunacasa::Application.routes.draw do
     resources :proposals
     resources :versions
     resources :experiencies
-    resources :announcements
 
     # Esto es un truco para mostrar el nombre de las fases
     # sin el prefijo, es decir, en vez de "fases/mi_fase" 
