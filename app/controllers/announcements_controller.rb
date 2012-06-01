@@ -1,4 +1,5 @@
 class AnnouncementsController < ApplicationController
+  include CurrentUser
   respond_to :html
 
   expose(:announcements) { current_group.announcements }
@@ -42,12 +43,16 @@ class AnnouncementsController < ApplicationController
   end
 
   def probe
-    # TODO: enviar el correo al current_user
+    authorize! :send, announcement
+    AnnouncementMailer.probe(announcement, current_user.email).deliver
     redirect_to announcement
   end
 
   def send_email
-    # TODO: enviar el correo y marcar como enviado
+    authorize! :send, announcement
+    announcement.sent_at = Time.now
+    AnnouncementMailer.send_email(announcement).deliver
+    announcement.save
     redirect_to announcement
   end
 

@@ -2,7 +2,7 @@
 
 <div class="member_bar controls">
   <%= link_box 'Volver', announcements_path %>
-  <%= link_box 'Editar', [:edit, announcement] if can? :update, announcement %>
+  <%= link_box 'Editar', [:edit, announcement] if can?(:update, announcement) && !announcement.sent_at %>
 </div>
 
 <div class="row">
@@ -11,7 +11,7 @@
     <%= title announcement.title %>
     <% if announcement.sent_at? %>
       Enviado hace <%= time_ago_in_words announcement.sent_at %>
-  <% else %>
+    <% else %>
     <h3>Este mensaje colectivo aún no ha sido enviado</h3>
     <div class="controls">
       <%= link_box 'Enviar correo de prueba', probe_announcement_path(announcement), method: :put if can? :send, announcement %>

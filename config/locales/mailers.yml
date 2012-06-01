@@ -1,0 +1,9 @@
+es:
+  announcement_mailer:
+    probe:
+      test_mail: Correo electrónico de prueba
+
+ca:
+  announcement_mailer:
+    probe:
+      test_mail: Correu electrònic de prova

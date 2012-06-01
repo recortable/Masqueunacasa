@@ -59,7 +59,7 @@ EXTERNO A UN GRUPO
   - resource_type: group
   - resource_id: id del grupo destinatario
 
-INTERNO DE UN GRUPO
+INTERNO DE UN GRUPO == announcements
   - Se manda desde ??
   - Reciben email todos los admin y member del grupo.
   - user_id: id del remitente
