@@ -3,9 +3,14 @@
 
 .main-header {
   .banner {
-    min-height: 100px;
+    min-height: 200px;
     background-color: $fondo;
     position: relative;
+
+    img.responsive {
+      position: absolute;
+      bottom: 0;
+    }
 
     .overlay {
       position: absolute;

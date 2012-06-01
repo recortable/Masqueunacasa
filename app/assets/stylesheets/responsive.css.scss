@@ -8,12 +8,24 @@
     margin-bottom: 20px;
     padding-bottom: 20px;
   }
+
+  .main-header {
+    .banner {
+      min-height: 160px;
+    }
+  }
 }
 
 @media (max-width: 767px) {
   html.dashboard div#main .info .span4 {
     padding: 0;
     margin: 0 0 20px;
+  }
+
+  .main-header {
+    .banner {
+      min-height: 130px;
+    }
   }
 }
 
@@ -23,8 +35,14 @@
     margin: 1.5em 2em 0;
     padding-bottom: 50.5%
   }
+
+  .main-header {
+    .banner {
+      min-height: 110px;
+    }
+  }
 }
 
 @media (max-width: 480px) {
-
+  
 }

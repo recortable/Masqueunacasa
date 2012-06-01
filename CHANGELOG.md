@@ -1,11 +1,13 @@
 # Masqueunacasa
 
 TAREAS
-- Forzar que la cabecera de los grupos tenga 200 pixels de alto
-  una pregunta)
-- Enviar emails cuando se envíen mensajes
-- Añadir .atom a los blog (tanto al general como a los de grupos) -> http://railscasts.com/episodes/87-generating-rss-feeds
-- La posibilidad de grupos cerrados (no te puedes apuntar)
+1) Forzar que la cabecera de los grupos tenga 200 pixels de alto
+2) Enviar emails cuando se envíen mensajes (pendiente configuración smtp)
+3) Añadir .atom a los blog (tanto al general como a los de grupos) -> http://railscasts.com/episodes/87-generating-rss-feeds
+4) La posibilidad de grupos cerrados (no te puedes apuntar)
+
+## 02/06/2012
+- Altura de las cabeceras adaptativa (es lo que se pretendía con la tarea 1?)
 
 ## 23/06/2012
 - Enlace desde la propuesta a la pregunta
