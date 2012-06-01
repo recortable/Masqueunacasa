@@ -2,7 +2,8 @@
 
 <div class="member_bar controls">
   <%= link_box 'Volver', announcements_path %>
-  <%= link_box 'Editar', [:edit, announcement] if can?(:update, announcement) && !announcement.sent_at %>
+  <%= link_box 'Editar', [:edit, announcement] if can?(:update, announcement) &&
+                   announcement.sent_at.nil? %>
 </div>
 
 <div class="row">

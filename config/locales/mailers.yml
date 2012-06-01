@@ -3,7 +3,11 @@ es:
     probe:
       test_mail: Correo electrónico de prueba
 
+    intro_text: "Se ha mandado el siguiente mensaje para el grupo %{group} desde masqueunacasa.org"
+
 ca:
   announcement_mailer:
     probe:
       test_mail: Correu electrònic de prova
+
+    intro_text: "S'ha enviat el seguent missatge per al grup %{group} des de masqueunacasa.org"

@@ -2,4 +2,8 @@
   ** <%= @notice %> **
 <% end %>
 
-      
+<%= t("announcement_mailer.intro_text", group: @announcement.group.name) %>
+
+<%= @announcement.title.upcase %>
+
+<%= strip_tags @announcement.body %>  
