@@ -30,13 +30,13 @@ class AnnouncementMailer < ActionMailer::Base
       return group.users.map(&:email)
     elsif scope == "members"
       group.users.each do |user|
-        if group.member_level?(user, "member")
+        if group.member_level?(user, "member") | group.member_level?(user, "owner")
           recipients = recipients + ", " + user.email
         end
       end
     elsif scope == "admin"
       group.users.each do |user|
-        if group.member_level?(user, "admin")
+        if group.member_level?(user, "owner")
           recipients = recipients + ", " + user.email
         end
       end
