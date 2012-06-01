@@ -2,7 +2,7 @@
             height:auto; 
             float:left; 
             background: url('<%= root_url %>assets/email/fondo_announcement.png');">
-  <div style="width:600px; 
+  <div style="max-width:600px; 
               height:auto; 
               margin: 20px auto; 
               background:#F1F1E7">
@@ -15,7 +15,10 @@
                 width:100%; 
                 float:left">
       <img src="<%= @avatar %>" style="float:left" />
-      <h1 style="width: 310px;
+      <img src="<%= root_url %>assets/email/mquc_colectivos.png" 
+           style="float:right" />
+      <h1 style="width: 90%;
+                 max-width: 310px;
                  margin-top: 10px;
                  margin-left: 8px;
                  margin-bottom: 0;
@@ -30,17 +33,16 @@
       </h1>
       <%= link_to @announcement.group.subdomain + ".masqueunacasa.org",
         group_url(@announcement.group),
-        style: "width:312px;
+        style: "width: 90%;
+                max-width:310px;
                 margin-top:0;
                 margin-left:8px;
-                padding: 3px 0 3px 10px;
+                padding: 3px 0 3px 12px;
                 float:left;
                 border-bottom: 2px solid #14E3B7;
                 border-left: 2px solid #14E3B7;
                 font-family: sans-serif;
                 font-size: 13px;" %>
-      <img src="<%= root_url %>assets/email/mquc_colectivos.png" 
-           style="float:right" />
     </div>
     <div style="width:75%;
                 clear:both; 
