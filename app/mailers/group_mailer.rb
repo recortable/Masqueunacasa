@@ -7,8 +7,9 @@ class GroupMailer < ActionMailer::Base
   #   en.group_mailer.message_email.subject
   #
   def message_email(message)
-    @greeting = "Hi"
+    @message = message
 
-    mail to: "danigb@gmail.com", subject: "Probando"
+    mail to: message.group.users.map(&:email), 
+         subject: t("group_mailer.message_email.subject", group: message.group.name)
   end
 end

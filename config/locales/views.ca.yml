@@ -18,10 +18,15 @@ ca:
   groups:
     new:
       title: 'Afegir col.lectiu'
-
     index:
       title: 'Col·lectius'
       new_group: 'Afegir col·lectiu'
+    notices:
+      created: 'Col·lectiu afegit.'
+      updated: 'Dades del col·lectiu actualitzades. Gràcies!'
+    show:
+      get_in_touch: "Posa't en contacte"
+      you_can_send_message: Des d'aquí pots enviar un missatge a aquest grup
 
   user:
     new:

@@ -9,8 +9,8 @@
     </div>
   <% end %>
   <%= corner_span('messages span4', :none) do %>
-    <h2>Ponte en contacto</h2>
-    <p>Desde aquí puedes enviar un mensaje a este grupo</p>
+    <h2><%= t('.get_in_touch') %></h2>
+    <p><%= t('.you_can_send_message')%></p>
     <%= render 'messages/form' %>
     <div class="messages clearfix">
       <%= render group.received_messages %>

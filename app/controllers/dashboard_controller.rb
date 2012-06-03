@@ -7,6 +7,7 @@ class DashboardController < ApplicationController
   end
 
   def welcome
+    # UserMailer.registration_confirmation().deliver
   end
 
   def community

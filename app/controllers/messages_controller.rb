@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
     message.group_id = current_group.id
     message.user = current_user
     if message.save
+      GroupMailer.message_email(message).deliver if Rails.env.development?
       flash[:notice] = t('messages.notices.created') if message.save
     else
       flash[:notice] = message.errors.inspect

@@ -9,6 +9,9 @@ TAREAS
 ## 02/06/2012
 - Altura de las cabeceras adaptativa (es lo que se pretendía con la tarea 1?)
 
+## 30/06/2012
+  - Algo de investigación con GroupMailer. Solo development. No estilos. Con letter_opener 
+
 ## 23/06/2012
 - Enlace desde la propuesta a la pregunta
 - Enlace desde las preguntas a las propuestas
