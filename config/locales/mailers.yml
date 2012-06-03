@@ -4,6 +4,10 @@ es:
       test_mail: Correo electrónico de prueba
 
     intro_text: "Se ha mandado el siguiente mensaje para el grupo %{group} desde masqueunacasa.org"
+  group_mailer:
+    message_email:
+      subject: Se ha mandado un nuevo mensaje al grupo %{group}
+      email_intro: Alguien mandó el siguiente mensaje al grupo
 
 ca:
   announcement_mailer:
@@ -11,3 +15,7 @@ ca:
       test_mail: Correu electrònic de prova
 
     intro_text: "S'ha enviat el seguent missatge per al grup %{group} des de masqueunacasa.org"
+  group_mailer:
+    message_email:
+      subject: "S'ha enviat un nou missatge al grup %{group}"
+      email_intro: Algú ha enviat el seguent missatge al grup

@@ -6,25 +6,28 @@ TAREAS
 3) Añadir .atom a los blog (tanto al general como a los de grupos) -> http://railscasts.com/episodes/87-generating-rss-feeds
 4) La posibilidad de grupos cerrados (no te puedes apuntar)
 
+## 03/06/2012
+- Se puede mandar un mensaje (correo-e) a los miembros de un grupo desde su página de perfil
+
 ## 02/06/2012
 - Altura de las cabeceras adaptativa (es lo que se pretendía con la tarea 1?)
 
-## 30/06/2012
+## 30/05/2012
   - Algo de investigación con GroupMailer. Solo development. No estilos. Con letter_opener 
 
-## 23/06/2012
+## 23/05/2012
 - Enlace desde la propuesta a la pregunta
 - Enlace desde las preguntas a las propuestas
 - Test funcionales para category_controller
 - Test para el modelo Category
 - Modelo Category: es lo que anteriormente llamábamos Question
 
-## 22/06/2012
+## 22/05/2012
 - Algunos test de integración para las experiencias
 - Modelo y controlador para experiencias
 - El título muestra el grupo actual
 
-## 17/06/2012
+## 17/05/2012
 - Ahora usamos 'subdomain' en vez de 'slug' para los subdominios de los
   grupos
 - No todos los grupos tienen herramientas
