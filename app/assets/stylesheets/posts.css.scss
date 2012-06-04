@@ -63,12 +63,21 @@ div.post.row {
 }
 
 div.archive {
-  ul {
-    list-style: circle outside;
-    margin: 0 16px;
+  ul.months {
+    list-style: none;
+    margin: 10px 0 0;
 
     li {
-      margin-top: 5px;
+      margin: 8px 0;
+
+      ul {
+        list-style: circle outside;
+        margin: 0 16px;
+
+        li {
+          margin: 5px;
+        }
+      }
     }
   }
 }

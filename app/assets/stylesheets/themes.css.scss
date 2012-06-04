@@ -32,6 +32,10 @@ html.naranja {
 }
 
 html.azul_neon {
+  a, h1, h2, h3, h4, h5, h6 {
+    color: $azul_neon;
+  }
+
   #session {
     background-color: $azul_neon;
     .links, .session, .lang-selector {
@@ -50,6 +54,10 @@ html.azul_neon {
 
 
 html.verde_neon {
+  a, h1, h2, h3, h4, h5, h6 {
+    color: $verde_neon;
+  }
+
   #session {
     background-color: $verde_neon;
     .links, .session, .lang-selector {
@@ -67,6 +75,10 @@ html.verde_neon {
 }
 
 html.azul_gris {
+  a, h1, h2, h3, h4, h5, h6 {
+    color: $azul_gris;
+  }
+
   #session {
     background-color: $azul_gris;
     .links, .session, .lang-selector {
