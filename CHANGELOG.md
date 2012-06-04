@@ -8,6 +8,7 @@ TAREAS
 ## 03/06/2012
 - Se puede mandar un mensaje (correo-e) a los miembros de un grupo desde su página de perfil
 - Atom feeds para los blogs
+- Se pueden cerrar los grupos, pero aún no tiene efectos...
 
 ## 02/06/2012
 - Altura de las cabeceras adaptativa (es lo que se pretendía con la tarea 1?)

@@ -28,6 +28,7 @@ es:
         banner_image: 'Imágen de cabecera'
         avatar_image: 'Imágen de grupo'
         description: 'Breve resúmen'
+        closed: 'Cerrar el grupo?'
 
       post:
         image: 'Imágen principal'
@@ -52,13 +53,11 @@ es:
         phase: 'Fase en la que se incluye'
 
     hints:
-      post:
-        image: 'Esta imágen aparecerá al principio del post. Debe tener un ancho de 510px'
-        embed: 'En este espacio puedes pegar el código de insertar vídeo de youtube, vimeo, etcétera... Otros códigos iframe también sirven'
+      image: 'Esta imágen aparecerá al principio de la página. Debe tener un ancho de 510px'
+      embed: 'En este espacio puedes pegar el código de insertar vídeo de youtube, vimeo, etcétera... Otros códigos iframe también sirven'
 
-      page:
-        image: 'Esta imágen aparecerá al principio de la página. Debe tener un ancho de 510px'
-        embed: 'En este espacio puedes pegar el código de insertar vídeo de youtube, vimeo, etcétera... Otros códigos iframe también sirven'
+      group:
+        closed: 'Marcalo si no quieres que otros usuarios se unan al grupo'
 
       media_item:
         url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'

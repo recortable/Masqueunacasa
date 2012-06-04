@@ -27,4 +27,18 @@ describe 'Groups integration' do
     group.name.must_equal 'Name'
     group.description.must_equal 'Description'
   end
+
+  it 'can close a group' do
+    group = create(:group)
+    login_user group.user
+    puts group.inspect
+    puts group.user.inspect
+    puts group.memberships.inspect
+    subdomain(group.subdomain)
+
+    visit edit_profile_path
+    page.check('group_closed')
+    click_submit
+    group.reload.closed?.must_equal true
+  end
 end
