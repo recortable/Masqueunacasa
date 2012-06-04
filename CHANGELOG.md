@@ -7,6 +7,7 @@ TAREAS
 
 ## 04/06/2012
 - Se muestran las primeras lineas de cada comunicado en la página de correo
+- Se muestra el archivo de entradas del blog tambien en #index
 
 ## 03/06/2012
 - Se puede mandar un mensaje (correo-e) a los miembros de un grupo desde su página de perfil

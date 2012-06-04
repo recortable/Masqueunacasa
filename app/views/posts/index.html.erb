@@ -14,6 +14,7 @@
     <%= t('subscribe') %>:
     <%= link_to(image_tag("RSS_32.png", {:alt => 'Atom feed', :class=>"feed"}), feed_path, {format: 'atom', class: 'feed'}) %>
   <% end %>
+  <%= render 'archive' %>
 <% end %>
 
 <% if current_membership %>
