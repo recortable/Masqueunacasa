@@ -10,6 +10,7 @@ class Group < ActiveRecord::Base
   attr_accessible :banner_image, :avatar_image
   attr_accessible :user_id
   attr_accessible :subdomain, :domain
+  attr_accessible :closed
 
   validates :name, presence: true, uniqueness: true
   validates :user_id, presence: true

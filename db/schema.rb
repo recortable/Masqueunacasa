@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530155802) do
+ActiveRecord::Schema.define(:version => 20120604034320) do
 
   create_table "announcements", :force => true do |t|
     t.integer  "user_id"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(:version => 20120530155802) do
     t.string   "domain",            :limit => 100
     t.string   "subdomain",         :limit => 100
     t.integer  "memberships_count",                 :default => 0
+    t.boolean  "closed",                            :default => false
   end
 
   add_index "groups", ["name"], :name => "index_groups_on_name", :unique => true
