@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  respond_to :html
-  before_filter :require_user, except: [:index, :show]
+  respond_to :html, :atom, :xml
+  before_filter :require_user, except: [:index, :show, :feed]
 
   expose(:themes) { current_group.site? ? 'textura03 azul_gris masq1casa' : 'textura02 naranja group' }
   expose(:posts) { current_group.posts.order('created_at DESC').limit(10) }
@@ -44,4 +44,7 @@ class PostsController < ApplicationController
     respond_with post, location: posts_path
   end
 
+  def feed
+    respond_with posts    
+  end
 end

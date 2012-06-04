@@ -5,6 +5,17 @@
   <%= render 'groups/header' %>
 <% end %>
 
+<% content_for :head do %>
+  <%= auto_discovery_link_tag :atom, feed_path %>
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= corner_span 'subscribe', 'none' do %>
+    <%= t('subscribe') %>:
+    <%= link_to(image_tag("RSS_32.png", {:alt => 'Atom feed', :class=>"feed"}), feed_path, {format: 'atom', class: 'feed'}) %>
+  <% end %>
+<% end %>
+
 <% if current_membership %>
   <div class="member_bar controls">
     <%= t('membership.status', state: t("membership.states.#{current_membership.state}"), group: current_group.name) %>

@@ -3,11 +3,11 @@
 TAREAS
 1) Forzar que la cabecera de los grupos tenga 200 pixels de alto
 2) Enviar emails cuando se envíen mensajes (pendiente configuración smtp)
-3) Añadir .atom a los blog (tanto al general como a los de grupos) -> http://railscasts.com/episodes/87-generating-rss-feeds
 4) La posibilidad de grupos cerrados (no te puedes apuntar)
 
 ## 03/06/2012
 - Se puede mandar un mensaje (correo-e) a los miembros de un grupo desde su página de perfil
+- Atom feeds para los blogs
 
 ## 02/06/2012
 - Altura de las cabeceras adaptativa (es lo que se pretendía con la tarea 1?)

@@ -19,8 +19,17 @@ html.posts {
   }
 
   .sidebar {
+
+    &>div {
+      margin-bottom: 20px;
+    }
+
     .archive {
       margin-top: 20px;
+    }
+
+    .subscribe {
+      font-size: 20px;
     }
   }
 }

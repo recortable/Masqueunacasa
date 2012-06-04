@@ -4,6 +4,7 @@ Masqueunacasa::Application.routes.draw do
   resources :posts
   match '/entrar' => 'user_sessions#new', as: :login
   match '/salir' => 'user_sessions#destroy', as: :logout
+  match '/feed' => 'posts#feed', as: :feed, defaults: { format: 'atom' }
   resources :user_sessions, only: [:new, :create, :destroy]
   resources :messages, only: [:create, :show]
 
@@ -36,6 +37,7 @@ Masqueunacasa::Application.routes.draw do
     resources :proposals
     resources :versions
     resources :experiencies
+
 
     # Esto es un truco para mostrar el nombre de las fases
     # sin el prefijo, es decir, en vez de "fases/mi_fase" 
