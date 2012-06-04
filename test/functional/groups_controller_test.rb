@@ -41,4 +41,28 @@ describe 'Groups integration' do
     click_submit
     group.reload.closed?.must_equal true
   end
+
+  it 'must see follow and participate links in open group' do
+    group = create(:group)
+    user = create(:user)
+    sub = group.subdomain
+    Capybara.app_host = "http://#{sub}.lvh.me"
+    visit posts_path
+    page.text.must_include 'Entra para participar'
+    login_user user
+    page.text.must_include 'Seguir'
+    page.text.must_include 'Quiero participar'
+  end
+
+  it 'must not see follow and participate links in closed group' do
+    group = create(:group, closed: true)
+    user = create(:user)
+    sub = group.subdomain
+    Capybara.app_host = "http://#{sub}.lvh.me"
+    visit posts_path
+    page.text.wont_include 'Entra para participar'
+    login_user user
+    page.text.wont_include 'Seguir'
+    page.text.wont_include 'Quiero participar'
+  end
 end
