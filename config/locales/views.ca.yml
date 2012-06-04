@@ -16,6 +16,15 @@ ca:
       session_end: 'Sortir'
       groups: Col·lectius
 
+  announcements:
+    index:
+      title: Correu de %{group}
+      read_more: Llegir el comunicat complet
+
+    notices:
+      created: 'Missatge col·lectiu preparat.'
+      updated: 'Missatge col·lectiu modificat.'
+
   groups:
     new:
       title: 'Afegir col.lectiu'

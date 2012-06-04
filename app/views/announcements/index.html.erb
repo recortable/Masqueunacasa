@@ -9,10 +9,16 @@
 
 <div class="row">
   <%= corner_span 'span8' do %>
-<%= title "Correo de #{current_group.name}" %>
+<%= title t('.title', group: current_group.name) %>
     <% announcements.each do |ann| %>
       <%= div_for ann do %>
-        <%= link_to ann.title, ann %>
+        <h2 class="announcement-title">
+          <%= link_to ann.title, ann %>
+        </h2>
+        <div class='announcement-body' >
+          <%= raw truncate_html(ann.body, length: 250) %>
+          <%= link_to t('read_more'), ann, class: 'read-more' %>
+        </div>
       <% end %>
     <% end %>
   <% end %>

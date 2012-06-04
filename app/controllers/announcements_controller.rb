@@ -38,7 +38,7 @@ class AnnouncementsController < ApplicationController
   def update
     announcement.attributes = params[:announcement]
     authorize! :update, announcement
-    flash[:notice] = t('announcement.notices.updated') if announcement.save
+    flash[:notice] = t('announcements.notices.updated') if announcement.save
     respond_with announcement
   end
 
