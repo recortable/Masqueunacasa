@@ -1,4 +1,0 @@
-production:
-  smtp:
-    user_name: hola@masqueunacasa.org
-    password: thepasswordhere 
