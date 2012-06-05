@@ -7,6 +7,8 @@ TAREAS
 
 ## 05/06/2012
 - Mejorado el sistema de configuración
+- Puedes enviarte a ti mismo un mensaje si eres administrador... para
+  probar
 
 ## 04/06/2012
 - Se muestran las primeras lineas de cada comunicado en la página de correo
