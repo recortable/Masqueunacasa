@@ -35,7 +35,7 @@ namespace :deploy do
 
   task :symlink_config, roles: :app do
     ['database.yml', 'cloudinary.yml', 
-     'newrelic.yml', 'masqueunacasa.yml'].each do |file|
+     'newrelic.yml', 'smtp.yml'].each do |file|
       run "ln -nfs #{shared_path}/config/#{file} #{release_path}/config/#{file}"
     end
   end

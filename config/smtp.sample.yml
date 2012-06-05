@@ -4,4 +4,4 @@ domain: masqueunacasa.org
 authentication: plain
 enable_startls_auto: true
 user_name: hola@masqueunacasa.org
-password: casamasomenos
+password: 
