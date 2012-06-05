@@ -32,6 +32,7 @@ class Ability
       can(:manage, Post) {|post| participant?(post.group, user) }
       can(:manage, Page) {|page| participant?(page.group, user) }
       can(:manage, Announcement) {|ann| participant?(ann.group, user) }
+      cannot :delete, Announcement
     end
   end
 

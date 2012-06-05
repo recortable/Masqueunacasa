@@ -12,10 +12,11 @@
 <%= title t('.title', group: current_group.name) %>
     <% announcements.each do |ann| %>
       <%= div_for ann do %>
-      <%= link_to 'delete', ann, method: :delete, class: "delete-announcement" %>
+      <%= link_to 'delete', ann, method: :delete, class: "delete-announcement" if can? :delete, Announcement %>
         <h2 class="announcement-title">
           <%= link_to ann.title, ann %>
         </h2>
+      <%= current_user.name if current_user.admin?  %>
         <div class='announcement-body' >
           <%= raw truncate_html(ann.body, length: 250) %>
           <%= link_to t('read_more'), ann, class: 'read-more' %>
