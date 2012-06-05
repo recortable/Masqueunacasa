@@ -57,7 +57,7 @@ function init_map_for_form(lt, lg) {
   } else {
     var lat = 40;
     var lng = -3;
-    var zm = 6;    
+    var zm = 5;    
   }
   var position = new google.maps.LatLng(lat, lng);
 
