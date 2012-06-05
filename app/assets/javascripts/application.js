@@ -4,5 +4,6 @@
 //= require ckeditor/init
 //= require posts
 //= require_self
+//= require maps
 
 CKEDITOR.replaceClass = 'rte';
