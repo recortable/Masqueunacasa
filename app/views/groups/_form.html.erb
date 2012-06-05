@@ -3,16 +3,21 @@
     <div class="span8">
       <div class="content">
         <%= form.input :name %>
+        <%= form.input :banner_image %>
+        <%= form.input :avatar_image %>
         <%= form.input :description, as: :text, input_html: {class: 'rte'} %>
         <%= submit_button_for form %>
       </div>
     </div>
     <div class="span4">
       <div class="content">
+        <p class="form-label">Puedes clicar sobre el mapa para situarte:</p>
+        <div id="group_form_map" style="width:300px; height:300px"></div>
+        <%= form.input :latitude %>
+        <%= form.input :longitude %>
         <%= form.input :subdomain if current_user.admin? %>
         <%= form.input :domain if current_user.admin? %>
-        <%= form.input :banner_image %>
-        <%= form.input :avatar_image %>
+        </div>
       </div>
     </div>
   </div>
