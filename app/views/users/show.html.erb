@@ -14,7 +14,7 @@
   <% end %>
   <%= corner_span('messages span4', :none) do %>
     <h2>Mensajes</h2>
-    <% if current_user and current_user != user %>
+    <% if current_user and (current_user != user || current_user.admin?) %>
       <p>Desde aquí puedes enviar un mensaje a esta persona</p>
       <%= render 'messages/form' %>
     <% end %>

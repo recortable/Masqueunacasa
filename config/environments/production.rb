@@ -67,7 +67,7 @@ Masqueunacasa::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  # Don't care if the mailer can't send
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
+  # the configuration is in config/smtp.yml
 end
