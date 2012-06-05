@@ -15,7 +15,17 @@
 }
 
 .edit_group {
-  #group_form_map {
+  #form_map {
     margin-bottom: 10px;
+    border: 1px solid $negro;
   }
+
+  input[type="checkbox"] {
+    margin-left: -10px;
+    margin-right: 5px;
+  }
+}
+
+#show_map {
+  border: 1px solid $negro;
 }

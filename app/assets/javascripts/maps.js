@@ -53,7 +53,7 @@ function init_map_for_form(lt, lg) {
   if (lt && lg) {
     var lat = lt;
     var lng = lg;
-    var zm = 15;
+    var zm = 12;
   } else {
     var lat = 40;
     var lng = -3;
@@ -65,7 +65,7 @@ function init_map_for_form(lt, lg) {
   var myOptions = {
     center: position,
     zoom: zm,
-    mapTypeId: google.maps.MapTypeId.ROADMAP, 
+    mapTypeId: google.maps.MapTypeId.HYBRID, 
     disableDoubleClickZoom: true
   };
 
@@ -95,13 +95,13 @@ function init_map() {
   var coord = $('#show_map').attr('data-location').split(",")
   var lat = coord[0];
   var lng = coord[1];
-  zm = 5;
+  zm = 12;
   var location = new google.maps.LatLng(lat, lng);
 
   var myOptions = {
     center: location,
     zoom: zm,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: google.maps.MapTypeId.HYBRID
   };
 
   var map = new google.maps.Map(document.getElementById("show_map"),
