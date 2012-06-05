@@ -17,7 +17,8 @@
     <div class="controls">
       <%= link_box 'Enviar correo de prueba', probe_announcement_path(announcement), method: :put if can? :send, announcement %>
       <p>Te llegará este correo a ti para que puedas verificar que está todo correcto</p>
-      <%= link_box 'Enviar correo', send_email_announcement_path(announcement), method: :put if can? :send, announcement %>
+      <%= link_box 'Enviar correo', send_email_announcement_path(announcement), method: :put, 
+       confirm: '¿Enviar a todo el grupo?' if can? :send, announcement %>
       <p>Enviará este correo a <%= tscope(announcement).downcase %></p>
     </div>
   <% end %>
