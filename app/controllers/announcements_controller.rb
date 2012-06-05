@@ -42,6 +42,12 @@ class AnnouncementsController < ApplicationController
     respond_with announcement
   end
 
+  def destroy
+    authorize! :delete, announcement
+    flash[:notice] = 'Borrado' if announcement.destroy
+    respond_with announcement, location: announcements_path
+  end
+
   def probe
     authorize! :send, announcement
     AnnouncementMailer.probe(announcement, current_user.email).deliver

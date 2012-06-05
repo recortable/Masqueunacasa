@@ -12,6 +12,7 @@
 <%= title t('.title', group: current_group.name) %>
     <% announcements.each do |ann| %>
       <%= div_for ann do %>
+      <%= link_to 'delete', ann, method: :delete, class: "delete-announcement" %>
         <h2 class="announcement-title">
           <%= link_to ann.title, ann %>
         </h2>
