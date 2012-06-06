@@ -7,8 +7,11 @@
 TAREAS
 1) Forzar que la cabecera de los grupos tenga 200 pixels de alto
 st.
-2) Enviar emails cuando se envíen mensajes (pendiente configuración smtp)
-4) La posibilidad de grupos cerrados (no te puedes apuntar)
+2) Enviar emails a un usuario desde su perfil
+3) Enviar emails colectivos uno por uno y en background
+4) Paginador en los blogs
+5) Selector tipo de post (solo texto | texto + imagen | texto + video)
+
 
 ## 06/06/2012
 - Mostrar el resúmen de la propuesta en la página de la pregunta
@@ -28,9 +31,12 @@ st.
 ## 04/06/2012
 - Se muestran las primeras lineas de cada comunicado en la página de correo
 - Se muestra el archivo de entradas del blog tambien en #index
+- No te puedes "apuntar" ni seguir en los grupos cerrados
+- Se pueden enviar comunicados (announcements) a los miembros y seguidores de un grupo
+- Geolocalización de un grupo con Google Maps
 
 ## 03/06/2012
-- Se puede mandar un mensaje (correo-e) a los miembros de un grupo desde su página de perfil
+- Se puede mandar un mensaje (correo-e) a los miembros de un grupo desde su página de perfil (del grupo)
 - Atom feeds para los blogs
 - Se pueden cerrar los grupos, pero aún no tiene efectos...
 
