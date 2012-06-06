@@ -6,7 +6,7 @@
 
     <% phases.each do |phase| %>
       <%= div_for phase do %>
-        <%= phase.name %>
+        <%= link_to phase.name, phase %>
         <%= phase.description %>
         <%= link_to 'Editar', [:edit, phase], rel: "edit-phase-#{phase.id}" if can? :edit, Phase %>
       <% end %>
