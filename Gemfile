@@ -37,6 +37,7 @@ gem 'paper_trail'
 gem 'acts_as_list'
 gem 'cambelt'
 gem 'basic_config' # https://github.com/stephan778/basic_config 
+gem 'will_paginate', '~> 3.0'
 
 gem 'fog'
 gem 'carrierwave'
