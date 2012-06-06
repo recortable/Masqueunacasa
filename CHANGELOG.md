@@ -13,6 +13,9 @@ st.
 ## 06/06/2012
 - Mostrar el resúmen de la propuesta en la página de la pregunta
 - Traducir los nombres de los campos de Category
+- Relations: experiencias y propuestas relacionadas
+- Se puede relacionar una experiencia con una propuesta (en la página de
+  la propuesta)
 
 ## 05/06/2012
 - Mejorado el sistema de configuración

@@ -61,6 +61,11 @@ es:
     notices:
       created: 'Mensaje enviado. ¡Gracias!'
 
+  relations:
+    notices:
+      created: 'Relación creada'
+      destroyed: 'Relación borrada.'
+
   users:
     index:
       title: 'Personas'

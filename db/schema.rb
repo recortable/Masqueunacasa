@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120604034320) do
+ActiveRecord::Schema.define(:version => 20120606154054) do
 
   create_table "announcements", :force => true do |t|
     t.integer  "user_id"
@@ -202,6 +202,18 @@ ActiveRecord::Schema.define(:version => 20120604034320) do
   add_index "proposals", ["category_id"], :name => "index_proposals_on_category_id"
   add_index "proposals", ["slug_ca"], :name => "index_proposals_on_slug_ca"
   add_index "proposals", ["slug_es"], :name => "index_proposals_on_slug_es"
+
+  create_table "relations", :force => true do |t|
+    t.integer  "experiencie_id"
+    t.integer  "proposal_id"
+    t.integer  "user_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "relations", ["experiencie_id"], :name => "index_relations_on_experiencie_id"
+  add_index "relations", ["proposal_id"], :name => "index_relations_on_proposal_id"
+  add_index "relations", ["user_id"], :name => "index_relations_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

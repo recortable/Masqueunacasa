@@ -27,4 +27,14 @@ describe Proposal do
     v.title.must_equal proposal.title
     v.group_id.must_equal proposal.group_id
   end
+
+  it 'can relate to an experiencie' do
+    user = create(:user)
+    proposal = create(:proposal)
+    experiencie = create(:experiencie)
+
+    proposal.add_relation(experiencie, user)
+    proposal.relations.count.must_equal 1
+    proposal.experiencies.first.must_equal experiencie
+  end
 end

@@ -9,10 +9,27 @@
     <%= raw proposal.description %>
     <%= raw proposal.body %>
   <% end %>
-  <%= corner_span 'span4' do %>
-    <h3>Propuesta</h3>
-    Fase: <%= link_to proposal.phase.name, proposal.phase %>
-  <br>
+  <div class="span4">
+    <%= corner_span '' do %>
+      <h3>Propuesta</h3>
+      Fase: <%= link_to proposal.phase.name, proposal.phase %>
+    <br>
     En <%= link_to proposal.category.title, [proposal.category.phase, proposal.category] if proposal.category_id? %>
+
 <% end %>
+
+<%= corner_span '' do %>
+  <h3>Experiencias relacionadas</h3>
+  <ul>
+    <% proposal.relations.each do |relation| %>
+      <li>
+      <%= link_to relation.experiencie.title, relation.experiencie %>
+      <%= link_to '[borrar relación]', [proposal, relation], method: :delete, 
+        confirm: "Borrar relación con #{relation.experiencie.title}. ¿Segurx?" if can? :delete, relation %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to 'Añadir experiencia relacionada', new_proposal_relation_path(proposal) if can? :create, Relation %>
+<% end %>
+</div>
 </div>

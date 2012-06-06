@@ -34,8 +34,10 @@ Masqueunacasa::Application.routes.draw do
     resources :groups
     resources :posts
     resources :users
-    resources :proposals
     resources :versions
+    resources :proposals do
+      resources :relations, only: [:new, :create, :destroy]
+    end
     resources :experiencies
 
 

@@ -18,6 +18,8 @@ class Proposal < ActiveRecord::Base
   belongs_to :group
   belongs_to :phase
   belongs_to :category
+  has_many :relations
+  has_many :experiencies, through: :relations 
 
   validates_presence_of :title, :title_es, :title_ca, :user, :phase
   
@@ -28,4 +30,7 @@ class Proposal < ActiveRecord::Base
     false
   end
 
+  def add_relation(experiencie, user)
+    Relation.create(user: user, proposal: self, experiencie: experiencie)
+  end
 end

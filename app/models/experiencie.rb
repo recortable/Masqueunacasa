@@ -15,10 +15,15 @@ class Experiencie < ActiveRecord::Base
   
   belongs_to :user
   belongs_to :group
+  has_many :relations
 
   validates_presence_of :title, :user
   validates_uniqueness_of :title_es, :title_ca
 
   scope :published, where(published: true)
 
+  # TODO: hacer que funcione para otros idiomas
+  def self.search(term)
+    Experiencie.where(Experiencie.arel_table[:title_es].matches("%#{term}%")).order('title_es ASC')
+  end
 end

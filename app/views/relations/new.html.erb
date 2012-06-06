@@ -1,0 +1,27 @@
+<%= render_banner 'Relacionar', parent %>
+<div class="member_bar controls">
+  <%= link_box t('go_back'), parent %>
+</div>
+
+<div class="row">
+  <%= corner_span 'span8' do %>
+    <h1><%= parent.title %></h1>
+    <%= title 'Añadir experiencia relacionada', :h2 %>
+    <%= form_tag [:new, parent, :relation], method: :get do %>
+      <%= text_field_tag :term, params[:term] %>
+      <%= submit_tag 'Buscar experiencia' %>
+    <% end %>
+    <% if valid_term? %>
+      <h4>Experiencias con '<%= params[:term] %>'</h4>
+      <ul>
+        <% results.each do |result| %>
+          <li>
+          <%= result.title %> 
+          <%= link_to "Relacionar con #{parent.title}", proposal_relations_path(proposal, e: result.id), method: :post %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
+
