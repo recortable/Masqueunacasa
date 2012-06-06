@@ -1,7 +1,3 @@
-
-
-
-
 # Masqueunacasa
 
 TAREAS
@@ -9,7 +5,6 @@ TAREAS
 st.
 2) Enviar emails a un usuario desde su perfil
 3) Enviar emails colectivos uno por uno y en background
-4) Paginador en los blogs
 5) Selector tipo de post (solo texto | texto + imagen | texto + video)
 
 
@@ -19,6 +14,7 @@ st.
 - Relations: experiencias y propuestas relacionadas
 - Se puede relacionar una experiencia con una propuesta (en la página de
   la propuesta)
+- Paginador en los blogs para mostrar links de "entradas más antiguas" y "Entradas más recientes"
 
 ## 05/06/2012
 - Mejorado el sistema de configuración

@@ -50,6 +50,8 @@ ca:
   posts:
     index:
       add_post: 'Afegir entrada'
+      prev_posts: 'Entrades més recents'
+      next_posts: 'Entrades més antigues'
 
     new:
       title: 'Afegir entrada'

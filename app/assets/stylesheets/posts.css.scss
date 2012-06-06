@@ -32,6 +32,54 @@ html.posts {
       font-size: 20px;
     }
   }
+
+  #posts_pagination {
+    margin: 0;
+    padding: 10px 0;
+
+    .disabled {
+      display: none;
+    }
+
+    a {
+      margin-top: 6px;
+      padding: 0;
+      border: 0;
+      line-height: inherit;
+      text-decoration: none;
+    }
+
+    .previous_page {
+      float: left;
+      margin-left: 15px;
+
+      &:before {
+        content: "<< ";
+        margin-right: 5px;
+      }
+    }
+
+    .next_page {
+      float: right;
+      margin-right: 15px;
+
+      &:after {
+        content: ">>";
+        margin-left: 5px;
+      }
+    }
+
+    &:after {
+      width: 100%;
+      height: 20px;
+      content: ".";
+      display: block;
+      position: relative;
+      top: 20px;
+      color: $fondo;
+      background: $fondo;
+    }
+  }
 }
 
 div.post.row {
@@ -81,4 +129,3 @@ div.archive {
     }
   }
 }
-

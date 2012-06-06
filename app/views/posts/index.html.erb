@@ -54,6 +54,9 @@
         </div>
       <% end %>
     <% end %>
+    <%= will_paginate(posts, page_links: false, previous_label: 
+          t('.prev_posts'), next_label: t('.next_posts'),
+          id: 'posts_pagination', class: 'corner none') %>
     &nbsp;
   </div>
   <%= render 'groups/sidebar' %>

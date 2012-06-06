@@ -83,6 +83,8 @@ es:
   posts:
     index:
       add_post: 'Añadir entrada'
+      prev_posts: 'Entradas más recientes'
+      next_posts: 'Entradas más antiguas'
 
     new:
       title: 'Añadir entrada'
