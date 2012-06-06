@@ -25,13 +25,13 @@ class PhasesController < ApplicationController
 
   def create
     authorize! :create, phase
-    flash[:notice] = t('phases.notice.created') if phase.save
+    flash[:notice] = t('phases.notices.created') if phase.save
     respond_with phase
   end
 
   def update
     authorize! :update, phase
-    flash[:notice] = t('phases.notice.updated') if phase.update_attributes(params[:phase])
+    flash[:notice] = t('phases.notices.updated') if phase.update_attributes(params[:phase])
     respond_with phase
   end
 end

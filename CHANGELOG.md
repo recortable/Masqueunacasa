@@ -1,9 +1,18 @@
+
+
+
+
 # Masqueunacasa
 
 TAREAS
 1) Forzar que la cabecera de los grupos tenga 200 pixels de alto
+st.
 2) Enviar emails cuando se envíen mensajes (pendiente configuración smtp)
 4) La posibilidad de grupos cerrados (no te puedes apuntar)
+
+## 06/06/2012
+- Mostrar el resúmen de la propuesta en la página de la pregunta
+- Traducir los nombres de los campos de Category
 
 ## 05/06/2012
 - Mejorado el sistema de configuración

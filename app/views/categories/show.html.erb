@@ -13,7 +13,7 @@
     <h3>Alternativas</h3>
     <ul>
       <% category.proposals.each do |proposal| %>
-        <li><%= link_to proposal.title, proposal %></li>
+        <li><%= link_to proposal.title, proposal %><%= raw proposal.description %></li>
       <% end %>
     </ul>
   <% end %>

@@ -23,6 +23,10 @@ es:
       announcement:
         scope: 'Quién recibirá el correo'
 
+      category:
+        title: 'Nombre corto'
+        question: 'Pregunta'
+        
       group:
         slug: 'Subdominio'
         banner_image: 'Imágen de cabecera'
@@ -55,6 +59,9 @@ es:
     hints:
       image: 'Esta imágen aparecerá al principio de la página. Debe tener un ancho de 510px'
       embed: 'En este espacio puedes pegar el código de insertar vídeo de youtube, vimeo, etcétera... Otros códigos iframe también sirven'
+
+      category:
+        title: 'Este nombre se usará en la URL. Intenta que sea corto y descriptivo.'
 
       group:
         closed: 'Marcalo si no quieres que otros usuarios se unan al grupo'

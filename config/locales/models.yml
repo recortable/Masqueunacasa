@@ -8,6 +8,7 @@ es:
       group: 'colectivo'
       proposal: 'propuesta'
       experiencie: 'experiencia' 
+      category: 'pregunta'
 
   membership:
     states:

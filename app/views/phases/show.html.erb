@@ -8,9 +8,13 @@
 <div class="row">
   <%= corner_span 'span12' do %>
     <%= title phase.name %>
-    <% phase.categories.each do |category| %>
-      <%= link_to category.question, [phase, category] %>
-    <% end %>
+    <ul>
+      <% phase.categories.each do |category| %>
+        <li>
+        <%= link_to category.question, [phase, category] %>
+        </li>
+      <% end %>
+    </ul>
   <% end %>
 </div>
 
