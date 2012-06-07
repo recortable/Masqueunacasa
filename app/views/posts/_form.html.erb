@@ -1,10 +1,13 @@
 <div class="bloc">
   <form class="options-selector content">
-    <input type="radio" name="post-options" value="simple" checked="checked" >
+    <input type="radio" name="post-options" value="simple", id="simple"
+      <%= 'checked="checked"' if !(post.image? || post.embed?) %>  >
     <label for="simple">Solo texto</label>
-    <input type="radio" name="post-options" value="with-img" >
+    <input type="radio" name="post-options" value="with-img", id="with-img"
+      <%= 'checked="checked"' if post.image? && !post.embed? %> >
     <label for="with-img">Con una imagen</label>
-    <input type="radio" name="post-options" value="with-video" >
+    <input type="radio" name="post-options" value="with-video", id="with-video"
+      <%= 'checked="checked"' if !post.image? && post.embed? %> >
     <label for="with-video">Con un vídeo</label>
   </form>
   <%= simple_form_for post do |form| %>

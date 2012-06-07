@@ -14,22 +14,26 @@ archive = ->
   ).find("ul").css "display", "none"
 
 post_options = ->
-  $(".img-input, .embed-input").css "display", "none"
-  input_img = $(".img-input").first().html()
+  hide_unchecked(null)
   $("input[name=\"post-options\"]").change ->
-    switch $("input:radio[name=\"post-options\"]:checked").val()
-      when "simple"
-        $(".img-input, .embed-input").hide "slow", ->
-          clear_img(input_img)
-          clear_video()
-      when "with-img"
-        $(".img-input").show "slow"
-        $(".embed-input").hide "slow",  ->
-          clear_video()
-      when "with-video"
-        $(".embed-input").show "slow"
-        $(".img-input").hide "slow", ->
-          clear_img(input_img)
+    hide_unchecked('slow')
+
+hide_unchecked = (speed)-> 
+  input_img = $(".img-input").first().html()
+  switch $("input:radio[name=\"post-options\"]:checked").val()
+    when "simple"
+      $(".img-input, .embed-input").hide speed, ->
+        clear_img(input_img)
+        clear_video()
+    when "with-img"
+      $(".img-input").show speed
+      $(".embed-input").hide speed,  ->
+        clear_video()
+    when "with-video"
+      $(".embed-input").show speed
+      $(".img-input").hide speed, ->
+        clear_img(input_img)
+            
 
 clear_video = ->
   $(".embed-input textarea").val("")
