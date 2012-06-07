@@ -15,13 +15,24 @@ archive = ->
 
 post_options = ->
   $(".img-input, .embed-input").css "display", "none"
+  input_img = $(".img-input").first().html()
   $("input[name=\"post-options\"]").change ->
     switch $("input:radio[name=\"post-options\"]:checked").val()
       when "simple"
-        $(".img-input, .embed-input").hide "slow"
+        $(".img-input, .embed-input").hide "slow", ->
+          clear_img(input_img)
+          clear_video()
       when "with-img"
         $(".img-input").show "slow"
-        $(".embed-input").hide "slow"
+        $(".embed-input").hide "slow",  ->
+          clear_video()
       when "with-video"
         $(".embed-input").show "slow"
-        $(".img-input").hide "slow"
+        $(".img-input").hide "slow", ->
+          clear_img(input_img)
+
+clear_video = ->
+  $(".embed-input textarea").val("")
+
+clear_img = (content) ->
+  $(".img-input").html(content)

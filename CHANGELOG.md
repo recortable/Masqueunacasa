@@ -1,12 +1,13 @@
 # Masqueunacasa
 
 TAREAS
-1) Forzar que la cabecera de los grupos tenga 200 pixels de alto
+- 1) Forzar que la cabecera de los grupos tenga 200 pixels de alto
 st.
-2) Enviar emails a un usuario desde su perfil
-3) Enviar emails colectivos uno por uno y en background
-5) Selector tipo de post (solo texto | texto + imagen | texto + video)
+- 3) Enviar emails colectivos uno por uno y en background
 
+## 07/06/2012
+- Simplificación del formulario de los post con opciones de *texto*, *texto + imagen* o *texto + embed*
+- Pestañas para las acciones "Ver" y "Editar" un post
 
 ## 06/06/2012
 - Mostrar el resúmen de la propuesta en la página de la pregunta
