@@ -5,7 +5,12 @@
     <%= avatar_image(group, class: 'fixed') %>
     <%= raw group.description %>
     <div class="controls">
-      <%= link_box 'Editar datos', edit_profile_path, rel: 'edit-profile' if can? :edit, current_group %>
+      <% if can? :update, group %>
+        <%= link_box 'Editar datos', [:edit, group], 
+            rel: 'edit-profile' if !group.subdomain? %>
+        <%= link_box 'Editar datos', edit_profile_path, 
+            rel: 'edit-profile' if group.subdomain? %>
+      <% end %>
     </div>
   <% end %>
   <%= corner_span('messages span4', :none) do %>
