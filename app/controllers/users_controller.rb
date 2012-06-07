@@ -31,6 +31,7 @@ class UsersController < ApplicationController
   end
   
   def update
+    authorize! :update, user, current_user
     flash[:notice] = t('users.notices.updated') if user.update_attributes(params[:user])
     respond_with user
   end

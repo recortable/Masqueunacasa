@@ -28,6 +28,7 @@ class Ability
       can :read, Membership
       cannot :update, UserSession
 
+      can(:update, User) { |user, current| user == current }
       can(:update, Group) {|group| participant?(group, user) }
       can(:manage, Post) {|post| participant?(post.group, user) }
       can(:manage, Page) {|page| participant?(page.group, user) }
