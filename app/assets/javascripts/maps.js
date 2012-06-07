@@ -98,6 +98,9 @@ function setLocation(location) {
 }
 
 function init_map() {
+  /* Anchura del mapa adaptativa */
+  $('#show_map').css({'width': '100%', 'height': '300px'});
+
   var coord = $('#show_map').attr('data-location').split(",")
   var lat = coord[0];
   var lng = coord[1];
