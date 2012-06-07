@@ -4,6 +4,11 @@ module LayoutHelper
     raw "<div class='#{css_class}'><div class='corner #{color}'></div><div class='content'>#{content}</div></div>"
   end
 
+  def tabs(&block)
+    content = capture(&block)
+    raw "<ul class='tabs clearfix'>#{content}</ul>"
+  end
+
   def submit_button_for(form, text = nil, color = 'negro')
     options = text ? {value: text} : {}
     raw "<div class='submit-wrapper #{color}'>

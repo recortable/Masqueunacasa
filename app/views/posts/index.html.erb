@@ -48,9 +48,6 @@
               <%= link_to t('read_more'), post_url(post, subdomain: post.group.subdomain), class: 'read-more' %>
             </div>
           </div>
-          <div class="controls clearfix">
-            <%= link_box 'editar', edit_post_url(post, subdomain: post.group.subdomain) if can? :edit, post %>
-          </div>
         </div>
       <% end %>
     <% end %>

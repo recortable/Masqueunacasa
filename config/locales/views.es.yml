@@ -2,6 +2,7 @@ es:
   who: Quiénes
   go_back: Volver
   edit: Editar
+  view: Ver
   cancel: 'Cancelar'
   delete: Borrar
   confirm: '¿Estás seguro? Esta acción no se puede deshacer'

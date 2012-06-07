@@ -6,7 +6,6 @@
           <%= form.input :body, as: :text, input_html: {class: 'rte'} %>
           <%= submit_button_for form %>
           <div class="form-controls">
-            <%= link_box t('cancel'), post %>
             <%= link_box t('delete'), post, method: :delete, confirm: t('confirm') if post.persisted? %>
           </div>
       </div></div>
