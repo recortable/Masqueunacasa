@@ -6,11 +6,19 @@ class GroupMailer < ActionMailer::Base
   #
   #   en.group_mailer.message_email.subject
   #
-  def message_email(message)
+  def message_to_group(message)
     @message = message
 
     mail to: recipients(message.group),
-         subject: t("group_mailer.message_email.subject", group: message.group.name)
+         subject: t("group_mailer.message_to_group.subject",
+                   group: message.group.name)
+  end
+
+  def message_to_user(message)
+    @message = message
+
+    mail to: User.find(message.resource_id).email,
+         subject: t("group_mailer.message_to_user.subject")
   end
 
   private

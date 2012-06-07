@@ -42,11 +42,13 @@ html.posts {
     }
 
     a {
+      position: relative;
       margin-top: 6px;
       padding: 0;
       border: 0;
       line-height: inherit;
       text-decoration: none;
+      z-index: 1;
     }
 
     .previous_page {

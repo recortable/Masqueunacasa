@@ -18,9 +18,6 @@
       <p>Desde aquí puedes enviar un mensaje a esta persona</p>
       <%= render 'messages/form' %>
     <% end %>
-    <div class="messages clearfix">
-      <%= render user.received_messages %>
-    </div>
 
   <% end %>
   <%= corner_span('groups span4', :none) do %>

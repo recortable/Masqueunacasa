@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
     message.group_id = current_group.id
     message.user = current_user
     if message.save
-      GroupMailer.message_email(message).deliver 
+      send_message(message)       
       flash[:notice] = t('messages.notices.created') if message.save
     else
       flash[:notice] = message.errors.inspect
@@ -23,5 +23,12 @@ class MessagesController < ApplicationController
   def destroy
     message.destroy
     respond_with message
+  end
+
+  private
+
+  def send_message(message)
+    GroupMailer.message_to_group(message).deliver if message.resource_type == "Group"
+    GroupMailer.message_to_user(message).deliver if message.resource_type == "User" 
   end
 end

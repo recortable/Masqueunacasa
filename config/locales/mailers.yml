@@ -5,9 +5,13 @@ es:
 
     intro_text: "Se ha mandado el siguiente mensaje para el grupo %{group} desde masqueunacasa.org"
   group_mailer:
-    message_email:
+    message_to_group:
       subject: Se ha mandado un nuevo mensaje al grupo %{group}
       email_intro: Alguien mandó el siguiente mensaje al grupo
+
+    message_to_user: 
+      subject: Nuevo mensaje desde masqueunacasa.org
+      email_intro: "%{from} te ha mandado un mensaje desde masqueunacasa.org"
 
 ca:
   announcement_mailer:
@@ -16,6 +20,10 @@ ca:
 
     intro_text: "S'ha enviat el seguent missatge per al grup %{group} des de masqueunacasa.org"
   group_mailer:
-    message_email:
+    message_to_group:
       subject: "S'ha enviat un nou missatge al grup %{group}"
       email_intro: Algú ha enviat el seguent missatge al grup
+
+    message_to_user: 
+      subject: Nou missatge des de masqueunacasa.org
+      email_intro: "%{from} t'ha enviat un missatge des de masqueunacasa.org"
