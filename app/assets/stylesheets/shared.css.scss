@@ -1,5 +1,16 @@
 @import 'variables';
 
+form.options-selector {
+  padding-bottom: 0;
+
+  label {
+    display: inline;
+    margin-right: 50px;
+  }
+
+
+}
+
 $color_inactivos: #b0b0b0;
 $color_activo: #ddd;
 $border-radius: 10px;

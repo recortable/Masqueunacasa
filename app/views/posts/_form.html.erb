@@ -1,4 +1,12 @@
 <div class="bloc">
+  <form class="options-selector content">
+    <input type="radio" name="post-options" value="simple" checked="checked" >
+    <label for="simple">Solo texto</label>
+    <input type="radio" name="post-options" value="with-img" >
+    <label for="with-img">Con una imagen</label>
+    <input type="radio" name="post-options" value="with-video" >
+    <label for="with-video">Con un vídeo</label>
+  </form>
   <%= simple_form_for post do |form| %>
     <div class="row">
       <div class="span8"><div class="content">
@@ -10,8 +18,12 @@
           </div>
       </div></div>
       <div class="span4"><div class="content">
+        <div class="img-input">
           <%= form.input :image, hint: t('simple_form.hints.image') %>
+        </div>
+        <div class="embed-input">
           <%= form.input :embed, hint: t('simple_form.hints.embed') %>
+        </div>
       </div></div>
     </div>
     <% if current_user.admin? %>
