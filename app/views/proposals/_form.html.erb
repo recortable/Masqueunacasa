@@ -1,7 +1,7 @@
 <%= simple_form_for proposal do |form| %>
   <%= form.input :title %>
   <%= form.association :phase, include_blank: false %>
-  <%= form.association :category if current_user.admin? %>
+  <%= form.association :category, collection: Category.all.map{|c| [c.question, c.id]} if current_user.admin? %>
   <%= form.input :description, as: :text, input_html: {class: 'rte'} %>
   <%= form.input :body, as: :text, input_html: {class: 'rte'} %>
   <%= submit_button_for form %>

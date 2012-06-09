@@ -6,6 +6,8 @@ st.
 - 3) Enviar emails colectivos uno por uno y en background
 
 ## 09/06/2012
+- En las propuestas se ve la pregunta
+- El listado de fases muestra también las preguntas
 - Mejora de los emails con css (usando la gema Roadie: https://github.com/Mange/roadie)
 - Comentarios en algunas de las gemas (Gemfile)
 - Entrar y salir (user session controller) sólo se puede hacer desde el dominio principal: redirect en

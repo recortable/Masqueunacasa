@@ -53,6 +53,7 @@ es:
       proposal:
         description: 'Resúmen'
         phase: 'Fase en la que se incluye'
+        category: 'A qué pregunta responde'
 
     hints:
       image: 'Esta imágen aparecerá al principio de la página. Debe tener un ancho de 510px'
