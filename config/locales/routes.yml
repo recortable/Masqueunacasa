@@ -14,6 +14,7 @@ es:
   categories: 'preguntas'
   announcements: 'correo'
   relations: 'relacionadas'
+  password_recoveries: 'recuperar-constrasena'
 
   edit: 'editar'
   new: 'nueva'

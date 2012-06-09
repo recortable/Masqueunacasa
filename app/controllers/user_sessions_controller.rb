@@ -5,7 +5,11 @@ class UserSessionsController < ApplicationController
   expose(:themes) { 'textura04 azul_gris' }
 
   def new
-    authorize! :new, user_session
+    if request.subdomain.present?
+      redirect_to login_url(host: request.domain)
+    else
+      authorize! :new, user_session
+    end
   end
 
   def create
@@ -19,11 +23,15 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    flash[:notice] = "Adiós"
-    redirect_to root_path
+    if request.subdomain.present?
+      redirect_to logout_url(host: request.domain)
+    else
+      session[:user_id] = nil
+      flash[:notice] = "Adiós"
+      redirect_to root_path
+    end
   end
-  
+
   # Este método es una puerta de entrada que no está disponible en
   # producción. Se usa en los tests y en desarrollo.
   def enter

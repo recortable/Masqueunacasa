@@ -5,6 +5,11 @@ TAREAS
 st.
 - 3) Enviar emails colectivos uno por uno y en background
 
+## 09/06/2012
+- Entrar y salir (user session controller) sólo se puede hacer desde el dominio principal: redirect en
+  caso contrario
+- Recuperar contraseña implementado
+
 ## 07/06/2012
 - Simplificación del formulario de los post con opciones de *texto*, *texto + imagen* o *texto + embed*
 - Pestañas para las acciones "Ver" y "Editar" un post

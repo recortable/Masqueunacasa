@@ -1,0 +1,10 @@
+<div class="row">
+  <%= corner_span('span4') do %>
+    <%= title 'Cambiar contraseña' %>
+    <%= simple_form_for recovery do |form| %>
+      <%= form.input :password %>
+      <%= form.input :password_confirmation %>
+      <%= form.submit %>
+    <% end %>
+  <% end %>
+</div>
