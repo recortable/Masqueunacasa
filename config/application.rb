@@ -64,7 +64,7 @@ module Masqueunacasa
     config.assets.enabled = true
     config.assets.initialize_on_precompile = false
     config.assets.version = '1.0'
-    config.assets.precompile += %w(email.css) 
+    # config.assets.precompile += %w(email.css) 
 
     # Autoload ckeditor models folder
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
