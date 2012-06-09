@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title><%= @title %></title>
+
+    <link type='text/css' src='email.css' >
+  </head>
+  <body>
+    <table width="600px" id="background" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><%= image_tag 'emails/barra.png', width: 600, height: 20 %></td>
+      </tr>
+      <tr><td>
+          <a href="http://masqueunacasa.org">
+            <%= image_tag 'emails/mquc_banner.png', width: 600, height: 95, alt: 'Masqueunacasa.org (hola@masqueunacasa.org)' %>
+          </a>
+      </td></tr>
+      <tr>
+        <td align="center" valign="top">
+        </td>
+      </tr>
+      <tr>
+        <td><div class="email-content">
+            <%= yield %>
+        </div></td>
+      </tr>
+      <tr>
+        <td><%= image_tag 'emails/separador.png', width: 600, height: 11 %></td>
+        <tr>
+          <td>
+            <p class="footer">
+            Has recibido este email porque estás registrado/a en <%= link_to 'masqueunacasa.org', 'http://masqueunacasa.org' %>  <br/>
+            Respetamos tu privacidad. Si crees que se te ha enviado por error, escríbenos a <%= link_to 'hola@masqueunacasa.org', 'mailto:hola@masqueunacasa.org' %> y te daremos de baja.</p>
+          </td>
+        </tr>
+        <tr>
+          <td><%= image_tag 'emails/barra.png', width: 600, height: 20 %></td>
+        </tr>
+      </table>
+    </body>

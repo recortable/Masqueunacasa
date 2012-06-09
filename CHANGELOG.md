@@ -6,9 +6,12 @@ st.
 - 3) Enviar emails colectivos uno por uno y en background
 
 ## 09/06/2012
+- Mejora de los emails con css (usando la gema Roadie: https://github.com/Mange/roadie)
+- Comentarios en algunas de las gemas (Gemfile)
 - Entrar y salir (user session controller) sólo se puede hacer desde el dominio principal: redirect en
   caso contrario
 - Recuperar contraseña implementado
+
 
 ## 07/06/2012
 - Simplificación del formulario de los post con opciones de *texto*, *texto + imagen* o *texto + embed*

@@ -1,0 +1,30 @@
+@import 'variables';
+
+#background {
+  background-color: $fondo;
+  margin: 20px auto;
+}
+
+.email-content {
+  padding: 80px 70px;
+}
+
+h1, h2, h3 {
+  color: $negro;
+  font-family: $titulos;
+}
+
+a {
+  color: $verde_neon;
+}
+
+p {
+  color: $negro;
+  font-family: $texto;
+  font-size: 14px;
+}
+
+p.footer {
+  padding: 5px 20px;
+  font-size: 10px;
+}
