@@ -20,7 +20,7 @@ end
 
 gem 'hpricot'
 gem 'jquery-rails' # Integración de jquery y rails
-gem "ckeditor", "3.7.0" # Editor RTE
+gem "ckeditor" # Editor RTE
 gem "mini_magick" # Para modificar imágenes (probablemente no se necesite)
 #gem 'bootstrap-wysihtml5-rails'
 gem 'bcrypt-ruby', '~> 3.0.0' # Para encriptar cosas, p.ej: password (MD5)

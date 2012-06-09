@@ -57,10 +57,10 @@ GEM
       activesupport (>= 3.2.0)
     childprocess (0.3.2)
       ffi (~> 1.0.6)
-    ckeditor (3.7.0)
-      mime-types (~> 1.17.2)
-      orm_adapter (~> 0.0.6)
-    cloudinary (1.0.24)
+    ckeditor (3.7.1)
+      mime-types
+      orm_adapter
+    cloudinary (1.0.26)
       rest-client
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -95,7 +95,7 @@ GEM
       nokogiri (~> 1.5.0)
       ruby-hmac
     formatador (0.2.3)
-    friendly_id (4.0.6)
+    friendly_id (4.0.7)
     highline (1.6.12)
     hike (1.2.1)
     hoptoad_notifier (2.4.11)
@@ -126,7 +126,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.17.2)
+    mime-types (1.18)
     mini_magick (3.4)
       subexec (~> 0.2.1)
     minitest (3.0.1)
@@ -237,7 +237,7 @@ DEPENDENCIES
   capistrano
   capybara
   carrierwave
-  ckeditor (= 3.7.0)
+  ckeditor
   cloudinary
   coffee-rails (~> 3.2.1)
   database_cleaner

@@ -1,7 +1,7 @@
 @import 'variables';
 
 #background {
-  background-color: $fondo;
+  background-color: #F1F1E7;
   margin: 20px auto;
 }
 
@@ -10,17 +10,17 @@
 }
 
 h1, h2, h3 {
-  color: $negro;
-  font-family: $titulos;
+  color: #484848;
+  font-family: Georgia, serif;
 }
 
 a {
-  color: $verde_neon;
+  color: #61ECA9;
 }
 
 p {
-  color: $negro;
-  font-family: $texto;
+  color: #484848;;
+  font-family: LucidaGrande, sans-serif;
   font-size: 14px;
 }
 
