@@ -56,10 +56,18 @@ ca:
       user_session:
         password: 'Contrasenya'
 
+      content-options-selector:
+        with-video: amb un vídeo
+        with-img: amb una imatge
+        text-only: només text
+
     hints:
       image: "Aquesta imatge apareixerà al principi de la pàgina. Ha de tenir 510 píxels d'amplada"
       embed: 'En aquest espai hi pots enganxar el codi per inserir vídeo 
               de youtube, vimeo, etcètera... altres codis iframe també serveixen'
+      change_image: "Pots canviar la imatge. Veuràs la nova imatge després d'actua
+                     litzar el contingut"
+      content-options-selector: 'Un cop creat el contingut no podràs canviar aquestes opcions'
 
       group:
         closed: "Marca-ho si no vols que altres usuaris s'uneixin al grup"

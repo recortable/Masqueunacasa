@@ -52,6 +52,11 @@ es:
       user_session:
         password: Contraseña
 
+      content-options-selector:
+        with-video: con un vídeo
+        with-img: con una imagen
+        text-only: solo texto
+
       proposal:
         description: 'Resúmen'
         phase: 'Fase en la que se incluye'
@@ -59,6 +64,9 @@ es:
     hints:
       image: 'Esta imágen aparecerá al principio de la página. Debe tener un ancho de 510px'
       embed: 'En este espacio puedes pegar el código de insertar vídeo de youtube, vimeo, etcétera... Otros códigos iframe también sirven'
+      change_image: 'Puedes canviar la imagen. Verás la nueva imagen después de 
+                     actualizar el contenido'
+      content-options-selector: 'Una vez creado el contenido no podrás cambiar estas opciones'
 
       category:
         title: 'Este nombre se usará en la URL. Intenta que sea corto y descriptivo.'

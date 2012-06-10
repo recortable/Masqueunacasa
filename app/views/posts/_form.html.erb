@@ -1,15 +1,24 @@
 <div class="bloc">
-  <form class="options-selector content">
-    <input type="radio" name="post-options" value="simple", id="simple"
-      <%= 'checked="checked"' if !(post.image? || post.embed?) %>  >
-    <label for="simple">Solo texto</label>
-    <input type="radio" name="post-options" value="with-img", id="with-img"
-      <%= 'checked="checked"' if post.image? && !post.embed? %> >
-    <label for="with-img">Con una imagen</label>
-    <input type="radio" name="post-options" value="with-video", id="with-video"
-      <%= 'checked="checked"' if !post.image? && post.embed? %> >
-    <label for="with-video">Con un vídeo</label>
-  </form>
+  <% if post.new_record? %>
+    <form id="content-options-selector" class="content">
+      <input type="radio" name="post-options" value="simple" id="simple"
+      checked >
+      <label for="simple">
+        <%= t('simple_form.labels.content-options-selector.text-only') %>
+      </label>
+      <input type="radio" name="post-options" value="with-img" id="with-img" >
+      <label for="with-img">
+        <%= t('simple_form.labels.content-options-selector.with-img') %>
+      </label>
+      <input type="radio" name="post-options" value="with-video" id="with-video" >
+      <label for="with-video">
+        <%= t('simple_form.labels.content-options-selector.with-video') %>
+      </label>
+      <p class="help-block">
+        <%= t('simple_form.hints.content-options-selector') %>
+      </p>
+    </form>
+  <% end %>
   <%= simple_form_for post do |form| %>
     <div class="row">
       <div class="span8"><div class="content">
@@ -21,12 +30,22 @@
           </div>
       </div></div>
       <div class="span4"><div class="content">
-        <div class="img-input">
-          <%= form.input :image, hint: t('simple_form.hints.image') %>
-        </div>
-        <div class="embed-input">
-          <%= form.input :embed, hint: t('simple_form.hints.embed') %>
-        </div>
+        <% if post.new_record? || post.image? %>
+          <div class="img-input">
+            <%= form.input :image, hint: t('simple_form.hints.image') %>
+          </div>
+          <% if post.image? %>
+            <p class="help-block">
+              <%= t('simple_form.hints.change_image') %>
+            </p>
+            <%= image_tag post.image_url, class: 'responsive' %>
+          <% end %>
+        <% end %>
+        <% if post.new_record? || post.embed? %>
+          <div class="embed-input">
+            <%= form.input :embed, hint: t('simple_form.hints.embed') %>
+          </div>
+        <% end %>
       </div></div>
     </div>
     <% if current_user.admin? %>
