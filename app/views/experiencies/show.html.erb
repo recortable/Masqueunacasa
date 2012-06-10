@@ -1,11 +1,19 @@
 <%= render_banner 'Experiencias', experiencies_path %>
 
 <div class="row">
-<%= corner_span 'span12' do %>
-  <%= title experiencie.title %>
-  <div class="controls">
-    <%= link_box 'Editar', [:edit, experiencie] if can? :update, experiencie %>
-  </div>
-  <%= raw experiencie.body %>
-<% end %>
+  <%= corner_span 'span8' do %>
+    <%= title experiencie.title %>
+    <div class="controls">
+      <%= link_box 'Editar', [:edit, experiencie] if can? :update, experiencie %>
+    </div>
+    <%= raw experiencie.body %>
+  <% end %>
+  <%= corner_span 'span4' do %>
+    <h3>Alternativas relacionadas</h3>
+    <ul>
+      <% experiencie.proposals.each do |proposal| %>
+        <li><%= link_to proposal.title, proposal %></li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>

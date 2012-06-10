@@ -1,5 +1,4 @@
 Masqueunacasa::Application.configure do
-  config.action_mailer.default_url_options = { :host => 'masqueunacasa.org' }
 
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -67,7 +66,10 @@ Masqueunacasa::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
+  # Mail options
+  # the configuration is in config/smtp.yml
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
-  # the configuration is in config/smtp.yml
+  config.action_mailer.default_url_options = { :host => 'masqueunacasa.org' }
+  config.action_mailer.asset_host = 'http://masqueunacasa.org'
 end

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # EXTENSIONS
   include ReceiveMessages
+  include ResetPasswordToken
   extend FriendlyId
   friendly_id :name, use: :slugged
   has_secure_password
@@ -18,9 +19,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :admin
 
-  validates :name, presence: true, uniqueness: true
 
   # VALIDATIONS
+  validates :name, presence: true, uniqueness: true
   validates :name, presence: true,
             length: {minimum: 4, maximum: 50}
   validates :email, presence: true,

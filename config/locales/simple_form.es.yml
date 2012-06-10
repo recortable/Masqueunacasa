@@ -19,6 +19,9 @@ es:
         url: 'Enlace'
         title_ca: 'Título can catalán'
         body_ca: 'Texto en catalán'
+        email: 'Correo'
+        password: 'Contraseña'
+        password_confirmation: 'Repite la contraseña'
 
       announcement:
         scope: 'Quién recibirá el correo'
@@ -44,11 +47,8 @@ es:
 
       user:
         role: 'rol'
-        password: 'Contraseña'
-        password_confirmation: 'Repite contraseña'
         description: 'Breve biografía'
         avatar_image: 'Imágen'
-
       user_session:
         password: Contraseña
 
@@ -56,10 +56,11 @@ es:
         with-video: con un vídeo
         with-img: con una imagen
         text-only: solo texto
-
+        
       proposal:
         description: 'Resúmen'
         phase: 'Fase en la que se incluye'
+        category: 'A qué pregunta responde'
 
     hints:
       image: 'Esta imágen aparecerá al principio de la página. Debe tener un ancho de 510px'
@@ -76,6 +77,9 @@ es:
 
       media_item:
         url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'
+
+      password_recovery:
+        email: 'Escribe el email con el que te registraste, y te enviaremos las instrucciones'
       
       user:
         edit:
@@ -90,5 +94,8 @@ es:
         update: 'Guardar perfil'
       message:
         create: 'Enviar mensaje'
+      password_recovery:
+        create: 'Enviar instrucciones'
+        update: 'Modificar contraseña'
 
 

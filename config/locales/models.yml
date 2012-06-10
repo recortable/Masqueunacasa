@@ -9,6 +9,7 @@ es:
       proposal: 'propuesta'
       experiencie: 'experiencia' 
       category: 'pregunta'
+      password_recovery: 'recuperar contraseña'
 
   membership:
     states:

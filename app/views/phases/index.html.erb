@@ -6,9 +6,14 @@
 
     <% phases.each do |phase| %>
       <%= div_for phase do %>
-        <%= link_to phase.name, phase %>
-        <%= phase.description %>
+        <h3><%= link_to phase.name, phase %></h3>
+        <%= markdown phase.description %>
         <%= link_to 'Editar', [:edit, phase], rel: "edit-phase-#{phase.id}" if can? :edit, Phase %>
+        <ul>
+          <% phase.categories.each do |category| %>
+            <li><%= link_to category.question, [phase, category] %></li>
+          <% end %>
+        </ul>
       <% end %>
     <% end %>
   <% end %>

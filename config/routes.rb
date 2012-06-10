@@ -49,6 +49,7 @@ Masqueunacasa::Application.routes.draw do
       resources :categories, except: [:index]
     end
 
+    resources :password_recoveries
   end
 
 

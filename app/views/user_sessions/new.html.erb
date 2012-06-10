@@ -7,6 +7,7 @@
         <%= form.input :password %>
         <%= submit_button_for form, text='Entrar' %>
       <% end %>
+      <%= link_to 'Olvidé mi contraseña', new_password_recovery_path %>
   <% end %>
   <%= corner_span('span4', color = "negro") do %>
     <h2><%= t('.create_account') %></h2>
