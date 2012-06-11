@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title><%= @title %></title>
+
+    <style type="text/css">
+      #background {
+        background-color: #F1F1E7;
+        margin: 20px auto;
+      }
+
+      #avatar{
+        width: 100px;
+      }
+
+      #group_name, #group_url {
+        margin-left: 10px;
+        margin-right: 22px;
+        padding-left: 8px;
+        display: block;
+        color: #484848;
+        text-decoration: none;
+      }
+
+      #group_name {
+        margin-top: 18px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-left: 4px solid #61ECA9;
+        border-bottom: 4px solid #61ECA9;
+        font-size: 18px;
+        font-style: italic;
+      }
+
+      #group_url {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        border-left: 2px solid #61ECA9;
+        border-bottom: 2px solid #61ECA9;
+        font-family: sans-serif;
+        font-size: 13px;
+      }
+
+      .notice {
+        padding: 5px;
+        border: 1px solid #d22;
+      }
+
+      .email-content {
+        padding: 80px 70px;
+      }
+
+      h1, h2, h3 {
+        color: #484848;
+        font-family: Georgia, serif;
+      }
+
+      a {
+        color: #61ECA9;
+      }
+
+      p {
+        color: #484848;;
+        font-family: LucidaGrande, sans-serif;
+        font-size: 14px;
+      }
+
+      p.footer {
+        padding: 5px 20px;
+        font-size: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <table width="600px" id="background" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td colspan="3"><%= image_tag 'emails/barra.png', width: 600, height: 20 %></td>
+      </tr>
+      <tr>
+        <td width="100px" height="100px" rowspan="2">
+          <img id="avatar" src="<%= @avatar %>" /></td>
+        <td width="400px" height="50px" valign="bottom">
+          <%= link_to @announcement.group.name, group_url(@announcement.group), id: 'group_name', target: "_blank" %>          
+        </td>
+        <td width="100px" height="100px" rowspan="2">
+          <%= image_tag 'emails/mquc_colectivos.png', width: 100 %>
+        </td>
+      <tr>
+        <td valign="top">
+          <%= link_to @announcement.group.subdomain + ".masqueunacasa.org",
+                group_url(@announcement.group), id: 'group_url', target: "_blank" %>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <div class="email-content">
+            <%= yield %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <%= image_tag 'emails/separador.png', width: 600, height: 11 %>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <p class="footer">
+            Has recibido este email porque estás registrado/a en 
+            <%= link_to 'masqueunacasa.org', 'http://masqueunacasa.org' %>  <br/>
+            Respetamos tu privacidad. Si crees que se te ha enviado por error, 
+            escríbenos a <%= link_to 'hola@masqueunacasa.org', 
+            'mailto:hola@masqueunacasa.org' %> y te daremos de baja.</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3"><%= image_tag 'emails/barra.png', width: 600, height: 20 %></td>
+      </tr>      
+    </table>
+  </body>
+</html>

@@ -1,5 +1,6 @@
 class AnnouncementMailer < ActionMailer::Base
   default from: "info@masqueunacasa.org"
+  layout 'announcement_email'
 
   def probe(announcement, recipient)
     @notice = t('announcement_mailer.probe.test_mail')

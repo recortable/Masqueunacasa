@@ -1,57 +1,7 @@
-<div style="width: 100%; 
-            height:auto; 
-            float:left; 
-            background: url('<%= root_url %>assets/email/fondo_announcement.png');">
-  <div style="max-width:600px; 
-              height:auto; 
-              margin: 20px auto; 
-              background:#F1F1E7">
-    <% if @notice %>
-      <p style="font-size:16px; color:red">
-        ** <%= @notice %> **
-      </p>
-    <% end %>
-    <div style="margin:10px 0 50px 0; 
-                width:100%; 
-                float:left">
-      <img src="<%= @avatar %>" style="float:left" />
-      <img src="<%= root_url %>assets/email/mquc_colectivos.png" 
-           style="float:right" />
-      <h1 style="width: 90%;
-                 max-width: 310px;
-                 margin-top: 10px;
-                 margin-left: 8px;
-                 margin-bottom: 0;
-                 padding: 20px 0 5px 10px;
-                 float: left;
-                 border-bottom: 4px solid #14E3B7;
-                 border-left: 4px solid #14E3B7;
-                 font-family: serif;
-                 font-size: 23px;
-                 font-style: italic;">
-        <%= @announcement.group.name %>
-      </h1>
-      <%= link_to @announcement.group.subdomain + ".masqueunacasa.org",
-        group_url(@announcement.group),
-        style: "width: 90%;
-                max-width:310px;
-                margin-top:0;
-                margin-left:8px;
-                padding: 3px 0 3px 12px;
-                float:left;
-                border-bottom: 2px solid #14E3B7;
-                border-left: 2px solid #14E3B7;
-                font-family: sans-serif;
-                font-size: 13px;" %>
-    </div>
-    <div style="width:75%;
-                clear:both; 
-                margin:0 auto;
-                padding-bottom: 200px;">
-      <h2 style="margin-bottom:25px"><%= @announcement.title %></h2>
-      <div style="font-family: sans-serif">
-        <%= @announcement.body.html_safe %>
-      </div>
-    </div>
-  </div>
+<%= content_tag :p, @notice, class: 'notice' if @notice %>
+
+<h1><%= @announcement.title %></h1>
+
+<div id="message_content">
+  <%= raw @announcement.body %>
 </div>
