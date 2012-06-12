@@ -19,6 +19,7 @@ ca:
         url: 'Enllaç'
         title_ca: 'Títol en català'
         body_ca: 'Text en català'
+        map: Si vols pots ubicar-te clicant sobre el mapa
 
       group:
         slug: 'Subdomini'
@@ -79,6 +80,11 @@ ca:
         edit:
           password: 'Deixa-ho buit si no vols canviar-la'
           password_confirmation: 'Deixa-ho buit si no vols canviar la contrasenya'
+
+      proposal:
+        phase: 'A quina fase es podria aplicar aquesta proposta'
+
+      longitude: 'Graus amb decimals i signe (DDD.dddd). Ex: "-2.1463", "41.0732"'
 
   helpers:
     submit:
