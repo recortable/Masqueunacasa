@@ -9,7 +9,7 @@
   <div class="span2">
     <div class="corner"></div>
       <div class="user-column">
-        <%= link_to avatar_image(post.group), profile_path %>
+        <%= link_to avatar_image(post.group, class: 'fixed'), profile_path %>
         <h4>Blog</h4>
         <%= link_to(t('subscribe'), feed_path, {format: 'atom', class: 'feed'}) %>
           <h4>Participa</h4>

@@ -3,7 +3,7 @@
 
 <div class="row">
   <%= user_column 'span2' do %>
-    <%= link_to avatar_image(current_group), profile_path %>
+    <%= link_to avatar_image(current_group, class: 'fixed'), profile_path %>
     <% if current_membership %>
       <%= t('membership.status', state: t("membership.states.#{current_membership.state}"), group: current_group.name) %>
     <% end %>
