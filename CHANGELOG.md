@@ -5,6 +5,12 @@ TAREAS
 st.
 - 3) Enviar emails colectivos uno por uno y en background
 
+## 12/06/2012
+- Apaño para mostrar los emails de los participantes (quitar cuando
+  funcione el tema de envíos)
+- El parámetro from de iniciar sesión es la url completa (para que
+  funcione con subdominios)
+
 ## 09/06/2012
 - En las propuestas se ve la pregunta
 - El listado de fases muestra también las preguntas

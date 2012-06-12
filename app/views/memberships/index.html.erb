@@ -9,9 +9,20 @@
   <% memberships.each do |member| %>
     <%= user_card(member.user) do %>
       <%= t("membership.states.#{member.state}") %>
-        <%= link_box 'Editar participación', [:edit, member] if can? :edit, member %>
+      <%= link_box 'Editar participación', [:edit, member] if can? :edit, member %>
     <% end %>
   <% end %>
 </div>
+
+<% if current_user && current_user.admin? %>
+  <div class="row">
+    <div class="span-12 bloc" style="margin-top:20px">
+      <h3>Eres admin: emails de los participantes</h3>
+      <% memberships.each do |member| %>
+        "<%= member.user.name %>" &lt;<%= member.user.email %>&gt;,
+      <% end %>
+    </div>
+  </div>
+<% end %>
 
 
