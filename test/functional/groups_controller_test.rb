@@ -39,8 +39,7 @@ describe 'Groups integration' do
     group.reload.closed?.must_equal true
   end
 
-  # TODO: revisar cuando tengamos claro ésto
-  it 'must see follow and participate links in open group' do
+  it 'must see follow link in open group' do
     group = create(:group)
     user = create(:user)
     sub = group.subdomain
@@ -48,8 +47,7 @@ describe 'Groups integration' do
     visit posts_path
     #page.text.must_include 'Entra para participar'
     login_user user
-    #page.text.must_include 'Seguir'
-    #page.text.must_include 'Quiero participar'
+    page.text.must_include 'Seguir'
   end
 
   it 'must not see follow and participate links in closed group' do
@@ -61,6 +59,5 @@ describe 'Groups integration' do
     page.text.wont_include 'Entra para participar'
     login_user user
     page.text.wont_include 'Seguir'
-    page.text.wont_include 'Quiero participar'
   end
 end

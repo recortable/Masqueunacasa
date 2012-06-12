@@ -12,13 +12,13 @@
     </div>
     <div class="span4">
       <div class="content">
-        <p class="form-label">Si quieres puedes ubicarte en el mapa:</p>
+        <p class="form-label"><%= t('simple_form.labels.default.map') %></p>
         <div id="form_map" style="width:300px; height:300px"
           <% if group.latitude && group.longitude %>
             data-location="<%= group.latitude.to_s + "," + group.longitude.to_s %>"
           <% end %>></div>
             <%= form.input :latitude %>
-            <%= form.input :longitude %>
+            <%= form.input :longitude, hint: t('simple_form.hints.longitude') %>
             <%= form.input :subdomain if current_user.admin? %>
             <%= form.input :domain if current_user.admin? %>
         </div>

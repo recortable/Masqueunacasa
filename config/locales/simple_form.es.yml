@@ -22,6 +22,7 @@ es:
         email: 'Correo'
         password: 'Contraseña'
         password_confirmation: 'Repite la contraseña'
+        map: Si quieres puedes ubicarte clicando sobre el mapa
 
       announcement:
         scope: 'Quién recibirá el correo'
@@ -85,8 +86,11 @@ es:
         edit:
           password: 'Déjalo vacío si no quieres cambiarla'
           password_confirmation: 'Déjalo vacío si no quieres cambiar la contraseña'
+
       proposal:
         phase: 'En qué fase se podría aplicar ésta propuesta'
+
+      longitude: 'Grados con decimales y signo (DDD.dddd). Ej: "-2.1463", "41.0732"'
 
   helpers:
     submit:

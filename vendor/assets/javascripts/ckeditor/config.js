@@ -59,10 +59,7 @@ CKEDITOR.editorConfig = function( config )
   
   config.toolbar_Defeault =
     [
-        ['Source'],
-        ['Bold','Italic','Underline','Strike'], ['NumberedList','BulletedList'],
-        ['Link','Unlink'],
-        // ['Image', 'Embed'],
-        ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock']
+        ['Bold','Italic'],
+        ['Link','Unlink']
     ];
 };

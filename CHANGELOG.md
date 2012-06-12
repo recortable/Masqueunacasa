@@ -8,6 +8,7 @@ st.
 ## 12/06/2012
 - El grupo principal (Group.main) queda oculto
 - Propuesta de layout para los posts
+- Indicaciones de formato en los campos de latitud y longitud
 - Apaño para mostrar los emails de los participantes (quitar cuando
   funcione el tema de envíos)
 - El parámetro from de iniciar sesión es la url completa (para que
