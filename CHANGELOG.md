@@ -4,8 +4,13 @@ TAREAS
 - 1) Forzar que la cabecera de los grupos tenga 200 pixels de alto
 st.
 - 3) Enviar emails colectivos uno por uno y en background
+
 ## 12/06/2012
 - Indicaciones de formato en los campos de latitud y longitud
+- Apaño para mostrar los emails de los participantes (quitar cuando
+  funcione el tema de envíos)
+- El parámetro from de iniciar sesión es la url completa (para que
+  funcione con subdominios)
 
 ## 09/06/2012
 - En las propuestas se ve la pregunta

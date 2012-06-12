@@ -15,7 +15,7 @@
         <%= link_box "¡Hola #{current_user.name}!", user_url(current_user, host: request.domain), class: 'user' %>
         <%= link_box t('.session_end'), logout_url(host: request.domain) %>
       <% else %>
-        <%= link_box t('.session_start'), login_url(host: request.domain, from: request.path), class: 'login' %>
+        <%= link_box t('.session_start'), login_url(host: request.domain, from: request.url), class: 'login' %>
       <% end %>
     </div>
   </div>
