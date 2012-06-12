@@ -1,8 +1,10 @@
 class Content < ActiveRecord::Base
+  include ActionView::Helpers::SanitizeHelper
   include Translatable
   extend FriendlyId
   friendly_id :title, use: :slugged
   has_paper_trail meta: {title: :title, group_id: :group_id }
+  before_save :clean_input
 
   belongs_to :user
   belongs_to :group
@@ -24,7 +26,11 @@ class Content < ActiveRecord::Base
   before_save :set_published_date
 
   private
-  def set_published_date
-    self.published_at ||= Time.now
-  end
+    def set_published_date
+      self.published_at ||= Time.now
+    end
+
+    def clean_input
+      self.body = sanitize self.body, tags: %w(a p em strong), attributes: %(href)
+    end
 end
