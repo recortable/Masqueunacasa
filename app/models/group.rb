@@ -25,6 +25,10 @@ class Group < ActiveRecord::Base
   mount_uploader :banner_image, GroupBannerUploader
   mount_uploader :avatar_image, GroupAvatarUploader
 
+  def self.main
+    Group.reorder('id ASC').first
+  end
+
   def site?
     false
   end

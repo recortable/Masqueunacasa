@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale_from_url
 
   expose(:themes) { 'textura02 naranja' }
+  expose(:site) { Site.new }
 
   protected
   # TODO: no se por qué falla en test (sospecho que algo

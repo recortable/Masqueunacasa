@@ -31,11 +31,15 @@ class Site
   end
 
   def latest_groups
-    Group.scoped.limit(6)
+    Group.where('id <> 1').limit(6)
   end
 
   def posts
     Post.scoped
+  end
+
+  def latest_posts(page = 1, per_page = 5)
+    Post.paginate(page: page, per_page: per_page).order('created_at DESC')
   end
   
   def users

@@ -35,6 +35,7 @@ class IntegrationTest < MiniTest::Spec
   register_spec_type(/integration$/, self)
 
   before :each do
+    create(:group, name: 'Masqueunacasa')
     subdomain(nil)
     visit logout_path
   end
@@ -44,7 +45,6 @@ class IntegrationTest < MiniTest::Spec
   end
 
   def subdomain(subdomain)
-    puts "MOVE TO SUBDOMAIN #{subdomain}"
     host = subdomain.present? ? "http://#{subdomain}.lvh.me" : "http://lvh.me"
     Capybara.app_host = host
   end
@@ -74,6 +74,18 @@ class HelperTest < MiniTest::Spec
   register_spec_type(/Helper$/, self)
 end
 
-Turn.config.format = :outline
-
+Turn.config do |c|
+ # use one of output formats:
+ # :outline  - turn's original case/test outline mode [default]
+ # :progress - indicates progress with progress bar
+ # :dotted   - test/unit's traditional dot-progress mode
+ # :pretty   - new pretty reporter
+ # :marshal  - dump output as YAML (normal run mode only)
+ # :cue      - interactive testing
+ c.format  = :pretty
+ # turn on invoke/execute tracing, enable full backtrace
+ c.trace   = true
+ # use humanized test names (works only with :outline format)
+ c.natural = true
+end
 

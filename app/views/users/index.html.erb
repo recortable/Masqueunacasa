@@ -1,5 +1,4 @@
-<%= current_group.site? ? render_banner(t('.title'), users_path) : 
-  render('groups/header') %>
+<%= render_banner ('.title'), users_path %>
 
 <div class="users cards">
   <% users.each do |user| %>

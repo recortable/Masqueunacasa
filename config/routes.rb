@@ -8,11 +8,11 @@ Masqueunacasa::Application.routes.draw do
   resources :user_sessions, only: [:new, :create, :destroy]
   resources :messages, only: [:create, :show]
 
+  resource :profile, only: [:show, :edit]
 
   # Rutas que sólo se puede acceder desde un subdominio
   constraints subdomain: /.+/ do
     match '', to: 'posts#index'
-    resource :profile, only: [:show, :edit]
     resources :memberships
     resources :pages
     resources :groups, only: [:update, :show]
@@ -25,7 +25,7 @@ Masqueunacasa::Application.routes.draw do
 
   root to: 'dashboard#welcome'
   match '/inicio' => 'dashboard#dashboard'
-  match '/community' => 'dashboard#community', as: :community
+  match '/community' => 'dashboard#blog', as: :community
   match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'
   match '/quinientos' => 'dashboard#quinientos'
 
@@ -41,10 +41,10 @@ Masqueunacasa::Application.routes.draw do
     resources :experiencies
 
 
-    # Esto es un truco para mostrar el nombre de las fases
+    resources :phases, except: [:show, :update, :destroy]
+    # El path: '' es un truco para mostrar el nombre de las fases
     # sin el prefijo, es decir, en vez de "fases/mi_fase" 
     # se verá "mi_fase"
-    resources :phases, except: [:show, :update, :destroy]
     resources :phases, only: [:show, :update, :destroy], path: '' do
       resources :categories, except: [:index]
     end

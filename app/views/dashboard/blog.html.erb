@@ -1,0 +1,24 @@
+<% title 'Comunidad' %>
+<%= render_banner 'Comunidad', community_path %>
+
+<div class="row">
+  <%= corner_span 'span2' do %>
+    <p>Éstas son los últimas entradas de 
+    todos los colectivos de Masqueunacasa.</p>
+  <% end %>
+  <div class="center span6">
+    <%= render posts %>
+    <%= render 'posts/pagination' %>
+  </div>
+  <div class="sidebar span4">
+    <%= corner_span '' do %>
+      <h3>Colectivos</h3>
+      <p>Estos son los colectivos que forman parte
+      de la comunidad de Masqueunacasa</p>
+    <% end %>
+    <% #TODO: quitar cuando se diseñe esta página %>
+    <div class="cards" style="margin-top: 10px">
+      <%= render site.latest_groups %>
+    </div>
+  </div>
+</div>

@@ -11,7 +11,7 @@ module HasCurrentGroup
   protected
   def load_subdomain_group
     if request.subdomain.blank?
-      Site.new
+      current_group = Group.main
     else
       current_group = Group.find_by_subdomain(request.subdomain)
       if current_group.blank?

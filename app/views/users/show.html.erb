@@ -1,5 +1,4 @@
-<%= current_group.site? ? render_banner('Participantes', users_path) : 
-  render('groups/header') %>
+<%= render_banner user.name, users_path %>
 
 <%= div_for user, class: 'row space' do %>
   <%= corner_span('info span4') do %> 

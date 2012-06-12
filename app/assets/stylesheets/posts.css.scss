@@ -25,7 +25,6 @@ html.posts {
     }
 
     .archive {
-      margin-top: 20px;
     }
 
     .subscribe {
@@ -84,7 +83,7 @@ html.posts {
   }
 }
 
-div.post.row {
+div.post {
   overflow: hidden;
   margin-bottom: 20px;
   .post-info, .content {

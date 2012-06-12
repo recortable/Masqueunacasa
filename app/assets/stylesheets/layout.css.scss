@@ -59,3 +59,9 @@ div.bloc, div.content {
   background-color: $fondo;
 }
 
+.user-column { 
+  background-color: $fondo; padding: 0 10px; overflow: hidden; 
+
+  // avatar
+  img {margin-bottom: 10px;}
+}

@@ -4,6 +4,11 @@ module LayoutHelper
     raw "<div class='#{css_class}'><div class='corner #{color}'></div><div class='content'>#{content}</div></div>"
   end
 
+  def user_column(css_class, color = :none, &block)
+    content = capture(&block)
+    raw "<div class='#{css_class}'><div class='corner #{color}'></div><div class='user-column'>#{content}</div></div>"
+  end
+
   def tabs(&block)
     content = capture(&block)
     raw "<ul class='tabs clearfix'>#{content}</ul>"

@@ -1,38 +1,33 @@
-<% title post.title %>
-
-<% content_for :sidebar do %>
-  <%= render 'archive' %>
-<% end %>
 
 <%= render 'groups/header' %>
 
-<div class="member_bar controls">
-  <%= link_box t('go_back'), posts_path %>
-</div>
 <div class="row">
-  <div class="center span8">
-    <%= div_for post, class: 'row' do %>
-      <div class="info span2">
-        <div class="corner none"></div>
-        <div class="content">
-          <h3><%= post.title %></h3>
-        </div>
-      </div>
-      <div class="body span6">
-        <div class="corner colored"></div>
-        <div class="content">
-          <% if can? :update, post %>
-            <%= tabs do %> 
-              <li class="active"><%= link_to t('view'), post %></li>
-              <li><%= link_to t('edit'), edit_post_path(post) %></li>
-            <% end %>
-          <% end %>
+  <%= user_column 'span2' do %>
+    <%= link_to avatar_image(current_group), profile_path %>
+    <% if current_membership %>
+      <%= t('membership.status', state: t("membership.states.#{current_membership.state}"), group: current_group.name) %>
+    <% end %>
+    <div class="controls">
+      <%= link_box 'Ir al blog', posts_path, class: 'highlight' %>
+      <%= link_box 'Editar entrada', edit_post_path(post) if can? :update, post %>
+    </div>
+  <% end %>
+
+  <div class="center span6">
+    <%= div_for post do %>
+      <div class="corner colored"></div>
+      <div class="content">
+        <div class="body">
+          <%= title post.title %>
           <%= render_post_media(post) %>
           <%= raw post.body %>
         </div>
       </div>
     <% end %>
   </div>
-  <%= render 'groups/sidebar' %>
+
+  <div class="sidebar span4">
+    <%= render 'archive' %>
+  </div>
 </div>
 
