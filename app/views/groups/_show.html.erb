@@ -4,45 +4,39 @@
   <%= user_column 'span2' do %>
     <%= avatar_image(current_group) %>
     <div class="controls">
+      <% if can? :update, group %>
+        <%= link_box 'Editar datos', [:edit, group], 
+          rel: 'edit-profile' if !group.subdomain? %>
+        <%= link_box 'Editar datos', edit_profile_path, 
+          rel: 'edit-profile' if group.subdomain? %>
+      <% end %>
     </div>
   <% end %>
 
-  <div class="span6">
-    <div class="row">
-      <div class="span2">
-      </div>
-
-    </div>
-  </div>
-</div>
-
-  <div class="row">
-  </div>
-
-  <%= div_for group, class: 'row space' do %>
-    <%= corner_span('info span4') do %> 
+  <div class="group center span6">
+    <%= corner_span('info') do %> 
       <%= title group.name %>
       <%= raw group.description %>
-      <div class="controls">
-        <% if can? :update, group %>
-          <%= link_box 'Editar datos', [:edit, group], 
-            rel: 'edit-profile' if !group.subdomain? %>
-          <%= link_box 'Editar datos', edit_profile_path, 
-            rel: 'edit-profile' if group.subdomain? %>
-        <% end %>
-      </div>
-    <% end %>
-    <%= corner_span('messages span4', :none) do %>
+    <% end %> 
+    <%= corner_span('messages', :none) do %>
       <h2><%= t('.get_in_touch') %></h2>
       <p><%= t('.you_can_send_message')%></p>
       <%= render 'messages/form' %>
     <% end %>
-    <% if group.latitude && group.longitude %>
-      <%= corner_span('map span4', :none) do %>
-        <h2><em><%= group.name %></em> en el mapa</h2>
-        <div id="show_map" style="width: 310px; 
-          height: 300px" data-location="<%= group.latitude.to_s + "," + group.longitude.to_s %>">
-        </div>
-      <% end %>
+  </div>
+
+  <% if group.latitude && group.longitude %>
+    <%= corner_span('map span4', :none) do %>
+      <h2><em><%= group.name %></em> en el mapa</h2>
+      <div id="show_map" style="width: 310px; 
+        height: 300px" data-location="<%= group.latitude.to_s + "," + group.longitude.to_s %>">
+      </div>
     <% end %>
   <% end %>
+</div>
+
+<div class="row">
+</div>
+
+<%= div_for group, class: 'row space' do %>
+<% end %>

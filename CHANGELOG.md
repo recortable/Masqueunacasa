@@ -5,6 +5,10 @@ TAREAS
 st.
 - 3) Enviar emails colectivos uno por uno y en background
 
+## 13/06/2012
+- Pequeña reorganización del layout (en perfil y fases)
+
+
 ## 12/06/2012
 - El grupo principal (Group.main) queda oculto
 - Propuesta de layout para los posts

@@ -1,11 +1,17 @@
+<%= render_banner 'Habitapedia', phases_path %>
 <div class="row">
-  <%= corner_span('span12') do %>
+  <%= user_column 'span2' do %>
     <%= title 'Fases' %>
+    <div class="controls">
+      <%= link_box 'Añadir fase', new_phase_path, rel: 'new-phase' if can? :new, Phase %>
+    </div>
+  <% end %>
 
-    <%= link_box 'Añadir fase', new_phase_path, rel: 'new-phase' if can? :new, Phase %>
+  <div class="span8">
+
 
     <% phases.each do |phase| %>
-      <%= div_for phase do %>
+      <%= corner_span('phase') do %>
         <h3><%= link_to phase.name, phase %></h3>
         <%= markdown phase.description %>
         <%= link_to 'Editar', [:edit, phase], rel: "edit-phase-#{phase.id}" if can? :edit, Phase %>
@@ -16,5 +22,5 @@
         </ul>
       <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
