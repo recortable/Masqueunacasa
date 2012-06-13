@@ -120,6 +120,9 @@ es:
       too_long: es demasiado largo (%{count} caracteres máximo)
       too_short: es demasiado corto (%{count} caracteres mínimo)
       wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
+      wrong_size: no tiene el tamaño correcto (debería tener %{file_size})
+      size_too_small: el tamaño es demasiado pequeño (debería ser de al menos %{file_size})
+      size_too_big: es demasiado grande (se permite %{file_size} como máximo)
     template:
       body: ! 'Se encontraron problemas con los siguientes campos:'
       header:

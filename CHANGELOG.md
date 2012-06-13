@@ -6,9 +6,9 @@ st.
 - 3) Enviar emails colectivos en background
 
 ## 13/06/2012
+- Los posts pueden tener adjuntos (se guardan en s3)
 - Pequeña reorganización del layout (en perfil y fases)
 - Los emails con múltiples destinatarios se mandan de uno en uno
-
 
 ## 12/06/2012
 - El grupo principal (Group.main) queda oculto

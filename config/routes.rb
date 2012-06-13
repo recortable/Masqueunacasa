@@ -1,7 +1,6 @@
 Masqueunacasa::Application.routes.draw do
 
   # Rutas que se pueden acceder tanto desde un subdominio como sin él
-  resources :posts
   match '/entrar' => 'user_sessions#new', as: :login
   match '/salir' => 'user_sessions#destroy', as: :logout
   match '/feed' => 'posts#feed', as: :feed, defaults: { format: 'atom' }
@@ -9,6 +8,13 @@ Masqueunacasa::Application.routes.draw do
   resources :messages, only: [:create, :show]
 
   resource :profile, only: [:show, :edit]
+  resources :announcements do
+    put :send_email, on: :member
+    put :probe, on: :member
+  end
+  resources :posts do
+    resources :post_attachments, except: [:index, :show]
+  end
 
   # Rutas que sólo se puede acceder desde un subdominio
   constraints subdomain: /.+/ do
@@ -16,10 +22,6 @@ Masqueunacasa::Application.routes.draw do
     resources :memberships
     resources :pages
     resources :groups, only: [:update, :show]
-    resources :announcements do
-      put :send_email, on: :member
-      put :probe, on: :member
-    end
 
   end
 
