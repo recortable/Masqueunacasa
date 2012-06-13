@@ -1,28 +1,28 @@
 
 <%= current_group.site? ? render_banner('Correo', announcements_path) : group_header('Correo') %>
 
-<% if current_membership %>
-  <div class="member_bar controls">
-    <%= link_box 'Nuevo correo', new_announcement_path, rel: 'new-announcement' if can? :new, Announcement %>
-  </div>
-<% end %>
-
 <div class="row">
-  <%= corner_span 'span8' do %>
-<%= title t('.title', group: current_group.name) %>
-    <% announcements.each do |ann| %>
-      <%= div_for ann do %>
+  <%= user_column 'span2' do %>
+    <div class="controls">
+      <%= link_box 'Nueva noticia', new_announcement_path, rel: 'new-announcement' if can? :new, Announcement %>
+    </div>
+  <% end %>
+
+<%= corner_span 'span8' do %>
+  <%= title t('.title', group: current_group.name) %>
+  <% announcements.each do |ann| %>
+    <%= div_for ann do %>
       <%= link_to 'delete', ann, method: :delete, class: "delete-announcement" if can? :delete, Announcement %>
-        <h2 class="announcement-title">
-          <%= link_to ann.title, ann %>
-        </h2>
+      <h2 class="announcement-title">
+        <%= link_to ann.title, ann %>
+      </h2>
       <%= current_user.name if current_user.admin?  %>
-        <div class='announcement-body' >
-          <%= raw truncate_html(ann.body, length: 250) %>
-          <%= link_to t('read_more'), ann, class: 'read-more' %>
-        </div>
-      <% end %>
+      <div class='announcement-body' >
+        <%= raw truncate_html(ann.body, length: 250) %>
+        <%= link_to t('read_more'), ann, class: 'read-more' %>
+      </div>
     <% end %>
   <% end %>
+<% end %>
 </div>
 

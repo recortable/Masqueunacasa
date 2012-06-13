@@ -1,0 +1,13 @@
+<%= render 'groups/header' %>
+
+<div class="row">
+  <%= corner_span 'span6 offset2' do %>
+    <h3><%= post.title %></h3>
+    <%= title 'Añadir adjunto' %>
+    <%= simple_form_for [post, post_attachment] do  |form| %>
+      <%= form.input :title %>
+      <%= form.input :file %>
+      <%= submit_button_for form %>
+    <% end %>
+    <% end %>
+  </div>

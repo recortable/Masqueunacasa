@@ -10,6 +10,7 @@
     <div class="controls">
       <%= link_box 'Ir al blog', posts_path, class: 'highlight' %>
       <%= link_box 'Editar entrada', edit_post_path(post) if can? :update, post %>
+      <%= link_box 'Añadir adjunto', new_post_post_attachment_path(post) if can? :create, PostAttachment %>
     </div>
   <% end %>
 
@@ -22,6 +23,16 @@
           <%= render_post_media(post) %>
           <%= raw post.body %>
         </div>
+      </div>
+      <div class="attachments">
+        <% post.attachments.each do |attachment| %>
+          <%= div_for attachment do %>
+            <%= link_to attachment.file_identifier, attachment.file_url %>
+            <%= number_to_human_size attachment.size %>
+            <%= link_to 'Borrar', [post, attachment], 
+              method: :delete, confirm: "¿Borrar #{attachment.title}?" if can? :destroy, attachment %>
+          <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>

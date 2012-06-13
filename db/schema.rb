@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120606154054) do
+ActiveRecord::Schema.define(:version => 20120613140232) do
 
   create_table "announcements", :force => true do |t|
     t.integer  "user_id"
@@ -179,6 +179,18 @@ ActiveRecord::Schema.define(:version => 20120606154054) do
 
   add_index "phases", ["slug_ca"], :name => "index_phases_on_slug_ca"
   add_index "phases", ["slug_es"], :name => "index_phases_on_slug_es"
+
+  create_table "post_attachments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "post_id"
+    t.string   "title",        :limit => 200
+    t.string   "file"
+    t.string   "content_type"
+    t.integer  "size"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
 
   create_table "proposals", :force => true do |t|
     t.string   "title_es",       :limit => 200

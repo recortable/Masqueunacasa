@@ -1,5 +1,4 @@
 class AnnouncementsController < ApplicationController
-  include CurrentUser
   respond_to :html
 
   expose(:announcements) { current_group.announcements }

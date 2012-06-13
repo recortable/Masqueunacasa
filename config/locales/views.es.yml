@@ -58,6 +58,11 @@ es:
       created: 'Fase añadida.'
       updated: 'Fase modificada.'
 
+  post_attachments:
+    notices:
+      created: 'Fichero adjunto subido'
+      destroyed: 'Fichero adjunto borrado'
+
   messages:
     notices:
       created: 'Mensaje enviado. ¡Gracias!'
