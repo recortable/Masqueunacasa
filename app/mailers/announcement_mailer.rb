@@ -11,37 +11,11 @@ class AnnouncementMailer < ActionMailer::Base
          template_name: 'announcement_mailer' 
   end
 
-  def send_email(announcement)
+  def send_email(announcement, recipient)
     @announcement = announcement
     @avatar = announcement.group.avatar_image_url
-    recipients = recipients announcement 
-    mail to: recipients, 
+    mail to: recipient, 
          subject: announcement.title,
          template_name: 'announcement_mailer' 
-  end
-
-  private
-
-  # Me parece que esto está un poco java, no?
-  def recipients(announcement)
-    scope = announcement.scope
-    group = announcement.group
-    recipients = ""
-    if scope == "all"
-      return group.users.map(&:email)
-    elsif scope == "members"
-      group.users.each do |user|
-        if group.member_level?(user, "member") | group.member_level?(user, "owner")
-          recipients = recipients + ", " + user.email
-        end
-      end
-    elsif scope == "admin"
-      group.users.each do |user|
-        if group.member_level?(user, "owner")
-          recipients = recipients + ", " + user.email
-        end
-      end
-    end
-    recipients
   end
 end

@@ -6,10 +6,10 @@ class GroupMailer < ActionMailer::Base
   #
   #   en.group_mailer.message_email.subject
   #
-  def message_to_group(message)
+  def message_to_group(message, recipient)
     @message = message
 
-    mail to: recipients(message.group),
+    mail to: recipient,
          subject: t("group_mailer.message_to_group.subject",
                    group: message.group.name)
   end
@@ -22,24 +22,4 @@ class GroupMailer < ActionMailer::Base
   end
 
   private
-
-  def recipients(group, scope = 'members')
-    recipients = ""
-    if scope == "all"
-      return group.users.map(&:email)
-    elsif scope == "members"
-      group.users.each do |user|
-        if group.member_level?(user, "member") | group.member_level?(user, "owner")
-          recipients = recipients + ", " + user.email
-        end
-      end
-    elsif scope == "admin"
-      group.users.each do |user|
-        if group.member_level?(user, "owner")
-          recipients = recipients + ", " + user.email
-        end
-      end
-    end
-    recipients
-  end
 end

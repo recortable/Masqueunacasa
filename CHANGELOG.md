@@ -3,10 +3,11 @@
 TAREAS
 - 1) Forzar que la cabecera de los grupos tenga 200 pixels de alto
 st.
-- 3) Enviar emails colectivos uno por uno y en background
+- 3) Enviar emails colectivos en background
 
 ## 13/06/2012
 - Pequeña reorganización del layout (en perfil y fases)
+- Los emails con múltiples destinatarios se mandan de uno en uno
 
 
 ## 12/06/2012
