@@ -7,8 +7,9 @@
       <%= link_box t('.community'), community_url(host: request.domain), show_if_current: false %>
     </div>
     <div class="lang-selector">
-      <%= link_box 'ES', url_for(locale: 'es') %>
-      <%= link_box 'CA', url_for(locale: 'ca') %>
+      <!-- TODO: implementar el cambio de idiomas -->
+      <%#= link_box 'ES', url_for(locale: 'es') %>
+      <%#= link_box 'CA', url_for(locale: 'ca') %>
     </div>
     <div class="session">
       <% if current_user %>

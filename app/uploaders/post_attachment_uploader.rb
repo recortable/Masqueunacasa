@@ -10,7 +10,7 @@ class PostAttachmentUploader < CarrierWave::Uploader::Base
 
   # Example: "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   def store_dir
-    "posts/#{model.group_id}"
+    "blog/#{model.group_id}"
   end
 
 
