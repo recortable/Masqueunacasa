@@ -32,4 +32,25 @@ class Group < ActiveRecord::Base
   def site?
     false
   end
+
+  def recipients(scope = 'all')
+    recipients = []
+    if scope == 'all'
+      return self.users.map
+    elsif scope == 'members'
+      self.users.each do |user|
+        if self.member_level?(user, "member") | self.member_level?(user, "owner")
+          recipients << user
+        end
+      end
+    elsif scope == 'admin'
+      self.users.each do |user|
+        if self.member_level?(user, "owner")
+          recipients << user
+        end
+      end
+    end
+
+    recipients
+  end
 end

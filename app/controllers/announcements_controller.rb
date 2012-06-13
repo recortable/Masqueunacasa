@@ -56,7 +56,10 @@ class AnnouncementsController < ApplicationController
   def send_email
     authorize! :send, announcement
     announcement.sent_at = Time.now
-    AnnouncementMailer.send_email(announcement).deliver
+    recipients = announcement.group.recipients(announcement.scope)
+    recipients.each do |user|
+      AnnouncementMailer.send_email(announcement, user.email).deliver
+    end
     announcement.save
     redirect_to announcement
   end
