@@ -18,34 +18,41 @@ group :assets do
   gem 'bootstrap-sass'
 end
 
-gem 'hpricot'
-gem 'jquery-rails' # Integración de jquery y rails
-gem "ckeditor" # Editor RTE
-gem "mini_magick" # Para modificar imágenes (probablemente no se necesite)
-#gem 'bootstrap-wysihtml5-rails'
+# Cosas de modelos
 gem 'bcrypt-ruby', '~> 3.0.0' # Para encriptar cosas, p.ej: password (MD5)
+gem 'friendly_id'
+gem 'paper_trail'
+gem 'acts_as_list'
+
+# Para subir ficheros e imágenes al servidor
+gem "mini_magick" # Para modificar imágenes (lo usa carrierwave)
+gem 'fog'
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'mini_magick'
+
+# Cosas de controladores
+gem 'decent_exposure'
+gem 'cancan'
+
+# Cosas de vistas
+gem 'jquery-rails' # Integración de jquery y rails
+gem 'will_paginate-bootstrap' # Integración will_paginate - twitter bootstrap
+gem 'will_paginate', '~> 3.0'
+gem 'hpricot'
+gem "ckeditor" # Editor RTE
+#gem 'bootstrap-wysihtml5-rails'
 gem 'jbuilder' # Para enviar json fácilmente
 gem 'ie_conditional_tag' # Para meter el html tag con clases especiales según la version de explorer
 gem 'truncate_html' # Para poder recortar un texto en html sin que se estropee la estructura
 #gem 'roadie' # P#ara meter css en los emails
 gem 'premailer-rails3'
 
-#gem 'devise'
 gem 'simple_form'
-gem 'decent_exposure'
-gem 'cancan'
-gem 'redcarpet'
-gem 'friendly_id'
-gem 'paper_trail'
-gem 'acts_as_list'
+gem 'redcarpet' # Convierte markdown a html
 gem 'cambelt' # Genera imágenes de prueba
 gem 'basic_config' # https://github.com/stephan778/basic_config 
-gem 'will_paginate', '~> 3.0'
 
-gem 'fog'
-gem 'carrierwave'
-gem 'cloudinary'
-gem 'mini_magick'
 #gem 'rmagick'
 
 gem 'rails-translate-routes'
