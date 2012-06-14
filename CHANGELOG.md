@@ -7,6 +7,11 @@ st.
 
 ## 14/06/2012
 - Empezamos a mover las cosas de cloudinary a s3
+- Fuera los avatares, los banners y las imágenes de los posts de
+  cloudinary
+- Usamos thin como servidor de desarrollo
+- Limpieza del log en desarrollo: fuera assets
+- Bug fix en los attachments. 
 
 ## 13/06/2012
 - Ponemos un CNAME al amazon s3
