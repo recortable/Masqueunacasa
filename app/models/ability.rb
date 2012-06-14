@@ -7,6 +7,7 @@ class Ability
     # Any user
     can :read, Phase
     can :read, Proposal
+    cannot :index, Proposal
     can :read, Group
     can [:read, :index], Experiencie
     can :read, Category

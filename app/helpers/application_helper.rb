@@ -40,4 +40,5 @@ module ApplicationHelper
       placeholder_image_tag(text: 'A', width: size, height: size, class: options[:class])
     end
   end
+
 end

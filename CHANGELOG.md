@@ -6,12 +6,15 @@ st.
 - 3) Enviar emails colectivos en background
 
 ## 14/06/2012
+- Lista de propuestas para administradorxs
+- Una manera para poder usar markdown además de html
+- Actualizar gemas
 - Propuesta de layout para la habitapedia
 - Mejora de los estilos del paginador
 - Empezamos a mover las cosas de cloudinary a s3
 - Fuera los avatares, los banners y las imágenes de los posts de
   cloudinary
-- Usamos thin como servidor de desarrollo
+- Usamos thin como servidor de desarrollo (para logs más claros)
 - Limpieza del log en desarrollo: fuera assets
 - Bug fix en los attachments. 
 
