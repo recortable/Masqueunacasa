@@ -120,11 +120,13 @@ div.archive {
       margin: 8px 0;
 
       ul {
-        list-style: circle outside;
-        margin: 0 16px;
+        list-style: none;
+        margin: 0;
 
         li {
-          margin: 5px;
+          width: 100%; overflow: hidden;
+          margin-bottom: 5px;
+          img { float: left; width: 40px; margin-right: 5px; }
         }
       }
     }
