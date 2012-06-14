@@ -2,9 +2,12 @@
 <%= render_banner 'Blog', community_path %>
 
 <div class="row">
-  <%= corner_span 'span2' do %>
+  <%= user_column 'span2' do %>
     <p>Éstas son los últimas entradas de 
     todos los colectivos de Masqueunacasa.</p>
+    <div class="controls">
+      <%# link_box 'Publicar', new_post_path %>
+    </div>
   <% end %>
   <div class="center span6">
     <%= render posts %>

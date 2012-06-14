@@ -7,11 +7,11 @@
   <% end %>
 </div>
 <div><%= link_to t('more'), groups_path %></div>
-
-<div class="users cards">
-  <% site.users.limit(20).each do |group| %>
-    <%= user_card(group) %>
+<br/>
+<div class="users avatars small">
+  <% site.users.each do |user| %>
+    <%= div_for user, class: 'avatar' do %>
+      <%= link_to avatar_image(user, size: :small), user_url(user, host: request.domain) %>
+    <% end %>
   <% end %>
 </div>
-<div><%= link_to t('more'), users_path %></div>
-

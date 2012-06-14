@@ -29,12 +29,15 @@ module ApplicationHelper
   end
 
   def avatar_image(model, options = {})
-    options.reverse_merge! class: 'responsive'
+    options.reverse_merge! class: 'responsive', size: 'normal'
+
+    size = options[:size] == :small ? 40 : 140
 
     if model.avatar_image? 
-      image_tag(model.avatar_image_url, alt: model.name, class: options[:class])
+      url = options[:size] == :small ? model.avatar_image_url(:mini) : model.avatar_image_url
+      image_tag(url, alt: model.name, class: options[:class], width: size, height: size)
     else
-      placeholder_image_tag(text: 'A', width: 140, height: 140, class: options[:class])
+      placeholder_image_tag(text: 'A', width: size, height: size, class: options[:class])
     end
   end
 end

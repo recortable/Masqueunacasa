@@ -5,6 +5,9 @@ TAREAS
 st.
 - 3) Enviar emails colectivos en background
 
+## 14/06/2012
+- Empezamos a mover las cosas de cloudinary a s3
+
 ## 13/06/2012
 - Ponemos un CNAME al amazon s3
 - De momento QUITAMOS todos los locales que no sean ES. No se puede

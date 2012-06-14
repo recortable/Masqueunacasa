@@ -138,11 +138,31 @@ $border-radius: 10px;
       margin: 0px auto;
       text-align: center;
 
-      img {width: 140px; height: 140px; margin-top: -10px; margin-bottom: 10px;}
+      img {
+        width: 140px; height: 140px; margin-top: -10px; margin-bottom: 10px;
+      }
     }
-    .avatar { height: 180px; }
+    .avatar { height: 180px; overflow: hidden; }
     .info {padding-bottom: 10px;}
   }
-  
+
+  .card.small { 
+    width: 90px;
+    margin: 20px 0 0 20px;
+    img {width: 70px; height: 70px;}
+    .avatar { height: 90px; }
+    .info { padding-bottom: 0; }
+  }
+
   & .card:last-child {margin-right: 0}
+}
+
+.avatars {
+  width: 100%; overflow: hidden; clear: both;
+  .avatar {
+    float: left; margin: 0 10px 10px 0;
+    background-color: $fondo;
+    padding: 10px;
+    box-shadow: 1px 1px 3px darken($fondo, 20%);
+  }
 }

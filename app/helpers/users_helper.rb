@@ -1,6 +1,9 @@
 module UsersHelper
-  def user_card(user, &block)
+  def user_card(user, options = {}, &block)
     content = block_given? ? capture(&block) : ''
-    render partial: 'users/user', locals: {user: user, info: content}
+    options.reverse_merge(size: 'medium')
+    options[:user] = user
+    options[:info] = content
+    render partial: 'users/user', locals: options
   end
 end
