@@ -6,6 +6,7 @@ st.
 - 3) Enviar emails colectivos en background
 
 ## 14/06/2012
+- Propuesta de layout para la habitapedia
 - Mejora de los estilos del paginador
 - Empezamos a mover las cosas de cloudinary a s3
 - Fuera los avatares, los banners y las imágenes de los posts de

@@ -6,7 +6,7 @@ es:
   profile: 'quienes'
   messages: 'mensajes'
   memberships: 'participantes'
-  phases: 'fases'
+  phases: 'preguntas'
   proposals: 'propuestas'
   versions: 'actividad'
   community: 'comunidad'

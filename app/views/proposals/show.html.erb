@@ -1,11 +1,13 @@
 <%= render_banner t('.title'), proposals_path %>
-<div class="member_bar controls">
-  <%= link_box t('go_back'), proposals_path %>
-  <%= link_box t('edit'), [:edit, proposal], rel: "edit-proposal-#{proposal.id}" if can? :edit, proposal %>
-</div>
 <div class="row">
-  <%= corner_span 'span8' do %>
-    <h2><%= link_to proposal.phase.name, proposal.phase %></h2>
+  <%= user_column 'span2' do %>
+    <%= link_to placeholder_image_tag(text: proposal.phase.name, width: 140, height: 140), proposal.phase %>
+    <div class="controls">
+      <%= link_box 'Editar propuesta', [:edit, proposal], rel: "edit-proposal-#{proposal.id}" if can? :edit, proposal %>
+    </div>
+  <% end %>
+
+  <%= corner_span 'span6' do %>
     <h3><%= link_to proposal.category.question, [proposal.category.phase, proposal.category] if proposal.category_id? %></h3>
     <%= title proposal.title %>
     <%= raw proposal.description %>
