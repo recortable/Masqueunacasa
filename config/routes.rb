@@ -12,6 +12,7 @@ Masqueunacasa::Application.routes.draw do
     put :send_email, on: :member
     put :probe, on: :member
   end
+  match '/blog' => 'dashboard#blog'
   resources :posts do
     resources :post_attachments, except: [:index, :show]
   end
@@ -27,7 +28,7 @@ Masqueunacasa::Application.routes.draw do
 
   root to: 'dashboard#welcome'
   match '/inicio' => 'dashboard#dashboard'
-  match '/community' => 'dashboard#blog', as: :community
+  match '/community' => 'dashboard#community', as: :community
   match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'
   match '/quinientos' => 'dashboard#quinientos'
 

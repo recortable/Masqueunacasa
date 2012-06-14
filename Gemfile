@@ -45,6 +45,8 @@ gem 'will_paginate', '~> 3.0'
 gem 'fog'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'mini_magick'
+#gem 'rmagick'
 
 gem 'rails-translate-routes'
 gem 'http_accept_language'

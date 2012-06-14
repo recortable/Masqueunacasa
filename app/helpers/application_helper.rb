@@ -34,7 +34,7 @@ module ApplicationHelper
     if model.avatar_image? 
       image_tag(model.avatar_image_url, alt: model.name, class: options[:class])
     else
-      placeholder_image_tag(text: '', width: 140, height: 140, class: options[:class])
+      placeholder_image_tag(text: 'A', width: 140, height: 140, class: options[:class])
     end
   end
 end

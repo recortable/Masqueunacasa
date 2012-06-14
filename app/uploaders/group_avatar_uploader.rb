@@ -1,12 +1,20 @@
 class GroupAvatarUploader < CarrierWave::Uploader::Base
-  include Cloudinary::CarrierWave
-  
-  process resize_to_fill: [140, 140, :north]
+  include CarrierWave::MiniMagick
 
-  process tags: ['group', 'avatar']
+  storage :fog
 
-  version :medium do
-    process :resize_to_fill => [40,40, :north]
+  process resize_to_fill: [140, 140]
+
+  version :mini do
+    process resize_to_fill: [40, 40]
+  end
+
+  def extension_white_list
+    %w(jpg jpeg gif png)
+  end
+
+  def store_dir
+    "avatars/"
   end
 
   def public_id

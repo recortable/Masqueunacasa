@@ -34,23 +34,14 @@ class Group < ActiveRecord::Base
   end
 
   def recipients(scope = 'all')
-    recipients = []
     if scope == 'all'
-      return self.users.map
+      users
     elsif scope == 'members'
-      self.users.each do |user|
-        if self.member_level?(user, "member") | self.member_level?(user, "owner")
-          recipients << user
-        end
-      end
+      users.select {|u| member_level?(u, [:member, :owner]) }
     elsif scope == 'admin'
-      self.users.each do |user|
-        if self.member_level?(user, "owner")
-          recipients << user
-        end
-      end
+      self.users.select {|u| member_level?(u, :owner) }
+    else
+      []
     end
-
-    recipients
   end
 end
