@@ -42,10 +42,9 @@ describe 'Groups integration' do
   it 'must see follow link in open group' do
     group = create(:group)
     user = create(:user)
-    sub = group.subdomain
-    Capybara.app_host = "http://#{sub}.lvh.me"
-    visit posts_path
-    #page.text.must_include 'Entra para participar'
+    subdomain group.subdomain
+    visit root_path
+    page.text.must_include 'Entra para participar'
     login_user user
     page.text.must_include 'Seguir'
   end

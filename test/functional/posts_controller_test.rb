@@ -6,7 +6,7 @@ describe 'Posts integration' do
     post = create(:post, group: group)
     other = create(:post)
     subdomain group.subdomain
-    visit posts_path
+    visit root_path
     page.text.must_include post.title
     page.text.wont_include other.title
   end
@@ -34,7 +34,7 @@ describe 'Posts integration' do
 
     login_user(user)
     subdomain(group.subdomain)
-    visit posts_path
+    visit root_path
     page.find('a[rel="new-post"]').click
     page.current_path.must_equal new_post_path
   end

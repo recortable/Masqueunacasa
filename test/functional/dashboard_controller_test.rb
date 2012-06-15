@@ -8,7 +8,7 @@ describe 'Dashboard integration' do
   it 'lists recent post of all groups' do
     p1 = create(:post)
     p2 = create(:post)
-    visit community_path
+    visit posts_path
     page.text.must_include p1.title
     page.text.must_include p2.title
   end
