@@ -3,20 +3,18 @@
   <div class="content">
     <h3><%= t('.archive') %></h3>
     <ul class="months">
-      <% post_archive.sort.reverse.each do |month, posts| %>
+      <% posts_archive.sort.reverse.each do |month, posts| %>
         <li class="month">
-          <h4><%= l month, format: :month_year %></h4>
-          <ul>
-            <% for post in posts %>
-              <li>
-                <%=link_to_unless_current post.title, post %><br />
-                <%= l post.published_at %>
-                <% if !request.subdomain.present? %>
-                  <%= t('posts.by').downcase %> <%= link_to post.group.name, post.group %>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
+        <h4><%= l month, format: :month_year %></h4>
+        <ul>
+          <% posts.each do |post| %>
+            <li>
+            <%= link_to avatar_image(post.group, size: :small, class: 'fixed') %>
+            <%= l post.published_at %>
+            <%=link_to_unless_current post.title, post %>
+            </li>
+          <% end %>
+        </ul>
         </li>
       <% end %>
     </ul>

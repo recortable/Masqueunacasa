@@ -1,9 +1,7 @@
 <%= render_banner user.name, users_path %>
 
 <%= div_for user, class: 'row space' do %>
-  <%= corner_span('info span4') do %> 
-    <%= title user.name %>
-    <%= raw user.description %>
+  <%= user_column 'span2' do %>
     <%= avatar_image(user) %>
     <%= content_tag(:p, 'Administrador(a) de masqueunacasa.org') if user.admin? %>
     <div class="controls">
@@ -11,18 +9,25 @@
       <%= link_box 'Editar perfil', [:edit, user] if can? :update, user %>
     </div>
   <% end %>
-  <%= corner_span('messages span4', :none) do %>
-    <h2>Mensajes</h2>
-    <% if current_user and (current_user != user || current_user.admin?) %>
-      <p>Desde aquí puedes enviar un mensaje a esta persona</p>
-      <%= render 'messages/form' %>
-    <% end %>
 
+  <%= corner_span('info span6') do %> 
+    <%= title user.name %>
+    <%= raw user.description %>
   <% end %>
-  <%= corner_span('groups span4', :none) do %>
-    <h2>Colectivos</h2>
-    <% user.memberships.each do |m| %>
-      <%= link_to m.group.name, m.group %>
-    <% end %>
+
+<% end %>
+<!--
+<%= corner_span('groups span4', :none) do %>
+  <h2>Colectivos</h2>
+  <% user.memberships.each do |m| %>
+    <%= link_to m.group.name, m.group %>
   <% end %>
 <% end %>
+<%= corner_span('messages span4', :none) do %>
+  <h2>Mensajes</h2>
+  <% if current_user and (current_user != user || current_user.admin?) %>
+    <p>Desde aquí puedes enviar un mensaje a esta persona</p>
+    <%= render 'messages/form' %>
+  <% end %>
+<% end %>
+-->

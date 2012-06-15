@@ -12,7 +12,7 @@ class Proposal < ActiveRecord::Base
   attr_accessible :user_id, :phase_id, :group_id, :category_id
   attr_accessible :user, :phase, :group, :category
   attr_accessible :title, :body, :description
-  attr_accessible :published
+  attr_accessible :published, :body_type
 
   belongs_to :user
   belongs_to :group

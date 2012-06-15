@@ -1,5 +1,1 @@
-<% #TODO: esto se puede configurar en un initializer %>
-<%= will_paginate(posts, page_links: false, previous_label: 
-                  t('.prev_posts'), next_label: t('.next_posts'),
-                  id: 'posts_pagination', class: 'corner none') %>
-                &nbsp;
+<%= will_paginate(posts, :renderer => BootstrapPagination::Rails, id: 'posts_pagination', class: 'pagination') %>

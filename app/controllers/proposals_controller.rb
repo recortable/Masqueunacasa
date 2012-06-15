@@ -5,7 +5,7 @@ class ProposalsController < ApplicationController
   expose(:proposal)
 
   def index
-    authorize! :read, Proposal
+    authorize! :index, Proposal
     respond_with proposals
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613140232) do
+ActiveRecord::Schema.define(:version => 20120614231304) do
 
   create_table "announcements", :force => true do |t|
     t.integer  "user_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20120613140232) do
     t.text     "body_es"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.string   "body_type",   :limit => 16
   end
 
   add_index "categories", ["phase_id"], :name => "index_categories_on_phase_id"
@@ -81,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20120613140232) do
     t.string   "link_url"
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false
+    t.string   "body_type",      :limit => 16
   end
 
   add_index "contents", ["group_id"], :name => "index_contents_on_group_id"
@@ -102,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20120613140232) do
     t.integer  "proposals_count"
     t.datetime "created_at",                                       :null => false
     t.datetime "updated_at",                                       :null => false
+    t.string   "body_type",       :limit => 16
   end
 
   add_index "experiencies", ["group_id"], :name => "index_experiencies_on_group_id"
@@ -209,6 +212,7 @@ ActiveRecord::Schema.define(:version => 20120613140232) do
     t.datetime "created_at",                                       :null => false
     t.datetime "updated_at",                                       :null => false
     t.integer  "category_id"
+    t.string   "body_type",      :limit => 16
   end
 
   add_index "proposals", ["category_id"], :name => "index_proposals_on_category_id"

@@ -1,14 +1,23 @@
 class GroupBannerUploader < CarrierWave::Uploader::Base
-  include Cloudinary::CarrierWave
+  include CarrierWave::MiniMagick
 
-  process tags: ['group', 'banner']
-  process resize_to_limit: [1170, 400]
+  storage :fog
 
-  version :thumb do
-    process :resize_to_fit => [360,100]
+  process resize_to_fill: [1170, 200]
+
+  version :mini do
+    process resize_to_fill: [117, 20]
+  end
+
+  def extension_white_list
+    %w(jpg jpeg gif png)
+  end
+
+  def store_dir
+    "banners/"
   end
 
   def public_id
-    return "group_#{model.id}"
+    return "group_banner_#{model.id}"
   end
 end

@@ -28,7 +28,7 @@
         <% post.attachments.each do |attachment| %>
           <%= div_for attachment do %>
             <%= link_to attachment.file_identifier, attachment.file_url %>
-            <%= number_to_human_size attachment.size %>
+            <%#= number_to_human_size attachment.size %>
             <%= link_to 'Borrar', [post, attachment], 
               method: :delete, confirm: "¿Borrar #{attachment.title}?" if can? :destroy, attachment %>
           <% end %>
