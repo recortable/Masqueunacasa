@@ -6,12 +6,14 @@ es:
     intro_text: "Se ha mandado el siguiente mensaje para el grupo %{group} desde masqueunacasa.org"
   group_mailer:
     message_to_group:
+      email_intro: "%{sender} mandó el siguiente mensaje al grupo %{group}"
       subject: Se ha mandado un nuevo mensaje al grupo %{group}
-      email_intro: Alguien mandó el siguiente mensaje al grupo
 
     message_to_user: 
       subject: Nuevo mensaje desde masqueunacasa.org
       email_intro: "%{from} te ha mandado un mensaje desde masqueunacasa.org"
+
+    title: Nuevo mensaje
 
 ca:
   announcement_mailer:

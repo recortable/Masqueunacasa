@@ -8,10 +8,16 @@ class GroupMailer < ActionMailer::Base
   #
   def message_to_group(message, recipient)
     @message = message
-
-    mail to: recipient,
-         subject: t("group_mailer.message_to_group.subject",
-                   group: message.group.name)
+    @title = t('group_mailer.title')
+    @avatar = message.group.avatar_image_url
+    @sender = message.user.name || "Alguien"
+    
+    mail to: recipient, 
+         subject: t("group_mailer.message_to_group.subject", 
+          group: message.group.name) do |format|
+      format.html {render layout: 'group_email_layout' }
+      format.text
+    end
   end
 
   def message_to_user(message)

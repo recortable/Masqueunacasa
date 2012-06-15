@@ -1,7 +1,7 @@
 <%= content_tag :p, @notice, class: 'notice' if @notice %>
 
-<h1><%= @announcement.title %></h1>
+<h1><%= @message.title %></h1>
 
 <div id="message_content">
-  <%= raw @announcement.body %>
+  <%= raw @message.body %>
 </div>
