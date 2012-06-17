@@ -82,15 +82,15 @@
         <td width="100px" height="100px" rowspan="2">
           <img id="avatar" src="<%= @avatar %>" /></td>
         <td width="400px" height="50px" valign="bottom">
-          <%= link_to @announcement.group.name, group_url(@announcement.group), id: 'group_name', target: "_blank" %>          
+          <%= link_to @message.group.name, group_url(@message.group), id: 'group_name', target: "_blank" %>          
         </td>
         <td width="100px" height="100px" rowspan="2">
           <%= image_tag 'emails/mquc_colectivos.png', width: 100 %>
         </td>
       <tr>
         <td valign="top">
-          <%= link_to @announcement.group.subdomain + ".masqueunacasa.org",
-                group_url(@announcement.group), id: 'group_url', target: "_blank" %>
+          <%= link_to @message.group.subdomain + ".masqueunacasa.org",
+                group_url(@message.group), id: 'group_url', target: "_blank" %>
         </td>
       </tr>
       <tr>

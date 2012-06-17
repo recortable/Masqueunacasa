@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
     message.user = current_user
     if message.save
       send_message(message)       
-      flash[:notice] = t('messages.notices.created') if message.save
+      flash[:notice] = t('messages.notices.created')
     else
       flash[:notice] = message.errors.inspect
     end
