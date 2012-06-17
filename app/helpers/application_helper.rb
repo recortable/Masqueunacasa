@@ -12,6 +12,10 @@ module ApplicationHelper
     request.subdomain.present? ? 'subdomain' : 'main_domain'
   end
 
+  def current_user_admin?
+    current_user && current_user.admin?
+  end
+
   # Translate collection
   # Used in forms (see views/memberships/edit)
   def tc(prefix, collection)
