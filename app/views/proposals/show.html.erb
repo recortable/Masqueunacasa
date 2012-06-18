@@ -18,11 +18,6 @@
       <% end %>
     <% end %>
     <%= link_to 'Añadir sección', [:new, proposal, :section], rel: 'new-section' if can? :create, Section %>
-
-    <br/><br/>
-    <h3>Texto anterior(desaparecerá)</h3>
-    <%= render_text proposal.description, proposal.body_type %>
-    <%= render_text proposal.body, proposal.body_type %>
   <% end %>
   <%= corner_span 'span4' do %>
     <h3>Experiencias relacionadas</h3>
@@ -38,3 +33,9 @@
     <%= link_to 'Añadir experiencia relacionada', new_proposal_relation_path(proposal) if can? :create, Relation %>
   <% end %>
 </div>
+<div class="bloc" style="margin-top: 200px;">
+  <h3>Texto anterior(desaparecerá)</h3>
+<%= render_text proposal.description, proposal.body_type %>
+<%= render_text proposal.body, proposal.body_type %>
+</div>
+

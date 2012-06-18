@@ -8,14 +8,19 @@
     </div>
   <% end %>
   <%= corner_span 'span6' do %>
+    <h2><%= link_to phase.name, phase %></h2>
     <%= fake_img 600, 400 %>
     <%= title category.question %>
     <%= render_body category %>
   <% end %>
   <%= corner_span 'span4', :none do %>
+    <h2>Propuestas</h2>
     <ul>
       <% category.proposals.each do |proposal| %>
-        <li><%= link_to proposal.title, proposal %><%= raw proposal.description %></li>
+        <li>
+        <%= link_to proposal.title, proposal %>
+        <%= render_body proposal.sections.first %>
+        </li>
       <% end %>
     </ul>
   <% end %>

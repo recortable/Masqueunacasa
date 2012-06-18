@@ -1,5 +1,6 @@
 module TextHelper
   def render_body(model) 
+    return '' if model.blank?
     render_text(model.body, model.body_type)
   end
 

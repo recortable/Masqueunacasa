@@ -12,7 +12,12 @@
 
   <%= corner_span 'span6' do %>
     <%= title phase.name %>
+    <%= fake_img 600, 400 %>
     <%= markdown phase.description %>
+  <% end %>
+
+  <%= corner_span 'span4' do %>
+    <h2>Preguntas</h2>
     <ul>
       <% phase.categories.each do |category| %>
         <li>

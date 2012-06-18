@@ -4,12 +4,8 @@
   <% phases.each do |phase| %>
     <%= corner_span('phase span4') do %>
       <h2><%= link_to phase.name, phase %></h2>
+      <%= link_to fake_img(600, 400), phase %>
       <%= markdown phase.description %>
-      <ul>
-        <% phase.categories.each do |category| %>
-          <li><%= link_to category.question, [phase, category] %></li>
-        <% end %>
-      </ul>
       <%= link_to 'Editar fase', [:edit, phase], rel: "edit-phase-#{phase.id}" if can? :edit, Phase %>
     <% end %>
   <% end %>
