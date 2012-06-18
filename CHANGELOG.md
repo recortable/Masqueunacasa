@@ -6,6 +6,11 @@ st.
 - 3) Enviar emails colectivos en background
 
 ## 18/06/2012
+- Añadir o quitar relaciones se hace en la página de edición de
+  propuestas
+- El contenido de las propuestas se organiza en secciones
+- Reorganización del layout de habitapedia
+
 
 ## 14/06/2012
 - Lista de propuestas para administradorxs

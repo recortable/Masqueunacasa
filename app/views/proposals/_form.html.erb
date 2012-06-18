@@ -2,10 +2,8 @@
   <%= form.input :title %>
   <%= form.association :phase, include_blank: false %>
   <%= form.association :category, collection: Category.all.map{|c| [c.question, c.id]} if current_user_admin? %>
-  <%= form.input :description, as: :text, input_html: {class: 'NOrte'} %>
-  <%= form.input :body_type, collection: ['html', 'markdown'], include_blank: false if current_user_admin? %>
-  <%= form.input :body, as: :text, input_html: {class: 'NOrte'} %>
+  <%# form.input :description, as: :text, input_html: {class: 'NOrte'} %>
+  <%# form.input :body_type, collection: ['html', 'markdown'], include_blank: false if current_user_admin? %>
+  <%# form.input :body, as: :text, input_html: {class: 'NOrte'} %>
   <%= submit_button_for form %>
 <% end %>
-
-<div id="epiceditor" style="width: 100%; height: 10em;border: 1px solid black;"></div>

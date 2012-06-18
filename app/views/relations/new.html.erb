@@ -1,11 +1,13 @@
 <%= render_banner 'Relacionar', parent %>
-<div class="member_bar controls">
-  <%= link_box t('go_back'), parent %>
-</div>
 
 <div class="row">
+  <%= user_column 'span2' do %>
+    <h3><%= parent.title %></h3>
+    <div class="controls">
+      <%= link_box t('go_back'), [:edit, parent] %>
+    </div>
+  <% end %>
   <%= corner_span 'span8' do %>
-    <h1><%= parent.title %></h1>
     <%= title 'Añadir experiencia relacionada', :h2 %>
     <%= form_tag [:new, parent, :relation], method: :get do %>
       <%= text_field_tag :term, params[:term] %>

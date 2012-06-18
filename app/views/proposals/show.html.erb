@@ -25,12 +25,9 @@
       <% proposal.relations.each do |relation| %>
         <li>
         <%= link_to relation.experiencie.title, relation.experiencie %>
-        <%= link_to '[borrar relación]', [proposal, relation], method: :delete, 
-          confirm: "Borrar relación con #{relation.experiencie.title}. ¿Segurx?" if can? :delete, relation %>
         </li>
       <% end %>
     </ul>
-    <%= link_to 'Añadir experiencia relacionada', new_proposal_relation_path(proposal) if can? :create, Relation %>
   <% end %>
 </div>
 <div class="bloc" style="margin-top: 200px;">
