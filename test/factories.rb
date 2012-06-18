@@ -36,11 +36,26 @@ FactoryGirl.define do
     description_ca { "#{name_ca} descripciò" }
   end
 
+  factory :category do
+    sequence(:title) {|n| "Category #{n}" }
+    question { "#{title} question" }
+    user
+    phase
+  end
+
   factory :proposal do
     sequence(:title) {|n| "Proposal #{n}"}
     body { "#{title} body" }
     user
     phase
+  end
+
+  factory :section do
+    proposal
+    sequence(:title) {|n| "Section #{n}" }
+    body { "#{title} body" }
+    body_type 'markdown'
+    lang 'es'
   end
 
   factory :experiencie do
@@ -52,13 +67,6 @@ FactoryGirl.define do
   factory :message do
     sequence(:body) {|n| "Message body #{n}" }
     user
-  end
-
-  factory :category do
-    sequence(:title) {|n| "Category #{n}" }
-    question { "#{title} question" }
-    user
-    phase
   end
 
   factory :announcement do

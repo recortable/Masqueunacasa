@@ -39,6 +39,7 @@ Masqueunacasa::Application.routes.draw do
     resources :versions
     resources :proposals do
       resources :relations, only: [:new, :create, :destroy]
+      resources :sections, except: [:index]
     end
     resources :experiencies
 

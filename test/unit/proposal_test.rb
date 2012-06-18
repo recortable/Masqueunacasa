@@ -37,4 +37,16 @@ describe Proposal do
     proposal.relations.count.must_equal 1
     proposal.experiencies.first.must_equal experiencie
   end
+
+  it 'has sections by lang' do
+    p = create(:proposal)
+    es = create(:section, proposal: p, lang: 'es')
+    ca = create(:section, proposal: p, lang: 'ca')
+    I18n.locale = 'es'
+    p.sections.size.must_equal 1
+    p.sections.first.must_equal es
+    I18n.locale = 'ca'
+    p.sections.size.must_equal 1
+    p.sections.first.must_equal es
+  end
 end

@@ -10,6 +10,17 @@
   <%= corner_span 'span6' do %>
     <h3><%= link_to proposal.category.question, [proposal.category.phase, proposal.category] if proposal.category_id? %></h3>
     <%= title proposal.title %>
+    <% proposal.sections.each do |section| %>
+      <%= div_for section do %>
+        <%= link_to 'Editar', [:edit, proposal, section], class: 'edit-section', rel: "edit-section-#{section.id}" if can? :edit, section %>
+        <%= content_tag :h3, section.title %>
+        <%= render_body section %>
+      <% end %>
+    <% end %>
+    <%= link_to 'Añadir sección', [:new, proposal, :section], rel: 'new-section' if can? :create, Section %>
+
+    <br/><br/>
+    <h3>Texto anterior(desaparecerá)</h3>
     <%= render_text proposal.description, proposal.body_type %>
     <%= render_text proposal.body, proposal.body_type %>
   <% end %>
