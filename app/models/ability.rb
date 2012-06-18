@@ -11,6 +11,7 @@ class Ability
     can :read, Group
     can [:read, :index], Experiencie
     can :read, Category
+    cannot :index, Category
 
     if user.blank?
       can :create, UserSession 

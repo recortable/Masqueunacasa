@@ -1,0 +1,18 @@
+<%= render_banner t('.title'), proposals_path %>
+
+<div class="row">
+  <div class="span8 offset2">
+    <div class="content">
+      <%= title 'Preguntas' %>
+      <table class="table stripped">
+        <% categories.each do |category| %>
+          <tr>
+            <td><%= category.phase.name %></td>
+            <td><%= link_to category.question, [category.phase, category] %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+

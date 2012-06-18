@@ -1,4 +1,8 @@
 module TextHelper
+  def render_body(model) 
+    render_text(model.body, model.body_type)
+  end
+
   def render_text(content, type) 
     type == 'html' ? raw(content) : markdown(content)
   end

@@ -2,8 +2,14 @@ class CategoriesController < ApplicationController
   respond_to :html
 
   expose(:phase) { Phase.find params[:phase_id] }
-  expose(:categories) { phase.categories }
+  expose(:parent) { params[:phase_id].present? ? phase : Site.new }
+  expose(:categories) { parent.categories }
   expose(:category)
+
+  def index
+    authorize! :index, Category
+    respond_with categories
+  end
 
   def new
     authorize! :create, Category

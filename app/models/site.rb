@@ -26,6 +26,10 @@ class Site
     Phase.order('position ASC')
   end
 
+  def categories
+    Category.scoped
+  end
+
   def groups
     Group.order('updated_at DESC')
   end

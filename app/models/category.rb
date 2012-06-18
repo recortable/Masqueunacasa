@@ -6,7 +6,7 @@ class Category < ActiveRecord::Base
   translates :title, :slug, :question, :body
   translation_required :title, :slug, :question
 
-  attr_accessible :title, :question, :body
+  attr_accessible :title, :question, :body, :body_type
   attr_accessible :user_id, :user, :phase_id, :phase
 
   validates_presence_of :user_id, :phase_id, :title, :question

@@ -2,14 +2,15 @@
 
 <div class="row">
   <%= user_column 'span2' do %>
-    <%= link_to placeholder_image_tag(text: phase.name, width: 140, height: 140), phase %>
+    <%= link_to fake_img(140, 140, class: 'fixed', text: phase.name), phase %>
     <div class="controls">
       <%= link_box 'Editar pregunta', [:edit, phase, category] if can? :edit, category %>
     </div>
   <% end %>
   <%= corner_span 'span6' do %>
+    <%= fake_img 600, 400 %>
     <%= title category.question %>
-    <%= raw category.body %>
+    <%= render_body category %>
   <% end %>
   <%= corner_span 'span4', :none do %>
     <ul>

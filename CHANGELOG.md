@@ -5,6 +5,8 @@ TAREAS
 st.
 - 3) Enviar emails colectivos en background
 
+## 18/06/2012
+
 ## 14/06/2012
 - Lista de propuestas para administradorxs
 - Una manera para poder usar markdown además de html
