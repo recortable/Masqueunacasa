@@ -11,6 +11,7 @@ es:
       category: 'pregunta'
       password_recovery: 'recuperar contraseña'
       post_attachment: 'adjunto'
+      section: 'sección'
 
   membership:
     states:

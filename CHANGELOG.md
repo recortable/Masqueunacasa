@@ -5,6 +5,11 @@ TAREAS
 st.
 - 3) Enviar emails colectivos en background
 
+## 19/06/2012
+- La secciones pueden pertenecer a otras cosas que no solo las
+  propuestas
+- ExposeResource expose_parent 
+
 ## 18/06/2012
 - Mediafy.js: automáticamente inserta enlaces de vídeo, imágenes, etc...
   que haya en el texto.

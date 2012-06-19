@@ -2,6 +2,7 @@
 class ApplicationController < ActionController::Base
   include CurrentUser
   include HasCurrentGroup
+  include ExposeResource
   protect_from_forgery
 
   before_filter :set_locale

@@ -51,7 +51,6 @@ FactoryGirl.define do
   end
 
   factory :section do
-    proposal
     sequence(:title) {|n| "Section #{n}" }
     body { "#{title} body" }
     body_type 'markdown'

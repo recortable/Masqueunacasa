@@ -15,6 +15,7 @@ es:
   relations: 'relacionadas'
   users: 'personas'
   versions: 'actividad'
+  sections: 'secciones'
 
   edit: 'editar'
   new: 'nueva'

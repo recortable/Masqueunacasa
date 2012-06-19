@@ -1,13 +1,19 @@
 require 'test_helper'
 
 describe Section do
-  it 'has proposal_title' do
-    s = create(:section)
-    s.proposal_title.must_equal s.proposal.title
+
+  it 'has document_title' do
+    proposal = create(:proposal)
+    s = create(:section, document: proposal)
+    s.document_title.must_equal proposal.title
   end
 
   it 'has position' do
-    s = create(:section)
-    s.position.must_be :present?
+    proposal = create(:proposal)
+    create(:section, document: proposal).position.must_equal 1
+    create(:section, document: proposal).position.must_equal 2
+    experiencie = create(:experiencie)
+    create(:section, document: experiencie).position.must_equal 1
+    create(:section, document: experiencie).position.must_equal 2
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120618190901) do
+ActiveRecord::Schema.define(:version => 20120619080514) do
 
   create_table "announcements", :force => true do |t|
     t.integer  "user_id"
@@ -232,21 +232,22 @@ ActiveRecord::Schema.define(:version => 20120618190901) do
   add_index "relations", ["user_id"], :name => "index_relations_on_user_id"
 
   create_table "sections", :force => true do |t|
-    t.integer  "proposal_id"
-    t.string   "lang",        :limit => 2
-    t.integer  "position",                   :null => false
-    t.string   "title",       :limit => 200
+    t.string   "lang",          :limit => 2
+    t.integer  "position",                     :null => false
+    t.string   "title",         :limit => 200
     t.text     "body"
-    t.string   "body_type",   :limit => 16
+    t.string   "body_type",     :limit => 16
     t.string   "image"
     t.text     "properties"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.integer  "document_id"
+    t.string   "document_type", :limit => 16
   end
 
+  add_index "sections", ["document_type", "document_id", "lang"], :name => "index_sections_on_document_type_and_document_id_and_lang"
+  add_index "sections", ["document_type", "document_id"], :name => "index_sections_on_document_type_and_document_id"
   add_index "sections", ["position"], :name => "index_sections_on_position"
-  add_index "sections", ["proposal_id", "lang"], :name => "index_sections_on_proposal_id_and_lang"
-  add_index "sections", ["proposal_id"], :name => "index_sections_on_proposal_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

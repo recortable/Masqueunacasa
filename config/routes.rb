@@ -13,7 +13,9 @@ Masqueunacasa::Application.routes.draw do
   constraints subdomain: /^$/ do
     match '/blog' => 'dashboard#blog'
   end
-  resources :pages
+  resources :pages do
+    resources :sections, except: [:index]
+  end
   resources :posts do
     resources :post_attachments, except: [:index, :show]
   end

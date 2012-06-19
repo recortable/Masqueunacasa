@@ -40,8 +40,8 @@ describe Proposal do
 
   it 'has sections by lang' do
     p = create(:proposal)
-    es = create(:section, proposal: p, lang: 'es')
-    ca = create(:section, proposal: p, lang: 'ca')
+    es = create(:section, document: p, lang: 'es')
+    ca = create(:section, document: p, lang: 'ca')
     I18n.locale = 'es'
     p.sections.size.must_equal 1
     p.sections.first.must_equal es

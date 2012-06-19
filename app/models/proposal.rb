@@ -20,7 +20,7 @@ class Proposal < ActiveRecord::Base
   belongs_to :category
   has_many :relations
   has_many :experiencies, through: :relations 
-  has_many :sections, conditions: proc { ['lang = ?', I18n.locale] }
+  has_many :sections, as: :document, conditions: proc { ['lang = ?', I18n.locale] }
 
   validates_presence_of :title, :title_es, :title_ca, :user, :phase
   

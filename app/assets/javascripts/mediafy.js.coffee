@@ -12,6 +12,7 @@ class Mediafy
       if media
         console.log media
         media.renderer = render
+        media.type = render.name
         return media
     
 # Create the Mediafy object

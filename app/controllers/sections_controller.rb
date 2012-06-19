@@ -1,8 +1,8 @@
 class SectionsController < ApplicationController
   respond_to :html
 
-  expose(:proposal) { Proposal.find params[:proposal_id] }
-  expose(:sections) { proposal.sections(:es) }
+  expose_parent :document, [:proposal, :page]
+  expose(:sections) { document.sections(:es) }
   expose(:section)
 
   def new
@@ -14,19 +14,19 @@ class SectionsController < ApplicationController
   end
 
   def create
-    section.proposal = proposal
+    section.document = document
     section.lang = I18n.locale
     section.body_type ||= 'markdown'
     authorize! :create, section
     section.save
-    respond_with section, location: proposal
+    respond_with section, location: document
   end
 
   def update
-    section.attributes = params[:proposal]
+    section.attributes = params[:section]
     authorize! :update, section
     section.save
-    respond_with section, location: proposal
+    respond_with section, location: document
   end
   
 end

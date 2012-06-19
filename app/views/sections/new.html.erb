@@ -1,2 +1,8 @@
-<%= title 'Añadir sección' %>
-<%= render 'form' %>
+<%= render_banner 'Contenido', url_for() %>
+
+<div class="row">
+  <%= corner_span 'span6 offset2' do %>
+    <%= title "Añadir sección a '#{document.title}'" %>
+    <%= render 'form' %>
+  <% end %>
+</div>

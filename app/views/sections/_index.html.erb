@@ -1,0 +1,9 @@
+<% document.sections.each do |section| %>
+  <%= div_for section do %>
+    <%= link_to 'Editar', [:edit, document, section], class: 'edit-section', rel: "edit-section-#{section.id}" if can? :edit, section %>
+    <%= content_tag :h3, section.title %>
+    <%= render_body section %>
+  <% end %>
+<% end %>
+<%= link_to 'Añadir sección', [:new, document, :section], rel: 'new-section' if can? :create, Section %>
+
