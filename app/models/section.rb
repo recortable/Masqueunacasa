@@ -4,7 +4,7 @@ class Section < ActiveRecord::Base
 
   validates_presence_of :document_id, :document_type, :lang, :body_type
 
-  belongs_to :document, polymorphic: true
+  belongs_to :document, polymorphic: true, touch: true
   default_scope order: 'position ASC'
 
   acts_as_list scope: [:document_type, :document_id]

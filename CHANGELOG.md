@@ -1,11 +1,14 @@
 # Masqueunacasa
 
 TAREAS
-- 1) Forzar que la cabecera de los grupos tenga 200 pixels de alto
-st.
-- 3) Enviar emails colectivos en background
+- Enviar emails colectivos en background
 
 ## 19/06/2012
+- Las secciones actualizan el update_at del documento al que están
+  asociados
+- cap db:sync se renombre a cap db:pull (como en heroku)
+- El contenido de las experiencias se organiza en secciones
+- El contenido de las páginas se organiza en secciones
 - La secciones pueden pertenecer a otras cosas que no solo las
   propuestas
 - ExposeResource expose_parent 

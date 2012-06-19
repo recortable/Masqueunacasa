@@ -16,4 +16,11 @@ describe Section do
     create(:section, document: experiencie).position.must_equal 1
     create(:section, document: experiencie).position.must_equal 2
   end
+
+  it 'touches document' do
+    proposal = create(:proposal)
+    date = proposal.updated_at
+    create(:section, document: proposal)
+    proposal.updated_at.wont_equal date
+  end
 end

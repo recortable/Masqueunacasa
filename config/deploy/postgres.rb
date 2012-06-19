@@ -15,7 +15,7 @@ namespace :db do
   end
 
   desc "Dumps target database into development db"
-  task :sync do
+  task :pull do
     db = YAML::load(ERB.new(IO.read(File.join(File.dirname(__FILE__), '../database.yml'))).result)
     production = db['production']
 
