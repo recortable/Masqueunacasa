@@ -6,6 +6,8 @@ st.
 - 3) Enviar emails colectivos en background
 
 ## 18/06/2012
+- Mediafy.js: automáticamente inserta enlaces de vídeo, imágenes, etc...
+  que haya en el texto.
 - El layuot de Pages mejorado
 - Páginas pasa a /docs
 - Añadir o quitar relaciones se hace en la página de edición de

@@ -1,7 +1,7 @@
 module TextHelper
   def render_body(model) 
     return '' if model.blank?
-    render_text(model.body, model.body_type)
+    content_tag(:div, render_text(model.body, model.body_type), class: 'body')
   end
 
   def render_text(content, type) 
@@ -9,6 +9,7 @@ module TextHelper
   end
 
   def markdown(text)
+    text.gsub! /^#+/, '### '
     markdowner.render(text).html_safe
   end
 
