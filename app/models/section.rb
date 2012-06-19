@@ -6,6 +6,7 @@ class Section < ActiveRecord::Base
 
   belongs_to :document, polymorphic: true, touch: true
   default_scope order: 'position ASC'
+  scope :titled, where('title IS NOT NULL')
 
   acts_as_list scope: [:document_type, :document_id]
   has_paper_trail meta: {title: :document_title}

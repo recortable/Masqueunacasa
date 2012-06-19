@@ -19,14 +19,21 @@ class SectionsController < ApplicationController
     section.body_type ||= 'markdown'
     authorize! :create, section
     section.save
-    respond_with section, location: document
+    respond_with section, location: document_location
   end
 
   def update
     section.attributes = params[:section]
     authorize! :update, section
     section.save
-    respond_with section, location: document
+    respond_with section, location: document_location
   end
-  
+
+  private
+  def document_location
+    section.title? ? 
+      url_for(document) + "##{section.title}" :
+      url_for(document)
+  end
+
 end

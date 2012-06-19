@@ -9,19 +9,19 @@
     </div>
   <% end %>
   <%= corner_span 'span6' do %>
-    <%= fake_img 600, 400 %>
     <%= title category.question %>
+    <%= fake_img 600, 400 %>
     <%= render_body category %>
   <% end %>
   <%= corner_span 'span4', :none do %>
     <h2>Propuestas</h2>
-    <ul>
+    <table class="table">
       <% category.proposals.each do |proposal| %>
-        <li>
+        <tr><td>
         <%= link_to proposal.title, proposal %>
         <%= render_body proposal.sections.first %>
-        </li>
+        </td><tr>
       <% end %>
-    </ul>
+    </table>
   <% end %>
 </div>

@@ -32,4 +32,12 @@ module ApplicationHelper
     render partial: 'application/card', locals: {content: content}
   end
 
+  def simple_list(collection, &block)
+    content = '<table class="table">'
+    collection.each do |item|
+      content += "<tr><td>#{capture(item, &block)}</td></tr>"
+    end
+    content += '</table>'
+    raw content
+  end
 end

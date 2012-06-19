@@ -4,6 +4,9 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 19/06/2012
+- Cuando pulsas salir permaneces en la misma página 
+- Habitapedia reorganizado - muestra las preguntas
+- Índice en propuestas a la izquierda del contenido
 - Las secciones actualizan el update_at del documento al que están
   asociados
 - cap db:sync se renombre a cap db:pull (como en heroku)

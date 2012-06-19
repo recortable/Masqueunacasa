@@ -7,14 +7,9 @@
     <table class="table stripped">
       <% proposals.each do |proposal| %>
         <tr>
-          <td><h3><%= link_to proposal.title, proposal %></h3></td>
-          <td>
-            [<%= proposal.sections.count %> secciones]
-            <%= proposal.body.length %> caracteres (<%= proposal.body_type %>)
-          </td>
           <td><%= proposal.phase.name %></td>
           <td><%= proposal.category.title %></td>
-          <td><%= time_ago_in_words proposal.updated_at %></td>
+          <td><h3><%= link_to proposal.title, proposal %></h3></td>
           <td><%= link_to 'Editar', [:edit, proposal] %></td>
         </tr>
       <% end %>

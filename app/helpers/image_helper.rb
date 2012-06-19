@@ -1,16 +1,14 @@
 module ImageHelper
   def fake_img(width, height, options = {}) 
-    options.reverse_merge! class: 'responsive'
-
-    extra = options[:text].present? ? "/#{options[:text]}" : ''
-    raw("<img src='http://cambelt.co/#{width}x#{height}#{extra}' class='#{options[:class]}' />")
+    options.reverse_merge! class: 'responsive', text: ''
+    text = options.delete(:text)
+    placeholder_image_tag({width: width, height: height, 
+                          text: text}, options)
   end
 
   def fake_img_fixed(width, height, options = {})
     options.reverse_merge! class: 'fixed'
-    text = ''
-    placeholder_image_tag({width: width, height: height, 
-                          text: text}, options)
+    fake_img(width, height, options)
   end
 
   def avatar_image(model, options = {})

@@ -28,7 +28,8 @@ class UserSessionsController < ApplicationController
     else
       session[:user_id] = nil
       flash[:notice] = "Adiós"
-      redirect_to root_path
+      path = params[:from].present? ? params[:from] : root_path
+      redirect_to path 
     end
   end
 

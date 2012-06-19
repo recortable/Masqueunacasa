@@ -1,3 +1,32 @@
+@import 'variables';
+
+
 .section {
   a.edit-section { float: right; }
+}
+
+.row.phase {
+  margin-bottom: 20px;
+  .questions {
+    margin-bottom: -1000px;
+    padding-bottom: 1000px;
+  }
+}
+
+.section {
+  position: relative;
+  h2 { margin: 40px 0 0px 0; padding-bottom: 10px; }
+
+  .section-edit {
+    background-color: $rojo;
+    padding: 3px 5px;
+    position: absolute; top: 0; right: 0;
+    display: none;
+    a {
+      color: $fondo;
+      text-decoration: none;
+    }
+  }
+
+  &:hover .section-edit { display: block; }
 }

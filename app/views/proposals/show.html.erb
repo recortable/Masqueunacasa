@@ -1,10 +1,19 @@
 <%= render_banner t('.title'), proposals_path %>
 <div class="row">
   <%= user_column 'span2' do %>
-    <%= link_to placeholder_image_tag(text: proposal.phase.name, width: 140, height: 140), proposal.phase %>
+    <%= link_to fake_img_fixed(140, 140, text: proposal.category.title), [proposal.phase, proposal.category] %>
     <div class="controls">
       <%= link_box 'Editar propuesta', [:edit, proposal], rel: "edit-proposal-#{proposal.id}" if can? :edit, proposal %>
     </div>
+    <table class="table">
+      <tr><td><h3><%= link_to proposal.title, "#" %></h3></td></tr>
+      <% proposal.sections.titled.each do |section| %>
+        <!-- TODO: fixme -->
+        <% if section.title? %>
+          <tr><td><%= link_to section.title, "##{section.title}" %></td></tr>
+        <% end %>
+      <% end %>
+    </table>
   <% end %>
 
   <%= corner_span 'span6' do %>
@@ -14,12 +23,8 @@
   <% end %>
   <%= corner_span 'span4' do %>
     <h3>Experiencias relacionadas</h3>
-    <ul>
-      <% proposal.relations.each do |relation| %>
-        <li>
-        <%= link_to relation.experiencie.title, relation.experiencie %>
-        </li>
-      <% end %>
-    </ul>
+    <%= simple_list proposal.relations do |relation| %>
+      <%= link_to relation.experiencie.title, relation.experiencie %>
+    <% end %>
   <% end %>
 </div>
