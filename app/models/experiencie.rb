@@ -17,6 +17,7 @@ class Experiencie < ActiveRecord::Base
   belongs_to :group
   has_many :relations
   has_many :proposals, through: :relations
+  has_many :sections, as: :document, conditions: proc { ['lang = ?', I18n.locale] }
 
   validates_presence_of :title, :user
   validates_uniqueness_of :title_es, :title_ca

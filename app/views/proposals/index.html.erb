@@ -7,8 +7,11 @@
     <table class="table stripped">
       <% proposals.each do |proposal| %>
         <tr>
-          <td><%= link_to proposal.title, proposal %></td>
-          <td><%= proposal.body.length %> caracteres (<%= proposal.body_type %>)</td>
+          <td><h3><%= link_to proposal.title, proposal %></h3></td>
+          <td>
+            [<%= proposal.sections.count %> secciones]
+            <%= proposal.body.length %> caracteres (<%= proposal.body_type %>)
+          </td>
           <td><%= proposal.phase.name %></td>
           <td><%= proposal.category.title %></td>
           <td><%= time_ago_in_words proposal.updated_at %></td>

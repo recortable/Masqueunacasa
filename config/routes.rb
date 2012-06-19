@@ -47,7 +47,10 @@ Masqueunacasa::Application.routes.draw do
       resources :relations, only: [:new, :create, :destroy]
       resources :sections, except: [:index]
     end
-    resources :experiencies
+
+    resources :experiencies do
+      resources :sections, except: [:index]
+    end
 
 
     resources :user_sessions, only: [:new, :create, :destroy]

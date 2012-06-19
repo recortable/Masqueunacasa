@@ -1,19 +1,21 @@
-<% title 'Experiencias' %>
 <%= render_banner 'Experiencias', experiencies_path %>
 
-<div class="experiencies cards">
-
-  <% if can? :create, Experiencie %>
-    <%= render_card do %>
-      <div class="avatar">
-        <img alt="Añadir experiencia" src="//cambelt.co/140x140/E%2B?font=Questrial&amp;font_size=48&amp;color=#cccccc,#333333">
-      </div>
-      <div class="info">
-        <%= link_to 'Añadir experiencia', new_experiencie_path, rel: 'new-experiencie' %>
-      </div>
-    <% end %>
+<div class="row">
+  <%= user_column 'span2' do %>
+    <%= avatar_link current_group %>
+    <div class="controls">
+    <%= link_box '+ Experiencia', new_experiencie_path, rel: 'new-experiencie' if can? :create, Experiencie %>
+    </div>
   <% end %>
-
-  <%= render experiencies %>
+  <%= corner_span 'span6' do %>
+    <%= title 'Experiencias' %>
+    <table class="table">
+      <% experiencies.each do |experiencie| %>
+        <tr>
+          <td><h3><%= link_to experiencie.title, experiencie %></h3></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
 </div>
 

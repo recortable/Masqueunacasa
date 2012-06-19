@@ -1,12 +1,15 @@
 <%= render_banner 'Experiencias', experiencies_path %>
 
 <div class="row">
-  <%= corner_span 'span8' do %>
-    <%= title experiencie.title %>
+  <%= user_column 'span2' do %>
+    <%= avatar_link current_group %>
     <div class="controls">
       <%= link_box 'Editar', [:edit, experiencie] if can? :update, experiencie %>
     </div>
-    <%= raw experiencie.body %>
+  <% end %>
+  <%= corner_span 'span6' do %>
+    <%= title experiencie.title %>
+    <%= render_sections experiencie %>
   <% end %>
   <%= corner_span 'span4' do %>
     <h3>Alternativas relacionadas</h3>
