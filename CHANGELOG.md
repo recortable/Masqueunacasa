@@ -6,6 +6,8 @@ st.
 - 3) Enviar emails colectivos en background
 
 ## 18/06/2012
+- El layuot de Pages mejorado
+- Páginas pasa a /docs
 - Añadir o quitar relaciones se hace en la página de edición de
   propuestas
 - El contenido de las propuestas se organiza en secciones

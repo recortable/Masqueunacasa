@@ -2,27 +2,16 @@
 
 <%= render 'groups/header' %>
 
-<div class="member_bar controls">
-  <%= link_box t('go_back'), pages_path %>
-  <%= link_box t('edit'), edit_page_path(page), class: 'highlight' if current_user &&
-            current_user.member?(current_group) %>
-</div>
 <div class="row">
-  <div class="center span8">
-    <%= div_for page, class: 'row' do %>
-      <div class="info span2">
-        <div class="corner none"></div>
-        <div class="content">
-          <h3><%= page.title %></h3>
-        </div>
-      </div>
-      <div class="body span6">
-        <div class="corner colored"></div>
-        <div class="content">
-          <%= render_post_media(page) %>
-          <%= raw page.body %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <%= user_column 'span2' do %>
+    <%= avatar_link current_group %>
+    <div class="controls">
+      <%= link_box 'Documentos', pages_path %>
+      <%= link_box t('edit'), edit_page_path(page), class: 'highlight' if can? :edit, page %>
+    </div>
+  <% end %>
+  <%= corner_span 'span6' do %>
+    <%= title page.title %>
+    <%= render_body page %>
+  <% end %>
 </div>

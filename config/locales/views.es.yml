@@ -110,6 +110,9 @@ es:
       title: 'Nueva página de la wiki'
     edit:
       title: 'Editar %{title}'
+    notices:
+      created: 'Documento guardado.'
+      updated: 'Documento guardado.'
 
   proposals:
     index:

@@ -1,19 +1,5 @@
-<div class="bloc">
-  <%= simple_form_for page do |form| %>
-    <div class="row">
-      <div class="span8"><div class="content">
-          <%= form.input :title %>
-          <%= form.input :body, as: :text, input_html: {class: 'rte'} %>
-          <%= submit_button_for form %>
-          <div class="form-controls">
-            <%= link_box t('cancel'), page %>
-            <%= link_box t('delete'), page, method: :delete, confirm: t('confirm') if page.persisted? %>
-          </div>
-      </div></div>
-      <div class="span4"><div class="content">
-          <%= form.input :image %>
-          <%= form.input :embed %>
-      </div></div>
-    </div>
-  <% end %>
-</div>
+<%= simple_form_for page do |form| %>
+  <%= form.input :title %>
+  <%= form.input :body, as: :text %>
+  <%= submit_button_for form %>
+<% end %>

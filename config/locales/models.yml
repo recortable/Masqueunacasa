@@ -3,7 +3,7 @@ es:
     models:
       announcement: 'mensaje colectivo'
       user: 'perfil'
-      page: 'página'
+      page: 'documento'
       phase: 'fase'
       group: 'colectivo'
       proposal: 'propuesta'

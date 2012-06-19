@@ -4,11 +4,16 @@ Masqueunacasa::Application.routes.draw do
   constraints subdomain: /.+/ do
     match '', to: 'posts#index'
     resources :memberships
-    resources :pages
     resources :groups, only: [:update, :show]
   end
 
   # Rutas que se pueden acceder tanto desde un subdominio como sin él
+ 
+  # PARTE SOCIAL
+  resources :pages
+  resources :posts do
+    resources :post_attachments, except: [:index, :show]
+  end
   resources :messages, only: [:create, :show]
 
   resource :profile, only: [:show, :edit]
@@ -16,15 +21,10 @@ Masqueunacasa::Application.routes.draw do
     put :send_email, on: :member
     put :probe, on: :member
   end
-  match '/blog' => 'dashboard#blog'
-  resources :posts do
-    resources :post_attachments, except: [:index, :show]
-  end
 
   match '/entrar' => 'user_sessions#new', as: :login
   match '/salir' => 'user_sessions#destroy', as: :logout
   match '/feed' => 'posts#feed', as: :feed, defaults: { format: 'atom' }
-  resources :user_sessions, only: [:new, :create, :destroy]
   match '/inicio' => 'dashboard#dashboard'
   match '/community' => 'dashboard#community', as: :community
   match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'
@@ -33,10 +33,11 @@ Masqueunacasa::Application.routes.draw do
 
   # Rutas sólo accesibles desde el dominio principal 
   constraints subdomain: /^$/ do
-    resources :groups
-    resources :posts
     resources :users
     resources :versions
+    resources :groups
+
+    # HABITAPEDIA
     resources :proposals do
       resources :relations, only: [:new, :create, :destroy]
       resources :sections, except: [:index]
@@ -44,6 +45,7 @@ Masqueunacasa::Application.routes.draw do
     resources :experiencies
 
 
+    resources :user_sessions, only: [:new, :create, :destroy]
     resources :password_recoveries
     resources :categories, only: [:index]
     resources :phases, except: [:show, :update, :destroy]
@@ -54,6 +56,7 @@ Masqueunacasa::Application.routes.draw do
       resources :categories, except: [:index]
     end
 
+    match '/blog' => 'dashboard#blog'
   end
 
 

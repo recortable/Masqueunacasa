@@ -25,13 +25,14 @@ class PagesController < ApplicationController
   def create
     page.user = current_user
     page.group = current_group
+    page.body_type ||= 'markdown'
     authorize! :create, page
-    flash[:notice] = t('notice.pages.created') if page.save
+    flash[:notice] = t('pages.notices.created') if page.save
     respond_with page
   end
 
   def update
-    flash[:notice] = t('notice.pages.updated') if page.update_attributes(params[:page])
+    flash[:notice] = t('pages.notices.updated') if page.update_attributes(params[:page])
     respond_with page
   end
 

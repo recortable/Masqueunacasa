@@ -6,6 +6,13 @@ module ImageHelper
     raw("<img src='http://cambelt.co/#{width}x#{height}#{extra}' class='#{options[:class]}' />")
   end
 
+  def fake_img_fixed(width, height, options = {})
+    options.reverse_merge! class: 'fixed'
+    text = ''
+    placeholder_image_tag({width: width, height: height, 
+                          text: text}, options)
+  end
+
   def avatar_image(model, options = {})
     options.reverse_merge! class: 'responsive', size: 'normal'
 
@@ -17,6 +24,10 @@ module ImageHelper
     else
       placeholder_image_tag(text: 'A', width: size, height: size, class: options[:class])
     end
+  end
+
+  def avatar_link(model, options = {})
+    link_to avatar_image(model, options), model
   end
 
 

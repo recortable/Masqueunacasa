@@ -1,44 +1,28 @@
-<% title "Wiki #{current_group.name}" %>
-
 <%= render 'groups/header' %>
 
-<% if current_membership %>
-  <div class="member_bar controls">
-    <%= t('membership.status', state: t("membership.states.#{current_membership.state}"), group: current_group.name) %>'
-    <%= link_box t('.add_page'), new_page_path, rel: 'new-page', 
+<div class="row">
+  <%= user_column 'span2' do %>
+    <%= avatar_link current_group %>
+    <div class="controls">
+      <%= link_box 'Nuevo documento', new_page_path, rel: 'new-page', 
         class: 'highlight' if can? :edit, current_group %>
-    <%= link_box 'Editar perfil', edit_profile_path, 
+      <% if current_membership %>
+        <%= t('membership.status', state: t("membership.states.#{current_membership.state}"), group: current_group.name) %>'
+        <%= link_box 'Editar perfil', edit_profile_path, 
         rel: 'edit-profile' if can? :edit, current_group %>
+    <% end %>
   </div>
 <% end %>
-
-<div class="row">
-  <div class="center span8">
+<%= corner_span 'span6' do %>
+  <%= title "Documentos" %>
+  <table class="table">
     <% pages.each do |page| %>
-      <%= div_for page, class: 'row' do %>
-        <div class="span2 page-info">
-          <div class="corner none"></div>
-          <div class="content">
-            <%= link_to content_tag(:h3, page.title), page %>
-            <%= l page.published_at %>
-            <%= link_to avatar_image(page.group), page %>
-          </div>
-        </div>
-      <div class="span6 post-teaser">
-        <div class="corner colored"></div>
-        <div class="content">
-          <%= render_post_media(page) %>
-          <%= raw truncate_html(page.body, length: 500) %>
-          <div class="links">
-            <%= link_to t('read_more'), page, class: 'read-more' %>
-          </div>
-        </div>
-        <div class="controls clearfix">
-          <%= link_box 'Editar', page if can? :edit, page %>
-        </div>
-      </div>
+      <tr>
+        <td><%= fake_img_fixed(30, 30) %></td>
+        <td><h3><%= link_to page.title, page %></h3></td>
+        <td><%= link_to 'Editar', [:edit, page] %></td>
+      </tr>
     <% end %>
-  <% end %>
-  &nbsp;
-  </div>
+  </table>
+<% end %>
 </div>
