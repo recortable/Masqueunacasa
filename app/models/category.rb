@@ -2,6 +2,7 @@ class Category < ActiveRecord::Base
   include Translatable
   extend FriendlyId
   friendly_id :title, use: :simple_i18n
+  acts_as_list scope: :phase_id
 
   translates :title, :slug, :question, :body
   translation_required :title, :slug, :question
@@ -13,6 +14,6 @@ class Category < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :phase
-  has_many :proposals
+  has_many :proposals, order: :position
   has_many :sections, as: :document, conditions: proc { ['lang = ?', I18n.locale] }
 end

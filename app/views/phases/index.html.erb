@@ -12,13 +12,9 @@
       <%= link_to 'Editar fase', [:edit, phase], rel: "edit-phase-#{phase.id}" if can? :edit, Phase %>
     <% end %>
     <%= corner_span('questions span4', :none) do %>
-      <table class="table">
-        <% phase.categories.each do |category| %>
-          <tr><td>
-              <%= link_to category.question, [phase, category] %>
-          </td></tr>
+        <%= simple_list phase.categories.each do |category| %>
+          <h3><%= link_to category.question, [phase, category] %></h3>
         <% end %>
-      </table>
     <% end %>
   </div>
 <% end %>

@@ -60,6 +60,8 @@ Masqueunacasa::Application.routes.draw do
     resources :user_sessions, only: [:new, :create, :destroy]
     resources :password_recoveries
     resources :categories, only: [:index, :show] do
+      put :up, on: :member
+      put :down, on: :member
       resources :sections, except: [:index]
     end
     resources :phases, except: [:show, :update, :destroy]

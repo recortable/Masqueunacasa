@@ -45,4 +45,16 @@ class CategoriesController < ApplicationController
     flash[:notice] = t('categories.notices.updated') if category.save
     respond_with [phase, category]
   end
+
+  def down
+    authorize! :update, category
+    category.move_lower
+    respond_with category, location: category.phase
+  end
+
+  def up
+    authorize! :update, category
+    category.move_higher
+    respond_with category, location: category.phase
+  end
 end

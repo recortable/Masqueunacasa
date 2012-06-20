@@ -4,6 +4,8 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 19/06/2012
+- Las preguntas tienen posición con respecto a su fase
+- Las propuestas tienen posición con respecto a su pregunta
 - Las categorias también tienen secciones
 - Las secciones se pueden mover
 - Cuando pulsas salir permaneces en la misma página 

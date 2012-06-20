@@ -14,6 +14,8 @@ class Proposal < ActiveRecord::Base
   attr_accessible :title, :body, :description
   attr_accessible :published, :body_type
 
+  validates_presence_of :title, :title_es, :title_ca, :user, :phase_id, :category_id
+
   belongs_to :user
   belongs_to :group
   belongs_to :phase
@@ -22,7 +24,6 @@ class Proposal < ActiveRecord::Base
   has_many :experiencies, through: :relations 
   has_many :sections, as: :document, conditions: proc { ['lang = ?', I18n.locale] }
 
-  validates_presence_of :title, :title_es, :title_ca, :user, :phase
   
   scope :published, where(published: true)
 
