@@ -41,6 +41,10 @@ Masqueunacasa::Application.routes.draw do
     resources :users
     resources :versions
     resources :groups
+    resources :sections, only: [:up, :down] do
+      post :up, on: :member
+      post :down, on: :member
+    end
 
     # HABITAPEDIA
     resources :proposals do

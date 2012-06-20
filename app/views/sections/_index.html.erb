@@ -2,10 +2,14 @@
   <%= div_for section do %>
     <% if can? :update, section %>
       <div class="section-edit">
-        <%= link_to 'Editar', [:edit, document, section], class: 'edit-section', rel: "edit-section-#{section.id}" if can? :update, section %>
+        <%= link_to 'Editar', [:edit, document, section], rel: "edit-section-#{section.id}" %> 
+        |
+        <%= link_to 'Subir', [:up, section], method: :post %>
+        |
+        <%= link_to 'Bajar', [:down, section], method: :post %>
       </div>
     <% end %>
-    <a name="<%= section.title %>">
+    <a name="<%= section.title? ? section.title : section.id %>">
       <h2><%= link_to section.title, '#' %></h2>
     </a>
     <%= render_body section %>

@@ -4,6 +4,7 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 19/06/2012
+- Las secciones se pueden mover
 - Cuando pulsas salir permaneces en la misma página 
 - Habitapedia reorganizado - muestra las preguntas
 - Índice en propuestas a la izquierda del contenido

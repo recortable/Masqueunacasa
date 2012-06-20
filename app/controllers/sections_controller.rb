@@ -29,11 +29,24 @@ class SectionsController < ApplicationController
     respond_with section, location: document_location
   end
 
+  def up
+    s = Section.find params[:id]
+    s.move_higher
+    respond_with s, location: document_location(s)
+  end
+
+  def down
+    s = Section.find params[:id]
+    s.move_lower
+    respond_with s, location: document_location(s)
+  end
+
   private
-  def document_location
-    section.title? ? 
-      url_for(document) + "##{section.title}" :
-      url_for(document)
+  def document_location(s = nil)
+    s ||= section
+    s.title? ? 
+      url_for(s.document) + "##{s.title}" :
+      url_for(s.document) + "##{s.id}"
   end
 
 end
