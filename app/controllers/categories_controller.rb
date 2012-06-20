@@ -17,8 +17,13 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    authorize! :read, category
-    respond_with category
+    if params[:phase_id].blank?
+      c = Category.find params[:id]
+      redirect_to url_for([c.phase, c])
+    else
+      authorize! :read, category
+      respond_with category
+    end
   end
 
   def edit

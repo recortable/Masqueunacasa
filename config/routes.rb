@@ -59,7 +59,9 @@ Masqueunacasa::Application.routes.draw do
 
     resources :user_sessions, only: [:new, :create, :destroy]
     resources :password_recoveries
-    resources :categories, only: [:index]
+    resources :categories, only: [:index, :show] do
+      resources :sections, except: [:index]
+    end
     resources :phases, except: [:show, :update, :destroy]
     # El path: '' es un truco para mostrar el nombre de las fases
     # sin el prefijo, es decir, en vez de "fases/mi_fase" 

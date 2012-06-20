@@ -4,14 +4,12 @@
   <div class="span8 offset2">
     <div class="content">
       <%= title 'Preguntas' %>
-      <table class="table stripped">
-        <% categories.each do |category| %>
-          <tr>
-            <td><%= category.phase.name %></td>
-            <td><%= link_to category.question, [category.phase, category] %></td>
-          </tr>
-        <% end %>
-      </table>
+      <%= simple_list categories.each do |category| %>
+        <h3>
+          <%= link_to category.question, [category.phase, category] %>
+          <small><%= category.phase.name %></small>
+        </h3>
+      <% end %>
     </div>
   </div>
 </div>

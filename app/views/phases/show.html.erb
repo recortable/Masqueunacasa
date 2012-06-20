@@ -18,13 +18,9 @@
 
   <%= corner_span 'span4' do %>
     <h2>Preguntas</h2>
-    <ul>
-      <% phase.categories.each do |category| %>
-        <li>
-        <%= link_to category.question, [phase, category] %>
-        </li>
+      <%= simple_list phase.categories.each do |category| %>
+        <h3><%= link_to category.question, [phase, category] %></h3>
       <% end %>
-    </ul>
   <% end %>
 </div>
 
