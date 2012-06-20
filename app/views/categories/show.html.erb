@@ -2,21 +2,32 @@
 
 <div class="row">
   <%= user_column 'span2' do %>
-    <h3><%= link_to phase.name, phase %></h3>
     <%= link_to fake_img(140, 140, class: 'fixed', text: phase.name), phase %>
-    <div class="controls">
-      <%= link_box 'Editar pregunta', [:edit, phase, category] if can? :edit, category %>
-    </div>
+    <%= simple_list category.sections.titled do |section| %>
+      <%= link_to truncate(section.title), "##{section.title}" %>
+    <% end %>
   <% end %>
   <%= corner_span 'span6' do %>
-    <%= title category.question %>
-    <%= fake_img 600, 400 %>
+    <div class="hoverize">
+      <% if can? :update, category %>
+        <div class="hover">
+          <%= link_to 'Editar', [:edit, phase, category] %>
+        </div>
+      <% end %>
+      <%= title category.question %>
+      <%= fake_img 600, 400 %>
+    </div>
     <%= render_sections category %>
     <%= render_body category %>
   <% end %>
 
   <%= corner_span 'span4', :none do %>
-    <h2>Propuestas</h2>
+    <div class="hoverize">
+      <%= hover? :create, Proposal do %>
+        <%= link_to 'Añadir propuesta', [:new, :proposal] %>
+      <% end %>
+      <h2>Propuestas</h2>
+    </div>
     <%= simple_list category.proposals.each do |proposal| %>
       <h3><%= link_to proposal.title, proposal %></h3>
       <%= render_body proposal.sections.first %>

@@ -32,6 +32,14 @@ module ApplicationHelper
     render partial: 'application/card', locals: {content: content}
   end
 
+  def hover?(action, subject, &block)
+    if can? action, subject
+      content_tag(:div, capture(&block), class: 'hover')
+    else
+      ''
+    end
+  end
+
   def simple_list(collection, &block)
     content = '<table class="table">'
     collection.each do |item|

@@ -3,21 +3,27 @@
 
 <div class="row">
   <%= user_column 'span2' do %>
-    <%= fake_img(140, 140, class: 'fixed', text: phase.name) %>
-    <div class="controls">
-      <%= link_box 'Editar fase', [:edit, phase] if can? :update, phase %>
-      <%= link_box 'Añadir pregunta', [:new, phase, :category] if can? :create, Category %>
-    </div>
+    <%= link_to fake_img(140, 140, class: 'fixed', text: 'Habitapedia'), phases_path %>
   <% end %>
 
   <%= corner_span 'span6' do %>
-    <%= title phase.name %>
-    <%= fake_img 600, 400 %>
+    <div class="hoverize">
+      <%= hover? :update, phase do %>
+        <%= link_to 'Editar', [:edit, phase] %>
+      <% end %>
+      <%= title phase.name %>
+      <%= fake_img 600, 400 %>
+    </div>
     <%= markdown phase.description %>
   <% end %>
 
   <%= corner_span 'span4' do %>
-    <h2>Preguntas</h2>
+    <div class="hoverize">
+      <%= hover? :create, Category do %>
+        <%= link_to 'Añadir pregnta', [:new, phase, :category] %>
+      <% end %>
+      <h2>Preguntas</h2>
+    </div>
     <%= simple_list phase.categories.each do |category| %>
       <div class="hoverize">
         <% if can? :update, category %>
