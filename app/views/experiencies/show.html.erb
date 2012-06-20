@@ -1,22 +1,24 @@
-<%= render_banner 'Experiencias', experiencies_path %>
+<%# render_banner 'Experiencias', experiencies_path %>
 
 <div class="row">
   <%= user_column 'span2' do %>
-    <%= avatar_link current_group %>
-    <div class="controls">
-      <%= link_box 'Editar', [:edit, experiencie] if can? :update, experiencie %>
-    </div>
+    <%= avatar_image current_group %>
   <% end %>
   <%= corner_span 'span6' do %>
-    <%= title experiencie.title %>
+    <div class="hoverize">
+      <%= hover? :update, experiencie do %>
+        <%= link_to 'Editar', [:edit, experiencie] %>
+      <% end %>
+      <h3>Experiencia</h3>
+      <%= title experiencie.title %>
+    </div>
     <%= render_sections experiencie %>
   <% end %>
   <%= corner_span 'span4' do %>
-    <h3>Alternativas relacionadas</h3>
-    <ul>
-      <% experiencie.proposals.each do |proposal| %>
-        <li><%= link_to proposal.title, proposal %></li>
-      <% end %>
-    </ul>
+    <h2>Alternativas relacionadas</h2>
+    <%= simple_list experiencie.proposals.each do |proposal| %>
+      <h3><%= link_to proposal.title, proposal %></h3>
+      <%= render_body proposal.sections.first %>
+    <% end %>
   <% end %>
 </div>

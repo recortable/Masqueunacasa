@@ -69,6 +69,7 @@ Masqueunacasa::Application.routes.draw do
     # sin el prefijo, es decir, en vez de "fases/mi_fase" 
     # se verá "mi_fase"
     resources :phases, only: [:show, :update, :destroy], path: '' do
+      resources :sections, except: [:index]
       resources :categories, except: [:index]
     end
 

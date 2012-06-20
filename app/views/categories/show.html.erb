@@ -1,13 +1,14 @@
-<%= render_banner 'Pregunta', phase_path(phase) %>
+<%# render_banner 'Pregunta', phase_path(phase) %>
 
 <div class="row">
   <%= user_column 'span2' do %>
-    <%= link_to fake_img(140, 140, class: 'fixed', text: phase.name), phase %>
+    <%= link_to fake_img(140, 140, class: 'fixed', text: phase.title), phase %>
     <%= simple_list category.sections.titled do |section| %>
       <%= link_to truncate(section.title), "##{section.title}" %>
     <% end %>
   <% end %>
   <%= corner_span 'span6' do %>
+    <h3><%= link_to phase.title, phase %></h3>
     <div class="hoverize">
       <% if can? :update, category %>
         <div class="hover">

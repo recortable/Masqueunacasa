@@ -11,7 +11,7 @@ module ExposeResource
     def expose_parent(name, names) 
       expose(name) do
         parent_name = names.find {|n| params["#{n}_id"].present? }
-        throw ActiveRecord::RecordNotFoundException.new unless parent_name
+        throw ActiveRecord::RecordNotFound.new unless parent_name
         klass = parent_name.to_s.camelcase.constantize
         klass.find(params["#{parent_name}_id"])
       end

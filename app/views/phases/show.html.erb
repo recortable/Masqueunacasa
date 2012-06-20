@@ -1,4 +1,4 @@
-<%= render_banner phase.name, phase %>
+<%# render_banner phase.title, phase %>
 
 
 <div class="row">
@@ -7,14 +7,15 @@
   <% end %>
 
   <%= corner_span 'span6' do %>
+    <h3><%= link_to 'Habitapedia', phases_path %></h3>
     <div class="hoverize">
       <%= hover? :update, phase do %>
         <%= link_to 'Editar', [:edit, phase] %>
       <% end %>
-      <%= title phase.name %>
+      <%= title phase.title %>
       <%= fake_img 600, 400 %>
     </div>
-    <%= markdown phase.description %>
+    <%= render_sections phase %>
   <% end %>
 
   <%= corner_span 'span4' do %>

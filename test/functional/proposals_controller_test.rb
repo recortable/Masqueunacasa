@@ -28,7 +28,7 @@ describe 'Proposals integration' do
     page.fill_in 'proposal_title', with: 'My proposal'
     page.fill_in 'proposal_description', with: 'My proposal description'
     page.fill_in 'proposal_body', with: 'My proposal body'
-    page.select phase.name, from: 'proposal_phase_id'
+    page.select phase.title, from: 'proposal_phase_id'
     click_submit
     Proposal.count.must_equal 1
     proposal = Proposal.last

@@ -9,7 +9,7 @@
     <%= simple_list categories.each do |category| %>
       <h3>
         <%= link_to category.question, [category.phase, category] %>
-        <small><%= link_to category.phase.name, category.phase %></small>
+        <small><%= link_to category.phase.title, category.phase %></small>
       </h3>
     <% end %>
   <% end %>

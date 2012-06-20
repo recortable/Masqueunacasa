@@ -7,7 +7,7 @@
     <table class="table stripped">
       <% proposals.each do |proposal| %>
         <tr>
-          <td><%= proposal.phase.name %></td>
+          <td><%= proposal.phase.title %></td>
           <td><%= proposal.category.title %></td>
           <td><h3><%= link_to proposal.title, proposal %></h3></td>
           <td><%= link_to 'Editar', [:edit, proposal] %></td>

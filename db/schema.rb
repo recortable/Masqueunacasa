@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620004806) do
+ActiveRecord::Schema.define(:version => 20120620144746) do
 
   create_table "announcements", :force => true do |t|
     t.integer  "user_id"
@@ -170,15 +170,13 @@ ActiveRecord::Schema.define(:version => 20120620004806) do
   add_index "messages", ["user_id"], :name => "index_messages_on_user_id"
 
   create_table "phases", :force => true do |t|
-    t.string   "name_es",        :limit => 50
-    t.string   "name_ca",        :limit => 50
-    t.text     "description_es"
-    t.text     "description_ca"
-    t.string   "slug_es",        :limit => 50
-    t.string   "slug_ca",        :limit => 50
+    t.string   "title_es",   :limit => 50
+    t.string   "title_ca",   :limit => 50
+    t.string   "slug_es",    :limit => 50
+    t.string   "slug_ca",    :limit => 50
     t.integer  "position"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   add_index "phases", ["slug_ca"], :name => "index_phases_on_slug_ca"

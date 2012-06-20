@@ -1,13 +1,14 @@
-<%= render_banner 'Habitapedia', phases_path %>
+<%# render_banner 'Habitapedia', phases_path %>
 <% title 'Habitapedia' %>
 <% phases.each do |phase| %>
   <div class="row phase">
     <%= corner_span('span8') do %>
       <div class="row">
         <div class="span3">
-          <%= link_to fake_img(600, 400, text: phase.name), phase %>
+          <%= link_to fake_img(600, 400, text: phase.title), phase %>
           </div><div class="span4">
-          <%= markdown phase.description %>
+          <%= render_body phase.sections.first %>
+          <%= link_to 'Leer más...', phase %>
       </div></div>
       <%= link_to 'Editar fase', [:edit, phase], rel: "edit-phase-#{phase.id}" if can? :edit, Phase %>
     <% end %>

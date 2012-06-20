@@ -5,8 +5,7 @@ describe 'Phases integration' do
   it 'list phases' do
     phase = create(:phase)
     visit phases_path
-    page.text.must_include phase.name
-    page.text.must_include phase.description
+    page.text.must_include phase.title
   end
 
   it 'can create phases' do
@@ -18,12 +17,12 @@ describe 'Phases integration' do
   it 'creates phases' do
     login_user create(:user, admin: true)
     visit new_phase_path
-    fill_in 'phase_name_es', with: 'Nombre'
-    fill_in 'phase_name_ca', with: 'Nom'
+    fill_in 'phase_title_es', with: 'Nombre'
+    fill_in 'phase_title_ca', with: 'Nom'
     click_submit
     phase = Phase.last
-    phase.name_es.must_equal 'Nombre'
-    phase.name_ca.must_equal 'Nom'
+    phase.title_es.must_equal 'Nombre'
+    phase.title_ca.must_equal 'Nom'
   end
 
   it 'can edit phase' do
@@ -37,11 +36,11 @@ describe 'Phases integration' do
     login_user create(:user, admin: true)
     phase = create(:phase)
     visit edit_phase_path(phase)
-    fill_in 'phase_name_es', with: 'Nombre editado'
-    fill_in 'phase_name_ca', with: 'Nom editado'
+    fill_in 'phase_title_es', with: 'Nombre editado'
+    fill_in 'phase_title_ca', with: 'Nom editado'
     click_submit
     phase.reload
-    phase.name_es.must_equal 'Nombre editado'
-    phase.name_ca.must_equal 'Nom editado'
+    phase.title_es.must_equal 'Nombre editado'
+    phase.title_ca.must_equal 'Nom editado'
   end
 end

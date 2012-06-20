@@ -1,15 +1,15 @@
 class Phase < ActiveRecord::Base
-  attr_accessible :name_es, :description_es
-  attr_accessible :name_ca, :description_ca
-  attr_accessible :name, :description, :position
+  attr_accessible :title_es, :title_ca, :title
+  attr_accessible :position
+
+  validates_presence_of :title_es, :title_ca
 
   has_many :categories, order: :position
   default_scope order: :position
-  
-  validates_presence_of :name_es, :name_ca
+  has_many :sections, as: :document, conditions: proc { ['lang = ?', I18n.locale] }
 
   include Translatable
-  translates :name, :description
+  translates :title
   extend FriendlyId
-  friendly_id :name, use: :simple_i18n
+  friendly_id :title, use: :simple_i18n
 end

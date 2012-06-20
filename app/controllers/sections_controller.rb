@@ -1,7 +1,7 @@
 class SectionsController < ApplicationController
   respond_to :html
 
-  expose_parent :document, [:category, :proposal, :experiencie, :page]
+  expose_parent :document, [:phase, :category, :proposal, :experiencie, :page]
   expose(:sections) { document.sections(:es) }
   expose(:section)
 

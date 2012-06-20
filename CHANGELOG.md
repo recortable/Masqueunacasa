@@ -3,6 +3,11 @@
 TAREAS
 - Enviar emails colectivos en background
 
+## 20/06/2012
+- Quitar banner de habitapedia
+- Mejorar la navegación
+- Las fases también tienen secciones
+
 ## 19/06/2012
 - Más botones flotantes para las acciones
 - Las preguntas tienen posición con respecto a su fase
