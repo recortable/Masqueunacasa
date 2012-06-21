@@ -12,6 +12,8 @@ class Phase < ActiveRecord::Base
   translates :title
   extend FriendlyId
   friendly_id :title, use: :simple_i18n
+  include HasKudos
+  include HasSubscriptors
 
   # TODO: convertir en un campo de la db
   def image_url

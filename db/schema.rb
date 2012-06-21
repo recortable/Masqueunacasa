@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120620144746) do
+ActiveRecord::Schema.define(:version => 20120621141346) do
 
   create_table "announcements", :force => true do |t|
     t.integer  "user_id"
@@ -30,18 +30,21 @@ ActiveRecord::Schema.define(:version => 20120620144746) do
   create_table "categories", :force => true do |t|
     t.integer  "phase_id"
     t.integer  "user_id"
-    t.string   "title_es",    :limit => 100
-    t.string   "title_ca",    :limit => 100
-    t.string   "slug_es",     :limit => 100
-    t.string   "slug_ca",     :limit => 100
-    t.string   "question_es", :limit => 300
-    t.string   "question_ca", :limit => 300
+    t.string   "title_es",          :limit => 100
+    t.string   "title_ca",          :limit => 100
+    t.string   "slug_es",           :limit => 100
+    t.string   "slug_ca",           :limit => 100
+    t.string   "question_es",       :limit => 300
+    t.string   "question_ca",       :limit => 300
     t.text     "body_ca"
     t.text     "body_es"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-    t.string   "body_type",   :limit => 16
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
+    t.string   "body_type",         :limit => 16
     t.integer  "position"
+    t.integer  "kudos_count",                      :default => 0
+    t.integer  "subscribers_count",                :default => 0
+    t.integer  "view_count",                       :default => 0
   end
 
   add_index "categories", ["phase_id"], :name => "index_categories_on_phase_id"
@@ -95,17 +98,20 @@ ActiveRecord::Schema.define(:version => 20120620144746) do
   create_table "experiencies", :force => true do |t|
     t.integer  "user_id"
     t.integer  "group_id"
-    t.string   "title_es",        :limit => 300
-    t.string   "title_ca",        :limit => 300
-    t.string   "slug_es",         :limit => 300
-    t.string   "slug_ca",         :limit => 300
+    t.string   "title_es",          :limit => 300
+    t.string   "title_ca",          :limit => 300
+    t.string   "slug_es",           :limit => 300
+    t.string   "slug_ca",           :limit => 300
     t.text     "body_es"
     t.text     "body_ca"
-    t.boolean  "published",                      :default => true
+    t.boolean  "published",                        :default => true
     t.integer  "proposals_count"
-    t.datetime "created_at",                                       :null => false
-    t.datetime "updated_at",                                       :null => false
-    t.string   "body_type",       :limit => 16
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
+    t.string   "body_type",         :limit => 16
+    t.integer  "kudos_count",                      :default => 0
+    t.integer  "subscribers_count",                :default => 0
+    t.integer  "view_count",                       :default => 0
   end
 
   add_index "experiencies", ["group_id"], :name => "index_experiencies_on_group_id"
@@ -137,10 +143,22 @@ ActiveRecord::Schema.define(:version => 20120620144746) do
     t.string   "subdomain",         :limit => 100
     t.integer  "memberships_count",                 :default => 0
     t.boolean  "closed",                            :default => false
+    t.boolean  "root",                              :default => false
   end
 
   add_index "groups", ["name"], :name => "index_groups_on_name", :unique => true
   add_index "groups", ["slug"], :name => "index_groups_on_slug", :unique => true
+
+  create_table "kudos", :force => true do |t|
+    t.integer  "document_id"
+    t.string   "document_type", :limit => 16
+    t.integer  "user_id"
+    t.string   "ip",            :limit => 16
+    t.datetime "created_at"
+  end
+
+  add_index "kudos", ["document_type", "document_id"], :name => "index_kudos_on_document_type_and_document_id"
+  add_index "kudos", ["user_id"], :name => "index_kudos_on_user_id"
 
   create_table "memberships", :force => true do |t|
     t.integer  "group_id"
@@ -170,13 +188,16 @@ ActiveRecord::Schema.define(:version => 20120620144746) do
   add_index "messages", ["user_id"], :name => "index_messages_on_user_id"
 
   create_table "phases", :force => true do |t|
-    t.string   "title_es",   :limit => 50
-    t.string   "title_ca",   :limit => 50
-    t.string   "slug_es",    :limit => 50
-    t.string   "slug_ca",    :limit => 50
+    t.string   "title_es",          :limit => 50
+    t.string   "title_ca",          :limit => 50
+    t.string   "slug_es",           :limit => 50
+    t.string   "slug_ca",           :limit => 50
     t.integer  "position"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+    t.integer  "kudos_count",                     :default => 0
+    t.integer  "subscribers_count",               :default => 0
+    t.integer  "view_count",                      :default => 0
   end
 
   add_index "phases", ["slug_ca"], :name => "index_phases_on_slug_ca"
@@ -195,24 +216,27 @@ ActiveRecord::Schema.define(:version => 20120620144746) do
   end
 
   create_table "proposals", :force => true do |t|
-    t.string   "title_es",       :limit => 200
-    t.string   "title_ca",       :limit => 200
-    t.string   "slug_es",        :limit => 200
-    t.string   "slug_ca",        :limit => 200
+    t.string   "title_es",          :limit => 200
+    t.string   "title_ca",          :limit => 200
+    t.string   "slug_es",           :limit => 200
+    t.string   "slug_ca",           :limit => 200
     t.integer  "user_id"
     t.integer  "phase_id"
     t.integer  "group_id"
-    t.boolean  "published",                      :default => true
-    t.string   "description_es", :limit => 1000
-    t.string   "description_ca", :limit => 1000
+    t.boolean  "published",                         :default => true
+    t.string   "description_es",    :limit => 1000
+    t.string   "description_ca",    :limit => 1000
     t.text     "body_es"
     t.text     "body_ca"
     t.text     "settings"
-    t.datetime "created_at",                                       :null => false
-    t.datetime "updated_at",                                       :null => false
+    t.datetime "created_at",                                          :null => false
+    t.datetime "updated_at",                                          :null => false
     t.integer  "category_id"
-    t.string   "body_type",      :limit => 16
+    t.string   "body_type",         :limit => 16
     t.integer  "position"
+    t.integer  "kudos_count",                       :default => 0
+    t.integer  "subscribers_count",                 :default => 0
+    t.integer  "view_count",                        :default => 0
   end
 
   add_index "proposals", ["category_id"], :name => "index_proposals_on_category_id"
@@ -248,6 +272,16 @@ ActiveRecord::Schema.define(:version => 20120620144746) do
   add_index "sections", ["document_type", "document_id", "lang"], :name => "index_sections_on_document_type_and_document_id_and_lang"
   add_index "sections", ["document_type", "document_id"], :name => "index_sections_on_document_type_and_document_id"
   add_index "sections", ["position"], :name => "index_sections_on_position"
+
+  create_table "subscribers", :force => true do |t|
+    t.integer  "document_id"
+    t.string   "document_type", :limit => 16
+    t.integer  "user_id"
+    t.datetime "created_at"
+  end
+
+  add_index "subscribers", ["document_type", "document_id"], :name => "index_subscribers_on_document_type_and_document_id"
+  add_index "subscribers", ["user_id"], :name => "index_subscribers_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

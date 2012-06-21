@@ -1,10 +1,10 @@
 class Proposal < ActiveRecord::Base
-  include Translatable
-  extend FriendlyId
-  friendly_id :title, use: :simple_i18n
   has_paper_trail meta: {title: :title, group_id: :group_id }
   acts_as_list scope: :category_id
-
+  extend FriendlyId
+  friendly_id :title, use: :simple_i18n
+  include HasKudos
+  include Translatable
   translates :title, :body, :slug, :description
   translation_required :title, :slug
 

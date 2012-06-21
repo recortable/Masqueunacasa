@@ -3,6 +3,7 @@ class Category < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :simple_i18n
   acts_as_list scope: :phase_id
+  include HasKudos
 
   translates :title, :slug, :question, :body
   translation_required :title, :slug, :question

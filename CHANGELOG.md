@@ -4,6 +4,9 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 21/06/2012
+- vide_count en los modelos (número de veces visto)
+- Modelo subscriptor (Subscribirse a los cambios de un modelo)
+- Modelo kudos ("Me gusta")
 - Probando la integración con twitter
 - Las propuestas se pueden reordenar
 - Tratando de mejorar la navegación
