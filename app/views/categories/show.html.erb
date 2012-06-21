@@ -4,6 +4,7 @@
   <%= user_column 'span2' do %>
     <%= image_tag('habitap/category.png', alt: category.title, width: 150, height: 150) %>
     <%= render_sections_summary category %>
+    <%= render_social_links category %>
   <% end %>
   <%= corner_span 'span6' do %>
     <h3><%= link_to phase.title, phase %></h3>

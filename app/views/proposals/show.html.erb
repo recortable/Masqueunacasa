@@ -3,6 +3,7 @@
   <%= user_column 'span2' do %>
     <%= image_tag('habitap/proposal.png', alt: proposal.title, width: 150, height: 150) %>
     <%= render_sections_summary proposal %>
+    <%= render_social_links proposal %>
   <% end %>
 
   <%= corner_span 'span6' do %>

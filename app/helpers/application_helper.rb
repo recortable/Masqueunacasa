@@ -48,4 +48,8 @@ module ApplicationHelper
     content += '</table>'
     raw content
   end
+
+  def render_social_links(model)
+    render partial: 'application/social_links', locals: {model: model}
+  end
 end

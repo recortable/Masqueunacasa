@@ -15,6 +15,15 @@
   }
   &:hover .hover { display: block; }
 }
+
+.social {
+  .tweet a {
+    background: image-url('social/tweet.png') left 1px no-repeat;
+    color: gray;
+    padding-left: 19px;
+  }
+}
+
 #content-options-selector {
   padding-bottom: 0;
 
@@ -22,8 +31,6 @@
     display: inline;
     margin-right: 50px;
   }
-
-
 }
 
 $color_inactivos: #b0b0b0;

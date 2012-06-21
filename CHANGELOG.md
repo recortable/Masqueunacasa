@@ -4,6 +4,7 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 21/06/2012
+- Probando la integración con twitter
 - Las propuestas se pueden reordenar
 - Tratando de mejorar la navegación
 - Ahora las propuestas se crean desde la pregunta (la pregunta es un
