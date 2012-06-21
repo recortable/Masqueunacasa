@@ -1,6 +1,7 @@
 class ProposalsController < ApplicationController
   respond_to :html
 
+  include HasListActions
   expose(:proposals) { Proposal.published }
   expose(:proposal)
 
@@ -14,7 +15,10 @@ class ProposalsController < ApplicationController
     respond_with proposal
   end
 
+  expose(:category) { Category.find params[:category_id] }
   def new
+    proposal.category = category
+    proposal.phase = category.phase
     authorize! :new, proposal
     respond_with proposal
   end
@@ -32,5 +36,12 @@ class ProposalsController < ApplicationController
     respond_with proposal
   end
 
+  def up
+    respond_with move_up(proposal), location: proposal.category
+  end
+
+  def down
+    respond_with move_down(proposal), location: proposal.category
+  end
 
 end

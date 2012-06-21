@@ -8,12 +8,6 @@ describe 'Phases integration' do
     page.text.must_include phase.title
   end
 
-  it 'can create phases' do
-    login_user create(:user, admin: true)
-    visit phases_path
-    page.find("a[rel='new-phase']")
-  end
-
   it 'creates phases' do
     login_user create(:user, admin: true)
     visit new_phase_path

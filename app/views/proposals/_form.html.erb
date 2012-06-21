@@ -1,9 +1,6 @@
 <%= simple_form_for proposal do |form| %>
   <%= form.input :title %>
-  <%= form.association :phase, include_blank: false %>
-  <%= form.association :category, collection: Category.all.map{|c| [c.question, c.id]}, include_blank: false %>
-  <%# form.input :description, as: :text, input_html: {class: 'NOrte'} %>
-  <%# form.input :body_type, collection: ['html', 'markdown'], include_blank: false if current_user_admin? %>
-  <%# form.input :body, as: :text, input_html: {class: 'NOrte'} %>
+  <%= form.input :phase_id, as: :hidden %>
+  <%= form.input :category_id, as: :hidden %>
   <%= submit_button_for form %>
 <% end %>

@@ -3,7 +3,8 @@
 
 <div class="row">
   <%= user_column 'span2' do %>
-    <%= link_to fake_img(140, 140, class: 'fixed', text: 'Habitapedia'), phases_path %>
+    <%= link_to image_tag(phase.image_url, alt: phase.title, width: 150, height: 150), phases_path %>
+    <%= render_sections_summary phase %>
   <% end %>
 
   <%= corner_span 'span6' do %>

@@ -21,6 +21,7 @@ FactoryGirl.define do
     sequence(:title) {|n| "Content #{n}" }
     user
     group
+    body_type 'markdown'
   end
 
   factory :post, parent: :content, class: Post do

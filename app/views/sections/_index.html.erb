@@ -4,16 +4,18 @@
       <div class="section-edit">
         <%= link_to 'Editar', [:edit, document, section], rel: "edit-section-#{section.id}" %> 
         |
-        <%= link_to 'Subir', [:up, section], method: :post %>
+        <%= link_to 'Subir', [:up, section], method: :put %>
         |
-        <%= link_to 'Bajar', [:down, section], method: :post %>
+        <%= link_to 'Bajar', [:down, section], method: :put %>
       </div>
     <% end %>
     <a name="<%= section.title? ? section.title : section.id %>">
-      <h2><%= link_to section.title, '#' %></h2>
     </a>
-    <%= render_body section %>
-  <% end %>
+    <h2><%= section.title %>
+    <small><%= link_to raw('&uarr;'), '#' %></small>
+  </h2>
+  <%= render_body section %>
+<% end %>
 <% end %>
 <%= link_to 'Añadir sección', [:new, document, :section], rel: 'new-section' if can? :create, Section %>
 

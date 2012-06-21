@@ -42,12 +42,14 @@ Masqueunacasa::Application.routes.draw do
     resources :versions
     resources :groups
     resources :sections, only: [:up, :down] do
-      post :up, on: :member
-      post :down, on: :member
+      put :up, on: :member
+      put :down, on: :member
     end
 
     # HABITAPEDIA
-    resources :proposals do
+    resources :proposals, except: [:new] do
+      put :up, on: :member
+      put :down, on: :member
       resources :relations, only: [:new, :create, :destroy]
       resources :sections, except: [:index]
     end
@@ -60,6 +62,7 @@ Masqueunacasa::Application.routes.draw do
     resources :user_sessions, only: [:new, :create, :destroy]
     resources :password_recoveries
     resources :categories, only: [:index, :show] do
+      resources :proposals, only: [:new]
       put :up, on: :member
       put :down, on: :member
       resources :sections, except: [:index]

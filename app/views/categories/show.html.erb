@@ -2,10 +2,8 @@
 
 <div class="row">
   <%= user_column 'span2' do %>
-    <%= link_to fake_img(140, 140, class: 'fixed', text: phase.title), phase %>
-    <%= simple_list category.sections.titled do |section| %>
-      <%= link_to truncate(section.title), "##{section.title}" %>
-    <% end %>
+    <%= image_tag('habitap/category.png', alt: category.title, width: 150, height: 150) %>
+    <%= render_sections_summary category %>
   <% end %>
   <%= corner_span 'span6' do %>
     <h3><%= link_to phase.title, phase %></h3>
@@ -25,13 +23,21 @@
   <%= corner_span 'span4', :none do %>
     <div class="hoverize">
       <%= hover? :create, Proposal do %>
-        <%= link_to 'Añadir propuesta', [:new, :proposal] %>
+        <%= link_to 'Añadir propuesta', [:new, category, :proposal] %>
       <% end %>
       <h2>Propuestas</h2>
     </div>
     <%= simple_list category.proposals.each do |proposal| %>
-      <h3><%= link_to proposal.title, proposal %></h3>
-      <%= render_body proposal.sections.first %>
+      <div class="hoverize">
+        <%= hover? :update, proposal do %>
+          <%= link_to 'Subir', [:up, proposal], method: :put %>
+          |
+          <%= link_to 'Bajar', [:down, proposal], method: :put %>
+        <% end %>
+
+        <h3><%= link_to proposal.title, proposal %></h3>
+        <%= render_body proposal.sections.first %>
+      </div>
     <% end %>
   <% end %>
 </div>

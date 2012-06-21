@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   respond_to :html
 
+  include HasListActions
   expose(:phase) { Phase.find params[:phase_id] }
   expose(:parent) { params[:phase_id].present? ? phase : Site.new }
   expose(:categories) { parent.categories }
@@ -46,15 +47,11 @@ class CategoriesController < ApplicationController
     respond_with [phase, category]
   end
 
-  def down
-    authorize! :update, category
-    category.move_lower
-    respond_with category, location: category.phase
+  def up
+    respond_with move_up(category), location: category.phase
   end
 
-  def up
-    authorize! :update, category
-    category.move_higher
-    respond_with category, location: category.phase
+  def down
+    respond_with move_down(category), location: category.phase
   end
 end

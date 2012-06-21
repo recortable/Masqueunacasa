@@ -2,6 +2,7 @@ require 'test_helper'
 
 describe 'Proposals integration' do
   it 'list proposals' do
+    login_user(create(:user, admin: true))
     proposal = create(:proposal)
     visit proposals_path
     page.text.must_include proposal.title
@@ -14,21 +15,21 @@ describe 'Proposals integration' do
     page.text.must_include proposal.body
   end
 
-  it 'can create proposals' do
+  it 'can create proposals inside category' do
+    category = create(:category)
     login_user create(:user)
-    visit proposals_path
-    page.find("a[rel='new-proposal']")
+    visit category_path(category)
+    find_link('new-proposal')
   end
 
   it 'creates proposals' do
     user = create(:user)
     login_user user
-    phase = create(:phase)
-    visit new_proposal_path
+    category = create(:category)
+    visit new_category_proposal_path(category)
     page.fill_in 'proposal_title', with: 'My proposal'
     page.fill_in 'proposal_description', with: 'My proposal description'
     page.fill_in 'proposal_body', with: 'My proposal body'
-    page.select phase.title, from: 'proposal_phase_id'
     click_submit
     Proposal.count.must_equal 1
     proposal = Proposal.last
@@ -36,7 +37,8 @@ describe 'Proposals integration' do
     proposal.title.must_equal 'My proposal'
     proposal.description.must_equal 'My proposal description'
     proposal.body.must_equal 'My proposal body'
-    proposal.phase.must_equal phase
+    proposal.category.must_equal category
+    proposal.phase.must_equal category.phase
   end
 
   it 'updates proposals' do

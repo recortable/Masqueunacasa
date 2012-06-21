@@ -1,16 +1,8 @@
 <%# render_banner t('.title'), proposals_path %>
 <div class="row">
   <%= user_column 'span2' do %>
-    <%= link_to fake_img_fixed(140, 140, text: proposal.category.title), [proposal.phase, proposal.category] %>
-    <table class="table">
-      <tr><td><h3><%= link_to proposal.title, "#" %></h3></td></tr>
-      <% proposal.sections.titled.each do |section| %>
-        <!-- TODO: fixme -->
-        <% if section.title? %>
-          <tr><td><%= link_to section.title, "##{section.title}" %></td></tr>
-        <% end %>
-      <% end %>
-    </table>
+    <%= image_tag('habitap/proposal.png', alt: proposal.title, width: 150, height: 150) %>
+    <%= render_sections_summary proposal %>
   <% end %>
 
   <%= corner_span 'span6' do %>
