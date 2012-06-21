@@ -1,3 +1,4 @@
+<h3><%= link_to document.title, "#" %></h3>
 <table class="table">
   <% document.sections.titled.each do |section| %>
     <tr><td><%= link_to section.title, "##{section.title}" %></td></tr>

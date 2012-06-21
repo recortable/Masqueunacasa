@@ -48,6 +48,7 @@ Masqueunacasa::Application.routes.draw do
 
     # HABITAPEDIA
     resources :proposals, except: [:new] do
+      resource :kudos
       put :up, on: :member
       put :down, on: :member
       resources :relations, only: [:new, :create, :destroy]
@@ -55,6 +56,7 @@ Masqueunacasa::Application.routes.draw do
     end
 
     resources :experiencies do
+      resource :kudos
       resources :sections, except: [:index]
     end
 
@@ -62,6 +64,7 @@ Masqueunacasa::Application.routes.draw do
     resources :user_sessions, only: [:new, :create, :destroy]
     resources :password_recoveries
     resources :categories, only: [:index, :show] do
+      resource :kudos
       resources :proposals, only: [:new]
       put :up, on: :member
       put :down, on: :member
@@ -72,6 +75,7 @@ Masqueunacasa::Application.routes.draw do
     # sin el prefijo, es decir, en vez de "fases/mi_fase" 
     # se verá "mi_fase"
     resources :phases, only: [:show, :update, :destroy], path: '' do
+      resource :kudos
       resources :sections, except: [:index]
       resources :categories, except: [:index]
     end

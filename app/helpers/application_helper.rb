@@ -49,7 +49,8 @@ module ApplicationHelper
     raw content
   end
 
-  def render_social_links(model)
-    render partial: 'application/social_links', locals: {model: model}
+  def icon(icon, label = '')
+    raw("<i class='icon-#{icon}'></i>#{h(label)}")
   end
+
 end

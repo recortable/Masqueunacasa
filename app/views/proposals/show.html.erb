@@ -2,7 +2,7 @@
 <div class="row">
   <%= user_column 'span2' do %>
     <%= image_tag('habitap/proposal.png', alt: proposal.title, width: 150, height: 150) %>
-    <%= render 'kudos' %>
+    <%= render_kudos proposal %>
     <%= render_sections_summary proposal %>
     <%= render_social_links proposal %>
   <% end %>

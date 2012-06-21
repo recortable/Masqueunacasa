@@ -27,3 +27,5 @@
 
   &:hover .section-edit { display: block; }
 }
+
+[class^="icon-"]:before, [class*=" icon-"]:before { font-size: 150%; text-decoration: none;}

@@ -16,7 +16,7 @@ module HasKudos
       end
     else
       ip = user.to_s
-      self.kudos.where(ip: ip).first
+      kudo = self.kudos.where(ip: ip).first
       if kudo.present?
         kudo.destroy
       else
