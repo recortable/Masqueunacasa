@@ -1,11 +1,4 @@
 module HasSubscriptors
-  extend ActiveSupport::Concern
-
-  included do
-    has_many :subscribers, as: :document, dependent: :destroy
-    has_many :subscriptors, through: :subscribers, source: :user
-  end
-
   def subscription(user)
     self.subscribers.where(user_id: user).first
   end

@@ -23,6 +23,7 @@ class CategoriesController < ApplicationController
       redirect_to url_for([c.phase, c])
     else
       authorize! :read, category
+      category.increment_view_counter
       respond_with category
     end
   end

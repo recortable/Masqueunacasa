@@ -2,11 +2,11 @@
   <%= div_for section do %>
     <% if can? :update, section %>
       <div class="section-edit">
-        <%= link_to 'Editar', [:edit, document, section], rel: "edit-section-#{section.id}" %> 
+        <%= link_to icon(:edit, ' Editar'), [:edit, document, section], rel: "edit-section-#{section.id}" %> 
         |
-        <%= link_to 'Subir', [:up, section], method: :put %>
+        <%= link_to icon('arrow-up'), [:up, section], method: :put %>
         |
-        <%= link_to 'Bajar', [:down, section], method: :put %>
+        <%= link_to icon('arrow-down'), [:down, section], method: :put %>
       </div>
     <% end %>
     <a name="<%= section.title? ? section.title : section.id %>">

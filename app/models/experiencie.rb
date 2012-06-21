@@ -3,7 +3,7 @@ class Experiencie < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :simple_i18n
   has_paper_trail meta: { title: :title, group_id: :group_id }
-  include HasKudos
+  include SocialDocument
 
   translates :title, :body, :slug
   translation_required :title, :slug

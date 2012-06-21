@@ -10,6 +10,7 @@ class PhasesController < ApplicationController
 
   def show
     authorize! :read, phase
+    phase.increment_view_counter
     respond_with phase
   end
 

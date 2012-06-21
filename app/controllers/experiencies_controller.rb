@@ -11,6 +11,7 @@ class ExperienciesController < ApplicationController
 
   def show
     authorize! :read, experiencie
+    experiencie.increment_view_counter
     respond_with experiencie
   end
 

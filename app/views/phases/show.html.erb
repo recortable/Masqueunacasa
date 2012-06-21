@@ -1,11 +1,9 @@
 <%# render_banner phase.title, phase %>
 
-
 <div class="row">
   <%= user_column 'span2' do %>
     <%= image_tag(phase.image_url, alt: phase.title, width: 150, height: 150) %>
     <%= render_kudos phase %>
-    <%= render_sections_summary phase %>
     <%= render_social_links phase %>
   <% end %>
 
@@ -21,27 +19,29 @@
     <%= render_sections phase %>
   <% end %>
 
-  <%= corner_span 'span4' do %>
-    <div class="hoverize">
-      <%= hover? :create, Category do %>
-        <%= link_to 'Añadir pregnta', [:new, phase, :category] %>
-      <% end %>
-      <h2>Preguntas</h2>
-    </div>
-    <%= simple_list phase.categories.each do |category| %>
+  <div class="span4">
+    <%= corner_span 'categories' do %>
       <div class="hoverize">
-        <% if can? :update, category %>
-          <div class="hover">
-            <%= link_to 'Subir', [:up, category], method: :put%>
-            |
-            <%= link_to 'Bajar', [:down, category], method: :put %>
-          </div>
+        <%= hover? :create, Category do %>
+          <%= link_to 'Añadir pregnta', [:new, phase, :category] %>
         <% end %>
-        <h3><%= link_to category.question, [phase, category] %></h3>
+        <h2>Preguntas</h2>
       </div>
-    </div>
+      <%= simple_list phase.categories.each do |category| %>
+        <div class="hoverize">
+          <% if can? :update, category %>
+            <div class="hover">
+              <%= link_to 'Subir', [:up, category], method: :put%>
+              |
+              <%= link_to 'Bajar', [:down, category], method: :put %>
+            </div>
+          <% end %>
+          <h3><%= link_to category.question, [phase, category] %></h3>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 </div>
 
 

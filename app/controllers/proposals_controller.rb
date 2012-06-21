@@ -12,6 +12,7 @@ class ProposalsController < ApplicationController
 
   def show
     authorize! :read, proposal
+    proposal.increment_view_counter
     respond_with proposal
   end
 

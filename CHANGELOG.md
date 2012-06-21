@@ -3,7 +3,12 @@
 TAREAS
 - Enviar emails colectivos en background
 
+
 ## 21/06/2012
+- Fuera índice (hasta que encontremos la manera de encajarlo, si es que
+  tiene sentido)
+- Se puede pinchar en me gusta
+- Lleva la cuenta del número de veces que se accede a una página
 - vide_count en los modelos (número de veces visto)
 - Modelo subscriptor (Subscribirse a los cambios de un modelo)
 - Modelo kudos ("Me gusta")

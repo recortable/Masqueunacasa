@@ -1,11 +1,4 @@
 module HasKudos
-  extend ActiveSupport::Concern
-
-  included do
-#    attr_accessible :kudos_count
-    has_many :kudos, as: :document, dependent: :destroy
-  end
-
   def kudo(user)
     if user.class == User
       kudo = self.kudos.where(user_id: user.id).first
