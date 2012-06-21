@@ -4,6 +4,7 @@
 <div class="row">
   <%= user_column 'span2' do %>
     <%= link_to image_tag(phase.image_url, alt: phase.title, width: 150, height: 150), phases_path %>
+    <%= render 'kudos' %>
     <%= render_sections_summary phase %>
     <%= render_social_links phase %>
   <% end %>

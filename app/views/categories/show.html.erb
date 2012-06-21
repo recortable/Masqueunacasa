@@ -3,6 +3,7 @@
 <div class="row">
   <%= user_column 'span2' do %>
     <%= image_tag('habitap/category.png', alt: category.title, width: 150, height: 150) %>
+    <%= render 'kudos' %>
     <%= render_sections_summary category %>
     <%= render_social_links category %>
   <% end %>

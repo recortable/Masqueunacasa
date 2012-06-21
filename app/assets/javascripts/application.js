@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require ckeditor/init
+//= require shared
 //= require posts
 //= require_self
 //= require maps
