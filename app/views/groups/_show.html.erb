@@ -1,28 +1,24 @@
 
 <div class="row">
-
-  <%= user_column 'span2' do %>
-    <%= avatar_image(current_group) %>
-    <div class="controls">
-      <% if can? :update, group %>
-        <%= link_box 'Editar datos', [:edit, group], 
-          rel: 'edit-profile' if !group.subdomain? %>
-        <%= link_box 'Editar datos', edit_profile_path, 
-          rel: 'edit-profile' if group.subdomain? %>
-      <% end %>
-    </div>
-  <% end %>
+  <%= render 'groups/current' %>
 
   <div class="group center span6">
     <%= corner_span('info') do %> 
-      <%= title group.name %>
+      <div class="hoverize">
+        <%= hover? :update, group do %>
+          <%= link_to 'Editar', [:edit, group] %>
+        <% end %>
+        <%= title group.name %>
+      </div>
       <%= raw group.description %>
     <% end %> 
+    <!--
     <%= corner_span('messages', :none) do %>
       <h2><%= t('.get_in_touch') %></h2>
       <p><%= t('.you_can_send_message')%></p>
       <%= render 'messages/form' %>
     <% end %>
+    -->
   </div>
 
   <% if group.latitude && group.longitude %>

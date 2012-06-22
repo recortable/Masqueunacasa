@@ -10,7 +10,7 @@ class Group < ActiveRecord::Base
   attr_accessible :banner_image, :avatar_image
   attr_accessible :user_id
   attr_accessible :subdomain, :domain
-  attr_accessible :closed
+  attr_accessible :closed, :root
   attr_accessible :longitude, :latitude
 
   validates :name, presence: true, uniqueness: true
@@ -22,11 +22,14 @@ class Group < ActiveRecord::Base
   has_many :messages
   has_many :announcements
 
+  default_scope order: 'updated_at ASC'
+  scope :community, where(root: false)
+
   mount_uploader :banner_image, GroupBannerUploader
   mount_uploader :avatar_image, GroupAvatarUploader
 
-  def self.main
-    Group.reorder('id ASC').first
+  def self.root
+    Group.where(root: true).first
   end
 
   def site?

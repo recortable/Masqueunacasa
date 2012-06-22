@@ -1,0 +1,13 @@
+<%= user_column 'span2' do %>
+  <%= link_to avatar_image(current_group, class: 'fixed'), profile_path %>
+  <div class="members">
+    <% current_group.members.limit(4).each do |user| %>
+      <%= link_to avatar_image(user, size: :small, class: 'fixed'), user_url(user, host: request.domain) %>
+    <% end %>
+  </div>
+  <table class="table">
+    <tr><td><h3><%= link_to 'Quienes', profile_path %></h3></td></tr>
+    <tr><td><h3><%= link_to 'Blog', posts_path %></h3></td></tr>
+    <tr><td><h3><%= link_to 'Documentos', pages_path %></h3></td></tr>
+  </table>
+<% end %>

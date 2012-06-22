@@ -6,7 +6,8 @@
         <%= form.input :banner_image %>
         <%= form.input :avatar_image %>
         <%= form.input :description, as: :text, input_html: {class: 'rte'} %>
-        <%= form.input :closed %>
+        <%= form.input :closed, wrapper: :checkbox %>
+        <%= form.input :root, wrapper: :checkbox if current_user_admin? %>
         <%= submit_button_for form %>
       </div>
     </div>

@@ -2,40 +2,22 @@
 <%= render 'groups/header' %>
 
 <div class="row">
-  <%= user_column 'span2' do %>
-    <%= link_to avatar_image(current_group, class: 'fixed'), profile_path %>
-    <% if current_membership %>
-      <%= t('membership.status', state: t("membership.states.#{current_membership.state}"), group: current_group.name) %>
-    <% end %>
-    <div class="controls">
-      <%= link_box 'Ir al blog', posts_path, class: 'highlight' %>
-      <%= link_box 'Editar entrada', edit_post_path(post) if can? :update, post %>
-      <%= link_box 'Añadir adjunto', new_post_post_attachment_path(post) if can? :create, PostAttachment %>
-    </div>
-  <% end %>
+  <%= render 'groups/current' %>
 
-  <div class="center span6">
-    <%= div_for post do %>
-      <div class="corner colored"></div>
-      <div class="content">
-        <div class="body">
-          <%= title post.title %>
-          <%= render_post_media(post) %>
-          <%= raw post.body %>
-        </div>
-      </div>
-      <div class="attachments">
-        <% post.attachments.each do |attachment| %>
-          <%= div_for attachment do %>
-            <%= link_to attachment.file_identifier, attachment.file_url %>
-            <%#= number_to_human_size attachment.size %>
-            <%= link_to 'Borrar', [post, attachment], 
-              method: :delete, confirm: "¿Borrar #{attachment.title}?" if can? :destroy, attachment %>
-          <% end %>
-        <% end %>
-      </div>
+  <%= corner_span 'span6 center' do %>
+    <div class="hoverize">
+      <%= hover? :update, post do %>
+        <%= link_to 'Editar', [:edit, post] %>
+      <% end %>
+      <h3><%= l post.published_at %></h3>
+      <%= title post.title %>
+      <%= render_post_media(post) %>
+    </div>
+    <%= raw post.body %>
+    <%= simple_list post.attachments do |attachment| %>
+      <%= link_to attachment.file_identifier, attachment.file_url %>
     <% end %>
-  </div>
+  <% end %>
 
   <div class="sidebar span4">
     <%= render 'archive' %>

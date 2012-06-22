@@ -1,22 +1,6 @@
-<div class="archive">
-  <div class="corner none"></div>
-  <div class="content">
-    <h3><%= t('.archive') %></h3>
-    <ul class="months">
-      <% posts_archive.sort.reverse.each do |month, posts| %>
-        <li class="month">
-        <h4><%= l month, format: :month_year %></h4>
-        <ul>
-          <% posts.each do |post| %>
-            <li>
-            <%= link_to avatar_image(post.group, size: :small, class: 'fixed') %>
-            <%= l post.published_at %>
-            <%=link_to_unless_current post.title, post %>
-            </li>
-          <% end %>
-        </ul>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
+<%= corner_span 'archive' do %>
+  <h3>Archivo</h3>
+  <%= simple_list archive_posts do |post| %>
+    <h4><%= link_to post.title, url_for_post(post) %></h4>
+  <% end %>
+<% end %>

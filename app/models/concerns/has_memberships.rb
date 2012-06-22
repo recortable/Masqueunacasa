@@ -4,6 +4,7 @@ module HasMemberships
   included do
     has_many :memberships
     has_many :users, through: :memberships
+    has_many :members, through: :memberships, source: :user
     after_create :create_owner_membership
   end
 

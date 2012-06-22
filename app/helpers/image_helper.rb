@@ -14,13 +14,13 @@ module ImageHelper
   def avatar_image(model, options = {})
     options.reverse_merge! class: 'responsive', size: 'normal'
 
-    size = options[:size] == :small ? 40 : 140
+    size = options[:size] == :small ? 44 : 140
 
     if model.avatar_image? 
       url = options[:size] == :small ? model.avatar_image_url(:mini) : model.avatar_image_url
       image_tag(url, alt: model.name, class: options[:class], width: size, height: size)
     else
-      placeholder_image_tag(text: 'A', width: size, height: size, class: options[:class])
+      image_tag('comm/user.png', width: size, height: size, class: options[:class])
     end
   end
 

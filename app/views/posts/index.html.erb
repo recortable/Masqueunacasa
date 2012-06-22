@@ -6,23 +6,7 @@
 <% end %>
 
 <div class="row">
-  <div class="span2">
-    <div class="corner"></div>
-      <div class="user-column">
-        <%= link_to avatar_image(post.group, class: 'fixed'), profile_path %>
-        <h4>Blog</h4>
-        <%= link_to(t('subscribe'), feed_path, {format: 'atom', class: 'feed'}) %>
-          <h4>Participa</h4>
-          <%= t('membership.status', state: t("membership.states.#{current_membership.state}"), group: current_group.name) if current_membership %>
-          <div class="controls">
-            <%= link_box 'Iniciar sesión', login_path unless current_user %>
-            <%= link_box t('.add_post'), new_post_path, rel: 'new-post', class: 'highlight' if can? :create, post %>
-            <%= link_box 'Editar perfil', edit_profile_path, rel: 'edit-profile' if can? :edit, current_group %>
-            <%= link_box 'Participantes', memberships_path, rel: 'manage-users' if can? :manage, User %>
-          </div>
-      &nbsp;
-    </div>
-  </div>
+  <%= render 'groups/current' %>
 
   <div class="center span6">
     <%= render posts %>

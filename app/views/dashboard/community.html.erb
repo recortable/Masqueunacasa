@@ -2,7 +2,7 @@
 <%= render_banner t('.title'), root_path %>
 
 <div class="groups cards">
-  <% site.groups.limit(10).each do |group| %>
+  <% community_groups.limit(10).each do |group| %>
     <%= group_card(group) %>
   <% end %>
 </div>

@@ -3,6 +3,9 @@
 TAREAS
 - Enviar emails colectivos en background
 
+## 22/06/2012
+- De momento, el archivo es sin fechas (lo siento, Pau...)
+- Intentando poner un poco de orden en la parte 'social'
 
 ## 21/06/2012
 - Fuera índice (hasta que encontremos la manera de encajarlo, si es que

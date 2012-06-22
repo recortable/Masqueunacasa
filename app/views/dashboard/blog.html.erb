@@ -3,26 +3,20 @@
 
 <div class="row">
   <%= user_column 'span2' do %>
-    <p>Éstas son los últimas entradas de 
-    todos los colectivos de Masqueunacasa.</p>
-    <div class="controls">
-      <%# link_box 'Publicar', new_post_path %>
+    <div class="groups">
+      <% community_groups.each do |group| %>
+        <%= link_to avatar_image(group, size: :small, class: 'fixed'), group %>
+      <% end %>
     </div>
+    <%= link_to 'Publicar', new_post_path, class: 'action' %> 
   <% end %>
+
   <div class="center span6">
     <%= render posts %>
   </div>
+
   <div class="sidebar span4">
     <%= render 'posts/pagination' %>
     <%= render 'posts/archive' %>
-    <%= corner_span '' do %>
-      <h3>Colectivos</h3>
-      <p>Estos son los colectivos que forman parte
-      de la comunidad de Masqueunacasa</p>
-    <% end %>
-    <% #TODO: quitar cuando se diseñe esta página %>
-    <div class="cards" style="margin-top: 10px">
-      <%= render site.latest_groups %>
-    </div>
   </div>
 </div>

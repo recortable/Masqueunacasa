@@ -2,6 +2,7 @@
 class Post < Content
 
   has_many :attachments, class_name: 'PostAttachment'
+  default_scope order: 'published_at DESC'
 
   mount_uploader :image, PostImageUploader
 

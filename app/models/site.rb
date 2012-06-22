@@ -11,7 +11,7 @@ class Site
   end
 
   def site?
-    true
+    root?
   end
 
   def membership_for(user) 

@@ -5,6 +5,7 @@
     <% t('posts.by') %>:<% link_to post.group.name, post.group %>
     <% l post.published_at %>
     -->
+    <h3><%= l post.published_at %></h3>
     <%= link_to content_tag(:h2, post.title), post_url(post, subdomain: (post.group.subdomain.present? ? post.group.subdomain : nil)) %>
     <%= render_post_media(post) %>
     <%= raw truncate_html(post.body, length: 500) %>
