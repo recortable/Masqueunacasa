@@ -1,11 +1,10 @@
 class Group < ActiveRecord::Base
+  # acts_as :agent
   include ReceiveMessages
   include Translatable
   include HasMemberships
-  extend FriendlyId
-  friendly_id :name, use: :slugged
-
   translates :description
+
   attr_accessible :name, :description, :slug
   attr_accessible :banner_image, :avatar_image
   attr_accessible :user_id
@@ -13,7 +12,6 @@ class Group < ActiveRecord::Base
   attr_accessible :closed, :root
   attr_accessible :longitude, :latitude
 
-  validates :name, presence: true, uniqueness: true
   validates :user_id, presence: true
 
   belongs_to :user
@@ -46,5 +44,9 @@ class Group < ActiveRecord::Base
     else
       []
     end
+  end
+
+  def name
+    title
   end
 end

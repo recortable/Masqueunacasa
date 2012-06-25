@@ -2,7 +2,7 @@
 
 <div class="row">
   <%= user_column 'span2' do %>
-    <%= image_tag(phase.image_url, alt: phase.title, width: 150, height: 150) %>
+    <%= phase_image_link phase, size: 150 %>
     <%= render_kudos phase %>
     <%= render_social_links phase %>
   <% end %>

@@ -9,7 +9,11 @@
     <%= simple_list categories.each do |category| %>
       <h3>
         <%= link_to category.question, [category.phase, category] %>
-        <small><%= link_to category.phase.title, category.phase %></small>
+        <small>
+          <%= link_to category.phase.title, category.phase %>
+          <%= icon(:heart, category.kudos_count) %>
+          <%= icon('eye-open', category.view_count) %>
+        </small>
       </h3>
     <% end %>
   <% end %>

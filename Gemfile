@@ -23,6 +23,7 @@ gem 'bcrypt-ruby', '~> 3.0.0' # Para encriptar cosas, p.ej: password (MD5)
 gem 'friendly_id'
 gem 'paper_trail'
 gem 'acts_as_list'
+gem 'acts_as_relation' # Multiple inheritance   https://github.com/hzamani/acts_as_relation
 
 # Para subir ficheros e imágenes al servidor
 gem "mini_magick" # Para modificar imágenes (lo usa carrierwave)

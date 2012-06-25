@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120625135253) do
+ActiveRecord::Schema.define(:version => 20120625150111) do
+
+  create_table "agents", :force => true do |t|
+    t.integer  "as_agent_id"
+    t.string   "as_agent_type"
+    t.string   "name",          :limit => 50
+    t.string   "slug",          :limit => 50
+    t.integer  "kudos_count",                 :default => 0
+    t.integer  "view_count",                  :default => 0
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+  end
+
+  add_index "agents", ["slug"], :name => "index_agents_on_slug"
 
   create_table "announcements", :force => true do |t|
     t.integer  "user_id"
@@ -124,7 +137,7 @@ ActiveRecord::Schema.define(:version => 20120625135253) do
 
   create_table "groups", :force => true do |t|
     t.integer  "user_id"
-    t.string   "name"
+    t.string   "title"
     t.string   "slug"
     t.string   "description_es",    :limit => 1024
     t.string   "description_ca",    :limit => 1024
@@ -149,8 +162,8 @@ ActiveRecord::Schema.define(:version => 20120625135253) do
     t.boolean  "root",                              :default => false
   end
 
-  add_index "groups", ["name"], :name => "index_groups_on_name", :unique => true
   add_index "groups", ["slug"], :name => "index_groups_on_slug", :unique => true
+  add_index "groups", ["title"], :name => "index_groups_on_name", :unique => true
 
   create_table "kudos", :force => true do |t|
     t.integer  "document_id"
@@ -287,7 +300,7 @@ ActiveRecord::Schema.define(:version => 20120625135253) do
   add_index "subscribers", ["user_id"], :name => "index_subscribers_on_user_id"
 
   create_table "users", :force => true do |t|
-    t.string   "name"
+    t.string   "title"
     t.string   "slug"
     t.text     "description"
     t.float    "latitude"
@@ -314,9 +327,9 @@ ActiveRecord::Schema.define(:version => 20120625135253) do
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
-  add_index "users", ["name"], :name => "index_users_on_name", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["slug"], :name => "index_users_on_slug", :unique => true
+  add_index "users", ["title"], :name => "index_users_on_name", :unique => true
 
   create_table "versions", :force => true do |t|
     t.string   "item_type",                 :null => false

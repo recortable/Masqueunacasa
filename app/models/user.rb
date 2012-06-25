@@ -1,9 +1,8 @@
 class User < ActiveRecord::Base
   # EXTENSIONS
+  # acts_as :agent
   include ReceiveMessages
   include ResetPasswordToken
-  extend FriendlyId
-  friendly_id :name, use: :slugged
   has_secure_password
   mount_uploader :avatar_image, UserAvatarUploader
 
@@ -21,9 +20,6 @@ class User < ActiveRecord::Base
 
 
   # VALIDATIONS
-  validates :name, presence: true, uniqueness: true
-  validates :name, presence: true,
-            length: {minimum: 4, maximum: 50}
   validates :email, presence: true,
             uniqueness: true,
             length: {minimum: 5, maximum: 60},
@@ -36,4 +32,7 @@ class User < ActiveRecord::Base
     Membership.where(group_id: group.id, user_id: self.id).first.present?
   end
 
+  def name
+    title
+  end
 end

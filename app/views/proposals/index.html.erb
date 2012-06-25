@@ -1,19 +1,27 @@
 <%= render_banner t('.title'), proposals_path %>
 
 <div class="row">
-  <div class="span8 offset2">
-    <div class="content">
-      <%= title t('.title') %>
-      <table class="table stripped">
-        <% proposals.each do |proposal| %>
-          <tr>
-            <td><%= proposal.phase.title %></td>
-            <td><%= proposal.category.title %></td>
-            <td><h3><%= link_to proposal.title, proposal %></h3></td>
-            <td><%= link_to 'Editar', [:edit, proposal] %></td>
-          </tr>
-        <% end %>
-      </table>
-    </div>
-  </div>
+  <%= user_column 'span2' do %>
+    <%= avatar_link current_group %>
+  <% end %>
+
+  <%= corner_span 'span6' do %>
+    <%= title 'Propuestas' %>
+    <% Phase.all.each do |phase| %>
+      <h2>
+        <%= phase_image_link phase, size: 40 %>
+        <%= link_to phase.title %>
+      </h2>
+    <%= simple_list phase.proposals do |proposal| %>
+      <h3>
+        <%= link_to proposal.title, proposal %>
+        <small>
+          <%= proposal.category.title %>
+          <%= icon(:heart, proposal.kudos_count) %>
+          <%= icon('eye-open', proposal.view_count) %>
+        </small>
+      </h3>
+    <% end %>
+    <% end %>
+  <% end %>
 </div>
