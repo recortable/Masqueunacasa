@@ -1,15 +1,11 @@
-<% title page.title %>
-
-<%= render 'groups/header' %>
 
 <div class="row">
   <%= user_column 'span2' do %>
     <%= avatar_link current_group %>
-    <div class="controls">
-      <%= link_box 'Documentos', pages_path %>
-      <%= link_box t('edit'), edit_page_path(page), class: 'highlight' if can? :edit, page %>
-    </div>
+    <%= render_kudos page %>
+    <%= render_group_sections %>
   <% end %>
+
   <%= corner_span 'span6' do %>
     <%= title page.title %>
     <%= render_sections page %>
