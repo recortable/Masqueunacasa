@@ -11,20 +11,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120625150111) do
+ActiveRecord::Schema.define(:version => 20120625201235) do
 
   create_table "agents", :force => true do |t|
-    t.integer  "as_agent_id"
-    t.string   "as_agent_type"
-    t.string   "name",          :limit => 50
-    t.string   "slug",          :limit => 50
-    t.integer  "kudos_count",                 :default => 0
-    t.integer  "view_count",                  :default => 0
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.string   "type",                 :limit => 8
+    t.string   "name",                 :limit => 50
+    t.string   "title",                :limit => 100
+    t.string   "slug",                 :limit => 50
+    t.boolean  "admin"
+    t.string   "avatar_image"
+    t.string   "lang",                 :limit => 8
+    t.string   "email"
+    t.text     "settings"
+    t.integer  "kudos_count",                         :default => 0
+    t.integer  "view_count",                          :default => 0
+    t.string   "password_digest"
+    t.string   "reset_password_token"
+    t.integer  "login_count"
+    t.datetime "last_login_at"
+    t.integer  "user_id"
+    t.string   "subdomain",            :limit => 50
+    t.integer  "memberships_count"
+    t.string   "banner_image"
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
   end
 
+  add_index "agents", ["email"], :name => "index_agents_on_email"
   add_index "agents", ["slug"], :name => "index_agents_on_slug"
+  add_index "agents", ["type"], :name => "index_agents_on_type"
 
   create_table "announcements", :force => true do |t|
     t.integer  "user_id"
@@ -175,6 +190,17 @@ ActiveRecord::Schema.define(:version => 20120625150111) do
 
   add_index "kudos", ["document_type", "document_id"], :name => "index_kudos_on_document_type_and_document_id"
   add_index "kudos", ["user_id"], :name => "index_kudos_on_user_id"
+
+  create_table "locations", :force => true do |t|
+    t.string   "resource_type", :limit => 16
+    t.integer  "resource_id"
+    t.integer  "user_id"
+    t.string   "title",         :limit => 200
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
 
   create_table "memberships", :force => true do |t|
     t.integer  "group_id"

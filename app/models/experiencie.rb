@@ -1,11 +1,12 @@
 class Experiencie < ActiveRecord::Base
   include Translatable
   extend FriendlyId
-  friendly_id :title, use: :simple_i18n
-  has_paper_trail meta: { title: :title, group_id: :group_id }
   include HasPopularity
   include HasSubscriptors
+  include HasSections
 
+  friendly_id :title, use: :simple_i18n
+  has_paper_trail meta: { title: :title, group_id: :group_id }
   translates :title, :body, :slug
   translation_required :title, :slug
 
@@ -19,7 +20,6 @@ class Experiencie < ActiveRecord::Base
   belongs_to :group
   has_many :relations
   has_many :proposals, through: :relations
-  has_many :sections, as: :document, conditions: proc { ['lang = ?', I18n.locale] }
 
   validates_presence_of :title, :user
   validates_uniqueness_of :title_es, :title_ca

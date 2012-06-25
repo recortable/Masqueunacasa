@@ -53,4 +53,7 @@ module ApplicationHelper
     raw("<i class='icon-#{icon}'></i>#{h(label)}")
   end
 
+  def simple_debug(model)
+    debug(model) if Rails.env.development?
+  end
 end

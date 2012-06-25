@@ -31,9 +31,9 @@
         <div class="hoverize">
           <% if can? :update, category %>
             <div class="hover">
-              <%= link_to 'Subir', [:up, category], method: :put%>
+              <%= link_to icon('arrow-up'), [:up, category], method: :put %>
               |
-              <%= link_to 'Bajar', [:down, category], method: :put %>
+              <%= link_to icon('arrow-down'), [:down, category], method: :put %>
             </div>
           <% end %>
           <h3><%= link_to category.question, [phase, category] %></h3>

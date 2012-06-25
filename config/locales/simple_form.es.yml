@@ -32,6 +32,8 @@ es:
         question: 'Pregunta'
         
       group:
+        name: 'Nombre corto'
+        title: 'Nombre completo'
         slug: 'Subdominio'
         banner_image: 'Imágen de cabecera'
         avatar_image: 'Imágen de grupo'
@@ -47,8 +49,9 @@ es:
         embed: 'Vídeo'
 
       user:
+        name: 'Nombre corto'
+        title: 'Nombre completo'
         role: 'rol'
-        description: 'Breve biografía'
         avatar_image: 'Imágen'
       user_session:
         password: Contraseña

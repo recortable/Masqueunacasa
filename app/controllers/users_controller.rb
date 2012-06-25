@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    authorize! :show, user
+    user.increment_view_counter
     respond_with user
   end
 

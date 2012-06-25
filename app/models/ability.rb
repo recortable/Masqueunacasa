@@ -19,6 +19,14 @@ class Ability
     elsif user.admin?
       can :manage, :all
     else
+      # Un usuario cualquiera
+
+      # HABITAPEDIA
+      can :update, Category
+      can :manage, Section do |section|
+        can? :update, section.document
+      end
+     
       can :create, Group
 
       can [:create, :update], Experiencie

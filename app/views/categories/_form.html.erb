@@ -1,7 +1,6 @@
 <%= simple_form_for [phase, category] do |form| %>
   <%= form.input :title %>
   <%= form.input :question %>
-  <%= form.input :body_type, collection: ['html', 'markdown'], include_blank: false if current_user_admin? %>
-  <%= form.input :body, as: :text %>
   <%= submit_button_for form %>
 <% end %>
+<%= raw category.body %>

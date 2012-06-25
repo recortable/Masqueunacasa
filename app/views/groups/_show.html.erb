@@ -10,7 +10,7 @@
         <% end %>
         <%= title group.name %>
       </div>
-      <%= raw group.description %>
+      <%= render_sections group %>
     <% end %> 
     <!--
     <%= corner_span('messages', :none) do %>
@@ -20,15 +20,6 @@
     <% end %>
     -->
   </div>
-
-  <% if group.latitude && group.longitude %>
-    <%= corner_span('map span4', :none) do %>
-      <h2><em><%= group.name %></em> en el mapa</h2>
-      <div id="show_map" style="width: 310px; 
-        height: 300px" data-location="<%= group.latitude.to_s + "," + group.longitude.to_s %>">
-      </div>
-    <% end %>
-  <% end %>
 </div>
 
 <div class="row">

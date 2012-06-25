@@ -1,14 +1,20 @@
 class Agent < ActiveRecord::Base
-  # ATTRIBUTES
-  attr_accessible :as_agent_id, :as_agent_type
-  attr_accessible :name
-
-  validates :name, presence: true, uniqueness: true,
-            length: {minimum: 4, maximum: 50}
-
-  # EXTENSIONS
   extend FriendlyId
   friendly_id :name, use: :slugged
-  acts_as_superclass
+
+  attr_accessible :name, :title, :email
+  attr_accessible :admin, :avatar_image
+  attr_accessible :lang
+  attr_accessible :city, :country, :website, :twitter, :facebook
+  store :settings, accessors: [:city, :country, :website, 
+                    :twitter, :facebook]
+
+  validates :name, presence: true, uniqueness: true
+
+  has_many :locations, as: :resource, dependent: :destroy
+  include HasSections
+
+  include HasPopularity
+
 
 end

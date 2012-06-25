@@ -8,11 +8,11 @@
   <% end %>
 
   <%= corner_span 'span6' do %>
+    <h3><%= link_to proposal.category.question, [proposal.category.phase, proposal.category] %></h3>
     <div class="hoverize">
       <%= hover? :update, proposal do %>
-        <%= link_to 'Editar', [:edit, proposal], rel: 'edit-proposal' %>
+        <%= link_to icon(:edit, 'Editar'), [:edit, proposal], rel: 'edit-proposal' %>
       <% end %>
-      <h3><%= link_to proposal.category.question, [proposal.category.phase, proposal.category] %></h3>
       <%= title proposal.title %>
     </div>
     <%= render_sections proposal %>

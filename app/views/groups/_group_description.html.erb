@@ -1,7 +1,7 @@
 <%= corner_span('description', :none) do %>
   <h3><%= t('who') %></h3>
   <p>
-    <%= raw current_group.description %>
+  <%= render_body current_group.sections.first %>
   </p>
   <div class="controls">
     <% if !current_group.closed? %>

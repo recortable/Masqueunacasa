@@ -1,5 +1,5 @@
 <%= simple_form_for [document, section] do |form| %>
-  <%= form.input :title %>
-  <%= form.input :body %>
-  <%= form.submit %>
+  <%= form.input :title unless document.sections.first == nil || document.sections.first == section %>
+  <%= form.input :body, label: false %>
+  <%= submit_button_for form %>
 <% end %>

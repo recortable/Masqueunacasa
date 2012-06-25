@@ -1,15 +1,1 @@
-<%= render 'groups/header' %>
-
-
-<div class="row profile-editor editor">
-  <div class="span12">
-    <div class="corner colored"></div>
-    <div class="content">
-      <%= title 'Editar perfil' %>
-    </div>
-
-    <div class="bloc">
-      <%= render 'groups/form' %>
-    </div>
-  </div>
-</div>
+<%= render partial: 'groups/form', locals: {group: current_group } %>

@@ -1,33 +1,21 @@
-<%= render_banner user.name, users_path %>
-
-<%= div_for user, class: 'row space' do %>
+<div class="row">
   <%= user_column 'span2' do %>
     <%= avatar_image(user) %>
-    <%= content_tag(:p, 'Administrador(a) de masqueunacasa.org') if user.admin? %>
-    <div class="controls">
-      <%= link_box 'Cerrar sesión', logout_path if user == current_user %>
-      <%= link_box 'Editar perfil', [:edit, user] if can? :update, user %>
+    <%= render_kudos user %>
+  <% end %>
+
+  <%= corner_span 'span6' do %>
+    <div class="hoverize">
+      <%= hover? :update, user do %>
+        <%= link_to 'Editar', [:edit, user] %>
+      <% end %>
+      <%= title user.title %>
     </div>
+    <h3><%= user.website %></h3>
+    <h3><%= user.twitter %></h3>
+    <h3><%= user.facebook %></h3>
+    <%= render_sections user %>
   <% end %>
+</div>
 
-  <%= corner_span('info span6') do %> 
-    <%= title user.name %>
-    <%= raw user.description %>
-  <% end %>
 
-<% end %>
-<!--
-<%= corner_span('groups span4', :none) do %>
-  <h2>Colectivos</h2>
-  <% user.memberships.each do |m| %>
-    <%= link_to m.group.name, m.group %>
-  <% end %>
-<% end %>
-<%= corner_span('messages span4', :none) do %>
-  <h2>Mensajes</h2>
-  <% if current_user and (current_user != user || current_user.admin?) %>
-    <p>Desde aquí puedes enviar un mensaje a esta persona</p>
-    <%= render 'messages/form' %>
-  <% end %>
-<% end %>
--->

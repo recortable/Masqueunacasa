@@ -1,21 +1,24 @@
 <% document.sections.each do |section| %>
   <%= div_for section do %>
-    <% if can? :update, section %>
-      <div class="section-edit">
-        <%= link_to icon(:edit, ' Editar'), [:edit, document, section], rel: "edit-section-#{section.id}" %> 
+    <div class="hoverize">
+      <%= hover? :update, section do %>
+        <%= link_to icon(:edit), [:edit, document, section], rel: "edit-section-#{section.id}" %> 
         |
         <%= link_to icon('arrow-up'), [:up, section], method: :put %>
         |
         <%= link_to icon('arrow-down'), [:down, section], method: :put %>
-      </div>
-    <% end %>
-    <a name="<%= section.title? ? section.title : section.id %>">
-    </a>
-    <h2><%= section.title %>
-    <small><%= link_to raw('&uarr;'), '#' %></small>
-  </h2>
-  <%= render_body section %>
+      <% end %>
+      <a name="<%= section.title? ? section.title : section.id %>">
+      </a>
+      <h2><%= section.title %><small><%= link_to raw('&uarr;'), '#' %></small></h2>
+    <%= render_body section %>
+    </div>
+  <% end %>
 <% end %>
-<% end %>
-<%= link_to 'Añadir sección', [:new, document, :section], rel: 'new-section' if can? :create, Section %>
+<div class="hoverize">
+  &nbsp;
+  <%= hover? :update, document do %>
+    <%= link_to icon(:plus, 'Añadir sección'), [:new, document, :section], rel: 'new-section' if can? :create, Section %>
+  <% end %>
+</div>
 

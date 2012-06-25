@@ -41,9 +41,15 @@ Masqueunacasa::Application.routes.draw do
   # Rutas sólo accesibles desde el dominio principal 
   constraints subdomain: /^$/ do
     resources :agents
-    resources :users
+    resources :users do
+      resources :sections
+      resources :kudos
+    end
+    resources :groups do
+      resources :sections
+      resources :kudos
+    end
     resources :versions
-    resources :groups
     resources :sections, only: [:up, :down] do
       put :up, on: :member
       put :down, on: :member

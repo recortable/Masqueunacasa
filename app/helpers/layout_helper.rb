@@ -14,8 +14,9 @@ module LayoutHelper
     raw "<ul class='tabs clearfix'>#{content}</ul>"
   end
 
-  def submit_button_for(form, text = nil, color = 'negro')
-    options = text ? {value: text} : {}
+  def submit_button_for(form, options = {})
+    options.reverse_merge!(color: 'negro')
+    color = options.delete(:color)
     raw "<div class='submit-wrapper #{color}'>
     #{form.button :submit, options}
            <div class='side-right'></div>

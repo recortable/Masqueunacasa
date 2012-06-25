@@ -1,29 +1,31 @@
-<%= simple_form_for group do |form| %>
-  <div class="row">
-    <div class="span8">
-      <div class="content">
-        <%= form.input :name %>
-        <%= form.input :banner_image %>
-        <%= form.input :avatar_image %>
-        <%= form.input :description, as: :text, input_html: {class: 'rte'} %>
-        <%= form.input :closed, wrapper: :checkbox %>
-        <%= form.input :root, wrapper: :checkbox if current_user_admin? %>
-        <%= submit_button_for form %>
-      </div>
-    </div>
-    <div class="span4">
-      <div class="content">
-        <p class="form-label"><%= t('simple_form.labels.default.map') %></p>
-        <div id="form_map" style="width:300px; height:300px"
-          <% if group.latitude && group.longitude %>
-            data-location="<%= group.latitude.to_s + "," + group.longitude.to_s %>"
-          <% end %>></div>
-            <%= form.input :latitude %>
-            <%= form.input :longitude, hint: t('simple_form.hints.longitude') %>
-            <%= form.input :subdomain if current_user.admin? %>
-            <%= form.input :domain if current_user.admin? %>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
+<div class="row">
+  <%= user_column 'span2' do %>
+    <%= avatar_image group %>
+    <h3>Cambiar imágen</h3>
+    <%= simple_form_for group do |form| %>
+      <%= form.input :avatar_image %>
+      <%= submit_button_for form, value: 'Cambiar imágen' %>
+    <% end %>
+  <% end %>
+
+  <%= corner_span('span6') do %>
+    <%= title "#{group.name}" %>
+    <%= simple_form_for group, html: {class: 'clearfix'} do |form| %>
+      <h3>Información pública</h3>
+      <p>Esta información será visible para el resto de las personas</p>
+      <%= form.input :name %>
+      <%= form.input :title %>
+      <%= form.input :email %>
+      <%= form.input :website %>
+      <%= form.input :twitter %>
+      <%= form.input :facebook %>
+      <% if current_user_admin? %>
+        <h3>Información privada</h3>
+        <p>Esto no será visible para el resto</p>
+        <%= form.input :subdomain %>
+      <% end %>
+
+      <%= submit_button_for form %>
+    <% end %>
+  <% end %>
+</div>

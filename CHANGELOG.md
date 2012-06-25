@@ -4,6 +4,10 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 25/06/2012
+- Cualquier usuario puede editar las propuestas y preguntas
+- GRAN CAMBIO EN LA DB: tanto Usuarios como Grupos usan la misma tabla
+- Modelo Agents: tanto usuarios como grupos son agentes. Se usa para que
+  no pueda haber un nombre de usuario igual que uno de grupo
 - Se pueden borrar preguntas (si eres admin)
 - Bug fix: editar grupos
 - Refactorizar el HasKudos
