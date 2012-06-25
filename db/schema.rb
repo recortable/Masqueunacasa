@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120621141346) do
+ActiveRecord::Schema.define(:version => 20120625135253) do
 
   create_table "announcements", :force => true do |t|
     t.integer  "user_id"
@@ -73,20 +73,23 @@ ActiveRecord::Schema.define(:version => 20120621141346) do
     t.string   "title_ca"
     t.string   "title_en"
     t.string   "slug"
-    t.string   "type",           :limit => 32
+    t.string   "type",              :limit => 32
     t.integer  "user_id"
     t.integer  "group_id"
     t.date     "published_at"
     t.text     "body_es"
     t.text     "body_ca"
     t.text     "body_en"
-    t.integer  "comments_count",               :default => 0
+    t.integer  "comments_count",                  :default => 0
     t.text     "embed"
     t.string   "image"
     t.string   "link_url"
-    t.datetime "created_at",                                  :null => false
-    t.datetime "updated_at",                                  :null => false
-    t.string   "body_type",      :limit => 16
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+    t.string   "body_type",         :limit => 16
+    t.integer  "kudos_count",                     :default => 0
+    t.integer  "subscribers_count",               :default => 0
+    t.integer  "view_count",                      :default => 0
   end
 
   add_index "contents", ["group_id"], :name => "index_contents_on_group_id"

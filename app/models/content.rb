@@ -1,6 +1,7 @@
 class Content < ActiveRecord::Base
   include ActionView::Helpers::SanitizeHelper
   include Translatable
+  include HasPopularity
   extend FriendlyId
   friendly_id :title, use: :slugged
   has_paper_trail meta: {title: :title, group_id: :group_id }

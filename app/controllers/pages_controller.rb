@@ -11,6 +11,8 @@ class PagesController < ApplicationController
   end
 
   def show
+    authorize! :show, page
+    page.increment_view_counter
     respond_with page
   end
 

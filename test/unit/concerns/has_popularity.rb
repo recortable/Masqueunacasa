@@ -1,6 +1,6 @@
 require 'test_helper'
 
-describe HasKudos do
+describe HasPopularity do
   MODELS = [:phase, :category, :proposal, :experiencie ]
 
   it "has kudos" do

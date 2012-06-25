@@ -5,12 +5,14 @@
       <%= model.kudos_count %> personas.
     </td>
   </tr>
-  <tr>
-    <td class="">
-      <%= link_to icon('edit'), '#' %>
-      <%= model.subscribers_count %> editores.
-    </td>
-  </tr>
+  <% if model.respond_to?(:subscriptors) %>
+    <tr>
+      <td class="">
+        <%= link_to icon('edit'), '#' %>
+        <%= model.subscribers_count %> editores.
+      </td>
+    </tr>
+  <% end %>
   <tr>
     <td class="subscriptors expansible">
       <%= link_to icon('eye-open'), '#' %>

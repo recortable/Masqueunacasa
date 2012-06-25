@@ -2,7 +2,11 @@
 <%= render 'groups/header' %>
 
 <div class="row">
-  <%= render 'groups/current' %>
+  <%= user_column 'span2' do %>
+    <%= avatar_link current_group, class: 'fixed' %>
+    <%= render_kudos post %>
+    <%= render_group_sections %>
+  <% end %>
 
   <%= corner_span 'span6 center' do %>
     <div class="hoverize">

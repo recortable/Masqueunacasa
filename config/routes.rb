@@ -8,15 +8,17 @@ Masqueunacasa::Application.routes.draw do
   end
 
   # Rutas que se pueden acceder tanto desde un subdominio como sin él
- 
+
   # PARTE SOCIAL
   constraints subdomain: /^$/ do
     match '/blog' => 'dashboard#blog'
   end
   resources :pages do
+    resource :kudos
     resources :sections, except: [:index]
   end
   resources :posts do
+    resource :kudos
     resources :post_attachments, except: [:index, :show]
   end
   resources :messages, only: [:create, :show]
