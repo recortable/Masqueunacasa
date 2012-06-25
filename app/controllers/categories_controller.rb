@@ -48,6 +48,12 @@ class CategoriesController < ApplicationController
     respond_with [phase, category]
   end
 
+  def destroy
+    authorize! :destroy, category
+    flash[:notice] = t('categories.notices.destroyed') if category.destroy
+    respond_with [phase, category], location: phase
+  end
+
   def up
     respond_with move_up(category), location: category.phase
   end

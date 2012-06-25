@@ -4,6 +4,8 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 25/06/2012
+- Se pueden borrar preguntas (si eres admin)
+- Bug fix: editar grupos
 - Refactorizar el HasKudos
 
 ## 22/06/2012

@@ -3,7 +3,12 @@
 <div class="row">
   <%= render 'groups/current' %>
   <%= corner_span 'span6' do %>
-    <%= title "Documentos" %>
+    <div class="hoverize">
+      <%= hover? :create, Page do %>
+        <%= link_to 'Añadir documento', new_page_path %>
+      <% end %>
+      <%= title "Documentos" %>
+    </div>
     <table class="table">
       <% pages.each do |page| %>
         <tr>

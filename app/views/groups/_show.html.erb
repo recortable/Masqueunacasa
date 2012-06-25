@@ -6,7 +6,7 @@
     <%= corner_span('info') do %> 
       <div class="hoverize">
         <%= hover? :update, group do %>
-          <%= link_to 'Editar', [:edit, group] %>
+          <%= link_to 'Editar', (group.subdomain? ? edit_profile_path : [:edit, group]) %>
         <% end %>
         <%= title group.name %>
       </div>

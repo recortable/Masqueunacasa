@@ -31,6 +31,7 @@ es:
     notices:
       created: 'Pregunta añadida.'
       updated: 'Pregunta modificada.'
+      destroyed: 'Pregunta borrada.'
 
   dashboard:
     community:
