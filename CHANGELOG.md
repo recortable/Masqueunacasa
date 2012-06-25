@@ -3,6 +3,9 @@
 TAREAS
 - Enviar emails colectivos en background
 
+## 25/06/2012
+- Refactorizar el HasKudos
+
 ## 22/06/2012
 - De momento, el archivo es sin fechas (lo siento, Pau...)
 - Intentando poner un poco de orden en la parte 'social'

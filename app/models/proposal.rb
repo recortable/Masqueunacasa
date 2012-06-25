@@ -3,7 +3,8 @@ class Proposal < ActiveRecord::Base
   acts_as_list scope: :category_id
   extend FriendlyId
   friendly_id :title, use: :simple_i18n
-  include SocialDocument
+  include HasPopularity
+  include HasSubscriptors
   include Translatable
   translates :title, :body, :slug, :description
   translation_required :title, :slug
