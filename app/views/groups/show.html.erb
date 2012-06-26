@@ -14,7 +14,10 @@
   <% end %> 
   <div class="span4">
     <%= corner_span '' do %>
-      <h2>En el blog</h2>
+      <h2>
+        Publicado
+      </h2>
+      <h3>En el blog</h3>
       <%= simple_list group.posts do |post| %>
         <%= link_to post.title, url_for_post(post) %>
       <% end %>

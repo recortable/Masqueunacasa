@@ -5,10 +5,9 @@
   <%= user_column 'span2' do %>
     <div class="groups">
       <% community_groups.each do |group| %>
-        <%= link_to avatar_image(group, size: :small, class: 'fixed'), group %>
+        <%= link_to avatar_image(group, class: 'fixed'), group %>
       <% end %>
     </div>
-    <%= link_to 'Publicar', new_post_path, class: 'action' %> 
   <% end %>
 
   <div class="center span6">

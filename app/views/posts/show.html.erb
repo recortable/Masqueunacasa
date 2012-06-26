@@ -1,9 +1,9 @@
 
-<%= group_header post.group %>
+<%= render_group_header post.group %>
 
 <div class="row">
   <%= user_column 'span2' do %>
-    <%= avatar_link post.group, class: 'fixed' %>
+    <%= fake_img_fixed(150, 150, text: 'Post') %> 
     <%= render_kudos post %>
     <% if post.group == current_group %>
       <%= render_group_sections %>

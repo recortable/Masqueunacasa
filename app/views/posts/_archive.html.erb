@@ -1,5 +1,19 @@
 <%= corner_span 'archive' do %>
-  <h3>Archivo</h3>
+  <div class="hoverize">
+    <%= hover? :create, Post do %>
+      <%= link_to icon(:plus, 'Publicar entrada'), '#' %>
+    <% end %>
+    <h2>
+      Blog
+    </h2>
+    <h4>
+      <% if current_group == Group.root %>
+        <small>Entradas publicadas por todos los colectivos y personas de masqueunacasa.org</small>
+      <% else %>
+        <small>Entradas publicadas por <%= current_group.title %></small>
+      <% end %>
+    </h4>
+  </div>
   <%= simple_list archive_posts do |post| %>
     <h4><%= link_to post.title, url_for_post(post) %></h4>
   <% end %>

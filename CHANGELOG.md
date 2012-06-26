@@ -3,7 +3,8 @@
 TAREAS
 - Enviar emails colectivos en background
 
-## 25/06/2012
+## 25/06/2012.
+- Se puede utilizar www como prefijo de subdominio
 - Tratando de simplificar la navegación
 - Mejorar las vistas de los grupos
 - Cualquier usuario puede editar las propuestas y preguntas
