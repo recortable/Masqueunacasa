@@ -18,7 +18,12 @@
     <%= render_sections proposal %>
   <% end %>
   <%= corner_span 'span4' do %>
+    <div class="hoverize">
+      <%= hover? :create, Experiencie do %>
+        <%= link_to icon(:plus, 'Añadir experiencia'), new_experiencie_path(p: proposal.id) %>
+      <% end %>
     <h3>Experiencias relacionadas</h3>
+  </div>
     <%= simple_list proposal.relations do |relation| %>
       <%= link_to relation.experiencie.title, relation.experiencie %>
     <% end %>

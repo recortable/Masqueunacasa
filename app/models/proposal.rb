@@ -22,7 +22,7 @@ class Proposal < ActiveRecord::Base
   belongs_to :group
   belongs_to :phase
   belongs_to :category
-  has_many :relations
+  has_many :relations, dependent: :destroy
   has_many :experiencies, through: :relations 
   has_many :sections, as: :document, conditions: proc { ['lang = ?', I18n.locale] }
 

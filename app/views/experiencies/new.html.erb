@@ -1,7 +1,10 @@
 <%= render_banner 'Experiencias', experiencies_path %>
 
 <div class="row">
-  <%= corner_span('user_editor span12') do %>
+  <%= corner_span('span6 offset2') do %>
+    <% if related_proposal %>
+      <h3>En <%= related_proposal.title %></h3>
+    <% end %>
     <%= title "Añadir experiencia" %>
     <%= render 'form' %>
   <% end %>

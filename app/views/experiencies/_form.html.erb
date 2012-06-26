@@ -1,5 +1,6 @@
 <%= simple_form_for experiencie do |form| %>
   <%= form.input :title %>
+  <%= form.input :related_proposal_id, as: :hidden %>
   <%= submit_button_for form %>
 <% end %>
 <%= raw experiencie.body %>

@@ -10,7 +10,12 @@
   <%= corner_span 'span6' do %>
     <div class="hoverize">
       <%= hover? :update, experiencie do %>
-        <%= link_to 'Editar', [:edit, experiencie] %>
+        <%= link_to icon(:pencil, 'Editar'), [:edit, experiencie] %>
+        <% if can? :destroy, experiencie %>
+          |
+          <%= link_to icon(:cut, 'Borrar'), experiencie, 
+            method: :delete, confirm: "¿Quieres borrar esta experiencia?" %>
+        <% end %>
       <% end %>
       <h3>Experiencia</h3>
       <%= title experiencie.title %>

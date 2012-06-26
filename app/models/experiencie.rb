@@ -15,10 +15,13 @@ class Experiencie < ActiveRecord::Base
   attr_accessible :published
   attr_accessible :title_ca, :body_ca, :slug_ca
   attr_accessible :title_es, :body_es, :slug_es
+
+  attr_accessible :related_proposal_id
+  attr_accessor :related_proposal_id
   
   belongs_to :user
   belongs_to :group
-  has_many :relations
+  has_many :relations, dependent: :destroy
   has_many :proposals, through: :relations
 
   validates_presence_of :title, :user
@@ -26,8 +29,18 @@ class Experiencie < ActiveRecord::Base
 
   scope :published, where(published: true)
 
+  after_create :add_relations
+
   # TODO: hacer que funcione para otros idiomas
   def self.search(term)
     Experiencie.where(Experiencie.arel_table[:title_es].matches("%#{term}%")).order('title_es ASC')
+  end
+
+  private
+  def add_relations
+    if related_proposal_id.present?
+      proposal = Proposal.find related_proposal_id
+      proposal.add_relation(self, self.user) 
+    end
   end
 end
