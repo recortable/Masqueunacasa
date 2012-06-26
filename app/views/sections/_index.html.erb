@@ -2,7 +2,7 @@
   <%= div_for section do %>
     <div class="hoverize">
       <%= hover? :update, section do %>
-        <%= link_to icon(:edit), [:edit, document, section], rel: "edit-section-#{section.id}" %> 
+        <%= link_to icon(:pencil), [:edit, document, section], rel: "edit-section-#{section.id}" %> 
         |
         <%= link_to icon('arrow-up'), [:up, section], method: :put %>
         |
@@ -10,7 +10,7 @@
       <% end %>
       <a name="<%= section.title? ? section.title : section.id %>">
       </a>
-      <h2><%= section.title %><small><%= link_to raw('&uarr;'), '#' %></small></h2>
+      <h2><%= section.title %><small><%= link_to icon('sort-up'), '#' %></small></h2>
     <%= render_body section %>
     </div>
   <% end %>

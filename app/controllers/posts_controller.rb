@@ -32,18 +32,18 @@ class PostsController < ApplicationController
     post.user = current_user
     post.group = current_group
     authorize! :create, post
-    flash[:notice] = t('notice.posts.created') if post.save
+    flash[:notice] = t('posts.notices.created') if post.save
     respond_with post, location: root_path
   end
 
   def update
-    flash[:notice] = t('notice.posts.updated') if post.update_attributes(params[:post])
+    flash[:notice] = t('posts.notices.updated') if post.update_attributes(params[:post])
     respond_with post
   end
 
   def destroy
     authorize! :delete, post
-    flash[:notice] = 'Borrado' if post.destroy
+    flash[:notice] = t('posts.notices.destroyed') if post.destroy
     respond_with post, location: root_path
   end
 

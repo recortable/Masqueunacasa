@@ -3,9 +3,12 @@
 TAREAS
 - Enviar emails colectivos en background
 
-## 25/06/2012.
+## 26/06/2012
+- Los posts también tienen secciones
 - Bug fix: documentos
 - Mejorar la gestión de memberships en grupos 
+
+## 25/06/2012.
 - Se puede utilizar www como prefijo de subdominio
 - Tratando de simplificar la navegación
 - Mejorar las vistas de los grupos

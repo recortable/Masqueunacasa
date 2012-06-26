@@ -92,6 +92,10 @@ es:
       add_post: 'Añadir entrada'
       prev_posts: 'Entradas más recientes'
       next_posts: 'Entradas más antiguas'
+    notices:
+      created: 'Entrada añadida. Gracias'
+      updated: 'Entrada al blog modificada.'
+      destroyed: 'Hemos borrado esa entrada del blog.'
 
     new:
       title: 'Añadir entrada'

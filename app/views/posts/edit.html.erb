@@ -1,13 +1,13 @@
-<%= group_header post.group %>
+<%= render_group_header post.group %>
 <div class="row">
-  <div class='post-editor editor span12'><div class='corner colored'></div>
-    <div class="content">
-      <%= title post.title %>
-      <%= tabs do %>
-        <li><%= link_to t('view'), post %></li>
-        <li class="active"><%= link_to t('edit'), edit_post_path(post) %></li>
-      <% end %>
-    </div>
-    <%= render 'form' %>
-  </div>
+  <%= corner_span 'span6 offset2' do %>
+    <h3><%= post.group.title %></h3>
+    <%= title 'Editar entrada al blog' %>
+    <%= simple_form_for post do |form| %>
+      <%= form.input :title %>
+      <%= submit_button_for form %>
+      <%= form.input :embed %>
+      <%= form.input :body, as: :text %>
+    <% end %>
+  <% end %>
 </div>

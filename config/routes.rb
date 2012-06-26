@@ -20,6 +20,7 @@ Masqueunacasa::Application.routes.draw do
     resources :sections, except: [:index]
   end
   resources :posts do
+    resources :sections, except: [:index]
     resource :kudos
     resources :post_attachments, except: [:index, :show]
   end

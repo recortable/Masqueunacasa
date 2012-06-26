@@ -19,6 +19,7 @@
       <%= title post.title %>
       <%= render_post_media(post) %>
     </div>
+    <%= render_sections post %>
     <%= raw post.body %>
     <%= simple_list post.attachments do |attachment| %>
       <%= link_to attachment.file_identifier, attachment.file_url %>
