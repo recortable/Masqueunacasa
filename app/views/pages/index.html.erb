@@ -1,7 +1,7 @@
-<%= render 'groups/header' %>
+<%= render_group_header group %>
 
 <div class="row">
-  <%= render 'groups/current' %>
+  <%= render_group_bar group %>
   <%= corner_span 'span6' do %>
     <div class="hoverize">
       <%= hover? :create, Page do %>

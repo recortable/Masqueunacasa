@@ -13,6 +13,7 @@ class Ability
     can :read, Category
     cannot :index, Category
     can :read, Agent
+    can :read, Post
 
     if user.blank?
       can :create, UserSession 

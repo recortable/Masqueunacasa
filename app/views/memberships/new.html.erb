@@ -1,14 +1,23 @@
 <%= group_header 'Añadir participante' %>
 
-<div class="users cards">
-  <% users.each do |user| %>
-    <%= user_card(user) do %>
-      <%= link_to user.name, user_url(user, host: request.domain) %>
-      <div class="controls">
-        <%= link_box 'Añadir', memberships_path(u: user), method: :post %>
-      </div>
+<div class="row">
+  <%= corner_span 'span6 offset2' do %>
+    <h3><%= group.title %></h3>
+    <%= title 'Añadir participante' %>
+    <%= simple_list users do |user| %>
+      <div class="hoverize">
+        <%= hover? :update, group do %>
+          <% if user.member?(group) %>
+            <%= link_to icon(:trash, 'Borrar'), group.membership_for(user), method: :delete, confirm: "¿Quieres quitar a #{user.title} de '#{group.title}'?" %>
+          <% else %>
+            <%= link_to icon(:plus, 'Añadir'), memberships_path(u: user), method: :post unless user.member?(group) %>
+          <% end %>
+        <% end %>
+        <%= avatar_link user, size: :small, class: 'fixed' %>
+        <%= user.title %>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+
 
 

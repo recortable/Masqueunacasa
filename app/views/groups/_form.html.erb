@@ -28,5 +28,22 @@
       <%= submit_button_for form %>
     <% end %>
   <% end %>
+
+  <div class="span4">
+    <%= corner_span('') do %>
+      <div class="hoverize">
+        <%= hover? :update, group do %>
+          <%= link_to icon(:plus, 'Añadir participante'),
+            new_group_membership_path(group) %>
+        <% end %>
+        <h2>Participantes</h2>
+      </div>
+      <%= simple_list group.memberships do |membership| %>
+        <%= avatar_link membership.user, size: :small, class: 'fixed' %>
+        <%= membership.user.title %>
+        <%= membership.state %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 <%= simple_debug group.errors %>

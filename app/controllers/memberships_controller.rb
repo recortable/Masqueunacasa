@@ -4,7 +4,8 @@ class MembershipsController < ApplicationController
   before_filter :load_subdomain_group
 
   expose(:users) { User.all }
-  expose(:memberships) { current_group.memberships }
+  expose(:group) { params[:group_id].present? ? Group.find(params[:group_id]) : current_group }
+  expose(:memberships) { group.memberships }
   expose(:membership)
 
   def index

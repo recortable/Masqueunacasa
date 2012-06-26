@@ -3,7 +3,8 @@ class PagesController < ApplicationController
   before_filter :require_user, except: [:index, :show]
 
   expose(:themes) { 'textura02 naranja group' }
-  expose(:pages) { current_group.pages.all }
+  expose_parent :group, [:parent], default: Proc.new { current_group }
+  expose(:pages) { group.pages.all }
   expose(:page)
 
   def index
@@ -26,7 +27,7 @@ class PagesController < ApplicationController
 
   def create
     page.user = current_user
-    page.group = current_group
+    page.group = group
     page.body_type ||= 'markdown'
     authorize! :create, page
     flash[:notice] = t('pages.notices.created') if page.save

@@ -50,6 +50,7 @@ Masqueunacasa::Application.routes.draw do
     resources :groups do
       resources :sections
       resources :kudos
+      resources :memberships
     end
     resources :versions
     resources :sections, only: [:up, :down] do
