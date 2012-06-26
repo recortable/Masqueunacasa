@@ -7,15 +7,18 @@
     <%= link_box '+ Experiencia', new_experiencie_path, rel: 'new-experiencie' if can? :create, Experiencie %>
     </div>
   <% end %>
+
   <%= corner_span 'span6' do %>
     <%= title 'Experiencias' %>
-    <table class="table">
-      <% experiencies.each do |experiencie| %>
-        <tr>
-          <td><h3><%= link_to experiencie.title, experiencie %></h3></td>
-        </tr>
-      <% end %>
-    </table>
+    <%= simple_list experiencies do |experiencie| %>
+      <h3>
+        <%= link_to experiencie.title, experiencie %>
+        <small>
+          <%= icon(:heart, experiencie.kudos_count) %>
+          <%= icon('eye-open', experiencie.view_count) %>
+        </small>
+      </h3>
+    <% end %>
   <% end %>
 </div>
 
