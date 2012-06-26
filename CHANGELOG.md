@@ -4,6 +4,7 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 26/06/2012
+- Bug fix: mostrar el archivo del grupo actual (si existe)
 - Añadir y borrar experiencias
 - Los posts también tienen secciones
 - Bug fix: documentos
