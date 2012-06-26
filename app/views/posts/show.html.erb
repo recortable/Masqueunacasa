@@ -1,11 +1,13 @@
 
-<%= render 'groups/header' %>
+<%= group_header post.group %>
 
 <div class="row">
   <%= user_column 'span2' do %>
-    <%= avatar_link current_group, class: 'fixed' %>
+    <%= avatar_link post.group, class: 'fixed' %>
     <%= render_kudos post %>
-    <%= render_group_sections %>
+    <% if post.group == current_group %>
+      <%= render_group_sections %>
+    <% end %>
   <% end %>
 
   <%= corner_span 'span6 center' do %>

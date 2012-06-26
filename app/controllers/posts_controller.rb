@@ -3,8 +3,9 @@ class PostsController < ApplicationController
   before_filter :require_user, except: [:index, :show, :feed]
 
   expose(:themes) { current_group.site? ? 'textura03 azul_gris masq1casa' : 'textura02 naranja group' }
-  expose(:posts) { current_group.posts.paginate(page: params[:page], per_page: 5).order('created_at DESC') }
+  expose(:posts) { Post.all }
   expose(:post)
+  expose(:post_list) { current_group.posts.paginate(page: params[:page], per_page: 5).order('created_at DESC') }
   expose(:archive_posts) { current_group.posts }
   # TODO: decidir si mantenemos fechas o no
   expose(:posts_archive) { Post.archive_for(current_group.posts) }

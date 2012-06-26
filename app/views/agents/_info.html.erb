@@ -1,0 +1,20 @@
+<div class="hoverize">
+  <%= hover? :update, agent do %>
+    <%= link_to 'Editar', [:edit, agent] %>
+  <% end %>
+  <%= title agent.title %>
+</div>
+<% if agent.website.present? %>
+  <h3><%= link_to agent.website, agent.website %></h3>
+<% end %>
+<% if agent.type == 'Group' && agent.email.present? %>
+  <h4><small>correo </small><%= link_to agent.email, "mailto:#{agent.email}" %></h4>
+<% end %>
+<% if agent.twitter.present? %>
+  <h4><small>twitter </small><%= link_to "#{agent.twitter}", "http://twitter.com/#!#{agent.twitter}", target: '_blank' %></h4>
+<% end %>
+<% if agent.facebook.present? %>
+  <h4><small>facebook </small><%= link_to agent.facebook, agent.facebook %></h4>
+<% end %>
+<%= render_sections agent %>
+

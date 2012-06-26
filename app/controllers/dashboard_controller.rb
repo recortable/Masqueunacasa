@@ -2,8 +2,8 @@ class DashboardController < ApplicationController
   #before_filter :authenticate_user!
   expose (:themes) { 'textura01 azul_neon'}
   expose(:site) { Site.new }
-  expose(:posts) { site.latest_posts(params[:page]) }
-  expose(:community_groups) { site.groups.community }
+  expose(:post_list) { site.latest_posts(params[:page]) }
+  expose(:community_groups) { site.groups }
   expose(:archive_posts) { Post.all }
   expose(:posts_archive) { Post.archive_for(site.posts) }
 

@@ -1,3 +1,25 @@
-<%= render_banner('Colectivos', groups_path) %>
+<%= group_header group.title, group %>
+<div class="row">
+  <%= user_column 'span2' do %>
+    <%= link_to avatar_image(group, class: 'fixed'), profile_path %>
+    <div class="members">
+      <% group.members.limit(4).each do |user| %>
+        <%= link_to avatar_image(user, size: :small, class: 'fixed'), user_url(user, host: request.domain) %>
+      <% end %>
+    </div>
+  <% end %>
 
-<%= render 'show' %>
+  <%= corner_span('span6') do %> 
+    <%= render_agent_info group %>
+  <% end %> 
+  <div class="span4">
+    <%= corner_span '' do %>
+      <h2>En el blog</h2>
+      <%= simple_list group.posts do |post| %>
+        <%= link_to post.title, url_for_post(post) %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+

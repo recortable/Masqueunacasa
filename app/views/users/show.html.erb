@@ -5,16 +5,7 @@
   <% end %>
 
   <%= corner_span 'span6' do %>
-    <div class="hoverize">
-      <%= hover? :update, user do %>
-        <%= link_to 'Editar', [:edit, user] %>
-      <% end %>
-      <%= title user.title %>
-    </div>
-    <h3><%= user.website %></h3>
-    <h3><%= user.twitter %></h3>
-    <h3><%= user.facebook %></h3>
-    <%= render_sections user %>
+    <%= render_agent_info user %>
   <% end %>
 </div>
 

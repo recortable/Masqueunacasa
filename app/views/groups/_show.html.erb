@@ -2,28 +2,8 @@
 <div class="row">
   <%= render 'groups/current' %>
 
-  <div class="group center span6">
-    <%= corner_span('info') do %> 
-      <div class="hoverize">
-        <%= hover? :update, group do %>
-          <%= link_to 'Editar', (group.subdomain? ? edit_profile_path : [:edit, group]) %>
-        <% end %>
-        <%= title group.name %>
-      </div>
-      <%= render_sections group %>
-    <% end %> 
-    <!--
-    <%= corner_span('messages', :none) do %>
-      <h2><%= t('.get_in_touch') %></h2>
-      <p><%= t('.you_can_send_message')%></p>
-      <%= render 'messages/form' %>
-    <% end %>
-    -->
-  </div>
+  <%= corner_span('span6') do %> 
+    <%= render_agent_info group %>
+  <% end %> 
 </div>
 
-<div class="row">
-</div>
-
-<%= div_for group, class: 'row space' do %>
-<% end %>

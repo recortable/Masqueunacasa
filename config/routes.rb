@@ -4,7 +4,9 @@ Masqueunacasa::Application.routes.draw do
   constraints subdomain: /.+/ do
     match '', to: 'posts#index'
     resources :memberships
-    resources :groups, only: [:update, :show]
+    resources :groups, only: [:update, :show] do
+      resources :sections
+    end
   end
 
   # Rutas que se pueden acceder tanto desde un subdominio como sin él
@@ -23,7 +25,7 @@ Masqueunacasa::Application.routes.draw do
   end
   resources :messages, only: [:create, :show]
 
-  resource :profile, only: [:show, :edit]
+  resource :profile, only: [:show, :edit] 
   resources :announcements do
     put :send_email, on: :member
     put :probe, on: :member

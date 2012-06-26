@@ -1,2 +1,15 @@
-<%= render 'groups/header' %>
-<%= render 'groups/show' %>
+<%= group_header group.title, group %>
+<div class="row">
+  <%= user_column 'span2' do %>
+    <%= link_to avatar_image(group, class: 'fixed'), profile_path %>
+    <div class="members">
+      <% group.members.limit(4).each do |user| %>
+        <%= link_to avatar_image(user, size: :small, class: 'fixed'), user_url(user, host: request.domain) %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= corner_span('span6') do %> 
+    <%= render_agent_info group %>
+  <% end %> 
+</div>

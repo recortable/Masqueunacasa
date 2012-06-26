@@ -5,7 +5,7 @@ class Group < Agent
   attr_accessible :subdomain, :user_id, :memberships_count, :banner_image
   store :settings, accessors: [:closed]
 
-  validates :user_id, presence: true
+  #validates :user_id, presence: true
 
   default_scope order: 'updated_at ASC'
   scope :community, where(admin: false)

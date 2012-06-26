@@ -4,6 +4,8 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 25/06/2012
+- Tratando de simplificar la navegación
+- Mejorar las vistas de los grupos
 - Cualquier usuario puede editar las propuestas y preguntas
 - GRAN CAMBIO EN LA DB: tanto Usuarios como Grupos usan la misma tabla
 - Modelo Agents: tanto usuarios como grupos son agentes. Se usa para que

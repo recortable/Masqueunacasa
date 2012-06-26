@@ -1,5 +1,11 @@
 module GroupsHelper
-  def render_group_sections
+
+  def render_group_bar(group)
+    render partial: 'groups/bar', locals: {group: group}
+  end
+
+  def render_group_sections(group = nil)
+    group ||= current_group
     render partial: 'groups/sections'
   end
 
@@ -8,9 +14,9 @@ module GroupsHelper
     render partial: 'groups/group', locals: {group: group, info: info}
   end
 
-  def group_header(title)
-    title(title)
-    render 'groups/header'
+  def group_header(title, group = nil)
+    group ||= current_group
+    render partial: 'groups/header', locals: {group: group }
   end
 
 end
