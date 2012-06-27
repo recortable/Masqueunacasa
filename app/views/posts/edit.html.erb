@@ -6,6 +6,10 @@
     <%= simple_form_for post do |form| %>
       <%= form.input :title %>
       <%= submit_button_for form %>
+      <br/>
+      <br/>
+      <br/>
+      <%= form.input :remove_image, as: :boolean %>
       <%= form.input :embed %>
       <%= form.input :body, as: :text %>
     <% end %>

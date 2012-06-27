@@ -1,14 +1,46 @@
+require 'file_size_validator'
+
 class Section < ActiveRecord::Base
+  attr_accessible :group_id
   attr_accessible :document_id, :document_type
   attr_accessible :lang, :title, :body, :body_type
+  attr_accessible :image
+  store :properties, accessors: [:image_type, :image_size, :image_position]
+  attr_accessible :image_type, :image_size, :image_position
+  delegate :title, to: :document, prefix: true
 
   validates_presence_of :document_id, :document_type, :lang, :body_type
+  validates :image, file_size: { maximum: 1.megabytes.to_i }
 
+  belongs_to :group
   belongs_to :document, polymorphic: true, touch: true
+
   default_scope order: 'position ASC'
   scope :titled, where("title <> ''")
 
   acts_as_list scope: [:document_type, :document_id]
   has_paper_trail meta: {title: :document_title}
-  delegate :title, to: :document, prefix: true
+
+  mount_uploader :image, ImageUploader
+  before_save :update_group_id
+  before_save :update_image_attributes
+
+  private
+  def update_group_id
+    if document_id_changed?
+      if document_type == 'Group'
+        self.group_id = document_id
+      elsif document.respond_to?(:group_id)
+        self.group_id = document.group_id
+      end
+    end
+  end
+
+  def update_image_attributes
+    if image.present? && image_changed?
+      self.image_type = image.file.content_type
+      self.image_size = image.file.size
+    end
+  end
+
 end

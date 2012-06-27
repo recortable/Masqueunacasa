@@ -69,3 +69,16 @@ form {
 
 // CASOS ESPECIALES
 #message_body {height: 6em;}
+
+form.new_section, form.edit_section {
+  textarea { border: 1px solid darken($fondo, 50%); }
+  div.image { 
+    width: 100%; overflow: hidden;
+    padding: 20px;
+
+    img.fixed { display: block; margin: 10px 0; }
+    div.controls {  margin-top: 10px; }
+  }
+}
+
+

@@ -41,6 +41,15 @@ class SectionsController < ApplicationController
     respond_with s, location: document_location(s)
   end
 
+  def remove_image
+    s = Section.find params[:id]
+    # https://github.com/jnicklas/carrierwave/issues/401
+    s.remove_image = true
+    s.image_position = nil
+    s.save!
+    respond_with s, location: [:edit, s.document, s]
+  end
+
   private
   def document_location(s = nil)
     s ||= section

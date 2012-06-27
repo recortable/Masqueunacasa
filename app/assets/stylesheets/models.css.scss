@@ -26,6 +26,9 @@
   }
 
   &:hover .section-edit { display: block; }
+
+  div.image.top { margin-bottom: 10px;}
+  div.image.bottom { margin-top: 10px;}
 }
 
 .social-document [class^="icon-"]:before, 

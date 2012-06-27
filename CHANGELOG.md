@@ -3,6 +3,10 @@
 TAREAS
 - Enviar emails colectivos en background
 
+## 27/06/2012
+- Imágenes en las secciones
+- Update gems (routes.yml breaking change)
+
 ## 26/06/2012
 - Bug fix: mostrar el archivo del grupo actual (si existe)
 - Añadir y borrar experiencias

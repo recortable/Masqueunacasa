@@ -11,7 +11,17 @@
       <a name="<%= section.title? ? section.title : section.id %>">
       </a>
       <h2><%= section.title %><small><%= link_to icon('sort-up'), '#' %></small></h2>
-    <%= render_body section %>
+      <% if section.image? && section.image_position == 'top' %>
+        <div class="image top">
+          <%= image_tag section.image_url, class: 'responsive' %>
+        </div>
+      <% end %>
+      <%= render_body section %>
+      <% if section.image? && section.image_position == 'bottom' %>
+        <div class="image bottom">
+          <%= image_tag section.image_url, class: 'responsive' %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 <% end %>

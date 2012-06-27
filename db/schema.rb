@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120625201235) do
+ActiveRecord::Schema.define(:version => 20120626155650) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -309,6 +309,7 @@ ActiveRecord::Schema.define(:version => 20120625201235) do
     t.datetime "updated_at",                   :null => false
     t.integer  "document_id"
     t.string   "document_type", :limit => 16
+    t.integer  "group_id"
   end
 
   add_index "sections", ["document_type", "document_id", "lang"], :name => "index_sections_on_document_type_and_document_id_and_lang"

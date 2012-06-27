@@ -54,9 +54,11 @@ Masqueunacasa::Application.routes.draw do
       resources :memberships
     end
     resources :versions
-    resources :sections, only: [:up, :down] do
+
+    resources :sections, only: [:up, :down, :remove_image] do
       put :up, on: :member
       put :down, on: :member
+      delete :remove_image, on: :member
     end
 
     # HABITAPEDIA
