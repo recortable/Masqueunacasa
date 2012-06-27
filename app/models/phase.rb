@@ -17,8 +17,10 @@ class Phase < ActiveRecord::Base
   include HasPopularity
   include HasSubscriptors
 
+  ICONS = ['planificacion', 'realizacion', 'uso-y-vida-util']
   # TODO: convertir en un campo de la db
   def image_url
-    "habitap/#{slug_es}.png"
+    icon = ICONS[position - 1]
+    "habitap/#{icon}.png"
   end
 end
