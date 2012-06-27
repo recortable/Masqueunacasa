@@ -1,5 +1,5 @@
 <%= simple_form_for [document, section] do |form| %>
-  <%= form.input :title unless document.sections.first == nil || document.sections.first == section %>
+  <%= form.input :title %>
   <%= form.input :body, label: false %>
   <div class="image">
     <h3>Imágen</h3>
@@ -10,7 +10,7 @@
         <dt>Enlace</dt><dd><%= section.image_url %></dd>
       </ul>
 
-            <div class="controls">
+      <div class="controls">
         <%= link_box 'Borrar imágen', remove_image_section_path(section), method: :delete, confirm: '¿Quieres borrar esta imágen?' %>
       </div>
     <% else %>

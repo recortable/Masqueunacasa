@@ -5,12 +5,11 @@ class Section < ActiveRecord::Base
   attr_accessible :document_id, :document_type
   attr_accessible :lang, :title, :body, :body_type
   attr_accessible :image
-  store :properties, accessors: [:image_position]
-  attr_accessible :image_type, :image_size, :image_position
+  attr_accessible :image_position
   delegate :title, to: :document, prefix: true
 
   validates_presence_of :document_id, :document_type, :lang, :body_type
-  validates :image, file_size: { maximum: 1.megabytes.to_i }
+#  validates :image, file_size: { maximum: 1.megabytes.to_i }
 
   belongs_to :group
   belongs_to :document, polymorphic: true, touch: true
@@ -22,6 +21,7 @@ class Section < ActiveRecord::Base
   has_paper_trail meta: {title: :document_title}
 
   mount_uploader :image, ImageUploader
+  store :properties, accessors: [:image_position]
   before_save :update_group_id
 
   private

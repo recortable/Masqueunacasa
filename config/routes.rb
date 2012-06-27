@@ -32,6 +32,12 @@ Masqueunacasa::Application.routes.draw do
     put :probe, on: :member
   end
 
+  resources :sections, only: [:up, :down, :remove_image] do
+    put :up, on: :member
+    put :down, on: :member
+    delete :remove_image, on: :member
+  end
+
   match '/entrar' => 'user_sessions#new', as: :login
   match '/salir' => 'user_sessions#destroy', as: :logout
   match '/feed' => 'posts#feed', as: :feed, defaults: { format: 'atom' }
@@ -55,11 +61,6 @@ Masqueunacasa::Application.routes.draw do
     end
     resources :versions
 
-    resources :sections, only: [:up, :down, :remove_image] do
-      put :up, on: :member
-      put :down, on: :member
-      delete :remove_image, on: :member
-    end
 
     # HABITAPEDIA
     resources :proposals, except: [:new] do
