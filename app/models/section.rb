@@ -5,7 +5,7 @@ class Section < ActiveRecord::Base
   attr_accessible :document_id, :document_type
   attr_accessible :lang, :title, :body, :body_type
   attr_accessible :image
-  store :properties, accessors: [:image_type, :image_size, :image_position]
+  store :properties, accessors: [:image_position]
   attr_accessible :image_type, :image_size, :image_position
   delegate :title, to: :document, prefix: true
 
@@ -23,7 +23,6 @@ class Section < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
   before_save :update_group_id
-  before_save :update_image_attributes
 
   private
   def update_group_id
@@ -35,12 +34,4 @@ class Section < ActiveRecord::Base
       end
     end
   end
-
-  def update_image_attributes
-    if image.present? && image_changed?
-      self.image_type = image.file.content_type
-      self.image_size = image.file.size
-    end
-  end
-
 end

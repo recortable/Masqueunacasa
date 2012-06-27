@@ -39,9 +39,15 @@
         <h2>Participantes</h2>
       </div>
       <%= simple_list group.memberships do |membership| %>
-        <%= avatar_link membership.user, size: :small, class: 'fixed' %>
-        <%= membership.user.title %>
-        <%= membership.state %>
+        <div class="hoverize">
+          <%= hover? :destroy, membership do %>
+            <%= link_to icon(:cut, 'Quitar'), [group, membership],
+              method: :delete, confirm: "¿Quieres quitar a '#{membership.user.title}' de este grupo?" %>
+          <% end %>
+          <%= avatar_link membership.user, size: :small, class: 'fixed' %>
+          <%= link_to membership.user.title, membership.user %>
+          <%= membership.state %>
+        </div>
       <% end %>
     <% end %>
   </div>

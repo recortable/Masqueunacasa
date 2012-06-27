@@ -33,6 +33,10 @@ class Group < Agent
     closed
   end
 
+  def own_domain?
+    subdomain.present?
+  end
+
   def recipients(scope = 'all')
     if scope == 'all'
       users

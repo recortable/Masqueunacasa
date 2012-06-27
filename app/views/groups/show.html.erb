@@ -3,8 +3,11 @@
   <%= user_column 'span2' do %>
     <%= link_to avatar_image(group, class: 'fixed'), profile_path %>
     <div class="members">
-      <% group.members.limit(4).each do |user| %>
+      <% group.members.limit(6).each do |user| %>
         <%= link_to avatar_image(user, size: :small, class: 'fixed'), user_url(user, host: request.domain) %>
+      <% end %>
+      <% if group.members.count > 6 %>
+        Y <%= group.members.count - 6 %> más...
       <% end %>
     </div>
   <% end %>

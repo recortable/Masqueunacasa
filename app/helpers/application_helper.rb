@@ -49,8 +49,9 @@ module ApplicationHelper
     raw content
   end
 
-  def icon(icon, label = '')
-    raw("<i class='icon-#{icon}'></i>#{h(label)}")
+  def icon(icon, label = nil)
+    label = label.present? ? h(" #{label}") : ''
+    raw("<i class='icon-#{icon}'></i>#{label}")
   end
 
   def simple_debug(model)

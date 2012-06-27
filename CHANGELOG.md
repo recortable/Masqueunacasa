@@ -4,6 +4,10 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 27/06/2012
+- Bug fix: se pueden guardar secciones sin imágen
+- Se puede eliminar participantes de un grupo
+- Ya no se oculta el login (login.css fuera) porque se ocultaba en
+  casos que no debía (p.ej: viendo un usuario)
 - Imágenes en las secciones
 - Update gems (routes.yml breaking change)
 
