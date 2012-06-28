@@ -3,8 +3,11 @@
 TAREAS
 - Enviar emails colectivos en background
 
+## 28/06/2012
+- Borrar secciones
+
 ## 27/06/2012
-- Bug fix: las phases se pueden cambiar de nombre
+- Bug fix: las phases se pueden cambiar de nombr
 - Bug fix: se pueden guardar secciones sin imágen
 - Se puede eliminar participantes de un grupo
 - Ya no se oculta el login (login.css fuera) porque se ocultaba en

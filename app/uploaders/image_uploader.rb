@@ -24,6 +24,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    "#{model.document.title.parameterize}-#{model.id}.jpg"
+    "#{model.document.title.parameterize}-#{model.id}.jpg" if original_filename
   end
 end

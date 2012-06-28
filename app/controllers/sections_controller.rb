@@ -29,6 +29,12 @@ class SectionsController < ApplicationController
     respond_with section, location: document_location
   end
 
+  def destroy
+    authorize! :destroy, section
+    section.destroy
+    respond_with section, location: document
+  end
+
   def up
     s = Section.find params[:id]
     s.move_higher
