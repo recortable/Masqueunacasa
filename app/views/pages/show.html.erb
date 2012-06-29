@@ -7,7 +7,12 @@
   <% end %>
 
   <%= corner_span 'span6' do %>
-    <%= title page.title %>
+    <div class="hoverize">
+      <%= hover? :update, page do %>
+        <%= link_to icon(:pencil), [:edit, page] %>
+      <% end %>
+      <%= title page.title %>
+    </div>
     <%= render_sections page %>
   <% end %>
 </div>

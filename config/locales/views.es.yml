@@ -40,6 +40,8 @@ es:
   experiencies:
     notices:
       created: 'Experiencia añadida, ¡gracias!'
+      updated: 'Experiencia modificada.'
+      destroyed: 'Experiencia borrada. Glups.'
 
   groups:
     new:

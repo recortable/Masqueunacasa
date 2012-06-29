@@ -5,18 +5,12 @@
   <%= corner_span 'span6' do %>
     <div class="hoverize">
       <%= hover? :create, Page do %>
-        <%= link_to 'Añadir documento', new_page_path %>
+        <%= link_to icon(:plus, 'Añadir documento'), new_page_path %>
       <% end %>
       <%= title "Documentos" %>
     </div>
-    <table class="table">
-      <% pages.each do |page| %>
-        <tr>
-          <td><%= fake_img_fixed(30, 30) %></td>
-          <td><h3><%= link_to page.title, page %></h3></td>
-          <td><%= link_to 'Editar', [:edit, page] %></td>
-        </tr>
-      <% end %>
-    </table>
+    <%= simple_list pages do |page| %>
+      <h3><%= link_to page.title, page %></h3>
+    <% end %>
   <% end %>
 </div>

@@ -4,6 +4,8 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 29/06/2012
+- Mejorado las vistas de Pages
+- Empezamos con la búsqueda (Search model)
 - Borrar propuestas y experiencias
 
 ## 28/06/2012

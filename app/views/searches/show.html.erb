@@ -1,0 +1,19 @@
+<%= page do %>
+  <div class="span2">
+    &nbsp;
+  </div>
+  <div class="span6">
+    <% if search.term.present? %>
+      <%= title "Buscar '#{search.term}'", :h2 %>
+    <% else %>
+      <%= title 'Buscar', :h2 %>
+    <% end %>
+    <%= simple_list search.errors do |error| %>
+      <%= t("search.errors.#{error}") %>
+    <% end %>
+    <p><%= search.results.size %> resultados encontrados.</p>
+    <%= simple_list search.proposals do |proposal| %>
+      <%= link_to proposal.title, proposal %>
+    <% end %>
+  </div>
+<% end %>

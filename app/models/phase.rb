@@ -6,7 +6,9 @@ class Phase < ActiveRecord::Base
 
   has_many :categories, order: :position
   has_many :proposals, order: 'kudos_count DESC, view_count DESC'
-  has_many :sections, as: :document, conditions: proc { ['lang = ?', I18n.locale] }
+  include HasPopularity
+  include HasSubscriptors
+  include HasSections
 
   default_scope order: :position
 
@@ -14,8 +16,7 @@ class Phase < ActiveRecord::Base
   translates :title
   extend FriendlyId
   friendly_id :title, use: :simple_i18n
-  include HasPopularity
-  include HasSubscriptors
+  acts_as_list
 
   ICONS = ['planificacion', 'realizacion', 'uso-y-vida-util']
   # TODO: convertir en un campo de la db

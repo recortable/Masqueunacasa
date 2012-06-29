@@ -13,6 +13,11 @@ es:
       post_attachment: 'adjunto'
       section: 'sección'
 
+  announcement:
+    scopes:
+      members: 'Los participantes del grupo'
+      all: 'Los participantes y los seguidores del grupo'
+
   membership:
     states:
       owner: 'Administrador/a'
@@ -21,24 +26,7 @@ es:
       follow: 'Seguidor/a'
     status: "Eres %{state} en el grupo '%{group}'"
 
-  announcement:
-    scopes:
-      members: 'Los participantes del grupo'
-      all: 'Los participantes y los seguidores del grupo'
-
-ca:
-  activerecord:
-    models:
-      user: 'perfil'
-      page: pàgina
-
-  membership:
-    states:
-      owner: 'Administrador/a'
-      member: 'Participant'
-      request: 'Futur/a participant'
-      follow: 'Seguidor/a'
-    status: "Ets %{state} al grup '%{group}'"
-  
-en:
+  search:
+    errors:
+      term_to_short: 'Lo que buscas debe tener al menos 3 letras'
 

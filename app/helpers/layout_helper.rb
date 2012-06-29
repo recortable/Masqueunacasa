@@ -3,7 +3,7 @@ module LayoutHelper
   def page(options = {}, &block)
     options.reverse_merge! class: ''
     content = capture(&block)
-    head = image_tag('Logo_Mquc.png', class: 'mquc', width: 271, height: 41) 
+    head = render 'page_header' 
     raw "<div class='#{options[:class]}'><div class='corner none'></div></div><div class='page bloc'>#{head}<div class='row'>#{content}</div></div>"
   end
 

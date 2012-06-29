@@ -32,11 +32,13 @@ Masqueunacasa::Application.routes.draw do
     put :probe, on: :member
   end
 
+  # GENERAL
   resources :sections, only: [:up, :down, :remove_image] do
     put :up, on: :member
     put :down, on: :member
     delete :remove_image, on: :member
   end
+  resource :search
 
   match '/entrar' => 'user_sessions#new', as: :login
   match '/salir' => 'user_sessions#destroy', as: :logout
