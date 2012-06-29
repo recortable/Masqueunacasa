@@ -3,6 +3,7 @@ class User < Agent
   friendly_id :name, use: :slugged
 
   attr_accessible :login_count, :last_login_at
+  attr_accessible :password, :password_confirmation
   store :settings, accessors: [:reset_password_sent_at]
 
   validates :email, presence: true,

@@ -8,6 +8,7 @@ module CurrentUser
   def login_user(user, options = {bypass: false})
     session[:user_id] = user.id
     unless options[:bypass]
+      user.login_count ||= 0 
       user.login_count = user.login_count + 1
       user.last_login_at = Time.now
       user.save
