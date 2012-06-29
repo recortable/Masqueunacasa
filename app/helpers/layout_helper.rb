@@ -1,4 +1,12 @@
 module LayoutHelper
+
+  def page(options = {}, &block)
+    options.reverse_merge! class: ''
+    content = capture(&block)
+    head = image_tag('Logo_Mquc.png', class: 'mquc', width: 271, height: 41) 
+    raw "<div class='#{options[:class]}'><div class='corner none'></div></div><div class='page bloc'>#{head}<div class='row'>#{content}</div></div>"
+  end
+
   def corner_span(css_class, color = :colored, &block)
     content = capture(&block)
     raw "<div class='#{css_class}'><div class='corner #{color}'></div><div class='content'>#{content}</div></div>"

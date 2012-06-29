@@ -1,34 +1,32 @@
-<%# render_banner 'Pregunta', phase_path(phase) %>
-
-<div class="row">
-  <%= user_column 'span2' do %>
+<%= page do %>
+  <div class="span2">
     <%= image_tag('habitap/category.png', alt: category.title, width: 150, height: 150) %>
     <%= render_kudos category %>
-    <%# render_sections_summary category %>
     <%= render_social_links category %>
-  <% end %>
-  <%= corner_span 'span6' do %>
+    <%# render_sections_summary category %>
+  </div>
+
+  <div class="span6">
     <h3><%= link_to phase.title, phase %></h3>
     <div class="hoverize">
       <%= hover? :update, category do %>
-          <%= link_to icon(:edit, 'Editar'), [:edit, phase, category] %>
-          <% if can? :destroy, category %>
-          |
-          <%= link_to 'Borrar', [phase, category], method: :delete, 
+        <%= link_to icon(:edit, 'Editar'), [:edit, phase, category] %>
+        <% if can? :destroy, category %>
+          | <%= link_to icon(:trash), [phase, category], method: :delete, 
             confirm: "¿Seguro que quieres borrar esta pregunta" %>
-      <% end %>
+        <% end %>
       <% end %>
       <%= title category.question %>
       <%= fake_img 600, 400 %>
     </div>
     <%= render_sections category %>
     <%= render_body category %>
-  <% end %>
+  </div>
 
-  <%= corner_span 'span4', :none do %>
+  <div class="span4">
     <div class="hoverize">
       <%= hover? :create, Proposal do %>
-        <%= link_to 'Añadir propuesta', [:new, category, :proposal] %>
+        <%= link_to icon(:plus, 'Añadir propuesta'), [:new, category, :proposal] %>
       <% end %>
       <h2>Propuestas</h2>
     </div>
@@ -44,7 +42,6 @@
         <%= render_body proposal.sections.first %>
       </div>
     <% end %>
-  <% end %>
-</div>
-
+  </div>
+<% end %>
 

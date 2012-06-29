@@ -3,7 +3,11 @@
 TAREAS
 - Enviar emails colectivos en background
 
+## 29/06/2012
+- Borrar propuestas y experiencias
+
 ## 28/06/2012
+- Adaptar un poco el layout a lo de maría
 - Borrar secciones
 
 ## 27/06/2012

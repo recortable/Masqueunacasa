@@ -37,6 +37,12 @@ class ProposalsController < ApplicationController
     respond_with proposal
   end
 
+  def destroy
+    authorize! :destroy, proposal
+    flash[:notice] = t('proposals.notices.destroyed') if proposal.destroy
+    respond_with proposal, location: [proposal.phase, proposal.category]
+  end
+
   def up
     respond_with move_up(proposal), location: proposal.category
   end

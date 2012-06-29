@@ -1,31 +1,35 @@
-<%# render_banner t('.title'), proposals_path %>
-<div class="row">
-  <%= user_column 'span2' do %>
+<%= page do %>
+  <div class="span2">
     <%= image_tag('habitap/proposal.png', alt: proposal.title, width: 150, height: 150) %>
     <%= render_kudos proposal %>
     <%# render_sections_summary proposal %>
     <%= render_social_links proposal %>
-  <% end %>
+  </div>
 
-  <%= corner_span 'span6' do %>
+  <div class="span6">
     <h3><%= link_to proposal.category.question, [proposal.category.phase, proposal.category] %></h3>
     <div class="hoverize">
       <%= hover? :update, proposal do %>
         <%= link_to icon(:edit, 'Editar'), [:edit, proposal], rel: 'edit-proposal' %>
+        <% if can? :delete, proposal %>
+          | <%= link_to icon(:trash), proposal, method: :delete,
+            confirm: "¿Seguro que quieres borrar esta propuesta?" %>
+        <% end %>
       <% end %>
       <%= title proposal.title %>
     </div>
     <%= render_sections proposal %>
-  <% end %>
-  <%= corner_span 'span4' do %>
+  </div>
+
+  <div class="span4">
     <div class="hoverize">
       <%= hover? :create, Experiencie do %>
         <%= link_to icon(:plus, 'Añadir experiencia'), new_experiencie_path(p: proposal.id) %>
       <% end %>
-    <h3>Experiencias relacionadas</h3>
-  </div>
+      <h3>Experiencias relacionadas</h3>
+    </div>
     <%= simple_list proposal.relations do |relation| %>
       <%= link_to relation.experiencie.title, relation.experiencie %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+<% end %>

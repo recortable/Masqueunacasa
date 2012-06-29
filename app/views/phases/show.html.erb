@@ -1,32 +1,34 @@
 <%# render_banner phase.title, phase %>
 
-<div class="row">
-  <%= user_column 'span2' do %>
+<%= page do %>
+  <div class="span2">
     <%= phase_image_link phase, size: 150 %>
     <%= render_kudos phase %>
     <%= render_social_links phase %>
-  <% end %>
+  </div>
 
-  <%= corner_span 'span6' do %>
+  <div class="span6">
     <h3><%= link_to 'Habitapedia', phases_path %></h3>
     <div class="hoverize">
       <%= hover? :update, phase do %>
-        <%= link_to 'Editar', [:edit, phase] %>
+        <%= link_to icon(:pencil), [:edit, phase] %>
       <% end %>
       <%= title phase.title %>
       <%= fake_img 600, 400 %>
     </div>
     <%= render_sections phase %>
-  <% end %>
+  </div>
 
   <div class="span4">
-    <%= corner_span 'categories' do %>
+    <div class="categories">
+
       <div class="hoverize">
         <%= hover? :create, Category do %>
-          <%= link_to 'Añadir pregnta', [:new, phase, :category] %>
+          <%= link_to icon(:plus, 'Añadir pregunta'), [:new, phase, :category] %>
         <% end %>
         <h2>Preguntas</h2>
       </div>
+
       <%= simple_list phase.categories.each do |category| %>
         <div class="hoverize">
           <% if can? :update, category %>
@@ -38,10 +40,11 @@
           <% end %>
           <h3><%= link_to category.question, [phase, category] %></h3>
         </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-</div>
+
+      <% end %>
+
+    </div>
+  </div>
+<% end %>
 
 
