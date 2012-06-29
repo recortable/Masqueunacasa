@@ -41,7 +41,7 @@
       <%= simple_list group.memberships do |membership| %>
         <div class="hoverize">
           <%= hover? :destroy, membership do %>
-            <%= link_to icon(:cut, 'Quitar'), [group, membership],
+            <%= link_to icon(:cut, 'Quitar'), url_for_membership(group, membership),
               method: :delete, confirm: "¿Quieres quitar a '#{membership.user.title}' de este grupo?" %>
           <% end %>
           <%= avatar_link membership.user, size: :small, class: 'fixed' %>
@@ -52,4 +52,3 @@
     <% end %>
   </div>
 </div>
-<%= simple_debug group.errors %>

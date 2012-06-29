@@ -3,7 +3,6 @@ Masqueunacasa::Application.routes.draw do
   # Rutas que sólo se puede acceder desde un subdominio
   constraints subdomain: /.+/ do
     match '', to: 'posts#index'
-    resources :memberships
     resources :groups, only: [:update, :show] do
       resources :sections
     end
@@ -12,6 +11,10 @@ Masqueunacasa::Application.routes.draw do
   # Rutas que se pueden acceder tanto desde un subdominio como sin él
 
   # PARTE SOCIAL
+  resources :users do
+    resources :sections
+    resources :kudos
+  end
   constraints subdomain: /^$/ do
     match '/blog' => 'dashboard#blog'
   end
@@ -25,6 +28,7 @@ Masqueunacasa::Application.routes.draw do
     resources :post_attachments, except: [:index, :show]
   end
   resources :messages, only: [:create, :show]
+  resources :memberships
 
   resource :profile, only: [:show, :edit] 
   resources :announcements do
@@ -52,10 +56,6 @@ Masqueunacasa::Application.routes.draw do
   # Rutas sólo accesibles desde el dominio principal 
   constraints subdomain: /^$/ do
     resources :agents
-    resources :users do
-      resources :sections
-      resources :kudos
-    end
     resources :groups do
       resources :sections
       resources :kudos

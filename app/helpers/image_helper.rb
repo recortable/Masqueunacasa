@@ -18,9 +18,9 @@ module ImageHelper
 
     if model.avatar_image? 
       url = options[:size] == :small ? model.avatar_image_url(:mini) : model.avatar_image_url
-      image_tag(url, alt: model.name, class: options[:class], width: size, height: size)
+      image_tag(url, alt: model.title, class: options[:class], width: size, height: size)
     else
-      image_tag('comm/user.png', width: size, height: size, class: options[:class])
+      image_tag('comm/user.png', width: size, height: size, class: options[:class], alt: model.title)
     end
   end
 
