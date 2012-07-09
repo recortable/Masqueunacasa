@@ -4,6 +4,7 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 9/07/2012
+- Se puede borrar el texto de las preguntas 
 - Compilar los assets sólo si han cambiado
 
 ## 29/06/2012

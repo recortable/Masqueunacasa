@@ -2,20 +2,28 @@
   <tr>
     <td class="kudos">
       <%= link_to icon(:heart, ''), [model, :kudos], method: :put %>
-      <%= model.kudos_count %> personas.
+      <%= model.kudos_count %> favoritos.
     </td>
   </tr>
+  <% if model.respond_to?(:editors) %>
+    <tr>
+      <td class="editors">
+        <%= link_to icon('edit'), '#' %>
+        <%= model.editors_count %> editores. %>
+      </td>
+    </tr>
+  <% end %>
   <% if model.respond_to?(:subscriptors) %>
     <tr>
       <td class="">
-        <%= link_to icon('edit'), '#' %>
-        <%= model.subscribers_count %> editores.
+        <%= link_to icon('eye-open'), '#' %>
+        <%= model.subscribers_count %> seguidores.
       </td>
     </tr>
   <% end %>
   <tr>
     <td class="subscriptors expansible">
-      <%= link_to icon('eye-open'), '#' %>
+      <%= link_to icon('globe'), '#' %>
       <%= model.view_count %> visitas.
     </td>
   </tr>

@@ -12,7 +12,8 @@
         <small>
           <%= link_to category.phase.title, category.phase %>
           <%= icon(:heart, category.kudos_count) %>
-          <%= icon('eye-open', category.view_count) %>
+          <%= icon('globe', category.view_count) %>
+          <%= '¡revisar!' if category.body.present? %>
         </small>
       </h3>
     <% end %>
