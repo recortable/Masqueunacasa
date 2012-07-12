@@ -10,19 +10,20 @@ es:
 
     labels:
       defaults:
-        title: 'Título'
-        name: 'Nombre'
         author: 'Autorxs'
-        published_at: 'Fecha de publicación'
         body: 'Texto'
-        content_type: 'Tipo de texto'
-        url: 'Enlace'
-        title_ca: 'Título can catalán'
         body_ca: 'Texto en catalán'
+        content_type: 'Tipo de texto'
         email: 'Correo'
+        name: 'Nombre'
+        map: Si quieres puedes ubicarte clicando sobre el mapa
+        published_at: 'Fecha de publicación'
         password: 'Contraseña'
         password_confirmation: 'Repite la contraseña'
-        map: Si quieres puedes ubicarte clicando sobre el mapa
+        summary: Resumen
+        title: 'Título'
+        title_ca: 'Título can catalán'
+        url: 'Enlace'
 
       announcement:
         scope: 'Quién recibirá el correo'

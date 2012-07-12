@@ -1,5 +1,6 @@
 class Phase < ActiveRecord::Base
   attr_accessible :title_es, :title_ca, :title
+  attr_accessible :summary
   attr_accessible :position
 
   validates_presence_of :title_es, :title_ca
@@ -13,7 +14,7 @@ class Phase < ActiveRecord::Base
   default_scope order: :position
 
   include Translatable
-  translates :title
+  translates :title, :summary
   extend FriendlyId
   friendly_id :title, use: :simple_i18n
   acts_as_list

@@ -17,5 +17,5 @@ class Category < ActiveRecord::Base
   belongs_to :user
   belongs_to :phase
   has_many :proposals, order: :position
-  has_many :sections, as: :document, conditions: proc { ['lang = ?', I18n.locale] }
+  include HasSections
 end
