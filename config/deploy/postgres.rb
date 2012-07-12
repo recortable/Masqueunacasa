@@ -31,5 +31,13 @@ namespace :db do
     puts depackage = "bzcat tmp/#{file} | psql -U#{development['username']} Masqueunacasa"
     `#{depackage}`
   end
+
+  desc "Reload the last downloaded database"
+  task :reload do
+    puts destroy_db = "rake db:drop db:create"
+    `#{destroy_db}`
+    puts depackage = "bzcat tmp/#{file} | psql -U#{development['username']} Masqueunacasa"
+    `#{depackage}`
+  end
 end
 
