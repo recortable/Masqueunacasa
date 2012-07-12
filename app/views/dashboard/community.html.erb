@@ -1,17 +1,21 @@
-<% title 'Comunidad' %>
-<%= render_banner t('.title'), root_path %>
+<%= page do %>
+    <div class="span10 offset2">
+      <%= title 'Comunidad' %>
+    </div>
+  <% groups.each do |group| %>
+    <div class="span12">
+      <div class="row">
+        <div class="span2">
+          <%= avatar_link group %>
+        </div>
+        <div class="span6">
+          <h2><%= link_to group.title, group %></h2>
+          <%= simple_list group.posts.latest do |post| %>
+            <%= link_to post.title, post_url(post, subdomain: group.subdomain) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
 
-<div class="groups cards">
-  <% community_groups.limit(10).each do |group| %>
-    <%= group_card(group) %>
-  <% end %>
-</div>
-<div><%= link_to t('more'), groups_path %></div>
-<br/>
-<div class="users avatars small">
-  <% site.users.each do |user| %>
-    <%= div_for user, class: 'avatar' do %>
-      <%= link_to avatar_image(user, size: :small), user_url(user, host: request.domain) %>
-    <% end %>
-  <% end %>
-</div>

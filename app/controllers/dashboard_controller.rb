@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
   expose (:themes) { 'textura01 azul_neon'}
   expose(:site) { Site.new }
   expose(:post_list) { site.latest_posts(params[:page]) }
-  expose(:community_groups) { site.groups }
+  expose(:groups) { site.groups }
   expose(:archive_posts) { Post.all }
   expose(:posts_archive) { Post.archive_for(site.posts) }
 
