@@ -2,5 +2,5 @@
   <%= form.input :title %>
   <%= form.input :question %>
   <%= submit_button_for form %>
-  <%= form.input :body, as: :text %>
+  <%= form.input :body, as: :text if current_user_admin? %>
 <% end %>

@@ -3,4 +3,5 @@
   <%= form.input :phase_id, as: :hidden %>
   <%= form.input :category_id, as: :hidden %>
   <%= submit_button_for form %>
+  <%= form.input :body, as: :text if current_user_admin? %>
 <% end %>
