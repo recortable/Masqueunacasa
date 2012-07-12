@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120712192005) do
+ActiveRecord::Schema.define(:version => 20120712202359) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -75,6 +75,9 @@ ActiveRecord::Schema.define(:version => 20120712192005) do
     t.integer  "kudos_count",                      :default => 0
     t.integer  "subscribers_count",                :default => 0
     t.integer  "view_count",                       :default => 0
+    t.text     "summary_es"
+    t.text     "summary_ca"
+    t.text     "summary_en"
   end
 
   add_index "categories", ["phase_id"], :name => "index_categories_on_phase_id"
@@ -120,6 +123,9 @@ ActiveRecord::Schema.define(:version => 20120712192005) do
     t.integer  "kudos_count",                     :default => 0
     t.integer  "subscribers_count",               :default => 0
     t.integer  "view_count",                      :default => 0
+    t.text     "summary_es"
+    t.text     "summary_ca"
+    t.text     "summary_en"
   end
 
   add_index "contents", ["group_id"], :name => "index_contents_on_group_id"
@@ -145,6 +151,9 @@ ActiveRecord::Schema.define(:version => 20120712192005) do
     t.integer  "kudos_count",                      :default => 0
     t.integer  "subscribers_count",                :default => 0
     t.integer  "view_count",                       :default => 0
+    t.text     "summary_es"
+    t.text     "summary_ca"
+    t.text     "summary_en"
   end
 
   add_index "experiencies", ["group_id"], :name => "index_experiencies_on_group_id"
@@ -212,6 +221,9 @@ ActiveRecord::Schema.define(:version => 20120712192005) do
     t.integer  "kudos_count",                     :default => 0
     t.integer  "subscribers_count",               :default => 0
     t.integer  "view_count",                      :default => 0
+    t.text     "summary_es"
+    t.text     "summary_ca"
+    t.text     "summary_en"
   end
 
   add_index "phases", ["slug_ca"], :name => "index_phases_on_slug_ca"
@@ -251,6 +263,9 @@ ActiveRecord::Schema.define(:version => 20120712192005) do
     t.integer  "kudos_count",                       :default => 0
     t.integer  "subscribers_count",                 :default => 0
     t.integer  "view_count",                        :default => 0
+    t.text     "summary_es"
+    t.text     "summary_ca"
+    t.text     "summary_en"
   end
 
   add_index "proposals", ["category_id"], :name => "index_proposals_on_category_id"
