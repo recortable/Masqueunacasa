@@ -1,5 +1,6 @@
 <%= simple_form_for proposal do |form| %>
   <%= form.input :title %>
+  <%= form.input :summary %>
   <%= form.input :phase_id, as: :hidden %>
   <%= form.input :category_id, as: :hidden %>
   <%= submit_button_for form %>

@@ -6,7 +6,7 @@ class Proposal < ActiveRecord::Base
   include HasPopularity
   include HasSubscriptors
   include Translatable
-  translates :title, :body, :slug, :description
+  translates :title, :body, :slug, :description, :summary
   translation_required :title, :slug
 
   attr_accessible :title_es, :body_es, :description_es
@@ -14,6 +14,7 @@ class Proposal < ActiveRecord::Base
   attr_accessible :user_id, :phase_id, :group_id, :category_id
   attr_accessible :user, :phase, :group, :category
   attr_accessible :title, :body, :description
+  attr_accessible :summary
   attr_accessible :published, :body_type
 
   validates_presence_of :title, :title_es, :title_ca, :user, :phase_id, :category_id

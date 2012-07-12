@@ -9,7 +9,9 @@
         </div>
         <div class="span4">
           <h2><%= link_to phase.title, phase %></h2>
-          <%= render_body phase.sections.first %>
+          <div class="summary markdown">
+            <%= markdown phase.summary %>
+          </div>
           <%= link_to 'Leer más...', phase %>
         </div>
       </div>
