@@ -38,7 +38,7 @@ es:
         banner_image: 'Imágen de cabecera'
         avatar_image: 'Imágen de grupo'
         description: 'Breve resúmen'
-        closed: 'Cerrar el grupo?'
+        has_blog: 'Blog'
 
       post:
         image: 'Imágen principal'
@@ -77,7 +77,7 @@ es:
         title: 'Este nombre se usará en la URL. Intenta que sea corto y descriptivo.'
 
       group:
-        closed: 'Marcalo si no quieres que otros usuarios se unan al grupo'
+        has_blog: 'Márcalo si quieres tener un blog en tu grupo'
 
       media_item:
         url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'

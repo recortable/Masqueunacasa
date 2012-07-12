@@ -1,10 +1,11 @@
 module GroupsHelper
-  def url_for_membership(group, membership)
-    group.own_domain? ? membership : [group, membership]
+  def gurl_for(group)
+    root_url(subdomain: group.slug)
   end
 
-  def url_for_group(group)
-    group.own_domain? ? root_path : group
+  # TODO: borrar este método
+  def url_for_membership(group, membership)
+    membership_url(membership, subdomain: group.slug)
   end
 
   def render_group_bar(group)

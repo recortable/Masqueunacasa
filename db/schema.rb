@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120626155650) do
+ActiveRecord::Schema.define(:version => 20120712161937) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -30,11 +30,13 @@ ActiveRecord::Schema.define(:version => 20120626155650) do
     t.integer  "login_count"
     t.datetime "last_login_at"
     t.integer  "user_id"
-    t.string   "subdomain",            :limit => 50
     t.integer  "memberships_count"
     t.string   "banner_image"
     t.datetime "created_at",                                         :null => false
     t.datetime "updated_at",                                         :null => false
+    t.string   "summary_es",           :limit => 500
+    t.string   "summary_ca",           :limit => 500
+    t.string   "summary_en",           :limit => 500
   end
 
   add_index "agents", ["email"], :name => "index_agents_on_email"

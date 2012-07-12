@@ -11,12 +11,12 @@ class GroupsController < ApplicationController
   end
 
   def show
-    authorize! :show, group
-    if group.subdomain?
-      redirect_to root_url(subdomain: group.subdomain)
-    else
-    respond_with group
-    end
+    redirect_to_group(group)
+  end
+
+  # El root (/) con subdominio
+  def root
+    redirect_to_group(current_group)
   end
 
   def new
@@ -40,4 +40,14 @@ class GroupsController < ApplicationController
     flash[:notice] = t('groups.notices.updated') if group.update_attributes(params[:group])
     respond_with group
   end
+
+  private
+  def redirect_to_group(group)
+    if group.has_blog?
+      redirect_to posts_url(subdomain: group.subdomain)
+    else
+      redirect_to profile_url(subdomain: group.subdomain)
+    end
+  end
+
 end

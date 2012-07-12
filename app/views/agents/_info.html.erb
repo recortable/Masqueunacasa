@@ -1,6 +1,6 @@
 <div class="hoverize">
   <%= hover? :update, agent do %>
-    <%= link_to 'Editar', (agent.subdomain? ? edit_profile_path : [:edit, agent]) %>
+    <%= link_to 'Editar', (agent.type == 'Group' ? edit_profile_url(subdomain: group) : [:edit, agent]) %>
   <% end %>
   <%= title agent.title %>
 </div>

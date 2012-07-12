@@ -1,11 +1,4 @@
 module PostsHelper
-  def url_for_post(post)
-    if post.group.subdomain?
-      post_url(post, subdomain: post.group.subdomain)
-    else
-      post_url(post)
-    end
-  end
   def render_posts_archive(posts, group = nil)
     render partial: 'posts/archive', locals: 
       {posts: posts, group: group}
