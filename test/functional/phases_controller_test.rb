@@ -1,6 +1,9 @@
 require 'test_helper'
 
 describe 'Phases integration' do
+  before do 
+    create(:group, admin: true)
+  end
 
   it 'list phases' do
     phase = create(:phase)
@@ -22,8 +25,8 @@ describe 'Phases integration' do
   it 'can edit phase' do
     login_user create(:user, admin: true)
     phase = create(:phase)
-    visit phases_path
-    page.find("a[rel='edit-phase-#{phase.id}']")
+    visit phase_path(phase)
+    find_link "edit-phase-#{phase.id}"
   end
 
   it 'update a phase' do

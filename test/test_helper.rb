@@ -35,7 +35,7 @@ class IntegrationTest < MiniTest::Spec
   register_spec_type(/integration$/, self)
 
   before :each do
-    create(:group, name: 'Masqueunacasa')
+    create(:group, name: 'Masqueunacasa', admin: true)
     subdomain(nil)
     visit logout_path
   end

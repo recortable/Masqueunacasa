@@ -1,6 +1,6 @@
 class Phase < ActiveRecord::Base
   attr_accessible :title_es, :title_ca, :title
-  attr_accessible :summary
+  attr_accessible :summary_es, :summary_ca, :summary
   attr_accessible :position
 
   validates_presence_of :title_es, :title_ca

@@ -11,7 +11,7 @@
     <h3><%= link_to 'Habitapedia', phases_path %></h3>
     <div class="hoverize">
       <%= hover? :update, phase do %>
-        <%= link_to icon(:pencil), [:edit, phase] %>
+        <%= link_to icon(:pencil), [:edit, phase], rel: "edit-phase-#{phase.id}" %>
       <% end %>
       <%= title phase.title %>
       <%= fake_img 600, 400 %>
