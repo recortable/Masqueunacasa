@@ -2,6 +2,14 @@
 require 'test_helper'
 
 describe 'Categories integration' do
+  it 'show category and its proposals' do
+    category = create(:category)
+    p1 = create(:proposal, category: category)
+
+    visit category_path(category)
+    page.text.must_include category.question
+  end
+
   it 'creates categories' do
     phase = create(:phase)
     user = create(:user, admin: true)
