@@ -16,7 +16,7 @@
     <%= render_agent_info group %>
   <% end %> 
   <div class="span4 column">
-    <%= corner_span '' do %>
+    <%= corner_span 'span2' do %>
       <h2>Dónde</h2>
       <%= fake_img_fixed(310, 310, text: 'Mapa') %>
       <%= simple_list group.locations do |location| %>

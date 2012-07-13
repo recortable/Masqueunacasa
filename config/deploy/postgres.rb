@@ -34,8 +34,11 @@ namespace :db do
 
   desc "Reload the last downloaded database"
   task :reload do
-    puts destroy_db = "rake db:drop db:create"
-    `#{destroy_db}`
+    db = YAML::load(ERB.new(IO.read(File.join(File.dirname(__FILE__), '../database.yml'))).result)
+    development = db['development']
+    #puts destroy_db = "rake db:drop db:create"
+    #`#{destroy_db}`
+    file  = "#{application}.sql.bz2"
     puts depackage = "bzcat tmp/#{file} | psql -U#{development['username']} Masqueunacasa"
     `#{depackage}`
   end

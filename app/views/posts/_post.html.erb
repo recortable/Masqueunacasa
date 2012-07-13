@@ -9,7 +9,7 @@
     <%= link_to content_tag(:h2, post.title), post_url(post, subdomain: post.group.subdomain) %>
     <%= render_post_media(post) %>
     <%= raw truncate_html(post.body, length: 500) %>
-    <%= markdown truncate(post.sections.first.body, length: 500) %>
+    <%= markdown truncate(post.sections.first.body, length: 500) if post.sections.first %>
     <div class="links">
       <%= link_to t('read_more'), post_url(post, subdomain: post.group.slug), class: 'read-more' %>
     </div>
