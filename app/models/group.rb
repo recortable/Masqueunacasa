@@ -9,7 +9,7 @@ class Group < Agent
 
   [:has_blog, :has_pages, :has_announcements].each do |name|
     define_method "#{name}?" do
-      self.send(name)
+      self.send(name) == '1'
     end
   end
 

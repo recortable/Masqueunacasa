@@ -32,7 +32,10 @@ html.naranja {
 }
 
 html.azul_neon {
-  a, h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
+  //  color: $azul_neon;
+  }
+  a {
     color: $azul_neon;
   }
 
@@ -54,8 +57,11 @@ html.azul_neon {
 
 
 html.verde_neon {
-  a, h1, h2, h3, h4, h5, h6 {
+  a {
     color: $verde_neon;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    //color: $verde_neon;
   }
 
   #session {

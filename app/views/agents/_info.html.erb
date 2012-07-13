@@ -16,5 +16,8 @@
 <% if agent.facebook.present? %>
   <h4><small>facebook </small><%= link_to agent.facebook, agent.facebook %></h4>
 <% end %>
+<div class="summary markdown">
+  <%= markdown agent.summary %>
+</div>
 <%= render_sections agent %>
 

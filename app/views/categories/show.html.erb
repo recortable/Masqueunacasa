@@ -42,7 +42,7 @@
         <% end %>
 
         <h3><%= link_to proposal.title, proposal %></h3>
-        <%= render_body proposal.sections.first %>
+        <%= markdown proposal.summary %>
       </div>
     <% end %>
   </div>
