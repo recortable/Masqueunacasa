@@ -9,6 +9,16 @@ describe 'Phases integration' do
     phase = create(:phase)
     visit phases_path
     page.text.must_include phase.title
+    page.text.must_include phase.summary
+  end
+
+  it 'show phases and its categories' do
+    phase = create(:phase)
+    c1 = create(:category, phase: phase)
+    visit phase_path(phase)
+    page.text.must_include phase.title
+    page.text.must_include phase.summary
+    page.text.must_include c1.question
   end
 
   it 'creates phases' do
