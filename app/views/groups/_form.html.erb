@@ -11,18 +11,19 @@
   <%= corner_span('span6') do %>
     <%= title "#{group.name}" %>
     <%= simple_form_for group, html: {class: 'clearfix'} do |form| %>
-      <h3>Información pública</h3>
+      <h3>Información general</h3>
       <p>Esta información será visible para el resto de las personas</p>
       <%= form.input :name %>
       <%= form.input :title %>
+      <%= form.input :summary, as: :text %>
+      <h3>Difusión</h3>
       <%= form.input :email %>
       <%= form.input :website %>
       <%= form.input :twitter %>
       <%= form.input :facebook %>
-      <% if current_user_admin? %>
-        <h3>Información privada</h3>
-        <p>Esto no será visible para el resto</p>
-        <%= form.input :subdomain %>
+      <h3>Funcionalidades</h3>
+      <% [:blog, :pages, :announcements].each do |item| %>
+        <%= form.input "has_#{item}", as: :boolean %>
       <% end %>
 
       <%= submit_button_for form %>

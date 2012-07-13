@@ -18,6 +18,9 @@
       <% end %>
       <%= title category.question %>
       <%= fake_img 600, 400 %>
+    </div>    
+    <div class="summary markdown">
+      <%= markdown category.summary %>
     </div>
     <%= render_sections category %>
     <%= render_body category %>
@@ -39,7 +42,7 @@
         <% end %>
 
         <h3><%= link_to proposal.title, proposal %></h3>
-        <%= render_body proposal.sections.first %>
+        <%= markdown proposal.summary %>
       </div>
     <% end %>
   </div>

@@ -2,8 +2,16 @@ class Group < Agent
   extend FriendlyId
   friendly_id :name, use: :slugged
 
-  attr_accessible :subdomain, :user_id, :memberships_count, :banner_image
-  store :settings, accessors: [:closed]
+  attr_accessible :user_id, :memberships_count, :banner_image
+  attr_accessible :has_blog, :has_pages, :has_announcements
+
+  store :settings, accessors: [:has_blog, :has_pages, :has_announcements]
+
+  [:has_blog, :has_pages, :has_announcements].each do |name|
+    define_method "#{name}?" do
+      self.send(name) == '1'
+    end
+  end
 
   #validates :user_id, presence: true
 
@@ -29,12 +37,8 @@ class Group < Agent
     false
   end
 
-  def closed?
-    closed
-  end
-
-  def own_domain?
-    subdomain.present?
+  def subdomain
+    admin? ? false : slug
   end
 
   def recipients(scope = 'all')

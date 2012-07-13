@@ -6,7 +6,9 @@
 <% end %>
 
 <div class="row">
-  <%= render_group_bar current_group %>
+  <%= user_column 'span2' do %>
+    <%= render_group_bar current_group %>
+  <% end %>
 
   <div class="center span6">
     <%= render post_list %>

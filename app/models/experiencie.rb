@@ -7,10 +7,11 @@ class Experiencie < ActiveRecord::Base
 
   friendly_id :title, use: :simple_i18n
   has_paper_trail meta: { title: :title, group_id: :group_id }
-  translates :title, :body, :slug
+  translates :title, :body, :slug, :summary
   translation_required :title, :slug
 
   attr_accessible :title, :body, :slug
+  attr_accessible :summary
   attr_accessible :user_id, :group_id, :user, :group
   attr_accessible :published
   attr_accessible :title_ca, :body_ca, :slug_ca

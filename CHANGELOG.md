@@ -3,6 +3,11 @@
 TAREAS
 - Enviar emails colectivos en background
 
+## 12/07/2012 (Pair programming!!)
+- Todos los modelos tienen summary
+- Borrada la tabla de usuarios y grupos (no agents)
+- Mover al subdominio todos los grupos menos el admin
+
 ## 9/07/2012
 - Se puede borrar el texto de las preguntas 
 - Compilar los assets sólo si han cambiado

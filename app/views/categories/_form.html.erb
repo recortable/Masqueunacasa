@@ -1,5 +1,6 @@
 <%= simple_form_for [phase, category] do |form| %>
   <%= form.input :title %>
+  <%= form.input :summary %>
   <%= form.input :question %>
   <%= submit_button_for form %>
   <%= form.input :body, as: :text if current_user_admin? %>

@@ -11,8 +11,11 @@ html.textura05 { background-image: asset-data-url('fondos/textura05.png'); }
 html.textura07 { background-image: asset-data-url('fondos/textura07.png'); }
 
 html.naranja {
-  a, h1, h2, h3, h4, h5, h6 {
+  a {
     color: $rojo;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    //color: $rojo;
   }
 
   #session {
@@ -32,7 +35,10 @@ html.naranja {
 }
 
 html.azul_neon {
-  a, h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
+  //  color: $azul_neon;
+  }
+  a {
     color: $azul_neon;
   }
 
@@ -54,8 +60,11 @@ html.azul_neon {
 
 
 html.verde_neon {
-  a, h1, h2, h3, h4, h5, h6 {
+  a {
     color: $verde_neon;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    //color: $verde_neon;
   }
 
   #session {
@@ -75,8 +84,11 @@ html.verde_neon {
 }
 
 html.azul_gris {
-  a, h1, h2, h3, h4, h5, h6 {
+  a {
     color: $azul_gris;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    //color: $azul_gris;
   }
 
   #session {
@@ -96,8 +108,11 @@ html.azul_gris {
 }
 
 html.negro {
-  a, h1, h2, h3, h4, h5, h6 {
+  a {
     color: $negro;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    //color: $negro;
   }
 
   #session {

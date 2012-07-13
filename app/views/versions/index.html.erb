@@ -5,7 +5,8 @@
       <%= div_for version do %>
         <%= version.user_name? ? version.user_name : 'Anónimx' %> ha
         <%= version.event %>
-        <%= version.title %>
+        <%= link_to version.title, version %>
+        (<%= version.item_type %>)
       <% end %>
     <% end %>
   <% end %>

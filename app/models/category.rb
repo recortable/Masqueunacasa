@@ -6,10 +6,10 @@ class Category < ActiveRecord::Base
   include HasPopularity
   include HasSubscriptors
 
-  translates :title, :slug, :question, :body
+  translates :title, :slug, :question, :summary, :body
   translation_required :title, :slug, :question
 
-  attr_accessible :title, :question, :body, :body_type
+  attr_accessible :title, :question, :summary, :body, :body_type
   attr_accessible :user_id, :user, :phase_id, :phase
 
   validates_presence_of :user_id, :phase_id, :title, :question
@@ -17,5 +17,5 @@ class Category < ActiveRecord::Base
   belongs_to :user
   belongs_to :phase
   has_many :proposals, order: :position
-  has_many :sections, as: :document, conditions: proc { ['lang = ?', I18n.locale] }
+  include HasSections
 end

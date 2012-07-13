@@ -12,17 +12,17 @@
         <%= phase_image_link phase, size: 40 %>
         <%= link_to phase.title %>
       </h2>
-    <%= simple_list phase.proposals do |proposal| %>
-      <h3>
-        <%= link_to proposal.title, proposal %>
-        <small>
-          <%= proposal.category.title %>
-          <%= icon(:heart, proposal.kudos_count) %>
-          <%= icon('eye-open', proposal.view_count) %>
-          <%= '¡revisar!' if proposal.body.present? %>
-        </small>
-      </hS>
-    <% end %>
+      <%= simple_list phase.proposals do |proposal| %>
+        <h3>
+          <%= link_to proposal.title, proposal %>
+          <small>
+            <%= proposal.category.title %>
+            <%= icon(:heart, proposal.kudos_count) %>
+            <%= icon('eye-open', proposal.view_count) %>
+            <%= '¡revisar!' if proposal.body.present? %>
+          </small>
+        </h3>
+      <% end %>
     <% end %>
   <% end %>
 </div>

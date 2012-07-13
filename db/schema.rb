@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120626155650) do
+ActiveRecord::Schema.define(:version => 20120712202359) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -30,11 +30,13 @@ ActiveRecord::Schema.define(:version => 20120626155650) do
     t.integer  "login_count"
     t.datetime "last_login_at"
     t.integer  "user_id"
-    t.string   "subdomain",            :limit => 50
     t.integer  "memberships_count"
     t.string   "banner_image"
     t.datetime "created_at",                                         :null => false
     t.datetime "updated_at",                                         :null => false
+    t.string   "summary_es",           :limit => 500
+    t.string   "summary_ca",           :limit => 500
+    t.string   "summary_en",           :limit => 500
   end
 
   add_index "agents", ["email"], :name => "index_agents_on_email"
@@ -73,6 +75,9 @@ ActiveRecord::Schema.define(:version => 20120626155650) do
     t.integer  "kudos_count",                      :default => 0
     t.integer  "subscribers_count",                :default => 0
     t.integer  "view_count",                       :default => 0
+    t.text     "summary_es"
+    t.text     "summary_ca"
+    t.text     "summary_en"
   end
 
   add_index "categories", ["phase_id"], :name => "index_categories_on_phase_id"
@@ -118,6 +123,9 @@ ActiveRecord::Schema.define(:version => 20120626155650) do
     t.integer  "kudos_count",                     :default => 0
     t.integer  "subscribers_count",               :default => 0
     t.integer  "view_count",                      :default => 0
+    t.text     "summary_es"
+    t.text     "summary_ca"
+    t.text     "summary_en"
   end
 
   add_index "contents", ["group_id"], :name => "index_contents_on_group_id"
@@ -143,42 +151,15 @@ ActiveRecord::Schema.define(:version => 20120626155650) do
     t.integer  "kudos_count",                      :default => 0
     t.integer  "subscribers_count",                :default => 0
     t.integer  "view_count",                       :default => 0
+    t.text     "summary_es"
+    t.text     "summary_ca"
+    t.text     "summary_en"
   end
 
   add_index "experiencies", ["group_id"], :name => "index_experiencies_on_group_id"
   add_index "experiencies", ["slug_ca"], :name => "index_experiencies_on_slug_ca"
   add_index "experiencies", ["slug_es"], :name => "index_experiencies_on_slug_es"
   add_index "experiencies", ["user_id"], :name => "index_experiencies_on_user_id"
-
-  create_table "groups", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "title"
-    t.string   "slug"
-    t.string   "description_es",    :limit => 1024
-    t.string   "description_ca",    :limit => 1024
-    t.string   "description_en",    :limit => 1024
-    t.string   "banner_image"
-    t.string   "avatar_image"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "city"
-    t.string   "country"
-    t.string   "lang"
-    t.string   "settings"
-    t.string   "website"
-    t.string   "twitter"
-    t.string   "facebook"
-    t.datetime "updated_at"
-    t.datetime "created_at"
-    t.string   "domain",            :limit => 100
-    t.string   "subdomain",         :limit => 100
-    t.integer  "memberships_count",                 :default => 0
-    t.boolean  "closed",                            :default => false
-    t.boolean  "root",                              :default => false
-  end
-
-  add_index "groups", ["slug"], :name => "index_groups_on_slug", :unique => true
-  add_index "groups", ["title"], :name => "index_groups_on_name", :unique => true
 
   create_table "kudos", :force => true do |t|
     t.integer  "document_id"
@@ -240,6 +221,9 @@ ActiveRecord::Schema.define(:version => 20120626155650) do
     t.integer  "kudos_count",                     :default => 0
     t.integer  "subscribers_count",               :default => 0
     t.integer  "view_count",                      :default => 0
+    t.text     "summary_es"
+    t.text     "summary_ca"
+    t.text     "summary_en"
   end
 
   add_index "phases", ["slug_ca"], :name => "index_phases_on_slug_ca"
@@ -279,6 +263,9 @@ ActiveRecord::Schema.define(:version => 20120626155650) do
     t.integer  "kudos_count",                       :default => 0
     t.integer  "subscribers_count",                 :default => 0
     t.integer  "view_count",                        :default => 0
+    t.text     "summary_es"
+    t.text     "summary_ca"
+    t.text     "summary_en"
   end
 
   add_index "proposals", ["category_id"], :name => "index_proposals_on_category_id"
@@ -325,38 +312,6 @@ ActiveRecord::Schema.define(:version => 20120626155650) do
 
   add_index "subscribers", ["document_type", "document_id"], :name => "index_subscribers_on_document_type_and_document_id"
   add_index "subscribers", ["user_id"], :name => "index_subscribers_on_user_id"
-
-  create_table "users", :force => true do |t|
-    t.string   "title"
-    t.string   "slug"
-    t.text     "description"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "city"
-    t.string   "country"
-    t.string   "lang"
-    t.boolean  "admin",                  :default => false
-    t.string   "settings"
-    t.string   "email",                  :default => "",    :null => false
-    t.string   "password_digest",        :default => "",    :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "login_count",            :default => 0
-    t.datetime "last_login_at"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
-    t.string   "avatar_image"
-  end
-
-  add_index "users", ["email"], :name => "index_users_on_email"
-  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
-  add_index "users", ["slug"], :name => "index_users_on_slug", :unique => true
-  add_index "users", ["title"], :name => "index_users_on_name", :unique => true
 
   create_table "versions", :force => true do |t|
     t.string   "item_type",                 :null => false

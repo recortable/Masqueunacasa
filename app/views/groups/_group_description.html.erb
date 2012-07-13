@@ -4,16 +4,5 @@
   <%= render_body current_group.sections.first %>
   </p>
   <div class="controls">
-    <% if !current_group.closed? %>
-      <% if current_user %>
-        <% m = current_group.membership_for(current_user) %>
-        <% if m.present? %>
-        <% else %>
-          <%= link_box 'Seguir', create_membership_path(current_user, 'follow'), method: :post %>
-        <% end %>
-      <% else %>
-        <%= link_box 'Entra para participar', login_url(host: request.domain, from: root_url(subdomain: current_group.subdomain)) %>
-      <% end %>
-    <% end %>
   </div>
 <% end %>

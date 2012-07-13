@@ -18,6 +18,9 @@
       <% end %>
       <%= title proposal.title %>
     </div>
+    <div class="summary markdown">
+      <%= markdown proposal.summary %>
+    </div>
     <%= render_sections proposal %>
   </div>
 

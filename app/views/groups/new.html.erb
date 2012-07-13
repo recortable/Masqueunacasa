@@ -1,10 +1,14 @@
-<%= render_banner t('.title'), groups_path %>
+<%= render_banner 'Crear colectivo', groups_path %>
 <div class="row">
   <%= corner_span 'span12' do %>
-    <h1><%= t '.title' %></h1>
+    <%= title 'Crear colectivo' %>
     <%= simple_form_for group do |form| %>
       <%= form.input :name %>
-      <%= form.input :description, as: :text, input_html: {class: 'rte'} %>
+      <%= form.input :summary, as: :text %>
+      <h3>Funcionalidades</h3>
+      <%= form.input :has_blog, as: :boolean %>
+      <%= form.input :has_pages, as: :boolean %>
+      <%= form.input :has_announcements, as: :boolean %>
       <%= form.button :submit %>
     <% end %>
   <% end %>

@@ -7,6 +7,8 @@ class Post < Content
   attr_accessible :remove_image
   mount_uploader :image, PostImageUploader
 
+  scope :latest, limit(4)
+
   ARCHIVE_COLUMNS = column_names - ['body_en', 'body_ca', 'body_es', 'comments_count', 'embed', 'image', 'created_at', 'updated_at']
 
   def self.archive_for(posts) 

@@ -7,14 +7,10 @@
       Blog
     </h2>
     <h4>
-      <% if group.present? %>
-        <small>Entradas publicadas por <%= group.title %></small>
-      <% else %>
-        <small>Entradas publicadas por todos los colectivos y personas de masqueunacasa.org</small>
-      <% end %>
+      <small>Entradas publicadas por <%= current_group.title %></small>
     </h4>
   </div>
   <%= simple_list posts do |post| %>
-    <h4><%= link_to post.title, url_for_post(post) %></h4>
+    <h4><%= link_to post.title, post_url(post, subdomain: post.group.subdomain) %></h4>
   <% end %>
 <% end %>

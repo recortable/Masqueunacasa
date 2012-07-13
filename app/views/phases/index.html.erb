@@ -1,23 +1,20 @@
-<%# render_banner 'Habitapedia', phases_path %>
-<% title 'Habitapedia' %>
-<% phases.each do |phase| %>
-  <div class="row phase">
-    <%= corner_span('span8') do %>
-      <div class="row">
-        <div class="span3">
-          <%= link_to image_tag(phase.image_url, width: 270, height: 270, alt: phase.title), phase %>
-        </div>
-        <div class="span4">
-          <h2><%= link_to phase.title, phase %></h2>
-          <%= render_body phase.sections.first %>
-          <%= link_to 'Leer más...', phase %>
-        </div>
+<%= page do %>
+  <div class="span12">
+    <% title 'Habitapedia' %>
+  </div>
+
+  <% phases.each do |phase| %>
+    <div class="span4">
+      <%= link_to image_tag(phase.image_url, width: 270, height: 270, alt: phase.title, class: 'fixed'), phase %>
+      <h2><%= link_to phase.title, phase %></h2>
+      <div class="summary markdown">
+        <%= markdown phase.summary %>
       </div>
-    <% end %>
-    <%= corner_span('questions span4', :none) do %>
+      <%= link_to 'Leer más...', phase %>
       <%= simple_list phase.categories.each do |category| %>
         <h3><%= link_to category.question, [phase, category] %></h3>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 <% end %>
+
