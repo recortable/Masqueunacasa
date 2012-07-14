@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120712202359) do
+ActiveRecord::Schema.define(:version => 20120714083147) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -278,6 +278,8 @@ ActiveRecord::Schema.define(:version => 20120712202359) do
     t.integer  "user_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "phase_id"
+    t.integer  "category_id"
   end
 
   add_index "relations", ["experiencie_id"], :name => "index_relations_on_experiencie_id"

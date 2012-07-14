@@ -10,6 +10,16 @@ describe Category do
     cat.slug_es.must_be :present?
     cat.question_es.must_be :present?
     cat.question_ca.must_be :present?
+  end
 
+  it 'propagate phases' do
+    c = create(:category)
+    p = create(:proposal, category: c)
+    p.phase.must_equal c.phase
+
+    c.phase = create(:phase)
+    c.save
+    p.reload
+    p.phase.must_equal c.phase
   end
 end

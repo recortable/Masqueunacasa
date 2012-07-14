@@ -17,7 +17,7 @@ class Proposal < ActiveRecord::Base
   attr_accessible :summary
   attr_accessible :published, :body_type
 
-  validates_presence_of :title, :title_es, :title_ca, :user, :phase_id, :category_id
+  validates_presence_of :title, :title_es, :title_ca, :user, :category_id
 
   belongs_to :user
   belongs_to :group
@@ -27,8 +27,10 @@ class Proposal < ActiveRecord::Base
   has_many :experiencies, through: :relations 
   include HasSections
 
-  
   scope :published, where(published: true)
+
+  before_save :add_phase
+  after_save :propagate_category
 
   # TODO: a la espera de subir imágenes
   def avatar_image?
@@ -37,5 +39,17 @@ class Proposal < ActiveRecord::Base
 
   def add_relation(experiencie, user)
     Relation.create(user: user, proposal: self, experiencie: experiencie)
+  end
+
+  private
+  def add_phase
+    self.category.reload
+    self.phase = self.category.phase
+  end
+
+  def propagate_category
+    if self.category_id_changed?
+      relations.each(&:save)
+    end
   end
 end

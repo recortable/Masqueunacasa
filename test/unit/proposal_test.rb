@@ -3,8 +3,8 @@ require 'test_helper'
 describe Proposal do
   it 'creates titles and slugs for every lang' do
     user = create(:user)
-    phase = create(:phase)
-    proposal = Proposal.new(title: 'Title', user: user, phase: phase)
+    category = create(:category)
+    proposal = Proposal.new(title: 'Title', user: user, category: category)
     proposal.save.must_equal true
     proposal.title.must_equal 'Title'
     proposal.title_es.must_be :present?
@@ -48,5 +48,18 @@ describe Proposal do
     I18n.locale = 'ca'
     p.sections.size.must_equal 1
     p.sections.first.must_equal es
+  end
+
+  it 'updates all relations when category change' do
+    p = create(:proposal)
+    e = create(:experiencie)
+    r = p.add_relation(e, create(:user))
+
+    c2 = create(:category)
+    p.category = c2
+    p.save
+    r.reload
+    r.category.must_equal c2
+    r.phase.must_equal c2.phase
   end
 end

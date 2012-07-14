@@ -46,7 +46,7 @@ FactoryGirl.define do
     sequence(:title) {|n| "Proposal #{n}"}
     body { "#{title} body" }
     user
-    phase
+    category
   end
 
   factory :section do
