@@ -1,0 +1,19 @@
+<div class="hoverize">
+  <%= hover? :update, agent do %>
+    <%= link_to icon(:add, 'Añadir localización'), [:new, agent, :location] %>
+  <% end %>
+  <h2>Dónde</h2>
+  <div class="locations">
+    <div class="map" style="width: 300px; height:300px;" >
+      <%= fake_img_fixed(310, 310, text: 'Mapa') %>
+    </div>
+    <%= simple_list agent.locations do |location| %>
+      <div class="hoverize">
+        <%= hover? :update, agent do %>
+          <%= link_to icon(:trash, 'Borrar localización'), [agent, location], method: :delete, confirm: "Seguro?" %>
+        <% end %>
+        <%= content_tag :div, location.title, class: 'location', data: {title: location.title, longitude: location.longitude, latitude: location.latitude} %>
+      </div>
+    <% end %>
+  </div>
+</div>
