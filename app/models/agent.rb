@@ -15,8 +15,9 @@ class Agent < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: true
 
-  has_many :locations, as: :resource, dependent: :destroy
   include HasSections
+
+  include HasLocations
 
   include HasPopularity
 

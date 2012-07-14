@@ -58,6 +58,7 @@ Masqueunacasa::Application.routes.draw do
       resources :sections
       resources :kudos
       resources :memberships
+      resources :locations
     end
     resources :versions
 

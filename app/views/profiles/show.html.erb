@@ -1,3 +1,4 @@
+<% google_maps %>
 <%= group_header group.title, group %>
 <div class="row">
   <%= user_column 'span2' do %>
@@ -6,5 +7,9 @@
 
   <%= corner_span('span6') do %> 
     <%= render_agent_info group %>
-  <% end %> 
+  <% end %>
+
+  <%= corner_span('span4') do %>
+    <%= render_agent_locations group %>
+  <% end %>
 </div>
