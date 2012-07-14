@@ -1,13 +1,8 @@
 <% google_maps %>
-
 <div class="row">
   <%= corner_span 'span6' do %>
-    <% simple_form_for [parent, location] do |f| %>
-      <div class="map" style="width: 300px; height: 300px;"></div>
-      <%= f.input :title %>
-      <%= f.input :latitude %>
-      <%= f.input :longitude %>
-      <%= f.button :submit %>
-    <% end %>
+    <h2>En <%= link_to parent.title, parent %></h2>
+    <%= title 'Añadir un lugar' %>
+    <%= render 'form' %>  
   <% end %>
 </div>

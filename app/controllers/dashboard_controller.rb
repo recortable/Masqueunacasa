@@ -20,6 +20,10 @@ class DashboardController < ApplicationController
   def blog
   end
 
+  def map
+    
+  end
+
   def cuatrocerocuatro
     render action: 'cuatrocerocuatro', layout: 'static'
   end

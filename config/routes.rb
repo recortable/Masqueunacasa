@@ -14,6 +14,7 @@ Masqueunacasa::Application.routes.draw do
   resources :users do
     resources :sections
     resources :kudos
+    resources :locations
   end
   resources :pages do
     resource :kudos
@@ -40,6 +41,8 @@ Masqueunacasa::Application.routes.draw do
     put :down, on: :member
     delete :remove_image, on: :member
   end
+  match '/mapa' => 'locations#map', as: :map
+  resources :locations
   resource :search
 
   match '/entrar' => 'user_sessions#new', as: :login
@@ -75,6 +78,7 @@ Masqueunacasa::Application.routes.draw do
     resources :experiencies do
       resource :kudos
       resources :sections, except: [:index]
+      resources :locations
     end
 
 

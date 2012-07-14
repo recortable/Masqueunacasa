@@ -1,9 +1,6 @@
 class Experiencie < ActiveRecord::Base
   include Translatable
   extend FriendlyId
-  include HasPopularity
-  include HasSubscriptors
-  include HasSections
 
   friendly_id :title, use: :simple_i18n
   has_paper_trail meta: { title: :title, group_id: :group_id }
@@ -24,6 +21,10 @@ class Experiencie < ActiveRecord::Base
   belongs_to :group
   has_many :relations, dependent: :destroy
   has_many :proposals, through: :relations
+  include HasLocations
+  include HasPopularity
+  include HasSubscriptors
+  include HasSections
 
   validates_presence_of :title, :user
   validates_uniqueness_of :title_es, :title_ca

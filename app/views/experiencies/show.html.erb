@@ -1,3 +1,4 @@
+<% google_maps %>
 <%= page do %>
   <div class="span2">
     <%= image_tag('habitap/experiencie.png', alt: experiencie.title, width: 150, height: 150) %>
@@ -28,7 +29,9 @@
     <h2>Alternativas relacionadas</h2>
     <%= simple_list experiencie.proposals.each do |proposal| %>
       <h3><%= link_to proposal.title, proposal %></h3>
-      <%= render_body proposal.sections.first %>
+      <%= markdown proposal.summary %>
     <% end %>
+    <%= render_locations_bar experiencie %>
+
   </div>
 <% end %>

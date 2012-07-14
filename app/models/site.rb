@@ -14,6 +14,10 @@ class Site
     root?
   end
 
+  def locations
+    Location.scoped
+  end
+
   def membership_for(user) 
     nil
   end

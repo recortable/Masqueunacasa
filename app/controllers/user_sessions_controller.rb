@@ -12,6 +12,10 @@ class UserSessionsController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
   def create
     if user_session.create
       login_user(user_session.user)

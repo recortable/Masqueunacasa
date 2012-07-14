@@ -1,7 +1,8 @@
 
 $ ->
-  $('.locations').showMap()
+  $('div.locations').showMap()
   $('form.new_location').mapForForm()
+  $('form.edit_location').mapForForm()
 
   
 $.fn.extend
@@ -19,10 +20,11 @@ $.fn.extend
       mapOptions = 
         center: center,
         zoom: 5,
-        mapTypeId: google.maps.MapTypeId.HYBRID
+        mapTypeId: google.maps.MapTypeId.HYBRID,
+        streetViewControl: false
       
       mapCanvas = $(this).find('.map')
-      mapCanvas.css({'width': '100%', 'height': '300px'});
+      mapCanvas.css({'width': '100%'}).height($(this).width())
       map = new google.maps.Map(mapCanvas.get(0),
               mapOptions)
 
@@ -39,18 +41,32 @@ $.fn.extend
       mapOptions = 
         center: center,
         zoom: 5,
-        mapTypeId: google.maps.MapTypeId.HYBRID
+        mapTypeId: google.maps.MapTypeId.HYBRID,
+        streetViewControl: false
 
       mapCanvas = $(this).find('.map')
+      inputLat = $(this).find('[id*="latitude"]')
+      inputLon = $(this).find('[id*="longitude"]')
+      lat = inputLat.val()
+      lon = inputLon.val()
+
+      mapCanvas.css({'width': '100%', 'height': '300px'});
+      # TODO: repasar esto!
+      #inputLat.attr('disabled', 'disabled')
+      #inputLon.attr('disabled', 'disabled')
+
       map = new google.maps.Map(mapCanvas.get(0),
              mapOptions);
 
+      marker = new google.maps.Marker
+        map: map      
+
+      if lat and lon
+        position = new google.maps.LatLng(lat, lon)
+        marker.setPosition(position)
+
       google.maps.event.addListener map, 'click', (event) ->
         position = event.latLng.toUrlValue().split(",");
-
-        $('[id*="latitude"]').val(position[0])
-        $('[id*="longitude"]').val(position[1])
-
-        marker = new google.maps.Marker
-          map: map
-          position: event.latLng
+        inputLat.val(position[0])
+        inputLon.val(position[1])
+        marker.setPosition(event.latLng)

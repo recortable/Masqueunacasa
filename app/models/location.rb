@@ -7,4 +7,8 @@ class Location < ActiveRecord::Base
   belongs_to :resource, polymorphic: true
 
   validates :title, presence: true
+  validates :latitude, presence: true
+  validates :longitude, presence: true
+
+  scope :of_experiencies, where(resource_type: 'Expeiencie')
 end
