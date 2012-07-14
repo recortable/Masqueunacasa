@@ -8,6 +8,12 @@
 //= require maps
 //= require mediafy
 
+$(function() {
+  $('div.locations').showMap();
+  $('form.new_location').mapForForm();
+  $('form.edit_location').mapForForm();
+});
+
 CKEDITOR.replaceClass = 'rte';
 
 if (typeof console == "undefined" || typeof console.log == "undefined") {
