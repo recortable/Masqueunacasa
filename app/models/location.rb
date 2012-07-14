@@ -5,4 +5,6 @@ class Location < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :resource, polymorphic: true
+
+  validates :title, presence: true
 end

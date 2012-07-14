@@ -13,6 +13,7 @@ class Group < Agent
     end
   end
 
+
   #validates :user_id, presence: true
 
   default_scope order: 'updated_at ASC'

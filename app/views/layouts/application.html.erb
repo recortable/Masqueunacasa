@@ -8,10 +8,6 @@
     <![endif]-->
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
-    <!-- TODO: Pau esto debería inyectarse -->
-    <!--script type="text/javascript"
-      src="http://maps.googleapis.com/maps/api/js?sensor=false&language=<%= I18n.locale %>&region=ES">
-    </script--!>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= yield :head %>
