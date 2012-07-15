@@ -71,6 +71,7 @@ Masqueunacasa::Application.routes.draw do
       resource :kudos
       put :up, on: :member
       put :down, on: :member
+      resource :edition
       resources :relations, only: [:new, :create, :destroy]
       resources :sections, except: [:index]
     end

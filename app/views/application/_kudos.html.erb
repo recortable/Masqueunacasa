@@ -5,11 +5,11 @@
       <%= model.kudos_count %> favoritos.
     </td>
   </tr>
-  <% if model.respond_to?(:editors) %>
+  <% if model.respond_to?(:editeds) %>
     <tr>
       <td class="editors">
-        <%= link_to icon('edit'), '#' %>
-        <%= model.editors_count %> editores. %>
+        <%= link_to icon('edit'), [model, :edition] %>
+        <%= model.editeds_count %> editores.
       </td>
     </tr>
   <% end %>
