@@ -1,20 +1,50 @@
-<%= page do %>
-  <div class="span12">
-    <% title 'Habitapedia' %>
+<%= page row: false do %>
+  <div class="row">
+    <div class="span12">
+      <%= title 'Habitapedia' %>
+    </div>
   </div>
 
-  <% phases.each do |phase| %>
-    <div class="span4">
-      <%= link_to image_tag(phase.image_url, width: 270, height: 270, alt: phase.title, class: 'fixed'), phase %>
-      <h2><%= link_to phase.title, phase %></h2>
-      <div class="summary markdown">
-        <%= markdown phase.summary %>
+  <div class="row">
+    <% phases.each do |phase| %>
+      <div class="span4">
+        <%= link_to image_tag(phase.image_url, width: 270, height: 270, alt: phase.title, class: 'fixed'), phase %>
+        <h2><%= link_to phase.title, phase %></h2>
+        <div class="summary markdown">
+          <%= markdown phase.summary %>
+        </div>
+        <%= link_to 'Leer más...', phase %>
       </div>
-      <%= link_to 'Leer más...', phase %>
-      <%= simple_list phase.categories.each do |category| %>
-        <h3><%= link_to category.question, [phase, category] %></h3>
-      <% end %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+
+  <div class="row"><div class="span12">
+      <h2>Propuestas</h3>
+  </div></div>
+  <div class="row">
+    <% phases.each do |phase| %>
+      <div class="span4">
+        <%= simple_list phase.categories.each do |category| %>
+          <h3>
+            <%= link_to category.question, [phase, category] %>
+            <small><%= icon('certificate', category.proposals.count) %> propuestas.</small>
+          </h3>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row"><div class="span12">
+      <h2>Experiencias</h3>
+  </div></div>
+  <div class="row">
+    <% phases.each do |phase| %>
+      <div class="span4">
+        <%= simple_list phase.experiencies do |experiencie| %>
+          <h3><%= link_to experiencie.title, experiencie %></h3>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 <% end %>
 

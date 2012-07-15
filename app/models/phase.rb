@@ -25,4 +25,10 @@ class Phase < ActiveRecord::Base
     icon = ICONS[position - 1]
     "habitap/#{icon}.png"
   end
+
+  def experiencies
+    pids = Proposal.where(phase_id: self.id).map(&:id)
+    es = Relation.where(proposal_id: pids)
+    es.map {|e| e.experiencie }
+  end
 end
