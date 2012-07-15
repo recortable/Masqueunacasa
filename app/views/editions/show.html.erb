@@ -1,0 +1,29 @@
+<%= page row: false do %>
+  <div class="row">
+    <div class="span2">
+      <%= icon_type document %>
+    </div>
+    <div class="span10">
+      <h3><%= link_to document.title, document %></h3>
+      <%= title 'Mesa de edición' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span2">
+      <h3>Editores</h3>
+      <%= simple_list document.editeds do |edited| %>
+        <%= avatar_link edited.user, size: :small, class: 'fixed' %>
+      <% end %>
+
+      <h3>Suscriptores</h3>
+      <%= simple_list document.subscribers do |subscriber| %>
+        <%= avatar_link subscriber.user, size: :small, class: 'fixed' %>
+      <% end %>
+
+    </div>
+    <div class="span6">
+      <h2>Actividad</h2>
+    </div>
+  </div>
+<% end %>

@@ -3,8 +3,6 @@ class Proposal < ActiveRecord::Base
   acts_as_list scope: :category_id
   extend FriendlyId
   friendly_id :title, use: :simple_i18n
-  include HasPopularity
-  include HasSubscriptors
   include Translatable
   translates :title, :body, :slug, :description, :summary
   translation_required :title, :slug
@@ -26,6 +24,9 @@ class Proposal < ActiveRecord::Base
   has_many :relations, dependent: :destroy
   has_many :experiencies, through: :relations 
   include HasSections
+  include HasPopularity
+  include HasSubscriptors
+  include HasEditors
 
   scope :published, where(published: true)
 
