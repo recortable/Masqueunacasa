@@ -1,23 +1,23 @@
 <table class="table social-document">
   <tr>
     <td class="kudos">
-      <%= link_to icon(:heart, ''), [model, :kudos], method: :put %>
-      <%= model.kudos_count %> favoritos.
+      <%= icon(:heart, '') %>
+      <%= link_to "#{model.kudos_count} favoritos", [model, :kudos], method: :put %>
     </td>
   </tr>
-  <% if model.respond_to?(:editeds) %>
+  <% if model.respond_to?(:editorships) %>
     <tr>
       <td class="editors">
-        <%= link_to icon('edit'), [model, :edition] %>
-        <%= model.editeds_count %> editores.
+        <%= icon('edit') %>
+        <%= link_to "#{model.editorships_count} editores", [model, :edition] %>
       </td>
     </tr>
   <% end %>
   <% if model.respond_to?(:subscriptors) %>
     <tr>
       <td class="">
-        <%= link_to icon('eye-open'), '#' %>
-        <%= model.subscribers_count %> seguidores.
+        <%= icon('eye-open') %>
+        <%= link_to "#{model.subscribers_count} seguidores", [model, :edition] %>
       </td>
     </tr>
   <% end %>
@@ -28,3 +28,16 @@
     </td>
   </tr>
 </table>
+
+<% if current_user %>
+  <% if model.subscriptor?(current_user) %>
+    <%= link_to icon('eye-close', 'Dejar de seguir'), 
+      polymorphic_path([model, model.subscription(current_user)]), 
+      rel: 'unfollow-document', method: :delete, confirm: '¿Dejar de seguir?' %>
+  <% else %>
+    <%= link_to icon('eye-open', 'Seguir'), 
+      polymorphic_path([model, :subscribers], u: current_user.id), 
+      rel: 'follow-document', method: :create %>
+  <% end %>
+<% end %>
+

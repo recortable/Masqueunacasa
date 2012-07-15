@@ -14,11 +14,8 @@ class SectionsController < ApplicationController
   end
 
   def create
-    section.document = document
-    section.lang = I18n.locale
-    section.body_type ||= 'markdown'
     authorize! :create, section
-    section.save
+    flash[:notice] = 'Contenido guardado' if document.add_section(section, current_user)
     respond_with section, location: document_location
   end
 

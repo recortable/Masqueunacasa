@@ -1,4 +1,4 @@
-class Edited < ActiveRecord::Base
+class Editorship < ActiveRecord::Base
   attr_accessible :document, :user
 
   belongs_to :document, polymorphic: true, counter_cache: true

@@ -74,6 +74,7 @@ Masqueunacasa::Application.routes.draw do
       resource :edition
       resources :relations, only: [:new, :create, :destroy]
       resources :sections, except: [:index]
+      resources :subscribers, only: [:create, :destroy]
       resources :links
     end
 
