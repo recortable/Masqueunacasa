@@ -32,17 +32,10 @@
       <%= markdown proposal.summary %>
     <% end %>
 
-    <div class="hoverize">
-      <%= hover? :update, experiencie do %>
-        <%= link_to icon(:plus, 'Añadir enlace'), [:new, experiencie, :link], rel: 'new-experiencie' %>
-      <% end %>
-      <h2>Enlaces relacionados</h2>
-    </div>
-    <%= simple_list experiencie.links do |link| %>
-      <h3><%= link_to link.title, link.url %></h3>
-    <% end %>
 
-    <%= render_locations_bar experiencie %>
+  <%= render_links_bar experiencie %>
 
-  </div>
+  <%= render_locations_bar experiencie %>
+
+</div>
 <% end %>

@@ -27,6 +27,7 @@ class Proposal < ActiveRecord::Base
   include HasPopularity
   include HasSubscriptors
   include HasEditors
+  include HasLinks
 
   scope :published, where(published: true)
 
