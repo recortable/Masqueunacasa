@@ -3,8 +3,6 @@ class Category < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :simple_i18n
   acts_as_list scope: :phase_id
-  include HasPopularity
-  include HasSubscriptors
 
   translates :title, :slug, :question, :summary, :body
   translation_required :title, :slug, :question
@@ -18,6 +16,9 @@ class Category < ActiveRecord::Base
   belongs_to :phase
   has_many :proposals, order: :position
   include HasSections
+  include HasEditors
+  include HasPopularity
+  include HasSubscriptors
 
   after_save :propagate_phases
 

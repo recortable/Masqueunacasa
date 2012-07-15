@@ -1,7 +1,7 @@
 class SubscribersController < ApplicationController
   respond_to :html
 
-  expose_parent :document, [:proposal]
+  expose_parent :document, [:category, :proposal, :experiencie]
   expose(:subscribers) { document.subscribers }
   expose(:subscriber)
 

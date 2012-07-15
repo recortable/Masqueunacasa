@@ -29,15 +29,25 @@
   </tr>
 </table>
 
-<% if current_user %>
-  <% if model.subscriptor?(current_user) %>
-    <%= link_to icon('eye-close', 'Dejar de seguir'), 
-      polymorphic_path([model, model.subscription(current_user)]), 
-      rel: 'unfollow-document', method: :delete, confirm: '¿Dejar de seguir?' %>
-  <% else %>
-    <%= link_to icon('eye-open', 'Seguir'), 
-      polymorphic_path([model, :subscribers], u: current_user.id), 
-      rel: 'follow-document', method: :create %>
+<table class="table social">
+  <% if model.respond_to?(:subscripbers) && current_user %>
+    <tr><td class="">
+        <% if model.subscriptor?(current_user) %>
+          <%= icon('eye-close') %>
+          <%= link_to 'Dejar de seguir',
+            polymorphic_path([model, model.subscription(current_user)]), 
+            rel: 'unfollow-document', method: :delete, confirm: '¿Dejar de seguir?' %>
+        <% else %>
+          <%= icon('eye-open') %>
+          <%= link_to 'Seguir', 
+            polymorphic_path([model, :subscribers], u: current_user.id), 
+            rel: 'follow-document', method: :create %>
+        <% end %>
+    </tr></td>
   <% end %>
-<% end %>
+  <tr><td class="">
+      <%= icon(:twitter) %>
+      <%= link_to 'Tweet', "https://twitter.com/share?url=#{request.url}", target: '_blank' %>
+  </tr></td>
+</table>
 

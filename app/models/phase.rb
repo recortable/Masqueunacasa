@@ -8,7 +8,7 @@ class Phase < ActiveRecord::Base
   has_many :categories, order: :position
   has_many :proposals, order: 'kudos_count DESC, view_count DESC'
   include HasPopularity
-  include HasSubscriptors
+  #include HasSubscriptors
   include HasSections
 
   default_scope order: :position

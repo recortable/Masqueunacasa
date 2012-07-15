@@ -1,5 +1,5 @@
 class EditionsController < ApplicationController
-  expose_parent :document, [:categorie, :proposal, :experiencie]
+  expose_parent :document, [:category, :proposal, :experiencie]
 
   def show
 

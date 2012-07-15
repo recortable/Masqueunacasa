@@ -83,6 +83,8 @@ Masqueunacasa::Application.routes.draw do
       resources :sections, except: [:index]
       resources :locations
       resources :links
+      resource :edition
+      resources :subscribers, only: [:create, :destroy]
     end
 
 
@@ -94,6 +96,8 @@ Masqueunacasa::Application.routes.draw do
       put :up, on: :member
       put :down, on: :member
       resources :sections, except: [:index]
+      resources :subscribers, only: [:create, :destroy]
+      resource :edition
     end
     resources :phases, except: [:show, :update, :destroy]
     # El path: '' es un truco para mostrar el nombre de las fases
@@ -103,6 +107,8 @@ Masqueunacasa::Application.routes.draw do
       resource :kudos
       resources :sections, except: [:index]
       resources :categories, except: [:index]
+      resource :edition
+      resources :subscribers, only: [:create, :destroy]
     end
 
   end
