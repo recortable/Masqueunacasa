@@ -1,0 +1,7 @@
+<%= page do %>
+  <div class="span6 offset2">
+    <h2>En <%= link_to resource.title, resource %></h2>
+    <%= title 'Añadir enlace' %>
+    <%= render 'form' %>
+  </div>
+<% end %>

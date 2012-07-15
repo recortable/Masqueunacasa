@@ -79,6 +79,7 @@ Masqueunacasa::Application.routes.draw do
       resource :kudos
       resources :sections, except: [:index]
       resources :locations
+      resources :links
     end
 
 

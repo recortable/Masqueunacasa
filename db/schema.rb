@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120714083147) do
+ActiveRecord::Schema.define(:version => 20120714213924) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -171,6 +171,20 @@ ActiveRecord::Schema.define(:version => 20120714083147) do
 
   add_index "kudos", ["document_type", "document_id"], :name => "index_kudos_on_document_type_and_document_id"
   add_index "kudos", ["user_id"], :name => "index_kudos_on_user_id"
+
+  create_table "links", :force => true do |t|
+    t.integer  "resource_id"
+    t.integer  "resource_type"
+    t.integer  "user_id"
+    t.string   "title",         :limit => 300
+    t.string   "url",           :limit => 500
+    t.string   "content_type",  :limit => 32
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "links", ["resource_id", "resource_type"], :name => "index_links_on_resource_id_and_resource_type"
+  add_index "links", ["user_id"], :name => "index_links_on_user_id"
 
   create_table "locations", :force => true do |t|
     t.string   "resource_type", :limit => 16

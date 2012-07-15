@@ -73,4 +73,9 @@ FactoryGirl.define do
     user
     group
   end
+
+  factory :link do
+    sequence(:title) {|n| "Link #{n}" }
+    sequence(:url) {|n| "http://mquc.org/#{n}" }
+  end
 end

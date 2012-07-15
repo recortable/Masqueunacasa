@@ -22,6 +22,7 @@ class LocationsController  < ApplicationController
   end
 
   def create
+    location.user = current_user
     authorize! :update, parent
     flash[:notice] = "Localización guardada" if location.save
     respond_with location, location: parent_location    

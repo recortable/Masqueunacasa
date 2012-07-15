@@ -21,6 +21,7 @@ class Experiencie < ActiveRecord::Base
   belongs_to :group
   has_many :relations, dependent: :destroy
   has_many :proposals, through: :relations
+  has_many :links, as: :resource, dependent: :destroy
   include HasLocations
   include HasPopularity
   include HasSubscriptors
@@ -36,6 +37,11 @@ class Experiencie < ActiveRecord::Base
   # TODO: hacer que funcione para otros idiomas
   def self.search(term)
     Experiencie.where(Experiencie.arel_table[:title_es].matches("%#{term}%")).order('title_es ASC')
+  end
+
+  def add_link(link, user)
+    link.resource = self
+    link.save
   end
 
   private
