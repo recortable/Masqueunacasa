@@ -12,15 +12,17 @@
   <div class="row">
     <div class="span2">
       <h3>Editores</h3>
-      <%= simple_list document.editeds do |edited| %>
-        <%= avatar_link edited.user, size: :small, class: 'fixed' %>
+      <p>Han participado en la elaboración de este contenido</p>
+      <%= simple_list document.editorships do |editorship| %>
+        <%= avatar_link editorship.user, size: :small, class: 'fixed' %>
+        <%#= link_to 'Quitar este editor', editorship, method: :delete, confirm: "¿Seguro" %>
       <% end %>
 
-      <h3>Suscriptores</h3>
-      <%= simple_list document.subscribers do |subscriber| %>
-        <%= avatar_link subscriber.user, size: :small, class: 'fixed' %>
+      <h3>Seguidores</h3>
+      <p>Reciben emails cuando este contenido cambia</p>
+      <%= simple_list document.subscriptors do |subscriptor| %>
+        <%= avatar_link subscriptor, size: :small, class: 'fixed' %>
       <% end %>
-
     </div>
     <div class="span6">
       <h2>Actividad</h2>

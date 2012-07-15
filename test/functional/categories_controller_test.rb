@@ -10,6 +10,13 @@ describe 'Categories integration' do
     page.text.must_include category.question
   end
 
+  it 'can create proposals inside category' do
+    category = create(:category)
+    login_user create(:user)
+    visit category_path(category)
+    find_link('new-proposal')
+  end
+
   it 'creates categories' do
     phase = create(:phase)
     user = create(:user, admin: true)

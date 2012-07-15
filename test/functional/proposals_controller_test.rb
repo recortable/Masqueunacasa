@@ -15,12 +15,13 @@ describe 'Proposals integration' do
     page.text.must_include proposal.summary
   end
 
-  it 'can create proposals inside category' do
-    category = create(:category)
-    login_user create(:user)
-    visit category_path(category)
-    find_link('new-proposal')
+  it 'shows proposal links' do
+    proposal = create(:proposal)
+    link = proposal.add_link(build(:link), create(:user))
+    visit proposal_path(proposal)
+    page.text.must_include link.title
   end
+
 
   it 'creates proposals' do
     user = create(:user)

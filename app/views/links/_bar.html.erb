@@ -1,0 +1,16 @@
+<div class="hoverize">
+  <%= hover? :update, document do %>
+    <%= link_to icon(:plus, 'Añadir enlace'), [:new, document, :link], rel: 'new-document' %>
+  <% end %>
+  <h2>Enlaces relacionados</h2>
+</div>
+<%= simple_list document.links do |link| %>
+  <div class="hoverize">
+    <%= hover? :update, document do %>
+      <%= link_to icon(:trash), [document, link], rel: "delete-link-#{link.id}", method: :delete, confirm: 
+      "¿Estas seguro de que quieres borrar este enlace?" %>
+  <% end %>
+  <h3><%= link_to link.title, link.url %></h3>
+</div>
+  <% end %>
+

@@ -44,7 +44,7 @@ FactoryGirl.define do
 
   factory :proposal do
     sequence(:title) {|n| "Proposal #{n}"}
-    body { "#{title} body" }
+    summary { "#{title} summary" }
     user
     category
   end
@@ -58,7 +58,7 @@ FactoryGirl.define do
 
   factory :experiencie do
     sequence(:title) {|n| "Experiencie #{n}" }
-    body { "#{title} body" }
+    summary { "#{title} summary" }
     user
   end
 

@@ -2,25 +2,27 @@ module HasEditors
   extend ActiveSupport::Concern
 
   included do
-    has_many :editeds, as: :document, dependent: :destroy
-    has_many :editors, through: :editeds, source: :user
+    has_many :editorships, as: :document, dependent: :destroy
+    has_many :editors, through: :editorships, source: :user
+    after_create :add_owner_as_editor
   end
 
-  def edited(user)
-    self.editeds.where(user_id: user.id).first
+  def editorship_of(user)
+    self.editorships.where(user_id: user.id).first
   end
 
-  def edited?(user)
-    edited(user).present?
+  def editor?(user)
+    editorship_of(user).present?
   end
 
   def add_editor(user)
-    edited = edited(user)
-    edited ||= self.editers.create!(user: user)
+    editorship = editorship_of(user)
+    editorship ||= self.editorships.create!(user: user)
   end
 
-  def remove_editor(user)
-    edited = edited(user)
-    edited.present? ? edited.destroy : false
+  protected
+  def add_owner_as_editor
+    add_editor(self.user)
   end
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120715100536) do
+ActiveRecord::Schema.define(:version => 20120715142613) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20120715100536) do
     t.text     "summary_ca"
     t.text     "summary_en"
     t.integer  "editeds_count",                    :default => 0
+    t.integer  "editorships_count",                :default => 0
   end
 
   add_index "categories", ["phase_id"], :name => "index_categories_on_phase_id"
@@ -128,6 +129,7 @@ ActiveRecord::Schema.define(:version => 20120715100536) do
     t.text     "summary_ca"
     t.text     "summary_en"
     t.integer  "editeds_count",                   :default => 0
+    t.integer  "editorships_count",               :default => 0
   end
 
   add_index "contents", ["group_id"], :name => "index_contents_on_group_id"
@@ -145,6 +147,16 @@ ActiveRecord::Schema.define(:version => 20120715100536) do
 
   add_index "editeds", ["document_type", "document_id"], :name => "index_editeds_on_document_type_and_document_id"
   add_index "editeds", ["user_id"], :name => "index_editeds_on_user_id"
+
+  create_table "editorships", :force => true do |t|
+    t.integer  "document_id"
+    t.string   "document_type", :limit => 16
+    t.integer  "user_id"
+    t.datetime "created_at"
+  end
+
+  add_index "editorships", ["document_type", "document_id"], :name => "index_editorships_on_document_type_and_document_id"
+  add_index "editorships", ["user_id"], :name => "index_editorships_on_user_id"
 
   create_table "experiencies", :force => true do |t|
     t.integer  "user_id"
@@ -167,6 +179,7 @@ ActiveRecord::Schema.define(:version => 20120715100536) do
     t.text     "summary_ca"
     t.text     "summary_en"
     t.integer  "editeds_count",                    :default => 0
+    t.integer  "editorships_count",                :default => 0
   end
 
   add_index "experiencies", ["group_id"], :name => "index_experiencies_on_group_id"
@@ -294,6 +307,7 @@ ActiveRecord::Schema.define(:version => 20120715100536) do
     t.text     "summary_ca"
     t.text     "summary_en"
     t.integer  "editeds_count",                     :default => 0
+    t.integer  "editorships_count",                 :default => 0
   end
 
   add_index "proposals", ["category_id"], :name => "index_proposals_on_category_id"
