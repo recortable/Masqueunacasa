@@ -46,7 +46,7 @@ FactoryGirl.define do
     sequence(:title) {|n| "Proposal #{n}"}
     body { "#{title} body" }
     user
-    phase
+    category
   end
 
   factory :section do
@@ -72,5 +72,10 @@ FactoryGirl.define do
     body { "#{title} body" }
     user
     group
+  end
+
+  factory :link do
+    sequence(:title) {|n| "Link #{n}" }
+    sequence(:url) {|n| "http://mquc.org/#{n}" }
   end
 end

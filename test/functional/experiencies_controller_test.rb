@@ -7,6 +7,26 @@ describe 'Experiencies integration' do
     page.text.must_include e.title
   end
 
+  it 'can create link if curent_user' do
+    user = create(:user)
+    login_user user
+    experiencie = create(:experiencie)
+    
+    visit experiencie_path(experiencie)
+    find_link 'new-link'
+  end
+
+  it 'show the related links' do
+    user = create(:user)
+    login_user user
+    experiencie = create(:experiencie)
+    link = build(:link)
+    experiencie.add_link(link, user)
+
+    visit experiencie_path(experiencie)
+    page.text.must_include link.title
+  end
+
   it 'can create experiencie if user' do
     login_user(create(:user))
     visit experiencies_path
@@ -17,11 +37,9 @@ describe 'Experiencies integration' do
     login_user create(:user)
     visit new_experiencie_path
     fill_in 'experiencie_title', with: 'The title'
-    fill_in 'experiencie_body', with: 'The body'
     click_submit
     e = Experiencie.last
     e.title.must_equal 'The title'
-    e.body.must_equal 'The body'
   end
 
   it 'can update experiencie' do

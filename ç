@@ -29,8 +29,7 @@ module ImageHelper
   end
 
   def icon_type(document, options = {})
-    options.reverse_merge! size: 150
-    if document.class == Proposal
+    if document.class == 'Proposal'
       image_tag('habitap/proposal.png', alt: document.title, width: options[:size], height: options[:size])
     else
       fake_img(options[:size], options[:size], text: document.title)

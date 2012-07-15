@@ -3,6 +3,10 @@
 TAREAS
 - Enviar emails colectivos en background
 
+## 14/07/2012
+- Mapa general
+- Mapa en grupos, usuarios y experiencias
+
 ## 12/07/2012 (Pair programming!!)
 - Todos los modelos tienen summary
 - Borrada la tabla de usuarios y grupos (no agents)

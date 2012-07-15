@@ -1,9 +1,6 @@
 class Experiencie < ActiveRecord::Base
   include Translatable
   extend FriendlyId
-  include HasPopularity
-  include HasSubscriptors
-  include HasSections
 
   friendly_id :title, use: :simple_i18n
   has_paper_trail meta: { title: :title, group_id: :group_id }
@@ -24,6 +21,11 @@ class Experiencie < ActiveRecord::Base
   belongs_to :group
   has_many :relations, dependent: :destroy
   has_many :proposals, through: :relations
+  has_many :links, as: :resource, dependent: :destroy
+  include HasLocations
+  include HasPopularity
+  include HasSubscriptors
+  include HasSections
 
   validates_presence_of :title, :user
   validates_uniqueness_of :title_es, :title_ca
@@ -35,6 +37,11 @@ class Experiencie < ActiveRecord::Base
   # TODO: hacer que funcione para otros idiomas
   def self.search(term)
     Experiencie.where(Experiencie.arel_table[:title_es].matches("%#{term}%")).order('title_es ASC')
+  end
+
+  def add_link(link, user)
+    link.resource = self
+    link.save
   end
 
   private

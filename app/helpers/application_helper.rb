@@ -40,8 +40,9 @@ module ApplicationHelper
     end
   end
 
-  def simple_list(collection, &block)
-    content = '<table class="table">'
+  def simple_list(collection, options = {}, &block)
+    options.reverse_merge! class: ''
+    content = "<table class='table #{options[:class]}'>"
     collection.each do |item|
       content += "<tr><td>#{capture(item, &block)}</td></tr>"
     end

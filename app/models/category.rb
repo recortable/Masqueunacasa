@@ -18,4 +18,13 @@ class Category < ActiveRecord::Base
   belongs_to :phase
   has_many :proposals, order: :position
   include HasSections
+
+  after_save :propagate_phases
+
+  private
+  def propagate_phases
+    if phase_id_changed?
+      self.proposals.each &:save
+    end
+  end
 end

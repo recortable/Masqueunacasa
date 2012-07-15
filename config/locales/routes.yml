@@ -17,6 +17,7 @@ es:
     users: 'personas'
     versions: 'actividad'
     sections: 'secciones'
+    locations: 'mapa'
 
     edit: 'editar'
     new: 'nueva'

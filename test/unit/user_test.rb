@@ -29,11 +29,4 @@ describe User do
     group.user.member?(group).must_equal true
   end
 
-  it 'can receive messages' do
-    user = create(:user)
-    message = build(:message)
-    user.receive_message(message)
-    user.received_messages.count.must_equal 1
-    user.received_messages.must_include message
-  end
 end

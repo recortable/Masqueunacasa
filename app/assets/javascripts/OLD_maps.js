@@ -1,13 +1,3 @@
-/*
- * La cosa está pensada intentando que funcione para:
- *  - Un mapa vinculado a un formulario del que se quiere capturar 
- *    la posición en la que se clica. En id del div que contendrá el mapa
- *    se tiene que llamar "form_map". Los campos para capturar lat y lon 
- *    tienen que terminar en "latitude" y "longitude" respectivamente
- *  - Un mapa con el que mostrar una posición, el div que lo contenga tiene 
- *    que tener id="show_map" y un atributo data-location="lat,lng"
- */
-
 $(function(){
   maps();
 });
@@ -126,4 +116,3 @@ function init_map() {
     map: map
   });
 }
-
