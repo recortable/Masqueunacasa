@@ -1,31 +1,45 @@
 <%= page row: false do %>
   <div class="row">
-    <div class="span2">
-      <%= icon_type document %>
-    </div>
-    <div class="span10">
-      <h3><%= link_to document.title, document %></h3>
-      <%= title 'Mesa de edición' %>
+    <div class="span10 offset2">
+      <%= title document.title %>
     </div>
   </div>
 
   <div class="row">
-    <div class="span2">
-      <h3>Editores</h3>
+    <div class="span3">
+      <h2>Editores</h2>
       <p>Han participado en la elaboración de este contenido</p>
       <%= simple_list document.editorships do |editorship| %>
         <%= avatar_link editorship.user, size: :small, class: 'fixed' %>
         <%#= link_to 'Quitar este editor', editorship, method: :delete, confirm: "¿Seguro" %>
       <% end %>
-
-      <h3>Seguidores</h3>
+    </div>
+    <div class="span3">
+      <h2>Seguidores</h2>
       <p>Reciben emails cuando este contenido cambia</p>
       <%= simple_list document.subscriptors do |subscriptor| %>
         <%= avatar_link subscriptor, size: :small, class: 'fixed' %>
       <% end %>
     </div>
-    <div class="span6">
+    <div class="span3">
       <h2>Actividad</h2>
+      <%= simple_list versions do |version| %>
+        <%= version.user_name %> ha
+        <%= version.event %> 
+        <%= link_to version.item_type, version %>
+        <%= time_ago_in_words version.created_at %>
+      <% end %>
+    </div>
+    <div class="span3">
+      <% if document.respond_to?(:tasks) %>
+        <h2>Tareas</h2>
+        <%= simple_list document.tasks do |task| %>
+          <%= check_box_tag "complete_task_#{task.id}", !task.finished?, task.finished?, class: 'complete_task', data: {
+            url: polymorphic_path([document, task], format: :json)} %>
+          <span class="task <%= 'finished' if task.finished? %>"><%= task.title %></span>
+        <% end %>
+        <%= link_to 'Añadir tarea', [:new, document, :task] %>
+      <% end %>
     </div>
   </div>
 <% end %>

@@ -76,6 +76,7 @@ Masqueunacasa::Application.routes.draw do
       resources :sections, except: [:index]
       resources :subscribers, only: [:create, :destroy]
       resources :links
+      resources :tasks
     end
 
     resources :experiencies do
@@ -85,6 +86,7 @@ Masqueunacasa::Application.routes.draw do
       resources :links
       resource :edition
       resources :subscribers, only: [:create, :destroy]
+      resources :tasks
     end
 
 

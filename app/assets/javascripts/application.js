@@ -14,6 +14,21 @@ $(function() {
   $('form.edit_location').mapForForm();
 });
 
+$(function() {
+  $('.complete_task').click(function() {
+    var box = $(this);
+    $.ajax({
+      url: $(this).data('url'),
+      type: 'PUT',
+      dataType: 'html',
+      success: function(data) {
+        box.siblings('span').toggleClass('finished');
+        console.log(data);
+      }
+    });
+  });
+});
+
 CKEDITOR.replaceClass = 'rte';
 
 if (typeof console == "undefined" || typeof console.log == "undefined") {

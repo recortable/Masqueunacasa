@@ -21,11 +21,13 @@ class Experiencie < ActiveRecord::Base
   belongs_to :group
   has_many :relations, dependent: :destroy
   has_many :proposals, through: :relations
+  has_many :tasks, dependent: :destroy, as: :document
   include HasLocations
   include HasPopularity
   include HasSubscriptors
   include HasSections
   include HasLinks
+  include HasEditors
 
   validates_presence_of :title, :user
   validates_uniqueness_of :title_es, :title_ca

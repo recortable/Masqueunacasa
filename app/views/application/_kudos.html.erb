@@ -5,6 +5,14 @@
       <%= link_to "#{model.kudos_count} favoritos", [model, :kudos], method: :put %>
     </td>
   </tr>
+  <tr>
+    <td class="subscriptors expansible">
+      <%= link_to icon('globe'), '#' %>
+      <%= model.view_count %> visitas.
+    </td>
+  </tr>
+</table>
+<table class="table">
   <% if model.respond_to?(:editorships) %>
     <tr>
       <td class="editors">
@@ -21,16 +29,7 @@
       </td>
     </tr>
   <% end %>
-  <tr>
-    <td class="subscriptors expansible">
-      <%= link_to icon('globe'), '#' %>
-      <%= model.view_count %> visitas.
-    </td>
-  </tr>
-</table>
-
-<table class="table social">
-  <% if model.respond_to?(:subscripbers) && current_user %>
+  <% if model.respond_to?(:subscriptors) && current_user %>
     <tr><td class="">
         <% if model.subscriptor?(current_user) %>
           <%= icon('eye-close') %>
@@ -45,6 +44,9 @@
         <% end %>
     </tr></td>
   <% end %>
+</table>
+
+<table class="table social">
   <tr><td class="">
       <%= icon(:twitter) %>
       <%= link_to 'Tweet', "https://twitter.com/share?url=#{request.url}", target: '_blank' %>
