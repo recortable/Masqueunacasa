@@ -15,6 +15,8 @@ class Category < ActiveRecord::Base
   belongs_to :user
   belongs_to :phase
   has_many :proposals, order: :position
+  has_many :tasks, as: :document, dependent: :destroy
+
   include HasSections
   include HasEditors
   include HasPopularity

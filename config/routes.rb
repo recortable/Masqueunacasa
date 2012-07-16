@@ -99,6 +99,7 @@ Masqueunacasa::Application.routes.draw do
       put :down, on: :member
       resources :sections, except: [:index]
       resources :subscribers, only: [:create, :destroy]
+      resources :tasks
       resource :edition
     end
     resources :phases, except: [:show, :update, :destroy]

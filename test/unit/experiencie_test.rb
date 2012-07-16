@@ -17,4 +17,17 @@ describe Experiencie do
     results.first.must_equal exp2
     results.last.must_equal exp1
   end
+
+  it 'find for phase' do
+    p1 = create(:proposal)
+    e1 = create(:experiencie)
+    p1.add_relation(e1, create(:user))
+
+    p2 = create(:proposal, phase: p1.phase)
+    e2 = create(:experiencie)
+    p2.add_relation(e2, create(:user))
+
+    es = Experiencie.all_for_phase(proposal.phase)
+    es.count.must_equal 2
+  end
 end

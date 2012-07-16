@@ -18,6 +18,8 @@ es:
     versions: 'actividad'
     sections: 'secciones'
     locations: 'mapa'
+    edition: 'edicion'
+    images: 'imagenes'
 
     edit: 'editar'
     new: 'nueva'

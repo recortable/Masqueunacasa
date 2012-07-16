@@ -31,6 +31,13 @@ class Proposal < ActiveRecord::Base
   include HasLinks
 
   scope :published, where(published: true)
+  scope :all_for_phase, lambda {|phase|
+    { 
+      joins: [:relations, :proposals],
+      conditions: { proposals: { phase_id: phase.id }},
+      select: "DISTINCT `experiencies`.*"
+    }
+  }
 
   before_save :add_phase
   after_save :propagate_category

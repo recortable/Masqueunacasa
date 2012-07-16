@@ -5,7 +5,7 @@
     <div class="map" style="width: 500; height: 800; margin: 0 auto">
       <%= fake_img 300, 100 %>
     </div>
-    <div style="display:block;">
+    <div style="display:none;">
       <%= simple_list map_locations do |location| %>
         <%= content_tag :div, location.resource.title, data: {latitude: location.latitude, longitude: location.longitude}, class: "location" %>
         <%= location.latitude %> /
