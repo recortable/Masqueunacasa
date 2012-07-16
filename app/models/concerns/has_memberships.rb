@@ -9,21 +9,9 @@ module HasMemberships
   end
 
   # Add a member to a group if not present
-  def add_member(user, level = 'member')
+  def add_member(user)
     m = membership_for(user)
-    m ||= Membership.create!(group: self, user: user, state: level)
-  end
-
-  def member_level?(user, levels) 
-    m = membership_for(user)
-    return false if m.blank?
-
-    level = m.state.to_sym
-    if levels.kind_of?(Array)
-      levels.include?(level)
-    else
-      levels.to_sym == level 
-    end
+    m ||= Membership.create!(group: self, user: user)
   end
 
   # Check if a user is member
@@ -38,6 +26,6 @@ module HasMemberships
 
   private
   def create_owner_membership
-    Membership.create!(group: self, user: self.user, state: 'owner')
+    Membership.create!(group: self, user: self.user)
   end
 end

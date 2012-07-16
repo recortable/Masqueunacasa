@@ -19,12 +19,6 @@ es:
       all: 'Los participantes y los seguidores del grupo'
 
   membership:
-    states:
-      owner: 'Administrador/a'
-      member: 'Participante'
-      request: 'Futurx participante'
-      follow: 'Seguidor/a'
-    status: "Eres %{state} en el grupo '%{group}'"
 
   search:
     errors:

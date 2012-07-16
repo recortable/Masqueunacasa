@@ -8,8 +8,6 @@
 <div class="users cards">
   <% memberships.each do |member| %>
     <%= user_card(member.user) do %>
-      <%= t("membership.states.#{member.state}") %>
-      <%= link_box 'Editar participación', [:edit, member] if can? :edit, member %>
     <% end %>
   <% end %>
 </div>

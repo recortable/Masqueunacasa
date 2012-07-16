@@ -58,6 +58,13 @@ class IntegrationTest < MiniTest::Spec
     user
   end
 
+  def setup_group
+    group = create(:group)
+    login_user(group.user)
+    subdomain(group.subdomain)
+    group
+  end
+
   def click_submit(name = 'commit')
     page.find("input[name=\"#{name}\"]").click
   end
