@@ -22,6 +22,7 @@ class Experiencie < ActiveRecord::Base
   has_many :relations, dependent: :destroy
   has_many :proposals, through: :relations
   has_many :tasks, dependent: :destroy, as: :document
+  has_many :images, dependent: :destroy, as: :imageable
   include HasLocations
   include HasPopularity
   include HasSubscriptors

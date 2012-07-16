@@ -1,0 +1,18 @@
+<%= page do %>
+  <div class="span6">
+    <h2>En <%= link_to document.title, document %></h2>
+    <%= title 'Administrar imágenes' %>
+    <%= simple_list images do |image| %>
+      <%= image.title %>
+      <%= image_tag image.image.thumb.to_s %>
+    <% end %>
+  </div>
+  <div class="span4 offset1">
+    <h3>Añadir imagen:</h3>
+    <%= simple_form_for [document, image] do |f| %>
+      <%= f.input :title %>
+      <%= f.input :image %>
+      <%= submit_button_for f %>
+    <% end %>
+  </div>
+<% end %>

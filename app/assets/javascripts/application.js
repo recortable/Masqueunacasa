@@ -4,9 +4,12 @@
 //= require ckeditor/init
 //= require shared
 //= require posts
-//= require_self
 //= require maps
 //= require mediafy
+//= require galleria/galleria-1.2.7.min
+//= require galleria/galleria.classic.min
+
+//= require_self
 
 $(function() {
   $('div.locations').showMap();
@@ -65,3 +68,21 @@ window.Util = {
     return vars;
   }
 }
+
+Galleria.configure({
+  transition: 'pulse',
+  lightbox: false,
+  overlayBackground: '#e0e0e0',
+  transitionSpeed: 400,
+  showCounter: false,
+  responsive: true,
+  easing: 'swing',
+  autoplay: 7000,
+  showInfo: false
+});
+
+$(function() {
+  if ($('.galleria').length > 0) {
+    Galleria.run('.galleria');
+  }
+});

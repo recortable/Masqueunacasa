@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120716002644) do
+ActiveRecord::Schema.define(:version => 20120716133304) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -186,6 +186,16 @@ ActiveRecord::Schema.define(:version => 20120716002644) do
   add_index "experiencies", ["slug_ca"], :name => "index_experiencies_on_slug_ca"
   add_index "experiencies", ["slug_es"], :name => "index_experiencies_on_slug_es"
   add_index "experiencies", ["user_id"], :name => "index_experiencies_on_user_id"
+
+  create_table "images", :force => true do |t|
+    t.string  "title",          :limit => 200
+    t.string  "image"
+    t.integer "user_id"
+    t.integer "imageable_id"
+    t.string  "imageable_type"
+  end
+
+  add_index "images", ["imageable_type", "imageable_id"], :name => "index_images_on_imageable_type_and_imageable_id"
 
   create_table "kudos", :force => true do |t|
     t.integer  "document_id"

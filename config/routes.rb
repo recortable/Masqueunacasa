@@ -87,6 +87,7 @@ Masqueunacasa::Application.routes.draw do
       resource :edition
       resources :subscribers, only: [:create, :destroy]
       resources :tasks
+      resources :images
     end
 
 
