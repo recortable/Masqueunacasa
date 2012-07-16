@@ -36,6 +36,10 @@ Masqueunacasa::Application.routes.draw do
   end
 
   # GENERAL
+  resources :images, only: [:up, :down] do
+    put :up, on: :member
+    put :down, on: :member
+  end
   resources :sections, only: [:up, :down, :remove_image] do
     put :up, on: :member
     put :down, on: :member
@@ -87,6 +91,7 @@ Masqueunacasa::Application.routes.draw do
       resource :edition
       resources :subscribers, only: [:create, :destroy]
       resources :tasks
+      resources :images
     end
 
 

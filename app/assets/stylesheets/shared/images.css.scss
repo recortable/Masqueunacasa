@@ -1,0 +1,27 @@
+.image-gallery {
+  margin-top: 32px;
+  margin-bottom: 20px;
+  .hover {
+    top: -30px;
+  }
+
+  .galleria {
+    height: 500px;
+  }
+}
+
+.images-list {
+  .image-container {
+    width: 125px;
+    float: left;
+
+    img {
+      vertical-align: top;
+    }
+  }
+
+  .image-title {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}

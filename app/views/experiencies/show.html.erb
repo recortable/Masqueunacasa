@@ -22,6 +22,18 @@
     <div class="summary markdown">
       <%= markdown experiencie.summary %>
     </div>
+    <div class="image-gallery hoverize">
+      <%= hover? :update, experiencie do %>
+        <%= link_to icon(:pencil, 'Administrar imágenes'), [experiencie, :images] %>
+      <% end %>
+      <% if !experiencie.images.empty? %>
+        <div class="galleria">
+          <% experiencie.images.each do |image| %>
+            <%= link_to image_tag(image.image.thumb.to_s), image.image.to_s %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
     <%= render_sections experiencie %>
   </div>
 
