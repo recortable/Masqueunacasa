@@ -29,14 +29,12 @@ describe 'Proposals integration' do
     category = create(:category)
     visit new_category_proposal_path(category)
     page.fill_in 'proposal_title', with: 'My proposal'
-    page.fill_in 'proposal_description', with: 'My proposal description'
     page.fill_in 'proposal_summary', with: 'My proposal summary'
     click_submit
     Proposal.count.must_equal 1
     proposal = Proposal.last
     proposal.user.must_equal user
     proposal.title.must_equal 'My proposal'
-    proposal.description.must_equal 'My proposal description'
     proposal.body.must_equal 'My proposal summary'
     proposal.category.must_equal category
     proposal.phase.must_equal category.phase

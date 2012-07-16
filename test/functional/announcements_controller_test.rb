@@ -5,12 +5,11 @@ describe 'Announcements integration' do
     user = create(:user)
     group = create(:group)
     group.add_member(user)
-    ann = create(:announcement, group: group)
-
     login_user(user)
     subdomain(group.subdomain)
+    
+    ann = create(:announcement, group: group)
     visit announcements_path
-
     page.text.must_include ann.title
   end
 
@@ -18,6 +17,7 @@ describe 'Announcements integration' do
     group = create(:group)
     login_user(group.user)
     subdomain(group.subdomain)
+
     visit announcements_path
     find_link('new-announcement')
   end
@@ -26,6 +26,7 @@ describe 'Announcements integration' do
     group = create(:group)
     login_user(group.user)
     subdomain(group.subdomain)
+
     visit new_announcement_path
 
   end

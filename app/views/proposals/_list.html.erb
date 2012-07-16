@@ -1,0 +1,19 @@
+<div class="hoverize">
+  <%= hover? :create, Proposal do %>
+    <%= link_to icon(:plus, 'Añadir propuesta'), [:new, category, :proposal], rel: 'new-proposal' %>
+  <% end %>
+  <h2>Propuestas</h2>
+</div>
+<%= simple_list category.proposals.each do |proposal| %>
+  <div class="hoverize">
+    <%= hover? :update, proposal do %>
+      <%= link_to icon('arrow-up'), [:up, proposal], method: :put %>
+      |
+      <%= link_to icon('arrow-down'), [:down, proposal], method: :put %>
+    <% end %>
+
+    <h3><%= link_to proposal.title, proposal %></h3>
+    <%= markdown proposal.summary %>
+  </div>
+<% end %>
+

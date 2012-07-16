@@ -9,7 +9,8 @@ describe 'Memberships integration' do
 
     login_user(member)
     subdomain(group.subdomain)
-    visit memberships_path
+    visit edit_profile_path
+
     page.text.must_include member.name
     page.text.wont_include nonmember.name
   end

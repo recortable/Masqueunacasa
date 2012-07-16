@@ -11,6 +11,7 @@ describe 'Categories integration' do
   end
 
   it 'can create proposals inside category' do
+    login_user create(:user)
     category = create(:category)
     login_user create(:user)
     visit category_path(category)
