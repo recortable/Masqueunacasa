@@ -36,14 +36,14 @@ class ImagesController < ApplicationController
   end
 
   def up
-    s = Section.find params[:id]
-    s.move_higher
-    respond_with s, location: document_location(s)
+    img = Image.find params[:id]
+    img.move_higher
+    respond_with img, location: [img.imageable, :images]
   end
 
   def down
-    s = Section.find params[:id]
-    s.move_lower
-    respond_with s, location: document_location(s)
+    img = Image.find params[:id]
+    img.move_lower
+    respond_with img, location: [img.imageable, :images]
   end
 end

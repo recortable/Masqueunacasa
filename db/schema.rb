@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120716133304) do
+ActiveRecord::Schema.define(:version => 20120716182931) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20120716133304) do
     t.text     "summary_es"
     t.text     "summary_ca"
     t.text     "summary_en"
+    t.integer  "editeds_count",                    :default => 0
     t.integer  "editorships_count",                :default => 0
   end
 
@@ -127,6 +128,7 @@ ActiveRecord::Schema.define(:version => 20120716133304) do
     t.text     "summary_es"
     t.text     "summary_ca"
     t.text     "summary_en"
+    t.integer  "editeds_count",                   :default => 0
     t.integer  "editorships_count",               :default => 0
   end
 
@@ -135,6 +137,16 @@ ActiveRecord::Schema.define(:version => 20120716133304) do
   add_index "contents", ["slug"], :name => "index_contents_on_slug"
   add_index "contents", ["type"], :name => "index_contents_on_type"
   add_index "contents", ["user_id"], :name => "index_contents_on_user_id"
+
+  create_table "editeds", :force => true do |t|
+    t.integer  "document_id"
+    t.string   "document_type", :limit => 16
+    t.integer  "user_id"
+    t.datetime "created_at"
+  end
+
+  add_index "editeds", ["document_type", "document_id"], :name => "index_editeds_on_document_type_and_document_id"
+  add_index "editeds", ["user_id"], :name => "index_editeds_on_user_id"
 
   create_table "editorships", :force => true do |t|
     t.integer  "document_id"
@@ -166,6 +178,7 @@ ActiveRecord::Schema.define(:version => 20120716133304) do
     t.text     "summary_es"
     t.text     "summary_ca"
     t.text     "summary_en"
+    t.integer  "editeds_count",                    :default => 0
     t.integer  "editorships_count",                :default => 0
   end
 
@@ -180,6 +193,7 @@ ActiveRecord::Schema.define(:version => 20120716133304) do
     t.integer "user_id"
     t.integer "imageable_id"
     t.string  "imageable_type"
+    t.integer "position"
   end
 
   add_index "images", ["imageable_type", "imageable_id"], :name => "index_images_on_imageable_type_and_imageable_id"
@@ -302,6 +316,7 @@ ActiveRecord::Schema.define(:version => 20120716133304) do
     t.text     "summary_es"
     t.text     "summary_ca"
     t.text     "summary_en"
+    t.integer  "editeds_count",                     :default => 0
     t.integer  "editorships_count",                 :default => 0
   end
 
