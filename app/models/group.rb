@@ -43,14 +43,6 @@ class Group < Agent
   end
 
   def recipients(scope = 'all')
-    if scope == 'all'
-      users
-    elsif scope == 'members'
-      users.select {|u| member_level?(u, [:member, :owner]) }
-    elsif scope == 'admin'
-      self.users.select {|u| member_level?(u, :owner) }
-    else
-      []
-    end
+    users
   end
 end

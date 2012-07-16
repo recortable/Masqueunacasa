@@ -1,7 +1,7 @@
 <%= corner_span 'archive' do %>
   <div class="hoverize">
     <%= hover? :create, Post do %>
-      <%= link_to icon(:plus, 'Publicar entrada'), '#' %>
+      <%= link_to icon(:plus, 'Publicar entrada'), new_post_path, rel: 'new-post' %>
     <% end %>
     <h2>
       Blog
