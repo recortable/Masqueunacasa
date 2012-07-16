@@ -1,0 +1,8 @@
+<%= simple_form_for [document, image] do |f| %>
+  <%= f.input :title %>
+  <% if !image.image.blank? %>
+    <%= image_tag image.image.thumb.to_s %>
+  <% end %>
+  <%= f.input :image %>
+  <%= submit_button_for f %>
+<% end %>
