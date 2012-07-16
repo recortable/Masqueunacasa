@@ -1,10 +1,10 @@
 module LayoutHelper
 
   def page(options = {}, &block)
-    options.reverse_merge! class: '', row: true
+    options.reverse_merge! class: '', row: true, head: true
     content = capture(&block)
     content = "<div class='row'>#{content}</div>" if options[:row]
-    head = render 'page_header' 
+    head = options[:head] ? render('page_header') : ''
     raw "<div class='#{options[:class]}'><div class='corner none'></div></div><div class='page bloc'>#{head}#{content}</div>"
   end
 

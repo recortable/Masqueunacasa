@@ -1,2 +1,58 @@
-<%= render partial: 'groups/form', locals: {group: current_group } %>
+<div class="row">
+  <%= user_column 'span2' do %>
+    <%= avatar_image current_group %>
+    <h3>Cambiar imágen</h3>
+    <%= simple_form_for current_group do |form| %>
+      <%= form.input :avatar_image %>
+      <%= submit_button_for form, value: 'Cambiar imágen' %>
+    <% end %>
+  <% end %>
+
+  <%= corner_span('span6') do %>
+    <%= title "#{current_group.name}" %>
+    <%= simple_form_for current_group, html: {class: 'clearfix'} do |form| %>
+      <h3>Información general</h3>
+      <p>Esta información será visible para el resto de las personas</p>
+      <%= form.input :name %>
+      <%= form.input :title %>
+      <%= form.input :summary, as: :text %>
+      <h3>Difusión</h3>
+      <%= form.input :email %>
+      <%= form.input :website %>
+      <%= form.input :twitter %>
+      <%= form.input :facebook %>
+      <h3>Funcionalidades</h3>
+      <% [:blog, :pages, :announcements].each do |item| %>
+        <%= form.input "has_#{item}", as: :boolean %>
+      <% end %>
+
+      <%= submit_button_for form %>
+    <% end %>
+  <% end %>
+
+  <div class="span4">
+    <%= corner_span('') do %>
+      <div class="hoverize">
+        <%= hover? :update, current_group do %>
+          <%= link_to icon(:plus, 'Añadir participante'),
+            new_membership_path, rel: 'new-membership' %>
+        <% end %>
+        <h2>Participantes</h2>
+      </div>
+      <%= simple_list current_group.memberships do |membership| %>
+        <div class="hoverize">
+          <%= hover? :destroy, membership do %>
+            <%= link_to icon(:cut, 'Quitar'), 
+              url_for_membership(current_group, membership),
+              method: :delete, confirm: "¿Quieres quitar a '#{membership.user.title}' de este grupo?", 
+              rel: "delete-membership-#{membership.id}" %>
+          <% end %>
+          <%= avatar_link membership.user, size: :small, class: 'fixed' %>
+          <%= link_to membership.user.title, membership.user %>
+          <%= membership.state %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 <%= simple_debug current_group %>

@@ -11,9 +11,7 @@ module HasMemberships
   # Add a member to a group if not present
   def add_member(user, level = 'member')
     m = membership_for(user)
-    if m.blank?
-      Membership.create!(group: self, user: user, state: level)
-    end
+    m ||= Membership.create!(group: self, user: user, state: level)
   end
 
   def member_level?(user, levels) 

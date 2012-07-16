@@ -26,7 +26,7 @@ Masqueunacasa::Application.routes.draw do
     resources :post_attachments, except: [:index, :show]
   end
   resources :messages, only: [:create, :show]
-  resources :memberships
+  resources :memberships, only: [:new, :create, :destroy]
 
   resource :profile, only: [:show, :edit] 
 

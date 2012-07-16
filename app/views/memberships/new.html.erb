@@ -2,16 +2,13 @@
 
 <div class="row">
   <%= corner_span 'span6 offset2' do %>
-    <h3><%= group.title %></h3>
+    <h3><%= link_to current_group.title, current_group %></h3>
     <%= title 'Añadir participante' %>
+
     <%= simple_list users do |user| %>
       <div class="hoverize">
-        <%= hover? :update, group do %>
-          <% if user.member?(group) %>
-            <%= link_to icon(:trash, 'Borrar'), group.membership_for(user), method: :delete, confirm: "¿Quieres quitar a #{user.title} de '#{group.title}'?" %>
-          <% else %>
-            <%= link_to icon(:plus, 'Añadir'), memberships_path(u: user), method: :post unless user.member?(group) %>
-          <% end %>
+        <%= hover? :update, current_group do %>
+          <%= link_to icon(:plus, 'Añadir'), memberships_path(u: user), method: :post, rel: "add-member-user-#{user.id}" %>
         <% end %>
         <%= avatar_link user, size: :small, class: 'fixed' %>
         <%= user.title %>

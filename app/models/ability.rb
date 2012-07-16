@@ -38,6 +38,8 @@ class Ability
       end
 
       can :read, Membership
+      can(:manage, Membership) {|m| participant?(m.group, user) }
+
       cannot :update, UserSession
 
       can(:update, User) { |usr| usr == user }
