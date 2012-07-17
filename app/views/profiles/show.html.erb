@@ -10,7 +10,14 @@
     <%= render_agent_info group %>
   <% end %>
 
-  <%= corner_span('span4') do %>
-    <%= render_locations_bar group %>
-  <% end %>
+  <div class="span4">
+    <%= corner_span('') do %>
+      <%= render_locations_bar group %>
+    <% end %>
+    <% unless group.admin? %>
+      <%= corner_span('') do %>
+        <%= render_memberships_list group %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
