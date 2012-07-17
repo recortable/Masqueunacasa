@@ -27,7 +27,7 @@
   <div class="span4">
     <div class="hoverize">
       <%= hover? :create, Experiencie do %>
-        <%= link_to icon(:plus, 'Añadir experiencia'), new_experiencie_path(p: proposal.id) %>
+        <%= link_to 'Añadir experiencia', new_proposal_relation_path(proposal) %>
       <% end %>
       <h2>Experiencias relacionadas</h2>
     </div>

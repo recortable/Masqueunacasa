@@ -1,11 +1,8 @@
 # Relations Controller
-# Maneja las relaciones tanto de Propuestas -> Experiencias como de
-# Experiencias -> Propuestas
 class RelationsController < ApplicationController
   respond_to :html
 
-  expose(:proposal) { Proposal.find(params[:proposal_id]) }
-  expose(:parent) { proposal } # Es el parent en routes.rb
+  expose_parent :parent, [:proposal, :experiencie]
   expose(:relations) { proposal.relations }
   expose(:relation)
 
