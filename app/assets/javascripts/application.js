@@ -1,13 +1,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require ckeditor/init
 //= require shared
 //= require posts
 //= require maps
 //= require mediafy
 //= require galleria/galleria-1.2.7.min
 //= require galleria/galleria.classic.min
+//= require ckeditor/init
 
 //= require_self
 
