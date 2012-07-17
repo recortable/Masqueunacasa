@@ -1,29 +1,22 @@
-<%= render_banner 'Relacionar', parent %>
+<%= page do %>
+  <div class="span6 offset2">
+    <h2>En <%= link_to parent.title, parent %></h2>
+    <%= title 'Añadir experiencia relacionada' %>
 
-<div class="row">
-  <%= user_column 'span2' do %>
-    <h3><%= parent.title %></h3>
-    <div class="controls">
-      <%= link_box t('go_back'), [:edit, parent] %>
-    </div>
-  <% end %>
-  <%= corner_span 'span8' do %>
-    <%= title 'Añadir experiencia relacionada', :h2 %>
-    <%= form_tag [:new, parent, :relation], method: :get do %>
-      <%= text_field_tag :term, params[:term] %>
-      <%= submit_tag 'Buscar experiencia' %>
-    <% end %>
-    <% if valid_term? %>
-      <h4>Experiencias con '<%= params[:term] %>'</h4>
-      <ul>
-        <% results.each do |result| %>
-          <li>
-          <%= result.title %> 
-          <%= link_to "Relacionar con #{parent.title}", proposal_relations_path(proposal, e: result.id), method: :post %>
-          </li>
+    <h3>Añadir una experiencia nueva</h3>
+    <%= link_to icon(:plus, "Crear experiencia"), new_experiencie_path(p: parent) %>
+    <br/><br/>
+
+    <h3>Relacionar con una experiencia existente</h3>
+    <%= simple_list experiencies do |experiencie| %>
+      <div class="hoverize">
+        <%= hover? :create, Relation do %>
+          <%= link_to 'Relacionar', proposal_relations_path(parent, e: experiencie.id), method: :post, rel: 'new-relation' %>
         <% end %>
-      </ul>
+        <%= experiencie.title %>
+      </div>
     <% end %>
-  <% end %>
-</div>
+  </div>
+
+<% end %>
 

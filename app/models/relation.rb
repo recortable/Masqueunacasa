@@ -13,8 +13,7 @@ class Relation < ActiveRecord::Base
 
   private
   def add_category_and_phase
-    self.proposal.reload
-    self.category = proposal.category
-    self.phase = proposal.phase
+    self.category_id = proposal.category_id
+    self.phase_id = proposal.phase_id
   end
 end

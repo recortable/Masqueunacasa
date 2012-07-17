@@ -3,8 +3,12 @@ class RelationsController < ApplicationController
   respond_to :html
 
   expose_parent :parent, [:proposal, :experiencie]
-  expose(:relations) { proposal.relations }
+  expose(:relations) { parent.relations }
   expose(:relation)
+
+  expose(:experiencies) do
+    Experiencie.where(['id NOT IN (?)', parent.experiencies]).order("title_#{I18n.locale} ASC")
+  end
 
   expose(:valid_term?) { params[:term].present? }
   expose(:results) { Experiencie.search(params[:term]) if valid_term? }

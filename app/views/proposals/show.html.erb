@@ -25,16 +25,7 @@
   </div>
 
   <div class="span4">
-    <div class="hoverize">
-      <%= hover? :create, Experiencie do %>
-        <%= link_to 'Añadir experiencia', new_proposal_relation_path(proposal) %>
-      <% end %>
-      <h2>Experiencias relacionadas</h2>
-    </div>
-    <%= simple_list proposal.relations do |relation| %>
-      <h3><%= link_to relation.experiencie.title, relation.experiencie %></h3>
-      <%= markdown relation.experiencie.summary %>
-    <% end %>
+    <%= render_proposal_relations proposal %>
 
     <%= render_links_bar proposal %>
   </div>

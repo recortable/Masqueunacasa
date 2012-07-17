@@ -22,6 +22,21 @@ describe 'Proposals integration' do
     page.text.must_include link.title
   end
 
+  it 'shows proposal relations' do
+    proposal = create(:proposal)
+    experiencie = create(:experiencie)
+    relation = proposal.add_relation(experiencie, create(:user))
+
+    visit proposal_path(proposal)
+    page.text.must_include experiencie.title
+  end
+
+  it 'can create relation' do
+    login_user(create(:user))
+    proposal = create(:proposal)
+    visit proposal_path(proposal)
+    find_link('new-relation').click
+  end
 
   it 'creates proposals' do
     user = create(:user)
@@ -35,7 +50,7 @@ describe 'Proposals integration' do
     proposal = Proposal.last
     proposal.user.must_equal user
     proposal.title.must_equal 'My proposal'
-    proposal.body.must_equal 'My proposal summary'
+    proposal.summary.must_equal 'My proposal summary'
     proposal.category.must_equal category
     proposal.phase.must_equal category.phase
   end

@@ -1,0 +1,16 @@
+<div class="hoverize">
+  <%= hover? :create, Experiencie do %>
+    <%= link_to icon(:plus, 'Añadir experiencia relacionada'), new_proposal_relation_path(proposal), rel: 'new-relation' %>
+  <% end %>
+  <h2>Experiencias relacionadas</h2>
+</div>
+<%= simple_list proposal.relations do |relation| %>
+  <div class="hoverize">
+    <%= hover? :destroy, relation do %>
+      <%= link_to icon(:cut, 'Quitar relación'), [proposal, relation], method: :delete, confirm: "¿Borrar la relación con #{relation.experiencie.title}?" %>
+    <% end %>
+    <h3><%= link_to relation.experiencie.title, relation.experiencie %></h3>
+  </div>
+  <%= markdown relation.experiencie.summary %>
+<% end %>
+
