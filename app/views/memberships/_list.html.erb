@@ -1,0 +1,13 @@
+<div class="hoverize">
+  <%= hover? :update, current_group do %>
+    <%= link_to icon(:plus, 'Añadir participante'),
+      new_membership_path, rel: 'new-membership' %>
+  <% end %>
+  <h2>Participantes</h2>
+</div>
+<div class="members">
+  <% group.members.each do |user| %>
+    <%= link_to avatar_image(user, size: :small, class: 'fixed'), user_url(user, host: request.domain) %>
+  <% end %>
+</div>
+

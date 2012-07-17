@@ -1,20 +1,21 @@
+<% title 'Habitapedia' %>
 <%= page row: false do %>
-  <div class="row">
-    <div class="span12">
-      <%= title 'Habitapedia' %>
-    </div>
-  </div>
 
   <div class="row">
     <% phases.each do |phase| %>
       <div class="span4">
         <div class="content">
-          <%= link_to image_tag(phase.image_url, width: 270, height: 270, alt: phase.title, class: 'fixed'), phase %>
-          <h2><%= link_to phase.title, phase %></h2>
-          <div class="summary markdown">
-            <%= markdown phase.summary %>
+          <div class="hoverize">
+            <%= hover? :update, phase do %>
+              <%= link_to icon(:edit, 'Editar fase'), [:edit, phase] %>
+            <% end %>
+
+            <%= image_tag(phase.image_url, width: 150, height: 150, alt: phase.title, class: 'fixed centered') %>
+            <h2><%= phase.title %></h2>
+            <div class="summary markdown">
+              <%= markdown phase.summary %>
+            </div>
           </div>
-          <%= link_to 'Leer más...', phase %>
         </div>
       </div>
     <% end %>
@@ -24,22 +25,11 @@
     <% phases.each do |phase| %>
       <div class="span4">
         <div class="content">
-          <%= render_category_list phase, title: '' %>
+          <%= render_category_list phase, title: phase.title %>
         </div>
       </div>
     <% end %>
   </div>
 
-  <div class="row">
-    <% phases.each do |phase| %>
-      <div class="span4">
-        <div class="content">
-          <%= simple_list phase.experiencies do |experiencie| %>
-            <h3><%= link_to experiencie.title, experiencie %></h3>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
 <% end %>
 
