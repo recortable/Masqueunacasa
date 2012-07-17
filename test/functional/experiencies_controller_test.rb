@@ -7,15 +7,24 @@ describe 'Experiencies integration' do
     page.text.must_include e.title
   end
 
-  it 'can create link if curent_user' do
-    user = create(:user)
-    login_user user
-    experiencie = create(:experiencie)
-    
-    visit experiencie_path(experiencie)
-    find_link 'new-link'
+  it 'shows experiencie' do
+    e = create(:experiencie)
+    visit experiencie_path(e)
+    page.text.must_include e.title
+    page.text.must_include e.summary
   end
 
+  # RELATIONS (ASSOCIATED PROPOSALS)
+  it 'show the associated proposals' do
+    experiencie = create(:experiencie)
+    proposal = create(:proposal)
+    relation = proposal.add_relation(experiencie, create(:user))
+
+    visit experiencie_path(experiencie)
+    page.text.must_include proposal.title
+  end
+
+  # EXTERNAL LINKS
   it 'show the related links' do
     user = create(:user)
     login_user user
@@ -25,6 +34,15 @@ describe 'Experiencies integration' do
 
     visit experiencie_path(experiencie)
     page.text.must_include link.title
+  end
+
+  it 'can create link if curent_user' do
+    user = create(:user)
+    login_user user
+    experiencie = create(:experiencie)
+    
+    visit experiencie_path(experiencie)
+    find_link 'new-link'
   end
 
   it 'can create experiencie if user' do

@@ -3,6 +3,18 @@
 TAREAS
 - Enviar emails colectivos en background
 
+## 17/07/2012
+- Los grupos muestran los participantes en el perfil
+- Las experiencias muestran las propuestas organizadas por fase
+- Las propuestas se pueden asociar a más de una experiencia
+
+## 16/07/2012
+- Las experiencias tienen una galería de imágenes
+
+## 15/07/2012
+- Mesa de edición
+- Los documentos tienen tareas:
+
 ## 14/07/2012
 - Links en propuestas y experiencias
 - Mapa general

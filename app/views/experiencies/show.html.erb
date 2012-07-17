@@ -38,16 +38,8 @@
   </div>
 
   <div class="span4">
-    <h2>Alternativas relacionadas</h2>
-    <%= simple_list experiencie.proposals.each do |proposal| %>
-      <h3><%= link_to proposal.title, proposal %></h3>
-      <%= markdown proposal.summary %>
-    <% end %>
-
-
-  <%= render_links_bar experiencie %>
-
-  <%= render_locations_bar experiencie %>
-
-</div>
+    <%= render_experiencie_relations experiencie %>
+    <%= render_links_bar experiencie %>
+    <%= render_locations_bar experiencie %>
+  </div>
 <% end %>

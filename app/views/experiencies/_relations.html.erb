@@ -1,0 +1,11 @@
+<h2>Alternativas relacionadas</h2>
+<% phases.each do |phase| %>
+  <% if phase_proposals[phase.id].size > 0 %>
+    <h3><%= phase.title %></h3>
+    <%= simple_list phase_proposals[phase.id] do |proposal| %>
+      <h3><%= link_to proposal.title, proposal %></h3>
+      <%= markdown proposal.summary %>
+    <% end %>
+  <% end %>
+<% end %>
+
