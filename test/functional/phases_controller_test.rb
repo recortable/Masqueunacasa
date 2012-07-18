@@ -35,7 +35,7 @@ describe 'Phases integration' do
   it 'can edit phase' do
     login_user create(:user, admin: true)
     phase = create(:phase)
-    visit phase_path(phase)
+    visit phases_path
     find_link "edit-phase-#{phase.id}"
   end
 

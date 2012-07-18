@@ -1,5 +1,6 @@
 # encoding: utf-8
 class UserSessionsController < ApplicationController
+  respond_to :html
   expose(:user_session)
   expose(:user) { User.new }
   expose(:themes) { 'textura04 azul_gris' }
@@ -13,7 +14,7 @@ class UserSessionsController < ApplicationController
   end
 
   def show
-
+    
   end
 
   def create

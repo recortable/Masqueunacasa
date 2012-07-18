@@ -3,11 +3,24 @@
     <%= title 'Actividad' %>
     <% versions.each do |version| %>
       <%= div_for version do %>
-        <%= version.user_name? ? version.user_name : 'Anónimx' %> ha
-        <%= version.event %>
+        <% if version.user_name.present? %>
+          <%= link_to version.user_name, user_path(version.whodunnit) %>
+        <% else %>
+          Anónimx
+        <% end %>
+
+        <%= t("versions.events.#{version.event}") %>
+        <strong>
+          la
+          <%= t("activerecord.models.#{version.item_type.downcase}") %>
+        </strong>
         <%= link_to version.title, version %>
-        (<%= version.item_type %>)
+        <% if version.document.present? %>
+          en <%= link_to version.parent_title, version.document %>
       <% end %>
-    <% end %>
+      <br>
+      Hace <%= time_ago_in_words version.created_at %>
+  <% end %>
+<% end %>
   <% end %>
 </div>

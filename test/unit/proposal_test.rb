@@ -39,6 +39,7 @@ describe Proposal do
   end
 
   it 'has sections by lang' do
+    original_locale = I18n.locale
     p = create(:proposal)
     es = create(:section, document: p, lang: 'es')
     ca = create(:section, document: p, lang: 'ca')
@@ -48,6 +49,7 @@ describe Proposal do
     I18n.locale = 'ca'
     p.sections.size.must_equal 1
     p.sections.first.must_equal es
+    I18n.locale = original_locale
   end
 
   it 'updates all relations when category change' do

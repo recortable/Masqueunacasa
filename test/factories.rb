@@ -79,4 +79,15 @@ FactoryGirl.define do
     sequence(:title) {|n| "Link #{n}" }
     sequence(:url) {|n| "http://mquc.org/#{n}" }
   end
+
+  factory :task do
+    sequence(:title) {|n| "Task #{n}" }
+    document factory: :proposal
+  end
+
+  factory :image do
+    sequence(:title) {|n| "Task #{n}" }
+    image 'image'
+    imageable factory: :experiencie
+  end
 end

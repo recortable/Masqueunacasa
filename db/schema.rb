@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120718113326) do
+=======
+ActiveRecord::Schema.define(:version => 20120718120219) do
+>>>>>>> 158c38f1748ec3661428808692011cc6a6d5335e
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -369,15 +373,18 @@ ActiveRecord::Schema.define(:version => 20120718113326) do
   add_index "tasks", ["finished"], :name => "index_tasks_on_finished"
 
   create_table "versions", :force => true do |t|
-    t.string   "item_type",                 :null => false
-    t.integer  "item_id",                   :null => false
-    t.string   "event",                     :null => false
+    t.string   "item_type",                    :null => false
+    t.integer  "item_id",                      :null => false
+    t.string   "event",                        :null => false
     t.string   "whodunnit"
     t.text     "object"
     t.datetime "created_at"
-    t.string   "user_name",  :limit => 50
-    t.string   "title",      :limit => 200
+    t.string   "user_name",     :limit => 50
+    t.string   "title",         :limit => 200
     t.integer  "group_id"
+    t.string   "document_type"
+    t.integer  "document_id"
+    t.string   "parent_title",  :limit => 200
   end
 
   add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"
