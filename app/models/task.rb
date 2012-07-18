@@ -8,4 +8,8 @@ class Task < ActiveRecord::Base
   belongs_to :user
 
   has_paper_trail meta: { title: :title, parent_title: :document_title, document: :document }
+
+  def to_anchor
+    title
+  end
 end

@@ -12,7 +12,7 @@ class AddInfoToVersions < ActiveRecord::Migration
       item = version.item
       if item
         if version.item_type == 'Section' || version.item_type == 'Task'
-          version.title = item.version_title.truncate(200)
+          version.title = item.to_anchor.truncate(200)
           version.document = item.document 
           version.parent_title = item.document.title.truncate(200) if version.document
         elsif version.item_type == 'Content'

@@ -18,13 +18,13 @@ class Section < ActiveRecord::Base
   scope :titled, where("title <> ''")
 
   acts_as_list scope: [:document_type, :document_id]
-  has_paper_trail meta: {title: :version_title, parent_title: :document_title, document: :document}
+  has_paper_trail meta: {title: :to_anchor, parent_title: :document_title, document: :document}
 
   mount_uploader :image, ImageUploader
   store :properties, accessors: [:image_position]
   before_save :update_group_id
 
-  def version_title
+  def to_anchor
     title.present? ? title : position.to_s
   end
 

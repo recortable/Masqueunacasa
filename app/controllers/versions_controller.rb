@@ -17,7 +17,7 @@ class VersionsController < ApplicationController
     case version.item_type
     when 'Section'
       section = Section.find version.item_id
-      url_for(section.document)
+      url_for(section.document, anchor: section.to_anchor)
     else
       klass = version.item_type.constantize
       model = klass.find version.item_id

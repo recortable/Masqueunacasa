@@ -1,6 +1,6 @@
 <%= simple_form_for [phase, category] do |form| %>
   <%= form.input :title %>
-  <%= form.input :summary, as: :text %>
   <%= form.input :question %>
+  <%= form.input :summary, as: :text %>
   <%= submit_button_for form %>
 <% end %>
