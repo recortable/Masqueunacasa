@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20120718113326) do
-=======
-ActiveRecord::Schema.define(:version => 20120718120219) do
->>>>>>> 158c38f1748ec3661428808692011cc6a6d5335e
+ActiveRecord::Schema.define(:version => 20120718162850) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -186,6 +182,7 @@ ActiveRecord::Schema.define(:version => 20120718120219) do
     t.string  "imageable_type"
     t.integer "position"
     t.string  "external_image_url"
+    t.string  "credits",            :limit => 300
   end
 
   add_index "images", ["imageable_type", "imageable_id"], :name => "index_images_on_imageable_type_and_imageable_id"

@@ -21,7 +21,7 @@
           <% end %>
         </div>
         <span class="image-title">
-          <%= image.title %>
+          <%= image.title %> <%= "(#{image.credits})" if image.credits? %>
         </span>
       </div>
     <% end %>
