@@ -78,7 +78,7 @@ Galleria.configure({
   responsive: true,
   easing: 'swing',
   autoplay: 7000,
-  showInfo: false
+  showInfo: true
 });
 
 $(function() {
