@@ -30,7 +30,12 @@
         <% if !experiencie.images.empty? %>
           <div class="galleria">
             <% experiencie.images.each do |image| %>
-              <%= link_to image_tag(image.image.thumb.to_s), image.image.to_s %>
+              <% if image.image? %>
+                <%= link_to image_tag(image.image.thumb.to_s), image.image.to_s %>
+              <% end %>
+              <% if image.external_image_url? %>
+                <%= image_tag(image.external_image_url) %>
+              <% end %>
             <% end %>
           </div>
         <% end %>

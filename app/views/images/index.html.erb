@@ -14,7 +14,11 @@
           <%= link_to icon(:trash), [document, image], method: :delete, confirm: "¿Seguro?" %>
         <% end %>
         <div class="image-container">
-          <%= image_tag image.image.thumb.to_s %>
+          <% if image.image? %>
+            <%= image_tag image.image.thumb.to_s %>
+          <% elsif image.external_image_url? %>
+            <%= image_tag image.external_image_url %>
+          <% end %>
         </div>
         <span class="image-title">
           <%= image.title %>
