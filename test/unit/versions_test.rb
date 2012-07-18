@@ -30,6 +30,12 @@ describe Version do
     verify(t, title: t.title, parent_title: t.document.title, document: t.document)
   end
 
+  it 'version created by link' do
+    p = create(:proposal)
+    t = create(:link, resource: p)
+    verify(t, title: t.title, parent_title: p.title, document: p)
+  end
+
   it 'version creted by image' do
     i = create(:image)
     verify(i, title: i.title, parent_title: i.imageable.title, document: i.imageable)

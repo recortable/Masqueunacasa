@@ -87,7 +87,7 @@ FactoryGirl.define do
 
   factory :image do
     sequence(:title) {|n| "Task #{n}" }
-    image 'image'
+    external_image_url 'http://en.com/im.jpg'
     imageable factory: :experiencie
   end
 end

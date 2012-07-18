@@ -1,6 +1,6 @@
 class VersionsController < ApplicationController
   respond_to :html
-  expose(:versions) { Version.limit(50).order('created_at DESC') }
+  expose(:versions) { Activity.site_activity }
   expose(:version)
 
   def index

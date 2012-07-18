@@ -12,6 +12,8 @@ es:
       password_recovery: 'recuperar contraseña'
       post_attachment: 'adjunto'
       section: 'sección'
+      image: 'imágen'
+      link: 'enlace relacionado'
 
   announcement:
     scopes:
