@@ -29,8 +29,6 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     acts_as_list (0.1.6)
-    acts_as_relation (0.1.2)
-      activerecord
     addressable (2.2.8)
     ansi (1.4.3)
     arel (3.0.2)
@@ -62,8 +60,6 @@ GEM
     ckeditor (3.7.1)
       mime-types
       orm_adapter
-    cloudinary (1.0.30)
-      rest-client
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -190,8 +186,6 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     redcarpet (2.1.1)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
     ruby-hmac (0.4.0)
     rubyzip (0.9.9)
     sass (3.1.20)
@@ -243,7 +237,6 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_list
-  acts_as_relation
   basic_config
   bcrypt-ruby (~> 3.0.0)
   bootstrap-sass
@@ -253,7 +246,6 @@ DEPENDENCIES
   capybara
   carrierwave
   ckeditor
-  cloudinary
   coffee-rails (~> 3.2.1)
   database_cleaner
   decent_exposure

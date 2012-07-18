@@ -18,7 +18,11 @@ es:
       members: 'Los participantes del grupo'
       all: 'Los participantes y los seguidores del grupo'
 
-  membership:
+  versions:
+    events:
+      create: 'creado'
+      update: 'modificado'
+      destroy: 'borrado'
 
   search:
     errors:

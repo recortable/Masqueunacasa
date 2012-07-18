@@ -24,7 +24,11 @@ class Section < ActiveRecord::Base
   store :properties, accessors: [:image_position]
   before_save :update_group_id
 
-  private
+  def version_title
+    title.present? ? title : position.to_s
+  end
+
+  protected
   def update_group_id
     if document_id_changed?
       if document_type == 'Group'

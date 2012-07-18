@@ -7,4 +7,8 @@ class Task < ActiveRecord::Base
 
   has_paper_trail meta: { title: :document_title }
 
+  def version_title
+    title
+  end
+
 end

@@ -56,6 +56,8 @@ Masqueunacasa::Application.routes.draw do
   match '/community' => 'dashboard#community', as: :community
   match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'
   match '/quinientos' => 'dashboard#quinientos'
+  match '/activity_mail' => 'dashboard#activity_mail'
+
   root to: 'dashboard#welcome'
 
   # Rutas sólo accesibles desde el dominio principal 
@@ -114,7 +116,7 @@ Masqueunacasa::Application.routes.draw do
     resources :phases, only: [:show, :update, :destroy], path: '' do
       resource :kudos
       resources :sections, except: [:index]
-      resources :categories, except: [:index]
+      resources :categories, except: [:index], path: ''
       resource :edition
       resources :subscribers, only: [:create, :destroy]
     end
@@ -129,6 +131,6 @@ Masqueunacasa::Application.routes.draw do
     resources :attachments, :only => [:index, :create, :destroy]
   end
 
-  #ActionDispatch::Routing::Translator.translate_from_file(
-  #  'config/locales/routes.yml', prefix_on_default_locale: false )
+  ActionDispatch::Routing::Translator.translate_from_file(
+    'config/locales/routes.yml', prefix_on_default_locale: false )
 end

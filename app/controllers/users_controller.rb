@@ -11,9 +11,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    authorize! :show, user
-    user.increment_view_counter
-    respond_with user
+    if params[:id] != user.to_param
+      redirect_to user, status: 301
+    else
+      authorize! :show, user
+      user.increment_view_counter
+      respond_with user
+    end
   end
 
   def new
@@ -31,7 +35,7 @@ class UsersController < ApplicationController
     end
     respond_with user
   end
-  
+
   def update
     authorize! :update, user, current_user
     flash[:notice] = t('users.notices.updated') if user.update_attributes(params[:user])
