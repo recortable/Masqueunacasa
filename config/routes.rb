@@ -129,6 +129,6 @@ Masqueunacasa::Application.routes.draw do
     resources :attachments, :only => [:index, :create, :destroy]
   end
 
-  ActionDispatch::Routing::Translator.translate_from_file(
-    'config/locales/routes.yml', prefix_on_default_locale: false )
+  #ActionDispatch::Routing::Translator.translate_from_file(
+  #  'config/locales/routes.yml', prefix_on_default_locale: false )
 end

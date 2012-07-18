@@ -9,7 +9,7 @@ describe Group do
     group = create(:group)
     owner = group.user
     member = create(:user)
-    group.add_member(member, :member)
+    group.add_member(member)
     follower = create(:user)
     group.add_member(follower, :follow)
 
