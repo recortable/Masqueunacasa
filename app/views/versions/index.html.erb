@@ -15,11 +15,12 @@
           <%= t("activerecord.models.#{version.item_type.downcase}") %>
         </strong>
         <%= link_to version.title, version %>
-        en
-        <%= link_to_if version.document.present?, version.parent_title, version.document %>
-        <br>
-        Hace <%= time_ago_in_words version.created_at %>
+        <% if version.document.present? %>
+          en <%= link_to version.parent_title, version.document %>
       <% end %>
-    <% end %>
+      <br>
+      Hace <%= time_ago_in_words version.created_at %>
+  <% end %>
+<% end %>
   <% end %>
 </div>
