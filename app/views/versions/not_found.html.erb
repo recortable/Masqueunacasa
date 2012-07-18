@@ -1,0 +1,9 @@
+<%= page do %>
+  <div class="span10 offset2">
+    <%= title 'Elemento no encontrado' %>
+    <p>El elemento de la actividad no se ha podido encontrar 
+    (porque ha sido borrado o movido). Lo sentimos</p>
+    <h3><%= link_to 'Volver', :back %></h3>
+  </div>
+<% end %>
+<%= simple_debug version %>

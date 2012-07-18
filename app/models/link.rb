@@ -3,16 +3,25 @@ class Link < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :resource, polymorphic: true
-  delegate :title, to: :resource, prefix: true
 
   validates :title, presence: true
   validates :url, presence: true
+  validates :resource, presence: true
+  validates :user, presence: true
   #validates :content_type, presence: true
 
   before_validation :complete_title
   before_validation :set_content_type
 
-  has_paper_trail meta: { title: :title, parent_title: :resource_title, document: :resource}
+  has_paper_trail meta: { 
+    title: :title, 
+    parent_title: :resource_title, 
+    document: :resource
+  }
+
+  def resource_title
+    self.resource.present ? self.resource.title : ''
+  end
 
   private
   def complete_title

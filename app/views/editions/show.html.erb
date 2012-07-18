@@ -1,7 +1,8 @@
 <%= page row: false do %>
   <div class="row">
     <div class="span10 offset2">
-      <%= title document.title %>
+      <h2><%= link_to document.title, document %></h2>
+      <%= title 'Mesa de edición' %>
     </div>
   </div>
 

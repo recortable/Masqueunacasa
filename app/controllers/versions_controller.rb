@@ -9,7 +9,7 @@ class VersionsController < ApplicationController
 
   def show
     url = url_for_version(version)
-    url.present? ? redirect_to(url) : render(text: version.inspect)
+    url.present? ? redirect_to(url) : render(action: 'not_found')
   end
 
   private
@@ -17,11 +17,11 @@ class VersionsController < ApplicationController
     case version.item_type
     when 'Section'
       section = Section.find version.item_id
-      url_for(section.document, anchor: section.to_anchor)
+      polymorphic_path(section.document, anchor: section.to_anchor)
     else
       klass = version.item_type.constantize
-      model = klass.find version.item_id
-      url_for(model)
+      model = klass.find_by_id version.item_id
+      model.present? ? url_for(model) : nil
     end
   end
 end
