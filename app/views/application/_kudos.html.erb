@@ -17,7 +17,7 @@
     <tr>
       <td class="editors">
         <%= icon('edit') %>
-        <%= link_to "#{model.editorships_count} editores", polymorphic_path([model, :edition]), class: 'jsify' %>
+        <%= link_to "#{model.editorships_count} editores", polymorphic_path([model, :edition]), class: '' %>
       </td>
     </tr>
   <% end %>
@@ -25,7 +25,7 @@
     <tr>
       <td class="">
         <%= icon('eye-open') %>
-        <%= link_to "#{model.subscribers_count} seguidores", polymorphic_path([model, :edition]), class: 'jsify' %>
+        <%= link_to "#{model.subscribers_count} seguidores", polymorphic_path([model, :edition]), class: '' %>
       </td>
     </tr>
   <% end %>

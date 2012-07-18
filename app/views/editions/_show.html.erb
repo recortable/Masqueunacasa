@@ -21,10 +21,7 @@
   <div class="content">
     <h2>Actividad</h2>
     <%= simple_list versions do |version| %>
-      <%= version.user_name %> ha
-      <%= version.event %> 
-      <%= link_to version.item_type, version %>
-      <%= time_ago_in_words version.created_at %>
+      <%= render version %>
     <% end %>
   </div>
 </div>

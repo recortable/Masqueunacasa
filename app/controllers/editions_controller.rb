@@ -15,20 +15,11 @@ class EditionsController < ApplicationController
     query = query.or(versions[:item_type].eq('Task').
                      and(versions[:item_id].in_any(tasks_ids)))
 
-    clean_versions(Version.where(query).order('id DESC'))
+    Activity.clean_versions(Version.where(query).order('id DESC'))
   end
 
   def show
     respond_with document
   end
 
-  protected
-  def clean_versions(versions)
-    prev = nil
-    versions.select do |version|
-      like_prev = prev && prev.item_type == version.item_type && prev.item_id == version.item_id && prev.whodunnit == version.whodunnit 
-      prev = version
-      !like_prev
-    end
-  end
 end
