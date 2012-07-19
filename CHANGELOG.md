@@ -3,7 +3,13 @@
 TAREAS
 - Enviar emails colectivos en background
 
+## 19/07/2012
+- Counter cache for experiencies and relations
+- Link document fixed
+- More test
+
 ## 18/07/2012
+- Las versiones muestran una actividad decente
 
 
 ## 17/07/2012

@@ -23,6 +23,7 @@ describe Experiencie do
     e = create(:experiencie)
     p.add_relation(e, p.user)
 
+    e.reload
     e.proposals_count.must_equal 1
   end
 end

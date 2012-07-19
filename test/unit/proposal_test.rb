@@ -61,6 +61,7 @@ describe Proposal do
     p = create(:proposal)
     p.add_relation(create(:experiencie), p.user)
     p.add_relation(create(:experiencie), p.user)
+    p.reload
     p.experiencies_count.must_equal 2
   end
 end
