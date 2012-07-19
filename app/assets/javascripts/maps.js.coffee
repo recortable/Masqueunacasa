@@ -1,9 +1,9 @@
 
-options = (center) ->
+options = (center, zoom) ->
   mapOptions =
     center: center,
-    zoom: 5,
-    mapTypeId: google.maps.MapTypeId.HYBRID,
+    zoom: zoom,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
     streetViewControl: false
 
 extractLocations = (divs) ->
@@ -15,23 +15,32 @@ extractLocations = (divs) ->
     locations.push location
   locations
 
-createMap = (container, center) ->
+createMap = (container, center, zoom = 5) ->
   mapCanvas = container
   mapCanvas.css({'width': '100%'}).height(mapCanvas.width())
   map = new google.maps.Map(mapCanvas.get(0),
-          options(center))
+          options(center, zoom))
 
 $.fn.extend
   showMap: ->
     return this.each ->
-      center = new google.maps.LatLng(40.24, -3.24)
-      map = createMap $(this).find('.map'), center
-
       locations = extractLocations $(this).find('.location')
+
+      center = locations[0]
+      zoom = 14
+
+      map = createMap $(this).find('.map'), center, zoom
+
       $.each locations, ->
         new google.maps.Marker
           position: this,
           map: map
+          
+      if locations.length > 1
+        bounds = new google.maps.LatLngBounds
+        bounds.extend location for location in locations
+
+      map.fitBounds bounds if bounds
 
 $.fn.extend
   mapForForm: ->
