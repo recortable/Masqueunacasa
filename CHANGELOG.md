@@ -4,6 +4,7 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 19/07/2012
+- Los enlaces pueden ser editados
 - Counter cache for experiencies and relations
 - Link document fixed
 - More test

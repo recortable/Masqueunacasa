@@ -11,7 +11,7 @@
       <%= link_to icon(:trash), [document, link], rel: "delete-link-#{link.id}", method: :delete, data: { confirm: 
                                                                                                           "¿Estas seguro de que quieres borrar este enlace?" } %>
   <% end %>
-  <h3><%= link_to link.title, link.url %></h3>
+  <h3><%= link_to link.caption, link.url %></h3>
 </div>
   <% end %>
 

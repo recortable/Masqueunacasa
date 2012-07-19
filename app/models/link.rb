@@ -5,13 +5,11 @@ class Link < ActiveRecord::Base
   belongs_to :user
   belongs_to :document, polymorphic: true
 
-  validates :title, presence: true
   validates :url, presence: true
   validates :document, presence: true
   validates :user, presence: true
   #validates :content_type, presence: true
 
-  before_validation :complete_title
   before_validation :set_content_type
 
   has_paper_trail meta: { 
@@ -20,9 +18,8 @@ class Link < ActiveRecord::Base
     document: :document
   }
 
-  private
-  def complete_title
-    self.title ||= self.url
+  def caption
+    title.present? ? title : url
   end
 
   def set_content_type

@@ -13,7 +13,7 @@
         <%= link_to icon(:edit, 'Editar'), [:edit, proposal], rel: 'edit-proposal' %>
         <% if can? :delete, proposal %>
           | <%= link_to icon(:trash), proposal, method: :delete,
-            confirm: "¿Seguro que quieres borrar esta propuesta?" %>
+            data: { confirm: "¿Seguro que quieres borrar esta propuesta?" } %>
         <% end %>
       <% end %>
       <%= title proposal.title %>
