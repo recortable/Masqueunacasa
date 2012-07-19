@@ -20,6 +20,11 @@ class DashboardController < ApplicationController
   def blog
   end
 
+  expose(:activities) { Activities.new }
+  def mailer
+
+  end
+
   def cuatrocerocuatro
     render action: 'cuatrocerocuatro', layout: 'static'
   end

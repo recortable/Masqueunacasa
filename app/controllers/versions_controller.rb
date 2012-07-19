@@ -1,6 +1,6 @@
 class VersionsController < ApplicationController
   respond_to :html
-  expose(:versions) { Activity.site_activity }
+  expose(:versions) { Activities.site_activity }
   expose(:version)
 
   def index

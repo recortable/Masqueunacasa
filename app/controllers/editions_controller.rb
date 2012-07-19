@@ -15,7 +15,7 @@ class EditionsController < ApplicationController
     query = query.or(versions[:item_type].eq('Task').
                      and(versions[:item_id].in_any(tasks_ids)))
 
-    Activity.clean_versions(Version.where(query).order('id DESC'))
+    Activities.clean_versions(Version.where(query).order('id DESC'))
   end
 
   def show

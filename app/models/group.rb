@@ -5,7 +5,7 @@ class Group < Agent
   attr_accessible :user_id, :memberships_count, :banner_image
   attr_accessible :has_blog, :has_pages, :has_announcements
 
-  store :settings, accessors: [:has_blog, :has_pages, :has_announcements]
+  store :settings, accessors: [:has_blog, :has_pages, :has_announcements, :last_mail_at]
 
   [:has_blog, :has_pages, :has_announcements].each do |name|
     define_method "#{name}?" do

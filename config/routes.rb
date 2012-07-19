@@ -54,6 +54,7 @@ Masqueunacasa::Application.routes.draw do
   match '/feed' => 'posts#feed', as: :feed, defaults: { format: 'atom' }
   match '/inicio' => 'dashboard#dashboard'
   match '/community' => 'dashboard#community', as: :community
+  match '/mailer' => 'dashboard#mailer'
   match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'
   match '/quinientos' => 'dashboard#quinientos'
   match '/activity_mail' => 'dashboard#activity_mail'
