@@ -156,6 +156,7 @@ ActiveRecord::Schema.define(:version => 20120719114358) do
     t.text     "body_es"
     t.text     "body_ca"
     t.boolean  "published",                        :default => true
+    t.integer  "proposals_count",                  :default => 0
     t.datetime "created_at",                                         :null => false
     t.datetime "updated_at",                                         :null => false
     t.string   "body_type",         :limit => 16
@@ -166,7 +167,6 @@ ActiveRecord::Schema.define(:version => 20120719114358) do
     t.text     "summary_ca"
     t.text     "summary_en"
     t.integer  "editorships_count",                :default => 0
-    t.integer  "proposals_count",                  :default => 0
   end
 
   add_index "experiencies", ["group_id"], :name => "index_experiencies_on_group_id"
