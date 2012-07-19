@@ -29,6 +29,7 @@ describe "LinksController integration" do
 
     model.links.count.must_equal 1
     link = model.links.first
+    link.document.must_equal model
     link.title.must_equal 'some title'
     link.url.must_equal 'http://mquc.org'
     link.user.must_equal user

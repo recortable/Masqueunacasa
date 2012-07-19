@@ -21,6 +21,7 @@ class Proposal < ActiveRecord::Base
   belongs_to :group
   belongs_to :phase
   belongs_to :category
+
   has_many :relations, dependent: :destroy
   has_many :experiencies, through: :relations 
   has_many :tasks, dependent: :destroy, as: :document

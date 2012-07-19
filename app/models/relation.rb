@@ -1,6 +1,6 @@
 class Relation < ActiveRecord::Base
-  belongs_to :proposal
-  belongs_to :experiencie
+  belongs_to :proposal, counter_cache: :experiencies_count
+  belongs_to :experiencie, counter_cache: :proposals_count
   belongs_to :user
   belongs_to :phase
   belongs_to :category

@@ -7,7 +7,9 @@ class RelationsController < ApplicationController
   expose(:relation)
 
   expose(:experiencies) do
-    Experiencie.where(['id NOT IN (?)', parent.experiencies]).order("title_#{I18n.locale} ASC")
+    eids = parent.experiencies.pluck('experiencies.id')
+    select = eids.size > 0 ? Experiencie.where(['id NOT IN (?)', parent.experiencies]) : Experiencie.scoped
+    select.order("title_#{I18n.locale} ASC")
   end
 
   expose(:valid_term?) { params[:term].present? }

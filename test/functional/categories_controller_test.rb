@@ -11,10 +11,12 @@ describe 'Categories integration' do
   it 'show category proposals' do
     category = create(:category)
     p = create(:proposal, category: category)
+    1.upto(3) { p.add_relation(create(:experiencie), category.user) }
 
     visit category_path(category)
     page.text.must_include p.title
     page.text.must_include p.summary
+    page.text.must_include p.experiencies_count.to_s
   end
 
   it 'can create proposals inside category' do

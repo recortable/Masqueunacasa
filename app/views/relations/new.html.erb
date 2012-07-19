@@ -13,7 +13,7 @@
         <%= hover? :create, Relation do %>
           <%= link_to 'Relacionar', proposal_relations_path(parent, e: experiencie.id), method: :post, rel: 'new-relation' %>
         <% end %>
-        <%= experiencie.title %>
+        <%= link_to experiencie.title, experiencie %>
       </div>
     <% end %>
   </div>

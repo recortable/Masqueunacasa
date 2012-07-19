@@ -20,14 +20,6 @@ describe Proposal do
     Proposal.published.first.must_equal published
   end
 
-  it 'create versions' do
-    proposal = create(:proposal, group: create(:group))
-    Version.count.must_equal 1
-    v = Version.last
-    v.title.must_equal proposal.title
-    v.group_id.must_equal proposal.group_id
-  end
-
   it 'can relate to an experiencie' do
     user = create(:user)
     proposal = create(:proposal)
@@ -63,5 +55,12 @@ describe Proposal do
     r.reload
     r.category.must_equal c2
     r.phase.must_equal c2.phase
+  end
+
+  it 'has experiencies counter' do
+    p = create(:proposal)
+    p.add_relation(create(:experiencie), p.user)
+    p.add_relation(create(:experiencie), p.user)
+    p.experiencies_count.must_equal 2
   end
 end

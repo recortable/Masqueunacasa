@@ -45,7 +45,8 @@ class Experiencie < ActiveRecord::Base
   private
   def add_relations
     if related_proposal_id.present?
-      proposal = Proposal.find related_proposal_id
+      puts "JOEDR #{related_proposal_id}"
+      proposal = Proposal.find_by_id(related_proposal_id.to_i)
       proposal.add_relation(self, self.user) 
     end
   end

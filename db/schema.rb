@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718162850) do
+ActiveRecord::Schema.define(:version => 20120719114358) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -156,7 +156,6 @@ ActiveRecord::Schema.define(:version => 20120718162850) do
     t.text     "body_es"
     t.text     "body_ca"
     t.boolean  "published",                        :default => true
-    t.integer  "proposals_count"
     t.datetime "created_at",                                         :null => false
     t.datetime "updated_at",                                         :null => false
     t.string   "body_type",         :limit => 16
@@ -167,6 +166,7 @@ ActiveRecord::Schema.define(:version => 20120718162850) do
     t.text     "summary_ca"
     t.text     "summary_en"
     t.integer  "editorships_count",                :default => 0
+    t.integer  "proposals_count",                  :default => 0
   end
 
   add_index "experiencies", ["group_id"], :name => "index_experiencies_on_group_id"
@@ -200,17 +200,16 @@ ActiveRecord::Schema.define(:version => 20120718162850) do
   add_index "kudos", ["user_id"], :name => "index_kudos_on_user_id"
 
   create_table "links", :force => true do |t|
-    t.integer  "resource_id"
-    t.integer  "resource_type"
     t.integer  "user_id"
     t.string   "title",         :limit => 300
     t.string   "url",           :limit => 500
     t.string   "content_type",  :limit => 32
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
+    t.integer  "document_id"
+    t.string   "document_type", :limit => 32
   end
 
-  add_index "links", ["resource_id", "resource_type"], :name => "index_links_on_resource_id_and_resource_type"
   add_index "links", ["user_id"], :name => "index_links_on_user_id"
 
   create_table "locations", :force => true do |t|
@@ -282,31 +281,32 @@ ActiveRecord::Schema.define(:version => 20120718162850) do
   end
 
   create_table "proposals", :force => true do |t|
-    t.string   "title_es",          :limit => 200
-    t.string   "title_ca",          :limit => 200
-    t.string   "slug_es",           :limit => 200
-    t.string   "slug_ca",           :limit => 200
+    t.string   "title_es",           :limit => 200
+    t.string   "title_ca",           :limit => 200
+    t.string   "slug_es",            :limit => 200
+    t.string   "slug_ca",            :limit => 200
     t.integer  "user_id"
     t.integer  "phase_id"
     t.integer  "group_id"
-    t.boolean  "published",                         :default => true
-    t.string   "description_es",    :limit => 1000
-    t.string   "description_ca",    :limit => 1000
+    t.boolean  "published",                          :default => true
+    t.string   "description_es",     :limit => 1000
+    t.string   "description_ca",     :limit => 1000
     t.text     "body_es"
     t.text     "body_ca"
     t.text     "settings"
-    t.datetime "created_at",                                          :null => false
-    t.datetime "updated_at",                                          :null => false
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
     t.integer  "category_id"
-    t.string   "body_type",         :limit => 16
+    t.string   "body_type",          :limit => 16
     t.integer  "position"
-    t.integer  "kudos_count",                       :default => 0
-    t.integer  "subscribers_count",                 :default => 0
-    t.integer  "view_count",                        :default => 0
+    t.integer  "kudos_count",                        :default => 0
+    t.integer  "subscribers_count",                  :default => 0
+    t.integer  "view_count",                         :default => 0
     t.text     "summary_es"
     t.text     "summary_ca"
     t.text     "summary_en"
-    t.integer  "editorships_count",                 :default => 0
+    t.integer  "editorships_count",                  :default => 0
+    t.integer  "experiencies_count",                 :default => 0
   end
 
   add_index "proposals", ["category_id"], :name => "index_proposals_on_category_id"

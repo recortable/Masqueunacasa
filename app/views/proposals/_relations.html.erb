@@ -2,7 +2,10 @@
   <%= hover? :create, Experiencie do %>
     <%= link_to icon(:plus, 'Añadir experiencia relacionada'), new_proposal_relation_path(proposal), rel: 'new-relation' %>
   <% end %>
-  <h2>Experiencias relacionadas</h2>
+  <h2>
+    Experiencias relacionadas
+    <small><%= proposal.experiencies_count %></small>
+  </h2>
 </div>
 <%= simple_list proposal.relations do |relation| %>
   <div class="hoverize">

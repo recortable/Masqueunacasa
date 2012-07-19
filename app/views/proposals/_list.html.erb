@@ -14,6 +14,7 @@
 
     <h3>
       <%= link_to proposal.title, proposal %>
+      <small><br><%= icon(:undo, proposal.experiencies_count) %> experiencias</small>
     </h3>
     <%= markdown proposal.summary %>
   </div>

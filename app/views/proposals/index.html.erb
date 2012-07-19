@@ -19,6 +19,7 @@
             <%= proposal.category.title %>
             <%= icon(:heart, proposal.kudos_count) %>
             <%= icon('eye-open', proposal.view_count) %>
+            <%= icon(:undo, proposal.experiencies_count) %>
             <%= 'no summary!' if proposal.summary.blank? %>
             <%= 'no sections!' if proposal.sections.count == 0 %>
             <%= 'body!' if proposal.body.present? %>

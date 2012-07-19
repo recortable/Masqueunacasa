@@ -17,4 +17,12 @@ describe Experiencie do
     results.first.must_equal exp2
     results.last.must_equal exp1
   end
+
+  it 'has proposals counter' do
+    p = create(:proposal)
+    e = create(:experiencie)
+    p.add_relation(e, p.user)
+
+    e.proposals_count.must_equal 1
+  end
 end

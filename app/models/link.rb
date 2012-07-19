@@ -1,12 +1,13 @@
 class Link < ActiveRecord::Base
   attr_accessible :title, :url
+  delegate :title, to: :document, prefix: true
 
   belongs_to :user
-  belongs_to :resource, polymorphic: true
+  belongs_to :document, polymorphic: true
 
   validates :title, presence: true
   validates :url, presence: true
-  validates :resource, presence: true
+  validates :document, presence: true
   validates :user, presence: true
   #validates :content_type, presence: true
 
@@ -15,13 +16,9 @@ class Link < ActiveRecord::Base
 
   has_paper_trail meta: { 
     title: :title, 
-    parent_title: :resource_title, 
-    document: :resource
+    parent_title: :document_title, 
+    document: :document
   }
-
-  def resource_title
-    self.resource.present ? self.resource.title : ''
-  end
 
   private
   def complete_title
