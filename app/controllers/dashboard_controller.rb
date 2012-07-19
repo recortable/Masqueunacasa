@@ -22,7 +22,6 @@ class DashboardController < ApplicationController
 
   expose(:activities) { Activities.new }
   def mailer
-
   end
 
   def cuatrocerocuatro
