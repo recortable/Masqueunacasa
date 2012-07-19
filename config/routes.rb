@@ -57,6 +57,7 @@ Masqueunacasa::Application.routes.draw do
   match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'
   match '/quinientos' => 'dashboard#quinientos'
   match '/activity_mail' => 'dashboard#activity_mail'
+  match "/enter/:id" => "users#enter", as: :enter 
 
   root to: 'dashboard#welcome'
 
@@ -98,8 +99,9 @@ Masqueunacasa::Application.routes.draw do
 
 
     resources :user_sessions, only: [:new, :create, :destroy]
+
     resources :password_recoveries
-    resources :categories, only: [:index, :show] do
+    resources :categories, only: [:show] do
       resource :kudos
       resources :proposals, only: [:new]
       put :up, on: :member
@@ -124,7 +126,6 @@ Masqueunacasa::Application.routes.draw do
   end
 
 
-  match "/enter/:id" => "users#enter", as: :enter 
   namespace :ckeditor do
     resources :pictures, :only => [:index, :create, :destroy]
     resources :attachment_files, :only => [:index, :create, :destroy]

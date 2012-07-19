@@ -9,9 +9,9 @@ class PhasesController < ApplicationController
   end
 
   def show
+    authorize! :read, phase
+    phase.increment_view_counter
     redirect_to phases_path
-    # authorize! :read, phase
-    # phase.increment_view_counter
     # respond_with phase
   end
 

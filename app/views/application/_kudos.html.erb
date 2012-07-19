@@ -35,12 +35,12 @@
           <%= icon('eye-close') %>
           <%= link_to 'Dejar de seguir',
             polymorphic_path([model, model.subscription(current_user)]), 
-            rel: 'unfollow-document', method: :delete, confirm: '¿Dejar de seguir?' %>
+            rel: 'unfollow-document', method: :delete, data: { confirm: '¿Dejar de seguir?' } %>
         <% else %>
           <%= icon('eye-open') %>
           <%= link_to 'Seguir', 
             polymorphic_path([model, :subscribers], u: current_user.id), 
-            rel: 'follow-document', method: :create %>
+            rel: 'follow-document', method: :post %>
         <% end %>
     </tr></td>
   <% end %>

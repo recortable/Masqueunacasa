@@ -15,4 +15,9 @@ class SubscribersController < ApplicationController
     subscriber.destroy
     respond_with subscriber, location: document
   end
+
+  protected
+  def document_location
+    document.class == Category ? [document.phase, document] : document
+  end
 end

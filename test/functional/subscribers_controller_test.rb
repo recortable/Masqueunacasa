@@ -2,20 +2,15 @@ require 'test_helper'
 
 describe 'Subscribers integration' do
   it 'category can be subscribed' do
-    user = create(:user)
-    login_user user
-    category = create(:category)
-    visit polymorphic_path([category.phase, category])
-    find_link('follow-document nofollow').click
-
+    subscribe_probe(create(:category))
   end
 
   it 'proposal can be subscribed' do
-#    subscribe_probe(create(:proposal))
+    subscribe_probe(create(:proposal))
   end
 
   it 'experiencies can be subscribed' do
-#    subscribe_probe(create(:experiencie))
+    subscribe_probe(create(:experiencie))
   end
 
   def subscribe_probe(doc, url = nil)
@@ -26,7 +21,6 @@ describe 'Subscribers integration' do
 
     visit polymorphic_path(url)
     follow_link = find_link('follow-document nofollow')
-    puts follow_link.inspect
     follow_link.click
 
 
