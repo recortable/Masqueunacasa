@@ -12,7 +12,9 @@
       <%= link_to icon('arrow-down'), [:down, proposal], method: :put %>
     <% end %>
 
-    <h3><%= link_to proposal.title, proposal %></h3>
+    <h3>
+      <%= link_to proposal.title, proposal %>
+    </h3>
     <%= markdown proposal.summary %>
   </div>
 <% end %>

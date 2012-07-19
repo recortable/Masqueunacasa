@@ -13,7 +13,7 @@
         <%= link_to icon(:edit, 'Editar'), [:edit, phase, category] %>
         <% if can? :destroy, category %>
           | <%= link_to icon(:trash), [phase, category], method: :delete, 
-            confirm: "¿Seguro que quieres borrar esta pregunta" %>
+            data: { confirm: "¿Seguro que quieres borrar esta pregunta" } %>
         <% end %>
       <% end %>
       <%= title category.question %>

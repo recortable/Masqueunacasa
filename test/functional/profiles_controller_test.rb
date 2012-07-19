@@ -11,9 +11,8 @@ describe 'Profile integration' do
     fill_in 'group_summary', with: 'New group summary'
     click_submit
 
-    puts page.html
     group.reload
-    group.name.must_equal 'New name'
     group.summary.must_equal 'New group summary'
+    group.name.must_equal 'New name'
   end
 end

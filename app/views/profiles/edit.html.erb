@@ -44,7 +44,7 @@
           <%= hover? :destroy, membership do %>
             <%= link_to icon(:cut, 'Quitar'), 
               url_for_membership(current_group, membership),
-              method: :delete, confirm: "¿Quieres quitar a '#{membership.user.title}' de este grupo?", 
+              method: :delete, data: {confirm: "¿Quieres quitar a '#{membership.user.title}' de este grupo?" }, 
               rel: "delete-membership-#{membership.id}" %>
           <% end %>
           <%= avatar_link membership.user, size: :small, class: 'fixed' %>
