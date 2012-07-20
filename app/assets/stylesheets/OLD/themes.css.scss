@@ -18,6 +18,19 @@ html.naranja {
     //color: $rojo;
   }
 
+  #session {
+    background-color: $rojo;
+    .links, .session, .lang-selector {
+      .link-wrapper {
+        background-color: $rojo;
+      }
+    }
+  }
+
+  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
+    background-color: $rojo;
+  }
+
   .corner.colored { background-position: 0 -90px; }
 }
 
@@ -27,6 +40,19 @@ html.azul_neon {
   }
   a {
     color: $azul_neon;
+  }
+
+  #session {
+    background-color: $azul_neon;
+    .links, .session, .lang-selector {
+      .link-wrapper {
+        background-color: $azul_neon;
+      }
+    }
+  }
+
+  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
+    background-color: $azul_neon;
   }
 
   .corner.colored { background-position: 0 -30px; }
@@ -41,6 +67,19 @@ html.verde_neon {
     //color: $verde_neon;
   }
 
+  #session {
+    background-color: $verde_neon;
+    .links, .session, .lang-selector {
+      .link-wrapper {
+        background-color: $verde_neon;
+      }
+    }
+  }
+
+  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
+    background-color: $verde_neon;
+  }
+
   .corner.colored { background-position: 0 -30px; }
 }
 
@@ -52,6 +91,19 @@ html.azul_gris {
     //color: $azul_gris;
   }
 
+  #session {
+    background-color: $azul_gris;
+    .links, .session, .lang-selector {
+      .link-wrapper {
+        background-color: $azul_gris;
+      }
+    }
+  }
+
+  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
+    background-color: $azul_gris;
+  }
+
   .corner.colored { background-position: 0 -120px; }
 }
 
@@ -61,6 +113,19 @@ html.negro {
   }
   h1, h2, h3, h4, h5, h6 {
     //color: $negro;
+  }
+
+  #session {
+    background-color: $negro;
+    .links, .session, .lang-selector {
+      .link-wrapper {
+        background-color: $negro;
+      }
+    }
+  }
+
+  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
+    background-color: $rojo;
   }
 
   .corner.colored { background-position: 0 -60px; }

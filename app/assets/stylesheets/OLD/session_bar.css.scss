@@ -1,0 +1,227 @@
+@import 'variables';
+
+div#session {
+  min-height: 41px;
+  background-color: $fondo;
+  margin-bottom: 20px;
+
+  #logo {
+    float: left;
+    margin-left: 30px;
+    padding: 0;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  .links {
+    float: left;
+    margin-top: 10px;
+    margin-left: 2%;
+
+    .link-wrapper {
+      float: left;
+      height: 21px;
+      padding: 0 0 0 11px;
+      margin-right: 5px;
+      background: url(link_con_muesca-transp.png) no-repeat;
+
+      a, .right-side {
+        height: 21px;
+        background: transparent url(link_con_muesca-transp.png) no-repeat;
+        float: left;
+      }
+
+      a {
+        background-position: left -42px;
+        background-repeat: repeat-x;
+      }
+
+      .right-side {
+        width: 11px;
+        background-position: left -84px;
+      }
+
+      &:hover {
+        background-position: left -21px;
+
+        a {
+          background-position: left -63px;
+          background-repeat: repeat-x;
+        }
+
+        .right-side {
+          width: 11px;
+          background-position: left -105px;
+        }
+      }
+    }
+  }
+
+  .session, .lang-selector {
+    float: right;
+    margin-top: 10px;
+    margin-right: 18%;
+
+    .link-wrapper {
+      margin-left: 10px;
+      height: 21px;
+      float: left;
+      padding: 0 0 0 4px;
+      background: url(caja_link-transp.png) no-repeat;
+
+      a, .right-side {
+        height: 21px;
+        background: transparent url(caja_link-transp.png) no-repeat;
+        float: left;
+      }
+
+      a {
+        background-position: left -42px;
+        background-repeat: repeat-x;
+      }
+
+      .right-side {
+        width: 4px;
+        background-position: left -84px;
+      }
+
+      &:hover {
+        background-position: left -21px;
+
+        a {
+          background-position: left -63px;
+        }
+
+        .right-side {
+          background-position: left -105px;
+        }
+      }
+    }
+  }
+
+  .lang-selector {
+    margin-right: 1%;
+
+    .link-wrapper {
+      margin-left: 3px;
+    }
+  }
+
+  .session .link-wrapper {
+    height: 21px;
+    border: 0;
+    background: url(caja_link_puntas-opac.png) no-repeat left 0px;
+    background-color: $fondo !important;
+    padding: 0 0 0 10px;
+
+    a {
+      padding: 2px 12px;
+      background-color: transparent;
+      height: 16px;
+    }
+
+    .right-side {
+      height: 19px;
+      width: 10px;
+      background: transparent url(caja_link_puntas-opac.png) no-repeat right -42px;
+    }
+
+    &:hover {
+      background: $negro url(caja_link_puntas-opac.png) no-repeat left -21px;
+      background-color: $negro !important;
+
+      a {
+        background-color: transparent;
+        background-image: none;
+        color: $fondo;
+      }
+
+      .right-side {
+        background: transparent url(caja_link_puntas-opac.png) no-repeat right -63px;
+      }
+    }
+
+    &.user {
+      height: 21px;
+      border: none;
+      background-image: none;
+      background-color: $verde_neon !important;
+
+      a, .right-side {
+        background-image: none;
+      }
+    }
+  }
+
+  a {
+    display: inline-block;
+    padding: 2px 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #333;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .link-wrapper:hover {
+    cursor: pointer;
+
+    a {
+      color: $fondo;
+    } 
+  }
+}
+
+
+/*
+ * REESCRIBIR ESTILOS PARA ALGUNAS PÁGINAS CON BARRA DE SESIÓN ESPECIAL
+ */
+
+html.main_domain {
+
+  div#session {
+
+    #logo {
+      display: none;
+    }
+
+    .links {
+      margin-left: 10%;
+
+      .link-wrapper {
+        background: transparent url(link_con_muesca-opac.png) no-repeat;
+        overflow: hidden;
+
+        a, .right-side {
+          background: $fondo;
+        }
+
+        &:hover {
+          background-position: left -21px;
+
+          a, .right-side {
+          background: $negro;
+        }
+        }
+      }
+    }
+
+    .lang-selector {
+      .link-wrapper {
+        background-image: none;
+        background-color: $fondo;
+
+        a, .right-side {
+          background-image: none;
+          background-color: transparent;
+        }
+
+        &:hover {
+          background-color: $negro;
+        }
+      }
+    }
+  }
+}

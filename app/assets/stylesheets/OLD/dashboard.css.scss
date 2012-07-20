@@ -1,0 +1,62 @@
+html.dashboard {
+  
+  div#main {
+    .intro.row {
+      margin-bottom: 20px;
+
+      .span12 {background-color: $fondo;}
+
+      #video-container {
+        padding-bottom: 1.563em;
+      }
+
+      .video {
+        width: 47.5%;
+        min-width: 286px;
+        height: 0;
+        position: relative;
+        margin: 3.75em auto 0;
+        padding-bottom: 27.5%;
+        overflow: hidden;
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .info {
+      overflow: hidden;
+
+      .span4 {
+        background-color: $fondo;
+        padding-bottom: 99999px;
+        margin-bottom: -99999px;
+
+
+        .content {
+          padding: 1em;
+
+          h2 {
+            width: 124px;
+            margin-bottom: 30px;
+            margin-top: 10px;
+            padding-bottom: 30px;
+            font-size: 36px;
+            font-weight: bold;
+            line-height: normal;
+            border-bottom: 2px solid $verde_neon;
+          }
+        }
+      }
+    }
+  }
+}
+
+#dashboard-logos {
+  img {margin-top: 20px;}
+}
