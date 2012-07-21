@@ -7,8 +7,40 @@
     box-shadow: none;
     border-radius: 0;
 
+    li {
+      margin-right: 6px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
     a {
       padding: 0;
+      color: $fondo;
+      text-transform: uppercase;
+      font-weight: bold;
+      line-height: 21px;
+
+      span {
+        display: block;
+        float: left;
+        padding: 0 8px 0 2px;
+        background: transparent url('link_con_muesca-opac.png')
+        repeat-x left -63px;
+
+        &.corner-decoration {
+          width: 10px;
+          height: 21px;
+          padding: 0;
+          background: transparent url('link_con_muesca-opac.png') no-repeat
+          left -21px;
+        }
+      
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
