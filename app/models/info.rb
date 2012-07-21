@@ -5,7 +5,6 @@ class Info
 
 Es un soporte online para ofrecer y debatir alternativas al modelo dominante de vivienda actual, proponiendo experiencias construidas y guías de asesoría que nos ayuden a ver otra manera de hacer las cosas más cooperativa.
 
-Nos imaginamos *masquenacasa* como una comunidad de aprendizaje y práctica, donde compartir experiencias, y poder desarrollar conocimiento y acciones de manera colaborativa para proponer otro modelo colectivo de vivienda que sea...
   TEXT
   COMO =<<-'TEXT'
 Llevamos trabajando desde el año pasado, y en febrero lanzamos el blog inicial donde intentamos abrir el proceso del nombre.
@@ -20,5 +19,16 @@ Es un proyecto abierto a todas aquellas personas, colectivos y entidades que est
 ¿Cómo puedo participar?
 
 *Masqueunacasa* es un proyecto iniciado por lapanaderia y desarrollado en colaboración con sostrecivic y otros colaboradores...
+  TEXT
+  
+  HABITAPEDIA =<<-'TEXT'
+<div class="section-question">
+  ¿Quieres saber cómo resolver tu problema de vivienda de manera colectiva?
+</div>
+<span>Consulta la</span>
+<h2>Habitapedia</h2>
+<p>
+  Estamos recopilando dudas y propuestas útiles para tener en cuenta a lo largo del proceso de construcción colectiva de nuestras viviendas y entornos. ¡La Habitapedia està abierta a la participación de todo el mundo!
+</p>
   TEXT
 end

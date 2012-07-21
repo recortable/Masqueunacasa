@@ -1,6 +1,12 @@
 class DashboardController < ApplicationController
   #before_filter :authenticate_user!
-  expose (:themes) { 'textura01 azul_neon'}
+  expose (:themes) do
+    if action_name == 'welcome'
+      'textura07 azul_neon'
+    else
+      'textura01 azul_neon'
+    end
+  end
   expose(:site) { Site.new }
   expose(:post_list) { site.latest_posts(params[:page]) }
   expose(:groups) { site.groups.reorder('admin DESC, title ASC') }
@@ -11,7 +17,6 @@ class DashboardController < ApplicationController
   end
 
   def welcome
-    # UserMailer.registration_confirmation().deliver
   end
 
   def community
@@ -31,5 +36,4 @@ class DashboardController < ApplicationController
   def quinientos
     render action: 'quinientos', layout: 'static'
   end
-
 end

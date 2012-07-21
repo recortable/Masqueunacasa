@@ -3,19 +3,12 @@
 
   .navbar-inner {
     min-height: 0;
+    padding-left: 29px;
     background: transparent;
     box-shadow: none;
     border-radius: 0;
 
-    li {
-      margin-right: 6px;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
-    a {
+   a {
       padding: 0;
       color: $fondo;
       text-transform: uppercase;

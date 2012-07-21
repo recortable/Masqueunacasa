@@ -1,38 +1,47 @@
 <% title 'Procesos colectivos de vivienda' %>
-<div class="intro row">
-  <div class="corner colored span12"></div>
+<div class="front-header corner colored">
+  <div>
+    <%= image_tag('logo-inicio-1170px.png', alt: 'Procesos colectivos de vivienda', class: 'responsive') %>
+  </div>
+</div>
+<div class="row intro">
   <div class="span12">
-    <%= image_tag('logo-inicio-1170px.png', alt: 'Procesos colectivos de vivienda',
-                  class: 'responsive') %>
-    <div id="video-container">
-      <div class="video">
-        <iframe src="http://player.vimeo.com/video/37086987?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    <div class="row">
+      <div class="video-container span6 offset1">
+        <div class="video">
+          <iframe src="http://player.vimeo.com/video/37086987?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        </div>
+      </div>     
+      <div class="span4">
+        <div class="corner"></div>
+        <div class="content">
+          <h2>¡Hola!</h2>
+          <%= markdown Info::QUE %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div class="info row">
-  <div class="span4 bloc">
-    <div class="content">
-      <h2>Qué</h2>
-      <%= markdown Info::QUE %>
+<div class="info-wrapper">
+  <div class="info clearfix">
+    <div class="habitapedia">
+      <div class="content">
+        <%= raw Info::HABITAPEDIA %>
+      </div>
     </div>
-  </div>
-  <div class="span4 bloc">
-    <div class="content">
-      <h2>Cómo</h2>
-      <%= markdown Info::COMO %>
+    <div class="experiencies">
+      <div class="content">
+        <%= raw Info::HABITAPEDIA %>
+      </div>
     </div>
-  </div>
-  <div class="span4 bloc">
-    <div class="content">
-      <h2>Quiénes</h2>
-      <%= markdown Info::QUIENES %>
-      <div id="dashboard-logos">
-        <%= link_to image_tag('inicio-logo-panaderia.png'),
-          'http://despachodepan.com' %><br>
-        <%= link_to(image_tag('inicio-logo-sostrecivic.png'),
-                      'http://www.sostrecivic.org') %><br>
+    <div class="blog">
+      <div class="content">
+        <%= raw Info::HABITAPEDIA %>
+      </div>
+    </div>
+    <div class="comunity">
+      <div class="content">
+        <%= raw Info::HABITAPEDIA %>
       </div>
     </div>
   </div>

@@ -1,0 +1,98 @@
+.welcome {
+  .front-header {
+    padding: 30px 0 0;
+    height: auto;
+
+    & > div {
+      background-color: $fondo;
+      padding-bottom: 30px;
+    }
+  }
+
+  div.intro {
+    .span12 {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      background-color: #888;
+    }
+  }
+
+  div.info-wrapper {
+    padding-bottom: 120px;
+    background: $fondo url('dotted-border-double.png') repeat-x left 93%;
+
+    div.info {
+      padding: 30px 0;
+      overflow: hidden;
+
+      & > div {
+        width: 25%;
+        float: left;
+
+        .content:before {
+          content: "";
+          height: 112px;
+          display: block;
+        }
+
+        &.habitapedia .content:before {
+          background: url('section-icons.png') no-repeat 50% top;
+        }
+
+        &.experiencies .content:before {
+          background: url('section-icons.png') no-repeat 50% -112px;
+        }
+
+        &.blog .content:before {
+          background: url('section-icons.png') no-repeat 50% -224px;
+        }
+
+        &.comunity .content:before {
+          background: url('section-icons.png') no-repeat 50% -336px;
+        }
+
+        &:last-child .content {
+          background-image: none;
+        }
+
+      }
+        
+      .content {
+        background-color: transparent;     
+        padding-top: 0;
+        margin-bottom: -99999px;
+        padding-bottom: 99999px;
+        background: url('vertical_bar.png') right top repeat-y;
+
+        .section-question {
+          margin-top: 12px;
+          font-weight: bold;
+          font-style: italic;
+          text-align: center;
+        }
+
+        span {
+          display: block;
+          margin: 8px 0 0;
+          font-family: $texto;
+          font-size: 0.9em;
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        h2 {
+          margin: 6px 0 12px;
+          font-weight: bold;
+          text-align: center;
+
+          &:after {
+            content: "_";
+            display: block;
+            margin: -10px 0 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
