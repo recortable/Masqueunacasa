@@ -4,7 +4,7 @@
   <div class="image">
     <h3>Imágen</h3>
     <% if section.image.present? %>
-      <%= image_tag section.image_url(:mini), class: 'fixed' %>
+      <%= image_tag section.image_url(:thumb), class: 'fixed' %>
       <dl class="unstyled">
         <dt>Posición</dt><dd><%= section.image_position %></dd>
         <dt>Enlace</dt><dd><%= section.image_url %></dd>
