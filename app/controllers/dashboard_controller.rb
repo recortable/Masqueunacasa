@@ -2,7 +2,7 @@ class DashboardController < ApplicationController
   #before_filter :authenticate_user!
   expose (:themes) do
     if action_name == 'welcome'
-      'textura07 azul_neon'
+      'textura_inicio azul_neon'
     else
       'textura01 azul_neon'
     end
