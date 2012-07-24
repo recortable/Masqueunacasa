@@ -27,14 +27,14 @@ Y FONDO CON COLOR SÓLIDO
         display: block;
         float: left;
         padding: 0 8px 0 2px;
-        background: transparent url('link_con_muesca-opac.png')
+        background: transparent image-url('link_con_muesca-opac.png')
         left -42px;
 
         &.corner-decoration {
           width: 10px;
           height: 21px;
           padding: 0;
-          background: transparent url('link_con_muesca-opac.png')
+          background: transparent image-url('link_con_muesca-opac.png')
           no-repeat left top;
         }
       }

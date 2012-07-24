@@ -13,13 +13,13 @@
     .span12 {
       padding-top: 30px;
       padding-bottom: 30px;
-      background: $fondo url('fondos/textura_puntos.png');
+      background: $fondo asset-data-url('fondos/textura_puntos.png');
     }
   }
 
   div.info-wrapper {
     padding-bottom: 120px;
-    background: $fondo url('dotted-border-double.png') repeat-x left 93%;
+    background: $fondo image-url(dotted-border-double) repeat-x left 93%;
 
     div.info {
       padding: 30px 0;
@@ -35,7 +35,7 @@
         padding-top: 0;
         margin-bottom: -99999px;
         padding-bottom: 99999px;
-        background: url('vertical_bar.png') right top repeat-y;
+        background: image-url(vertical_bar) right top repeat-y;
 
         a.icon {
           display: block;
