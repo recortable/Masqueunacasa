@@ -1,13 +1,9 @@
 <%= page row: false do %>
   <div class="row">
-    <div class="span6 offset2">
+    <div class="span12">
       <%= title 'Comunidad' %>
     </div>
-    <div class="span4">
-      <h2>Última actividad</h3>
-    </div>
   </div>
-
   <div class="row">
     <div class="span8">
       <% groups.each do |group| %>
@@ -37,6 +33,7 @@
       <% end %>
     </div>
     <div class="span4">
+      <h2>Última actividad</h3>
       <%= simple_list Activities.site_activity(30) do |version| %>
         <%= render version %>
       <% end %>

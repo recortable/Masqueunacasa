@@ -1,5 +1,4 @@
 body {
-  padding-top: 40px;
   background-color: transparent;
 }
 
@@ -7,4 +6,18 @@ body {
   height: 30px;
   background: image-url('pl-1170.png') no-repeat;
   background-color: transparent !important;
+}
+
+#main {
+  position: relative;
+
+  div.page.bloc {
+    padding-top: 20px;
+  
+    img.mquc {
+      position: absolute;
+      top: 5px;
+      left: 21px;
+    }
+  }
 }
