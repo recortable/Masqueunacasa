@@ -53,12 +53,12 @@ $.fn.extend
       lat = inputLat.val()
       lon = inputLon.val()
 
-      inputLat.attr('disabled', 'disabled')
-      inputLon.attr('disabled', 'disabled')
+      #inputLat.attr('disabled', 'disabled')
+      #inputLon.attr('disabled', 'disabled')
 
-      $(this).submit =>
-        inputLat.removeAttr('disabled')
-        inputLon.removeAttr('disabled')
+      #$(this).submit =>
+        #inputLat.removeAttr('disabled')
+        #inputLon.removeAttr('disabled')
 
       marker = new google.maps.Marker
         map: map
