@@ -62,6 +62,15 @@ $.fn.extend
 
       marker = new google.maps.Marker
         map: map
+        
+      $.each [inputLat, inputLon], ->
+        $(this).change ->
+          lat = inputLat.val()
+          lon = inputLon.val()
+          if lat and lon
+            position = new google.maps.LatLng(lat, lon)
+            marker.setPosition(position)
+            map.setCenter(position)
 
       if lat and lon
         position = new google.maps.LatLng(lat, lon)
