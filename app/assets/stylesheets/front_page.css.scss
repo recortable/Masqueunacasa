@@ -28,33 +28,6 @@
       & > div {
         width: 25%;
         float: left;
-
-        .content:before {
-          content: "";
-          height: 112px;
-          display: block;
-        }
-
-        &.habitapedia .content:before {
-          background: url('section-icons.png') no-repeat 50% top;
-        }
-
-        &.experiencies .content:before {
-          background: url('section-icons.png') no-repeat 50% -112px;
-        }
-
-        &.blog .content:before {
-          background: url('section-icons.png') no-repeat 50% -224px;
-        }
-
-        &.comunity .content:before {
-          background: url('section-icons.png') no-repeat 50% -336px;
-        }
-
-        &:last-child .content {
-          background-image: none;
-        }
-
       }
         
       .content {
@@ -63,6 +36,11 @@
         margin-bottom: -99999px;
         padding-bottom: 99999px;
         background: url('vertical_bar.png') right top repeat-y;
+
+        a.icon {
+          display: block;
+          text-align: center;
+        }
 
         .section-question {
           margin-top: 12px;
@@ -84,6 +62,10 @@
           margin: 6px 0 12px;
           font-weight: bold;
           text-align: center;
+
+          a {
+            color: inherit;
+          }
 
           &:after {
             content: "_";
