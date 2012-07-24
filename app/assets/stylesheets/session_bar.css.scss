@@ -1,37 +1,78 @@
+/*============================================
+BARRA DE SESSIÓN ARRIBA DE LA PÁGINA
+Y FONDO CON COLOR SÓLIDO
+============================================*/
+
 #session {
-  margin-bottom: 0;
+  margin-bottom: 12px;
 
   .navbar-inner {
-    min-height: 0;
-    padding-left: 29px;
-    background: transparent;
+    padding: 0 2px;
     box-shadow: none;
     border-radius: 0;
+    background: transparent;
 
-   a {
-      padding: 0;
-      color: $fondo;
+
+    a {
+      margin: 0 2px;
+      padding-left: 0;
+      padding-right: 0;
+      line-height: 21px;
+      color: $negro;
       text-transform: uppercase;
       font-weight: bold;
-      line-height: 21px;
+      text-shadow: none;
 
       span {
         display: block;
         float: left;
         padding: 0 8px 0 2px;
         background: transparent url('link_con_muesca-opac.png')
-        repeat-x left -63px;
+        left -42px;
 
         &.corner-decoration {
           width: 10px;
           height: 21px;
           padding: 0;
-          background: transparent url('link_con_muesca-opac.png') no-repeat
-          left -21px;
+          background: transparent url('link_con_muesca-opac.png')
+          no-repeat left top;
         }
-      
-        &:hover {
-          text-decoration: underline;
+      }
+
+      &:hover span {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+/*============================================
+BARRA DE SESSIÓN PEGADA AL CONTENIDO
+Y FONDO TRANSPARENTE
+============================================*/
+html.dashboard.welcome {
+  body {
+    padding-top: 40px;
+
+    #session {
+      margin-bottom: 0;
+
+      .navbar-inner {
+        min-height: 0;
+        padding-left: 29px;
+
+        a {
+          padding: 0;
+          color: $fondo;
+
+          span {
+            background-position: left -63px;
+
+            &.corner-decoration {
+              background-position: left -21px;
+            }
+          }
         }
       }
     }

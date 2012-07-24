@@ -3,6 +3,8 @@ class DashboardController < ApplicationController
   expose (:themes) do
     if action_name == 'welcome'
       'textura_inicio azul_neon'
+    elsif action_name == 'community'
+      'textura08 rojo'
     else
       'textura01 azul_neon'
     end
