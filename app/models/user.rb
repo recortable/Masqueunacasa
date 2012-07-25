@@ -27,5 +27,10 @@ class User < Agent
   def member?(group)
     Membership.where(group_id: group.id, user_id: self.id).first.present?
   end
-
+  
+  def build_reset_password_token
+    begin
+      self.reset_password_token = SecureRandom.urlsafe_base64
+    end while User.exists?(reset_password_token: self[:reset_password_token])
+  end
 end

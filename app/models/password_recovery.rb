@@ -18,6 +18,7 @@ class PasswordRecovery
     user = User.find_by_email(email)
     if user.present?
       user.build_reset_password_token
+      user.reset_password_sent_at = Time.now
       user.save
       UserMailer.password_recovery_email(user.id).deliver
       true
