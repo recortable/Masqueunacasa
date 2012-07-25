@@ -1,0 +1,19 @@
+html.usersessions.new {
+  .page.bloc {
+    padding-bottom: 200px;
+    background-image: asset-data-url('dotted-border-double.png');
+    background-position: left 93%;
+    background-repeat: repeat-x;
+
+    .row [class*="span"] {
+      margin-top: 30px;
+      margin-bottom: 30px;
+
+      h1, h2 {
+        margin-bottom: 35px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid $azul_neon;
+      }
+    }
+  }
+}

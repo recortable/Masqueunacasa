@@ -3,7 +3,7 @@ class UserSessionsController < ApplicationController
   respond_to :html
   expose(:user_session)
   expose(:user) { User.new }
-  expose(:themes) { 'textura04 azul_gris' }
+  expose(:themes) { 'textura_inicio negro' }
 
   def new
     if request.subdomain.present?

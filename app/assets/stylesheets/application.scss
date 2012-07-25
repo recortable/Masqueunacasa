@@ -7,6 +7,7 @@
 @import "shared/pagination";
 @import "header";
 @import "forms";
+@import "themes";
 @import "session_bar";
 @import "dashboard";
 @import "welcome";
@@ -14,7 +15,6 @@
 @import "groups";
 @import "models";
 @import "posts";
-@import "themes";
 @import "users";
 @import "messages";
 @import "controls-buttons";
@@ -22,3 +22,4 @@
 @import "announcements";
 @import "galleria/galleria.classic";
 @import "shared/images";
+@import "user_sessions";

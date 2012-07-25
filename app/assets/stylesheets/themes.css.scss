@@ -1,5 +1,3 @@
-@import 'variables';
-
 //html.cuatro { background-image: asset-data-url('fondos/textura_e404.png'); }
 //html.cinco { background-image: asset-data-url('fondos/textura_e500.png'); }
 
@@ -55,6 +53,10 @@ html.azul_neon {
     color: $azul_neon;
   }
 
+  #session {
+    background-color: $azul_neon;
+  }
+
   .corner.colored { background-position: 0 -30px; }
 }
 
@@ -65,6 +67,10 @@ html.verde_neon {
   }
   h1, h2, h3, h4, h5, h6 {
     //color: $verde_neon;
+  }
+
+  #session {
+    background-color: $verde_neon;
   }
 
   .corner.colored { background-position: 0 -30px; }
@@ -78,6 +84,10 @@ html.azul_gris {
     //color: $azul_gris;
   }
 
+  #session {
+    background-color: $azul_gris;
+  }
+
   .corner.colored { background-position: 0 -120px; }
 }
 
@@ -89,9 +99,20 @@ html.negro {
     //color: $negro;
   }
 
+  #session {
+    background-color: $negro;
+  }
+
   .corner.colored { background-position: 0 -60px; }
+
+  .dotted-bg { background: asset-data-url('fondos/textura_puntos.png'); }
 }
 
+.corner.naranja { background-position: 0 -90px; }
+.corner.rojo { background-position: 0 -60px; }
+.corner.azul_neon { background-position: 0 -30px; }
+.corner.verde_neon { background-position: 0 -60px; }
+.corner.azul_gris { background-position: 0 -120px; }
 .corner.negro { background-position: 0 -60px; }
 
 html.subdomain #session {background-color: $fondo;}
