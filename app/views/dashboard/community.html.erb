@@ -7,7 +7,7 @@
   <div class="row">
     <div class="span8">
       <% groups.each do |group| %>
-        <div class="row">
+        <div class="row group">
           <div class="span2">
             <%= render_group_bar group %>
           </div>
@@ -18,25 +18,29 @@
               <% end %>
               <h2><%= link_to group.title, group %></h2>
               <%= markdown group.summary %>
-              <%= link_to 'Leer más...', profile_url(subdomain: group.subdomain) %>
             </div>
           </div>
-          <div class="span2">
-            <h4>Últimas entradas al blog</h4>
-            <%= simple_list group.posts.latest do |post| %>
-              <div style="width: 100%; height: 1.2em; overflow: hidden; text-overflow: ellipsis;">
-                <%= link_to post.title, post_url(post, subdomain: group.subdomain) %>
-              </div>
-            <% end %>
-          </div>
+          <% if group.has_blog? %>
+            <div class="span2 blog-entries">
+              <h4>Últimas entradas al blog</h4>
+              <% group.posts.latest.each do |post| %>
+                <div>
+                  <%= link_to post.title, post_url(post, subdomain: group.subdomain) %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
-    <div class="span4">
-      <h2>Última actividad</h3>
-      <%= simple_list Activities.site_activity(30) do |version| %>
-        <%= render version %>
-      <% end %>
+    <div class="span4 sidebar sidebar-right">
+      <div class="sidebar-bloc activity dotted-bg">
+        <div class="corner-opac"></div>
+        <h2>Última actividad</h3>
+        <%= simple_list Activities.site_activity(30) do |version| %>
+          <%= render version %>
+        <% end %>
+      </div>
     </div>
   </div>
 <% end %>

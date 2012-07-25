@@ -1,5 +1,13 @@
+div.page.bloc {
+  overflow: hidden;
+}
+
 .content, .bloc {
   background-color: $fondo;
+}
+
+.content-inner {
+  padding-left: 15px;
 }
 
 .content {
@@ -14,7 +22,17 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $titulos;
   font-weight: normal;
-} 
+}
+
+img {
+  height: auto;
+}
+
+.corner-opac { 
+  height: 30px;
+  position: relative;
+  background: image-url('corner-opaco.png') no-repeat; 
+}
 
 .hoverize {
   position: relative;

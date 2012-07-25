@@ -51,12 +51,13 @@ Y FONDO CON COLOR SÓLIDO
 BARRA DE SESSIÓN PEGADA AL CONTENIDO
 Y FONDO TRANSPARENTE
 ============================================*/
-html.dashboard.welcome {
+html.dashboard.welcome, html.phases {
   body {
     padding-top: 40px;
 
     #session {
       margin-bottom: 0;
+      background-color: transparent !important;
 
       .navbar-inner {
         min-height: 0;

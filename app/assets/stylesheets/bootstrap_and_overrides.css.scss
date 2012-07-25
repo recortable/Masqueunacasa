@@ -1,5 +1,11 @@
-
 @import "bootstrap";
 @import "font-awesome";
 @import "bootstrap-responsive";
 
+.table {
+  margin-bottom: 0;
+
+    tbody tr:hover td, .table tbody tr:hover th {
+    background-color: transparent;
+  }
+}

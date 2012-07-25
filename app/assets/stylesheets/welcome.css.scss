@@ -19,7 +19,7 @@
 
   div.info-wrapper {
     padding-bottom: 120px;
-    background: $fondo image-url(dotted-border-double) repeat-x left 93%;
+    background: $fondo asset-data-url('dotted-border-double.png') repeat-x left 93%;
 
     div.info {
       padding: 30px 0;
