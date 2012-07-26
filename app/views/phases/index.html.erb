@@ -1,7 +1,25 @@
 <% title 'Habitapedia' %>
 <%= page row: false do %>
-
-  <div class="row">
+  <%# Estilos para .intro en welcome.css.scss %>
+  <div class="row intro">
+    <div class="span12">
+      <div class="row">
+        <div class="video-container span6 offset1">
+          <div class="video">
+            <iframe src="http://player.vimeo.com/video/37086987?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+          </div>
+        </div>     
+        <div class="span4">
+          <div class="corner"></div>
+          <div class="content">
+            <h2>¡Hola!</h2>
+            <%= markdown Info::QUE %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row phases">
     <% phases.each do |phase| %>
       <div class="span4">
         <div class="content">
