@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    authorize! :update, user, current_user
     respond_with user
   end
 
