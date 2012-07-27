@@ -1,5 +1,5 @@
 $.fn.extend
-  center_image_v: ->
+  expand_image: ->
     return this.each ->
       img = $(this).find('img')
       if img.height() < 170

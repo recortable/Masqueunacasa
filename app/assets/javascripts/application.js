@@ -5,7 +5,7 @@
 //= require posts
 //= require maps
 //= require mediafy
-//= require experiences
+//= require experiencies
 //= require galleria/galleria-1.2.7.min
 //= require galleria/galleria.classic.min
 //= require ckeditor/init
@@ -35,7 +35,7 @@ $(function() {
 
 $(window).load(function() {
   $('.experiencies.index .quadricula .experiencie').each(function() {
-    $(this).center_image_v()
+    $(this).expand_image()
   });
 });
 
