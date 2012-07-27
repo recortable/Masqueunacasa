@@ -44,7 +44,10 @@ class Ability
 
       can(:update, User) { |usr| usr == user }
       can(:update, Group) {|group| participant?(group, user) }
+
       can(:manage, Post) {|post| participant?(current_group, user) }
+      can(:delete, Post) {|post| post.user_id == user.id }
+
       can(:manage, Page) {|page| participant?(page.group, user) }
       can(:manage, Announcement) {|ann| participant?(ann.group, user) }
       cannot :delete, Announcement

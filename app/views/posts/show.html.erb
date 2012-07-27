@@ -13,7 +13,11 @@
   <%= corner_span 'span6 center' do %>
     <div class="hoverize">
       <%= hover? :update, post do %>
-        <%= link_to 'Editar', [:edit, post] %>
+        <%= link_to icon(:pencil, 'Editar'), [:edit, post] %>
+        <% if can? :delete, post %>
+          |  <%= link_to icon(:trash), post, method: :delete,
+            rel: "delete-post-#{post.id}", data: { confirm: '¿Quieres borrar esta entrada?' } %>
+        <% end %>
       <% end %>
       <h3><%= l post.published_at %></h3>
       <%= title post.title %>

@@ -14,6 +14,7 @@ FactoryGirl.define do
 
   factory :group do
     sequence(:name) {|n| "Group#{n}" }
+    title { "#{name} title" }
     summary { "#{name} summary" }
     user
   end

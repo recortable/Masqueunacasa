@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     post.group = current_group
     authorize! :create, post
     flash[:notice] = t('posts.notices.created') if post.save
-    respond_with post, location: root_path
+    respond_with post
   end
 
   def update
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   def destroy
     authorize! :delete, post
     flash[:notice] = t('posts.notices.destroyed') if post.destroy
-    respond_with post, location: root_path
+    respond_with post, location: posts_path
   end
 
   def feed

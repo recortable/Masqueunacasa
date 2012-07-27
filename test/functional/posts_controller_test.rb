@@ -11,6 +11,16 @@ describe 'Posts integration' do
     page.text.wont_include other.title
   end
 
+  it 'deletes posts' do
+    group = setup_group
+    post = create(:post, group: group)
+    login_user post.user
+
+    visit post_path(post)
+    find_link("delete-post-#{post.id} nofollow").click
+    post.must_be :destroyed?
+  end
+
   it 'creates a post' do
     group = setup_group
 
