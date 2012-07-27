@@ -23,6 +23,42 @@ body {
     overflow: hidden;
     padding-bottom: 90px;
   }
+
+  .main-header {
+    margin-bottom: 30px;
+
+    .banner {
+      min-height: 200px;
+      position: relative;
+
+      .overlay {
+        position: absolute;
+        left: 0;
+        top: -42px;
+
+        h2 {
+          height: 32px;
+          margin: 0;
+          padding: 20px;
+          float: left;
+          background-color: $fondo;
+
+          &.black {
+            color: $fondo;
+            background-color: $negro;
+          }
+        }
+        
+        .shape {
+          width: 50px;
+          height: 72px;
+          float: left;
+          background-image: image-url('esquinas.png');
+          background-position: 0 0;
+        }
+      }
+    }
+  }
 }
 
 .content, .bloc {

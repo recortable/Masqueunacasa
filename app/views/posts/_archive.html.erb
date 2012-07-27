@@ -1,4 +1,4 @@
-<%= corner_span 'archive' do %>
+<div class="archive">
   <div class="hoverize">
     <%= hover? :create, Post do %>
       <%= link_to icon(:plus, 'Publicar entrada'), new_post_path, rel: 'new-post' %>
@@ -13,4 +13,4 @@
   <%= simple_list posts do |post| %>
     <h4><%= link_to post.title, post_url(post, subdomain: post.group.subdomain) %></h4>
   <% end %>
-<% end %>
+</div>

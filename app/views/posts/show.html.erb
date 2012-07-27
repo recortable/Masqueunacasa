@@ -1,33 +1,33 @@
+<%= page head: false, row: false do %>
+  <%= render_group_header post.group %>
 
-<%= render_group_header post.group %>
-
-<div class="row">
-  <%= user_column 'span2' do %>
-    <%= fake_img_fixed(150, 150, text: 'Post') %> 
-    <%= render_kudos post %>
-    <% if post.group == current_group %>
-      <%= render_group_sections %>
-    <% end %>
-  <% end %>
-
-  <%= corner_span 'span6 center' do %>
-    <div class="hoverize">
-      <%= hover? :update, post do %>
-        <%= link_to 'Editar', [:edit, post] %>
+  <div class="row">
+    <%= user_column 'span2' do %>
+      <%= fake_img_fixed(150, 150, text: 'Post') %> 
+      <%= render_kudos post %>
+      <% if post.group == current_group %>
+        <%= render_group_sections %>
       <% end %>
-      <h3><%= l post.published_at %></h3>
-      <%= title post.title %>
-      <%= render_post_media(post) %>
-    </div>
-    <%= render_sections post %>
-    <%= raw post.body %>
-    <%= simple_list post.attachments do |attachment| %>
-      <%= link_to attachment.file_identifier, attachment.file_url %>
     <% end %>
-  <% end %>
 
-  <div class="sidebar span4">
-    <%= render_posts_archive post.group.posts, post.group %>
+    <div class='span6 center'>
+      <div class="hoverize">
+        <%= hover? :update, post do %>
+          <%= link_to 'Editar', [:edit, post] %>
+        <% end %>
+        <h3><%= l post.published_at %></h3>
+        <%= title post.title %>
+        <%= render_post_media(post) %>
+      </div>
+      <%= render_sections post %>
+      <%= raw post.body %>
+      <%= simple_list post.attachments do |attachment| %>
+        <%= link_to attachment.file_identifier, attachment.file_url %>
+      <% end %>
+    </div>
+
+    <div class="sidebar span4">
+      <%= render_posts_archive post.group.posts, post.group %>
+    </div>
   </div>
-</div>
-
+<% end %>

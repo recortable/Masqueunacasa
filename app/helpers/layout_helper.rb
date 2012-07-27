@@ -15,7 +15,7 @@ module LayoutHelper
 
   def user_column(css_class, color = :none, &block)
     content = capture(&block)
-    raw "<div class='#{css_class}'><div class='corner #{color}'></div><div class='user-column'>#{content}</div></div>"
+    raw "<div class='#{css_class}'><div class='user-column'>#{content}</div></div>"
   end
 
   def tabs(&block)
