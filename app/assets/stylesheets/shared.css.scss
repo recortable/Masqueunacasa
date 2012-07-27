@@ -46,6 +46,11 @@ img {
   height: auto;
 }
 
+img.centered {
+  display: block;
+  margin: 0 auto;
+}
+
 .corner-opac { 
   height: 30px;
   position: relative;

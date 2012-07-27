@@ -12,8 +12,10 @@
         <div class="span4">
           <div class="corner"></div>
           <div class="content">
-            <h2>¡Hola!</h2>
-            <%= markdown Info::QUE %>
+            <h2>Habitapedia</h2>
+            <p>
+            Estamos recopilando dudas y propuestas útiles para tener en cuenta a lo largo del proceso de construcción colectiva de nuestras viviendas y entornos. ¡La Habitapedia està abierta a la participación de todo el mundo!
+            </p>
           </div>
         </div>
       </div>
@@ -29,7 +31,7 @@
                 rel: "edit-phase-#{phase.id}" %>
             <% end %>
 
-            <%= image_tag(phase.image_url, width: 150, height: 150, alt: phase.title, class: 'fixed centered') %>
+            <%= image_tag(phase.image_url, width: 150, height: 150, alt: phase.title, class: 'fixed centered phase-image') %>
             <h2><%= phase.title %></h2>
             <div class="summary markdown">
               <%= markdown phase.summary %>
