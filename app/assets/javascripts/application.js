@@ -5,6 +5,7 @@
 //= require posts
 //= require maps
 //= require mediafy
+//= require experiences
 //= require galleria/galleria-1.2.7.min
 //= require galleria/galleria.classic.min
 //= require ckeditor/init
@@ -29,6 +30,12 @@ $(function() {
         console.log(data);
       }
     });
+  });
+});
+
+$(window).load(function() {
+  $('.experiencies.index .quadricula .experiencie').each(function() {
+    $(this).center_image_v()
   });
 });
 

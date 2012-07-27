@@ -1,25 +1,25 @@
-<%= render_banner 'Experiencias', experiencies_path %>
-
-<div class="row">
-  <%= user_column 'span2' do %>
-    <%= avatar_link current_group %>
-    <div class="controls">
-    <%= link_box '+ Experiencia', new_experiencie_path, rel: 'new-experiencie' if can? :create, Experiencie %>
-    </div>
-  <% end %>
-
-  <%= corner_span 'span6' do %>
-    <%= title 'Experiencias' %>
-    <%= simple_list experiencies do |experiencie| %>
-      <h3>
-        <%= link_to experiencie.title, experiencie %>
-        <small>
-          <%= icon(:heart, experiencie.kudos_count) %>
-          <%= icon('eye-open', experiencie.view_count) %>
-          <%= icon(:undo, experiencie.proposals_count) %>
-        </small>
-      </h3>
+<%= page row: false do %> 
+  <%= title 'Experiencias' %>
+  <div class="quadricula">
+    <% if can? :create, Experiencie %>
+      <div id="add_image">
+        <%= link_to "Añadir<br /> experiencia".html_safe, new_experiencie_path, rel: 'new-experiencie' %>
+      </div>
     <% end %>
-  <% end %>
-</div>
-
+    <% experiencies.each do |experiencie| %>
+      <%= div_for experiencie do %>
+        <% if experiencie.images.empty? %>
+          No hay imagen disponible
+        <% else %>
+          <%= link_to image_tag(experiencie.image), experiencie if !experiencie.images.empty? %>
+        <% end %>
+        <div class="overlay">
+          <div class="transparent-bg"></div>
+          <div class="experiencie-text">
+            <%= link_to experiencie.title, experiencie %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

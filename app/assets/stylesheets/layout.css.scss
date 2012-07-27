@@ -11,13 +11,14 @@ body {
 #main {
   position: relative;
 
+  a.mquc {
+    position: absolute;
+    top: 5px;
+    left: 21px;
+    z-index: 2;
+  }
+
   div.page.bloc {
     padding-top: 16px;
-  
-    a.mquc {
-      position: absolute;
-      top: 5px;
-      left: 21px;
-    }
   }
 }

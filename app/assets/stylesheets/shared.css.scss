@@ -1,5 +1,28 @@
-div.page.bloc {
-  overflow: hidden;
+body {
+  background: transparent;
+  padding-bottom: 60px;
+}
+
+#main {  
+  position: relative;
+  margin-bottom: 250px;
+
+  &:after {
+    content: "";
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    background-image: asset-data-url('dotted-border-double.png');
+    background-color: $fondo;
+    background-repeat: repeat-x;
+  }
+ 
+  .page.bloc {
+    overflow: hidden;
+    padding-bottom: 90px;
+  }
 }
 
 .content, .bloc {
@@ -12,11 +35,6 @@ div.page.bloc {
 
 .content {
   padding: 3px 30px 30px 30px;
-}
-
-body {
-  background: transparent;
-  padding-bottom: 60px;
 }
 
 h1, h2, h3, h4, h5, h6 {

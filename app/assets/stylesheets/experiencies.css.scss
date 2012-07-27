@@ -1,0 +1,79 @@
+html.experiencies.index {
+  div.quadricula {
+    margin-top: 30px;
+    margin-left: -25px;
+
+    #add_image {
+      position: relative;
+
+      a {
+        display: block;
+        height: 35%;
+        padding-top: 65%;
+        text-transform: uppercase;
+        background: $azul_neon;
+
+        &:before {
+          content: "";
+          width: 78px;
+          height: 78px;
+          position: absolute;
+          top: 18px;
+          left: 45px;
+          background: asset-data-url('add_icon-big.png') no-repeat;
+        }
+
+        &:hover {
+          background-color: $negro;
+          color: $azul_neon;
+
+          &:before {
+            background-position: 0 -78px;
+          }
+        }
+      }
+    }
+
+    .experiencie, #add_image {
+      width: 170px;
+      height: 170px;
+      position: relative;
+      float: left;
+      margin-left: 25px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      text-align: center;
+
+      img {
+        width: 170px;
+        max-width: 2000px;
+      }
+
+      .overlay {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+
+        .transparent-bg {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background: #000;
+          filter: alpha(opacity=50);
+          opacity: 0.5;
+        }
+
+        .experiencie-text {
+          position: relative;
+          padding: 4px 4px 6px;
+          text-align: left;
+          color: $fondo;
+          
+          a {
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+} 

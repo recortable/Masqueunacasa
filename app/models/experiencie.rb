@@ -37,6 +37,12 @@ class Experiencie < ActiveRecord::Base
 
   after_create :add_relations
 
+  def image
+    img = images.first
+    return img.external_image_url if !img.external_image_url.blank?
+    return img.image.small
+  end
+
   # TODO: hacer que funcione para otros idiomas
   def self.search(term)
     Experiencie.where(Experiencie.arel_table[:title_es].matches("%#{term}%")).order('title_es ASC')
