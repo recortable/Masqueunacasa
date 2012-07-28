@@ -37,7 +37,6 @@ describe 'Memberships integration' do
     membership = group.add_member(create(:user))
 
     visit edit_profile_path
-    puts page.html
     find_link("delete-membership-#{membership.id} nofollow").click
     group.member?(membership.user).must_equal false
   end

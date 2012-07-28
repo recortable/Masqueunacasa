@@ -2,14 +2,6 @@
 <div class="row">
   <%= corner_span 'span12' do %>
     <%= title 'Crear colectivo' %>
-    <%= simple_form_for group do |form| %>
-      <%= form.input :name %>
-      <%= form.input :summary, as: :text %>
-      <h3>Funcionalidades</h3>
-      <%= form.input :has_blog, as: :boolean %>
-      <%= form.input :has_pages, as: :boolean %>
-      <%= form.input :has_announcements, as: :boolean %>
-      <%= form.button :submit %>
-    <% end %>
+    <%= render 'form' %>
   <% end %>
 </div>

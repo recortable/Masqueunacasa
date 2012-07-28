@@ -28,14 +28,10 @@ describe 'Pages integration' do
   end
 
   it 'member can create pages' do
-    group = create(:group)
-    user = create(:user)
-    group.add_member(user)
+    group = setup_group
 
-    login_user(user)
-    subdomain(group.subdomain)
     visit pages_path
-    page.find('a[rel="new-page"]').click
+    find_link('new-page').click
     page.current_path.must_equal new_page_path
   end
 end

@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
 
   def send_message(message)
     if message.resource_type == "Group"
-      recipients = message.group.recipients(scope = 'members')
+      recipients = message.group.recipients
       recipients.each do |user|
         GroupMailer.message_to_group(message, user.email).deliver 
       end

@@ -15,11 +15,13 @@ describe 'Groups integration' do
     visit new_group_path
 
     fill_in 'group_name', with: 'Name'
+    fill_in 'group_title', with: 'Group title'
     fill_in 'group_summary', with: 'summary'
 
     click_submit
     group = Group.last
     group.name.must_equal 'Name'
+    group.title.must_equal 'Group title'
     group.summary.must_equal 'summary'
   end
 

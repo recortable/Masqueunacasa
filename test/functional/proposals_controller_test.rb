@@ -19,7 +19,7 @@ describe 'Proposals integration' do
     proposal = create(:proposal)
     link = proposal.add_link(build(:link), create(:user))
     visit proposal_path(proposal)
-    page.text.must_include link.title
+    page.text.must_include link.caption
   end
 
   it 'shows proposal relations' do

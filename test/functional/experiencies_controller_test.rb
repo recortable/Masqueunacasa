@@ -33,7 +33,7 @@ describe 'Experiencies integration' do
     experiencie.add_link(link, user)
 
     visit experiencie_path(experiencie)
-    page.text.must_include link.title
+    page.text.must_include link.caption
   end
 
   it 'can create link if curent_user' do

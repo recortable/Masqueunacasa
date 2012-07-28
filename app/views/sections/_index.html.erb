@@ -9,7 +9,7 @@
         <%= link_to icon('arrow-down'), [:down, section], method: :put %>
         <% if can? :delete, section %>
           | <%= link_to icon(:trash), [document, section], method: :delete,
-            confirm: "¿Quieres borrar esta sección?" %>
+            data: { confirm: "¿Quieres borrar esta sección?" } %>
         <% end %>
       <% end %>
       <a name="<%= section.title? ? section.title : section.id %>">

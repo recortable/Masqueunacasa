@@ -10,20 +10,9 @@ describe Group do
     owner = group.user
     member = create(:user)
     group.add_member(member)
-    follower = create(:user)
-    group.add_member(follower, :follow)
-
-    admin = group.recipients('admin')
-    admin.size.must_equal 1 
-    admin.must_include owner
-
-    members = group.recipients('members')
-    members.size.must_equal 2
-    members.must_include owner
-    members.must_include member
 
     all = group.recipients
-    all.size.must_equal 3
-    [owner, member, follower].each {|u| all.must_include u }
+    all.size.must_equal 2
+    [owner, member].each {|u| all.must_include u }
   end
 end

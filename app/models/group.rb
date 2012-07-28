@@ -42,7 +42,7 @@ class Group < Agent
     admin? ? false : slug
   end
 
-  def recipients(scope = 'all')
+  def recipients
     users
   end
 end

@@ -78,8 +78,9 @@ FactoryGirl.define do
   end
 
   factory :link do
-    sequence(:title) {|n| "Link #{n}" }
     sequence(:url) {|n| "http://mquc.org/#{n}" }
+    document  factory: :experiencie
+    user
   end
 
   factory :task do

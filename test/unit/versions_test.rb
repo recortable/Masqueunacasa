@@ -32,7 +32,7 @@ describe Version do
 
   it 'version created by link' do
     p = create(:proposal)
-    t = create(:link, resource: p)
+    t = create(:link, document: p)
     verify(t, title: t.title, parent_title: p.title, document: p)
   end
 

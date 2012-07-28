@@ -4,7 +4,7 @@ describe HasSubscriptors do
 
   it 'can subscribe' do
     user = create(:user)
-    doc = create(:phase)
+    doc = create(:proposal)
     s = doc.subscribe(user)
     s.user.must_equal user
     s.document.must_equal doc
@@ -12,7 +12,7 @@ describe HasSubscriptors do
 
   it 'check subscriptor' do
     user = create(:user)
-    doc = create(:phase)
+    doc = create(:proposal)
     doc.subscriptor?(user).must_equal false
     doc.subscribe(user)
     doc.subscriptor?(user).must_equal true
@@ -20,7 +20,7 @@ describe HasSubscriptors do
 
   it 'has subscriptors' do
     user = create(:user)
-    doc = create(:phase)
+    doc = create(:proposal)
 
     doc.subscriptors.count.must_equal 0
     doc.subscribe(user)
@@ -30,7 +30,7 @@ describe HasSubscriptors do
 
   it 'ubsubcribe' do
     user = create(:user)
-    doc = create(:phase)
+    doc = create(:proposal)
     doc.unsubscribe(user).must_equal false
     doc.subscribe(user)
     doc.unsubscribe(user).wont_equal false

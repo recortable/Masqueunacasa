@@ -8,15 +8,17 @@ describe 'Users integration' do
   end
 
   it 'create users' do
-    admin = create(:user, admin: true)
-    login_user(admin)
     visit new_user_path
     page.fill_in 'user_name', with: 'NewUser'
+    page.fill_in 'user_title', with: 'User title'
     page.fill_in 'user_email', with: 'user@email.com'
     page.fill_in 'user_password', with: 'secret'
     page.fill_in 'user_password_confirmation', with: 'secret'
     click_submit
+
     user = User.last
     user.name.must_equal 'NewUser'
+    user.title.must_equal 'User title'
+    user.email.must_equal 'user@email.com'
   end
 end

@@ -7,7 +7,7 @@
   <%= corner_span 'span6' do %>
     <div class="hoverize">
       <%= hover? :create, Page do %>
-        <%= link_to icon(:plus, 'Añadir documento'), new_page_path %>
+        <%= link_to icon(:plus, 'Añadir documento'), new_page_path, rel: 'new-page' %>
       <% end %>
       <%= title "Documentos" %>
     </div>

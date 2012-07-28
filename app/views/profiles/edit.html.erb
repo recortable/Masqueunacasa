@@ -4,30 +4,13 @@
     <h3>Cambiar imágen</h3>
     <%= simple_form_for current_group do |form| %>
       <%= form.input :avatar_image %>
-      <%= submit_button_for form, value: 'Cambiar imágen' %>
+      <%= submit_button_for form, value: 'Cambiar imágen', name: 'commit-image' %>
     <% end %>
   <% end %>
 
   <%= corner_span('span6') do %>
     <%= title "#{current_group.name}" %>
-    <%= simple_form_for current_group, html: {class: 'clearfix'} do |form| %>
-      <h3>Información general</h3>
-      <p>Esta información será visible para el resto de las personas</p>
-      <%= form.input :name %>
-      <%= form.input :title %>
-      <%= form.input :summary, as: :text %>
-      <h3>Difusión</h3>
-      <%= form.input :email %>
-      <%= form.input :website %>
-      <%= form.input :twitter %>
-      <%= form.input :facebook %>
-      <h3>Funcionalidades</h3>
-      <% [:blog, :pages, :announcements].each do |item| %>
-        <%= form.input "has_#{item}", as: :boolean %>
-      <% end %>
-
-      <%= submit_button_for form %>
-    <% end %>
+    <%= render partial: 'groups/form', locals: {group: current_group } %>
   <% end %>
 
   <div class="span4">

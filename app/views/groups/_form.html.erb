@@ -1,0 +1,19 @@
+<%= simple_form_for group, html: {class: 'clearfix'} do |form| %>
+  <h3>Información general</h3>
+  <p>Esta información será visible para el resto de las personas</p>
+  <%= form.input :name %>
+  <%= form.input :title %>
+  <%= form.input :summary, as: :text %>
+  <h3>Difusión</h3>
+  <%= form.input :email %>
+  <%= form.input :website %>
+  <%= form.input :twitter %>
+  <%= form.input :facebook %>
+  <h3>Funcionalidades</h3>
+  <% [:blog, :pages, :announcements].each do |item| %>
+    <%= form.input "has_#{item}", as: :boolean %>
+  <% end %>
+
+  <%= submit_button_for form %>
+<% end %>
+
