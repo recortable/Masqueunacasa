@@ -1,79 +1,39 @@
-/*============================================
-BARRA DE SESSIÓN ARRIBA DE LA PÁGINA
-Y FONDO CON COLOR SÓLIDO
-============================================*/
+body {
+  padding-top: 40px;
 
-#session {
-  margin-bottom: 12px;
+  #session {
+    margin-bottom: 0;
+    background-color: transparent !important;
 
-  .navbar-inner {
-    padding: 0 2px;
-    box-shadow: none;
-    border-radius: 0;
-    background: transparent;
+    .navbar-inner {
+      min-height: 0;
+      padding: 0 2px 0 29px;
+      box-shadow: none;
+      border-radius: 0;
+      background: transparent;
 
+      a {
+        margin: 0 2px;
+        padding: 0;
+        line-height: 21px;
+        color: $fondo;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-shadow: none;
 
-    a {
-      margin: 0 2px;
-      padding-left: 0;
-      padding-right: 0;
-      line-height: 21px;
-      color: $negro;
-      text-transform: uppercase;
-      font-weight: bold;
-      text-shadow: none;
+        span {
+          display: block;
+          float: left;
+          padding: 0 8px 0 2px;
+          background: transparent image-url('link_con_muesca-opac.png');
+          background-position: left -63px;
 
-      span {
-        display: block;
-        float: left;
-        padding: 0 8px 0 2px;
-        background: transparent image-url('link_con_muesca-opac.png')
-        left -42px;
-
-        &.corner-decoration {
-          width: 10px;
-          height: 21px;
-          padding: 0;
-          background: transparent image-url('link_con_muesca-opac.png')
-          no-repeat left top;
-        }
-      }
-
-      &:hover span {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-
-/*============================================
-BARRA DE SESSIÓN PEGADA AL CONTENIDO
-Y FONDO TRANSPARENTE
-============================================*/
-html.dashboard.welcome, html.phases, html.experiencies, html.categories,
-html.proposals {
-  body {
-    padding-top: 40px;
-
-    #session {
-      margin-bottom: 0;
-      background-color: transparent !important;
-
-      .navbar-inner {
-        min-height: 0;
-        padding-left: 29px;
-
-        a {
-          padding: 0;
-          color: $fondo;
-
-          span {
-            background-position: left -63px;
-
-            &.corner-decoration {
-              background-position: left -21px;
-            }
+          &.corner-decoration {
+            width: 10px;
+            height: 21px;
+            padding: 0;
+            background: transparent image-url('link_con_muesca-opac.png');
+            background-position: left -21px;
           }
         }
       }
