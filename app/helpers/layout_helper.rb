@@ -15,12 +15,7 @@ module LayoutHelper
 
   def user_column(css_class, color = :none, &block)
     content = capture(&block)
-    raw "<div class='#{css_class}'><div class='user-column'>#{content}</div></div>"
-  end
-
-  def tabs(&block)
-    content = capture(&block)
-    raw "<ul class='tabs clearfix'>#{content}</ul>"
+    raw "<div class='#{css_class}'><div class='user-column content-inner'>#{content}</div></div>"
   end
 
   def submit_button_for(form, options = {})

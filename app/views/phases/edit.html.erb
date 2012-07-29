@@ -1,7 +1,6 @@
-<div class="row">
-  <%= corner_span('span12') do %>
-    <%= title 'Editar fase' %>
-
+<%= page do %>
+  <div class="span6">
+    <%= title "Editar #{phase.title}" %>
     <%= render 'form' %>
-  <% end %>
-</div>
+  </div>
+<% end %>

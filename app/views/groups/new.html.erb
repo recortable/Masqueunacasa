@@ -1,6 +1,5 @@
-<%= render_banner 'Crear colectivo', groups_path %>
-<div class="row">
-  <%= corner_span 'span12' do %>
+<%= page do %>
+  <div class='span12'>
     <%= title 'Crear colectivo' %>
     <%= simple_form_for group do |form| %>
       <%= form.input :name %>
@@ -11,5 +10,5 @@
       <%= form.input :has_announcements, as: :boolean %>
       <%= form.button :submit %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+<% end %>

@@ -22,7 +22,7 @@ module GroupsHelper
     render partial: 'groups/group', locals: {group: group, info: info}
   end
 
-  def group_header(title, group = nil)
+  def group_header(title = nil, group = nil)
     group ||= current_group
     render partial: 'groups/header', locals: {group: group }
   end

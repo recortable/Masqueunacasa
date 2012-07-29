@@ -1,5 +1,5 @@
-<div class="row">
-  <%= user_column 'span2' do %>
+<%= page do %>
+  <%= user_column 'span3' do %>
     <%= avatar_image user %>
     <h3>Cambiar imágen</h3>
     <%= simple_form_for user do |form| %>
@@ -8,7 +8,7 @@
     <% end %>
   <% end %>
 
-  <%= corner_span('span6') do %>
+  <div class="span5">
     <%= title "Editar #{user.name}" %>
     <%= simple_form_for user, html: {class: 'clearfix'} do |form| %>
       <h3>Información pública</h3>
@@ -23,17 +23,15 @@
       <%= form.input :email %>
       <%= submit_button_for form %>
     <% end %>
-  <% end %>
+  </div>
 
   <div class="span4">
-    <%= corner_span '' do %>
-      <h2>Cambiar contraseña</h2>
-      <%= simple_form_for user do |form| %>
-        <%= form.input :password %>
-        <%= form.input :password_confirmation %>
-        <%= form.input :admin, wrapper: :checkbox if current_user && current_user.admin? %>
-        <%= submit_button_for form, value: 'Cambiar contraseña' %>
-      <% end %>
+    <h2>Cambiar contraseña</h2>
+    <%= simple_form_for user do |form| %>
+      <%= form.input :password %>
+      <%= form.input :password_confirmation %>
+      <%= form.input :admin, wrapper: :checkbox if current_user && current_user.admin? %>
+      <%= submit_button_for form, value: 'Cambiar contraseña' %>
     <% end %>
   </div>
-</div>
+<% end %>
