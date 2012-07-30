@@ -1,9 +1,10 @@
-<%= render 'groups/header' %>
-
-<div class="row">
-  <%= corner_span 'editor span12' do %>
-    <%= title 'Editar mensaje colectivo' %>
-    <%= render 'form' %>
-  <% end %>
-</div> 
+<%= page row: false, head: false do %>
+  <%= group_header %>
+  <div class="row">
+    <div class='span8'>
+      <%= title 'Editar mensaje colectivo' %>
+      <%= render 'form' %>
+    </div> 
+  </div>
+<% end %>
 

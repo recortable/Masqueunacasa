@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def controller_class
-    controller.class.name[0..-11].downcase.gsub(/:/, '-')
+    controller.class.name[0..-11].downcase.gsub(/:/, '-') + " " + controller.action_name
   end
 
   def subdomain_class

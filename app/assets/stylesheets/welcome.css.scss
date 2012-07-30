@@ -1,0 +1,86 @@
+html.welcome, html.phases.index {
+  div.intro {
+    .span12 {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      background: $fondo asset-data-url('fondos/textura_puntos.png');
+    }
+  }
+}
+
+.welcome {
+  .front-header {
+    padding: 30px 0 0;
+    height: auto;
+
+    & > div {
+      background-color: $fondo;
+      padding-bottom: 30px;
+    }
+  }
+
+  div.info-wrapper {
+    padding-bottom: 120px;
+    background: $fondo;
+
+    div.info {
+      padding: 30px 0;
+      overflow: hidden;
+
+      & > div {
+        width: 25%;
+        float: left;
+        
+        &.comunity .content {
+          background-image: none;
+        }
+      }
+        
+      .content {
+        background-color: transparent;     
+        padding-top: 0;
+        margin-bottom: -99999px;
+        padding-bottom: 99999px;
+        background: asset-data-url('vertical_bar.png') right top repeat-y;
+
+        a.icon {
+          display: block;
+          text-align: center;
+        }
+
+        .section-question {
+          margin-top: 12px;
+          font-weight: bold;
+          font-style: italic;
+          text-align: center;
+        }
+
+        span {
+          display: block;
+          margin: 8px 0 0;
+          font-family: $texto;
+          font-size: 0.9em;
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        h2 {
+          margin: 6px 0 12px;
+          font-weight: bold;
+          text-align: center;
+
+          a {
+            color: inherit;
+          }
+
+          &:after {
+            content: "_";
+            display: block;
+            margin: -10px 0 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

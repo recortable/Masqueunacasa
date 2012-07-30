@@ -36,6 +36,8 @@ GEM
     bcrypt-ruby (3.0.1)
     blankslate (2.1.2.4)
     bootstrap-sass (2.0.4.0)
+    bourbon (2.1.1)
+      sass (>= 3.1)
     builder (3.0.0)
     cambelt (0.1.1)
     cancan (1.6.8)
@@ -240,6 +242,7 @@ DEPENDENCIES
   basic_config
   bcrypt-ruby (~> 3.0.0)
   bootstrap-sass
+  bourbon
   cambelt
   cancan
   capistrano

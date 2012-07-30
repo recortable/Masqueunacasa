@@ -1,4 +1,39 @@
 /*************************************
+*********** ESTILOS ******************
+**************************************/
+Blanco # F1F1E7
+Negro # 484848
+Azul_neón # 14E3B7
+Amarillo # F3E40B
+Gris # A29E8C
+Rojo # F15A5B
+Ocre # F1BE2D
+Tierra # E18255
+Azul # 199DB6
+
+Tipografías usadas: Open Sans Regular, Italic, Bold / Droid serif Regular, Bold, Bold italic.
+
+Bot: Open sans Regular 12px
+L: Open sans italic 11px gris
+Pregunta_inicio: Droid serif bold italic 16px interlínea 20px
+M1: Open sans regular 11px / Bold para marcar dónde estamos.
+H0: Droid serif regular 30px
+B1: Open sans Regular 13px interlínea 17px
+H1: Droid serif Bold 30px
+H2: Droid serif bold 24px
+H2sub: Droid serif regular 13px
+H3: Droid serif regular 16px
+B2: Open sans regular 16px Interlínea 22px
+H4: Droid serif regular 24px
+H5: Droid serif bold 16px
+H5b: Droid serif regular 12px
+H6: Droid serif regular 14px Interlínea 17px
+H7: Droid serif regular 18px
+B3: Open sans regular 18px
+Mensajes: Open sans italic 13px
+
+
+/*************************************
 ****** MODELOS HABITAPEDIA ***********
 **************************************/
 FASES

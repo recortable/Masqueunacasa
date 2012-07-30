@@ -1,9 +1,8 @@
-<div class="row">
-  <%= corner_span 'span6 offset2' do %>
-    <h3><%= category.question %>
-  </h3>
+<%= page do %>
+  <div class="span6">
+    <h3><%= category.question %></h3>
     <%= title 'Añadir propuesta' %>
     <%= render 'form' %>
-  <% end %>
-</div>
+  </div>
+<% end %>
 

@@ -50,7 +50,7 @@ class Ability
 
       can(:manage, Page) {|page| participant?(page.group, user) }
       can(:manage, Announcement) {|ann| participant?(ann.group, user) }
-      cannot :delete, Announcement
+      cannot :destroy, Announcement
     end
   end
 

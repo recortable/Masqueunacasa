@@ -1,9 +1,7 @@
-<%= render_banner 'Experiencias', experiencies_path %>
-
-<div class="row">
-  <%= corner_span('user_editor span12') do %>
-    <%= title "Editar experiencia" %>
+<%= page do %>
+  <div class='span12' >
+    <%= title "Editar #{experiencie.title}" %>
     <%= render 'form' %>
-  <% end %>
-</div>
+  </div>
+<% end %>
 

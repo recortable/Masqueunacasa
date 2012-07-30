@@ -1,16 +1,29 @@
-@import 'variables';
-
 //html.cuatro { background-image: asset-data-url('fondos/textura_e404.png'); }
 //html.cinco { background-image: asset-data-url('fondos/textura_e500.png'); }
 
+html.textura_inicio { background-image:
+  asset-data-url('fondos/textura_inicio.png'); }
 html.textura01 { background-image: asset-data-url('fondos/textura01.png'); }
 html.textura02 { background-image: asset-data-url('fondos/textura02.png'); }
 html.textura03 { background-image: asset-data-url('fondos/textura03.png'); }
 html.textura04 { background-image: asset-data-url('fondos/textura04.png'); }
 html.textura05 { background-image: asset-data-url('fondos/textura05.png'); }
 html.textura07 { background-image: asset-data-url('fondos/textura07.png'); }
+html.textura08 { background-image: asset-data-url('fondos/textura08.png'); }
+html.textura09 { background-image: asset-data-url('fondos/textura09.png'); }
 
 html.naranja {
+  a {
+    color: $naranja;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    //color: $naranja;
+  }
+
+  .corner.colored { background-position: 0 -90px; }
+}
+
+html.rojo {
   a {
     color: $rojo;
   }
@@ -18,20 +31,11 @@ html.naranja {
     //color: $rojo;
   }
 
-  #session {
-    background-color: $rojo;
-    .links, .session, .lang-selector {
-      .link-wrapper {
-        background-color: $rojo;
-      }
-    }
-  }
-
-  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
-    background-color: $rojo;
-  }
-
   .corner.colored { background-position: 0 -90px; }
+
+  .dotted-bg { background: asset-data-url('fondos/textura_puntos-rojo.png'); }
+
+  .corner-opac { background-position: 0 -90px; }
 }
 
 html.azul_neon {
@@ -40,19 +44,6 @@ html.azul_neon {
   }
   a {
     color: $azul_neon;
-  }
-
-  #session {
-    background-color: $azul_neon;
-    .links, .session, .lang-selector {
-      .link-wrapper {
-        background-color: $azul_neon;
-      }
-    }
-  }
-
-  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
-    background-color: $azul_neon;
   }
 
   .corner.colored { background-position: 0 -30px; }
@@ -67,19 +58,6 @@ html.verde_neon {
     //color: $verde_neon;
   }
 
-  #session {
-    background-color: $verde_neon;
-    .links, .session, .lang-selector {
-      .link-wrapper {
-        background-color: $verde_neon;
-      }
-    }
-  }
-
-  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
-    background-color: $verde_neon;
-  }
-
   .corner.colored { background-position: 0 -30px; }
 }
 
@@ -89,19 +67,6 @@ html.azul_gris {
   }
   h1, h2, h3, h4, h5, h6 {
     //color: $azul_gris;
-  }
-
-  #session {
-    background-color: $azul_gris;
-    .links, .session, .lang-selector {
-      .link-wrapper {
-        background-color: $azul_gris;
-      }
-    }
-  }
-
-  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
-    background-color: $azul_gris;
   }
 
   .corner.colored { background-position: 0 -120px; }
@@ -115,22 +80,15 @@ html.negro {
     //color: $negro;
   }
 
-  #session {
-    background-color: $negro;
-    .links, .session, .lang-selector {
-      .link-wrapper {
-        background-color: $negro;
-      }
-    }
-  }
-
-  .controls .link-wrapper:hover, .form-controls .link-wrapper:hover {
-    background-color: $rojo;
-  }
-
   .corner.colored { background-position: 0 -60px; }
+
+  .dotted-bg { background: asset-data-url('fondos/textura_puntos.png'); }
 }
 
+.corner.naranja { background-position: 0 -90px; }
+.corner.rojo { background-position: 0 -60px; }
+.corner.azul_neon { background-position: 0 -30px; }
+.corner.verde_neon { background-position: 0 -60px; }
+.corner.azul_gris { background-position: 0 -120px; }
 .corner.negro { background-position: 0 -60px; }
 
-html.subdomain #session {background-color: $fondo;}

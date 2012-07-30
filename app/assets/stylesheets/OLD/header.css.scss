@@ -1,0 +1,65 @@
+/* Lo relacionado con las cabeceras */
+@import 'variables';
+
+.main-header {
+  .banner {
+    min-height: 200px;
+    background-color: $fondo;
+    position: relative;
+
+    img.responsive {
+      position: absolute;
+      bottom: 0;
+    }
+
+    .overlay {
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; overflow: hidden;
+
+      h2 { 
+        margin: 0px 0 0 0px;
+        float: left; background-color: $fondo; 
+
+        &.black {background-color: $negro; color: $fondo;}
+      }
+
+      .shape {
+        float: left; 
+        background-image: image-url('esquinas.png');
+      }
+
+    }
+    .margin {
+      position: absolute;
+      left: 0; right: 0; top: 0; bottom: 0;
+      border: 10px solid $fondo;
+    }
+  }
+  margin-bottom: 20px;
+}
+
+.main-header.group {
+  h2 {
+    padding: 20px 20px;
+    height: 32px;
+  }
+  .shape {
+    width: 50px;
+    height: 72px; 
+    background-position: 0 0;
+  }
+}
+.main-header.site {
+  h2 {
+    padding: 3px 20px 7px 30px;
+    height: 30px;
+  }
+  .shape {
+    width: 24px;
+    height: 40px;
+    background-position: 0px -544px;
+  }
+}
+
+

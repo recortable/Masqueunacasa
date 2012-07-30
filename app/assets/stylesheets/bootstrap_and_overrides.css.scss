@@ -1,5 +1,41 @@
-
 @import "bootstrap";
 @import "font-awesome";
 @import "bootstrap-responsive";
 
+.table {
+  margin-bottom: 0;
+
+    tbody tr:hover td, .table tbody tr:hover th {
+    background-color: transparent;
+  }
+}
+
+/*
+ * ANULAR TODOS LOS ESTILOS RESPONSIVOS
+ */
+$gridColumnWidth: 60px;
+$gridGutterWidth: 20px;
+
+@media (min-width: 768px) and (max-width: 979px) {
+  @include gridCore($gridColumnWidth, $gridGutterWidth);
+}
+
+@media (max-width: 767px) {
+  @include gridCore($gridColumnWidth, $gridGutterWidth);
+
+  .row {
+    margin-left: -20px;
+  }
+
+  [class*="span"] {
+    float: left;
+  }
+}
+
+@media (max-width: 480px) {
+  @include gridCore ($gridColumnWidth, $gridGutterWidth);
+
+  .row {
+    margin-left: -20px;
+  }
+}

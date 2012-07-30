@@ -15,12 +15,7 @@ module LayoutHelper
 
   def user_column(css_class, color = :none, &block)
     content = capture(&block)
-    raw "<div class='#{css_class}'><div class='corner #{color}'></div><div class='user-column'>#{content}</div></div>"
-  end
-
-  def tabs(&block)
-    content = capture(&block)
-    raw "<ul class='tabs clearfix'>#{content}</ul>"
+    raw "<div class='#{css_class}'><div class='user-column content-inner'>#{content}</div></div>"
   end
 
   def submit_button_for(form, options = {})
@@ -30,6 +25,10 @@ module LayoutHelper
     #{form.button :submit, options}
            <div class='side-right'></div>
          </div>"
+  end
+
+  def corner_link(text, url, options = {})
+    link_to raw("<span class='corner-decoration'></span><span>#{text}</span>"), url, options
   end
 
   def link_box(text, url, options = {})

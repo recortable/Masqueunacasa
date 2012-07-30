@@ -1,9 +1,7 @@
-<%= render_banner 'Preguntas', [phase] %>
-
-<div class="row">
-  <%= corner_span 'span12' do %>
+<%= page do %>
+  <div class="span6">
     <%= title 'Nueva pregunta' %>
     <h2>En <%= phase.title %></h2>
     <%= render 'form' %>
-  <% end %>
-</div>
+  </div>
+<% end %>

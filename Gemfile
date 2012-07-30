@@ -48,6 +48,8 @@ gem 'truncate_html' # Para poder recortar un texto en html sin que se estropee l
 #gem 'roadie' # P#ara meter css en los emails
 gem 'premailer-rails3'
 
+gem 'bourbon' #Colección de mixins para SASS
+
 gem 'simple_form'
 gem 'redcarpet' # Convierte markdown a html
 gem 'cambelt' # Genera imágenes de prueba

@@ -1,12 +1,9 @@
-<div class="row">
-  <%= corner_span 'span2' do %>
-    <h3><%= link_to proposal.title, proposal %></h3>
-  <% end %>
-  <%= corner_span 'span6' do %>
-    <%= title 'Editar propuesta' %>
+<%= page do %>
+  <div class="span6">
+    <%= title "Editar #{proposal.title}" %>
     <%= render 'form' %>
-  <% end %>
-  <%= corner_span 'span4' do %>
+  </div>
+  <div class="span4">
     <h3>Experiencias relacionadas</h3>
     <ul>
       <% proposal.relations.each do |relation| %>
@@ -18,5 +15,5 @@
       <% end %>
     </ul>
     <%= link_to 'Añadir experiencia relacionada', new_proposal_relation_path(proposal) if can? :create, Relation %>
-  <% end %>
   </div>
+<% end %>

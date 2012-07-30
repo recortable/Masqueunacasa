@@ -1,20 +1,21 @@
-<div class="row">
-  <%= user_column 'span2' do %>
-    <%= avatar_image current_group %>
-    <h3>Cambiar imágen</h3>
-    <%= simple_form_for current_group do |form| %>
-      <%= form.input :avatar_image %>
-      <%= submit_button_for form, value: 'Cambiar imágen', name: 'commit-image' %>
+<%= page row: false do %>
+  <%= title "Editar información del grupo #{current_group.title}" %>
+  <div class="row">
+    <%= user_column 'span3' do %>
+      <%= avatar_image current_group %>
+      <h3>Cambiar imágen</h3>
+      <%= simple_form_for current_group do |form| %>
+        <%= form.input :avatar_image %>
+        <%= submit_button_for form, value: 'Cambiar imágen', name: 'commit-image' %>
+      <% end %>
     <% end %>
-  <% end %>
 
-  <%= corner_span('span6') do %>
-    <%= title "#{current_group.name}" %>
-    <%= render partial: 'groups/form', locals: {group: current_group } %>
-  <% end %>
+    <div class="span5">
+      <%= title "#{current_group.name}" %>
+      <%= render partial: 'groups/form', locals: {group: current_group } %>
+    </div>
 
-  <div class="span4">
-    <%= corner_span('') do %>
+    <div class="span4">
       <div class="hoverize">
         <%= hover? :update, current_group do %>
           <%= link_to icon(:plus, 'Añadir participante'),
@@ -34,7 +35,6 @@
           <%= link_to membership.user.title, membership.user %>
         </div>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
-<%= simple_debug current_group %>
+<% end %>

@@ -1,7 +1,27 @@
 <% title 'Habitapedia' %>
 <%= page row: false do %>
-
-  <div class="row">
+  <%# Estilos para .intro en welcome.css.scss %>
+  <div class="row intro">
+    <div class="span12">
+      <div class="row">
+        <div class="video-container span6 offset1">
+          <div class="video">
+            <iframe src="http://player.vimeo.com/video/37086987?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+          </div>
+        </div>     
+        <div class="span4">
+          <div class="corner"></div>
+          <div class="content">
+            <h2>Habitapedia</h2>
+            <p>
+            Estamos recopilando dudas y propuestas útiles para tener en cuenta a lo largo del proceso de construcción colectiva de nuestras viviendas y entornos. ¡La Habitapedia està abierta a la participación de todo el mundo!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row phases">
     <% phases.each do |phase| %>
       <div class="span4">
         <div class="content">
@@ -11,7 +31,7 @@
                 rel: "edit-phase-#{phase.id}" %>
             <% end %>
 
-            <%= image_tag(phase.image_url, width: 150, height: 150, alt: phase.title, class: 'fixed centered') %>
+            <%= image_tag(phase.image_url, width: 150, height: 150, alt: phase.title, class: 'fixed centered phase-image') %>
             <h2><%= phase.title %></h2>
             <div class="summary markdown">
               <%= markdown phase.summary %>

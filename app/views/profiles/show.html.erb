@@ -1,23 +1,23 @@
 <% google_maps %>
-<%= group_header group.title, group %>
+<%= page row: false, head: false do %>
+  <%= group_header group.title, group %>
 
-<div class="row">
-  <%= user_column 'span2' do %>
-    <%= render_group_bar group %>
-  <% end %>
-
-  <%= corner_span('span6') do %> 
-    <%= render_agent_info group %>
-  <% end %>
-
-  <div class="span4">
-    <%= corner_span('') do %>
-      <%= render_locations_bar group %>
+  <div class="row">
+    <%= user_column 'span2' do %>
+      <%= render_group_bar group %>
     <% end %>
-    <% unless group.admin? %>
-      <%= corner_span('') do %>
+
+    <div class="center span6">
+      <div class="content">
+        <%= render_agent_info group %>
+      </div>
+    </div>
+
+    <div class="sidebar sidebar-right span4">
+      <%= render_locations_bar group %>
+      <% unless group.admin? %>
         <%= render_memberships_list group %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>

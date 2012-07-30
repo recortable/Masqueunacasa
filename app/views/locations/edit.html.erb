@@ -1,4 +1,8 @@
 <% google_maps %>
-<div class="row">
-  <%= render 'form' %>  
-</div>
+<%= page do %>
+  <div class="span6">
+    <h2>En <%= link_to parent.title, parent %>
+    <%= title 'Editar localización' %>
+    <%= render 'form' %>  
+  </div>
+<% end %>

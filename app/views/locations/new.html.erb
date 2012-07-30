@@ -1,8 +1,8 @@
 <% google_maps %>
-<div class="row">
-  <%= corner_span 'span6' do %>
-    <h2>En <%= link_to parent.title, parent %></h2>
+<%= page do %>
+  <div class="span6">
+    <h2>En <%= link_to parent.title, parent %>
     <%= title 'Añadir un lugar' %>
     <%= render 'form' %>  
-  <% end %>
-</div>
+  </div>
+<% end %>

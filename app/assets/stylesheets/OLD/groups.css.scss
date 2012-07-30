@@ -1,0 +1,32 @@
+@import 'variables';
+
+.groups.cards { margin-top: 20px;  }
+
+.member_bar.row {
+  .controls {
+    padding-top: 10px;
+    
+    .membership_level { float: left; margin: 0 10px 10px 10px;}
+  }
+}
+
+.group .info {
+  margin-bottom: 20px; 
+  img.fixed {display: block; margin-bottom: 10px;}
+}
+
+.edit_group {
+  #form_map {
+    margin-bottom: 10px;
+    border: 1px solid $negro;
+  }
+
+  input[type="checkbox"] {
+    margin-left: -10px;
+    margin-right: 5px;
+  }
+}
+
+#show_map {
+  border: 1px solid $negro;
+}

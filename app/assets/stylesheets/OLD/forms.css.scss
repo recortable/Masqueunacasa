@@ -1,0 +1,84 @@
+@import 'variables';
+
+form {
+  overflow: hidden;
+  font-family: Helvetica, Arial, sans-serif;
+  
+  .controls {
+    overflow: visible;
+  }
+
+  input, textarea {
+    width: 97%;
+    border: 1px solid $negro;
+    border-radius: 0;
+    background: $fondo;
+  }
+  input { height: 20px;}
+
+  p.help-block { font-family: Helvetica, Arial, sans-serif; 
+    font-style: italic; 
+  }
+
+  .submit-wrapper {
+    height: 31px;
+    float: left;
+    padding: 0 0 0 10px;
+    background: $negro url(submit-transp.png) no-repeat;
+    overflow: hidden;
+    margin-bottom: 20px;
+    
+    // -moz-transition: background-color 0.3s; /* Firefox 4 */
+    // -webkit-transition: background-color 0.3s; /* Safari and Chrome */
+    // -o-transition: background-color 0.3s; /* Opera */
+    // transition: background-color 0.3s;
+    
+
+    input, input:hover {
+      width: auto;
+      height: 100%;
+      float: left;
+      padding: 0 2px;
+      border: 0;
+      border-radius: 0;
+      background: transparent url(submit-transp.png) repeat-x left -31px;
+      font-family: inherit;
+      font-size: 12px;
+      color: $fondo;
+      text-transform: uppercase;
+      text-shadow: 0 0;
+      -moz-transition: none; /* Firefox 4 */
+      -webkit-transition: none; /* Safari and Chrome */
+      -o-transition: none; /* Opera */
+      transition: none;
+    }
+
+    .side-right {
+      width: 10px;
+      height: 31px;
+      float: left;
+      background: transparent url(submit-transp.png) no-repeat left -62px;
+    }
+
+    &:hover {
+      background-color: $azul_gris;
+      cursor: pointer;
+    }
+  }
+}
+
+// CASOS ESPECIALES
+#message_body {height: 6em;}
+
+form.new_section, form.edit_section {
+  textarea { border: 1px solid darken($fondo, 50%); }
+  div.image { 
+    width: 100%; overflow: hidden;
+    padding: 20px;
+
+    img.fixed { display: block; margin: 10px 0; }
+    div.controls {  margin-top: 10px; }
+  }
+}
+
+span.task.finished { text-decoration: line-through; } 

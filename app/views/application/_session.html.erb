@@ -1,23 +1,30 @@
-<div id="session" class="container">
-  <div class="row">
-    <%= link_to image_tag('Logo_Mquc.png', alt: 'Logo masqueunacasa'), root_url(host: request.domain), id: 'logo' %>
-    <div class="links">
-      <%= link_box 'Habitapedia', phases_url(host: request.domain) %>
-      <%# link_box 'Mapa', locations_url(host: request.domain) %>
-      <%= link_box t('.community'), community_url(host: request.domain) %>
-    </div>
-    <div class="lang-selector">
-      <!-- TODO: implementar el cambio de idiomas -->
-      <%#= link_box 'ES', url_for(locale: 'es') %>
-      <%#= link_box 'CA', url_for(locale: 'ca') %>
-    </div>
-    <div class="session">
-      <% if current_user %>
-        <%= link_box "¡Hola #{current_user.name}!", user_url(current_user, host: request.domain), class: 'user' %>
-        <%= link_box t('.session_end'), logout_url(host: request.domain, from: request.url) %>
-      <% else %>
-        <%= link_box t('.session_start'), login_url(host: request.domain, from: request.url), class: 'login' %>
-      <% end %>
+<div id="session" class="navbar container">
+  <div class="navbar-inner">
+    <div class="container">
+      <ul class="nav pull-left primary-links">
+        <li><%= corner_link 'Habitapedia', phases_url(host: request.domain) %></li>
+        <!-- <li><%# corner_link 'Mapa', locations_url(host: request.domain) %></li> -->
+        <li><%= corner_link t('.community'), community_url(host: request.domain) %></li>
+      </ul>
+      <ul class="nav pull-right secondary-links">
+        <li><%= corner_link "Sobre el proyecto", "#" %></li>
+        <li><%= corner_link "Contacto", "#" %></li>
+         <!-- TODO: implementar el cambio de idiomas 
+         <div class="lang-selector">
+           <%#= corner_link 'ES', url_for(locale: 'es') %>
+           <%#= corner_link 'CA', url_for(locale: 'ca') %>
+         </div>
+         -->
+      </ul>
+      <ul class="nav pull-right session-links">
+        <% if current_user %>
+          <li><%= corner_link "¡Hola #{current_user.name}!", user_url(current_user, host: request.domain), class: 'user' %></li>
+          <li><%= corner_link t('.session_end'), logout_url(host: request.domain, from: request.url) %></li>
+        <% else %>
+          <li><%= corner_link t('.session_start'), login_url(host: request.domain, from: request.url), class: 'login' %></li>
+        <% end %>
+      </ul>
+      
     </div>
   </div>
 </div>
