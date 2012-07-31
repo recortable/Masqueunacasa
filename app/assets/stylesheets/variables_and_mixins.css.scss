@@ -16,15 +16,16 @@ $rojo: #F15B5B;
     content: "";
     width: $width;
     height: $height;
+    padding: 0;
     display: block;
     float: left;
     margin-right: 6px;
-    background: url(#{$image_left}) no-repeat;
+    background: image-url($image_left) no-repeat;
   }
 
   &:after {
     float: right;
     margin: 0 0 0 6px;
-    background: url($image_right) no-repeat;
+    background: image-url($image_right) no-repeat;
   }
 }

@@ -12,28 +12,47 @@ body {
       border-radius: 0;
       background: transparent;
 
-      a {
-        margin: 0 2px;
-        padding: 0;
-        line-height: 20px;
-        color: $fondo;
-        text-transform: uppercase;
-        font-weight: bold;
-        text-shadow: none;
+      li {
+        a {
+          margin: 0 2px;
+          padding: 0;
+          line-height: 20px;
+          color: $fondo;
+          text-transform: uppercase;
+          font-weight: bold;
+          text-shadow: none;
 
-        span {
-          display: block;
-          float: left;
-          padding: 0 8px 0 2px;
-          background: transparent image-url('link_con_muesca-opac.png');
-          background-position: left -63px;
+          &:hover {
+            color: $negro;
+          }
+        }
+      }
 
-          &.corner-decoration {
-            width: 10px;
+      .primary-links, .secondary-links {
+        a {
+          margin-right: 14px;
+          padding: 0 12px 0 2px;
+          position: relative;
+          left: 12px;
+          background: image-url('boton_about.png') repeat-x 0 -20px;
+
+          &:before {
+            content: "";
+            width: 12px;
             height: 20px;
-            padding: 0;
-            background: transparent image-url('link_con_muesca-opac.png');
-            background-position: left -21px;
+            display: block;
+            float: left;
+            position: absolute;
+            left: -12px;
+            background: image-url('boton_about-left.png') no-repeat 0 -20px;
+          }
+
+          &:hover {
+            background-position: 0 0;
+
+            &:before {
+              background-position: 0 0;
+            }
           }
         }
       }
@@ -50,8 +69,6 @@ body {
 
           &:hover {
             background-position: 0 0;
-            color: $negro;
-            color: $negro;
 
             &:after, &:before {
               background-position: 0 0;

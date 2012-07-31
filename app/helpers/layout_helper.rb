@@ -27,10 +27,6 @@ module LayoutHelper
          </div>"
   end
 
-  def corner_link(text, url, options = {})
-    link_to raw("<span class='corner-decoration'></span><span>#{text}</span>"), url, options
-  end
-
   def link_box(text, url, options = {})
     options.reverse_merge!({show_if_current: true})
     show_if_current = options.delete :show_if_current
