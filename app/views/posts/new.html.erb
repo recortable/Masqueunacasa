@@ -1,9 +1,9 @@
-<%= render_group_header current_group %>
-<div class="row">
-  <div class='post-editor editor span12'><div class='corner colored'></div>
-    <div class="content">
+<%= page row: false, head: false do %>
+  <%= render_group_header current_group %>
+  <div class="row">
+    <div class='post-editor editor span12'>
       <%= title t('.title') %>
+      <%= render 'form' %>
     </div>
-    <%= render 'form' %>
   </div>
-</div>
+<% end %>

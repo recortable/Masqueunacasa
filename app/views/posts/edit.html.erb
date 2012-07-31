@@ -1,17 +1,10 @@
-<%= render_group_header post.group %>
-<div class="row">
-  <%= corner_span 'span6 offset2' do %>
-    <h3><%= post.group.title %></h3>
-    <%= title 'Editar entrada al blog' %>
-    <%= simple_form_for post do |form| %>
-      <%= form.input :title %>
-      <%= submit_button_for form %>
-      <br/>
-      <br/>
-      <br/>
-      <%= form.input :remove_image, as: :boolean %>
-      <%= form.input :embed %>
-      <%= form.input :body, as: :text %>
-    <% end %>
-  <% end %>
-</div>
+<%= page row: false, head: false do %>
+  <%= render_group_header post.group %>
+  <div class="row">
+    <div class='span12'>
+      <h3><%= post.group.title %></h3>
+      <%= title 'Editar entrada al blog' %>
+      <%= render 'form' %>
+    </div>
+  </div>
+<% end %>
