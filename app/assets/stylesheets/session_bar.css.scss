@@ -58,11 +58,29 @@ body {
       }
 
       .session-links {
-        .login {
+        .login, .user {
           background: image-url('iniciarsesion-center.png') repeat-x 0 -20px;
           @include three_parts_link(12px, 20px, 'iniciarsesion-left.png',
           'iniciarsesion-right.png');
           
+          &:before, &:after {
+            background-position: 0 -20px;
+          }
+
+          &:hover {
+            background-position: 0 0;
+
+            &:after, &:before {
+              background-position: 0 0;
+            }
+          }
+        }
+
+        .logout {
+          background: image-url('iniciarsesion-center.png') repeat-x 0 -20px;
+          @include three_parts_link(12px, 20px, 'salir-left.png',
+          'salir-right.png');
+
           &:before, &:after {
             background-position: 0 -20px;
           }
