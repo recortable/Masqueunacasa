@@ -15,7 +15,7 @@ body {
       a {
         margin: 0 2px;
         padding: 0;
-        line-height: 21px;
+        line-height: 20px;
         color: $fondo;
         text-transform: uppercase;
         font-weight: bold;
@@ -30,10 +30,32 @@ body {
 
           &.corner-decoration {
             width: 10px;
-            height: 21px;
+            height: 20px;
             padding: 0;
             background: transparent image-url('link_con_muesca-opac.png');
             background-position: left -21px;
+          }
+        }
+      }
+
+      .session-links {
+        .login {
+          background: image-url('iniciarsesion-center.png') repeat-x 0 -20px;
+          @include three_parts_link(12px, 20px, 'iniciarsesion-left.png',
+          'iniciarsesion-right.png');
+          
+          &:before, &:after {
+            background-position: 0 -20px;
+          }
+
+          &:hover {
+            background-position: 0 0;
+            color: $negro;
+            color: $negro;
+
+            &:after, &:before {
+              background-position: 0 0;
+            }
           }
         }
       }

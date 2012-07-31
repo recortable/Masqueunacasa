@@ -1,0 +1,30 @@
+$texto: LucidaGrande, sans-serif;
+$info: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$titulos: Georgia, serif;
+
+$fondo: #F1F1E7;
+$verde_neon: #61ECA9;
+$negro: #484848;
+$naranja: #E44410;
+$azul_neon: #14E3B7;
+$azul_gris: #199DB6;
+$rojo: #F15B5B;
+
+// Para los links con tres partes:
+@mixin three_parts_link($width, $height, $image_left, $image_right) {
+  &:before, &:after {
+    content: "";
+    width: $width;
+    height: $height;
+    display: block;
+    float: left;
+    margin-right: 6px;
+    background: url(#{$image_left}) no-repeat;
+  }
+
+  &:after {
+    float: right;
+    margin: 0 0 0 6px;
+    background: url($image_right) no-repeat;
+  }
+}
