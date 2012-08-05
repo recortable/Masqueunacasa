@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include CurrentUser
   include HasCurrentGroup
   include ExposeResource
+  include HasBreadcrumbs
   protect_from_forgery
 
   before_filter :set_locale
@@ -11,7 +12,6 @@ class ApplicationController < ActionController::Base
   expose(:themes) { 'textura02 naranja' }
   expose(:site) { Site.new }
 
-  protected
   # TODO: no se por qué falla en test (sospecho que algo
   # de los dominios, subdominios y la sesión)
   unless Rails.env.test?

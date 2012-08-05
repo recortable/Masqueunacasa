@@ -47,7 +47,7 @@ gem 'ie_conditional_tag' # Para meter el html tag con clases especiales según l
 gem 'truncate_html' # Para poder recortar un texto en html sin que se estropee la estructura
 #gem 'roadie' # P#ara meter css en los emails
 gem 'premailer-rails3'
-
+gem "breadcrumbs_on_rails"
 gem 'bourbon' #Colección de mixins para SASS
 
 gem 'simple_form'

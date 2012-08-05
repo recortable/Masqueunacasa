@@ -8,18 +8,34 @@ class ExperienciesController < ApplicationController
 
   def index
     authorize! :index, Experiencie
+
+    breadcrumb_for_experiencies
     respond_with experiencies
   end
 
   def show
     authorize! :read, experiencie
     experiencie.increment_view_counter
+
+    breadcrumb_for_experiencie(experiencie)
+    respond_with experiencie
+  end
+
+  def edit
+    authorize! :update, experiencie
+
+    breadcrumb_for_experiencie(experiencie)
     respond_with experiencie
   end
 
   def new
     authorize! :create, Experiencie
-    experiencie.related_proposal_id = related_proposal.id if related_proposal.present?
+    if related_proposal.present?
+      experiencie.related_proposal_id = related_proposal.id 
+      breadcrumb_for_proposal(related_proposal)
+    else
+      breadcrumb_for_experiencies
+    end
     respond_with experiencie
   end
 

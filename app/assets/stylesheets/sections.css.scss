@@ -2,9 +2,8 @@
 .summary.markdown {
   p {
     font-family: $font-open;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 22px;
-    text-indent: 1em;
   }
 }
 
@@ -13,6 +12,7 @@
 
   h1, h2, h3, h4 {
     font-family: $font-droid;
+    margin-top: 1em;
   }
 
   li {
@@ -21,7 +21,7 @@
 
   p, li {
     font-family: $font-open;
-    font-size: 12px;
-    line-height: 17px;
+    font-size: 13px;
+    line-height: 18px;
   }
 }
