@@ -1,6 +1,8 @@
 <%= page do %>
-  <div class="span6">
-    <%= title "Añadir sección a '#{document.title}'" %>
+  <div class="span6 offset2">
+    <%= title 'Añadir sección' %>
+    <h2>En la <%= document.class.model_name.human %> 
+    <%= link_to document.title, document %></h2>
     <%= render 'form' %>
   </div>
 <% end %>

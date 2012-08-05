@@ -1,6 +1,8 @@
 <%= page do %>
   <div class="span6 offset2">
-    <%= title "Editar sección de '#{document.title}'" %>
-    <%= render 'form' %>
-  <% end %>
+    <%= title "Editar sección" %>
+    <h2>En la <%= document.class.model_name.human %> 
+    <%= link_to document.title, document %></h2>
+  <%= render 'form' %>
+<% end %>
 </div>
