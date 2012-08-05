@@ -17,9 +17,10 @@ body {
           margin: 0 2px;
           padding: 0;
           line-height: 20px;
+          font-family: $font-open;
           color: $fondo;
           text-transform: uppercase;
-          font-weight: bold;
+          font-weight: normal;
           text-shadow: none;
 
           &:hover {
