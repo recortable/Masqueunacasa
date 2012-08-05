@@ -3,7 +3,7 @@ class ExperienciesController < ApplicationController
 
   expose(:themes) { 'textura09 negro' }
   expose(:related_proposal) { Proposal.find(params[:p]) if params[:p].present? }
-  expose(:experiencies) { Experiencie.scoped }
+  expose(:experiencies) { Experiencie.order('updated_at DESC') }
   expose(:experiencie) 
 
   def index

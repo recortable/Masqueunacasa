@@ -11,7 +11,7 @@
         <% if experiencie.images.empty? %>
           No hay imagen disponible
         <% else %>
-          <%= link_to image_tag(experiencie.image), experiencie if !experiencie.images.empty? %>
+          <%= link_to image_tag(experiencie.image), experiencie  %>
         <% end %>
         <div class="overlay">
           <div class="transparent-bg"></div>
