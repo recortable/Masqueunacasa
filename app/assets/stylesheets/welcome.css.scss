@@ -38,7 +38,7 @@ html.welcome, html.phases.index {
         
       .content {
         background-color: transparent;     
-        padding-top: 0;
+        padding: 0 20px;
         margin-bottom: -99999px;
         padding-bottom: 99999px;
         background: asset-data-url('vertical_bar.png') right top repeat-y;
@@ -50,6 +50,7 @@ html.welcome, html.phases.index {
 
         .section-question {
           margin-top: 12px;
+          font-size: 16px;
           font-family: $font-droid;
           font-weight: bold;
           font-style: italic;
@@ -59,15 +60,23 @@ html.welcome, html.phases.index {
         span {
           display: block;
           margin: 8px 0 0;
-          font-family: $texto;
-          font-size: 0.9em;
+          font-family: $font-open;
+          font-size: 11px;
           text-align: center;
           text-transform: uppercase;
         }
 
+        p {
+          font-family: $font-open;
+          font-size: 13px;
+          line-height: 17px;
+        }
+
         h2 {
           margin: 6px 0 12px;
+          font-family: $font-droid;
           font-weight: bold;
+          font-size: 30px;
           text-align: center;
 
           a {
