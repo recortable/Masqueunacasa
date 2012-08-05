@@ -1,20 +1,20 @@
 class Phase < ActiveRecord::Base
-  attr_accessible :title_es, :title_ca, :title
-  attr_accessible :summary_es, :summary_ca, :summary
+  attr_accessible :title_es, :title_ca, :title_en, :title
+  attr_accessible :question_es, :question_ca, :question_en, :question
+  attr_accessible :summary_es, :summary_ca, :summary_en, :summary
   attr_accessible :position
+  include Translatable
+  translates :title, :summary, :question
 
   validates_presence_of :title_es, :title_ca
 
   has_many :categories, order: :position
   has_many :proposals, order: 'kudos_count DESC, view_count DESC'
   include HasPopularity
-  #include HasSubscriptors
   include HasSections
 
   default_scope order: :position
 
-  include Translatable
-  translates :title, :summary
   extend FriendlyId
   friendly_id :title, use: :simple_i18n
   acts_as_list
@@ -22,7 +22,7 @@ class Phase < ActiveRecord::Base
   ICONS = ['organizacion', 'realizacion', 'uso']
   # TODO: convertir en un campo de la db
   def image_url
-    icon = ICONS[position - 1]
+    icon = ICONS[(position - 1) % 3]
     "habitap/#{icon}_100.png"
   end
 

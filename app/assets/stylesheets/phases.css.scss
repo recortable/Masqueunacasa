@@ -1,11 +1,22 @@
 
 .phase-info {
-  background: asset-data-url('vertical_bar.png') right top repeat-y;
+  margin-top: 30px;
 
   // TODO: repetido de welcome -> refactorizar
+  div.question {
+    margin-top: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family: $font-droid;
+    text-align: center;
+  }
+
   h2 {
+    font-family: $font-droid;
     margin: 6px 0 12px;
     text-align: center;
+    text-style: bold;
+    font-size: 24px;
 
     &:after {
       content: "_";
@@ -15,4 +26,22 @@
     }
   }
 
+  .summary.markdown p {
+    font-family: $font-open;
+    font-size: 13px;
+    line-height: 17px;
+  }
+}
+
+.phase-categories {
+  h3 {
+    font-family: $font-droid;
+    font-size: 16px;
+
+    small {
+      display: block;
+      font-family: $font-open;
+      font-size: 13px;
+    }
+  }
 }
