@@ -4,6 +4,13 @@ html.welcome, html.phases.index {
       padding-top: 30px;
       padding-bottom: 30px;
       background: $fondo asset-data-url('fondos/textura_puntos.png');
+
+      h2 {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid $negro;
+        font-weight: normal;
+      }
     }
   }
 }
@@ -31,7 +38,7 @@ html.welcome, html.phases.index {
         width: 25%;
         float: left;
         
-        &.comunity .content {
+        &.community .content {
           background-image: none;
         }
       }
@@ -50,33 +57,21 @@ html.welcome, html.phases.index {
 
         .section-question {
           margin-top: 12px;
-          font-size: 16px;
-          font-family: $font-droid;
-          font-weight: bold;
-          font-style: italic;
           text-align: center;
+          white-space: nowrap;
+          @include title_font(16px, bold, italic);
         }
 
         span {
           display: block;
           margin: 8px 0 0;
-          font-family: $font-open;
           font-size: 11px;
           text-align: center;
           text-transform: uppercase;
         }
 
-        p {
-          font-family: $font-open;
-          font-size: 13px;
-          line-height: 17px;
-        }
-
         h2 {
           margin: 6px 0 12px;
-          font-family: $font-droid;
-          font-weight: bold;
-          font-size: 30px;
           text-align: center;
 
           a {
