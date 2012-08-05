@@ -1,0 +1,33 @@
+es:
+  welcome:
+    title: ¡Hola!
+    what: |
+      *Masqueunacasa* es una plataforma web de procesos colectivos de vivienda que pretende ofrecer herramientas para fomentar la participación y autogestión en la construcción de nuestras viviendas y entornos.
+
+      Es un soporte online para ofrecer y debatir alternativas al modelo dominante de vivienda actual, proponiendo experiencias construidas y guías de asesoría que nos ayuden a ver otra manera de hacer las cosas más cooperativa.
+
+    habitapedia:
+      question: '¿Quieres saber cómo resolver<br> tu problema de vivienda<br> de manera colectiva?'
+      action: 'Consulta la'
+      info: |
+        Estamos recopilando dudas y propuestas útiles para tener en cuenta a lo largo del proceso de construcción colectiva de nuestras viviendas y entornos. ¡La Habitapedia està abierta a la participación de todo el mundo!
+
+    experiencies:
+      question: '¿Quieres conocer<br> algunas propuestas<br> ya realizadas?'
+      action: 'Visita las'
+      info: |
+        Si conoces alguna experiencia de vivienda colectiva en la que sus habitantes hayan participado en alguna de las fases del proceso, puedes subirla a la base de datos desde tu perfil de usuario de Más que una casa.
+
+    blog:
+      question: '¿Quieres participar<br> proponiendo<br> mejoras y posibilidades?'
+      action: 'Escribe en el'
+      info: |
+        Éste es el blog colectivo de Más que una casa. También puedes tener tu propio blog e informar de tus actividades, tanto si trabajas con estos temas como si estás iniciando un proyecto de cooperativa en vuestra zona. ¡Regístrate y participa!
+
+    community:
+      question: '¿Quieres encontrar gente<br> interesada en procesos<br> colectivos de vivienda?'
+      action: 'Únete a nuestra' 
+      info: |
+        Queremos generar una red para compartir experiencias, conocer personas con experiencias comunes y encontrar gente que nos pueda asesorar en nuestros contextos locales. Regístrate y podrás formar parte de Más que una casa.
+
+
