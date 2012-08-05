@@ -1,5 +1,6 @@
 class PhasesController < ApplicationController
   respond_to :html
+  expose(:themes) { 'textura_habitapedia naranja' }
   expose(:phases) { Phase.all }
   expose(:phase)
 

@@ -1,9 +1,18 @@
-html.phases.index {
-  div.phases {
-    padding-top: 30px;
 
-    .phase-image {
-      margin-bottom: 30px;
+.phase-info {
+  background: asset-data-url('vertical_bar.png') right top repeat-y;
+
+  // TODO: repetido de welcome -> refactorizar
+  h2 {
+    margin: 6px 0 12px;
+    text-align: center;
+
+    &:after {
+      content: "_";
+      display: block;
+      margin: -10px 0 0;
+      text-align: center;
     }
   }
+
 }

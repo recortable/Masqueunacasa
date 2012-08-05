@@ -19,11 +19,11 @@ class Phase < ActiveRecord::Base
   friendly_id :title, use: :simple_i18n
   acts_as_list
 
-  ICONS = ['planificacion', 'realizacion', 'uso-y-vida-util']
+  ICONS = ['organizacion', 'realizacion', 'uso']
   # TODO: convertir en un campo de la db
   def image_url
     icon = ICONS[position - 1]
-    "habitap/#{icon}.png"
+    "habitap/#{icon}_100.png"
   end
 
   def experiencies

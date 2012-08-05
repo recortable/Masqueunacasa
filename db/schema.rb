@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120719114358) do
+ActiveRecord::Schema.define(:version => 20120805112151) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -255,14 +255,19 @@ ActiveRecord::Schema.define(:version => 20120719114358) do
     t.string   "slug_es",           :limit => 50
     t.string   "slug_ca",           :limit => 50
     t.integer  "position"
-    t.datetime "created_at",                                     :null => false
-    t.datetime "updated_at",                                     :null => false
-    t.integer  "kudos_count",                     :default => 0
-    t.integer  "subscribers_count",               :default => 0
-    t.integer  "view_count",                      :default => 0
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
+    t.integer  "kudos_count",                      :default => 0
+    t.integer  "subscribers_count",                :default => 0
+    t.integer  "view_count",                       :default => 0
     t.text     "summary_es"
     t.text     "summary_ca"
     t.text     "summary_en"
+    t.string   "title_en",          :limit => 50
+    t.string   "slug_en",           :limit => 50
+    t.string   "question_es",       :limit => 300
+    t.string   "question_ca",       :limit => 300
+    t.string   "question_en",       :limit => 300
   end
 
   add_index "phases", ["slug_ca"], :name => "index_phases_on_slug_ca"

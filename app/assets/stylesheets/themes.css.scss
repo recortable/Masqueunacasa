@@ -3,6 +3,10 @@
 
 html.textura_inicio { background-image:
   asset-data-url('fondos/textura_inicio.png'); }
+html.textura_habitapedia { background-image:
+  asset-data-url('fondos/textura_habitapedia.png'); }
+
+// ÉSTAS DEBERÍAN IR FUERA!! TODO: BORRAR CUANDO NO SE NECESITEN
 html.textura01 { background-image: asset-data-url('fondos/textura01.png'); }
 html.textura02 { background-image: asset-data-url('fondos/textura02.png'); }
 html.textura03 { background-image: asset-data-url('fondos/textura03.png'); }
@@ -11,6 +15,7 @@ html.textura05 { background-image: asset-data-url('fondos/textura05.png'); }
 html.textura07 { background-image: asset-data-url('fondos/textura07.png'); }
 html.textura08 { background-image: asset-data-url('fondos/textura08.png'); }
 html.textura09 { background-image: asset-data-url('fondos/textura09.png'); }
+
 
 html.naranja {
   a {

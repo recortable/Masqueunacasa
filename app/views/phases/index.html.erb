@@ -12,18 +12,16 @@
         <div class="span4">
           <div class="corner"></div>
           <div class="content">
-            <h2>Habitapedia</h2>
-            <p>
-            Estamos recopilando dudas y propuestas útiles para tener en cuenta a lo largo del proceso de construcción colectiva de nuestras viviendas y entornos. ¡La Habitapedia està abierta a la participación de todo el mundo!
-            </p>
+            <h2><%= t('intro.habitapedia.title') %></h2>
+            <%= markdown t('intro.habitapedia.what') %>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="row phases">
+  <div class="row">
     <% phases.each do |phase| %>
-      <div class="span4">
+      <div class="phase-info span4">
         <div class="content">
           <div class="hoverize">
             <%= hover? :update, phase do %>
@@ -31,7 +29,7 @@
                 rel: "edit-phase-#{phase.id}" %>
             <% end %>
 
-            <%= image_tag(phase.image_url, width: 150, height: 150, alt: phase.title, class: 'fixed centered phase-image') %>
+            <%= image_tag(phase.image_url, width: 100, height: 100, alt: phase.title, class: 'fixed centered phase-image') %>
             <h2><%= phase.title %></h2>
             <div class="summary markdown">
               <%= markdown phase.summary %>
@@ -51,6 +49,5 @@
       </div>
     <% end %>
   </div>
-
 <% end %>
 
