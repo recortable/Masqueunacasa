@@ -1,3 +1,10 @@
+
+form {
+  input[type=text], input[type=email], input[type=password], textarea {
+    width: 98%;
+  }
+}
+
 #content-options-selector {
   padding-bottom: 0;
 

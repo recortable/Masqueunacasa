@@ -1,7 +1,9 @@
 <%= page do %>
-  <div class="span6">
-    <%= title 'Editar pregunta' %>
-    <h2>En la fase '<%= phase.title %>'</h2>
+  <div class="span6 offset2">
+    <%= title "Editar pregunta: #{category.question}" %>
+    <br>
+    <h3>En la fase '<%= phase.title %>'</h3>
+    <br>
     <%= render 'form' %>
   </div>
 <% end %>

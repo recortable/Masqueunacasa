@@ -4,12 +4,14 @@ class Category < ActiveRecord::Base
   friendly_id :title, use: :simple_i18n
   acts_as_list scope: :phase_id
   has_paper_trail meta: {title: :question }
+  mount_uploader :image, CategoryImageUploader
 
   translates :title, :slug, :question, :summary, :body
   translation_required :title, :slug, :question
 
   attr_accessible :title, :question, :summary, :body, :body_type
   attr_accessible :user_id, :user, :phase_id, :phase
+  attr_accessible :image
 
   validates_presence_of :user_id, :phase_id, :title, :question
 

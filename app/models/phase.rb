@@ -2,7 +2,7 @@ class Phase < ActiveRecord::Base
   attr_accessible :title_es, :title_ca, :title_en, :title
   attr_accessible :question_es, :question_ca, :question_en, :question
   attr_accessible :summary_es, :summary_ca, :summary_en, :summary
-  attr_accessible :position
+  attr_accessible :position, :color
   include Translatable
   translates :title, :summary, :question
 

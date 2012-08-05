@@ -30,7 +30,7 @@ es:
 
       category:
         title: 'Nombre corto'
-        question: 'Pregunta'
+        question: 'Título'
         
       group:
         name: 'Nombre corto'

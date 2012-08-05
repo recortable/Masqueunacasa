@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120805112151) do
+ActiveRecord::Schema.define(:version => 20120805152834) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20120805112151) do
     t.text     "summary_ca"
     t.text     "summary_en"
     t.integer  "editorships_count",                :default => 0
+    t.string   "image"
   end
 
   add_index "categories", ["phase_id"], :name => "index_categories_on_phase_id"
@@ -268,6 +269,7 @@ ActiveRecord::Schema.define(:version => 20120805112151) do
     t.string   "question_es",       :limit => 300
     t.string   "question_ca",       :limit => 300
     t.string   "question_en",       :limit => 300
+    t.string   "color",             :limit => 16
   end
 
   add_index "phases", ["slug_ca"], :name => "index_phases_on_slug_ca"
