@@ -1,23 +1,8 @@
 <div class="span3">
-  <div class="content">
-    <h2>Editores</h2>
-    <p>Han participado en la elaboración de este contenido</p>
-    <%= simple_list document.editorships do |editorship| %>
-      <%= avatar_link editorship.user, size: :small, class: 'fixed' %>
-      <%#= link_to 'Quitar este editor', editorship, method: :delete, confirm: "¿Seguro" %>
-    <% end %>
-  </div>
+    <%= render_editorships_list document %>
+    <%= render_subscriptors_list document %>
 </div>
-<div class="span3">
-  <div class="content">
-    <h2>Seguidores</h2>
-    <p>Reciben emails cuando este contenido cambia</p>
-    <%= simple_list document.subscriptors do |subscriptor| %>
-      <%= avatar_link subscriptor, size: :small, class: 'fixed' %>
-    <% end %>
-  </div>
-</div>
-<div class="span3">
+<div class="span6">
   <div class="content">
     <h2>Actividad</h2>
     <%= simple_list versions do |version| %>
@@ -26,16 +11,6 @@
   </div>
 </div>
 <div class="span3">
-  <div class="content">
-    <% if document.respond_to?(:tasks) %>
-      <h2>Tareas</h2>
-      <%= simple_list document.tasks do |task| %>
-        <%= check_box_tag "complete_task_#{task.id}", !task.finished?, task.finished?, class: 'complete_task', data: {
-          url: polymorphic_path([document, task], format: :json)} %>
-        <span class="task <%= 'finished' if task.finished? %>"><%= task.title %></span>
-      <% end %>
-      <%= link_to 'Añadir tarea', [:new, document, :task] %>
-    <% end %>
-  </div>
+    <%= render_task_list document %>
 </div>
 

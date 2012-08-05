@@ -1,0 +1,10 @@
+<% if document.respond_to?(:subscriptors) %>
+  <h3>Seguidores
+    <small><%= document.subscriptors.count %></small>
+  </h3>
+  <p>Reciben emails cuando este contenido cambia</p>
+  <%= simple_list document.subscriptors do |subscriptor| %>
+    <%= avatar_link subscriptor, size: :small, class: 'fixed' %>
+  <% end %>
+<% end %>
+

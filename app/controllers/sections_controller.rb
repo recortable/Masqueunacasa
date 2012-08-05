@@ -13,6 +13,10 @@ class SectionsController < ApplicationController
     authorize! :edit, section
   end
 
+  def show
+    redirect_to document_location
+  end
+
   def create
     authorize! :create, section
     flash[:notice] = 'Contenido guardado' if document.add_section(section, current_user)

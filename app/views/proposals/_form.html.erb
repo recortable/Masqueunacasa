@@ -1,5 +1,7 @@
 <%= simple_form_for proposal do |form| %>
-  <%= form.input :title %>
+  <div class="title">
+    <%= form.input :title, label: false %>
+  </div>
   <%= form.input :summary, as: :text %>
   <%= form.input :phase_id, as: :hidden %>
   <%= form.input :category_id, as: :hidden %>

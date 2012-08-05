@@ -1,9 +1,13 @@
+<h3>En la fase '<%= phase.title %>'</h3>
 <%= simple_form_for [phase, category] do |form| %>
-  <%= form.input :question %>
+  <div class="title">
+    <%= form.input :question, label: false %>
+  </div>
   <%= form.input :title %>
   <% if category.image.blank? %>
     <%= form.input :image %>
   <% else %>
+    <%= image_tag category.image, class: 'responsive' %>
     <%= form.input :remove_image, as: :boolean %>
   <% end %>
   <%= form.input :summary, as: :text %>

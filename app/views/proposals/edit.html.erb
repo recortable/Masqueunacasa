@@ -1,19 +1,12 @@
 <%= page do %>
+  <div class="span2">
+    <%= render_editorships_list proposal %>
+    <%= render_subscriptors_list proposal %>
+  </div>
   <div class="span6">
-    <%= title "Editar #{proposal.title}" %>
+    <%= title "Editar propuesta" %>
     <%= render 'form' %>
   </div>
-  <div class="span4">
-    <h3>Experiencias relacionadas</h3>
-    <ul>
-      <% proposal.relations.each do |relation| %>
-        <li>
-        <%= link_to relation.experiencie.title, relation.experiencie %>
-        <%= link_to '[borrar relación]', [proposal, relation], method: :delete, 
-          confirm: "Borrar relación con #{relation.experiencie.title}. ¿Segurx?" if can? :delete, relation %>
-        </li>
-      <% end %>
-    </ul>
-    <%= link_to 'Añadir experiencia relacionada', new_proposal_relation_path(proposal) if can? :create, Relation %>
-  </div>
+  <div class="span2">
+    <%= render_task_list proposal %>
 <% end %>

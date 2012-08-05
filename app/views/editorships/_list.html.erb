@@ -1,0 +1,11 @@
+<% if document.respond_to?(:editorships) %>
+  <h3>Editores
+    <small><%= document.editorships.count %>
+  </h3>
+  <p>Han participado en la elaboración de este contenido</p>
+  <%= simple_list document.editorships do |editorship| %>
+    <%= avatar_link editorship.user, size: :small, class: 'fixed' %>
+    <%#= link_to 'Quitar este editor', editorship, method: :delete, confirm: "¿Seguro" %>
+  <% end %>
+<% end %>
+

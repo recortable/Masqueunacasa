@@ -3,6 +3,14 @@ form {
   input[type=text], input[type=email], input[type=password], textarea {
     width: 98%;
   }
+
+  div.title {
+    margin-top: 20px;
+    input {
+      font-size: 200%;
+      height: 1.2em;
+    }
+  }
 }
 
 #content-options-selector {

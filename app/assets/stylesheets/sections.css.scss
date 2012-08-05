@@ -1,0 +1,27 @@
+
+.summary.markdown {
+  p {
+    font-family: $font-open;
+    font-size: 14px;
+    line-height: 22px;
+    text-indent: 1em;
+  }
+}
+
+.section {
+  font-family: $font-open;
+
+  h1, h2, h3, h4 {
+    font-family: $font-droid;
+  }
+
+  li {
+    margin-top: 0.2em;
+  }
+
+  p, li {
+    font-family: $font-open;
+    font-size: 12px;
+    line-height: 17px;
+  }
+}

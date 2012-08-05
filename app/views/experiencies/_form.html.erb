@@ -1,5 +1,7 @@
 <%= simple_form_for experiencie do |form| %>
-  <%= form.input :title %>
+  <div class="title">
+    <%= form.input :title, label: false %>
+  </div>
   <%= form.input :summary, as: :text %>
   <%= form.input :related_proposal_id, as: :hidden %>
   <%= submit_button_for form %>

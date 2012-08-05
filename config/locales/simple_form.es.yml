@@ -20,7 +20,7 @@ es:
         published_at: 'Fecha de publicación'
         password: 'Contraseña'
         password_confirmation: 'Repite la contraseña'
-        summary: Resumen
+        summary: 'Resúmen'
         title: 'Título'
         title_ca: 'Título can catalán'
         url: 'Enlace'
@@ -70,11 +70,8 @@ es:
         category: 'A qué pregunta responde'
 
     hints:
-      image: 'Esta imágen aparecerá al principio de la página. Debe tener un ancho de 510px'
-      embed: 'En este espacio puedes pegar el código de insertar vídeo de youtube, vimeo, etcétera... Otros códigos iframe también sirven'
-      change_image: 'Puedes canviar la imagen. Verás la nueva imagen después de 
-                     actualizar el contenido'
-      content-options-selector: 'Una vez creado el contenido no podrás cambiar estas opciones'
+      defaults:
+        summary: 'Debe ser corto e introduce el contenido. No más de un párrafo.'
 
       category:
         title: 'Se usará en la URL. Intenta que sea corto y descriptivo.'
@@ -90,6 +87,8 @@ es:
       password_recovery:
         email: 'Escribe el email con el que te registraste, y te enviaremos las instrucciones'
       
+      section:
+        title: 'El título de esta sección. Es opcional'
       user:
         edit:
           password: 'Déjalo vacío si no quieres cambiarla'

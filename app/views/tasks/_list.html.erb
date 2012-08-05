@@ -1,0 +1,10 @@
+<% if document.respond_to?(:tasks) %>
+  <h2>Tareas</h2>
+  <%= simple_list document.tasks do |task| %>
+    <%= check_box_tag "complete_task_#{task.id}", !task.finished?, task.finished?, class: 'complete_task', data: {
+      url: polymorphic_path([document, task], format: :json)} %>
+    <span class="task <%= 'finished' if task.finished? %>"><%= task.title %></span>
+  <% end %>
+  <%= link_to 'Añadir tarea', [:new, document, :task] %>
+<% end %>
+
