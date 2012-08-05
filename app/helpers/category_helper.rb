@@ -9,7 +9,7 @@ module CategoryHelper
     if category.image.present?
       image_tag(category.image_url, alt: category.question)
     else
-      fake_image(800, 460)
+      fake_img(800, 460)
     end
   end
 end

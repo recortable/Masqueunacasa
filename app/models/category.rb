@@ -11,7 +11,7 @@ class Category < ActiveRecord::Base
 
   attr_accessible :title, :question, :summary, :body, :body_type
   attr_accessible :user_id, :user, :phase_id, :phase
-  attr_accessible :image
+  attr_accessible :image, :remove_image
 
   validates_presence_of :user_id, :phase_id, :title, :question
 

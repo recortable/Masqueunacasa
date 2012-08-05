@@ -31,6 +31,8 @@ es:
       category:
         title: 'Nombre corto'
         question: 'Título'
+        image: 'Imágen o dibujo'
+        remove_image: 'Borrar imágen'
         
       group:
         name: 'Nombre corto'
@@ -75,7 +77,9 @@ es:
       content-options-selector: 'Una vez creado el contenido no podrás cambiar estas opciones'
 
       category:
-        title: 'Este nombre se usará en la URL. Intenta que sea corto y descriptivo.'
+        title: 'Se usará en la URL. Intenta que sea corto y descriptivo.'
+        image: 'Debe tener un ancho de 800 pixels, ni más ni menos.'
+        remove_image: 'Selecciona ésto si quieres borrar la imágen actual'
 
       group:
         has_blog: 'Márcalo si quieres tener un blog en tu grupo'
