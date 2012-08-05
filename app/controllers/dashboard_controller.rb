@@ -18,6 +18,7 @@ class DashboardController < ApplicationController
   def dashboard
   end
 
+  expose(:info) { Welcome.new }
   def welcome
   end
 
