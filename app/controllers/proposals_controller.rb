@@ -13,6 +13,15 @@ class ProposalsController < ApplicationController
   def show
     authorize! :read, proposal
     proposal.increment_view_counter
+
+    breadcrumb_for_proposal(proposal)
+    respond_with proposal
+  end
+
+  def edit
+    authorize! :update, proposal
+
+    breadcrumb_for_proposal(proposal)
     respond_with proposal
   end
 
@@ -28,6 +37,7 @@ class ProposalsController < ApplicationController
     proposal.user = current_user
     authorize! :create, proposal
     flash[:notice] = t('proposals.notices.created') if proposal.save
+
     respond_with proposal
   end
 

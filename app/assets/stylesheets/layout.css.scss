@@ -22,3 +22,20 @@ body {
     padding-top: 16px;
   }
 }
+
+.page {
+  .span6, .span4 { margin-top: 40px; }
+}
+
+.headrow {
+  width: 100%; overflow: hidden;
+  .breadcrumbs {
+    float: left;
+    background-color: $negro;
+    color: $fondo;
+    font-weight: bold;
+    padding: 0 5px;
+
+    a { font-weight: normal; color: $fondo; }
+  }
+}
