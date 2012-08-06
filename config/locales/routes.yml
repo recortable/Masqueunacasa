@@ -21,6 +21,7 @@ es:
     edition: 'edicion'
     images: 'imagenes'
     tasks: 'tareas'
+    links: 'enlaces-relacionados'
 
     edit: 'editar'
     new: 'nueva'

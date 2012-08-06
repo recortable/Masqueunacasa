@@ -9,7 +9,11 @@ class LinksController < ApplicationController
   end
 
   def edit
+  end
 
+  def show
+    link = Link.find params[:id]
+    redirect_to link.document
   end
 
   def create
