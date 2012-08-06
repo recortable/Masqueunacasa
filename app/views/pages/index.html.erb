@@ -1,18 +1,20 @@
-<%= render_group_header group %>
+<%= page row: false, head: false do %>
+  <%= render_group_header group %>
 
-<div class="row">
-  <%= user_column 'span2' do %>
-    <%= render_group_bar group %>
-  <% end %>
-  <%= corner_span 'span6' do %>
-    <div class="hoverize">
-      <%= hover? :create, Page do %>
-        <%= link_to icon(:plus, 'Añadir documento'), new_page_path, rel: 'new-page' %>
-      <% end %>
-      <%= title "Documentos" %>
-    </div>
-    <%= simple_list pages do |page| %>
-      <h3><%= link_to page.title, page %></h3>
+  <div class="row">
+    <%= user_column 'span2' do %>
+      <%= render_group_bar group %>
     <% end %>
-  <% end %>
-</div>
+    <div class="span6">
+      <div class="hoverize">
+        <%= hover? :create, Page do %>
+          <%= link_to icon(:plus, 'Añadir documento'), new_page_path, rel: 'new-page' %>
+        <% end %>
+        <%= title "Documentos" %>
+      </div>
+      <%= simple_list docs do |document| %>
+        <h3><%= link_to document.title, document %></h3>
+      <% end %>
+    </div>
+  </div>
+<% end %>
