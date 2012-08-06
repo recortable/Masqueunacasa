@@ -12,17 +12,21 @@ class MailerController < ApplicationController
   end
 
   def activity
-    users = User.where(admin: true)
-    users.each {|u| UserMailer.activity_email(u, activities).deliver }
-
-    flash[:notice] = "Email de actividad enviado (#{users.count} emails)"
+    if activities.deliver?
+      users = User.where(admin: true)
+      users.each {|u| UserMailer.activity_email(u, activities).deliver }
+      activities.last_mail_at = Time.now
+      flash[:notice] = "Email de actividad enviado (#{users.count} emails)"
+    else
+      flash[:notice] = 'No era necesario enviar el email'
+    end
     render action: 'info'
   end
 
   def set
     begin
-      time = Date.parse params[:q]
-      activities.last_mail_at = time
+      date = Date.parse params[:d]
+      activities.last_mail_at = date.to_time
     end
     redirect_to action: 'info'
   end

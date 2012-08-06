@@ -22,6 +22,10 @@ class Activities
     updated_at
   end
 
+  def deliver?
+    (Time.now.to_i - last_mail_at.to_i > 1.hour) && versions.size > 0
+  end
+
   def self.site_activity(max = 50)
     clean_versions(Version.limit(max).order('created_at DESC')) 
   end
