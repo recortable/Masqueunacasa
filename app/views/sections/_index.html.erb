@@ -14,7 +14,7 @@
       <% end %>
       <a name="<%= section.title? ? section.title : section.id %>">
       </a>
-      <h2><%= section.title %><small><%= link_to icon('sort-up'), '#' %></small></h2>
+      <h2 <%= "class='no-title'" if section.title.blank? %>><%= section.title %><small><%= link_to icon('sort-up'), '#' %></small></h2>
       <% if section.image? && section.image_position == 'top' %>
         <div class="image top">
           <%= image_tag section.image_url, class: 'responsive' %>

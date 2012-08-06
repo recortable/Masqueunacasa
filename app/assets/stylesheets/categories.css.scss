@@ -29,6 +29,10 @@ html.categories.show {
         display: block;
         background: image-url('lineazigzag.png') repeat-x;
       }
+
+      h2.no-title:before, h2.no-title:after {
+        display: none;
+      }
     }
   }
 }
