@@ -90,6 +90,8 @@ img.centered {
 
 .hoverize {
   position: relative;
+  min-height: 26px;
+
   .hover {
     margin-right: -0px;
     background-color: $rojo;

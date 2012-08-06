@@ -23,9 +23,14 @@ body {
   }
 }
 
+/* 
+ * Para qué son estos estilos? Se puede hacer de otra manera?
+ * Aplica margen superior a mogollon de sitios que no debería..
+ *
 .page {
   .span6, .span4 { margin-top: 40px; }
 }
+*/
 
 .headrow {
   width: 100%; overflow: hidden;

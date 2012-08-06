@@ -1,47 +1,70 @@
+/* Algunos estilos de fases#index estan definidos en welcome.css.scss */
 
-.phase-info {
+.phases-container, .categories-container {
+  overflow: hidden;
+
+  .phase-info, .phase-categories {
+    width: 33.333333%;
+    float: left;
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+    background: image-url('vertical_bar.png') repeat-y right top;
+
+    .content {
+      background-color: transparent;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    &:last-child {
+      background-image: none;
+    }
+  }
+}
+
+.phases-container {
   margin-top: 30px;
 
-  // TODO: repetido de welcome -> refactorizar
-  div.question {
-    margin-top: 12px;
-    margin-bottom: 20px;
-    font-size: 14px;
-    font-family: $font-droid;
-    text-align: center;
-  }
-
-  h2 {
-    font-family: $font-droid;
-    margin: 6px 0 12px;
-    text-align: center;
-    text-style: bold;
-    font-size: 24px;
-
-    &:after {
-      content: "_";
-      display: block;
-      margin: -10px 0 0;
+  .phase-info {
+    div.question {
+      margin-bottom: 20px;
       text-align: center;
+      @include title_font(13px, normal);
     }
-  }
 
-  .summary.markdown p {
-    font-family: $font-open;
-    font-size: 13px;
-    line-height: 17px;
-  }
-}
+    h2 {
+      margin: 6px 0 12px;
+      text-align: center;
+      font-size: 24px;
 
-.phase-categories {
-  h3 {
-    font-family: $font-droid;
-    font-size: 16px;
+      &:after {
+        content: "_";
+        display: block;
+        margin: -10px 0 0;
+        text-align: center;
+      }
+    }
 
-    small {
-      display: block;
+    .summary.markdown p {
       font-family: $font-open;
       font-size: 13px;
+      line-height: 17px;
     }
   }
 }
+
+.categories-container {
+  .phase-categories {
+    h3 {
+      font-family: $font-droid;
+      font-size: 16px;
+
+      small {
+        display: block;
+        font-family: $font-open;
+        font-size: 13px;
+      }
+    }
+  }
+}
+    

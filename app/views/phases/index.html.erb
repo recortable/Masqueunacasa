@@ -19,9 +19,9 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="phases-container clearfix">
     <% phases.each do |phase| %>
-      <div class="phase-info span4">
+      <div class="phase-info">
         <div class="content">
           <div class="hoverize">
             <%= hover? :update, phase do %>
@@ -42,10 +42,9 @@
       </div>
     <% end %>
   </div>
-
-  <div class="row">
+  <div class="categories-container">
     <% phases.each do |phase| %>
-      <div class="span4 phase-categories">
+      <div class="phase-categories">
         <div class="content">
           <%= render_category_list phase, title: nil %>
         </div>
