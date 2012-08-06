@@ -61,6 +61,18 @@ body {
   }
 }
 
+.sidebar {
+  h2 {
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: normal;
+  }
+}
+
 .content, .bloc {
   background-color: $fondo;
 }

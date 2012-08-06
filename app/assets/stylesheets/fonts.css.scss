@@ -28,3 +28,7 @@ h3 {
   @include title_font(24px, bold);
 }
 
+h4 {
+  @include title_font(16px, normal);
+}
+
