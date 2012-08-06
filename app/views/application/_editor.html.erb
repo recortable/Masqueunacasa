@@ -1,13 +1,13 @@
 <%= page do %>
-  <div class="span2">
+  <div class="span2 leftcol">
     <%= render_editorships_list document %>
     <%= render_subscriptors_list document %>
   </div>
-  <div class="span6">
+  <div class="span6 center">
     <%= title "Editar #{document.class.model_name.human}" %>
     <%= render 'form' %>
   </div>
-  <div class="span2">
+  <div class="span4 rightcol">
     <%= render_task_list document %>
 <% end %>
 

@@ -26,11 +26,15 @@ body {
 /* 
  * Para qué son estos estilos? Se puede hacer de otra manera?
  * Aplica margen superior a mogollon de sitios que no debería..
- *
+ * DANI: pues esto sirve para bajar la columna central y la derecha
+ * con respecto al breadcrumbs. Ahora no veo dónde no debería...
+ * y me parece que, de momento, queda mejor con que sin (desde luego
+ * en las pantallas de preguntas, propuestas y experiencias es
+ * imprescindible
+ */
 .page {
   .span6, .span4 { margin-top: 40px; }
 }
-*/
 
 .headrow {
   width: 100%; overflow: hidden;
