@@ -32,9 +32,7 @@ body {
  * en las pantallas de preguntas, propuestas y experiencias es
  * imprescindible
  */
-.page {
-  .span6, .span4 { margin-top: 40px; }
-}
+.page > .span6, .page > .span4 { margin-top: 40px; }
 
 .headrow {
   width: 100%; overflow: hidden;
