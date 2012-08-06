@@ -4,7 +4,7 @@ html.categories.show {
       top: 22px;
     }
 
-    h1:before {
+    h1:before, h1:after {
       content: "";
       height: 20px;
       display: block;
@@ -12,9 +12,7 @@ html.categories.show {
     }
 
     h1:after {
-      content: "";
       height: 8px;
-      display: block;
       background: image-url('lineazigzag.png') repeat-x;
     }
 
@@ -28,10 +26,6 @@ html.categories.show {
         height: 8px;
         display: block;
         background: image-url('lineazigzag.png') repeat-x;
-      }
-
-      h2.no-title:before, h2.no-title:after {
-        display: none;
       }
     }
   }

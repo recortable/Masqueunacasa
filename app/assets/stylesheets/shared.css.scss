@@ -119,3 +119,7 @@ img.centered {
   }
   &:hover .hover { opacity: 0.9; }
 }
+
+h2.no-title:before, h2.no-title:after {
+  display: none !important;
+}
