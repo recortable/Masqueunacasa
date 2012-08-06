@@ -23,7 +23,7 @@ class Activities
   end
 
   def deliver?
-    (Time.now.to_i - last_mail_at.to_i > 1.hour) && versions.size > 0
+    (Time.now.to_i - last_mail_at.to_i > 8.hour) && versions.size > 0
   end
 
   def self.site_activity(max = 50)
