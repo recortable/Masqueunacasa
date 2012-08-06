@@ -18,10 +18,23 @@ class VersionsController < ApplicationController
     when 'Section'
       section = Section.find version.item_id
       polymorphic_path(section.document, anchor: section.to_anchor)
+    when 'Image'
+      image = Image.find version.item_id
+      polymorphic_path(image.imageable)
     else
-      klass = version.item_type.constantize
-      model = klass.find_by_id version.item_id
-      model.present? ? url_for(model) : nil
+      begin
+        klass = version.item_type.constantize
+        model = klass.find_by_id version.item_id
+        if model.respond_to?(:document)
+          url_for(model.document)
+        elsif model.present?
+          url_for(model)
+        else
+          nil
+        end
+      rescue
+        nil  
+      end
     end
   end
 end
