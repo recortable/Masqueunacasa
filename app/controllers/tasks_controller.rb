@@ -7,6 +7,11 @@ class TasksController < ApplicationController
   def new
   end
 
+  def show
+    task = Task.find params[:id]
+    redirect_to [task.document, :edition]
+  end
+
   def create
     task.save
     respond_with task, location: [document, :edition]

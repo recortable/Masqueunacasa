@@ -75,6 +75,8 @@ Masqueunacasa::Application.routes.draw do
 
 
     # HABITAPEDIA
+    resources :links, only: :show
+    resources :tasks, only: :show
     resources :proposals, except: [:new] do
       resource :kudos
       put :up, on: :member
@@ -123,6 +125,7 @@ Masqueunacasa::Application.routes.draw do
       resource :edition
       resources :subscribers, only: [:create, :destroy]
     end
+
 
   end
 
