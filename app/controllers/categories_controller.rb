@@ -6,6 +6,9 @@ class CategoriesController < ApplicationController
   expose(:parent) { params[:phase_id].present? ? phase : Site.new }
   expose(:categories) { parent.categories }
   expose(:category)
+  expose(:themes) do
+    "#{phase.textura} #{phase.color}"
+  end
 
   def index
     authorize! :index, Category
