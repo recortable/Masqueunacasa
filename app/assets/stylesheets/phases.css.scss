@@ -7,7 +7,7 @@
     width: 33.333333%;
     float: left;
     margin-bottom: -99999px;
-    padding-bottom: 99999px;
+    padding-bottom: 99990px;
     background: image-url('vertical_bar.png') repeat-y right top;
 
     .content {
@@ -55,14 +55,88 @@
 
 .categories-container {
   .phase-categories {
+    padding-top: 15px;
+
+    .categories>.hoverize {
+      min-height: 30px;
+    }
+
+    .content {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
     h3 {
-      font-family: $font-droid;
       font-size: 16px;
+      font-weight: normal;
+
+      a {
+        color: $negro;
+      }
 
       small {
         display: block;
+        padding-left: 26px;
         font-family: $font-open;
         font-size: 13px;
+        color: $negro;
+        background: image-url('propuesta_20px.png') no-repeat left 50%;
+      }
+    }
+
+    .table {
+      position: relative;
+
+      &:before {
+        content: "";
+        width: 35px;
+        height: 35px;
+        display: block;
+        position: absolute;
+        top: -17px;
+        left: -12px;
+        background: image-url('pregunta_35px.png') no-repeat;
+      }
+
+      tr:first-child td {
+        padding-top: 15px;
+      }
+
+      td {
+        padding: 8px 5px 0;
+        border-top: none;
+      }
+    }
+
+    &.azul_gris .table {
+      border-top: 4px double $azul_gris;
+
+      td {
+        border-bottom: 1px solid $azul_gris;
+      }
+    }
+
+    &.tierra .table {
+      border-top: 4px double $tierra;
+
+      &:before {
+        background-position: 0 -70px;
+      }
+
+      td {
+        border-bottom: 1px solid $tierra;
+      }
+    }
+
+    &.ocre .table {
+      border-top: 4px double $ocre;
+
+      &:before {
+        background-position: 0 -35px;
+      }
+
+      td {
+        border-bottom: 1px solid $ocre;
       }
     }
   }

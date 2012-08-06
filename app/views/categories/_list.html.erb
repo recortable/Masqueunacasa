@@ -21,7 +21,7 @@
       <% end %>
       <h3>
         <%= link_to category.question, [phase, category] %>
-        <small><%= icon('certificate', category.proposals.count) %> propuestas.</small>
+        <small><%= category.proposals.count %> propuestas.</small>
       </h3>
     </div>
   <% end %>
