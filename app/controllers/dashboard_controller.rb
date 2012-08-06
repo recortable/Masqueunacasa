@@ -27,11 +27,11 @@ class DashboardController < ApplicationController
     add_breadcrumb 'Comunidad', community_path
   end
 
-  def blog
+  def mailer
+    redirect_to '/mailer/admin'
   end
 
-  expose(:activities) { Activities.new }
-  def mailer
+  def blog
   end
 
   def cuatrocerocuatro

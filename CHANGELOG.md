@@ -3,6 +3,12 @@
 TAREAS
 - Enviar emails colectivos en background
 
+## 5/08/2012 (Muere Chavela Vargas! :( )
+- Css 
+- Editor genérico
+- Formularios mejorados
+- Bug fixes
+
 ## 19/07/2012
 - Los enlaces pueden ser editados
 - Counter cache for experiencies and relations

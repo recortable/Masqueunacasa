@@ -20,12 +20,17 @@ body { @include text_font(13px, normal);
   line-height: 17px;
 }
 
-h1, h2 {
+h1 {
   @include title_font(30px, bold);
 }
 
-h3 {
+h2 {
   @include title_font(24px, bold);
+}
+
+
+h3 {
+  @include title_font(20px, bold);
 }
 
 h4 {
