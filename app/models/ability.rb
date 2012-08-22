@@ -21,21 +21,22 @@ class Ability
       can :manage, :all
     else
       # Un usuario cualquiera
+      can :create, Group
 
       # HABITAPEDIA
-      can :update, Category
       can :manage, Section do |section|
         can? :update, section.document
       end
-     
-      can :create, Group
 
-      can [:create, :update], Experiencie
-
+      can :update, Category
       can :manage, Proposal
-      can :delete, Proposal do |proposal|
+      can :destroy, Proposal do |proposal|
         proposal.user_id == user.id
       end
+      can [:create, :update], Experiencie
+      can :create, Relation
+      can(:destroy, Relation) {|relation| relation.user_id == user.id }
+
 
       can :manage, Task
 
@@ -48,7 +49,7 @@ class Ability
       can(:update, Group) {|group| participant?(group, user) }
 
       can(:manage, Post) {|post| participant?(current_group, user) }
-      can(:delete, Post) {|post| post.user_id == user.id }
+      can(:destroy, Post) {|post| post.user_id == user.id }
 
       can(:manage, Page) {|page| participant?(page.group, user) }
       can(:manage, Announcement) {|ann| participant?(ann.group, user) }

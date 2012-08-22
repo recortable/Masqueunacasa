@@ -7,6 +7,7 @@
   </div>
 
   <div class="span6">
+    <h4><%= link_to proposal.category.question, proposal.category %></h4>
     <div class="hoverize">
       <%= hover? :update, proposal do %>
         <%= link_to icon(:edit, 'Editar'), [:edit, proposal], rel: 'edit-proposal' %>
