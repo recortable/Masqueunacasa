@@ -37,6 +37,8 @@ class Ability
         proposal.user_id == user.id
       end
 
+      can :manage, Task
+
       can :read, Membership
       can(:manage, Membership) {|m| participant?(m.group, user) }
 

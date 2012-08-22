@@ -24,6 +24,14 @@ class User < Agent
   has_secure_password
   mount_uploader :avatar_image, UserAvatarUploader
 
+  def self.current_user
+    Thread.current[:current_user]
+  end
+
+  def self.current_user=(user)
+    Thread.current[:current_user] = user
+  end
+
   def member?(group)
     Membership.where(group_id: group.id, user_id: self.id).first.present?
   end

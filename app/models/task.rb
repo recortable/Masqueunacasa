@@ -6,6 +6,7 @@ class Task < ActiveRecord::Base
 
   belongs_to :document, polymorphic: true
   belongs_to :user
+  include DocumentHasEditors
 
   has_paper_trail meta: { title: :title, parent_title: :document_title, document: :document }
 

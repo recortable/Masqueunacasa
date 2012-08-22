@@ -2,7 +2,8 @@ module CurrentUser
   extend ActiveSupport::Concern
 
   included do
-   helper_method :current_user
+    helper_method :current_user
+    before_filter :set_current_user
   end
 
   def login_user(user, options = {bypass: false})
@@ -33,7 +34,7 @@ module CurrentUser
       false
     end
   end 
-    
+
 
   def store_location(location = nil)
     location ||= request.fullpath
@@ -42,10 +43,15 @@ module CurrentUser
 
   def current_user
     @current_user ||= if session[:user_id].present?
-      User.find session[:user_id]
-    else
-      nil
-    end
+                        User.find session[:user_id]
+                      else
+                        nil
+                      end
+  end
+
+  protected
+  def set_current_user
+    User.current_user = self.current_user
   end
 
 end
