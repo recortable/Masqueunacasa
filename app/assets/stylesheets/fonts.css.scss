@@ -1,16 +1,39 @@
-p {
-  color: $negro;
-  font-family: 'Lucida Grande', Helvetica, sans-serif;
+$font-droid: 'Droid Serif', serif;
+$font-open: 'Open Sans', sans-serif;
+
+@mixin title_font($size, $weight, $style: normal) {
+  font-family: $font-droid;
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin text_font($size, $weight, $style: normal) {
+  font-family: $font-open;
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+/* TIPOGRAFÍAS POR DEFECTO */ 
+body { @include text_font(13px, normal);
   line-height: 17px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: Georgia, serif;
+h1 {
+  @include title_font(30px, bold);
 }
 
-html.experiencies.index .quadricula {
-  #add_image, .experiencie {
-    font-size: 18px;
-    line-height: 21px;
-  }
+h2 {
+  @include title_font(24px, bold);
 }
+
+
+h3 {
+  @include title_font(20px, bold);
+}
+
+h4 {
+  @include title_font(16px, normal);
+}
+

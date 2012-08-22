@@ -54,11 +54,11 @@ Masqueunacasa::Application.routes.draw do
   match '/feed' => 'posts#feed', as: :feed, defaults: { format: 'atom' }
   match '/inicio' => 'dashboard#dashboard'
   match '/community' => 'dashboard#community', as: :community
-  match '/mailer' => 'dashboard#mailer'
   match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'
   match '/quinientos' => 'dashboard#quinientos'
   match '/activity_mail' => 'dashboard#activity_mail'
   match "/enter/:id" => "users#enter", as: :enter 
+  match '/mail/:action/' => 'mailer'
 
   root to: 'dashboard#welcome'
 
@@ -123,6 +123,7 @@ Masqueunacasa::Application.routes.draw do
       resource :edition
       resources :subscribers, only: [:create, :destroy]
     end
+
 
   end
 

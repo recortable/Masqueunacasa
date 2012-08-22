@@ -20,6 +20,17 @@ class Phase < ActiveRecord::Base
   acts_as_list
 
   ICONS = ['organizacion', 'realizacion', 'uso']
+  COLORS = ['azul_gris', 'tierra', 'ocre']
+
+  def color
+    COLORS[(position - 1) % 3]
+  end
+
+  def textura
+    textura = ICONS[(position - 1) % 3]
+    "textura_#{textura}"
+  end
+
   # TODO: convertir en un campo de la db
   def image_url
     icon = ICONS[(position - 1) % 3]

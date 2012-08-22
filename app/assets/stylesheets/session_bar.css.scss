@@ -4,6 +4,7 @@ body {
   #session {
     margin-bottom: 0;
     background-color: transparent !important;
+    font-size: 12px;
 
     .navbar-inner {
       min-height: 0;
@@ -17,7 +18,6 @@ body {
           margin: 0 2px;
           padding: 0;
           line-height: 20px;
-          font-family: $font-open;
           color: $fondo;
           text-transform: uppercase;
           font-weight: normal;

@@ -6,6 +6,9 @@ class CategoriesController < ApplicationController
   expose(:parent) { params[:phase_id].present? ? phase : Site.new }
   expose(:categories) { parent.categories }
   expose(:category)
+  expose(:themes) do
+    "#{phase.textura} #{phase.color}"
+  end
 
   def index
     authorize! :index, Category
@@ -24,12 +27,16 @@ class CategoriesController < ApplicationController
     else
       authorize! :read, category
       category.increment_view_counter
+
+      breadcrumb_for_category(category)
       respond_with category
     end
   end
 
   def edit
     authorize! :edit, category
+
+    breadcrumb_for_category(category)
     respond_with category
   end
 

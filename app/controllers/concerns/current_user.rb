@@ -16,12 +16,24 @@ module CurrentUser
   end
 
   def require_user
-    unless current_user
+    if current_user
+      true
+    else
       store_location
       flash[:notice] = 'Es necesario que te identifiques primero.'
       redirect_to login_path(from: request.fullpath)
+      false
     end
   end
+
+  def require_admin
+    if require_user && current_user.admin?
+      true
+    else
+      false
+    end
+  end 
+    
 
   def store_location(location = nil)
     location ||= request.fullpath

@@ -1,0 +1,20 @@
+html.posts {
+  .post {
+    h2, h3 {
+      font-weight: normal;
+    }
+  }
+
+  &.index {
+    .post {
+      h2 {
+        font-size: 24px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+    }
+  }
+}
+

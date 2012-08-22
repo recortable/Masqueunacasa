@@ -61,6 +61,18 @@ body {
   }
 }
 
+.sidebar {
+  h2 {
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: normal;
+  }
+}
+
 .content, .bloc {
   background-color: $fondo;
 }
@@ -71,11 +83,6 @@ body {
 
 .content {
   padding: 3px 30px 30px 30px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $titulos;
-  font-weight: normal;
 }
 
 img {
@@ -95,6 +102,7 @@ img.centered {
 
 .hoverize {
   position: relative;
+
   .hover {
     margin-right: -0px;
     background-color: $rojo;
@@ -110,4 +118,8 @@ img.centered {
     }
   }
   &:hover .hover { opacity: 0.9; }
+}
+
+h2.no-title:before, h2.no-title:after {
+  display: none !important;
 }

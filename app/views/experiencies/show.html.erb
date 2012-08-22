@@ -17,7 +17,6 @@
               method: :delete, confirm: "¿Quieres borrar esta experiencia?" %>
           <% end %>
         <% end %>
-        <h3>Experiencia</h3>
         <%= title experiencie.title %>
       </div>
       <div class="summary markdown">
@@ -43,7 +42,7 @@
       <%= render_sections experiencie %>
     </div>
 
-    <div class="span4">
+    <div class="span4 sidebar sidebar-right">
       <%= render_experiencie_relations experiencie %>
       <%= render_links_bar experiencie %>
       <%= render_locations_bar experiencie %>

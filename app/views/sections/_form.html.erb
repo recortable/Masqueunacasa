@@ -20,6 +20,18 @@
       <%= form.input :image_position, collection: ['top', 'bottom', 'none'], include_blank: false %>
     <% end %>
   </div>
+  <div class="videos">
+    <h3>Vídeos u otros enlaces</h3>
+    <p>Para poner un vídeo, simplemente pon la url en el texto, rodeado
+    por una línea en blanco tanto antes como después. Por ejemplo:</p>
+    <pre>
+
+http://vimeo.com/37086987
+
+</pre>
+    <p>... incrustaría el vídeo de introducción a masqueunacasa.org</p>
+    <p>Esto funciona tanto con imágenes externas, como vídeos de youtube, y vimeo (más formatos por venir).</p>
+  </div>
   <%= submit_button_for form %>
   <%= link_to 'Cancelar', [document, section] %>
 <% end %>

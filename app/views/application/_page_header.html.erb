@@ -1,6 +1,11 @@
 <!--<%= form_tag search_path, class: 'form-search', method: :get do %>
-  <input type="text" name="t" class="input-medium search-query">
+<input type="text" name="t" class="input-medium search-query">
 <% end %>-->
 <%= link_to image_tag('Logo_Mquc.png', width: 271, height: 41), root_url(subdomain: nil), class: 'mquc' %>
+<div class="headrow">
+  <div class="breadcrumbs">
+    <%= render_breadcrumbs :separator => ' / ' %>
+  </div>
+</div>
 
 

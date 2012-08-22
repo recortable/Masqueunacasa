@@ -7,11 +7,14 @@ TAREAS
 - Tratando de mejorar el viewport para dispositivos móviles
 
 ## 05/08/2012 (Ha muerto Chavela Vargas! :( )
+- Css 
+- Editor genérico
+- Formularios mejorados
+- Bug fixes
 - Los editores, suscriptores y tareas aparecen en los formularios de
   edición
 - Los formularios de edición son genéricos para todos los documentos
 - Mejora de estilos (en especial tipos de letras)
-
 
 ## 19/07/2012
 - Los enlaces pueden ser editados

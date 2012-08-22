@@ -1,15 +1,13 @@
+<% title 'Comunidad' %>
 <%= page row: false do %>
-  <div class="row">
-    <div class="span12">
-      <%= title 'Comunidad' %>
-    </div>
-  </div>
   <div class="row">
     <div class="span8">
       <% groups.each do |group| %>
         <div class="row group">
           <div class="span2">
-            <%= render_group_bar group %>
+            <div class="content-inner"
+              <%= render_group_bar group %>
+            </div>
           </div>
           <div class="span4">
             <div class="hoverize">

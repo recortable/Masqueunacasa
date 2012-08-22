@@ -1,10 +1,12 @@
 <div class="categories">
-  <% if options[:title].present? %>
+  <% if can? :create, Category %>
     <div class="hoverize">
-      <%= hover? :create, Category do %>
+      <div class="hover">
         <%= link_to icon(:plus, 'Añadir pregunta'), [:new, phase, :category] %>
+      </div>
+      <% if options[:title].present? %>
+        <h2><%= options[:title] %></h2>
       <% end %>
-      <h2><%= options[:title] %></h2>
     </div>
   <% end %>
 
@@ -19,7 +21,7 @@
       <% end %>
       <h3>
         <%= link_to category.question, [phase, category] %>
-        <small><%= icon('certificate', category.proposals.count) %> propuestas.</small>
+        <small><%= category.proposals.count %> propuestas.</small>
       </h3>
     </div>
   <% end %>

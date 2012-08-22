@@ -15,6 +15,8 @@ class DashboardController < ApplicationController
   expose(:archive_posts) { Post.all }
   expose(:posts_archive) { Post.archive_for(site.posts) }
 
+  add_breadcrumb 'Mas que una casa', :root_path
+
   def dashboard
   end
 
@@ -22,13 +24,14 @@ class DashboardController < ApplicationController
   end
 
   def community
+    add_breadcrumb 'Comunidad', community_path
+  end
+
+  def mailer
+    redirect_to '/mailer/admin'
   end
 
   def blog
-  end
-
-  expose(:activities) { Activities.new }
-  def mailer
   end
 
   def cuatrocerocuatro

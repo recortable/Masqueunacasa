@@ -17,6 +17,18 @@
   }
 }
 
+@media (max-width: 1200px) {
+  html.welcome div.info-wrapper div.info .content {
+    .section-question {
+      font-size: 13px;
+    }
+  }
+
+  #main .main-header .banner {
+    min-height: 160px;
+  }
+}
+
 /*@media (min-width: 980px) {*/
   /*html.welcome {*/
     /*div.intro {*/
