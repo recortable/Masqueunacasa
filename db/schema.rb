@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806032538) do
+ActiveRecord::Schema.define(:version => 20120822165947) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8

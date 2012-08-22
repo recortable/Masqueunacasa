@@ -7,7 +7,11 @@ class CategoriesController < ApplicationController
   expose(:categories) { parent.categories }
   expose(:category)
   expose(:themes) do
-    "#{phase.textura} #{phase.color}"
+    "#{phase.textura} #{phase.color}" if params[:phase_id]
+  end
+
+  def dahsboard
+    respond_with categories
   end
 
   def index

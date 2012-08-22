@@ -76,6 +76,7 @@ Masqueunacasa::Application.routes.draw do
 
     # HABITAPEDIA
     resources :proposals, except: [:new] do
+      get :dashboard, on: :collection
       resource :kudos
       put :up, on: :member
       put :down, on: :member
@@ -88,6 +89,7 @@ Masqueunacasa::Application.routes.draw do
     end
 
     resources :experiencies do
+      get :dashboard, on: :collection
       resource :kudos
       resources :sections, except: [:index]
       resources :locations
@@ -103,6 +105,7 @@ Masqueunacasa::Application.routes.draw do
 
     resources :password_recoveries
     resources :categories, only: [:show] do
+      get :dashboard, on: :collection
       resource :kudos
       resources :proposals, only: [:new]
       put :up, on: :member

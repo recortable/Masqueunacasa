@@ -4,7 +4,7 @@
   <%= title 'Propuestas' %>
   <% Phase.all.each do |phase| %>
     <h2><br/><%= phase_image_link phase, size: 40 %>
-  <%= link_to phase.title %></h2>
+  <%= link_to phase.title, phase %></h2>
   <table class="table">
     <% phase.proposals.reorder('category_id ASC').each do |proposal| %>
       <tr>

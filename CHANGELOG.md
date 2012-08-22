@@ -4,6 +4,10 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 22/08/2012
+- Migración: añadir editores de las secciones
+- Dashboards para preguntas y experiencias
+- Mejorada la vista de propuestas dashboard
+- Ahora se añaden editorships correctamente
 - Tratando de mejorar el viewport para dispositivos móviles
 - Sólo usuarios autorizados pueden crear o actualizar tareas
 

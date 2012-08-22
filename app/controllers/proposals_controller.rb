@@ -6,6 +6,10 @@ class ProposalsController < ApplicationController
   expose(:proposal)
 
   def index
+    redirect_to phases_path
+  end
+
+  def dashboard
     authorize! :index, Proposal
     respond_with proposals
   end

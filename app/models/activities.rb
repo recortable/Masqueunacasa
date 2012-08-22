@@ -38,4 +38,21 @@ class Activities
       !like_prev
     end
   end
+
+  # Devuelve las versiones (limpias) de un documento dado
+  def self.document_activity(document)
+    versions = Version.arel_table
+    query = versions[:item_type].eq(document.class.to_s).
+      and( versions[:item_id].eq(document.id) )
+
+    section_ids = document.sections.map(&:id)
+    query = query.or(versions[:item_type].eq('Section').
+                     and(versions[:item_id].in_any(section_ids)))
+
+    tasks_ids = document.tasks.map(&:id)
+    query = query.or(versions[:item_type].eq('Task').
+                     and(versions[:item_id].in_any(tasks_ids)))
+
+    Activities.clean_versions(Version.where(query).order('id DESC'))
+  end
 end

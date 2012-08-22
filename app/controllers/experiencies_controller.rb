@@ -13,6 +13,10 @@ class ExperienciesController < ApplicationController
     respond_with experiencies
   end
 
+  def dashboard
+    respond_with experiencies
+  end
+
   def show
     authorize! :read, experiencie
     experiencie.increment_view_counter

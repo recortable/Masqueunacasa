@@ -1,0 +1,15 @@
+<%= page do %>
+  <div class="span8 offset2">
+  <%= title 'Experiencias' %>
+  <table class="table">
+    <% experiencies.each do |experiencie| %>
+      <tr>
+      <td><%= link_to experiencie.title, experiencie %></td>
+      <td><%= icon(:edit, experiencie.editorships_count) %></td>
+      <td><%= icon(:heart, experiencie.kudos_count) %></td>
+      <td><%= icon('eye-open', experiencie.view_count) %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+<% end %>
