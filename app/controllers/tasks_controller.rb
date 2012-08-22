@@ -13,11 +13,13 @@ class TasksController < ApplicationController
   end
 
   def create
+    authorize! :create, task
     task.save
     respond_with task, location: [document, :edition]
   end
 
   def update
+    authorize! :update, task
     task.finished = !task.finished
     task.save
     respond_with task, location: [document, :edition]

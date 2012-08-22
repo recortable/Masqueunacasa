@@ -5,6 +5,7 @@ TAREAS
 
 ## 22/08/2012
 - Tratando de mejorar el viewport para dispositivos móviles
+- Sólo usuarios autorizados pueden crear o actualizar tareas
 
 ## 05/08/2012 (Ha muerto Chavela Vargas! :( )
 - Css 
