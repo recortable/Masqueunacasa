@@ -21,6 +21,7 @@ class MiniTest::Spec
 
   before :each do
     DatabaseCleaner.clean
+    User.current_user = nil
   end
 
   def ar_log

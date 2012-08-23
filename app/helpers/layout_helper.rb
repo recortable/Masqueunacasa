@@ -1,7 +1,15 @@
 module LayoutHelper
 
+
+  # TODO: deprecated, use page_div
   def page(options = {}, &block)
     options.reverse_merge! class: '', row: true, head: true
+    page_div(options, &block)
+  end
+
+  # CUIDADO!: row es false por defecto (al revés que page)
+  def page_div(options = {}, &block)
+    options.reverse_merge! class: '', row: false, head: true
     content = capture(&block)
     content = "<div class='row'>#{content}</div>" if options[:row]
     head = options[:head] ? render('page_header') : ''

@@ -4,8 +4,11 @@ class PagesController < ApplicationController
 
   expose(:themes) { 'textura02 naranja group' }
   expose_parent :group, [:parent], default: Proc.new { current_group }
-  expose(:docs) { group.pages.all }
-  expose(:doc) { params[:id].present? ? Page.find(params[:id]) : Page.new }
+  expose(:pages) { group.pages.all }
+  expose(:page) 
+
+  expose(:docs) { pages }
+  expose(:doc) { page }
 
   def index
     respond_with docs

@@ -1,10 +1,10 @@
 require 'test_helper'
 
 describe 'Proposals integration' do
-  it 'list proposals' do
+  it 'dashboard proposals' do
     login_user(create(:user, admin: true))
     proposal = create(:proposal)
-    visit proposals_path
+    visit dashboard_proposals_path
     page.text.must_include proposal.title
   end
 

@@ -4,6 +4,9 @@ describe HasEditors do
   it 'find editorship of user' do
     user = create(:user)
     document = create(:proposal)
+    puts user.inspect
+    puts document.inspect
+    puts document.editorships.inspect
     document.editorship_of(user).must_be :blank?
   end
 

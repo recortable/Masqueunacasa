@@ -2,8 +2,9 @@ require 'test_helper'
 
 describe HasSections do
   it 'add editor when create a proposal' do
+    User.current_user = create(:user)
     proposal = create(:proposal)
-    proposal.editor?(proposal.user).must_equal true
+    proposal.editor?(User.current_user).must_equal true
   end
 
   it 'add editor when add section' do

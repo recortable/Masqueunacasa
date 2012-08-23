@@ -1,5 +1,7 @@
 <%= simple_form_for doc do |form| %>
+  <div class="title">
   <%= form.input :title %>
-  <%= form.input :body, as: :text %>
-  <%= submit_button_for form %>
+</div>
+<%= form.input :body, as: :text %>
+<%= submit_button_for form %>
 <% end %>
