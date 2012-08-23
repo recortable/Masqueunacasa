@@ -16,4 +16,11 @@ describe DocumentHasEditors do
     section.save
     document.editors.must_include User.current_user
   end
+
+  it 'doesnt add editorship if updating a section of a group' do
+    group = create(:group)
+    section = create(:section, document: group)
+    section.title = 'The group'
+    section.save
+  end
 end

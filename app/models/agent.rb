@@ -15,10 +15,7 @@ class Agent < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: true
   validates :title, presence: true
-
   include HasSections
   include HasLocations
   include HasPopularity
-
-
 end

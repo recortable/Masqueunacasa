@@ -3,6 +3,9 @@
 TAREAS
 - Enviar emails colectivos en background
 
+## 23/08/2012
+- Bug que no permitía editar las secciones de los grupos
+
 ## 22/08/2012
 - Migración: añadir editores de las secciones
 - Dashboards para preguntas y experiencias

@@ -5,6 +5,8 @@
       <h4>Último email: <%= l activities.last_mail_at %></h4>
       <h4>Último intento: <%= l activities.updated_at %></h4>
       <p>Debería enviar: <%= activities.deliver? %>
+    <%= simple_debug(User.where(admin:true).map(&:email)) if Rails.env.development? %>
+
       <h2>Versiones</h2>
       <%= simple_list activities.versions do |version| %>
         <%= render version %>

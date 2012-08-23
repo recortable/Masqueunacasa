@@ -52,6 +52,11 @@ describe Version do
     verify(p, title: p.title, group: p.group)
   end
 
+  it 'version created by group' do
+    g = create(:group)
+    verify(g, title: g.title, group: g)
+  end
+
   protected
   def verify(model, options = {})
     options.reverse_merge! title: nil, parent_title: nil, document: nil, group: nil
