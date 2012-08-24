@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    authorize! :show, post
+    authorize! :read, post
     post.increment_view_counter
     breadcrumb_for_post(post)
     respond_with post

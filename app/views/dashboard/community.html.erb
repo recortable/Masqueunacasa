@@ -24,7 +24,7 @@
         <ul>
           <% group.posts.latest.each do |post| %>
             <li>
-          <%= link_to post.title, new_post_url(post, subdomain: group.subdomain) %>
+          <%= link_to post.title, post_url(post, subdomain: group.subdomain) %>
           </li>
         <% end %>
         </ul>
