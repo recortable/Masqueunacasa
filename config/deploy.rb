@@ -8,6 +8,7 @@ load "config/recipes/postgresql"
 load "config/recipes/postgresql_backup"
 load "config/recipes/rbenv"
 load "config/recipes/check"
+load "config/recipes/assets"
 
 server "176.58.98.122", :web, :app, :db, primary: true
 
@@ -24,18 +25,10 @@ set :branch, "master"
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
-set :assets_dependencies, %w(app/assets lib/assets vendor/assets Gemfile.lock config/routes.rb)
-
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 namespace :deploy do
-  %w[start stop restart].each do |command|
-    desc "#{command} unicorn server"
-    task command, roles: :app, except: {no_release: true} do
-      run "/etc/init.d/unicorn_#{application} #{command}"
-    end
-  end
 
   task :setup_config, roles: :app do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
@@ -51,29 +44,5 @@ namespace :deploy do
     end
   end
   after "deploy:finalize_update", "deploy:symlink_config"
-
-
-  namespace :assets do
-    desc <<-DESC
-      Run the asset precompilation rake task. You can specify the full path \
-      to the rake executable by setting the rake variable. You can also \
-      specify additional environment variables to pass to rake via the \
-      asset_env variable. The defaults are:
-
-        set :rake,      "rake"
-        set :rails_env, "production"
-        set :asset_env, "RAILS_GROUPS=assets"
-        set :assets_dependencies, fetch(:assets_dependencies) + %w(config/locales/js)
-    DESC
-    task :precompile, :roles => :web, :except => { :no_release => true } do
-      from = source.next_revision(current_revision)
-      if capture("cd #{latest_release} && #{source.local.log(from)} #{assets_dependencies.join ' '} | wc -l").to_i > 0
-        run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
-      else
-        logger.info "Skipping asset pre-compilation because there were no asset changes"
-      end
-    end
-
-  end
 end
 
