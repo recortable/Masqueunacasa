@@ -7,6 +7,7 @@
 <% if agent.website.present? %>
   <h3><%= link_to agent.website, agent.website %></h3>
 <% end %>
+<br/>
 <% if agent.type == 'Group' && agent.email.present? %>
   <h4><small>correo </small><%= link_to agent.email, "mailto:#{agent.email}" %></h4>
 <% end %>
