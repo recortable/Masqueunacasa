@@ -7,7 +7,8 @@
 
 ha <%= t("versions.events.#{version.event}") %>
 <strong>
-  la <%= t("activerecord.models.#{version.item_type.downcase}") %>
+  <%= item_type_gender(version) %>
+  <%= t("activerecord.models.#{version.item_type.downcase}") %>
   </strong>
 <%= link_to_if version.event != 'destroy', version.title, version_url(version) %>
 <br>

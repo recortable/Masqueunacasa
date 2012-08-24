@@ -15,6 +15,7 @@ es:
       image: 'imágen'
       link: 'enlace relacionado'
       task: 'tarea'
+      agent: 'grupo'
 
   announcement:
     scopes:
