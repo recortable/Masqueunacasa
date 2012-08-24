@@ -18,7 +18,7 @@
           <%= title post.title %>
           <%= render_post_media(post) %>
         </div>
-        <%= raw post.body %>
+        <%= markdown post.body %>
         <%= render_sections post %>
         <%= simple_list post.attachments do |attachment| %>
           <%= link_to attachment.file_identifier, attachment.file_url %>
