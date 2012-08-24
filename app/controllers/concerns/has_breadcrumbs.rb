@@ -2,12 +2,13 @@ module HasBreadcrumbs
   extend ActiveSupport::Concern
 
   protected
+
+  # HABITAPEDIA
   def breadcrumb_for_root
     add_breadcrumb 'Mas que una casa', root_path
   end
 
   def breadcrumb_for_habitapedia
-    breadcrumb_for_root
     add_breadcrumb 'Habitapedia', phases_path
   end
 
@@ -34,6 +35,21 @@ module HasBreadcrumbs
   def breadcrumb_for_experiencie(experiencie)
     breadcrumb_for_experiencies
     add_breadcrumb experiencie.title, experiencie_path(experiencie)
+  end
+
+  def breadcrumb_for_group(group)
+    add_breadcrumb 'Comunidad', community_url(subdomain: false)
+    add_breadcrumb group.title, profile_url(subdomain: group.subdomain)
+  end
+
+  def breadcrumb_for_posts(group)
+    breadcrumb_for_group group
+    add_breadcrumb 'Blog', posts_url(subdomain: group.subdomain)
+  end
+
+  def breadcrumb_for_post(post)
+    breadcrumb_for_posts post.group
+    add_breadcrumb post.title, post_url(post, subdomain: post.group.subdomain)
   end
 
 end

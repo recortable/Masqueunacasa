@@ -1,45 +1,48 @@
 <% title 'Comunidad' %>
 <%= page row: false do %>
   <div class="row">
-    <div class="span8">
-      <% groups.each do |group| %>
-        <div class="row group">
-          <div class="span2">
-            <div class="content-inner"
-              <%= render_group_bar group %>
-            </div>
-          </div>
-          <div class="span4">
-            <div class="hoverize">
-              <%= hover? :update, group do %>
-                <%= link_to icon(:edit, 'Editar perfil'), edit_profile_url(subdomain: group.subdomain) %>
-              <% end %>
-              <h2><%= link_to group.title, group %></h2>
-              <%= markdown group.summary %>
-            </div>
-          </div>
-          <% if group.has_blog? %>
-            <div class="span2 blog-entries">
-              <h4>Últimas entradas al blog</h4>
-              <% group.posts.latest.each do |post| %>
-                <div>
-                  <%= link_to post.title, post_url(post, subdomain: group.subdomain) %>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
+  <div class="span8">
+    <% groups.each do |group| %>
+      <div class="row group">
+      <div class="span2">
+        <div class="content-inner"
+          <%= render_group_bar group %>
         </div>
-      <% end %>
-    </div>
-    <div class="span4 sidebar sidebar-right">
-      <div class="sidebar-bloc activity dotted-bg">
-        <div class="corner-opac"></div>
-        <h2>Última actividad</h3>
-        <%= simple_list Activities.site_activity(30) do |version| %>
-          <%= render version %>
-        <% end %>
       </div>
+      <div class="span4">
+        <div class="hoverize">
+          <%= hover? :update, group do %>
+            <%= link_to icon(:edit, 'Editar perfil'), edit_profile_url(subdomain: group.subdomain) %>
+        <% end %>
+          <h2><%= link_to group.title, group %></h2>
+          <%= markdown group.summary %>
+        </div>
+      </div>
+      <% if group.has_blog? %>
+        <div class="span2 blog-entries">
+        <h4>Últimas entradas al blog</h4>
+        <ul>
+          <% group.posts.latest.each do |post| %>
+            <li>
+          <%= link_to post.title, new_post_url(post, subdomain: group.subdomain) %>
+          </li>
+        <% end %>
+        </ul>
+        <%= link_to 'Publicar entrada', new_post_url(subdomain: group.subdomain), class: 'publish', data: {behaviour: 'new_post'}  if can?(:edit, group) %>
+      </div>
+    <% end %>
+    </div>
+  <% end %>
+  </div>
+  <div class="span4 sidebar sidebar-right">
+    <div class="sidebar-bloc activity dotted-bg">
+      <div class="corner-opac"></div>
+      <h2>Última actividad</h3>
+      <%= simple_list Activities.site_activity(30) do |version| %>
+        <%= render version %>
+    <% end %>
     </div>
   </div>
+</div>
 <% end %>
 

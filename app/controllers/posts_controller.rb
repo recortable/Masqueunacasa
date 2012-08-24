@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   respond_to :html, :atom, :xml
   before_filter :require_user, except: [:index, :show, :feed]
+  before_filter :require_admin, only: [:dashboard]
 
   expose(:themes) { current_group.site? ? 'textura03 azul_gris masq1casa' : 'textura02 naranja group' }
 
@@ -9,13 +10,20 @@ class PostsController < ApplicationController
   expose(:post_list) { current_group.posts.paginate(page: params[:page], per_page: 5).order('created_at DESC') }
   expose(:archive_posts) { current_group.posts }
 
+  expose(:all_posts) { Post.reorder('updated_at DESC') }
+  def dashboard
+    respond_with all_posts
+  end
+
   def index
+    breadcrumb_for_posts current_group
     respond_with posts
   end
 
   def show
     authorize! :show, post
     post.increment_view_counter
+    breadcrumb_for_post(post)
     respond_with post
   end
 
@@ -24,6 +32,9 @@ class PostsController < ApplicationController
   end
 
   def edit
+    authorize! :update, Post
+    breadcrumb_for_post(post)
+    add_breadcrumb 'Editar', edit_post_path(post)
     respond_with post
   end
 

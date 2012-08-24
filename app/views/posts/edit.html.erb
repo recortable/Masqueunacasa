@@ -1,10 +1,10 @@
-<%= page row: false, head: false do %>
+<%= page_div do %>
   <%= render_group_header post.group %>
-  <div class="row">
-    <div class='span12'>
-      <h3><%= post.group.title %></h3>
-      <%= title 'Editar entrada al blog' %>
-      <%= render 'form' %>
-    </div>
+<div class="row">
+  <div class='span6 offset2'>
+    <%= title 'Editar entrada al blog' %>
+    <h3>En <%= post.group.title %></h3>
+    <%= render 'form' %>
   </div>
+</div>
 <% end %>

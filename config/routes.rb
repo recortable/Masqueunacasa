@@ -21,9 +21,11 @@ Masqueunacasa::Application.routes.draw do
     resources :sections, except: [:index]
   end
   resources :posts do
+    get :dashboard, on: :collection
     resources :sections, except: [:index]
     resource :kudos
     resources :post_attachments, except: [:index, :show]
+    resource :edition
   end
   resources :messages, only: [:create, :show]
   resources :memberships, only: [:new, :create, :destroy]

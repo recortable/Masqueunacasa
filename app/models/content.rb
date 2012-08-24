@@ -10,6 +10,7 @@ class Content < ActiveRecord::Base
   belongs_to :user
   belongs_to :group
   include HasSections
+  include HasEditors
 
   attr_accessible :user_id, :group_id
   attr_accessible :title, :body

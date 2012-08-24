@@ -4,6 +4,7 @@ es:
       announcement: 'mensaje colectivo'
       user: 'perfil'
       page: 'documento'
+      post: 'entrada'
       phase: 'fase'
       group: 'colectivo'
       proposal: 'propuesta'

@@ -9,11 +9,12 @@ module LayoutHelper
 
   # CUIDADO!: row es false por defecto (al revés que page)
   def page_div(options = {}, &block)
-    options.reverse_merge! class: '', row: false, head: true
+    options.reverse_merge! class: '', row: false, head: true, group: false
     content = capture(&block)
     content = "<div class='row'>#{content}</div>" if options[:row]
-    head = options[:head] ? render('page_header') : ''
-    raw "<div class='#{options[:class]}'><div class='corner none'></div></div><div class='page bloc'>#{head}#{content}</div>"
+    head = options[:head] ? render('page_header', group: options[:group]) : ''
+    corner = "<div class='corner none'></div>"
+    raw "<div class='#{options[:class]}'>#{corner}</div><div class='page bloc'>#{head}#{content}</div>"
   end
 
   def corner_span(css_class, color = :colored, &block)
