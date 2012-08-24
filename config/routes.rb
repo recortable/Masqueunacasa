@@ -130,12 +130,11 @@ Masqueunacasa::Application.routes.draw do
 
   end
 
-
-  namespace :ckeditor do
-    resources :pictures, :only => [:index, :create, :destroy]
-    resources :attachment_files, :only => [:index, :create, :destroy]
-    resources :attachments, :only => [:index, :create, :destroy]
-  end
+#  namespace :ckeditor do
+#    resources :pictures, :only => [:index, :create, :destroy]
+#    resources :attachment_files, :only => [:index, :create, :destroy]
+#    resources :attachments, :only => [:index, :create, :destroy]
+#  end
 
   ActionDispatch::Routing::Translator.translate_from_file(
     'config/locales/routes.yml', prefix_on_default_locale: false )
