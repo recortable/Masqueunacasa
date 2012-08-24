@@ -1,10 +1,11 @@
 # encoding: utf-8
 class UserMailer < ActionMailer::Base
-  default from: "hola@masqueunacasa.org"
+  default from: '"Masqueuncasa" <hola@masqueunacasa.org>'
   layout 'mquc_email'
 
   def activity_email(user, activities)
-    @title = "Actividad en masqueunacasa.org"
+    date = Time.now.strftime('%-d/%-m/%Y')
+    @title = "#{date} Actividad reciente"
     @user = user
     @activities = activities
 

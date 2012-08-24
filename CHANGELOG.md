@@ -3,6 +3,9 @@
 TAREAS
 - Enviar emails colectivos en background
 
+## 24/08/2012
+- Mejoras en los emails de actividad
+
 ## 23/08/2012
 - Bug que no permitía editar las secciones de los grupos
 
