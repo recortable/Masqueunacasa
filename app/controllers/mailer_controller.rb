@@ -13,7 +13,7 @@ class MailerController < ApplicationController
 
   def activity
     if activities.deliver?
-      users = User.where(admin: true)
+      users = Group.root.users
       users.each {|u| UserMailer.activity_email(u, activities).deliver }
       activities.last_mail_at = Time.now
       flash[:notice] = "Email de actividad enviado (#{users.count} emails)"

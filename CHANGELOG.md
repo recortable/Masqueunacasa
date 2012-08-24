@@ -4,6 +4,9 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 24/08/2012
+- El email de actividad se envía a lxs participantes de Group.root en
+vez de a lxs admins
+- Mejoras en cómo se muestran las versiones
 - Cache agresivo de welcome, habitapedia y categorias
 - Mejoras en los emails de actividad
 
