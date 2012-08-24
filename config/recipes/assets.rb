@@ -1,10 +1,10 @@
-set_default(:assets_dependencies) { %w(app/assets lib/assets vendor/assets Gemfile.lock config/routes.rb) }
+set_default(:assets_dependencies) { %w(app/assets lib/assets vendor/assets Gemfile.lock ) } #config/routes.rb) }
 
 namespace :assets do
   desc <<-DESC
-      Run the asset precompilation rake task. You can specify the full path \
-      to the rake executable by setting the rake variable. You can also \
-      specify additional environment variables to pass to rake via the \
+      Run the asset precompilation rake task. You can specify the full path
+      to the rake executable by setting the rake variable. You can also
+      specify additional environment variables to pass to rake via the
       asset_env variable. The defaults are:
 
         set :rake,      "rake"
