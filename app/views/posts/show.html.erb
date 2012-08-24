@@ -3,7 +3,7 @@
 
   <div class="row">
     <%= user_column 'span2' do %>
-      <%= fake_img_fixed(150, 150, text: 'Post') %> 
+      <%= link_to avatar_image(post.group, class: 'fixed'), posts_path %> 
       <%= render_kudos post %>
       <% if post.group == current_group %>
         <%= render_group_sections %>

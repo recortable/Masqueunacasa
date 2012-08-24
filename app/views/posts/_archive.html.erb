@@ -7,7 +7,7 @@
       Blog
     </h2>
     <h4>
-      <small>Entradas publicadas por <%= current_group.title %></small>
+      <small>Entradas publicadas en <%= link_to current_group.title, profile_path %></small>
     </h4>
   </div>
   <%= simple_list posts do |post| %>
