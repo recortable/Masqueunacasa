@@ -4,6 +4,7 @@ TAREAS
 - Enviar emails colectivos en background
 
 ## 24/08/2012
+- Cache agresivo de welcome, habitapedia y categorias
 - Mejoras en los emails de actividad
 
 ## 23/08/2012

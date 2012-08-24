@@ -1,22 +1,23 @@
-<div class="hoverize">
+<% cache ['proposals', category] do %>
+  <div class="hoverize">
   <%= hover? :create, Proposal do %>
     <%= link_to icon(:plus, 'Añadir propuesta'), [:new, category, :proposal], rel: 'new-proposal' %>
-  <% end %>
+<% end %>
   <h2>Propuestas</h2>
 </div>
 <%= simple_list category.proposals.each do |proposal| %>
   <div class="hoverize">
-    <%= hover? :update, proposal do %>
-      <%= link_to icon('arrow-up'), [:up, proposal], method: :put %>
-      |
-      <%= link_to icon('arrow-down'), [:down, proposal], method: :put %>
-    <% end %>
-
-    <h3>
-      <%= link_to proposal.title, proposal %>
-      <small><br><%= icon(:undo, proposal.experiencies_count) %> experiencias</small>
-    </h3>
-    <%= markdown proposal.summary %>
-  </div>
+  <%= hover? :update, proposal do %>
+    <%= link_to icon('arrow-up'), [:up, proposal], method: :put %>
+  |
+  <%= link_to icon('arrow-down'), [:down, proposal], method: :put %>
 <% end %>
 
+  <h3>
+    <%= link_to proposal.title, proposal %>
+    <small><br><%= icon(:undo, proposal.experiencies_count) %> experiencias</small>
+  </h3>
+  <%= markdown proposal.summary %>
+</div>
+<% end %>
+<% end %>

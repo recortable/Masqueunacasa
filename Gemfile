@@ -36,6 +36,7 @@ gem 'decent_exposure'
 gem 'cancan'
 
 # Cosas de vistas
+gem 'cache_digests'
 gem 'jquery-rails' # Integración de jquery y rails
 gem 'will_paginate-bootstrap' # Integración will_paginate - twitter bootstrap
 gem 'will_paginate', '~> 3.0'
@@ -54,8 +55,6 @@ gem 'simple_form'
 gem 'redcarpet' # Convierte markdown a html
 gem 'cambelt' # Genera imágenes de prueba
 gem 'basic_config' # https://github.com/stephan778/basic_config 
-
-#gem 'rmagick'
 
 gem 'rails-translate-routes'
 gem 'http_accept_language'

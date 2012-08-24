@@ -1,33 +1,34 @@
+<% title category.question %>
 <%= page do %>
   <div class="span2">
-    <%= image_tag('habitap/category.png', alt: category.title, width: 150, height: 150) %>
-    <%= render_kudos category %>
-    <%= render_social_links category %>
-    <%# render_sections_summary category %>
-  </div>
-
+  <%= image_tag('habitap/category.png', alt: category.title, width: 150, height: 150) %>
+  <%= render_kudos category %>
+  <%= render_social_links category %>
+  <%# render_sections_summary category %>
+</div>
+<% cache category do %>
   <div class="span6">
-    <div class="hoverize">
-      <%= hover? :update, category do %>
-        <%= link_to icon(:edit, 'Editar'), [:edit, phase, category] %>
-        <% if can? :destroy, category %>
-          | <%= link_to icon(:trash), [phase, category], method: :delete, 
-            data: { confirm: "¿Seguro que quieres borrar esta pregunta" } %>
-        <% end %>
+  <div class="hoverize">
+    <%= hover? :update, category do %>
+      <%= link_to icon(:edit, 'Editar'), [:edit, phase, category] %>
+    <% if can? :destroy, category %>
+      | <%= link_to icon(:trash), [phase, category], method: :delete, 
+        data: { confirm: "¿Seguro que quieres borrar esta pregunta" } %>
+    <% end %>
       <% end %>
-      <%= title category.question %>
-      <div class="category_image">
-        <%= category_image category %>
+        <h1><%= category.question %></h1>
+        <div class="category_image">
+          <%= category_image category %>
+        </div>
+      </div>    
+      <div class="summary markdown">
+        <%= markdown category.summary %>
       </div>
-    </div>    
-    <div class="summary markdown">
-      <%= markdown category.summary %>
+      <%= render_sections category %>
     </div>
-    <%= render_sections category %>
-  </div>
+  <% end %>
 
-  <div class="span4 sidebar sidebar-right">
-    <%= render_proposal_list category %>
-  </div>
-<% end %>
-
+    <div class="span4 sidebar sidebar-right">
+      <%= render_proposal_list category %>
+    </div>
+  <% end %>

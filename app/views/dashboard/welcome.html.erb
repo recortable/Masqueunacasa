@@ -1,5 +1,6 @@
 <% title 'Procesos colectivos de vivienda' %>
-<div class="front-header corner colored">
+<% cache 'welcome' do %>
+  <div class="front-header corner colored">
   <div>
     <%= image_tag('logo_inicio.png', alt: 'Procesos colectivos de vivienda', class: 'responsive') %>
   </div>
@@ -70,3 +71,4 @@
     </div>
   </div>
 </div>
+<% end %> 

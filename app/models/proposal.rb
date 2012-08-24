@@ -14,13 +14,14 @@ class Proposal < ActiveRecord::Base
   attr_accessible :title, :body, :description
   attr_accessible :summary
   attr_accessible :published, :body_type
+  attr_accessible :position
 
   validates_presence_of :title, :title_es, :title_ca, :user, :category_id
 
   belongs_to :user
   belongs_to :group
   belongs_to :phase
-  belongs_to :category
+  belongs_to :category, touch: true
 
   has_many :relations, dependent: :destroy
   has_many :experiencies, through: :relations 

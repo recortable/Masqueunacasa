@@ -1,33 +1,34 @@
 <% title 'Habitapedia' %>
 <%= page row: false do %>
   <%# Estilos para .intro en welcome.css.scss %>
-  <div class="row intro">
-    <div class="span12">
-      <div class="row">
-        <div class="video-container span6 offset1">
-          <div class="video">
-            <iframe src="http://player.vimeo.com/video/37086987?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-          </div>
-        </div>     
-        <div class="span4">
-          <div class="corner"></div>
-          <div class="content">
-            <h2><%= t('intro.habitapedia.title') %></h2>
-            <%= markdown t('intro.habitapedia.what') %>
-          </div>
+<div class="row intro">
+  <div class="span12">
+    <div class="row">
+      <div class="video-container span6 offset1">
+        <div class="video">
+          <iframe src="http://player.vimeo.com/video/37086987?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        </div>
+      </div>     
+      <div class="span4">
+        <div class="corner"></div>
+        <div class="content">
+          <h2><%= t('intro.habitapedia.title') %></h2>
+          <%= markdown t('intro.habitapedia.what') %>
         </div>
       </div>
     </div>
   </div>
-  <div class="phases-container clearfix">
-    <% phases.each do |phase| %>
-      <div class="phase-info <%= phase.color %>">
-        <div class="content">
-          <div class="hoverize">
-            <%= hover? :update, phase do %>
-              <%= link_to icon(:edit, 'Editar fase'), [:edit, phase], 
-                rel: "edit-phase-#{phase.id}" %>
-            <% end %>
+</div>
+<div class="phases-container clearfix">
+  <% phases.each do |phase| %>
+    <% cache ['info', phase] do %>
+    <div class="phase-info <%= phase.color %>">
+    <div class="content">
+      <div class="hoverize">
+        <%= hover? :update, phase do %>
+          <%= link_to icon(:edit, 'Editar fase'), [:edit, phase], 
+            rel: "edit-phase-#{phase.id}" %>
+        <% end %>
 
             <%= image_tag(phase.image_url, width: 100, height: 100, alt: phase.title, class: 'fixed centered phase-image') %>
             <h2><%= phase.title %></h2>
@@ -41,15 +42,18 @@
         </div>
       </div>
     <% end %>
-  </div>
-  <div class="categories-container">
-    <% phases.each do |phase| %>
-      <div class="phase-categories <%= phase.color %>">
+    <% end %>
+    </div>
+    <div class="categories-container">
+      <% phases.each do |phase| %>
+        <% cache ['phase-categories', phase] do %>
+        <div class="phase-categories <%= phase.color %>">
         <div class="content">
           <%= render_category_list phase, title: nil %>
         </div>
       </div>
     <% end %>
-  </div>
-<% end %>
+    <% end %>
+    </div>
+  <% end %>
 

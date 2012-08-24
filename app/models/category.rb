@@ -16,7 +16,7 @@ class Category < ActiveRecord::Base
   validates_presence_of :user_id, :phase_id, :title, :question
 
   belongs_to :user
-  belongs_to :phase
+  belongs_to :phase, touch: true
   has_many :proposals, order: :position
   has_many :tasks, as: :document, dependent: :destroy
 
