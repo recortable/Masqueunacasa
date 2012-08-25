@@ -18,7 +18,7 @@ class VersionsController < ApplicationController
     when 'Section'
       section = Section.find version.item_id
       document = section.document
-      if document.respond_to?(:group)
+      if document.respond_to?(:group) && document.group
         group = document.group
         polymorphic_url(document, subdomain: group.subdomain, anchor: section.to_anchor)
       else
