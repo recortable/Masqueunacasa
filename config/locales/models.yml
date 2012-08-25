@@ -3,6 +3,7 @@ es:
     models:
       announcement: 'mensaje colectivo'
       user: 'perfil'
+      content: 'entrada'
       page: 'documento'
       post: 'entrada'
       phase: 'fase'
