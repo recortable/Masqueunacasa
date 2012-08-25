@@ -17,10 +17,19 @@ class VersionsController < ApplicationController
     case version.item_type
     when 'Section'
       section = Section.find version.item_id
-      polymorphic_path(section.document, anchor: section.to_anchor)
+      document = section.document
+      if document.respond_to?(:group)
+        group = document.group
+        polymorphic_url(document, subdomain: group.subdomain, anchor: section.to_anchor)
+      else
+        polymorphic_path(document, anchor: section.to_anchor)
+      end
     when 'Image'
       image = Image.find version.item_id
       polymorphic_path(image.imageable)
+    when 'Agent'
+      group = Group.find version.item_id
+      root_url(subdomain: group.subdomain)
     else
       begin
         klass = version.item_type.constantize
@@ -28,7 +37,11 @@ class VersionsController < ApplicationController
         if model.respond_to?(:document)
           url_for(model.document)
         elsif model.present?
-          url_for(model)
+          if model.respond_to?(:group)
+            polymorphic_url(model, subdomain: model.group.subdomain)
+          else
+            polymorphic_path(model)
+          end
         else
           nil
         end
