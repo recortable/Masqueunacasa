@@ -43,10 +43,10 @@ html.rojo {
   }
 
   .corner.colored { background-position: 0 -90px; }
+  .corner-opac { background-position: 0 -90px; }
 
   .dotted-bg { background: asset-data-url('fondos/textura_puntos-rojo.png'); }
 
-  .corner-opac { background-position: 0 -90px; }
 }
 
 html.azul_neon {
@@ -81,6 +81,7 @@ html.azul_gris {
   }
 
   .corner.colored { background-position: 0 -120px; }
+  .corner-opac { background-position: 0 -120px; }
   .dotted-bg { background: asset-data-url('fondos/textura_puntos.png'); }
 }
 

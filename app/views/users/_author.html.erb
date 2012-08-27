@@ -8,6 +8,7 @@
   </div>
   <div class="summary">
     <%= markdown user.summary %>
+    <%= markdown user.sections.first.body if user.sections.first %>
   </div>
 </div>
 

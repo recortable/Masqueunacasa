@@ -1,4 +1,16 @@
-<%= simple_list document.sections.each, class: 'sections summary' do |section| %>
-  <%= link_to section.title, "##{section.title}" %>
+<div class="sections summary">
+  <h5>Índice</h5>
+  <table class="table">
+    <tr class="title">
+      <td style="font-weight: bold"><%= link_to document.title, '#' %></td>
+    </tr>
+    <% document.sections.each do |section| %>
+      <% if section.title.present? %>
+      <tr>
+      <td><%= link_to section.title, "##{section.title}" %></td>
+    </tr>
   <% end %>
+  <% end %>
+  </table>
+</div>
 
