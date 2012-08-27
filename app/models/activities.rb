@@ -31,6 +31,11 @@ class Activities
     (Time.now.to_i - last_mail_at.to_i > 8.hour) && versions.size > 0
   end
 
+  def self.user_activity(user, max = 10)
+    versions = Version.where(whodunnit: user.id.to_s).limit(max).order('created_at DESC')
+    clean_versions(versions)
+  end
+
   def self.site_activity(max = 50)
     versions = Version.limit(max).order('created_at DESC')
     clean_versions(versions)

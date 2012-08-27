@@ -1,0 +1,13 @@
+.activity {
+    h2 { margin: 6px 0 -4px 8px; }
+    .version {
+      margin: 6px 6px;
+      padding: 6px;
+      background: $fondo;
+    }
+  }
+
+  .version {
+    .time { display: block; font-style: italic; }
+  }
+

@@ -35,15 +35,7 @@
   <% end %>
   </div>
   <div class="span4 sidebar sidebar-right">
-    <div class="sidebar-bloc activity dotted-bg">
-      <div class="corner-opac"></div>
-      <div class="main">
-        <h2>Última actividad</h3>
-        <%= simple_list Activities.site_activity(30) do |version| %>
-          <%= render version %>
-      <% end %>
-      </div>
-    </div>
+    <%= render 'versions/activity', activity: Activities.site_activity(30) %>
   </div>
 </div>
 <% end %>

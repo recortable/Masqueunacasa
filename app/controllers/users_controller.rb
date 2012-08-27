@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   expose(:themes) { 'textura04 azul_gris' }
   expose(:users) { site.users }
   expose(:user)
+  expose(:activity) { Activities.user_activity(user) }
   expose(:message) { Message.new(resource: user) }
 
   def index

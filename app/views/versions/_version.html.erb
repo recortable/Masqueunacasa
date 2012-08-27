@@ -1,24 +1,31 @@
 <%= div_for version do %>
+  <span class="user">
   <% if version.user_name.present? %>
-  <%= link_to version.user_name, user_url(version.whodunnit) %>
-       <% else %>
-  Anónimx
-       <% end %>
-
-ha <%= t("versions.events.#{version.event}") %>
-     <strong>
-  <%= version.item_type == 'Agent' ? 'el' : 'la' %>
-  <%= t("activerecord.models.#{version.item_type.downcase}") %>
-</strong>
-<%= link_to_if version.event != 'destroy', version.title, version_url(version) %>
-<br>
-Hace <%= time_ago_in_words version.created_at %>
- <% if version.document.present? %>
-  <% if version.document.respond_to?(:group) && version.document.group %>
-  en <%= link_to version.parent_title, polymorphic_url(version.document, subdomain: version.document.group.subdomain) %>
+    <%= link_to version.user_name, user_url(version.whodunnit) %>
 <% else %>
-  en <%= link_to version.parent_title, polymorphic_url(version.document) %>
+    Anónimx
 <% end %>
- <% end %>
- <% end %>
+</span>
+<span class="action">
+  ha <%= t("versions.events.#{version.event}") %>
+<strong>
+    <%= version.item_type == 'Agent' ? 'el' : 'la' %>
+    <%= t("activerecord.models.#{version.item_type.downcase}") %>
+  </strong>
+  <%= link_to_if version.event != 'destroy', version.title, version_url(version) %>
+</span>
+<% if version.document.present? %>
+  <span class="document">
+  de 
+  <% if version.document.respond_to?(:group) && version.document.group %>
+    <%= link_to version.parent_title, polymorphic_url(version.document, subdomain: version.document.group.subdomain) %>
+<% else %>
+    <%= link_to version.parent_title, polymorphic_url(version.document) %>
+<% end %>
+</span>
+<% end %>
+<span class="time">
+  Hace <%= time_ago_in_words version.created_at %>
+</span>
+<% end %>
 

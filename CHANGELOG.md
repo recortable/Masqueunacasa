@@ -1,9 +1,7 @@
 # Masqueunacasa
 
-TAREAS
-- Enviar emails colectivos en background
-
 ## 27/08/2012
+- Última actividad en página de perfil
 - Css tweaks en actividad
 - Cache post y resúmenes
 - Los post muestran al autor/a
