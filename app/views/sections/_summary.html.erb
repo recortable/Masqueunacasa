@@ -1,7 +1,4 @@
-<h3><%= link_to 'Índice', "#" %></h3>
-<table class="table">
-  <% document.sections.titled.each do |section| %>
-    <tr><td><%= link_to section.title, "##{section.title}" %></td></tr>
+<%= simple_list document.sections.each, class: 'sections summary' do |section| %>
+  <%= link_to section.title, "##{section.title}" %>
   <% end %>
-</table>
 

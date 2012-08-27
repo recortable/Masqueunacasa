@@ -44,7 +44,7 @@ es:
         has_blog: 'Blog'
 
       post:
-        body: 'Introducción' 
+        body: 'Resúmen'
         image: 'Imágen principal'
         embed: 'Vídeo'
 
@@ -87,6 +87,9 @@ es:
 
       password_recovery:
         email: 'Escribe el email con el que te registraste, y te enviaremos las instrucciones'
+
+      post:
+        body: 'Se breve, por favor. No más de un párrafo.'
       
       section:
         title: 'El título de esta sección. Es opcional'

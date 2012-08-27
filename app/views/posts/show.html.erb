@@ -1,9 +1,9 @@
 <%= page_div group: true do %>
-
-<div class="row">
+  <div class="row">
   <%= user_column 'span2' do %>
     <%= link_to image_tag('icon-blog.png', class: 'fixed'), posts_path %> 
   <%= render_kudos post %>
+  <%= render 'sections/summary', document: post %>
 <% end %>
   <div class='span6 center post'>
     <div class="hoverize">
@@ -16,13 +16,18 @@
         <% end %>
           <h3><%= l post.published_at %></h3>
           <%= title post.title %>
+          <h4>Por <%= link_to post.user.name, post.user %></h4>
           <%= render_post_media(post) %>
+          <br/>
         </div>
-        <%= markdown post.body %>
+        <div class="summary markdown">
+          <%= markdown post.body %>
+        </div>
         <%= render_sections post %>
         <%= simple_list post.attachments do |attachment| %>
           <%= link_to attachment.file_identifier, attachment.file_url %>
       <% end %>
+        <%= render 'users/author', user: post.user %>
       </div>
 
       <div class="sidebar span4">

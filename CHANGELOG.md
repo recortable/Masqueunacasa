@@ -3,6 +3,9 @@
 TAREAS
 - Enviar emails colectivos en background
 
+## 27/08/2012
+- Los post muestran al autor/a
+
 ## 24/08/2012
 - El email de actividad se envía a lxs participantes de Group.root en
 vez de a lxs admins
