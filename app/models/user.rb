@@ -19,6 +19,7 @@ class User < Agent
   has_many :created_groups, class_name: 'Group', foreign_key: 'user_id'
   has_many :memberships, dependent: :destroy
   has_many :groups, through: :memberships
+  has_many :editorships
 
   # EXTENSIONS
   has_secure_password

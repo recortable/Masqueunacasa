@@ -19,6 +19,7 @@ Masqueunacasa::Application.routes.draw do
   resources :pages do
     resource :kudos
     resources :sections, except: [:index]
+    resource :edition
   end
   resources :posts do
     get :dashboard, on: :collection

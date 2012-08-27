@@ -64,6 +64,7 @@ describe Version do
     v = Version.last
     v.item.must_equal model 
 
+    v.item_type.must_equal options[:item_type] if options[:item_type]
     v.title.must_equal options[:title] if options[:title]
     v.parent_title.must_equal options[:parent_title] if options[:parent_title]
     v.document.must_equal options[:document] if options[:document]
