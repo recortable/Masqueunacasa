@@ -32,13 +32,15 @@ class Activities
   end
 
   def self.user_activity(user, max = 10)
-    versions = Version.where(whodunnit: user.id.to_s).limit(max).order('created_at DESC')
-    clean_versions(versions)
+    prepare(Version.where(whodunnit: user.id.to_s), max)
   end
 
-  def self.site_activity(max = 50)
-    versions = Version.limit(max).order('created_at DESC')
-    clean_versions(versions)
+  def self.site_activity(max = 20)
+    prepare(Version.scoped, max)
+  end
+
+  def self.prepare(versions, max = 50)
+    clean_versions versions.includes(:user).limit(max).reorder('created_at DESC')
   end
 
   def self.clean_versions(versions)

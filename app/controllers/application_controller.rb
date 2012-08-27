@@ -35,6 +35,10 @@ class ApplicationController < ActionController::Base
     I18n.locale = locale
   end
 
+  def require_root_domain
+    redirect_to url_for(subdomain: false) if request.subdomain.present?
+  end
+
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, alert: 'No puedes entrar ahí...'
   end

@@ -6,4 +6,5 @@ class Version < ActiveRecord::Base
 
   belongs_to :group
   belongs_to :document, polymorphic: true
+  belongs_to :user, foreign_key: :whodunnit, class_name: 'User'
 end

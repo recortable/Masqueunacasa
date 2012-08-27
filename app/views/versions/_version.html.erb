@@ -1,7 +1,10 @@
-<%= div_for version do %>
+<% cache version do %>
+  <%= div_for version do %>
   <span class="user">
-  <% if version.user_name.present? %>
-    <%= link_to version.user_name, user_url(version.whodunnit) %>
+  <% user = version.user %>
+  <% if user %>
+    <%= avatar_link user, size: :small %>
+    <%= link_to user.name, user_url(user, subdomain: false) %>
 <% else %>
     Anónimx
 <% end %>
@@ -18,14 +21,15 @@
   <span class="document">
   de 
   <% if version.document.respond_to?(:group) && version.document.group %>
-    <%= link_to version.parent_title, polymorphic_url(version.document, subdomain: version.document.group.subdomain) %>
+    <%= link_to version.document.title, polymorphic_url(version.document, subdomain: version.document.group.subdomain) %>
 <% else %>
-    <%= link_to version.parent_title, polymorphic_url(version.document) %>
+    <%= link_to version.document.title, polymorphic_url(version.document) %>
 <% end %>
 </span>
 <% end %>
 <span class="time">
   Hace <%= time_ago_in_words version.created_at %>
 </span>
+<% end %>
 <% end %>
 

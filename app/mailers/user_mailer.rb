@@ -2,6 +2,7 @@
 class UserMailer < ActionMailer::Base
   default from: '"Masqueuncasa" <hola@masqueunacasa.org>'
   layout 'mquc_email'
+  helper :image
 
   def activity_email(user, activities)
     date = Time.now.strftime('%-d/%-m/%Y')
@@ -17,6 +18,9 @@ class UserMailer < ActionMailer::Base
     @user = User.find(user_id)
     
     mail to: @user.email, subject: @title
+  end
+
+  def perform_caching
   end
 end
 
