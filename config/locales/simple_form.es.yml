@@ -89,6 +89,7 @@ es:
         email: 'Escribe el email con el que te registraste, y te enviaremos las instrucciones'
 
       post:
+        title: 'Cuando más corto y preciso, mejor.'
         body: 'Se breve, por favor. No más de un párrafo.'
       
       section:

@@ -1,3 +1,4 @@
+<% title post.title %>
 <%= page_div group: true do %>
   <div class="row">
   <%= user_column 'span2' do %>
@@ -7,7 +8,8 @@
 <% end %>
   <div class='span6 center post'>
     <div class="hoverize">
-      <%= hover? :update, post do %>
+      <% cache post do %>
+        <%= hover? :update, post do %>
         <%= link_to icon(:pencil, 'Editar'), [:edit, post] %>
       <% if can? :delete, post %>
         |  <%= link_to icon(:trash), post, method: :delete,
@@ -15,7 +17,7 @@
       <% end %>
         <% end %>
           <h3><%= l post.published_at %></h3>
-          <%= title post.title %>
+          <h1><%= post.title %></h1>
           <h4>Por <%= link_to post.user.name, post.user %></h4>
           <%= render_post_media(post) %>
           <br/>
@@ -28,6 +30,7 @@
           <%= link_to attachment.file_identifier, attachment.file_url %>
       <% end %>
         <%= render 'users/author', user: post.user %>
+      <% end %>
       </div>
 
       <div class="sidebar span4">

@@ -13,8 +13,8 @@ Masqueunacasa::Application.configure do
   config.consider_all_requests_local       = true
 
   # Enable view cache (see cache_digests gem)
-  # config.action_controller.perform_caching = false
-  config.action_controller.perform_caching = true
+  config.action_controller.perform_caching = false
+  # config.action_controller.perform_caching = true
 
   # Email configuration (using letter opener)
   config.action_mailer.default_url_options = { :host => 'lvh.me:3000' }

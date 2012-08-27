@@ -37,8 +37,22 @@ module HasBreadcrumbs
     add_breadcrumb experiencie.title, experiencie_path(experiencie)
   end
 
-  def breadcrumb_for_group(group)
+  def breadcrumb_for_community
     add_breadcrumb 'Comunidad', community_url(subdomain: false)
+  end
+
+  def breadcrumb_for_users
+    breadcrumb_for_community
+    add_breadcrumb 'Participantes', users_path
+  end
+
+  def breadcrumb_for_user(user)
+    breadcrumb_for_users
+    add_breadcrumb user.name, user_url(user, subdomain: false)
+  end
+
+  def breadcrumb_for_group(group)
+    breadcrumb_for_community
     add_breadcrumb group.title, profile_url(subdomain: group.subdomain)
   end
 

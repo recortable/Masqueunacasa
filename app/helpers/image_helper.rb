@@ -11,6 +11,11 @@ module ImageHelper
     fake_img(width, height, options)
   end
 
+  def quick_avatar(name)
+    image_tag "http://archivos.masqueunacasa.org/avatars/mini_#{name.parameterize}.png", 
+      alt: name, width: 44, height: 44, class: 'avatar'
+  end
+
   def avatar_image(model, options = {})
     options.reverse_merge! class: 'responsive', size: 'normal'
 

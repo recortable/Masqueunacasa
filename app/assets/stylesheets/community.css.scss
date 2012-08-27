@@ -23,7 +23,7 @@ html.dashboard.community {
           margin: 3px 0;
           padding: 3px 0;
         }
-          
+
 
         ul { margin: 0; }
 
@@ -32,7 +32,7 @@ html.dashboard.community {
           margin: 0;
           padding: 4px 0 4px 4px;
           border-bottom: 1px solid $rojo;
-          
+
           a {
             max-width: 100%;
             display: inline-block;
@@ -45,8 +45,13 @@ html.dashboard.community {
     }
   }
 
-  .activity .table .version {
-    padding: 6px;
-    background: $fondo;
+  .activity {
+    h2 { margin: 6px 0 -4px 8px; }
+    .version {
+      padding: 6px;
+      background: $fondo;
+    }
   }
 }
+
+

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   expose(:posts) { current_group.posts }
   expose(:post)
-  expose(:post_list) { current_group.posts.paginate(page: params[:page], per_page: 5).order('created_at DESC') }
+  expose(:post_list) { current_group.posts.paginate(page: params[:page], per_page: 5).order('created_at DESC').includes(:user) }
   expose(:archive_posts) { current_group.posts }
 
   expose(:all_posts) { Post.reorder('updated_at DESC') }

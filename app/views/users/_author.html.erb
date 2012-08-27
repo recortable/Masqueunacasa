@@ -1,6 +1,11 @@
 <div class="author">
   <%= avatar_link user %>
-  <h3><%= link_to user.name, user %></h3>
+  <div class="hoverize">
+    <%= hover? :update, user do %>
+      <%= link_to icon(:pencil, 'Editar perfil'), [:edit, user] %>
+  <% end %>
+    <h3><%= link_to user.name, user %></h3>
+  </div>
   <div class="summary">
     <%= markdown user.summary %>
   </div>

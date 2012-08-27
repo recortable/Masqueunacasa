@@ -10,7 +10,7 @@
     <% end %>
 
     <div class="center span6">
-      <%= render post_list %>
+      <%= render partial: 'posts/summary', collection: post_list, as: :post %>
       <%= render 'posts/pagination' %>
     </div>
     <div class="sidebar sidebar-right span4">

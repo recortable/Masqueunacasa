@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   expose(:message) { Message.new(resource: user) }
 
   def index
+    breadcrumb_for_users
     respond_with users
   end
 
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
       redirect_to user, status: 301
     else
       authorize! :show, user
+      breadcrumb_for_user(user)
       user.increment_view_counter
       respond_with user
     end

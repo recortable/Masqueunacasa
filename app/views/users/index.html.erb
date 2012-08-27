@@ -1,8 +1,15 @@
-<% title 'Participantes' %>
-<%= render_banner 'Participantes', users_path %>
-
-<div class="users cards">
-  <% users.each do |user| %>
-    <%= user_card(user) %>
-  <% end %>
+<%= page_div do %>
+  <div class="row">
+  <div class="span6 offset2">
+    <%= title 'Participantes en Masqueunacasa.org' %>
+    <table class="table users">
+      <% users.each do |user| %>
+        <tr>
+        <td><%= avatar_link user, size: :small %></td>
+        <td><%= link_to user.name, user %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
 </div>
+<% end %>
