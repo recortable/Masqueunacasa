@@ -37,7 +37,7 @@ class VersionsController < ApplicationController
         if model.respond_to?(:document)
           url_for(model.document)
         elsif model.present?
-          if model.respond_to?(:group)
+          if model.respond_to?(:group) && model.group.present?
             polymorphic_url(model, subdomain: model.group.subdomain)
           else
             polymorphic_path(model)
@@ -45,7 +45,8 @@ class VersionsController < ApplicationController
         else
           nil
         end
-      rescue
+      rescue Exception => e
+        # raise e
         nil  
       end
     end
