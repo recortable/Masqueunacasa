@@ -1,16 +1,12 @@
-<div class="span3">
-    <%= render_editorships_list document %>
-    <%= render_subscriptors_list document %>
+<div class="span2">
+  <%# render_subscriptors_list document %>
+  &nbsp;
 </div>
 <div class="span6">
-  <div class="content">
-    <h2>Actividad</h2>
-    <%= simple_list versions do |version| %>
-      <%= render version %>
-    <% end %>
-  </div>
+  <h3>Comentarios y discusión</h3>
+  <%= render_editorships_list document %>
 </div>
-<div class="span3">
-    <%= render_task_list document %>
+<div class="span4 sidebar sidebar-right">
+  <%= render 'versions/activity', activity: versions %>
 </div>
 

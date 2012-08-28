@@ -1,12 +1,16 @@
 <% if document.respond_to?(:editorships) %>
   <div class="editorships">
-  <h3>Editores
-    <small><%= document.editorships.count %>
-  </h3>
-    <p>Han participado en la elaboración de este contenido</p>
+    <p>
+    En la elaboración de esta 
+    <%= t("activerecord.models.#{document.class.name.downcase}") %>
+    han participado:
+    </p>
+
     <% document.editorships.each do |editorship| %>
       <%= avatar_link editorship.user, size: :small, class: 'fixed' %>
   <% end %>
+  <br><br>
+  <h5>Próximamente se habilitará la zona de comentarios / discusión</h5>
   </div>
 <% end %>
 

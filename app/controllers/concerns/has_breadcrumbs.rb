@@ -19,7 +19,7 @@ module HasBreadcrumbs
 
   def breadcrumb_for_phase(phase)
     breadcrumb_for_habitapedia
-    add_breadcrumb phase.title, phase_path(phase)
+    add_breadcrumb phase.title, phases_path(anchor: 'fases')
   end
 
   def breadcrumb_for_category(category)

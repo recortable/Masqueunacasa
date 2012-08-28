@@ -53,7 +53,9 @@ class Activities
   end
 
   # Devuelve las versiones (limpias) de un documento dado
-  def self.document_activity(document)
+  def self.document_activity(document, options = {})
+    options.reverse_merge! limit: 30
+
     versions = Version.arel_table
     query = versions[:item_type].eq(document.class.to_s).
       and( versions[:item_id].eq(document.id) )
@@ -68,6 +70,7 @@ class Activities
                        and(versions[:item_id].in_any(tasks_ids)))
     end
 
-    Activities.clean_versions(Version.where(query).order('id DESC'))
+    versions = Version.where(query).order('id DESC').limit(options[:limit])
+    Activities.clean_versions(versions)
   end
 end

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :set_locale_from_url
 
-  expose(:themes) { 'textura02 naranja' }
+  expose(:themes) { 'textura02 rojo' }
   expose(:site) { Site.new }
 
   # TODO: no se por qué falla en test (sospecho que algo

@@ -16,11 +16,12 @@
   <% if model.respond_to?(:editorships_count) %>
     <tr>
       <td class="editors">
-        <%= icon('edit') %>
+        <%= icon('pencil') %>
         <%= link_to "#{model.editorships_count} editores", polymorphic_path([model, :edition]), class: '' %>
       </td>
     </tr>
   <% end %>
+  <% if false %>
   <% if model.respond_to?(:subscriptors) %>
     <tr>
       <td class="">
@@ -44,6 +45,7 @@
         <% end %>
     </tr></td>
   <% end %>
+<% end %>
 </table>
 
 <table class="table social">

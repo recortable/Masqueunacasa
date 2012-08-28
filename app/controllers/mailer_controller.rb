@@ -7,7 +7,6 @@ class MailerController < ApplicationController
 
   def test 
     UserMailer.activity_email(current_user, activities).deliver
-    flash[:notice] = "Email de actividad enviado a #{current_user.email}"
     render action: 'info'
   end
 
@@ -16,9 +15,6 @@ class MailerController < ApplicationController
       users = Group.root.users
       users.each {|u| UserMailer.activity_email(u, activities).deliver }
       activities.last_mail_at = Time.now
-      flash[:notice] = "Email de actividad enviado (#{users.count} emails)"
-    else
-      flash[:notice] = 'No era necesario enviar el email'
     end
     render action: 'info'
   end

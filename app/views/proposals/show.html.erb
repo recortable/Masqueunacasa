@@ -32,4 +32,9 @@
         <%= render_links_bar proposal %>
       </div>
     </div>
+    <div class="row edition">
+      <div class="span6 offset2">
+        <%= link_to 'Comentar', polymorphic_path([proposal, :edition], format: :js), remote: true %>
+      </div>
+    </div>
   <% end %>
