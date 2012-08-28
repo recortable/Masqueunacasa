@@ -38,8 +38,11 @@ class Phase < ActiveRecord::Base
 
   # TODO: convertir en un campo de la db
   def image_url
-    icon = ICONS[(position - 1) % 3]
     "habitap/#{icon}_100.png"
+  end
+
+  def icon
+    ICONS[(position - 1) % 3]
   end
 
   def experiencies

@@ -1,0 +1,101 @@
+
+.document-links {
+  margin-bottom: 20px;
+  .header {
+    width: 100%;
+    overflow: hidden;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+
+    h2 {
+      float: left;
+      font-weight: normal;
+      padding: 0 0.5em;
+      border-width: 2px 2px 0 2px;
+      border-style: solid;
+    }
+
+  }
+  .link {
+    padding: 10px 5px;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    a.resource { font-size: 16px; }
+  }
+}
+
+.document-locations {
+  .header {
+    width: 100%;
+    overflow: hidden;
+
+    h2 {
+      float: left;
+      padding: 0 0.5em;
+      border-width: 2px 2px 0 2px;
+      border-style: solid;
+      background-color: $fondo;
+    }
+  }
+  .locations {
+    border: 2px solid $negro;
+  }
+
+  .map-wrapper {
+    margin: 10px;
+  }
+}
+
+// Propuestas relacionadas de cada experiencia... ¡organizadas por
+// fases!
+.experiencie-relations {
+  .phase {
+    margin: 10px 0;
+    border: 2px solid $negro;
+
+    h3 { margin: 9px 0 8px 5px; }
+
+    img.phase-icon {
+      float: left;
+      margin: 5px;
+    }
+
+    .proposal {
+      padding: 5px 10px;
+      border-top: 2px solid $negro;
+
+      h4 { margin: 5px 0; }
+
+      .experiencies-count {
+        border-top: 1px dashed $negro;
+        display: block;
+        padding: 5px 10px 0 10px;
+        margin-left: -10px;
+        margin-right: -10px;
+      }
+    }
+  }
+}
+
+// TODO: vaya lío, seguro que se puede hacer mejorQ
+.experiencie-relations {
+  .phase.phase-color-azul_gris { 
+    h3 { color: $azul_gris; }
+    border-color: $azul_gris; 
+    a { color: $azul_gris; }
+    .proposal { border-color: $azul_gris; }
+  }
+  .phase.phase-color-tierra { 
+    h3 { color: $tierra; }
+    border-color: $tierra; 
+    a { color: $tierra; }
+    .proposal { border-color: $tierra; }
+  }
+  .phase.phase-color-ocre { 
+    h3 { color: $ocre; }
+    border-color: $ocre; 
+    a { color: $ocre; }
+    .proposal { border-color: $ocre; }
+  }
+}
+

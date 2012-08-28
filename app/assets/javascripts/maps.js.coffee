@@ -2,6 +2,7 @@
 options = (center, zoom) ->
   mapOptions =
     center: center,
+    scrollwheel: false,
     zoom: zoom,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     streetViewControl: false
