@@ -2,10 +2,11 @@
 <%= page row: false do %>
   <div class="row">
   <div class="span2">
-    <%= image_tag('habitap/experiencie.png', alt: experiencie.title, width: 150, height: 150) %>
+  <%= image_tag("habitap/experiencias_100n.png", alt: 'Experiencia',
+                width: 100, height: 100) %>
     <%= render_kudos experiencie %>
     <%= render_social_links experiencie %>
-    <%= render 'sections/summary', document: proposal %>
+    <%= render 'sections/summary', document: experiencie %>
   </div>
 
   <div class="span6">

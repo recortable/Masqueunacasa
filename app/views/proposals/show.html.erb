@@ -1,32 +1,35 @@
 <%= page do %>
   <div class="span2">
-    <%= image_tag('habitap/proposal.png', alt: proposal.title, width: 150, height: 150) %>
-    <%= render_kudos proposal %>
-    <%= render_social_links proposal %>
-    <%= render 'sections/summary', document: proposal %>
-  </div>
+  <%= image_tag("habitap/propuesta_100_#{proposal.phase.color}.png", alt: 'Propuesta',
+                width: 100, height: 100, class: 'doc-icon') %>
+              <%= render_kudos proposal %>
+                <%= render_social_links proposal %>
+                <%= render 'sections/summary', document: proposal %>
+              </div>
 
-  <div class="span6">
-    <h4><%= link_to proposal.category.title, proposal.category %></h4>
-    <div class="hoverize">
-      <%= hover? :update, proposal do %>
-        <%= link_to icon(:edit, 'Editar'), [:edit, proposal], rel: 'edit-proposal' %>
-        <% if can? :delete, proposal %>
-          | <%= link_to icon(:trash), proposal, method: :delete,
-            data: { confirm: "¿Seguro que quieres borrar esta propuesta?" } %>
-        <% end %>
-      <% end %>
-      <%= title proposal.title %>
-    </div>
-    <div class="summary markdown">
-      <%= markdown proposal.summary %>
-    </div>
-    <%= render_sections proposal %>
-  </div>
+              <div class="span6">
+                <% cache proposal do %>
+                  <h4 class="category"><%= link_to proposal.category.title, proposal.category %></h4>
+                <div class="hoverize">
+                  <%= hover? :update, proposal do %>
+                    <%= link_to icon(:edit, 'Editar'), [:edit, proposal], rel: 'edit-proposal' %>
+                  <% if can? :delete, proposal %>
+                    | <%= link_to icon(:trash), proposal, method: :delete,
+                      data: { confirm: "¿Seguro que quieres borrar esta propuesta?" } %>
+                  <% end %>
+                    <% end %>
+                      <%= title proposal.title %>
+                    </div>
+                    <div class="summary markdown">
+                      <%= markdown proposal.summary %>
+                    </div>
+                    <%= render_sections proposal %>
+                  <% end %>
+                  </div>
 
-  <div class="span4">
-    <%= render_proposal_relations proposal %>
+                  <div class="span4">
+                    <%= render_proposal_relations proposal %>
 
-    <%= render_links_bar proposal %>
-  </div>
-<% end %>
+                    <%= render_links_bar proposal %>
+                  </div>
+                <% end %>

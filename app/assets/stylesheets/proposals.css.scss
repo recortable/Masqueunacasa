@@ -1,4 +1,12 @@
-html.categories.show {
+
+.proposals.show {
+  h4.category { 
+    margin-bottom: 5px; 
+    a { color: $negro; }
+  }
+}
+
+html.proposals.show {
   .span6 {
     &>.hoverize:first-child .hover {
       top: 22px;
@@ -31,7 +39,7 @@ html.categories.show {
   }
 }
 
-html.categories.show.ocre {
+html.proposals.show.ocre {
   h1:before {
     background-position: 0 -20px;
   }
@@ -41,7 +49,7 @@ html.categories.show.ocre {
  }
 } 
 
-html.categories.show.tierra {
+html.proposals.show.tierra {
   h1:before {
     background-position: 0 -40px;
   }
@@ -50,3 +58,4 @@ html.categories.show.tierra {
    background-position: 0 -16px;
  }
 } 
+

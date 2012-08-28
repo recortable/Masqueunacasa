@@ -1,20 +1,34 @@
+// FRAMEWORKS
 @import "bourbon";
 @import "variables_and_mixins";
 @import "bootstrap_and_overrides";
-@import "layout";
+
+// GENERAL 
 @import "fonts";
-@import "shared";
-@import "shared/pagination";
 @import "forms";
 @import "themes";
-@import "session_bar";
+
+// SHARED
+@import "shared";
+@import "shared/pagination";
 @import "sections";
+
+// LAYOUT
+@import "layout";
+@import "session_bar";
+
 @import "dashboard";
 @import "welcome";
+
+// HABITAPEDIA
+@import "habitapedia";
 @import "phases";
 @import "categories";
-@import "community";
+@import "proposals";
 @import "experiencies";
+
+// COMMUNITY
+@import "community";
 @import "groups";
 @import "models";
 @import "posts";

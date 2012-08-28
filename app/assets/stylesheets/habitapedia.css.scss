@@ -1,0 +1,9 @@
+
+@mixin linea-zigzag-doble {
+      content: "";
+      height: 20px;
+      display: block;
+      background: image-url('lineazigzag_doble.png') repeat-x;
+}
+
+
