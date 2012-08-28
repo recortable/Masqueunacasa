@@ -1,0 +1,24 @@
+
+.document-links {
+  .header {
+    width: 100%;
+    overflow: hidden;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+
+    h2 {
+      float: left;
+      font-weight: normal;
+      padding: 0 0.5em;
+      border-width: 2px 2px 0 2px;
+      border-style: solid;
+    }
+
+  }
+  .link {
+    padding: 10px 5px;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    a.resource { font-size: 16px; }
+  }
+}

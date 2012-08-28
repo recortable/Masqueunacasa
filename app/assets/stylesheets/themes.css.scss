@@ -38,7 +38,7 @@ html.azul_gris {
   .corner.colored { background-position: 0 -120px; }
   .corner-opac { background-position: 0 -120px; }
   .dotted-bg { background: asset-data-url('fondos/textura_puntos.png'); }
-  .line-box { border: 2px solid $azul_gris; }
+  .border-color { border-color: $azul_gris; }
 }
 
 html.rojo, html.tierra {
@@ -53,7 +53,7 @@ html.rojo, html.tierra {
   .corner-opac { background-position: 0 -90px; }
 
   .dotted-bg { background: asset-data-url('fondos/textura_puntos-rojo.png'); }
-  .line-box { border: 2px solid $rojo; }
+  .border-color { border-color: $rojo; }
 
 }
 
@@ -67,7 +67,7 @@ html.amarillo, html.ocre {
   .corner.colored { background-position: 0 -90px; }
   .corner-opac { background-position: 0 -90px; }
   .dotted-bg { background: asset-data-url('fondos/textura_puntos-rojo.png'); }
-  .line-box { border: 2px solid $ocre; }
+  .border-color { border-color: $ocre; }
 }
 
 html.azul_neon {

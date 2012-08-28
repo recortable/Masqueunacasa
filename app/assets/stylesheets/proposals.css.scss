@@ -61,11 +61,29 @@ html.proposals.show.tierra {
 
 // Propuestas de cada categoría
 .related-proposals {
-  width: 100%; overflow: hidden;
   .header {
     padding: 3px 0;
-    img { float: left; margin: 0 3px; }
-    h2 { margin-top: 3px; }
+    border-width: 2px;
+    border-style: solid;
+    img { display: block; margin: -22px auto 0 auto; }
+    h2 { display: block; text-indent: 10px; margin-top: -10px; }
+  }
+  .proposals {
+    margin: 0 0px 30px 0px;
+    .proposal {
+      margin: 10px 0 10px 0;
+      padding: 3px 5px;
+      border-width: 2px;
+      border-style: solid;
+
+      h3 { margin: 10px 10px 0 10px; }
+      p { margin: 0 10px 10px 10px; }
+      .experiencies-count { 
+        border-width: 1px 0 0 0;
+        border-style: dashed ;
+        padding-top: 3px;
+      }
+    }
   }
 }
 
@@ -76,11 +94,13 @@ html.proposals.show.tierra {
     width: 100%; overflow: hidden;
     img { float: left; }
     h2 {
-      height: 40px; 
+      height: 40px;
       font-weight: normal; 
       padding-top: 3px;
       text-indent: 4px;
       overflow: hidden;
+      border-width: 2px 2px 2px 0;
+      border-style: solid;
     }
   }
 

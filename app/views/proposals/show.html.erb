@@ -13,7 +13,7 @@
                   <h4 class="category"><%= link_to proposal.category.title, proposal.category %></h4>
                 <div class="hoverize">
                   <%= hover? :update, proposal do %>
-                    <%= link_to icon(:edit, 'Editar'), [:edit, proposal], rel: 'edit-proposal' %>
+                    <%= link_to icon(:pencil, 'Editar'), [:edit, proposal], rel: 'edit-proposal' %>
                   <% if can? :delete, proposal %>
                     | <%= link_to icon(:trash), proposal, method: :delete,
                       data: { confirm: "¿Seguro que quieres borrar esta propuesta?" } %>
