@@ -1,3 +1,4 @@
+# encoding: utf-8
 class LinksController < ApplicationController
   respond_to :html
   expose_parent :resource, [:experiencie, :proposal]
@@ -6,9 +7,16 @@ class LinksController < ApplicationController
 
   def new
     authorize! :update, resource
+    polymorphic_breadcrumb_for(resource)
+    add_breadcrumb 'Añadir recurso', polymorphic_path([:new, resource, :link])
+    respond_with link
   end
 
   def edit
+    authorize! :update, resource
+    polymorphic_breadcrumb_for(resource)
+    add_breadcrumb 'Editar', polymorphic_path([:edit, resource, link])
+    respond_with link
   end
 
   def show

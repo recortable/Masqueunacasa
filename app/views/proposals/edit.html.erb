@@ -1,12 +1,13 @@
-<%= page do %>
+<%= page_div do %>
+  <div class="row">
   <div class="span2">
-    <%= render_editorships_list proposal %>
-    <%= render_subscriptors_list proposal %>
+    &nbsp;
   </div>
   <div class="span6">
     <%= title "Editar propuesta" %>
     <%= render 'form' %>
   </div>
   <div class="span2">
-    <%= render_task_list proposal %>
+  </div>
+</div>
 <% end %>

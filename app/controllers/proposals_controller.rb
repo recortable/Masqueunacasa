@@ -6,7 +6,7 @@ class ProposalsController < ApplicationController
   expose(:proposal)
   expose(:phase) { proposal.phase }
   expose(:themes) do
-    "#{phase.textura} #{phase.color_name}" 
+    "#{phase.textura} #{phase.color_name}" if proposal.phase
   end
 
   def index
@@ -30,6 +30,7 @@ class ProposalsController < ApplicationController
     authorize! :update, proposal
 
     breadcrumb_for_proposal(proposal)
+    add_breadcrumb 'Editar', edit_proposal_path(proposal)
     respond_with proposal
   end
 

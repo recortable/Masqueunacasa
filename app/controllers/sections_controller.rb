@@ -1,3 +1,4 @@
+# encoding: utf-8
 class SectionsController < ApplicationController
   respond_to :html
 
@@ -7,10 +8,16 @@ class SectionsController < ApplicationController
 
   def new
     authorize! :create, section
+    polymorphic_breadcrumb_for(document)
+    add_breadcrumb 'Añadir sección', polymorphic_path([:new, document, :section])
+    respond_with section
   end
 
   def edit
     authorize! :edit, section
+    polymorphic_breadcrumb_for(document)
+    add_breadcrumb 'Editar sección', polymorphic_path([:edit, document, section])
+    respond_with section
   end
 
   def show
@@ -19,6 +26,8 @@ class SectionsController < ApplicationController
 
   def create
     authorize! :create, section
+    polymorphic_breadcrumb_for(document)
+    add_breadcrumb 'Añadir sección', polymorphic_path([:new, document, :section])
     flash[:notice] = 'Contenido guardado' if document.add_section(section, current_user)
     respond_with section, location: document_location
   end

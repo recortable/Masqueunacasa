@@ -8,7 +8,6 @@
 <% end %>
   <div class='span6 center post'>
     <div class="hoverize">
-      <% cache post do %>
         <%= hover? :update, post do %>
         <%= link_to icon(:pencil, 'Editar'), [:edit, post] %>
       <% if can? :delete, post %>
@@ -30,7 +29,6 @@
           <%= link_to attachment.file_identifier, attachment.file_url %>
       <% end %>
         <%= render 'users/author', user: post.user %>
-      <% end %>
       </div>
 
       <div class="sidebar span4">

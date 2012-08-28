@@ -1,8 +1,10 @@
 
-<%= page do %>
+<%= page_div do %>
+  <div class="row">
   <div class="span6 offset2">
     <h2>En <%= link_to resource.title, resource %></h2>
     <%= title 'Editar enlace' %>
     <%= render 'form' %>
   </div>
+</div>
 <% end %>

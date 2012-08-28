@@ -8,6 +8,11 @@ module HasBreadcrumbs
     add_breadcrumb 'Mas que una casa', root_path
   end
 
+  def polymorphic_breadcrumb_for(document)
+    name = document.class.name.downcase
+    self.send("breadcrumb_for_#{name}", document)
+  end
+
   def breadcrumb_for_habitapedia
     add_breadcrumb 'Habitapedia', phases_path
   end

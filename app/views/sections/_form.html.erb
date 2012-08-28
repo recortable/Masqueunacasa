@@ -1,38 +1,26 @@
 <%= simple_form_for [document, section] do |form| %>
+  <div class="title">
   <%= form.input :title %>
-  <%= form.input :body, label: false %>
-  <div class="image">
-    <h3>Imágen</h3>
-    <% if section.image.present? %>
-      <%= image_tag section.image_url(:thumb), class: 'fixed' %>
-      <dl class="unstyled">
-        <dt>Posición</dt><dd><%= section.image_position %></dd>
-        <dt>Enlace</dt><dd><%= section.image_url %></dd>
-      </ul>
+</div>
+<%= form.input :body, label: false %>
+<br><br>
+<div class="image">
+  <% if section.image.present? %>
+    <%= image_tag section.image_url(:thumb), class: 'fixed' %>
+  <dl class="unstyled">
+    <dt>Posición</dt><dd><%= section.image_position %></dd>
+    <dt>Enlace</dt><dd><%= section.image_url %></dd>
+  </ul>
 
-      <div class="controls">
-        <%= link_box 'Borrar imágen', remove_image_section_path(section), method: :delete, confirm: '¿Quieres borrar esta imágen?' %>
-      </div>
-    <% else %>
-      <p>Si quieres acompañar esta sección de una imágen, 
-      lo puedes hacer aqui</p>
-      <%= form.input :image, label: false %>
-      <%= form.input :image_position, collection: ['top', 'bottom', 'none'], include_blank: false %>
-    <% end %>
+  <div class="controls">
+    <%= link_box 'Borrar imágen', remove_image_section_path(section), method: :delete, confirm: '¿Quieres borrar esta imágen?' %>
   </div>
-  <div class="videos">
-    <h3>Vídeos u otros enlaces</h3>
-    <p>Para poner un vídeo, simplemente pon la url en el texto, rodeado
-    por una línea en blanco tanto antes como después. Por ejemplo:</p>
-    <pre>
-
-http://vimeo.com/37086987
-
-</pre>
-    <p>... incrustaría el vídeo de introducción a masqueunacasa.org</p>
-    <p>Esto funciona tanto con imágenes externas, como vídeos de youtube, y vimeo (más formatos por venir).</p>
-  </div>
-  <%= submit_button_for form %>
-  <%= link_to 'Cancelar', [document, section] %>
+<% else %>
+    <p>Opcional: puedes <strong>subir una imágen</strong> que acompañe a esta sección</p>
+  <%= form.input :image, label: false %>
+  <%= form.input :image_position, collection: [['Antes del texto', 'top'], ['Después del texto', 'bottom']], include_blank: false %>
+<% end %>
+</div>
+<%= submit_button_for form %>
 <% end %>
 

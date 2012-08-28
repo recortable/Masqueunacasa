@@ -69,6 +69,10 @@ es:
         description: 'Resúmen'
         phase: 'Fase en la que se incluye'
         category: 'A qué pregunta responde'
+    
+      section:
+        image_position: 'Dónde quieres poner la imágen'
+
 
     hints:
       defaults:
@@ -94,6 +98,8 @@ es:
       
       section:
         title: 'El título de esta sección. Es opcional'
+        body: 'Puedes usar markdown.'
+
       user:
         edit:
           password: 'Déjalo vacío si no quieres cambiarla'

@@ -1,0 +1,40 @@
+es:
+  markdown:
+    help: |
+      # Cómo usar markdown
+      
+      Markdown es un sistema para indicar el formato visual de un texto utilizando códigos. Los códigos son muy simples:
+
+      - Para escribir un título, pon un \# al principio de la línea
+      - Para escribir *cursivas* rodea el texto con un asterisco. Por ejemplo, \*esto iría en cursivas\*
+      - Para escribir **negritas** rodea el texto con dos asteriscos. Usando markdown \*\*esto iría en negritas\*\*
+      
+      **Los párrafos van separados por una línea en blanco**. Dos párrafos sin línea en blanco de separación se unirán en uno solo.
+
+      Por último, para escribir una lista añade un guión (-) al principio de cada línea. ** Antes y después de la lista** debe haber una línea en blanco.
+
+      # Mostrar imágenes externas
+      
+      Para insertar una imágen externa (es decir, una que está fuera de másqueunacasa.org) simplemente escribe la url de la imágen. 
+
+      De nuevo, es necesario poner una línea en blanco antes y después. Por ejemplo, para mostrar el logo de más que una casa escribiremos:
+
+      ```
+      http://masqueunacasa.org/logo.png
+      ```
+
+      *Truco*: cuando estés navegando, pulsa con el botón derecho sobre una imágen y aparecerá un menú que nos permite copiar la URL de la imágen al portapapeles.
+
+      # Incrustar vídeos
+
+      Incrustar un vídeo es igual de fácil. Escribe la url del vídeo rodeado por una línea en blanco:
+
+      ```
+      http://vimeo.com/37086987
+      ```
+
+      Ese ejemplo mostraría el vídeo de introducción a masqueunacasa.org. Funciona con vimeo, youtube (y habrá más formatos)
+
+      # Otros objetos incrustados
+      
+      Por último si te sientes intrépid@ puedes incrustar código html directamente. Eso te puede servir, por ejemplo, para que se muestren fragmentos de otras web.

@@ -1,42 +1,42 @@
-<% document.sections.each do |section| %>
-  <%= div_for section do %>
-  <div class="hoverize">
-  <%= hover? :update, section do %>
-    <%= link_to icon(:pencil), [:edit, document, section], rel: "edit-section-#{section.id}" %> 
-  |
-  <%= link_to icon('arrow-up'), [:up, section], method: :put %>
-  |
-  <%= link_to icon('arrow-down'), [:down, section], method: :put %>
-  <% if can? :delete, section %>
-    | <%= link_to icon(:trash), [document, section], method: :delete,
-      data: { confirm: "¿Quieres borrar esta sección?" } %>
-  <% end %>
-    <% end %>
-      <a name="<%= section.title? ? section.title : section.id %>">
-      </a>
-      <% if section.title.blank? %>
-        <p>&nbsp;</p>
-      <% else %>
-        <h2 <%= "class='no-title'" if section.title.blank? %>><%= section.title %><small><%= link_to icon('sort-up'), '#' %></small></h2>
-    <% end %>
-      <% if section.image? && section.image_position == 'top' %>
-        <div class="image top">
-        <%= image_tag section.image_url, class: 'responsive' %>
-      </div>
-    <% end %>
-      <%= render_body section %>
-      <% if section.image? && section.image_position == 'bottom' %>
-        <div class="image bottom">
-        <%= image_tag section.image_url, class: 'responsive' %>
-      </div>
-    <% end %>
-    </div>
-  <% end %>
-  <% end %>
-    <div class="hoverize">
-      &nbsp;
-      <%= hover? :update, document do %>
-        <%= link_to icon(:plus, 'Añadir sección'), [:new, document, :section], rel: 'new-section' if can? :create, Section %>
-    <% end %>
-    </div>
 
+<div class="sections">
+  <%= content_tag_for :div, document.sections do |section| %>
+    <div class="hoverize">
+    <%= hover? :update, section do %>
+      <%= link_to icon(:pencil), [:edit, document, section], rel: "edit-section-#{section.id}" %> 
+    |
+    <%= link_to icon('arrow-up'), [:up, section], method: :put %>
+    |
+    <%= link_to icon('arrow-down'), [:down, section], method: :put %>
+    <% if can? :delete, section %>
+      | <%= link_to icon(:trash), [document, section], method: :delete,
+        data: { confirm: "¿Quieres borrar esta sección?" } %>
+    <% end %>
+      <% end %>
+        <a name="<%= section.title? ? section.title : section.id %>">
+        </a>
+        <% if section.title.blank? %>
+          <p>&nbsp;</p>
+      <% else %>
+          <h2 <%= "class='no-title'" if section.title.blank? %>><%= section.title %><small><%= link_to icon('sort-up'), '#' %></small></h2>
+      <% end %>
+        <% if section.image? && section.image_position == 'top' %>
+          <div class="image top">
+          <%= image_tag section.image_url, class: 'responsive' %>
+        </div>
+      <% end %>
+        <%= render_body section %>
+        <% if section.image? && section.image_position == 'bottom' %>
+          <div class="image bottom">
+          <%= image_tag section.image_url, class: 'responsive' %>
+        </div>
+      <% end %>
+      </div>
+    <% end %>
+      <div class="hoverize">
+        &nbsp;
+        <%= hover? :update, document do %>
+          <%= link_to icon(:plus, 'Añadir sección'), [:new, document, :section], rel: 'new-section' if can? :create, Section %>
+      <% end %>
+      </div>
+    </div>

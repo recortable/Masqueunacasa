@@ -9,6 +9,7 @@ class Section < ActiveRecord::Base
   delegate :title, to: :document, prefix: true
 
   validates_presence_of :document_id, :document_type, :lang, :body_type
+  validates_presence_of :body
 #  validates :image, file_size: { maximum: 1.megabytes.to_i }
 
   belongs_to :group

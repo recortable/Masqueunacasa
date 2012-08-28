@@ -21,6 +21,8 @@ class CategoriesController < ApplicationController
 
   def new
     authorize! :create, Category
+    breadcrumb_for_phase(phase)
+    add_breadcrumb 'Nueva pregunta', polymorphic_path([:new, phase, :category])
     respond_with category
   end
 
@@ -41,6 +43,7 @@ class CategoriesController < ApplicationController
     authorize! :edit, category
 
     breadcrumb_for_category(category)
+    add_breadcrumb 'Editar', polymorphic_path([:edit, phase, category])
     respond_with category
   end
 

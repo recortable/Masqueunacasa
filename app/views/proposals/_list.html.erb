@@ -1,33 +1,30 @@
-<% cache ['proposals', category] do %>
-  <div class="related-proposals">
+<div class="related-proposals">
   <div class="hoverize">
     <%= hover? :create, Proposal do %>
       <%= link_to icon(:plus, 'Añadir propuesta'), [:new, category, :proposal], rel: 'new-proposal' %>
   <% end %>
     <div class="header border-color">
-      <%= image_tag("habitap/propuesta_35#{category.phase.color}.png", 
-                    alt: 'Propuestas', width: 35, height: 35) %>
-                  <h2>Propuestas</h2>
-                  </div>
-                </div>
-                <div class="proposals">
-                  <%= content_tag_for :div, category.proposals, class: 'border-color' do |proposal| %>
-                    <div class="hoverize">
-                    <%= hover? :update, proposal do %>
-                      <%= link_to icon('arrow-up'), [:up, proposal], method: :put %>
-                    |
-                    <%= link_to icon('arrow-down'), [:down, proposal], method: :put %>
-                  <% end %>
+      <%= image_tag("habitap/propuesta_35#{category.phase.color}.png", alt: 'Propuestas', width: 35, height: 35) %>
+      <h2>Propuestas</h2>
+    </div>
+  </div>
+  <div class="proposals">
+    <%= content_tag_for :div, category.proposals, class: 'border-color' do |proposal| %>
+      <div class="hoverize">
+      <%= hover? :update, proposal do %>
+        <%= link_to icon('arrow-up'), [:up, proposal], method: :put %>
+      |
+      <%= link_to icon('arrow-down'), [:down, proposal], method: :put %>
+    <% end %>
 
-                    <h3>
-                      <%= link_to proposal.title, proposal %>
-                    </h3>
-                    <%= markdown truncate(proposal.summary, length: 150) %>
-                    <div class="experiencies-count border-color">
-                      <%= proposal.experiencies_count %> experiencias
-                    </div>
-                  </div>
-                <% end %>
-                </div>
-              </div>
-            <% end %>
+      <h3>
+        <%= link_to proposal.title, proposal %>
+      </h3>
+      <%= markdown truncate(proposal.summary, length: 150) %>
+      <div class="experiencies-count border-color">
+        <%= proposal.experiencies_count %> experiencias
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
