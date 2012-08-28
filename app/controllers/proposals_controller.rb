@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ProposalsController < ApplicationController
   respond_to :html
 
@@ -34,11 +35,15 @@ class ProposalsController < ApplicationController
     respond_with proposal
   end
 
-  expose(:category) { Category.find params[:category_id] }
   def new
-    proposal.category = category
-    proposal.phase = category.phase
+    if params[:category_id]
+      category = Category.find params[:category_id]
+      proposal.category = category
+      proposal.phase = category.phase
+    end
     authorize! :new, proposal
+    breadcrumb_for_category(proposal.category)
+    add_breadcrumb 'Añadir propuesta', new_category_proposal_path(proposal.category, proposal)
     respond_with proposal
   end
 

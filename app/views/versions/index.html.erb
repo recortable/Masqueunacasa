@@ -1,8 +1,11 @@
-<div class="row">
-  <%= corner_span 'span12' do %>
+<%= page_div do %>
+  <div class="row">
+  <div class="span10 offset2">
     <%= title 'Actividad' %>
     <%= simple_list versions do |version| %>
       <%= render version %>
-    <% end %>
   <% end %>
+    <%= simple_debug Version.order('id DESC').limit(10) %>
+  </div>
 </div>
+  <% end %>

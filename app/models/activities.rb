@@ -46,7 +46,7 @@ class Activities
   def self.clean_versions(versions)
     prev = nil
     versions.select do |version|
-      like_prev = prev && prev.whodunnit == version.whodunnit && prev.item_id == version.item_id && prev.item_type == version.item_type
+      like_prev = prev && prev.whodunnit == version.whodunnit && prev.event == version.event && prev.item_id == version.item_id && prev.item_type == version.item_type 
       prev = version
       !like_prev
     end
