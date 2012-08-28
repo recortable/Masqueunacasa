@@ -5,7 +5,7 @@ describe 'Categories integration' do
   it 'show category' do
     category = create(:category)
     visit category_path(category)
-    page.text.must_include category.question
+    page.text.must_include category.title
   end
 
   it 'show category proposals' do
@@ -33,16 +33,16 @@ describe 'Categories integration' do
 
     login_user(user)
     visit new_phase_category_path(phase)
-    fill_in 'category_title', with: 'Mi categoría'
-    fill_in 'category_question', with: '¿Qué hacemos?'
+    fill_in 'category_name', with: 'Mi categoría'
+    fill_in 'category_title', with: '¿Qué hacemos?'
     fill_in 'category_summary', with: 'Las cositas'
     click_submit
 
     category = Category.last
     category.phase.must_equal phase
     category.user.must_equal user
-    category.title.must_equal 'Mi categoría'
-    category.question.must_equal '¿Qué hacemos?'
+    category.name.must_equal 'Mi categoría'
+    category.title.must_equal '¿Qué hacemos?'
     category.summary.must_equal 'Las cositas'
   end
 end

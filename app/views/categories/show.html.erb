@@ -1,10 +1,10 @@
-<% title category.question %>
+<% title category.title %>
 <%= page do %>
   <div class="span2">
   <%= image_tag('habitap/category.png', alt: category.title, width: 150, height: 150) %>
   <%= render_kudos category %>
   <%= render_social_links category %>
-  <%# render_sections_summary category %>
+  <%= render 'sections/summary', document: category %>
 </div>
 <% cache category do %>
   <div class="span6">
@@ -16,7 +16,7 @@
         data: { confirm: "¿Seguro que quieres borrar esta pregunta" } %>
     <% end %>
       <% end %>
-        <h1><%= category.question %></h1>
+        <h1><%= category.title %></h1>
         <div class="category_image">
           <%= category_image category %>
         </div>

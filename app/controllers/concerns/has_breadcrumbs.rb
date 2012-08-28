@@ -19,7 +19,7 @@ module HasBreadcrumbs
 
   def breadcrumb_for_category(category)
     breadcrumb_for_phase(category.phase)
-    add_breadcrumb category.question, phase_category_path(category.phase, category)
+    add_breadcrumb category.title, phase_category_path(category.phase, category)
   end
 
   def breadcrumb_for_proposal(proposal)

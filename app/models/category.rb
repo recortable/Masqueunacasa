@@ -1,19 +1,19 @@
 class Category < ActiveRecord::Base
   include Translatable
   extend FriendlyId
-  friendly_id :title, use: :simple_i18n
+  friendly_id :name, use: :simple_i18n
   acts_as_list scope: :phase_id
-  has_paper_trail meta: {title: :question }
+  has_paper_trail meta: {title: :title}
   mount_uploader :image, CategoryImageUploader
 
-  translates :title, :slug, :question, :summary, :body
-  translation_required :title, :slug, :question
+  translates :name, :slug, :title, :summary, :body
+  translation_required :title, :slug, :name
 
-  attr_accessible :title, :question, :summary, :body, :body_type
+  attr_accessible :name, :title, :summary, :body, :body_type
   attr_accessible :user_id, :user, :phase_id, :phase
   attr_accessible :image, :remove_image
 
-  validates_presence_of :user_id, :phase_id, :title, :question
+  validates_presence_of :user_id, :phase_id, :title, :name
 
   belongs_to :user
   belongs_to :phase, touch: true

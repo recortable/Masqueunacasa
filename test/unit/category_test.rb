@@ -1,15 +1,15 @@
 require 'test_helper' 
 
 describe Category do
-  it 'title, slg and question always present in all locales' do
+  it 'name, sulg and title always present in all locales' do
     cat = create(:category)
 
+    cat.name_es.must_be :present?
+    cat.name_ca.must_be :present?
     cat.title_es.must_be :present?
     cat.title_ca.must_be :present?
     cat.slug_es.must_be :present?
-    cat.slug_es.must_be :present?
-    cat.question_es.must_be :present?
-    cat.question_ca.must_be :present?
+    cat.slug_ca.must_be :present?
   end
 
   it 'propagate phases' do

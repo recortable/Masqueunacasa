@@ -18,7 +18,7 @@ describe 'Phases integration' do
     visit phase_path(phase)
     page.text.must_include phase.title
     page.text.must_include phase.summary
-    page.text.must_include c1.question
+    page.text.must_include c1.title
   end
 
   it 'creates phases' do

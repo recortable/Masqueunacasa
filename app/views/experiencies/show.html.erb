@@ -1,53 +1,53 @@
 <% google_maps %>
 <%= page row: false do %>
   <div class="row">
-    <div class="span2">
-      <%= image_tag('habitap/experiencie.png', alt: experiencie.title, width: 150, height: 150) %>
-      <%= render_kudos experiencie %>
-      <%# render_sections_summary experiencie %>
-      <%= render_social_links experiencie %>
-    </div>
+  <div class="span2">
+    <%= image_tag('habitap/experiencie.png', alt: experiencie.title, width: 150, height: 150) %>
+    <%= render_kudos experiencie %>
+    <%= render_social_links experiencie %>
+    <%= render 'sections/summary', document: proposal %>
+  </div>
 
-    <div class="span6">
-      <div class="hoverize">
-        <%= hover? :update, experiencie do %>
-          <%= link_to icon(:pencil, 'Editar'), [:edit, experiencie] %>
-          <% if can? :destroy, experiencie %>
-            | <%= link_to icon(:trash), experiencie, 
-              method: :delete, confirm: "¿Quieres borrar esta experiencia?" %>
-          <% end %>
+  <div class="span6">
+    <div class="hoverize">
+      <%= hover? :update, experiencie do %>
+        <%= link_to icon(:pencil, 'Editar'), [:edit, experiencie] %>
+      <% if can? :destroy, experiencie %>
+        | <%= link_to icon(:trash), experiencie, 
+          method: :delete, confirm: "¿Quieres borrar esta experiencia?" %>
+      <% end %>
         <% end %>
-        <%= title experiencie.title %>
-      </div>
-      <div class="summary markdown">
-        <%= markdown experiencie.summary %>
-      </div>
-      <div class="image-gallery hoverize">
-        <%= hover? :update, experiencie do %>
-          <%= link_to icon(:pencil, 'Administrar imágenes'), [experiencie, :images] %>
+          <%= title experiencie.title %>
+        </div>
+        <div class="summary markdown">
+          <%= markdown experiencie.summary %>
+        </div>
+        <div class="image-gallery hoverize">
+          <%= hover? :update, experiencie do %>
+            <%= link_to icon(:pencil, 'Administrar imágenes'), [experiencie, :images] %>
         <% end %>
-        <% if !experiencie.images.empty? %>
-          <div class="galleria">
+          <% if !experiencie.images.empty? %>
+            <div class="galleria">
             <% experiencie.images.each do |image| %>
               <% if image.image? %>
-                <%= link_to image_tag(image.image.thumb.to_s, title: image.title, alt: image.credits), image.image.to_s %>
-              <% end %>
-              <% if image.external_image_url? %>
-                <%= image_tag(image.external_image_url, title: image.title, alt: image.credits) %>
-              <% end %>
-            <% end %>
+              <%= link_to image_tag(image.image.thumb.to_s, title: image.title, alt: image.credits), image.image.to_s %>
+          <% end %>
+            <% if image.external_image_url? %>
+              <%= image_tag(image.external_image_url, title: image.title, alt: image.credits) %>
+          <% end %>
+          <% end %>
           </div>
         <% end %>
+        </div>
+        <%= render_sections experiencie %>
       </div>
-      <%= render_sections experiencie %>
-    </div>
 
-    <div class="span4 sidebar sidebar-right">
-      <%= render_experiencie_relations experiencie %>
-      <%= render_links_bar experiencie %>
-      <%= render_locations_bar experiencie %>
+      <div class="span4 sidebar sidebar-right">
+        <%= render_experiencie_relations experiencie %>
+        <%= render_links_bar experiencie %>
+        <%= render_locations_bar experiencie %>
+      </div>
     </div>
-  </div>
-  <div class="row edition">
-  </div>
-<% end %>
+    <div class="row edition">
+    </div>
+  <% end %>

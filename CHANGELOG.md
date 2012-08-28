@@ -1,5 +1,9 @@
 # Masqueunacasa
 
+## 28/08/2012
+- Añadir resúmen en preguntas, propuestas y experiencias
+- Cambiar, en category, question por title y title por nameQ
+
 ## 27/08/2012
 - Última actividad en página de perfil
 - Css tweaks en actividad

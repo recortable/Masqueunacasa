@@ -1,8 +1,8 @@
 <%= simple_form_for [phase, category] do |form| %>
   <div class="title">
-    <%= form.input :question, label: false %>
+    <%= form.input :title, label: false %>
   </div>
-  <%= form.input :title %>
+  <%= form.input :name %>
   <% if category.image.blank? %>
     <%= form.input :image %>
   <% else %>

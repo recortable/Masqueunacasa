@@ -4,7 +4,7 @@
   <table class="table">
     <% categories.reorder('phase_id ASC').each do |category| %>
       <tr>
-      <td><%= link_to category.question, [category.phase, category] %></td>
+      <td><%= link_to category.title, [category.phase, category] %></td>
       <td><%= link_to category.phase.title, category.phase %></td>
       <td><%= icon(:edit, category.editorships_count) %></td>
       <td><%= icon(:heart, category.kudos_count) %></td>

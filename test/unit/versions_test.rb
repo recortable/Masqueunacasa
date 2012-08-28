@@ -3,7 +3,7 @@ require 'test_helper'
 describe Version do
   it 'version created by category' do
     c = create(:category)
-    verify(c, title: c.question)
+    verify(c, title: c.title)
   end
 
   it 'version created by experiencie' do

@@ -29,8 +29,8 @@ es:
         scope: 'Quién recibirá el correo'
 
       category:
-        title: 'Nombre corto'
-        question: 'Título'
+        name: 'Nombre corto'
+        title: 'Pregunta'
         image: 'Imágen o dibujo'
         remove_image: 'Borrar imágen'
         
@@ -75,7 +75,7 @@ es:
         summary: 'Debe ser corto e introduce el contenido. No más de un párrafo.'
 
       category:
-        title: 'Se usará en la URL. Intenta que sea corto y descriptivo.'
+        name: 'Se usará en la URL. Intenta que sea corto y descriptivo.'
         image: 'Debe tener un ancho de 800 pixels, ni más ni menos.'
         remove_image: 'Selecciona ésto si quieres borrar la imágen actual'
 

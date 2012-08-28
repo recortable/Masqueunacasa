@@ -2,12 +2,12 @@
   <div class="span2">
     <%= image_tag('habitap/proposal.png', alt: proposal.title, width: 150, height: 150) %>
     <%= render_kudos proposal %>
-    <%# render_sections_summary proposal %>
     <%= render_social_links proposal %>
+    <%= render 'sections/summary', document: proposal %>
   </div>
 
   <div class="span6">
-    <h4><%= link_to proposal.category.question, proposal.category %></h4>
+    <h4><%= link_to proposal.category.title, proposal.category %></h4>
     <div class="hoverize">
       <%= hover? :update, proposal do %>
         <%= link_to icon(:edit, 'Editar'), [:edit, proposal], rel: 'edit-proposal' %>

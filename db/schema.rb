@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120822165947) do
+ActiveRecord::Schema.define(:version => 20120828091246) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -60,12 +60,10 @@ ActiveRecord::Schema.define(:version => 20120822165947) do
   create_table "categories", :force => true do |t|
     t.integer  "phase_id"
     t.integer  "user_id"
-    t.string   "title_es",          :limit => 100
-    t.string   "title_ca",          :limit => 100
+    t.string   "title_es",          :limit => 300
+    t.string   "title_ca",          :limit => 300
     t.string   "slug_es",           :limit => 100
     t.string   "slug_ca",           :limit => 100
-    t.string   "question_es",       :limit => 300
-    t.string   "question_ca",       :limit => 300
     t.text     "body_ca"
     t.text     "body_es"
     t.datetime "created_at",                                      :null => false
@@ -80,6 +78,8 @@ ActiveRecord::Schema.define(:version => 20120822165947) do
     t.text     "summary_en"
     t.integer  "editorships_count",                :default => 0
     t.string   "image"
+    t.string   "name_es",           :limit => 100
+    t.string   "name_ca",           :limit => 100
   end
 
   add_index "categories", ["phase_id"], :name => "index_categories_on_phase_id"
