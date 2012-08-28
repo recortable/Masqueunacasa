@@ -1,7 +1,10 @@
+$width: 150px;
+$glutter: 20px;
+
 html.experiencies.index {
   div.quadricula {
     margin-top: 30px;
-    margin-left: -25px;
+    margin-left: -$glutter;
 
     #add_image {
       position: relative;
@@ -20,7 +23,7 @@ html.experiencies.index {
           position: absolute;
           top: 38px;
           left: 75px;
-          background: asset-data-url('add_icon-big.png') no-repeat;
+          //background: asset-data-url('add_icon-big.png') no-repeat;
         }
 
         &:hover {
@@ -35,19 +38,20 @@ html.experiencies.index {
     }
 
     .experiencie, #add_image {
-      width: 270px;
-      height: 270px;
+      background-color: darken($fondo, 20%);
+      width: $width;
+      height: $width;
       position: relative;
       float: left;
-      margin-left: 25px;
-      margin-bottom: 25px;
+      margin-left: $glutter;
+      margin-bottom: $glutter;
       overflow: hidden;
       text-align: center;
-      font-size: 18px;
-      line-height: 21px;
+      font-size: 14px;
+      line-height: 18px;
 
       img {
-        width: 270px;
+        width: $width;
         max-width: 2000px;
       }
 

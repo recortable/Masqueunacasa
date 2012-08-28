@@ -1,7 +1,7 @@
 <%= page row: false do %> 
   <% title 'Experiencias' %>
   <div class="quadricula">
-    <% if can? :create, Experiencie %>
+    <% if can?(:create, Experiencie) %>
       <div id="add_image">
         <%= link_to "Añadir<br /> experiencia".html_safe, new_experiencie_path, rel: 'new-experiencie' %>
       </div>
@@ -9,7 +9,7 @@
     <% experiencies.each do |experiencie| %>
       <%= div_for experiencie do %>
         <% if experiencie.images.empty? %>
-          No hay imagen disponible
+          <p><br>No hay imagen disponible</p>
         <% else %>
           <%= link_to image_tag(experiencie.image), experiencie  %>
         <% end %>
