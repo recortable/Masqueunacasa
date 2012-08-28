@@ -7,7 +7,7 @@
     <%= form.input :image %>
   <% else %>
     <%= image_tag category.image, class: 'responsive' %>
-    <%= form.input :remove_image, as: :boolean %>
+    <%= form.input :remove_image, as: :boolean, wrapper: :checkbox %>
   <% end %>
   <%= form.input :summary, as: :text %>
   <%= submit_button_for form %>

@@ -2,6 +2,14 @@
 form {
   input[type=text], input[type=email], input[type=password], textarea {
     width: 98%;
+    border-radius: 0;
+  }
+
+  .help-block {
+    display: block;
+    margin: -5px 0 5px 0;
+    font-size: 90%;
+    font-style: italic;
   }
 
   div.title {
