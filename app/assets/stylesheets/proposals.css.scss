@@ -59,6 +59,17 @@ html.proposals.show.tierra {
   }
 } 
 
+// Propuestas de cada categoría
+.related-proposals {
+  width: 100%; overflow: hidden;
+  .header {
+    padding: 3px 0;
+    img { float: left; margin: 0 3px; }
+    h2 { margin-top: 3px; }
+  }
+}
+
+// Experiencias relacionadas 
 .proposal-relations {
   margin-bottom: 30px;
   .header {
