@@ -20,10 +20,15 @@ class Phase < ActiveRecord::Base
   acts_as_list
 
   ICONS = ['organizacion', 'realizacion', 'uso']
-  COLORS = ['azul_gris', 'tierra', 'ocre']
+  COLORS = ['az', 't', 'am']
+  COLOR_NAMES = ['azul_gris', 'tierra', 'ocre']
 
   def color
     COLORS[(position - 1) % 3]
+  end
+
+  def color_name
+    COLOR_NAMES[(position - 1) % 3]
   end
 
   def textura

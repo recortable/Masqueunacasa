@@ -45,8 +45,8 @@ html.proposals.show.ocre {
   }
 
   h1:after, .section h2:before, .section h2:after {
-   background-position: 0 -8px;
- }
+    background-position: 0 -8px;
+  }
 } 
 
 html.proposals.show.tierra {
@@ -55,7 +55,31 @@ html.proposals.show.tierra {
   }
 
   h1:after, .section h2:before, .section h2:after {
-   background-position: 0 -16px;
- }
+    background-position: 0 -16px;
+  }
 } 
 
+.proposal-relations {
+  margin-bottom: 30px;
+  .header {
+    width: 100%; overflow: hidden;
+    img { float: left; }
+    h2 {
+      height: 40px; 
+      font-weight: normal; 
+      padding-top: 3px;
+      text-indent: 4px;
+      overflow: hidden;
+    }
+  }
+
+  .relations {
+    margin-left: 30px;
+    font-size: 12px;
+    h3 { 
+      font-weight: normal; font-size: 16px; 
+      display: block; overflow: hidden;
+      height: 1.5em;
+    }
+  }
+}

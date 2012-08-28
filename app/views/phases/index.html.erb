@@ -22,7 +22,7 @@
 <div class="phases-container clearfix">
   <% phases.each do |phase| %>
     <% cache ['info', phase] do %>
-    <div class="phase-info <%= phase.color %>">
+    <div class="phase-info <%= phase.color_name %>">
     <div class="content">
       <div class="hoverize">
         <%= hover? :update, phase do %>
@@ -47,7 +47,7 @@
     <div class="categories-container">
       <% phases.each do |phase| %>
         <% cache ['phase-categories', phase] do %>
-        <div class="phase-categories <%= phase.color %>">
+        <div class="phase-categories <%= phase.color_name %>">
         <div class="content">
           <%= render_category_list phase, title: nil %>
         </div>

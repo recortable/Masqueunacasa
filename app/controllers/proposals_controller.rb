@@ -4,6 +4,10 @@ class ProposalsController < ApplicationController
   include HasListActions
   expose(:proposals) { Proposal.published }
   expose(:proposal)
+  expose(:phase) { proposal.phase }
+  expose(:themes) do
+    "#{phase.textura} #{phase.color_name}" 
+  end
 
   def index
     redirect_to phases_path
