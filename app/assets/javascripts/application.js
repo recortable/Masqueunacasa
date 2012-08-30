@@ -33,7 +33,7 @@ $(function() {
   });
 });
 
-$(window).load(function() {
+$(function() {
   $('.experiencies.index .quadricula .experiencie').each(function() {
     $(this).expand_image()
   });
