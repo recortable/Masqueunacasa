@@ -27,21 +27,21 @@ $.fn.extend
     return this.each ->
       locations = extractLocations $(this).find('.location')
 
-      center = locations[0]
-      zoom = 14
+      if locations.length > 0
+        center = locations[0]
+        zoom = 14
 
-      map = createMap $(this).find('.map'), center, zoom
+        map = createMap $(this).find('.map'), center, zoom
 
-      $.each locations, ->
-        new google.maps.Marker
-          position: this,
-          map: map
-          
-      if locations.length > 1
-        bounds = new google.maps.LatLngBounds
-        bounds.extend location for location in locations
-
-      map.fitBounds bounds if bounds
+        $.each locations, ->
+          new google.maps.Marker
+            position: this,
+            map: map
+            
+        if locations.length > 1
+          bounds = new google.maps.LatLngBounds
+          bounds.extend location for location in locations
+          map.fitBounds bounds
 
 $.fn.extend
   mapForForm: ->
