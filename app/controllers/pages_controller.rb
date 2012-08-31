@@ -11,12 +11,14 @@ class PagesController < ApplicationController
   expose(:doc) { page }
 
   def index
+    breadcrumb_for_pages current_group
     respond_with docs
   end
 
   def show
     authorize! :show, doc
     doc.increment_view_counter
+    breadcrumb_for_page page
     respond_with doc
   end
 
@@ -26,6 +28,7 @@ class PagesController < ApplicationController
 
   def edit
     respond_with doc
+    add_breadcrumb 'Editar', edit_page_path(page)
   end
 
   def create
