@@ -22,7 +22,7 @@ class UserSessionsController < ApplicationController
       login_user(user_session.user)
       redirect_to path_or_default(params[:from]), notice: 'Bienvenidx'
     else
-      flash.now.notice = "Los datos no corresponden con nadie."
+      flash.now[:error] = "Los datos no corresponden con nadie."
       render "new"
     end
   end
