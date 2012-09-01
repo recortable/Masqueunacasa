@@ -1,37 +1,35 @@
-<%= page do %>
-  <%= user_column 'span3' do %>
-    <%= avatar_image user %>
-    <h3>Cambiar imágen</h3>
-    <%= simple_form_for user do |form| %>
-      <%= form.input :avatar_image %>
-      <%= submit_button_for form, value: 'Cambiar imágen' %>
-    <% end %>
+<%= user_column 'span3' do %>
+  <%= avatar_image user %>
+  <h3>Cambiar imágen</h3>
+  <%= simple_form_for user do |form| %>
+    <%= form.input :avatar_image %>
+    <%= submit_button_for form, value: 'Cambiar imágen' %>
   <% end %>
-
-  <div class="span5">
-    <%= title "Editar #{user.name}" %>
-    <%= simple_form_for user, html: {class: 'clearfix'} do |form| %>
-      <h3>Información pública</h3>
-      <p>Esta información será visible para el resto de las personas</p>
-      <%= form.input :name %>
-      <%= form.input :title %>
-      <%= form.input :website %>
-      <%= form.input :twitter %>
-      <%= form.input :facebook %>
-      <h3>Información privada</h3>
-      <p>Esto no será visible para el resto</p>
-      <%= form.input :email %>
-      <%= submit_button_for form %>
-    <% end %>
-  </div>
-
-  <div class="span4">
-    <h2>Cambiar contraseña</h2>
-    <%= simple_form_for user do |form| %>
-      <%= form.input :password %>
-      <%= form.input :password_confirmation %>
-      <%= form.input :admin, wrapper: :checkbox if current_user && current_user.admin? %>
-      <%= submit_button_for form, value: 'Cambiar contraseña' %>
-    <% end %>
-  </div>
 <% end %>
+
+<div class="span5">
+  <%= title "Editar #{user.name}" %>
+  <%= simple_form_for user, html: {class: 'clearfix'} do |form| %>
+    <h3>Información pública</h3>
+    <p>Esta información será visible para el resto de las personas</p>
+    <%= form.input :name %>
+    <%= form.input :title %>
+    <%= form.input :website %>
+    <%= form.input :twitter %>
+    <%= form.input :facebook %>
+    <h3>Información privada</h3>
+    <p>Esto no será visible para el resto</p>
+    <%= form.input :email %>
+    <%= submit_button_for form %>
+  <% end %>
+</div>
+
+<div class="span4">
+  <h2>Cambiar contraseña</h2>
+  <%= simple_form_for user do |form| %>
+    <%= form.input :password %>
+    <%= form.input :password_confirmation %>
+    <%= form.input :admin, wrapper: :checkbox if current_user && current_user.admin? %>
+    <%= submit_button_for form, value: 'Cambiar contraseña' %>
+  <% end %>
+</div>

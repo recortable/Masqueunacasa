@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   respond_to :html
   expose(:group) { current_group }
   expose(:message) { Message.new(resource: group) }
+  expose(:with_banner) { true }
 
   def show
     authorize! :read, group

@@ -1,11 +1,8 @@
 <% google_maps %>
-<%= page do %>
-  <%= user_column 'span2' do %>
-  <div class="content-inner">
+<%= user_column 'span2' do %>
   <%= avatar_image(user) %>
   <%= render_kudos user %>
-</div>
-  <% end %>
+<% end %>
 
 <div class="center span6">
   <%= render_agent_info user %>
@@ -14,15 +11,14 @@
     <%= simple_list user.editorships.order('created_at DESC').limit(10) do |editorship| %>
       <%= link_to editorship.document.title, editorship.document %>
       hace <%= time_ago_in_words editorship.created_at %>
-  <% end %>
+    <% end %>
     <% more = user.editorships.count - 10 %>
     <% if more > 0 %>
       y <%= more %> más...
-  <% end %>
+    <% end %>
   </div>
 </div>
 <div class="sidebar sidebar-right span4">
   <%= render 'versions/activity', activity: activity %>
   <%= render_locations_bar user %>
 </div>
-<% end %>

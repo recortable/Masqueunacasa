@@ -6,6 +6,10 @@ class SectionsController < ApplicationController
   expose(:sections) { document.sections(:es) }
   expose(:section)
 
+  expose(:with_banner) do
+    [:Page, :Group, :Post].include?(document.class.to_s.to_sym)
+  end
+
   def new
     authorize! :create, section
     polymorphic_breadcrumb_for(document)

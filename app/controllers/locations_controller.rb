@@ -6,6 +6,10 @@ class LocationsController  < ApplicationController
   expose(:locations) { parent.locations }
   expose(:location)
 
+  expose(:with_banner) do
+    parent.class == Group
+  end
+
   # Este es el mapa asociado a Site.new
   def map
 
@@ -25,7 +29,7 @@ class LocationsController  < ApplicationController
     location.user = current_user
     authorize! :update, parent
     flash[:notice] = "Localización guardada" if location.save
-    respond_with location, location: parent_location    
+    respond_with location, location: parent_location
   end
 
   def update

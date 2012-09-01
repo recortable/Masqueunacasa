@@ -1,36 +1,32 @@
 <% title category.title %>
-<%= page_div group: false do %>
-  <div class="row">
-  <div class="span2">
-    <%= image_tag("habitap/pregunta_100#{phase.color}.png", alt: 'Pregunta', width: 100, height: 100, class: 'doc-icon') %>
-    <%= render_kudos category %>
-    <%= render_social_links category %>
-    <%= render 'sections/summary', document: category %>
-  </div>
-  <div class="span6">
-    <div class="hoverize">
-      <%= hover? :update, category do %>
-        <%= link_to icon(:edit, 'Editar'), [:edit, phase, category] %>
+<div class="span2">
+  <%= image_tag("habitap/pregunta_100#{phase.color}.png", alt: 'Pregunta', width: 100, height: 100, class: 'doc-icon') %>
+  <%= render_kudos category %>
+  <%= render_social_links category %>
+  <%= render 'sections/summary', document: category %>
+</div>
+<div class="span6">
+  <div class="hoverize">
+    <%= hover? :update, category do %>
+      <%= link_to icon(:edit, 'Editar'), [:edit, phase, category] %>
       <% if can? :destroy, category %>
         | <%= link_to icon(:trash), [phase, category], method: :delete, 
           data: { confirm: "¿Seguro que quieres borrar esta pregunta" } %>
       <% end %>
-        <% end %>
-          <h1><%= category.title %></h1>
-          <div class="category_image">
-            <%= category_image category %>
-          </div>
-        </div>    
-
-        <div class="summary markdown">
-          <%= markdown category.summary %>
-        </div>
-        <%= render_sections category %>
-      </div>
-
-      <div class="span4 sidebar sidebar-right">
-        <%= render_proposal_list category %>
-      </div>
+    <% end %>
+    <h1><%= category.title %></h1>
+    <div class="category_image">
+      <%= category_image category %>
     </div>
-  <% end %>
+  </div>    
+
+  <div class="summary markdown">
+    <%= markdown category.summary %>
+  </div>
+  <%= render_sections category %>
+</div>
+
+<div class="span4 sidebar sidebar-right">
+  <%= render_proposal_list category %>
+</div>
 

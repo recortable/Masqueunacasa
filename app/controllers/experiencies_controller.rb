@@ -4,7 +4,7 @@ class ExperienciesController < ApplicationController
   expose(:themes) { 'textura09 negro' }
   expose(:related_proposal) { Proposal.find(params[:p]) if params[:p].present? }
   expose(:experiencies) { Experiencie.order('updated_at DESC') }
-  expose(:experiencie) 
+  expose(:experiencie)
 
   def index
     authorize! :index, Experiencie
@@ -29,13 +29,14 @@ class ExperienciesController < ApplicationController
     authorize! :update, experiencie
 
     breadcrumb_for_experiencie(experiencie)
+    add_breadcrumb "Editar", edit_experiencie_path(experiencie)
     respond_with experiencie
   end
 
   def new
     authorize! :create, Experiencie
     if related_proposal.present?
-      experiencie.related_proposal_id = related_proposal.id 
+      experiencie.related_proposal_id = related_proposal.id
       breadcrumb_for_proposal(related_proposal)
     else
       breadcrumb_for_experiencies
