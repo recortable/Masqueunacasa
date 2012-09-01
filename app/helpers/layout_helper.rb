@@ -74,10 +74,8 @@ module LayoutHelper
       end
     end
 
-    C_WITH_BANNER = %w{ posts pages groups announcements }
-
     def print_banner?
       current_group and
-      C_WITH_BANNER.include? controller_name
+      with_banner
     end
 end

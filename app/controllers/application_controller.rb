@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
   expose(:themes) { 'textura02 rojo' }
   expose(:site) { Site.new }
 
+  expose(:with_banner) { false }
+
   # TODO: no se por qué falla en test (sospecho que algo
   # de los dominios, subdominios y la sesión)
   unless Rails.env.test?

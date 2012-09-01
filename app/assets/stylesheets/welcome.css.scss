@@ -16,6 +16,10 @@ html.welcome, html.phases.index {
 }
 
 .welcome {
+  #main {
+    background-position: 0 -30px;
+  }
+
   .front-header {
     padding: 30px 0 0;
     height: auto;
@@ -37,14 +41,14 @@ html.welcome, html.phases.index {
       & > div {
         width: 25%;
         float: left;
-        
+
         &.community .content {
           background-image: none;
         }
       }
-        
+
       .content {
-        background-color: transparent;     
+        background-color: transparent;
         padding: 0 20px;
         margin-bottom: -99999px;
         padding-bottom: 99999px;

@@ -7,6 +7,21 @@ body {
   position: relative;
   margin-bottom: 250px;
 
+  header {
+    background-color: $fondo;
+
+    .group_name {
+      color: $negro;
+      @include title_font(30px, bold);
+      text-decoration: none;
+
+      img.mquc {
+        position: relative;
+        top: -8px;
+      }
+    }
+  }
+
   &:after {
     content: "";
     width: 100%;

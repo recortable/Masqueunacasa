@@ -11,6 +11,9 @@ class PostsController < ApplicationController
   expose(:archive_posts) { current_group.posts }
 
   expose(:all_posts) { Post.reorder('updated_at DESC') }
+
+  expose(:with_banner) { true }
+
   def dashboard
     respond_with all_posts
   end
@@ -58,6 +61,6 @@ class PostsController < ApplicationController
   end
 
   def feed
-    respond_with posts    
+    respond_with posts
   end
 end
