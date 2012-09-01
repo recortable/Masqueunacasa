@@ -11,7 +11,7 @@ body {
 #main {
   position: relative;
 
-  a.mquc {
+  a.mquc, a.group_name {
     position: absolute;
     top: 5px;
     left: 21px;
@@ -20,6 +20,10 @@ body {
 
   div.page.bloc {
     padding-top: 16px;
+
+    & > a.group_name {
+      top: 12px;
+    }
   }
 }
 

@@ -9,7 +9,7 @@ module LayoutHelper
 
   # CUIDADO!: row es false por defecto (al revés que page)
   def page_div(options = {}, &block)
-    options.reverse_merge! class: '', row: false, head: true, group: false
+    options.reverse_merge! class: '', row: false, head: true, group: true
     content = capture(&block)
     content = "<div class='row'>#{content}</div>" if options[:row]
     head = options[:head] ? render('page_header', group: options[:group]) : ''

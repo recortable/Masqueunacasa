@@ -22,6 +22,12 @@ body {
   .page.bloc {
     overflow: hidden;
     padding-bottom: 90px;
+
+    & > a.group_name {
+      color: $negro;
+      @include title_font(30px, bold);
+      text-decoration: none;
+    }
   }
 
   .main-header {
