@@ -1,6 +1,5 @@
 html.welcome, html.phases.index {
   div.intro {
-    .span12 {
       padding-top: 30px;
       padding-bottom: 30px;
       background: $fondo asset-data-url('fondos/textura_puntos.png');
@@ -11,7 +10,6 @@ html.welcome, html.phases.index {
         border-bottom: 2px solid $negro;
         font-weight: normal;
       }
-    }
   }
 }
 
@@ -31,7 +29,7 @@ html.welcome, html.phases.index {
   }
 
   div.info-wrapper {
-    padding-bottom: 120px;
+    padding-bottom: 20px;
     background: $fondo;
 
     div.info {

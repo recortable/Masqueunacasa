@@ -1,5 +1,5 @@
-<%= page row: false do %>
-  <div class="row dotted-bg">
+<div class="span12 dotted-bg">
+  <div class="row">
     <%= corner_span('span4 offset2', color = 'azul_neon') do %>
         <%= title t('.title')  %>
         <%= simple_form_for user_session, html: {class: 'clearfix'} do |form| %>
@@ -15,4 +15,4 @@
       <%= render 'users/form' %>
     <% end %>
   </div>
-<% end %>
+</div>
