@@ -1,20 +1,16 @@
 <% title "Blog" %>
-<%= page_div do %>
-  <% content_for :head do %>
-    <%= auto_discovery_link_tag :atom, feed_path %>
-  <% end %>
-
-  <div class="row">
-    <%= user_column 'span2' do %>
-      <%= render_group_bar current_group %>
-    <% end %>
-
-    <div class="center span6">
-      <%= render partial: 'posts/summary', collection: post_list, as: :post %>
-      <%= render 'posts/pagination' %>
-    </div>
-    <div class="sidebar sidebar-right span4">
-      <%= render 'archive' %>
-    </div>
-  </div>
+<% content_for :head do %>
+  <%= auto_discovery_link_tag :atom, feed_path %>
 <% end %>
+
+<%= user_column 'span2' do %>
+  <%= render_group_bar current_group %>
+<% end %>
+
+<div class="center span6">
+  <%= render partial: 'posts/summary', collection: post_list, as: :post %>
+  <%= render 'posts/pagination' %>
+</div>
+<div class="sidebar sidebar-right span4">
+  <%= render 'archive' %>
+</div>

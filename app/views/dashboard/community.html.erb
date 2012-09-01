@@ -1,9 +1,7 @@
 <% title 'Comunidad' %>
-<%= page_div group: false do %>
-  <div class="row">
-  <div class="span8">
-    <% groups.each do |group| %>
-      <div class="row group">
+<div class="span8">
+  <% groups.each do |group| %>
+    <div class="row group">
       <div class="span2">
         <div class="content-inner"
           <%= render_group_bar group %>
@@ -13,30 +11,27 @@
         <div class="hoverize">
           <%= hover? :update, group do %>
             <%= link_to icon(:edit, 'Editar perfil'), edit_profile_url(subdomain: group.subdomain) %>
-        <% end %>
+          <% end %>
           <h2><%= link_to group.title, group %></h2>
           <%= markdown group.summary %>
         </div>
       </div>
       <% if group.has_blog? %>
         <div class="span2 blog-entries">
-        <h4>Últimas entradas al blog</h4>
-        <ul>
-          <% group.posts.latest.each do |post| %>
-            <li>
-          <%= link_to post.title, post_url(post, subdomain: group.subdomain) %>
-          </li>
-        <% end %>
-        </ul>
-        <%= link_to 'Publicar entrada', new_post_url(subdomain: group.subdomain), class: 'publish', data: {behaviour: 'new_post'}  if can?(:edit, group) %>
-      </div>
-    <% end %>
+          <h4>Últimas entradas al blog</h4>
+          <ul>
+            <% group.posts.latest.each do |post| %>
+              <li>
+              <%= link_to post.title, post_url(post, subdomain: group.subdomain) %>
+              </li>
+            <% end %>
+          </ul>
+          <%= link_to 'Publicar entrada', new_post_url(subdomain: group.subdomain), class: 'publish', data: {behaviour: 'new_post'}  if can?(:edit, group) %>
+        </div>
+      <% end %>
     </div>
   <% end %>
-  </div>
-  <div class="span4 sidebar sidebar-right">
-    <%= render 'versions/activity', activity: Activities.site_activity(30) %>
-  </div>
 </div>
-<% end %>
-
+<div class="span4 sidebar sidebar-right">
+  <%= render 'versions/activity', activity: Activities.site_activity(30) %>
+</div>

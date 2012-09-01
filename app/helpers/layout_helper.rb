@@ -7,6 +7,12 @@ module LayoutHelper
     page_div(options, &block)
   end
 
+  def header
+    header_content = group_name
+    header_content += group_banner if print_banner?
+    header_content.html_safe
+  end
+
   # CUIDADO!: row es false por defecto (al revés que page)
   def page_div(options = {}, &block)
     options.reverse_merge! class: '', row: false, head: true, group: true
@@ -47,4 +53,31 @@ module LayoutHelper
          </div>"
     end
   end
+
+  private
+
+    def group_name
+      result = "<div class='group_name'>"
+      if !current_group or current_group.admin?
+        result += image_tag 'Logo_Mquc.png', width: 271, height: 41, class: 'mquc', alt: "Masqueunacasa"
+      else
+        result += current_group.name
+      end
+      result += "</div>"
+    end
+
+    def group_banner
+      if current_group.banner_image?
+        image_tag(current_group.banner_image_url, class: 'responsive', alt: current_group.name)
+      else
+        placeholder_image_tag({text: '1170x200px', width: 1170, height: 200}, {class: 'responsive'})
+      end
+    end
+
+    C_WITH_BANNER = %w{ posts pages groups announcements }
+
+    def print_banner?
+      current_group and
+      C_WITH_BANNER.include? controller_name
+    end
 end

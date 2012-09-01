@@ -10,32 +10,25 @@ body {
 
 #main {
   position: relative;
+  background: transparent image-url('pl-1170.png') no-repeat 0 0;
+  padding-top: 30px;
 
-  a.mquc, a.group_name {
-    position: absolute;
-    top: 5px;
-    left: 21px;
-    z-index: 2;
+  header {
+    background-color: $fondo;
+
+    .group_name {
+      position: absolute;
+      top: 5px;
+      left: 21px;
+    }
   }
 
-  div.page.bloc {
-    padding-top: 16px;
-
-    & > a.group_name {
-      top: 12px;
-    }
+  #page_content {
+    background-color: $fondo;
+    padding-top: 30px;
   }
 }
 
-/* 
- * Para qué son estos estilos? Se puede hacer de otra manera?
- * Aplica margen superior a mogollon de sitios que no debería..
- * DANI: pues esto sirve para bajar la columna central y la derecha
- * con respecto al breadcrumbs. Ahora no veo dónde no debería...
- * y me parece que, de momento, queda mejor con que sin (desde luego
- * en las pantallas de preguntas, propuestas y experiencias es
- * imprescindible
- */
 .page > .row > .span6, .page > .row > .span4 { margin-top: 30px; }
 
 .headrow {

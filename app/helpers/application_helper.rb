@@ -62,4 +62,8 @@ module ApplicationHelper
   def simple_debug(model)
     debug(model) if Rails.env.development?
   end
+
+  def front?
+    controller.controller_name == "dashboard" && controller.action_name == "welcome"
+  end
 end

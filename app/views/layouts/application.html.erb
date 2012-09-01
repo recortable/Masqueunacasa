@@ -21,7 +21,18 @@
 <%= render 'session' %>
 
 <div id="main" class="container">
-  <%= yield %>
+  <header>
+    <% if front? %>
+      <%= image_tag('logo_inicio.png', alt: 'Procesos colectivos de vivienda', class: 'responsive') %>
+    <% else %>
+      <%= header %>
+    <% end %>
+  </header>
+  <div id="page_content">
+    <div class="row">
+      <%= yield %>
+    </div>
+  </div>
 </div>
 <%= render 'layouts/ga' %>
 <div style="display:none">
