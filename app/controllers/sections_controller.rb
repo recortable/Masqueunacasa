@@ -74,8 +74,12 @@ class SectionsController < ApplicationController
   def document_location(s = nil)
     s ||= section
     s.title? ? 
-      url_for(s.document) + "##{s.title}" :
-      url_for(s.document) + "##{s.id}"
+      loc = url_for(s.document) + "##{s.title}" :
+      loc = url_for(s.document) + "##{s.id}"
+    if s.document.class == Group
+      loc = profile_path
+    end
+    loc
   end
 
 end

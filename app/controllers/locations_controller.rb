@@ -17,11 +17,15 @@ class LocationsController  < ApplicationController
  
   def new
     authorize! :update, parent
+    polymorphic_breadcrumb_for(parent)
+    add_breadcrumb 'Añadir localización', polymorphic_path([:new, parent, :location])
     respond_with location
   end
 
   def edit
     authorize! :update, parent
+    polymorphic_breadcrumb_for(parent)
+    add_breadcrumb 'Editar localización', polymorphic_path([:edit, parent, :location])
     respond_with location
   end
 
