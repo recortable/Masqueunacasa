@@ -10,7 +10,7 @@ module HasSections
     section.lang = I18n.locale
     section.body_type ||= 'markdown'
     if section.save
-      self.add_editor(user) if self.class != Group
+      self.add_editor(user) if section.document.respond_to?(:add_editor)
       section
     else
       nil

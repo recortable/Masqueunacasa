@@ -5,10 +5,12 @@ class PagesController < ApplicationController
   expose(:themes) { 'textura02 naranja group' }
   expose_parent :group, [:parent], default: Proc.new { current_group }
   expose(:pages) { group.pages.all }
-  expose(:page) 
+  expose(:page)
 
   expose(:docs) { pages }
   expose(:doc) { page }
+
+  expose(:with_banner) { true }
 
   def index
     breadcrumb_for_pages current_group

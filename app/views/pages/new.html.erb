@@ -1,12 +1,7 @@
-<%= page_div head: false do %>
-  <%= render_group_header group %>
-  <div class="row">
-    <%= user_column 'span2' do %>
-      <%= avatar_link current_group %>
-    <% end %>
-    <div class='span6'>
-      <%= title 'Añadir documento' %>
-      <%= render 'form' %>
-    </div>
-  </div>
+<%= user_column 'span2' do %>
+  <%= avatar_link current_group %>
 <% end %>
+<div class='span6'>
+  <%= title 'Añadir documento' %>
+  <%= render 'form' %>
+</div>

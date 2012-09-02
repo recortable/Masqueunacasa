@@ -30,7 +30,7 @@ module LayoutHelper
 
   def user_column(css_class, color = :none, &block)
     content = capture(&block)
-    raw "<div class='#{css_class}'><div class='user-column content-inner'>#{content}</div></div>"
+    raw "<div class='user-column #{css_class}'>#{content}</div>"
   end
 
   def submit_button_for(form, options = {})

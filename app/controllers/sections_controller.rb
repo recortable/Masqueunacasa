@@ -46,7 +46,7 @@ class SectionsController < ApplicationController
   def destroy
     authorize! :destroy, section
     section.destroy
-    respond_with section, location: document
+    respond_with section, location: document_location(section)
   end
 
   def up

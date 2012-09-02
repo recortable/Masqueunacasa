@@ -1,19 +1,15 @@
-<%= page_div group: true do %>
-  <div class="row">
-    <%= user_column 'span2' do %>
-      <%= avatar_link current_group %>
-      <%= render_kudos doc %>
-      <%= render 'sections/summary', document: doc %>
-    <% end %>
-
-    <div class="span6">
-      <div class="hoverize">
-        <%= hover? :update, doc do %>
-          <%= link_to icon(:pencil), [:edit, doc] %>
-        <% end %>
-        <%= title doc.title %>
-      </div>
-      <%= render_sections doc %>
-    </div>
-  </div>
+<%= user_column 'span2' do %>
+  <%= avatar_link current_group %>
+  <%= render_kudos doc %>
+  <%= render 'sections/summary', document: doc %>
 <% end %>
+
+<div class="span6">
+  <div class="hoverize">
+    <%= hover? :update, doc do %>
+      <%= link_to icon(:pencil), [:edit, doc] %>
+    <% end %>
+    <%= title doc.title %>
+  </div>
+  <%= render_sections doc %>
+</div>

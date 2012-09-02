@@ -3,30 +3,30 @@
     <div class="header">
       <%= hover? :update, resource do %>
         <% url = [:new, resource, :location] %>
-      <% url = new_location_url(subdomain: resource.subdomain) if resource.class == Group %>
-      <%= link_to icon(:add, 'Añadir localización'), url %>
-    <% end %>
+        <% url = new_location_url(subdomain: resource.subdomain) if resource.class == Group %>
+        <%= link_to icon(:add, 'Añadir localización'), url %>
+      <% end %>
       <h2>Dónde</h2>
     </div>
     <div class="locations">
       <div class="map-wrapper">
         <% if !resource.locations.empty? %>
           <div class="map" style="width: 0px; height:0px;" >
-          <%= fake_img_fixed(310, 310, text: 'Mapa') %>
+            <%= fake_img_fixed(310, 310, text: 'Mapa') %>
+          </div>
+          <%= simple_list resource.locations do |location| %>
+            <div class="hoverize">
+              <%= hover? :update, resource do %>
+                <%= link_to icon(:edit), [:edit, resource, location] %> |
+                <%= link_to icon(:trash), [resource, location], method: :delete, confirm: "Seguro?" %>
+              <% end %>
+              <%= content_tag :div, location.title, class: 'location', data: {title: location.title, longitude: location.longitude, latitude: location.latitude} %>
+            </div>
+          <% end %>
         </div>
-        <%= simple_list resource.locations do |location| %>
-          <div class="hoverize">
-          <%= hover? :update, resource do %>
-            <%= link_to icon(:edit), [:edit, resource, location] %>
-          <%= link_to icon(:trash), [resource, location], method: :delete, confirm: "Seguro?" %>
-        <% end %>
-          <%= content_tag :div, location.title, class: 'location', data: {title: location.title, longitude: location.longitude, latitude: location.latitude} %>
-        </div>
-      <% end %>
-      </div>
-    <% else %>
+      <% else %>
         <p>No hay información sobre localización  <%= "para #{resource.title.camelize}" %></p>
-    <% end %>
+      <% end %>
     </div>
   </div>
 </div>
