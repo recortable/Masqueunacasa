@@ -8,8 +8,13 @@
   <div class="hoverize">
     <%= hover? :update, doc do %>
       <%= link_to icon(:pencil), [:edit, doc] %>
+      |
+      <%= link_to icon(:trash), doc, method: :delete, confirm: "¿Seguro?" %>
     <% end %>
     <%= title doc.title %>
+    <div class="summary markdown">
+      <%= markdown doc.body %>
+    </div>
   </div>
   <%= render_sections doc %>
 </div>

@@ -78,6 +78,6 @@ module HasBreadcrumbs
 
   def breadcrumb_for_page(page)
     breadcrumb_for_pages page.group
-    add_breadcrumb page.title, page_url(subdomain: page.group.subdomain)
+    add_breadcrumb page.title, page_url(page, subdomain: page.group.subdomain)
   end
 end
