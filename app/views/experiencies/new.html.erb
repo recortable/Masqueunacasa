@@ -1,9 +1,7 @@
-<%= page_div group: false do %>
-  <div class='span6 offset2'>
-    <% if related_proposal %>
-      <h3>En <%= related_proposal.title %></h3>
-    <% end %>
-    <%= title "Añadir experiencia" %>
-    <%= render 'form' %>
-  </div>
+<div class='span6 offset2'>
+  <%= title "Añadir experiencia" %>
+  <% if related_proposal %>
+    <h4>En <%= link_to related_proposal.title, related_proposal %></h4>
 <% end %>
+  <%= render 'form' %>
+</div>
