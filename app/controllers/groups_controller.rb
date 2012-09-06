@@ -7,7 +7,7 @@ class GroupsController < ApplicationController
   expose(:message) { Message.new(resource: group) }
 
   def index
-    respond_with groups
+    redirect_to community_path
   end
 
   def show
