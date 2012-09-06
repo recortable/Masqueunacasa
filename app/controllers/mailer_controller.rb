@@ -12,7 +12,7 @@ class MailerController < ApplicationController
 
   def activity
     if activities.deliver?
-      users = Group.root.users
+      users = activities.activity_users
       users.each {|u| UserMailer.activity_email(u, activities).deliver }
       activities.last_mail_at = Time.now
     end

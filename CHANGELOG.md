@@ -1,6 +1,8 @@
 # Masqueunacasa
 
 ## 6/09/2012
+- Mejorando el layout de editar post
+- Limpiando el layout en algunas zonas
 - Intentando mejorar las heurísticas para enviar email de notificaciones
 - /colectivos redirecciona a comunidad
 - En comunidad, el título del blog lleva al blog

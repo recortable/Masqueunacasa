@@ -3,5 +3,6 @@
   <%= form.input :title %>
 </div>
 <%= form.input :body, as: :text, input_html: {class: 'rte'} %>
+<%= form.input :user_id if current_user.admin? %>
 <%= submit_button_for form %>
   <% end %>

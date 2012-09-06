@@ -3,6 +3,10 @@ class Activities
     @group = Group.root
   end
 
+  def activity_users
+    @activity_users ||= Group.root.users
+  end
+
   def versions
     @versions ||= Activities.clean_versions(Version.where(['created_at > ?', last_mail_at]).order('created_at DESC'))
   end
