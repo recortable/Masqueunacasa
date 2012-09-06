@@ -39,7 +39,7 @@ Masqueunacasa::Application.routes.draw do
     put :probe, on: :member
   end
     
-  get '/info/:id', to: "static_pages#show"
+  get '/info/:id', to: "static_pages#show", as: :static_page
 
   # GENERAL
   resources :images, only: [:up, :down] do

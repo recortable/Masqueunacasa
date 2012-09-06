@@ -47,3 +47,9 @@ body {
 }
 
 .doc-icon { display: block; margin: 30px auto; }
+
+#credits { 
+  background-color: $fondo;color: $negro;
+  text-align: center;
+  a { color: $negro; }
+} 
