@@ -32,7 +32,7 @@ class Activities
   end
 
   def deliver?
-    time_since(last_mail_at) > 4.hour && version.size > 0 && time_since(version.first.created_at) > 10.minutes
+    time_since(last_mail_at) > 4.hour && versions.size > 0 && time_since(versions.first.created_at) > 10.minutes
   end
 
   def time_since(time)

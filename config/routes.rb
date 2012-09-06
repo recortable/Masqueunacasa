@@ -6,6 +6,7 @@ Masqueunacasa::Application.routes.draw do
     resources :groups, only: [:update, :show] do
       resources :sections
     end
+    
   end
 
   # Rutas que se pueden acceder tanto desde un subdominio como sin él
@@ -37,6 +38,8 @@ Masqueunacasa::Application.routes.draw do
     put :send_email, on: :member
     put :probe, on: :member
   end
+    
+  get '/info/:id', to: "static_pages#show"
 
   # GENERAL
   resources :images, only: [:up, :down] do

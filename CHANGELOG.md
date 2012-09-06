@@ -1,6 +1,8 @@
 # Masqueunacasa
 
 ## 6/09/2012
+- Bug en email de actividad
+- StaticPage experimental
 - Mejorando el layout de editar post
 - Limpiando el layout en algunas zonas
 - Intentando mejorar las heurísticas para enviar email de notificaciones
