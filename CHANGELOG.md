@@ -1,5 +1,8 @@
 # Masqueunacasa
 
+## 6/09/2012
+- La posibilidad de cambiar el banner de un grupo
+
 ## 28/08/2012
 - Añadir resúmen en preguntas, propuestas y experiencias
 - Cambiar, en category, question por title y title por nameQ

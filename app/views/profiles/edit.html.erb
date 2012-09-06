@@ -1,10 +1,18 @@
 <% title "Editar perfil" %>
 <%= user_column 'span3' do %>
   <%= avatar_image current_group %>
-  <h3>Cambiar imágen</h3>
+  <h3>Imagen de perfil</h3>
   <%= simple_form_for current_group do |form| %>
     <%= form.input :avatar_image %>
     <%= submit_button_for form, value: 'Cambiar imágen', name: 'commit-image' %>
+  <% end %>
+
+  <h3>Imágen de grupo</h3>
+  <%= image_tag(current_group.banner_image, alt: 'Imágen de cabecera', 
+                class: 'responsive') if current_group.banner_image? %>
+  <%= simple_form_for current_group do |form| %>
+    <%= form.input :banner_image %>
+    <%= submit_button_for form, value: 'Cambiar imágen', name: 'commit-banner' %>
   <% end %>
 <% end %>
 
