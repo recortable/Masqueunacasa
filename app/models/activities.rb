@@ -28,7 +28,11 @@ class Activities
   end
 
   def deliver?
-    (Time.now.to_i - last_mail_at.to_i > 8.hour) && versions.size > 0
+    time_since(last_mail_at) > 4.hour && version.size > 0 && time_since(version.first.created_at) > 10.minutes
+  end
+
+  def time_since(time)
+    Time.now.to_i - time.to_i
   end
 
   def self.user_activity(user, max = 10)
@@ -73,4 +77,5 @@ class Activities
     versions = Version.where(query).order('id DESC').limit(options[:limit])
     Activities.clean_versions(versions)
   end
+
 end

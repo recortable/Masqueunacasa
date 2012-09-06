@@ -1,6 +1,7 @@
 # Masqueunacasa
 
 ## 6/09/2012
+- Intentando mejorar las heurísticas para enviar email de notificaciones
 - /colectivos redirecciona a comunidad
 - En comunidad, el título del blog lleva al blog
 - La posibilidad de cambiar el banner de un grupo
