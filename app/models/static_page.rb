@@ -1,4 +1,7 @@
+# encoding: UTF-8
+
 require 'open-uri'
+
 
 class StaticPage
   attr_accessor :url, :title
@@ -13,7 +16,9 @@ class StaticPage
 
   protected
   def read_page
-    page = Nokogiri::HTML(open(@url), 'utf-8')   
+    html = open(@url).read
+    page = Nokogiri::HTML(html, nil, 'utf-8')
+    page.encoding = 'utf-8'
     @title = page.xpath("//title").text
     @body = page.xpath('//div[@id="contents"]')
     #page.xpath("//head").remove
