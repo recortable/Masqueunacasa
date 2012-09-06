@@ -16,7 +16,7 @@
       </div>
       <% if group.has_blog? %>
         <div class="span2 blog-entries">
-          <h4>Últimas entradas al blog</h4>
+          <h4><%= link_to 'Últimas entradas al blog', posts_url(subdomain: group.subdomain) %></h4>
           <ul>
             <% group.posts.latest.each do |post| %>
               <li>

@@ -1,6 +1,7 @@
 # Masqueunacasa
 
 ## 6/09/2012
+- En comunidad, el título del blog lleva al blog
 - La posibilidad de cambiar el banner de un grupo
 
 ## 28/08/2012

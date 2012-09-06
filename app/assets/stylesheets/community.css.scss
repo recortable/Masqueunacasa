@@ -12,6 +12,7 @@ html.dashboard.community {
       .blog-entries {
         h4 {
           margin-bottom: 4px;
+          a { color: $negro; }
         }
 
         a.publish {
