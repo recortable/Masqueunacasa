@@ -22,7 +22,7 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "git@github.com:recortable/#{application}.git"
 set :branch, "master"
-set :config_files, ['database.yml', 'amazon_s3.yml', 'newrelic.yml', 'smtp.yml', 'gdocstatic.yml']
+set :config_files, ['database.yml', 'amazon_s3.yml', 'newrelic.yml', 'smtp.yml']
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true

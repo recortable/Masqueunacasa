@@ -1,6 +1,6 @@
 set_default(:config_files) { ['database.yml'] }
 
-namespace :config do
+namespace :configuration do
   task :symlink, roles: :app do
     config_files.each do |file|
       run "ln -nfs #{shared_path}/config/#{file} #{release_path}/config/#{file}"

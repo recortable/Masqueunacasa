@@ -49,7 +49,15 @@ body {
 .doc-icon { display: block; margin: 30px auto; }
 
 #credits { 
-  background-color: $fondo;color: $negro;
-  text-align: center;
-  a { color: $negro; }
+  overflow: hidden;
+
+  a {
+    display: block; float: right;
+    background-color: $negro; color: $fondo;
+    padding: 3px 5px;
+
+    img { opacity: 0.2; margin-top: -3px; }
+  }
+  a:hover { img { opacity: 0.5; } }
+
 } 
