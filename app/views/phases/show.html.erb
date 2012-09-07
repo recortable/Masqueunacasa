@@ -1,30 +1,26 @@
 <%# render_banner phase.title, phase %>
 
-<%= page do %>
-  <div class="span2">
-    <%= phase_image_link phase, size: 150 %>
-    <%= render_kudos phase %>
-    <%= render_social_links phase %>
+<div class="span2">
+  <%= phase_image_link phase, size: 150 %>
+  <%= render_kudos phase %>
+  <%= render_social_links phase %>
+</div>
+
+<div class="span6">
+  <h3><%= link_to 'Habitapedia', phases_path %></h3>
+  <div class="hoverize">
+    <%= hover? :update, phase do %>
+      <%= link_to icon(:pencil), [:edit, phase], rel: "edit-phase-#{phase.id}" %>
+    <% end %>
+    <%= title phase.title %>
+    <%= fake_img 600, 400 %>
   </div>
-
-  <div class="span6">
-    <h3><%= link_to 'Habitapedia', phases_path %></h3>
-    <div class="hoverize">
-      <%= hover? :update, phase do %>
-        <%= link_to icon(:pencil), [:edit, phase], rel: "edit-phase-#{phase.id}" %>
-      <% end %>
-      <%= title phase.title %>
-      <%= fake_img 600, 400 %>
-    </div>
-    <div class="summary markdown">
-      <%= markdown phase.summary %>
-    </div>
-    <%= render_sections phase %>
+  <div class="summary markdown">
+    <%= markdown phase.summary %>
   </div>
+  <%= render_sections phase %>
+</div>
 
-  <div class="span4">
-    <%= render_category_list phase %>
-  </div>
-<% end %>
-
-
+<div class="span4">
+  <%= render_category_list phase %>
+</div>

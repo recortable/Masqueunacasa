@@ -1,18 +1,16 @@
-<%= page_div group: false, row: true do %>
-  <div class="span6 offset2">
+<div class="span6 offset2">
   <%= title 'Preguntas' %>
   <table class="table">
     <% categories.reorder('phase_id ASC').each do |category| %>
       <tr>
-      <td><%= link_to category.title, [category.phase, category] %></td>
-      <td><%= link_to category.phase.title, category.phase %></td>
-      <td><%= icon(:edit, category.editorships_count) %></td>
-      <td><%= icon(:heart, category.kudos_count) %></td>
-      <td><%= icon('globe', category.view_count) %></td>
-      <td><%= '¡tiene body!' if category.body.present? %></td>
-    </tr>
-  <% end %>
+        <td><%= link_to category.title, [category.phase, category] %></td>
+        <td><%= link_to category.phase.title, category.phase %></td>
+        <td><%= icon(:edit, category.editorships_count) %></td>
+        <td><%= icon(:heart, category.kudos_count) %></td>
+        <td><%= icon('globe', category.view_count) %></td>
+        <td><%= '¡tiene body!' if category.body.present? %></td>
+      </tr>
+    <% end %>
   </table>
 </div>
-  <% end %>
 

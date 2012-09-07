@@ -1,27 +1,24 @@
-<%= page_div do %>
-  <div class="row">
-    <div class="span6">
-      <div class="hoverize">
-        <%= hover? :update, announcement do %>
-          <%= link_to icon(:edit, 'Editar'), [:edit, announcement] %>
-        <% end %>
-        <h3>Dirigido a <%= tscope(announcement).downcase %></h3>
-      </div>
-      <%= title announcement.title %>
-      <% if announcement.sent_at? %>
-        Enviado hace <%= time_ago_in_words announcement.sent_at %>
-    <% else %>
-      <h3>Este mensaje colectivo aún no ha sido enviado</h3>
-      <div class="controls">
-        <%= link_box 'Enviar correo de prueba', probe_announcement_path(announcement), method: :put if can? :send, announcement %>
-        <p>Te llegará este correo a ti para que puedas verificar que está todo correcto</p>
-        <%= link_box 'Enviar correo', send_email_announcement_path(announcement), method: :put, 
-          confirm: '¿Enviar a todo el grupo?' if can? :send, announcement %>
-        <p>Enviará este correo a <%= tscope(announcement).downcase %></p>
-      </div>
+<div class="span6">
+  <div class="hoverize">
+    <%= hover? :update, announcement do %>
+      <%= link_to icon(:edit, 'Editar'), [:edit, announcement] %>
     <% end %>
-    <br><br>
-    <h3>Texto del mensaje colectivo</h3>
-    <%= raw announcement.body %>
+    <h3>Dirigido a <%= tscope(announcement).downcase %></h3>
   </div>
-<% end %>
+  <%= title announcement.title %>
+  <% if announcement.sent_at? %>
+    Enviado hace <%= time_ago_in_words announcement.sent_at %>
+  <% else %>
+    <h3>Este mensaje colectivo aún no ha sido enviado</h3>
+    <div class="controls">
+      <%= link_box 'Enviar correo de prueba', probe_announcement_path(announcement), method: :put if can? :send, announcement %>
+      <p>Te llegará este correo a ti para que puedas verificar que está todo correcto</p>
+      <%= link_box 'Enviar correo', send_email_announcement_path(announcement), method: :put, 
+        confirm: '¿Enviar a todo el grupo?' if can? :send, announcement %>
+      <p>Enviará este correo a <%= tscope(announcement).downcase %></p>
+    </div>
+  <% end %>
+  <br><br>
+  <h3>Texto del mensaje colectivo</h3>
+  <%= raw announcement.body %>
+</div>

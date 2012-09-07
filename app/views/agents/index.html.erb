@@ -1,9 +1,7 @@
-<%= page_div row: true, group: false do %>
-  <div class='span6'>
-    <%= simple_list agents do |agent| %>
-      <h3>
-        <%= link_to agent.name, agent %>
-      </h3>
-    <% end %>
-  </div>
-<% end %>
+<div class='span6'>
+  <%= simple_list agents do |agent| %>
+    <h3>
+      <%= link_to agent.name, agent %>
+    </h3>
+  <% end %>
+</div>

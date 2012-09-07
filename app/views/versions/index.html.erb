@@ -1,11 +1,7 @@
-<%= page_div do %>
-  <div class="row">
-  <div class="span10 offset2">
-    <%= title 'Actividad' %>
-    <%= simple_list versions do |version| %>
-      <%= render version %>
+<div class="span10 offset2">
+  <%= title 'Actividad' %>
+  <%= simple_list versions do |version| %>
+    <%= render version %>
   <% end %>
-    <%= simple_debug Version.order('id DESC').limit(10) %>
-  </div>
+  <%= simple_debug Version.order('id DESC').limit(10) %>
 </div>
-  <% end %>
