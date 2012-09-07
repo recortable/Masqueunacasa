@@ -6,6 +6,7 @@ class Section < ActiveRecord::Base
   attr_accessible :lang, :title, :body, :body_type
   attr_accessible :image
   attr_accessible :image_position
+  attr_accessible :position
   delegate :title, to: :document, prefix: true
 
   validates_presence_of :document_id, :document_type, :lang, :body_type

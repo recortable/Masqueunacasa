@@ -1,4 +1,15 @@
 Masqueunacasa::Application.routes.draw do
+  # CONCERNS 
+  concern :document do
+    resource :kudos
+    resources :sections, except: [:index]
+    resource :edition
+  end
+
+  concern :position do
+    put :up, on: :member
+    put :down, on: :member
+  end
 
   # Rutas que sólo se puede acceder desde un subdominio
   constraints subdomain: /.+/ do
@@ -6,10 +17,11 @@ Masqueunacasa::Application.routes.draw do
     resources :groups, only: [:update, :show] do
       resources :sections
     end
-    
   end
 
+
   # Rutas que se pueden acceder tanto desde un subdominio como sin él
+
 
   # PARTE SOCIAL
   resources :users do
@@ -17,17 +29,11 @@ Masqueunacasa::Application.routes.draw do
     resources :kudos
     resources :locations
   end
-  resources :pages do
-    resource :kudos
-    resources :sections, except: [:index]
-    resource :edition
-  end
-  resources :posts do
+  resources :pages, concerns: [:document]
+
+  resources :posts, concerns: [:document] do
     get :dashboard, on: :collection
-    resources :sections, except: [:index]
-    resource :kudos
     resources :post_attachments, except: [:index, :show]
-    resource :edition
   end
   resources :messages, only: [:create, :show]
   resources :memberships, only: [:new, :create, :destroy]
@@ -38,17 +44,11 @@ Masqueunacasa::Application.routes.draw do
     put :send_email, on: :member
     put :probe, on: :member
   end
-    
-  #get '/info/:id', to: "static_pages#show", as: :static_page
 
   # GENERAL
-  resources :images, only: [:up, :down] do
-    put :up, on: :member
-    put :down, on: :member
+  resources :images, only: [:up, :down], concerns: :position do
   end
-  resources :sections, only: [:up, :down, :remove_image] do
-    put :up, on: :member
-    put :down, on: :member
+  resources :sections, only: [:up, :down, :remove_image], concerns: :position do
     delete :remove_image, on: :member
   end
   match '/mapa' => 'locations#map', as: :map
@@ -71,6 +71,9 @@ Masqueunacasa::Application.routes.draw do
 
   # Rutas sólo accesibles desde el dominio principal 
   constraints subdomain: /^$/ do
+    resources :user_sessions, only: [:new, :create, :destroy]
+    resources :password_recoveries
+
     resources :agents
     resources :groups do
       resources :sections
@@ -82,66 +85,36 @@ Masqueunacasa::Application.routes.draw do
 
 
     # HABITAPEDIA
-    resources :proposals, except: [:new] do
+
+    resources :proposals, except: [:new], concerns: [:document, :position] do
       get :dashboard, on: :collection
-      resource :kudos
-      put :up, on: :member
-      put :down, on: :member
-      resource :edition
       resources :relations, only: [:new, :create, :destroy]
-      resources :sections, except: [:index]
       resources :subscribers, only: [:create, :destroy]
       resources :links
-      resources :tasks
     end
 
-    resources :experiencies do
+    resources :experiencies, concerns: [:document] do
       get :dashboard, on: :collection
-      resource :kudos
-      resources :sections, except: [:index]
       resources :locations
       resources :links
-      resource :edition
       resources :subscribers, only: [:create, :destroy]
-      resources :tasks
       resources :images
     end
 
 
-    resources :user_sessions, only: [:new, :create, :destroy]
-
-    resources :password_recoveries
-    resources :categories, only: [:show] do
+    resources :categories, only: [:show], concerns: [:document, :position] do
       get :dashboard, on: :collection
-      resource :kudos
       resources :proposals, only: [:new]
-      put :up, on: :member
-      put :down, on: :member
-      resources :sections, except: [:index]
       resources :subscribers, only: [:create, :destroy]
-      resources :tasks
-      resource :edition
     end
+
     resources :phases, except: [:show, :update, :destroy]
-    # El path: '' es un truco para mostrar el nombre de las fases
-    # sin el prefijo, es decir, en vez de "fases/mi_fase" 
-    # se verá "mi_fase"
-    resources :phases, only: [:show, :update, :destroy], path: '' do
-      resource :kudos
-      resources :sections, except: [:index]
+    resources :phases, only: [:show, :update, :destroy], path: '', concerns: [:document] do
       resources :categories, except: [:index], path: ''
-      resource :edition
       resources :subscribers, only: [:create, :destroy]
     end
-
-
   end
 
-#  namespace :ckeditor do
-#    resources :pictures, :only => [:index, :create, :destroy]
-#    resources :attachment_files, :only => [:index, :create, :destroy]
-#    resources :attachments, :only => [:index, :create, :destroy]
-#  end
 
   ActionDispatch::Routing::Translator.translate_from_file(
     'config/locales/routes.yml', prefix_on_default_locale: false )

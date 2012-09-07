@@ -34,6 +34,7 @@ gem 'mini_magick'
 # Cosas de controladores
 gem 'decent_exposure'
 gem 'cancan'
+gem 'routing_concerns'
 
 # Cosas de vistas
 gem 'gdocstatic', git: 'git://github.com/recortable/gdocstatic.git' # Páginas estáticas
