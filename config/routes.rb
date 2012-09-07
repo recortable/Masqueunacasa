@@ -67,7 +67,7 @@ Masqueunacasa::Application.routes.draw do
   match '/mail/:action/' => 'mailer'
 
   root to: 'dashboard#welcome'
-  Gdocstatic::Routes.draw
+  WaxMuseum::Routes.draw
 
   # Rutas sólo accesibles desde el dominio principal 
   constraints subdomain: /^$/ do

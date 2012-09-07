@@ -1,8 +1,8 @@
 GIT
-  remote: git://github.com/recortable/gdocstatic.git
-  revision: afc56675b505be703749ae6885cd5f952c1b845d
+  remote: git://github.com/recortable/wax_museum.git
+  revision: 4412e960fe62e12ddf1d09ffa589310e6573ea2f
   specs:
-    gdocstatic (0.0.1)
+    wax_museum (0.0.1)
       nokogiri
       rails (~> 3.2.8)
       sass-rails (~> 3.1)
@@ -269,7 +269,6 @@ DEPENDENCIES
   fog
   font-awesome-sass-rails
   friendly_id
-  gdocstatic!
   hoptoad_notifier
   hpricot
   http_accept_language
@@ -295,5 +294,6 @@ DEPENDENCIES
   turn
   uglifier (>= 1.0.3)
   unicorn
+  wax_museum!
   will_paginate (~> 3.0)
   will_paginate-bootstrap

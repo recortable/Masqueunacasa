@@ -37,7 +37,7 @@ gem 'cancan'
 gem 'routing_concerns'
 
 # Cosas de vistas
-gem 'gdocstatic', git: 'git://github.com/recortable/gdocstatic.git' # Páginas estáticas
+gem 'wax_museum', git: 'git://github.com/recortable/wax_museum.git' # Páginas estáticas
 gem 'cache_digests'
 gem 'jquery-rails' # Integración de jquery y rails
 gem 'will_paginate-bootstrap' # Integración will_paginate - twitter bootstrap
