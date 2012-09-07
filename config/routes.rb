@@ -39,7 +39,7 @@ Masqueunacasa::Application.routes.draw do
     put :probe, on: :member
   end
     
-  get '/info/:id', to: "static_pages#show", as: :static_page
+  #get '/info/:id', to: "static_pages#show", as: :static_page
 
   # GENERAL
   resources :images, only: [:up, :down] do
@@ -67,6 +67,7 @@ Masqueunacasa::Application.routes.draw do
   match '/mail/:action/' => 'mailer'
 
   root to: 'dashboard#welcome'
+  Gdocstatic::Routes.draw
 
   # Rutas sólo accesibles desde el dominio principal 
   constraints subdomain: /^$/ do

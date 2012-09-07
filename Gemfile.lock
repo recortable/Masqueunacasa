@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/recortable/gdocstatic.git
+  revision: afc56675b505be703749ae6885cd5f952c1b845d
+  specs:
+    gdocstatic (0.0.1)
+      nokogiri
+      rails (~> 3.2.8)
+      sass-rails (~> 3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -39,7 +48,7 @@ GEM
     bourbon (2.1.1)
       sass (>= 3.1)
     breadcrumbs_on_rails (2.2.0)
-    builder (3.0.0)
+    builder (3.0.2)
     cache_digests (0.1.0)
       actionpack (>= 3.2)
     cambelt (0.1.1)
@@ -109,7 +118,7 @@ GEM
     hpricot (0.8.6)
     htmlentities (4.3.1)
     http_accept_language (1.0.2)
-    i18n (0.6.0)
+    i18n (0.6.1)
     ie_conditional_tag (0.5.0)
       rails (~> 3.0)
     jbuilder (0.4.3)
@@ -256,6 +265,7 @@ DEPENDENCIES
   fog
   font-awesome-sass-rails
   friendly_id
+  gdocstatic!
   hoptoad_notifier
   hpricot
   http_accept_language
