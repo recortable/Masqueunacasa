@@ -1,5 +1,11 @@
 # Masqueunacasa
 
+## 9/09/2012 
+- De momento, quitar la caché de las páginas
+
+## 8/09/2012
+- Gema WaxMuseum sacada de StaticPage
+
 ## 6/09/2012
 - Bug en email de actividad
 - StaticPage experimental
