@@ -1,3 +1,3 @@
 [submodule "config/recipes"]
 	path = config/recipes
-	url = https://github.com/recortable/capistrano-recipes
+	url = git@github.com:recortable/capistrano-recipes.git
