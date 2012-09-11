@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/recortable/wax_museum.git
-  revision: 4412e960fe62e12ddf1d09ffa589310e6573ea2f
+  revision: ab2013d4224cdef5ac9556a842060a0aa6ee3596
   specs:
     wax_museum (0.0.1)
       nokogiri
