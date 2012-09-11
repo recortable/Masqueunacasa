@@ -1,19 +1,16 @@
-.video-container {
+.video-container .video, .embed-container {
+  min-width: 286px;
+  height: 0;
+  position: relative;
+  padding-bottom: 55.5%;
+  overflow: hidden;
 
-  .video {
-    min-width: 286px;
-    height: 0;
-    position: relative;
-    padding-bottom: 55.5%;
-    overflow: hidden;
-
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 

@@ -1,4 +1,6 @@
 # Masqueunacasa
+## 11/09/2012
+- Algo de estilos para los blogs
 
 ## 9/09/2012 
 - De momento, quitar la caché de las páginas
