@@ -33,17 +33,6 @@ body {
     background-color: $fondo;
     background-repeat: repeat-x;
   }
- 
-  .page.bloc {
-    overflow: hidden;
-    padding-bottom: 90px;
-
-    & > a.group_name {
-      color: $negro;
-      @include title_font(30px, bold);
-      text-decoration: none;
-    }
-  }
 
   .main-header {
 
@@ -142,4 +131,9 @@ img.centered {
 
 h2.no-title:before, h2.no-title:after {
   display: none !important;
+}
+
+.breadcrumb-image {
+  position: relative;
+  top: -30px;
 }

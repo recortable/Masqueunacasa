@@ -1,15 +1,17 @@
 <% cache ['summary', post] do %>
-  <%= div_for post, class: 'post post-teaser summary' do %>
-  <div class="content">
-  <h3><%= l post.published_at %></h3>
-  <%= link_to content_tag(:h2, post.title), post_url(post, subdomain: post.group.subdomain) %>
-  <h4>Por <%= link_to post.user.name, user_url(post.user, subdomain: false) %></h4>
-  <%= render_post_media(post) %>
-  <%= markdown truncate_html(post.body, length: 500) %>
-  <%= markdown truncate(post.sections.first.body, length: 500) if post.sections.first %>
-  <div class="links">
-    <%= link_to t('read_more'), post_url(post, subdomain: post.group.slug), class: 'read-more' %>
-  </div>
-</div>
-<% end %>
+  <%= div_for post, class: 'summary' do %>
+    <div class="header">
+      <%= link_to content_tag(:h2, post.title), post_url(post, subdomain: post.group.subdomain) %>
+      <h4>
+        Por <%= link_to post.user.name, user_url(post.user, subdomain: false) %>,
+        el <%= l post.published_at %>
+      </h4>
+    </div>
+    <%= render_post_media(post) %>
+    <%= markdown truncate_html(post.body, length: 500) %>
+    <%= markdown truncate(post.sections.first.body, length: 500) if post.sections.first %>
+    <div class="links">
+      <%= link_to t('read_more'), post_url(post, subdomain: post.group.slug), class: 'read-more' %>
+    </div>
+  <% end %>
 <% end %>

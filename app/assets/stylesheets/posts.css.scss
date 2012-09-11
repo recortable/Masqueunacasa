@@ -7,12 +7,56 @@ html.posts {
 
   &.index {
     .post {
+      padding-bottom: 40px;
+      margin-bottom: 16px;
+      background: image-url('lineas/posts-line.png') repeat-x 0 bottom;
+
       h2 {
         font-size: 24px;
       }
 
       h3 {
         font-size: 18px;
+      }
+    }
+  }
+
+  &.show .post {
+    .header:before, .header:after {
+      content: "";
+      height: 9px;
+      display: block;
+      margin-bottom: 6px;
+      background: image-url('lineas/posts-title.png') repeat-x;
+    }
+
+    .header:after {
+      height: 5px;
+      margin-top: 6px;
+      margin-bottom: 0;
+      background: image-url('lineas/posts-title-bottom.png') repeat-x 0 50%;
+    }
+
+    .section {
+      h2:before, h2:after {
+        content: "";
+        height: 5px;
+        display: block;
+        background: image-url('lineas/posts-title-bottom.png') repeat-x 0 50%;
+      }
+    }
+  }
+
+  .sidebar {
+    .archive {
+      .header {
+        padding-bottom: 15px;
+        background: transparent image-url('lineas/recta-doble.png') repeat-x 0 bottom;
+      }
+
+      td {
+        border-top: none;
+        border-bottom: 2px solid $negro;
       }
     }
   }

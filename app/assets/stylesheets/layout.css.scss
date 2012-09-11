@@ -31,8 +31,6 @@ body {
   }
 }
 
-.page > .row > .span6, .page > .row > .span4 { margin-top: 30px; }
-
 .headrow {
   width: 100%; overflow: hidden;
   .breadcrumbs {
@@ -40,7 +38,7 @@ body {
     background-color: $negro;
     color: $fondo;
     font-weight: bold;
-    padding: 0 5px;
+    padding: 0 5px 1px;
 
     a { font-weight: normal; color: $fondo; }
   }

@@ -1,24 +1,28 @@
 <% title post.title %>
 <%= user_column 'span2' do %>
-  <%= link_to image_tag('icon-blog.png', class: 'fixed'), posts_path %> 
+  <%= image_tag 'blog/blog_100n.png', class: 'breadcrumb-image', alt: 'blog' %>
   <%= render_kudos post %>
   <%= render 'sections/summary', document: post %>
 <% end %>
 <div class='span6 center post'>
-  <div class="hoverize">
-    <%= hover? :update, post do %>
-      <%= link_to icon(:pencil, 'Editar'), [:edit, post] %>
-      <% if can? :delete, post %>
-        |  <%= link_to icon(:trash), post, method: :delete,
-          rel: "delete-post-#{post.id}", data: { confirm: '¿Quieres borrar esta entrada?' } %>
+  <div class="header">
+    <div class="hoverize">
+      <%= hover? :update, post do %>
+        <%= link_to icon(:pencil, 'Editar'), [:edit, post] %>
+        <% if can? :delete, post %>
+          |  <%= link_to icon(:trash), post, method: :delete,
+            rel: "delete-post-#{post.id}", data: { confirm: '¿Quieres borrar esta entrada?' } %>
+        <% end %>
       <% end %>
-    <% end %>
-    <h3><%= l post.published_at %></h3>
-    <h1><%= post.title %></h1>
-    <h4>Por <%= link_to post.user.name, post.user %></h4>
-    <%= render_post_media(post) %>
-    <br/>
+      <h1><%= post.title %></h1>
+      <h4>
+        Por <%= link_to post.user.name, post.user %>,
+        el <%= l post.published_at %>
+      </h4>
+    </div>
   </div>
+  <%= render_post_media(post) %>
+  <br/>
   <div class="summary markdown">
     <%= markdown post.body %>
   </div>
