@@ -43,6 +43,7 @@ gem 'jquery-rails' # Integración de jquery y rails
 gem 'will_paginate-bootstrap' # Integración will_paginate - twitter bootstrap
 gem 'will_paginate', '~> 3.0'
 gem 'hpricot'
+gem 'nested_form'
 # gem "ckeditor" # Editor RTE
 #gem 'bootstrap-wysihtml5-rails'
 gem 'jbuilder' # Para enviar json fácilmente

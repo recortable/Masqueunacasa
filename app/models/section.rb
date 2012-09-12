@@ -9,6 +9,8 @@ class Section < ActiveRecord::Base
   attr_accessible :position
   delegate :title, to: :document, prefix: true
 
+  before_validation :populate_fields
+
   validates_presence_of :document_id, :document_type, :lang, :body_type
   validates_presence_of :body
 #  validates :image, file_size: { maximum: 1.megabytes.to_i }
@@ -40,5 +42,10 @@ class Section < ActiveRecord::Base
         self.group_id = document.group_id
       end
     end
+  end
+
+  def populate_fields
+    self.lang = I18n.locale
+    self.body_type ||= 'markdown'
   end
 end
