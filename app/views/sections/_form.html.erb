@@ -1,26 +1,26 @@
 <%= simple_form_for [document, section] do |form| %>
   <div class="title">
-  <%= form.input :title %>
-</div>
-<%= form.input :body, label: false %>
-<br><br>
-<div class="image">
-  <% if section.image.present? %>
-    <%= image_tag section.image_url(:thumb), class: 'fixed' %>
-  <dl class="unstyled">
-    <dt>Posición</dt><dd><%= section.image_position %></dd>
-    <dt>Enlace</dt><dd><%= section.image_url %></dd>
-  </ul>
-
-  <div class="controls">
-    <%= link_box 'Borrar imágen', remove_image_section_path(section), method: :delete, confirm: '¿Quieres borrar esta imágen?' %>
+    <%= form.input :title %>
   </div>
-<% else %>
-    <p>Opcional: puedes <strong>subir una imágen</strong> que acompañe a esta sección</p>
-  <%= form.input :image, label: false %>
-  <%= form.input :image_position, collection: [['Antes del texto', 'top'], ['Después del texto', 'bottom']], include_blank: false %>
-<% end %>
-</div>
-<%= submit_button_for form %>
+  <%= form.input :body, label: false %>
+  <br><br>
+  <div class="image">
+    <% if section.image.present? %>
+      <%= image_tag section.image_url(:thumb), class: 'fixed' %>
+      <dl class="unstyled">
+        <dt>Posición</dt><dd><%= section.image_position %></dd>
+        <dt>Enlace</dt><dd><%= section.image_url %></dd>
+      </ul>
+
+      <div class="controls">
+        <%= link_box 'Borrar imágen', remove_image_section_path(section), method: :delete, confirm: '¿Quieres borrar esta imágen?' %>
+      </div>
+    <% else %>
+      <p>Opcional: puedes <strong>subir una imágen</strong> que acompañe a esta sección</p>
+      <%= form.input :image, label: false %>
+      <%= form.input :image_position, collection: [['Antes del texto', 'top'], ['Después del texto', 'bottom']], include_blank: false %>
+    <% end %>
+  </div>
+  <%= submit_button_for form %>
 <% end %>
 

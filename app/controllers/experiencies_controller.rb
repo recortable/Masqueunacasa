@@ -53,7 +53,6 @@ class ExperienciesController < ApplicationController
 
   def update
     authorize! :update, experiencie
-    experiencie.attributes = params[:experiencie]
     flash[:notice] = t('experiencies.notices.updated') if experiencie.save
     respond_with experiencie 
   end

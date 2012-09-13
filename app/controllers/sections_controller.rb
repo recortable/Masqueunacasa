@@ -37,7 +37,6 @@ class SectionsController < ApplicationController
   end
 
   def update
-    section.attributes = params[:section]
     authorize! :update, section
     section.save
     respond_with section, location: document_location

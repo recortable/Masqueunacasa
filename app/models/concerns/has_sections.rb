@@ -2,7 +2,9 @@ module HasSections
   extend ActiveSupport::Concern
 
   included do
+    attr_accessible :sections_attributes
     has_many :sections, as: :document, dependent: :destroy, conditions: proc { ['lang = ?', I18n.locale] }
+    accepts_nested_attributes_for :sections, allow_destroy: true
   end
 
   def add_section(section, user)
