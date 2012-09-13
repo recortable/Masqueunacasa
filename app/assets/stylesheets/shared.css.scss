@@ -25,7 +25,9 @@ legend {
 }
 
 .fields {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid lighten($negro, 10%);
 
   &:after {
     content: "";
@@ -38,6 +40,8 @@ legend {
 a.btn.rm-section {
   float: right;
 }
+
+/* Anular los estilos de bootstrap para algunos elementos para que usen las mismas tipos que el restp del sitio */
 
 input, button, select, textarea {
   font-family: inherit;
@@ -101,7 +105,7 @@ input, button, select, textarea {
             background-color: $negro;
           }
         }
-        
+
         .shape {
           width: 50px;
           height: 72px;

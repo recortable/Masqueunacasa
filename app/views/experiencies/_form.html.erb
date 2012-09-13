@@ -6,7 +6,7 @@
   <fieldset>
     <legend>Secciones</legend>
     <%= form.fields_for :sections %>
-    <%= form.link_to_add "Add a section", :sections, class: 'btn link_to_add' %>
+    <%= form.link_to_add "Añadir una sección", :sections, class: 'btn link_to_add' %>
   </fieldset>
   <%= form.input :related_proposal_id, as: :hidden %>
   <%= submit_button_for form %>
