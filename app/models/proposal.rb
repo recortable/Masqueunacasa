@@ -25,7 +25,7 @@ class Proposal < ActiveRecord::Base
 
   has_many :relations, dependent: :destroy
   has_many :experiencies, through: :relations 
-  has_many :tasks, dependent: :destroy, as: :document
+
   include HasSections
   include HasPopularity
   include HasSubscriptors

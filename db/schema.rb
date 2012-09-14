@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120828091246) do
+ActiveRecord::Schema.define(:version => 20120914183025) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -361,19 +361,6 @@ ActiveRecord::Schema.define(:version => 20120828091246) do
 
   add_index "subscribers", ["document_type", "document_id"], :name => "index_subscribers_on_document_type_and_document_id"
   add_index "subscribers", ["user_id"], :name => "index_subscribers_on_user_id"
-
-  create_table "tasks", :force => true do |t|
-    t.string   "document_type", :limit => 16
-    t.integer  "document_id"
-    t.string   "title",         :limit => 300
-    t.boolean  "finished",                     :default => false
-    t.integer  "user_id"
-    t.datetime "created_at",                                      :null => false
-    t.datetime "updated_at",                                      :null => false
-  end
-
-  add_index "tasks", ["document_type", "document_id"], :name => "index_tasks_on_document_type_and_document_id"
-  add_index "tasks", ["finished"], :name => "index_tasks_on_finished"
 
   create_table "versions", :force => true do |t|
     t.string   "item_type",                    :null => false

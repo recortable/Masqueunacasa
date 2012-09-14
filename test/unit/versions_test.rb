@@ -25,11 +25,6 @@ describe Version do
     verify(s, title: s.position.to_s)
   end
 
-  it 'version created by task' do
-    t = create(:task)
-    verify(t, title: t.title, parent_title: t.document.title, document: t.document)
-  end
-
   it 'version created by link' do
     p = create(:proposal)
     t = create(:link, document: p)

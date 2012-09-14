@@ -20,21 +20,6 @@ $(function() {
 });
 
 $(function() {
-  $('.complete_task').click(function() {
-    var box = $(this);
-    $.ajax({
-      url: $(this).data('url'),
-      type: 'PUT',
-      dataType: 'html',
-      success: function(data) {
-        box.siblings('span').toggleClass('finished');
-        console.log(data);
-      }
-    });
-  });
-});
-
-$(function() {
   $('.experiencies.index .quadricula .experiencie').each(function() {
     $(this).expand_image()
   });

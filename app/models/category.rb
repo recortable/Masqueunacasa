@@ -18,7 +18,6 @@ class Category < ActiveRecord::Base
   belongs_to :user
   belongs_to :phase, touch: true
   has_many :proposals, order: :position
-  has_many :tasks, as: :document, dependent: :destroy
 
   include HasSections
   include HasEditors
@@ -30,7 +29,7 @@ class Category < ActiveRecord::Base
   private
   def propagate_phases
     if phase_id_changed?
-      self.proposals.each &:save
+      self.proposals.each(&:save)
     end
   end
 end

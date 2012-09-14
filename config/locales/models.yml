@@ -16,7 +16,6 @@ es:
       section: 'sección'
       image: 'imágen'
       link: 'recurso'
-      task: 'tarea'
       agent: 'grupo'
 
   announcement:

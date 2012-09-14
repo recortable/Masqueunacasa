@@ -72,12 +72,6 @@ class Activities
     query = query.or(versions[:item_type].eq('Section').
                      and(versions[:item_id].in_any(section_ids)))
 
-    if document.respond_to?(:tasks)
-      tasks_ids = document.tasks.map(&:id)
-      query = query.or(versions[:item_type].eq('Task').
-                       and(versions[:item_id].in_any(tasks_ids)))
-    end
-
     versions = Version.where(query).order('id DESC').limit(options[:limit])
     Activities.clean_versions(versions)
   end
