@@ -3,7 +3,7 @@
 .idea
 .project
 .bundle
-config/database.yml
+NOconfig/database.yml
 config/amazon_s3.yml
 config/cloudinary.yml
 config/smtp.yml
