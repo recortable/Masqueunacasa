@@ -7,4 +7,9 @@ class EditionsController < ApplicationController
     respond_with document
   end
 
+  def edit
+    authorize! :edit, document
+    respond_with document
+  end
+
 end

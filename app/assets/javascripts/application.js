@@ -8,6 +8,7 @@
 //= require experiencies
 //= require galleria/galleria-1.2.7.min
 //= require galleria/galleria.classic.min
+//= require jquery_nested_form
 //# require ckeditor/init
 
 //= require_self
