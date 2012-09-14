@@ -43,6 +43,16 @@ class Experiencie < ActiveRecord::Base
     return img.image.small
   end
 
+  def image_thumb
+    img = images.first
+    unless img.nil?
+      return img.external_image_url if !img.external_image_url.blank?
+      return img.image.thumb
+    else
+      nil
+    end
+  end
+
   # TODO: hacer que funcione para otros idiomas
   def self.search(term)
     Experiencie.where(Experiencie.arel_table[:title_es].matches("%#{term}%")).order('title_es ASC')
