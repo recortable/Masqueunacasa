@@ -15,10 +15,10 @@
           rel: "edit-link-#{link.id}" %> |
           <%= link_to icon(:trash), [document, link], 
           rel: "delete-link-#{link.id}", method: :delete, 
-        data: { confirm: 
+        data: { confirm:
                 "¿Estas seguro de que quieres borrar este enlace?" } %>
             <% end %>
-                <%= link_to link.caption, link.url, class: 'resource' %>
+                <%= link_to link.caption, link.url, target: '_blank', class: 'resource' %>
               </div>
             <% end %>
             </div>
