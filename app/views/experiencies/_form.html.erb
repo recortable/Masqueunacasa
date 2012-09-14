@@ -1,13 +1,7 @@
-<%= simple_nested_form_for experiencie do |form| %>
-  <div class="title">
+<%= simple_form_for experiencie do |form| %> <div class="title">
     <%= form.input :title, label: false %>
   </div>
   <%= form.input :summary, as: :text %>
-  <fieldset>
-    <legend>Secciones</legend>
-    <%= form.fields_for :sections %>
-    <%= form.link_to_add "Añadir una sección", :sections, class: 'btn link_to_add' %>
-  </fieldset>
   <%= form.input :related_proposal_id, as: :hidden %>
   <%= submit_button_for form %>
 <% end %>
