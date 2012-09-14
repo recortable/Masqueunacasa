@@ -45,7 +45,7 @@ class Section < ActiveRecord::Base
   end
 
   def populate_fields
-    self.lang = I18n.locale
+    self.lang ||= I18n.locale
     self.body_type ||= 'markdown'
   end
 end

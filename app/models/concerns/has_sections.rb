@@ -3,7 +3,8 @@ module HasSections
 
   included do
     attr_accessible :sections_attributes
-    has_many :sections, as: :document, dependent: :destroy, conditions: proc { ['lang = ?', I18n.locale] }
+    has_many :sections, as: :document, dependent: :destroy, 
+      conditions: proc { ['lang = ?', I18n.locale] }
     accepts_nested_attributes_for :sections, allow_destroy: true
   end
 
