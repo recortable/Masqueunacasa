@@ -29,8 +29,8 @@
   <%= render_proposal_relations proposal %>
   <%= render_links_bar proposal %>
 </div>
-<div class="row edition">
+</div> <%# Cerramos el 'row' anterior, abierto en layouts/application.html.erb %>
+<div class="row edition"> <%# Dejamos abierto este 'row', que se cerrará en layouts/application.html.erb %>
   <div class="span6 offset2">
     <%= link_to 'Comentar', polymorphic_path([proposal, :edition], format: :js), remote: true %>
   </div>
-</div>
