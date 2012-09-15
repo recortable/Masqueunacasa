@@ -23,10 +23,10 @@
               <%= content_tag :div, location.title, class: 'location', data: {title: location.title, longitude: location.longitude, latitude: location.latitude} %>
             </div>
           <% end %>
-        </div>
       <% else %>
         <p>No hay información sobre localización  <%= "para #{resource.title.camelize}" %></p>
       <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -6,14 +6,14 @@
   <% phases.each do |phase| %>
     <% if phase_proposals[phase.id].size > 0 %>
       <%= div_for phase, class: "phase-color-#{phase.color_name}" do %>
-      <%= image_tag("habitap/#{phase.icon}_35.png", alt: phase.title, class: 'phase-icon') %>
-    <h3><%= phase.title %></h3>
-  <%= div_for phase_proposals[phase.id] do |proposal| %>
-    <h4><%= link_to proposal.title, proposal %></h4>
-  <%= markdown truncate(proposal.summary, length: 150) %>
-  <span class="experiencies-count"><%= proposal.experiencies_count.to_s %> experiencias</span>
-<% end %>
-<% end %>
-<% end %>
-<% end %>
+        <%= image_tag("habitap/#{phase.icon}_35.png", alt: phase.title, class: 'phase-icon') %>
+        <h3><%= phase.title %></h3>
+        <%= div_for phase_proposals[phase.id] do |proposal| %>
+          <h4><%= link_to proposal.title, proposal %></h4>
+          <%= markdown truncate(proposal.summary, length: 150) %>
+          <span class="experiencies-count"><%= proposal.experiencies_count.to_s %> experiencias</span>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
