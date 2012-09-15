@@ -5,10 +5,10 @@
     <%= form.input :title, label: false %>
   </div>
   <%= form.input :summary, as: :text if document.respond_to?(:summary) %>
-  <fieldset>
+  <fieldset class="sections-fields">
     <legend>Secciones</legend>
     <%= form.fields_for :sections %>
-    <%= form.link_to_add "Añadir una sección", :sections, class: 'btn link_to_add' %>
+    <%= form.link_to_add "Añadir una sección", :sections, class: 'btn' %>
   </fieldset>
   <%= submit_button_for form %>
 <% end %>

@@ -7,12 +7,13 @@ body {
 
 fieldset {
   margin-bottom: 12px;
-  padding: 10px 5px;
+  padding: 10px 5px 0;
   border: 1px solid #E5E5E5;
   background-color: darken($fondo, 3%);
 
-  .link_to_add {
+  .add_nested_fields {
     clear: both;
+    margin-bottom: 15px;
   }
 }
 
@@ -26,8 +27,9 @@ legend {
 
 .fields {
   margin-bottom: 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid lighten($negro, 10%);
+  padding: 15px 0;
+  border-bottom: 1px dotted lighten($negro, 10%);
+  border-top: 1px dotted lighten($negro, 10%);
 
   &:after {
     content: "";

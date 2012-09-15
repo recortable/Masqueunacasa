@@ -1,21 +1,22 @@
 <%= f.input :title, hint: t('simple_form.hints.section.title') %>
 <div class="section_type text">
-<%= f.input :body, hint: t('simple_form.hints.section.body') %>
+  <%= f.input :body, hint: t('simple_form.hints.section.body') %>
 </div>
 <div class="image">
   <% if f.object.image? %>
     <div class="preview">
-    <%= image_tag f.object.image_url(:thumb), class: 'fixed' %>
-    <dl class="unstyled">
-      <dt>Posición</dt><dd><%= f.object.image_position %></dd>
-      <dt>Enlace</dt><dd><%= f.object.image_url %></dd>
-    </dl>
-  </div>
-<% end %>
+      <%= image_tag f.object.image_url(:thumb), class: 'fixed' %>
+      <dl class="unstyled">
+        <dt>Posición</dt><dd><%= f.object.image_position %></dd>
+        <dt>Enlace</dt><dd><%= f.object.image_url %></dd>
+      </dl>
+    </div>
+  <% end %>
   <div class="image_field<%= " hide" if f.object.image? %>">
     <p>Opcional: puedes <strong>subir una imágen</strong> que acompañe a esta sección</p>
     <%= f.input :image, label: false %>
     <%= f.input :image_position, collection: [['Antes del texto', 'top'], ['Después del texto', 'bottom']], include_blank: false %>
   </div>
 </div>
-<%= f.link_to_remove "Borrar esta sección", class: 'btn rm-section' %>
+<%= f.hidden_field :_destroy %>
+<%= link_to "Borrar esta sección", '#', class: 'btn rm-section' %>
