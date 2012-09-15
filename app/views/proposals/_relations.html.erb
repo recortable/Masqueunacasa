@@ -15,8 +15,12 @@
           <%= link_to icon(:cut, 'Quitar relación'), [proposal, relation], method: :delete, confirm: "¿Borrar la relación con #{relation.experiencie.title}?" %>
         <% end %>
         <h3><%= link_to relation.experiencie.title, relation.experiencie %></h3>
-        <%= image_tag relation.experiencie.image_thumb if relation.experiencie.image_thumb %>
       </div>
+      <% if relation.experiencie.image_thumb %>
+        <div class='experiencie-thumb'>
+          <%= link_to image_tag(relation.experiencie.image_thumb), relation.experiencie %>
+        </div>
+      <% end %>
       <%= markdown truncate(relation.experiencie.summary, length: 150) %>
     <% end %>
   </div>
