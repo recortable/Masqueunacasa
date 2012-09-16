@@ -1,17 +1,41 @@
+show_type_of_section_buttons = (btn) ->
+  btn.fadeOut 300, ->
+    btn.siblings('.add_fields').css({ opacity: 0, display: 'inline-block' }).animate
+      opacity: 1
+    , 300
+
+show_add_section_btn = (btn) ->
+  btn.fadeOut(300).siblings('.add_fields').fadeOut 300, ->
+    btn.siblings('a.add-section').css({ opacity : 0, display: 'inline-block' }).animate
+      opacity: 1
+    , 300
+
+clone_buttons = (btn) ->
+  btn.closest('div.add-section').clone()
+
+create_hidden_content = (btn, regexp, time) ->
+  $(btn.data('fields').replace(regexp, time)).css('display', 'none')
+
+insert_and_show_content = (btn, links, content) ->
+  btn.closest('div.add-section').after(links).after(content)
+  content.slideDown 500
+
 jQuery ->
+  # When clicking on 'Añadir una sección'
   $('form fieldset.sections-fields').on 'click', 'a.add-section', (event) ->
-    $(this).css('display', 'none').siblings('.add_fields').css('display', 'inline-block')
+    show_type_of_section_buttons($(this))
     event.preventDefault()
 
+  # When adding a text or image section
   $('form').on 'click', '.add_fields', (event) ->
-    $(this).css('display', 'none').siblings('.add_fields').css('display', 'none').first()
-    $(this).siblings('a.add-section').css('display', 'inline-block')
-    links = $(this).closest('div.add-section').clone()
+    links = clone_buttons($(this))
     time = new Date().getTime()
     regexp = new RegExp($(this).data('id'), 'g')
-    content = $($(this).data('fields').replace(regexp, time)).css('display', 'none')
-    $(this).closest('div.add-section').after(links).after(content)
-    content.slideDown(500)
+    content = create_hidden_content($(this), regexp, time)
+
+    show_add_section_btn($(this))
+
+    insert_and_show_content $(this), links, content
     event.preventDefault()
 
   $('form').on 'click', 'a.rm-section', (event) ->
