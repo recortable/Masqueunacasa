@@ -11,14 +11,17 @@ show_add_section_btn = (btn) ->
     , 300
 
 clone_buttons = (btn) ->
-  btn.closest('div.add-section').clone()
+  buttons = btn.closest('div.add-section').clone()
+  buttons.find('a.add-section').css('display', 'inline-block').siblings('.add_fields').css('display', 'none')
+  buttons.css('display', 'none')
 
 create_hidden_content = (btn, regexp, time) ->
   $(btn.data('fields').replace(regexp, time)).css('display', 'none')
 
 insert_and_show_content = (btn, links, content) ->
   btn.closest('div.add-section').after(links).after(content)
-  content.slideDown 500
+  content.slideDown 500, ->
+    links.slideDown 150
 
 jQuery ->
   # When clicking on 'Añadir una sección'
@@ -28,26 +31,29 @@ jQuery ->
 
   # When adding a text or image section
   $('form').on 'click', '.add_fields', (event) ->
+    show_add_section_btn($(this))
+
     links = clone_buttons($(this))
     time = new Date().getTime()
     regexp = new RegExp($(this).data('id'), 'g')
     content = create_hidden_content($(this), regexp, time)
 
-    show_add_section_btn($(this))
-
     insert_and_show_content $(this), links, content
     event.preventDefault()
 
+  # When removing a section
   $('form').on 'click', 'a.rm-section', (event) ->
     $(this).prev('input[type=hidden]').val('1')
     $(this).closest('.fields').slideUp().next('.add-section').slideUp()
     event.preventDefault()
 
+  # Before sending the form we assingn positions
   $('html.editions.edit form').submit (event) ->
     fields = $(this).find('.fields')
     fields.each (index) ->
       $(this).find('input[id$="position"]').attr('value', index + 1)
 
+  # Section up
   $('html.editions.edit form').on 'click',  'a.section-up', (event) ->
     fields =  $(this).closest('.fields')
     buttons = fields.next('div.add-section')
@@ -58,6 +64,7 @@ jQuery ->
       target.before(fields).before(buttons)
     event.preventDefault()
 
+  # Section down
   $('html.editions.edit form').on 'click',  'a.section-down', (event) ->
     fields =  $(this).closest('.fields')
     buttons = fields.next('div.add-section')
