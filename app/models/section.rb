@@ -12,7 +12,7 @@ class Section < ActiveRecord::Base
   before_validation :populate_fields
 
   validates_presence_of :document_id, :document_type, :lang, :body_type
-  validates_presence_of :body
+  validate :image_xor_body
 #  validates :image, file_size: { maximum: 1.megabytes.to_i }
 
   belongs_to :group
@@ -41,6 +41,12 @@ class Section < ActiveRecord::Base
       elsif document.respond_to?(:group_id)
         self.group_id = document.group_id
       end
+    end
+  end
+
+  def image_xor_body
+    if (self.image.blank? && self.body.blank?)
+      errors.add(:section, 'No puedes dejar este cammpo en blanco')
     end
   end
 

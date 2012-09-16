@@ -1,14 +1,25 @@
 <div class="span6 offset2">
   <%= title "Supereditor #{document.title}" %>
-  <%= simple_nested_form_for document do |form| %>
+  <%= simple_form_for document do |form| %>
     <div class="title">
     <%= form.input :title, label: false %>
   </div>
   <%= form.input :summary, as: :text if document.respond_to?(:summary) %>
   <fieldset class="sections-fields">
     <legend>Secciones</legend>
-    <%= form.fields_for :sections %>
-    <%= form.link_to_add "Añadir una sección", :sections, class: 'btn' %>
+    <div class="add-section">
+      <%= link_to "Añadir una sección", '#', class: 'btn add-section' %>
+      <%= link_to_add_fields "Texto", form, :sections, :text %>
+      <%= link_to_add_fields "Imagen", form, :sections, :image %>
+    </div>
+    <%= form.fields_for :sections do |builder| %>
+      <%= render_section_fields builder %>
+      <div class="add-section">
+        <%= link_to "Añadir una sección", '#', class: 'btn add-section' %>
+        <%= link_to_add_fields "Texto", form, :sections, :text %>
+        <%= link_to_add_fields "Imagen", form, :sections, :image %>
+      </div>
+    <% end %>
   </fieldset>
   <%= submit_button_for form %>
 <% end %>
