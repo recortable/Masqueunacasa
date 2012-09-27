@@ -3,12 +3,16 @@
     <%= form.input :title, label: false %>
   </div>
   <%= form.input :name %>
+  <%= form.input :summary, as: :text %>
+  <h4>Imágen</h4>
   <% if category.image.blank? %>
     <%= form.input :image %>
   <% else %>
     <%= image_tag category.image, class: 'responsive' %>
+    <br><br><strong>Puedes borrar ésta imágen:</strong>
     <%= form.input :remove_image, as: :boolean, wrapper: :checkbox %>
+    <strong>O sustituirla por otra:</strong>
+    <%= form.input :image %>
   <% end %>
-  <%= form.input :summary, as: :text %>
   <%= submit_button_for form %>
 <% end %>

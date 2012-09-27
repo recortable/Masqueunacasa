@@ -1,4 +1,8 @@
 # Masqueunacasa
+
+## 27/09/2012
+- Subir una imágen a una pregunta mejorado
+
 ## 11/09/2012
 - Algo de estilos para los blogs
 
