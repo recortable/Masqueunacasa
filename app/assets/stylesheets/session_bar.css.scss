@@ -12,6 +12,8 @@ body {
       box-shadow: none;
       border-radius: 0;
       background: transparent;
+      filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
+
 
       li {
         a {
@@ -59,11 +61,19 @@ body {
       }
 
       .session-links {
+        text-align: center;
+
+        li {
+          margin-left: 2px;
+        }
+
         .login, .user {
+          width: 100%;
+          float: left;
           background: image-url('iniciarsesion-center.png') repeat-x 0 -20px;
           @include three_parts_link(12px, 20px, 'iniciarsesion-left.png',
           'iniciarsesion-right.png');
-          
+
           &:before, &:after {
             background-position: 0 -20px;
           }
