@@ -19,12 +19,6 @@ $(function() {
   $('form.edit_location').mapForForm();
 });
 
-$(function() {
-  $('.experiencies.index .quadricula .experiencie').each(function() {
-    $(this).expand_image()
-  });
-});
-
 if (typeof console == "undefined" || typeof console.log == "undefined") {
   console = {
     log : function() {

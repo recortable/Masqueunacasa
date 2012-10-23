@@ -1,17 +1,13 @@
-$.fn.extend
-  expand_image: ->
-    return this.each ->
-      cont = $(this)
-      img = cont.find('img')
-      wth = cont.width()
-      # console.log(img.height())
-      if img.height() == 0
-        #console.log("1")
-        img.bind 'load', ->
-          ratio = img.width() / img.height()
-          img.height wth
-          img.width ratio * wth
-      else if img.height() < wth
-        ratio = img.width() / img.height()
-        img.height wth
-        img.width ratio * wth
+$ ->
+  if $('.experiencies.index').length
+    width = $('.experiencie').first().width()
+    $('.quadricula .experiencie img').one('load', ->
+      img = $(this).css('width', 'auto')
+
+      if $(this).height() < $(this).width() or $(this).height() < width
+        $(this).css('max-width', '30000px')
+        ratio = $(this).width() / $(this).height()
+        $(this).height(width)
+        $(this).width(width * ratio)
+    ).each ->
+      $(this).load() if $(this).complete || $(this).height() < width
