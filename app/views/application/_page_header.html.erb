@@ -1,6 +1,6 @@
-<!--<%= form_tag search_path, class: 'form-search', method: :get do %>
+<%= form_tag search_path, class: 'form-search', method: :get do %>
 <input type="text" name="t" class="input-medium search-query">
-<% end %>-->
+<% end %>
   <% if !group or current_group.admin? %>
     <%= link_to image_tag('Logo_Mquc.png', width: 271, height: 41), posts_path(subdomain: current_group), class: 'mquc' %>
   <% elsif group and !current_group.admin? %>

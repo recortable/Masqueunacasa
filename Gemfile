@@ -23,6 +23,7 @@ gem 'bcrypt-ruby', '~> 3.0.0' # Para encriptar cosas, p.ej: password (MD5)
 gem 'friendly_id'
 gem 'paper_trail'
 gem 'acts_as_list'
+gem 'texticle', '~> 2.0'#, :require => 'texticle/rails'
 
 # Para subir ficheros e imágenes al servidor
 gem "mini_magick" # Para modificar imágenes (lo usa carrierwave)
@@ -32,7 +33,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 # Cosas de controladores
-gem 'decent_exposure'
+gem 'decent_exposure', '1.0.2'
 gem 'cancan'
 gem 'routing_concerns'
 

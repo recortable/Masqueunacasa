@@ -43,7 +43,7 @@
 <div class="span4 sidebar sidebar-right">
   <%= render_experiencie_relations experiencie %>
   <%= render_links_bar experiencie %>
-  <%= render_locations_bar experiencie %>
+  <%= render 'locations/bar', resource: experiencie %>
 </div>
 
 </div> <%# Cerramos el 'row' anterior, abierto en layouts/application.html.erb %>

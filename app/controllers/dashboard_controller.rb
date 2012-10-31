@@ -20,6 +20,9 @@ class DashboardController < ApplicationController
   def dashboard
   end
 
+  def search
+  end
+
   def welcome
   end
 
