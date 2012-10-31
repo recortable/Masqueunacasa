@@ -58,6 +58,7 @@ gem 'simple_form'
 gem 'redcarpet' # Convierte markdown a html
 gem 'cambelt' # Genera imágenes de prueba
 gem 'basic_config' # https://github.com/stephan778/basic_config 
+gem 'turbolinks'
 
 gem 'rails-translate-routes'
 gem 'http_accept_language'

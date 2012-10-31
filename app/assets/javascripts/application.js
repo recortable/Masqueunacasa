@@ -1,8 +1,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require shared
-//= require posts
 //= require maps
 //= require mediafy
 //= require experiencies
@@ -10,49 +8,8 @@
 //= require galleria/galleria.classic.min
 //= require sections
 //# require ckeditor/init
-
+//= require utils
 //= require_self
-
-$(function() {
-  $('div.locations').showMap();
-  $('form.new_location').mapForForm();
-  $('form.edit_location').mapForForm();
-});
-
-if (typeof console == "undefined" || typeof console.log == "undefined") {
-  console = {
-    log : function() {
-    }
-  };
-}
-
-window.Util = {
-  /* Get URL Variables
-     ================================================== */
-  // var somestring = Util.getUrlVars(str_url)["varname"];
-  getUrlVars: function(string) {
-
-    var str = string.toString();
-
-    if (str.match('&#038;')) {
-      str = str.replace("&#038;", "&");
-    } else if (str.match('&#38;')) {
-      str = str.replace("&#38;", "&");
-    } else if (str.match('&amp;')) {
-      str = str.replace("&amp;", "&");
-    }
-
-    var vars = [], hash;
-    var hashes = str.slice(str.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++) {
-      hash = hashes[i].split('=');
-      vars.push(hash[0]);
-      vars[hash[0]] = hash[1];
-    }
-
-    return vars;
-  }
-}
 
 Galleria.configure({
   transition: 'pulse',
@@ -66,8 +23,16 @@ Galleria.configure({
   showInfo: true
 });
 
-$(function() {
+var MqucInit = function() {
+  $('div.locations').showMap();
+  $('form.new_location').mapForForm();
+  $('form.edit_location').mapForForm();
   if ($('.galleria').length > 0) {
     Galleria.run('.galleria');
   }
-});
+  $('.body a').medify();
+};
+
+$(document).ready(MqucInit);
+$(window).bind('page:change', MqucInit);
+

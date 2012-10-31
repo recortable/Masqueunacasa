@@ -48,22 +48,23 @@ mediafy.addRender
     webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>"
 
 
-$ ->
-  $('.body a').each ->
-    link = $(this).attr('href')
-    media = mediafy.getMedia(link)
-    if media
-      rendered = media.renderer.embed(media)
-      embed = "<div class='embed-container'>#{rendered}</div>"
-      if this.parentNode.firstChild == this
-        $(this).html(embed)
-      else
-        element = null
-        $(this).click (e) ->
-          e.preventDefault()
-          if element 
-            $(element).toggle()
-          else
-            element = $(embed).appendTo($(this))
+$.fn.extend
+  mediafy: ->
+    return this.each ->
+      link = $(this).attr('href')
+      media = mediafy.getMedia(link)
+      if media
+        rendered = media.renderer.embed(media)
+        embed = "<div class='embed-container'>#{rendered}</div>"
+        if this.parentNode.firstChild == this
+          $(this).html(embed)
+        else
+          element = null
+          $(this).click (e) ->
+            e.preventDefault()
+            if element 
+              $(element).toggle()
+            else
+              element = $(embed).appendTo($(this))
           
 

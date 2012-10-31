@@ -1,4 +1,4 @@
-$ ->
+init = ->
   if $('.experiencies.index').length
     width = $('.experiencie').first().width()
     $('.quadricula .experiencie img').one('load', ->
@@ -11,3 +11,7 @@ $ ->
         $(this).width(width * ratio)
     ).each ->
       $(this).load() if $(this).complete || $(this).height() < width
+
+$(document).ready(init)
+$(window).bind('page:change', init)
+

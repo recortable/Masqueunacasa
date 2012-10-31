@@ -230,6 +230,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     truncate_html (0.5.5)
+    turbolinks (0.5.1)
     turn (0.9.6)
       ansi
     tzinfo (0.3.34)
@@ -292,6 +293,7 @@ DEPENDENCIES
   texticle (~> 2.0)
   thin
   truncate_html
+  turbolinks
   turn
   uglifier (>= 1.0.3)
   unicorn

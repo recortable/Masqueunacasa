@@ -23,7 +23,7 @@ insert_and_show_content = (btn, links, content) ->
   content.slideDown 500, ->
     links.slideDown 150
 
-jQuery ->
+init = ->
   # When clicking on 'Añadir una sección'
   $('form fieldset.sections-fields').on 'click', 'a.add-section', (event) ->
     show_type_of_section_buttons($(this))
@@ -74,3 +74,7 @@ jQuery ->
       fields.remove()
       target.after(fields).after(buttons)
     event.preventDefault()
+
+$(document).ready(init)
+$(window).bind('page:change', init)
+
