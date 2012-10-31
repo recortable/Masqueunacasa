@@ -1,5 +1,11 @@
 language: ruby
 rvm:
   - 1.9.3
+env:
+  - DB=postgresql
+script: 
+  - RAILS_ENV=test bundle exec rake db:schema:load
+  - bundle exec rake
 before_script:
-  - psql -c 'create database Masqueunacasa_test;' -U Dani
+  - psql -c 'create database myapp_test' -U postgres
+bundler_args: --binstubs=./bundler_stubs
