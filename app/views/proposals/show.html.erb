@@ -1,36 +1,36 @@
 <% title proposal.title %>
-<div class="span2">
+
+<h4 class="category"><%= link_to proposal.category.title, proposal.category %></h4>
+<div class="hoverize">
+  <%= hover? :update, proposal do %>
+    <%= link_to icon(:pencil, 'Editar'), [:edit, proposal], rel: 'edit-proposal' %>
+    <% if can? :delete, proposal %>
+      | <%= link_to icon(:trash), proposal, method: :delete,
+        data: { confirm: "¿Seguro que quieres borrar esta propuesta?" } %>
+    <% end %>
+  <% end %>
+  <h1><%= proposal.title %></h1>
+</div><!-- hoverize -->
+
+<div class="summary markdown">
+  <%= markdown proposal.summary %>
+</div>
+<%= render_sections proposal %>
+
+<% content_for :left do %>
   <%= image_tag("habitap/propuesta_100#{proposal.phase.color}.png", alt: 'Propuesta', width: 100, height: 100, class: 'doc-icon') %>
   <%= render_kudos proposal %>
   <%= render_social_links proposal %>
   <%= render 'sections/summary', document: proposal %>
-</div><!-- span2 -->
+<% end %>
 
-<div class="span6">
-  <h4 class="category"><%= link_to proposal.category.title, proposal.category %></h4>
-  <div class="hoverize">
-    <%= hover? :update, proposal do %>
-      <%= link_to icon(:pencil, 'Editar'), [:edit, proposal], rel: 'edit-proposal' %>
-      <% if can? :delete, proposal %>
-        | <%= link_to icon(:trash), proposal, method: :delete,
-          data: { confirm: "¿Seguro que quieres borrar esta propuesta?" } %>
-      <% end %>
-    <% end %>
-    <h1><%= proposal.title %></h1>
-  </div><!-- hoverize -->
-
-  <div class="summary markdown">
-    <%= markdown proposal.summary %>
-  </div>
-  <%= render_sections proposal %>
-</div><!-- span6 -->
-
-<div class="span4">
+<% content_for :right do %>
   <%= render_proposal_relations proposal %>
   <%= render_links_bar proposal %>
-</div>
-</div> <%# Cerramos el 'row' anterior, abierto en layouts/application.html.erb %>
-<div class="row edition"> <%# Dejamos abierto este 'row', que se cerrará en layouts/application.html.erb %>
+<% end %>
+
+<% content_for :ajaxrow do %>
   <div class="span6 offset2">
     <%= link_to 'Comentar', polymorphic_path([proposal, :edition], format: :js), remote: true %>
   </div>
+<% end %>

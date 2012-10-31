@@ -37,8 +37,33 @@
   <% end %>
   </header>
   <div id="page_content">
-    <div class="row">
-      <%= yield %>
+    <div class="row mainrow">
+      <% if content_for? :left %>
+        <div class="span2 sidebar left">
+          <%= yield :left %>
+        </div>
+      <% end %>
+
+      <%# CUANDO TODAS LAS VISTAS USEN CONTENT_FOR, 
+        ESTE HACK SE PUEDE BORRAR %>
+      <% size = main_content_span_size %>
+      <% if size == 12 %>
+        <%= yield %>
+      <% else %>
+        <div class="span<%= size %> main-content">
+          <%= yield %>
+        </div>
+      <% end %>
+
+      <% if content_for? :right %>
+        <div class="span4 sidebar right">
+          <%= yield :right %>
+        </div>
+      <% end %>
+    </div> <!-- mainrow -->
+
+    <div class="row ajaxrow">
+      <%= yield :ajaxrow %>
     </div>
   </div>
 </div>

@@ -1,5 +1,11 @@
 module LayoutHelper
 
+  def main_content_span_size
+    size = 12
+    size = size - 2 if content_for?(:left)
+    size = size - 4 if content_for?(:right)
+    size
+  end
 
   # TODO: deprecated, use page_div
   def page(options = {}, &block)
