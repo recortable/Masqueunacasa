@@ -1,5 +1,8 @@
 # Masqueunacasa
 
+# Para ignorar un fichero del repositorio (p.ej: database.yml)
+git update-index --skip-worktree config/database.yml
+
 ## 27/09/2012
 - Subir una imágen a una pregunta mejorado
 
