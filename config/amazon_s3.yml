@@ -1,0 +1,16 @@
+development:
+  bucket: archivos.masqueunacasa.org
+  access_key_id: 
+  secret_access_key: 
+
+test:
+  bucket: archivos.masqueunacasa.org-test
+  access_key_id: 
+  secret_access_key: 
+
+
+production:
+  bucket: archivos.masqueunacasa.org
+  access_key_id: 
+  secret_access_key: 
+

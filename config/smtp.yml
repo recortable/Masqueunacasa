@@ -1,0 +1,7 @@
+address: smtp.gmail.com
+port: 587
+domain: masqueunacasa.org
+authentication: plain
+enable_startls_auto: true
+user_name: hola@masqueunacasa.org
+password: 

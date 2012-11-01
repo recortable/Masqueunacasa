@@ -3,9 +3,6 @@
 .idea
 .project
 .bundle
-config/amazon_s3.yml
-config/cloudinary.yml
-config/smtp.yml
 config/initializers/smtp_settings.rb
 db/*.sqlite3
 log/**
