@@ -11,7 +11,7 @@ module HasResource
       @resource_name = name.to_s
       include BangMethods
 
-      options[:actions].each do |action|
+      Array(options[:actions]).each do |action|
         define_method(action) do
           self.send("#{action}!")
         end
@@ -74,7 +74,7 @@ module HasResource
 
     def flash_for(action)
       flash[:notice] = t("#{resource_name}s.#{action}", 
-                         default: t("resource.#{action}d"))
+                         default: t("resource.#{action}"))
     end
 
     private

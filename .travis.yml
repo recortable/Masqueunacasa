@@ -4,7 +4,7 @@ rvm:
 env:
   - DB=postgresql
 script: 
-  - RAILS_ENV=test bundle exec rake db:schema:load
+  - RAILS_ENV=test bundle exec rake db:schema:load --trace
   - bundle exec rake
 before_script:
   - psql -c 'create database myapp_test' -U postgres

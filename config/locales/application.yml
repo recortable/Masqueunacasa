@@ -2,3 +2,8 @@ es:
   will_paginate:
     previous_label: '<<' 
     next_label: '>>'
+
+  resource:
+    created: 'Añadido. Gracias'
+    updated: 'Modificado. ¡Bien!'
+    destroyed: 'Borrado... uupps...'
