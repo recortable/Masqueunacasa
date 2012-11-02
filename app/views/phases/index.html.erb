@@ -1,6 +1,6 @@
 <% title 'Habitapedia' %>
 <%# Estilos para .intro en welcome.css.scss %>
-<%= render habitapedia_notices.first %>
+<%= render habitapedia_notices.first if habitapedia_notices.first %>
 <div class="phases-container span12 clearfix">
   <a name="fases"></a>
   <% phases.each do |phase| %>
