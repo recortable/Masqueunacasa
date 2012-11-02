@@ -12,6 +12,8 @@ class Content < ActiveRecord::Base
   include HasSections
   include HasEditors
 
+  scope :latest, limit(4)
+
   attr_accessible :user_id, :group_id
   attr_accessible :title, :body
   attr_accessible :title_es, :title_ca, :title_en
