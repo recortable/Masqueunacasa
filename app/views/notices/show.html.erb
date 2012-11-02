@@ -1,0 +1,6 @@
+<div class="span12">
+  <%= link_to 'Volver', notices_path(l: notice.list) %>
+  <%= link_to 'Editar', edit_notice_path(notice) %>
+</div>
+<% title notice.title %>
+<%= render notice %>

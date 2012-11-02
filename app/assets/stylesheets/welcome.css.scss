@@ -1,3 +1,16 @@
+div.notice {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: $fondo asset-data-url('fondos/textura_puntos.png');
+
+    h2 {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid $negro;
+      font-weight: normal;
+    }
+}
+
 html.welcome, html.phases.index {
   div.intro {
       padding-top: 30px;

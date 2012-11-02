@@ -1,0 +1,15 @@
+<%= simple_form_for notice do |form| %>
+  <div class="title">
+    <%= form.input :title %>
+  </div>
+  <%= form.input :list, collection: Notice::LISTS, 
+    include_blank: false %>
+  <%= form.input :body, as: :text %>
+  <%= form.input :embed, as: :text %>
+  <%= submit_button_for form %>
+<% end %>
+
+<% content_for :left do %>
+  &nbsp;
+<% end %>
+

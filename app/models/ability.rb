@@ -14,6 +14,7 @@ class Ability
     cannot :index, Category
     can :read, Agent
     can :read, Post
+    can :manage, Notice
 
     if user.blank?
       can :create, UserSession 

@@ -76,6 +76,7 @@ Masqueunacasa::Application.routes.draw do
     resources :user_sessions, only: [:new, :create, :destroy]
     resources :password_recoveries
 
+    resources :notices
     resources :agents
     resources :groups do
       resources :sections

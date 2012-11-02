@@ -1,7 +1,9 @@
 # Masqueunacasa
 
-# Para ignorar un fichero del repositorio (p.ej: database.yml)
+# Para ignorar los cambios en los ficheros de configuración
 git update-index --skip-worktree config/database.yml
+git update-index --skip-worktree config/amazon_s3.yml
+git update-index --skip-worktree config/smtp.yml
 
 ## 27/09/2012
 - Subir una imágen a una pregunta mejorado

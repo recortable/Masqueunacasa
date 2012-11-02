@@ -1,0 +1,18 @@
+<div class="span12">
+  <%= div_for notice do %>
+    <div class="row">
+      <div class="video-container span6 offset1">
+        <div class="video">
+          <%= raw notice.embed %>
+        </div>
+      </div>     
+      <div class="span4">
+        <div class="corner"></div>
+        <div class="content">
+          <h2><%= notice.title %></h2>
+          <%= markdown notice.body %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

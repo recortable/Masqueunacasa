@@ -1,0 +1,21 @@
+<div class="span12">
+  <%= title 'Destacados' %>
+  <ul class="nav nav-tabs">
+    <% Notice::LISTS.each do |item| %>
+      <%= content_tag :li, link_to(item, url_for(l: item)), class: (list == item ? 'active' : '') %>
+    <% end %>
+  </ul>
+  <div class="actions">
+    <%= link_to "Añadir destacado a '#{list}'", 
+      new_notice_path(l: list), class: 'btn' %>
+  </div>
+  <br>
+</div>
+
+<% notices.each do |notice| %>
+  <%= render notice %>
+  <div class="span12">
+    <%= link_to 'Editar', [:edit, notice], class: 'btn' %>
+  </div>
+<% end %>
+

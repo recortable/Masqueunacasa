@@ -17,11 +17,11 @@ $gridColumnWidth: 60px;
 $gridGutterWidth: 20px;
 
 @media (min-width: 768px) and (max-width: 979px) {
-  @include gridCore($gridColumnWidth, $gridGutterWidth);
+  @include grid-core($gridColumnWidth, $gridGutterWidth);
 }
 
 @media (max-width: 767px) {
-  @include gridCore($gridColumnWidth, $gridGutterWidth);
+  @include grid-core($gridColumnWidth, $gridGutterWidth);
 
   .row {
     margin-left: -20px;
@@ -33,7 +33,7 @@ $gridGutterWidth: 20px;
 }
 
 @media (max-width: 480px) {
-  @include gridCore ($gridColumnWidth, $gridGutterWidth);
+  @include grid-core($gridColumnWidth, $gridGutterWidth);
 
   .row {
     margin-left: -20px;

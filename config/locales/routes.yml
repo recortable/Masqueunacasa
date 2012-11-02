@@ -7,6 +7,7 @@ es:
     groups: 'colectivos'
     memberships: 'participantes'
     messages: 'mensajes'
+    notices: 'destacados'
     pages: 'docs'
     password_recoveries: 'recuperar-constrasena'
     phases: 'habitapedia'
