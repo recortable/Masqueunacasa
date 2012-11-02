@@ -4,6 +4,7 @@ class PhasesController < ApplicationController
   expose(:phases) { Phase.all }
   expose(:phase)
 
+  expose(:habitapedia_notices) { Notice.list('habitapedia') }
   def index
     authorize! :index, Phase
     respond_with phases

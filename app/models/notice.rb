@@ -5,8 +5,10 @@ class Notice < ActiveRecord::Base
 
   acts_as_list 
   default_scope order: :position
+  scope :list, lambda {|l| where(list: l) }
 
   LISTS = ['inicio', 'habitapedia']
+
 
   # scope_condition for acts_as_list
   def scope_condition

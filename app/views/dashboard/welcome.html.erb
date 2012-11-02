@@ -1,23 +1,6 @@
 <% title 'Procesos colectivos de vivienda' %>
 <% cache 'welcome' do %>
-  <div class="span12">
-    <div class="intro">
-      <div class="row">
-        <div class="video-container span6 offset1">
-          <div class="video">
-            <iframe src="http://player.vimeo.com/video/37086987?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-          </div>
-        </div>     
-        <div class="span4">
-          <div class="corner"></div>
-          <div class="content">
-            <h2><%= t('intro.welcome.title') %></h2>
-            <%= markdown t('intro.welcome.what') %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render welcome_notices.first %>
   <div class="info-wrapper span12">
     <div class="info clearfix">
       <div class="habitapedia">

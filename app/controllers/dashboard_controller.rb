@@ -23,6 +23,7 @@ class DashboardController < ApplicationController
   def search
   end
 
+  expose(:welcome_notices) { Notice.list('inicio') }
   def welcome
   end
 
