@@ -13,7 +13,6 @@ class DashboardController < ApplicationController
   expose(:post_list) { site.latest_posts(params[:page]) }
   expose(:groups) { site.groups.reorder('admin DESC, title ASC') }
   expose(:archive_posts) { Post.all }
-  expose(:posts_archive) { Post.archive_for(site.posts) }
 
   add_breadcrumb 'Mas que una casa', :root_path
 
