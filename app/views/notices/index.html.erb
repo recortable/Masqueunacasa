@@ -12,10 +12,22 @@
   <br>
 </div>
 
-<% notices.each do |notice| %>
-  <%= render notice %>
-  <div class="span12">
-    <%= link_to 'Editar', [:edit, notice], class: 'btn' %>
-  </div>
-<% end %>
+<div class="notices">
+  <% notices.each do |notice| %>
+    <%= render notice %>
+    <div class="span12 actions">
+      <span><%= notice.position %>º</span>
+      <strong><%= notice.title %></strong> &gt;
+      <%= link_to icon('arrow-up', 'Subir'),
+        up_notice_path(notice), method: :put %>
+      <%= link_to icon('arrow-down', 'Bajar'),
+        down_notice_path(notice), method: :put %>
+      <%= link_to icon('edit', 'Editar'), [:edit, notice] %>
+      <%= link_to icon('trash', 'Borrar'), notice, 
+        method: :delete, 
+        data: { confirm: "¿Quieres borrar #{notice.title}?", 
+              action: "delete-notice-#{notice.id}" } %>
+    </div>
+  <% end %>
+</div>
 

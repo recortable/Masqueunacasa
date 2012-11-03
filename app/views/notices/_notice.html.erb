@@ -2,9 +2,14 @@
   <%= div_for notice do %>
     <div class="row">
       <div class="video-container span6 offset1">
-        <div class="video">
-          <%= raw notice.embed %>
-        </div>
+        <% if notice.image? %>
+          <%= link_to_if notice.link?, 
+            image_tag(notice.image.url), notice.link %>
+        <% elsif notice.embed? %>
+          <div class="video">
+            <%= raw notice.embed %>
+          </div>
+        <% end %>
       </div>     
       <div class="span4">
         <div class="corner"></div>

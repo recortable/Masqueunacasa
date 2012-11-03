@@ -51,6 +51,12 @@ es:
       page:
         image: 'Imágen principal'
         embed: 'Vídeo'
+  
+      notice:
+        list: 'Lista'
+        image: 'Imágen'
+        link: 'Enlace de la imágen'
+        embed: 'Código'
 
       user:
         name: 'Nombre corto'
@@ -88,6 +94,11 @@ es:
 
       media_item:
         url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'
+
+      notice:
+        image: 'Debe tener 570x320 pixels.'
+        link: 'Opcional. Url al hacer click sobre la imágen. Debe ser http://...'
+        embed: 'Código html. Algo tipo &lt;iframe&gt...'
 
       password_recovery:
         email: 'Escribe el email con el que te registraste, y te enviaremos las instrucciones'

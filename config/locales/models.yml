@@ -9,6 +9,7 @@ es:
       phase: 'fase'
       group: 'colectivo'
       proposal: 'propuesta'
+      notice: 'destacado'
       experiencie: 'experiencia' 
       category: 'pregunta'
       password_recovery: 'recuperar contraseña'

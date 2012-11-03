@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121101104540) do
+ActiveRecord::Schema.define(:version => 20121103111732) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -56,20 +56,6 @@ ActiveRecord::Schema.define(:version => 20121101104540) do
 
   add_index "announcements", ["group_id"], :name => "index_announcements_on_group_id"
   add_index "announcements", ["user_id"], :name => "index_announcements_on_user_id"
-
-  create_table "attachments", :force => true do |t|
-    t.string  "content_type"
-    t.string  "filename"
-    t.integer "size"
-    t.string  "tags"
-    t.string  "description"
-    t.integer "page_id"
-    t.integer "parent_id"
-    t.string  "thumbnail"
-    t.integer "width"
-    t.integer "height"
-    t.integer "db_file_id"
-  end
 
   create_table "categories", :force => true do |t|
     t.integer  "phase_id"
@@ -273,24 +259,11 @@ ActiveRecord::Schema.define(:version => 20121101104540) do
     t.string   "list",       :limit => 16
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.string   "link",       :limit => 400
   end
 
   add_index "notices", ["list"], :name => "index_notices_on_list"
   add_index "notices", ["position"], :name => "index_notices_on_position"
-
-  create_table "pages", :force => true do |t|
-    t.string   "name"
-    t.string   "title"
-    t.string   "section"
-    t.string   "head",       :limit => 1024
-    t.text     "content"
-    t.string   "end",        :limit => 4096
-    t.string   "extra"
-    t.string   "params"
-    t.string   "position"
-    t.datetime "created_on"
-    t.datetime "updated_on"
-  end
 
   create_table "phases", :force => true do |t|
     t.string   "title_es",          :limit => 50
@@ -403,17 +376,6 @@ ActiveRecord::Schema.define(:version => 20121101104540) do
 
   add_index "subscribers", ["document_type", "document_id"], :name => "index_subscribers_on_document_type_and_document_id"
   add_index "subscribers", ["user_id"], :name => "index_subscribers_on_user_id"
-
-  create_table "users", :force => true do |t|
-    t.string   "login"
-    t.string   "email"
-    t.string   "crypted_password",          :limit => 40
-    t.string   "salt",                      :limit => 40
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "remember_token"
-    t.datetime "remember_token_expires_at"
-  end
 
   create_table "versions", :force => true do |t|
     t.string   "item_type",                    :null => false

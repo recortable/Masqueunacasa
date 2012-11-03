@@ -22,4 +22,20 @@ class NoticesController < ApplicationController
     notice.list = params[:l]
     new!
   end
+
+  def show
+    redirect_to notices_path(l: notice.list)
+  end
+
+  def up
+    authorize! :update, notice
+    notice.move_higher
+    respond_with notice
+  end
+
+  def down
+    authorize! :update, notice
+    notice.move_lower
+    respond_with notice
+  end
 end
