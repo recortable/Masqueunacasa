@@ -4,6 +4,9 @@ require "minitest/autorun"
 require "capybara/rails"
 require "active_support/testing/setup_and_teardown"
 
+# Load support files
+Dir["#{File.dirname(__FILE__)}/helpers/**/*.rb"].each { |f| require f }
+
 DatabaseCleaner.strategy = :truncation
 
 class MiniTest::Unit::TestCase
@@ -66,13 +69,11 @@ class IntegrationTest < MiniTest::Spec
     group
   end
 
-  def click_submit(name = 'commit')
-    page.find("input[name=\"#{name}\"]").click
-  end
-
   def find_link(rel)
     page.find("a[rel='#{rel}']")
   end
+
+  include ClickTestHelper
 end
 
 class HelperTest < MiniTest::Spec
