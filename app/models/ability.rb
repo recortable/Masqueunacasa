@@ -9,8 +9,6 @@ class Ability
 
     if user.blank?
       no_user_abilities
-    elsif user.admin?
-      admin_abilities
     else
       cannot :update, UserSession
       can :manage, Section do |section|
@@ -18,6 +16,7 @@ class Ability
       end
       habitapedia_abilities(user)
       social_abilities(user, current_group)
+      admin_abilities if user.admin?
     end
   end
 
@@ -67,6 +66,7 @@ class Ability
 
   def admin_abilities
     can :manage, Phase
+    can :manage, Category
     can :manage, Notice
   end
 
