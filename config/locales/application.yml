@@ -7,3 +7,8 @@ es:
     created: 'Añadido. Gracias'
     updated: 'Modificado. ¡Bien!'
     destroyed: 'Borrado... uupps...'
+
+  app:
+    cancel: 'Cancelar'
+    back_to: "Volver a '%{title}'"
+    edit: 'Editar'

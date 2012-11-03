@@ -1,0 +1,19 @@
+<div class="phase-categories <%= phase.color_name %>">
+  <div class="content">
+    <div class="categories">
+      <%= simple_list phase.categories do |category| %>
+        <h3>
+          <%= link_to category.title, [phase, category] %>
+        </h3>
+        <ul class="unstyled proposals">
+        <% category.proposals.each do |proposal| %>
+          <li>
+            <%= link_to proposal.title, proposal %>
+          </li>
+        <% end %>
+        </ul>
+    <% end %>
+    </div>
+  </div>
+</div>
+

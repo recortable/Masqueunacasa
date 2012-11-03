@@ -3,8 +3,9 @@ class PhasesController < ApplicationController
   expose(:themes) { 'textura_habitapedia naranja' }
   expose(:phases) { Phase.all }
   expose(:phase)
-
   expose(:habitapedia_notices) { Notice.list('habitapedia') }
+
+
   def index
     authorize! :index, Phase
     respond_with phases
@@ -14,7 +15,6 @@ class PhasesController < ApplicationController
     authorize! :read, phase
     phase.increment_view_counter
     redirect_to phases_path
-    # respond_with phase
   end
 
   def new

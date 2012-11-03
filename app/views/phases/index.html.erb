@@ -1,36 +1,15 @@
-<% title 'Habitapedia' %>
 <%# Estilos para .intro en welcome.css.scss %>
+
+<% title 'Habitapedia' %>
 <%= render habitapedia_notices.first if habitapedia_notices.first %>
+
 <div class="phases-container span12 clearfix">
   <a name="fases"></a>
-  <% phases.each do |phase| %>
-    <div class="phase-info <%= phase.color_name %>">
-      <div class="content">
-        <div class="hoverize">
-          <%= hover? :update, phase do %>
-            <%= link_to icon(:edit, 'Editar fase'), [:edit, phase], 
-              rel: "edit-phase-#{phase.id}" %>
-          <% end %>
-
-          <%= image_tag(phase.image_url, width: 100, height: 100, alt: phase.title, class: 'fixed centered phase-image') %>
-          <h2><%= phase.title %></h2>
-          <div class="question">
-            <%= phase.question %>
-          </div>
-          <div class="summary markdown">
-            <%= markdown phase.summary %>
-          </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
+  <%= render partial: 'summary', 
+    collection: phases, as: :phase %>
 </div>
+
 <div class="categories-container span12">
-  <% phases.each do |phase| %>
-    <div class="phase-categories <%= phase.color_name %>">
-      <div class="content">
-        <%= render_category_list phase, title: nil %>
-      </div>
-    </div>
-  <% end %>
+  <%= render partial: 'categories', 
+    collection: phases, as: :phase %>
 </div>

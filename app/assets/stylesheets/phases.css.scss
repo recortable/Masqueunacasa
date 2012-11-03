@@ -53,13 +53,21 @@
   }
 }
 
+.phase-categories {
+
+  ul.proposals {
+    li {
+      display: block; 
+      background: image-url('habitap/propuesta_16px.png') no-repeat left 50%;
+      padding: 3px 0 3px 22px;
+    }
+  }
+  
+}
+
 .categories-container {
   .phase-categories {
     padding-top: 15px;
-
-    .categories>.hoverize {
-      min-height: 30px;
-    }
 
     .content {
       padding-left: 20px;
@@ -68,19 +76,11 @@
 
     h3 {
       font-size: 16px;
+      line-height: 1.4em;
       font-weight: normal;
 
       a {
         color: $negro;
-      }
-
-      small {
-        display: block;
-        padding-left: 26px;
-        font-family: $font-open;
-        font-size: 13px;
-        color: $negro;
-        background: image-url('propuesta_20px.png') no-repeat left 50%;
       }
     }
 
@@ -95,7 +95,7 @@
         position: absolute;
         top: -17px;
         left: -12px;
-        background: image-url('pregunta_35px.png') no-repeat;
+        background: image-url('habitap/pregunta_35px.png') no-repeat;
       }
 
       tr:first-child td {
@@ -109,6 +109,8 @@
     }
 
     &.azul_gris .table {
+      a { color: $azul_gris; }
+      h3 a { color: $negro; }
       border-top: 4px double $azul_gris;
 
       td {
@@ -117,6 +119,8 @@
     }
 
     &.tierra .table {
+      a { color: $tierra; }
+      h3 a { color: $negro; }
       border-top: 4px double $tierra;
 
       &:before {
@@ -129,6 +133,8 @@
     }
 
     &.ocre .table {
+      a { color: darken($ocre, 20%); }
+      h3 a { color: $negro; }
       border-top: 4px double $ocre;
 
       &:before {

@@ -83,11 +83,6 @@ FactoryGirl.define do
     user
   end
 
-  factory :task do
-    sequence(:title) {|n| "Task #{n}" }
-    document factory: :proposal
-  end
-
   factory :image do
     sequence(:title) {|n| "Image #{n}" }
     external_image_url 'http://en.com/im.jpg'
