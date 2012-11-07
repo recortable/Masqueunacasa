@@ -1,6 +1,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require jquery.foundation.orbit
+//= require slider
 //= require maps
 //= require mediafy
 //= require experiencies
@@ -30,6 +32,7 @@ var MqucInit = function() {
   if ($('.galleria').length > 0) {
     Galleria.run('.galleria');
   }
+  $('.slider').applySlider();
   $('.body a').medify();
 };
 

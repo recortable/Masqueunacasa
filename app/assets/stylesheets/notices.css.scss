@@ -1,7 +1,6 @@
 div.notice {
   padding-top: 30px;
   padding-bottom: 30px;
-  background: $fondo asset-data-url('fondos/textura_puntos.png');
 
   h2 {
     margin-bottom: 20px;
@@ -19,3 +18,26 @@ div.notices {
   }
 }
 
+/* ESTILOS PARA EL SLIDER */
+
+.slider {
+  min-height: 380px;
+  background: $fondo asset-data-url('fondos/textura_puntos.png');
+
+  /* Para que el contenedor del slider pille la altura adecuada */
+  .slide-text.clone {
+    visibility: hidden;
+    margin: 30px -100% 30px 0;
+
+    h2 { /* Los mismos estilos que el h2 de un notice */
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid $negro;
+      font-weight: normal;
+    }
+  }
+
+  .fluid-placeholder {
+    display: none !important;
+  }
+}

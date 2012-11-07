@@ -1,6 +1,12 @@
 <% title 'Procesos colectivos de vivienda' %>
 <% cache 'welcome' do %>
-  <%= render welcome_notices.first if welcome_notices.first %> 
+  <div class='span12'>
+    <div class="slider">
+      <% welcome_notices.each do |notice| %>
+        <%= render notice %>
+      <% end %>
+    </div>
+  </div>
   <div class="info-wrapper span12">
     <div class="info clearfix">
       <div class="habitapedia">
