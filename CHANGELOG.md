@@ -5,6 +5,9 @@ git update-index --skip-worktree config/database.yml
 git update-index --skip-worktree config/amazon_s3.yml
 git update-index --skip-worktree config/smtp.yml
 
+## 08/10/2012
+- Sliders de destacados para página de inicio y habitapedia
+
 ## 27/09/2012
 - Subir una imágen a una pregunta mejorado
 

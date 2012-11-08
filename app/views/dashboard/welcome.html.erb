@@ -2,9 +2,9 @@
 <% cache 'welcome' do %>
   <div class='span12'>
     <div class="slider">
-      <% welcome_notices.each do |notice| %>
-        <%= render notice %>
-      <% end %>
+      <%# welcome_notices.each do |notice| %>
+        <%= render welcome_notices.first %>
+      <%# end %>
     </div>
   </div>
   <div class="info-wrapper span12">
