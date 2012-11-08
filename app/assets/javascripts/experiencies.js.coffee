@@ -13,5 +13,5 @@ init = ->
       $(this).load() if $(this).complete || $(this).height() < width
 
 $(document).ready(init)
-$(window).bind('page:change', init)
+$(window).bind('page:load', init)
 

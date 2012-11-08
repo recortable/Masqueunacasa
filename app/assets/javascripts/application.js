@@ -38,5 +38,5 @@ var MqucInit = function() {
 };
 
 $(document).ready(MqucInit);
-$(window).bind('page:change', MqucInit);
+$(window).bind('page:load', MqucInit);
 
