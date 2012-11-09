@@ -1,4 +1,3 @@
-
 .proposals.show {
   h4.category { 
     margin-bottom: 5px; 
@@ -6,7 +5,7 @@
   }
 }
 
-html.proposals.show {
+.proposals.show {
   .span6 {
     &>.hoverize:first-child .hover {
       top: 22px;
@@ -39,7 +38,7 @@ html.proposals.show {
   }
 }
 
-html.proposals.show.ocre {
+.proposals.show.ocre {
   h1:before {
     background-position: 0 -20px;
   }
@@ -49,7 +48,7 @@ html.proposals.show.ocre {
   }
 } 
 
-html.proposals.show.tierra {
+.proposals.show.tierra {
   h1:before {
     background-position: 0 -40px;
   }
@@ -114,7 +113,8 @@ html.proposals.show.tierra {
     h3 { 
       font-weight: normal; font-size: 16px; 
       display: block; overflow: hidden;
-      height: 1.5em;
+      line-height: 1.1;
+      margin-bottom: 0;
     }
 
     .relation {

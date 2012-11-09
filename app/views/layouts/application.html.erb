@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html class="<%= controller_class %> <%= themes %> <%= subdomain_class %>">
-<head> 
+<html>
+<head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="description" content="Másqueunacasa: procesos colectivos de vivienda">
@@ -19,7 +19,7 @@
 <%= csrf_meta_tags %>
 <%= yield :head %>
 </head>
-<body>
+<body class="<%= controller_class %> <%= themes %> <%= subdomain_class %>">
 <%= render 'flashes' %>
 <%= render 'session' %>
 

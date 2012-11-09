@@ -15,7 +15,7 @@
 }
 
 @media (max-width: 1200px) {
-  html.welcome div.info-wrapper div.info .content {
+  .welcome div.info-wrapper div.info .content {
     .section-question {
       font-size: 13px;
     }
@@ -31,7 +31,7 @@
 }
 
 /*@media (min-width: 980px) {*/
-  /*html.welcome {*/
+  /*.welcome {*/
     /*div.intro {*/
       /*.row {*/
         /*overflow: hidden;*/
@@ -46,7 +46,7 @@
 /*}*/
 
 /*@media (max-width: 979px) {*/
-  /*html.welcome {*/
+  /*.welcome {*/
     /*div.intro {*/
       /*.span12 .video-container {*/
         /*width: 80%;*/
@@ -89,7 +89,7 @@
 /*}*/
 
 /*@media (max-width: 600px) {*/
-  /*html.welcome {*/
+  /*.welcome {*/
     /*div.intro .span12 .video-container, div.intro .span12 .span4 {*/
       /*width: 90%;*/
       /*margin: 0 auto 15px;*/

@@ -1,4 +1,4 @@
-html.categories.show {
+.categories.show {
   .span6 {
     &>.hoverize:first-child .hover {
       top: 22px;
@@ -31,7 +31,7 @@ html.categories.show {
   }
 }
 
-html.categories.show.ocre {
+.categories.show.ocre {
   h1:before {
     background-position: 0 -20px;
   }
@@ -41,7 +41,7 @@ html.categories.show.ocre {
  }
 } 
 
-html.categories.show.tierra {
+.categories.show.tierra {
   h1:before {
     background-position: 0 -40px;
   }

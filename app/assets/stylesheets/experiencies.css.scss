@@ -1,7 +1,7 @@
 $width: 210px;
 $glutter: 30px;
 
-html.experiencies.index {
+.experiencies.index {
   div.quadricula {
     margin-top: 30px;
     margin-left: -$glutter;
@@ -83,7 +83,7 @@ html.experiencies.index {
   }
 } 
 
-html.experiencies.show {
+.experiencies.show {
   .span6 {
     h1 {
       margin-bottom: 15px;
