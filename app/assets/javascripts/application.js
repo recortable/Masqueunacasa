@@ -34,7 +34,7 @@ var MqucInit = function() {
     Galleria.run('.galleria');
   }
   $('.slider').applySlider();
-  $('.body a').medify();
+  $('.body a').mediafy();
 };
 
 $(document).ready(MqucInit);

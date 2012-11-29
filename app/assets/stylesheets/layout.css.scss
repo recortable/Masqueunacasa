@@ -49,8 +49,10 @@ body {
 
 #credits { 
   overflow: hidden;
+  border-bottom: 1px solid $fondo;
 
   a {
+    height: 20px;
     display: block; float: right;
     background-color: $negro; color: $fondo;
     padding: 3px 5px;
