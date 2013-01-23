@@ -8,6 +8,7 @@ class PhasesController < ApplicationController
 
   def index
     authorize! :index, Phase
+    @active_tab = "habitapedia"
     respond_with phases
   end
 

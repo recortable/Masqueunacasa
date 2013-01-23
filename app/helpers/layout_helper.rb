@@ -60,6 +60,10 @@ module LayoutHelper
     end
   end
 
+  def active?(tab_name)
+    return 'active' if tab_name == @active_tab
+  end
+
   private
 
     def group_name

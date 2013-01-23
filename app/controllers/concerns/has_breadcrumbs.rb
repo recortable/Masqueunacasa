@@ -14,6 +14,7 @@ module HasBreadcrumbs
   end
 
   def breadcrumb_for_habitapedia
+    @active_tab ||= "habitapedia"
     add_breadcrumb 'Habitapedia', phases_path
   end
 
@@ -33,6 +34,7 @@ module HasBreadcrumbs
   end
 
   def breadcrumb_for_experiencies
+    @active_tab = "experiencies"
     breadcrumb_for_habitapedia
     add_breadcrumb 'Experiencias', :experiencies_path
   end
@@ -43,6 +45,7 @@ module HasBreadcrumbs
   end
 
   def breadcrumb_for_community
+    @active_tab = 'community'
     add_breadcrumb 'Comunidad', community_url(subdomain: false)
   end
 
