@@ -32,14 +32,23 @@ class ApplicationController < ActionController::Base
     path.present? ? path : root_path
   end
 
+  VALID_LOCALES = ['es', 'ca', 'en']
   def set_locale
-    locale = params[:locale] || ((lang = request.env['HTTP_ACCEPT_LANGUAGE']) && lang[/^[a-z]{2}/])
-    locale = 'es' unless ['es', 'ca'].include? locale
-    I18n.locale = locale
+    locale = params[:locale]
+    unless locale.present? and VALID_LOCALES.include?(locale)
+      location = request.fullpath
+      locale = request.compatible_language_from(VALID_LOCALES) || I18n.default_locale
+      location = '/' + locale.to_s + location
+      redirect_to location
+    end
   end
 
   def require_root_domain
     redirect_to url_for(subdomain: false) if request.subdomain.present?
+  end
+
+  rescue_from ActionView::MissingTemplate do |exception|
+    raise ActionController::RoutingError.new "No route matches '#{request.fullpath}'"
   end
 
   rescue_from CanCan::AccessDenied do |exception|

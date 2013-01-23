@@ -112,13 +112,15 @@ Masqueunacasa::Application.routes.draw do
     end
 
     resources :phases, except: [:show, :update, :destroy]
-    resources :phases, only: [:show, :update, :destroy], path: '', concerns: [:document] do
+    resources :phases, only: [:show, :update, :destroy], concerns: [:document] do
       resources :categories, except: [:index], path: ''
       resources :subscribers, only: [:create, :destroy]
     end
   end
 
+  match "*path" => 'application#set_locale'
 
-  ActionDispatch::Routing::Translator.translate_from_file(
-    'config/locales/routes.yml', prefix_on_default_locale: false )
+  ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes.yml', { 
+    prefix_on_default_locale: true,
+    keep_untranslated_routes: true})
 end
