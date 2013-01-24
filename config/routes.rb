@@ -89,13 +89,6 @@ Masqueunacasa::Application.routes.draw do
 
     # HABITAPEDIA
 
-    resources :proposals, except: [:new], concerns: [:document, :position] do
-      get :dashboard, on: :collection
-      resources :relations, only: [:new, :create, :destroy]
-      resources :subscribers, only: [:create, :destroy]
-      resources :links
-    end
-
     resources :experiencies, concerns: [:document] do
       get :dashboard, on: :collection
       resources :locations
@@ -111,7 +104,15 @@ Masqueunacasa::Application.routes.draw do
       resources :subscribers, only: [:create, :destroy]
     end
 
+    resources :proposals, except: [:new], path: '/phases/proposals', concerns: [:document, :position] do
+      get :dashboard, on: :collection
+      resources :relations, only: [:new, :create, :destroy]
+      resources :subscribers, only: [:create, :destroy]
+      resources :links
+    end
+
     resources :phases, except: [:show, :update, :destroy]
+
     resources :phases, only: [:show, :update, :destroy], concerns: [:document] do
       resources :categories, except: [:index], path: ''
       resources :subscribers, only: [:create, :destroy]
