@@ -8,7 +8,6 @@ ca:
   confirm: "N'estàs segur? Aquesta acció no es pot desfer."
   more: 'Més...'
   read_more: 'Llegir més...'
-  subscribe: Subscriu-te
 
   application:
     session:

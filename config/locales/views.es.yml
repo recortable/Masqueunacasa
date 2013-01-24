@@ -8,7 +8,6 @@ es:
   confirm: '¿Estás seguro? Esta acción no se puede deshacer'
   read_more: 'Leer más...'
   more: 'Más...'
-  subscribe: Suscribete
 
   application:
     session:

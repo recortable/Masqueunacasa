@@ -16,7 +16,7 @@ class Experiencie < ActiveRecord::Base
 
   attr_accessible :related_proposal_id
   attr_accessor :related_proposal_id
-  
+
   belongs_to :user
   belongs_to :group
   has_many :relations, dependent: :destroy
@@ -24,7 +24,6 @@ class Experiencie < ActiveRecord::Base
   has_many :images, dependent: :destroy, as: :imageable
   include HasLocations
   include HasPopularity
-  include HasSubscriptors
   include HasSections
   include HasLinks
   include HasEditors

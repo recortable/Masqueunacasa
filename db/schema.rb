@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121103111732) do
+ActiveRecord::Schema.define(:version => 20130124204514) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(:version => 20121103111732) do
     t.string   "body_type",         :limit => 16
     t.integer  "position"
     t.integer  "kudos_count",                      :default => 0
-    t.integer  "subscribers_count",                :default => 0
     t.integer  "view_count",                       :default => 0
     t.text     "summary_es"
     t.text     "summary_ca"
@@ -162,7 +161,6 @@ ActiveRecord::Schema.define(:version => 20121103111732) do
     t.datetime "updated_at",                                         :null => false
     t.string   "body_type",         :limit => 16
     t.integer  "kudos_count",                      :default => 0
-    t.integer  "subscribers_count",                :default => 0
     t.integer  "view_count",                       :default => 0
     t.text     "summary_es"
     t.text     "summary_ca"
@@ -266,24 +264,23 @@ ActiveRecord::Schema.define(:version => 20121103111732) do
   add_index "notices", ["position"], :name => "index_notices_on_position"
 
   create_table "phases", :force => true do |t|
-    t.string   "title_es",          :limit => 50
-    t.string   "title_ca",          :limit => 50
-    t.string   "slug_es",           :limit => 50
-    t.string   "slug_ca",           :limit => 50
+    t.string   "title_es",    :limit => 50
+    t.string   "title_ca",    :limit => 50
+    t.string   "slug_es",     :limit => 50
+    t.string   "slug_ca",     :limit => 50
     t.integer  "position"
-    t.datetime "created_at",                                      :null => false
-    t.datetime "updated_at",                                      :null => false
-    t.integer  "kudos_count",                      :default => 0
-    t.integer  "subscribers_count",                :default => 0
-    t.integer  "view_count",                       :default => 0
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.integer  "kudos_count",                :default => 0
+    t.integer  "view_count",                 :default => 0
     t.text     "summary_es"
     t.text     "summary_ca"
     t.text     "summary_en"
-    t.string   "title_en",          :limit => 50
-    t.string   "slug_en",           :limit => 50
-    t.string   "question_es",       :limit => 300
-    t.string   "question_ca",       :limit => 300
-    t.string   "question_en",       :limit => 300
+    t.string   "title_en",    :limit => 50
+    t.string   "slug_en",     :limit => 50
+    t.string   "question_es", :limit => 300
+    t.string   "question_ca", :limit => 300
+    t.string   "question_en", :limit => 300
   end
 
   add_index "phases", ["slug_ca"], :name => "index_phases_on_slug_ca"
@@ -321,7 +318,6 @@ ActiveRecord::Schema.define(:version => 20121103111732) do
     t.string   "body_type",          :limit => 16
     t.integer  "position"
     t.integer  "kudos_count",                        :default => 0
-    t.integer  "subscribers_count",                  :default => 0
     t.integer  "view_count",                         :default => 0
     t.text     "summary_es"
     t.text     "summary_ca"
@@ -366,16 +362,6 @@ ActiveRecord::Schema.define(:version => 20121103111732) do
   add_index "sections", ["document_type", "document_id", "lang"], :name => "index_sections_on_document_type_and_document_id_and_lang"
   add_index "sections", ["document_type", "document_id"], :name => "index_sections_on_document_type_and_document_id"
   add_index "sections", ["position"], :name => "index_sections_on_position"
-
-  create_table "subscribers", :force => true do |t|
-    t.integer  "document_id"
-    t.string   "document_type", :limit => 16
-    t.integer  "user_id"
-    t.datetime "created_at"
-  end
-
-  add_index "subscribers", ["document_type", "document_id"], :name => "index_subscribers_on_document_type_and_document_id"
-  add_index "subscribers", ["user_id"], :name => "index_subscribers_on_user_id"
 
   create_table "versions", :force => true do |t|
     t.string   "item_type",                    :null => false

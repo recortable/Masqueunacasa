@@ -93,7 +93,6 @@ Masqueunacasa::Application.routes.draw do
       get :dashboard, on: :collection
       resources :locations
       resources :links
-      resources :subscribers, only: [:create, :destroy]
       resources :images
     end
 
@@ -101,13 +100,11 @@ Masqueunacasa::Application.routes.draw do
     resources :categories, only: [:show], concerns: [:document, :position] do
       get :dashboard, on: :collection
       resources :proposals, only: [:new]
-      resources :subscribers, only: [:create, :destroy]
     end
 
     resources :proposals, except: [:new], path: '/phases/proposals', concerns: [:document, :position] do
       get :dashboard, on: :collection
       resources :relations, only: [:new, :create, :destroy]
-      resources :subscribers, only: [:create, :destroy]
       resources :links
     end
 
@@ -115,7 +112,6 @@ Masqueunacasa::Application.routes.draw do
 
     resources :phases, only: [:show, :update, :destroy], concerns: [:document] do
       resources :categories, except: [:index], path: ''
-      resources :subscribers, only: [:create, :destroy]
     end
   end
 

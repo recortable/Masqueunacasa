@@ -5,12 +5,6 @@
       <%= link_to "#{model.kudos_count} favoritos", [model, :kudos], method: :put %>
     </td>
   </tr>
-  <tr>
-    <td class="subscriptors">
-      <%= link_to icon('globe'), '#' %>
-      <%= model.view_count %> visitas.
-    </td>
-  </tr>
 </table>
 <table class="table">
   <% if model.respond_to?(:editorships_count) %>
@@ -21,31 +15,6 @@
       </td>
     </tr>
   <% end %>
-  <% if false %>
-  <% if model.respond_to?(:subscriptors) %>
-    <tr>
-      <td class="">
-        <%= icon('eye-open') %>
-        <%= link_to "#{model.subscribers_count} seguidores", polymorphic_path([model, :edition]), class: '' %>
-      </td>
-    </tr>
-  <% end %>
-  <% if model.respond_to?(:subscriptors) && current_user %>
-    <tr><td class="">
-        <% if model.subscriptor?(current_user) %>
-          <%= icon('eye-close') %>
-          <%= link_to 'Dejar de seguir',
-            polymorphic_path([model, model.subscription(current_user)]), 
-            rel: 'unfollow-document', method: :delete, data: { confirm: '¿Dejar de seguir?' } %>
-        <% else %>
-          <%= icon('eye-open') %>
-          <%= link_to 'Seguir', 
-            polymorphic_path([model, :subscribers], u: current_user.id), 
-            rel: 'follow-document', method: :post %>
-        <% end %>
-    </tr></td>
-  <% end %>
-<% end %>
 </table>
 
 <table class="table social">

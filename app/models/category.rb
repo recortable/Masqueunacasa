@@ -22,7 +22,6 @@ class Category < ActiveRecord::Base
   include HasSections
   include HasEditors
   include HasPopularity
-  include HasSubscriptors
 
   after_save :propagate_phases
 

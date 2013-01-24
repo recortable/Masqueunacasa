@@ -28,7 +28,6 @@ class Proposal < ActiveRecord::Base
 
   include HasSections
   include HasPopularity
-  include HasSubscriptors
   include HasEditors
   include HasLinks
 
