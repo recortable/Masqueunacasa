@@ -41,9 +41,6 @@ class Ability
 
       can(:manage, Post) {|post| participant?(current_group, user) }
       can(:destroy, Post, user_id: user.id)
-      can(:manage, Page) {|page| participant?(page.group, user) }
-      can(:manage, Announcement) {|ann| participant?(ann.group, user) }
-      cannot :destroy, Announcement
   end
 
   def anonymous_abilities

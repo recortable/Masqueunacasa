@@ -17,11 +17,6 @@ es:
       groups: Colectivos
       community: 'Comunidad'
 
-  announcements:
-    index:
-      title: Correo de %{group}
-      read_more: Leer el comunicado completo
-
     notices:
       created: 'Mensaje colectivo preparado.'
       updated: 'Mensaje colectivo modificado.'

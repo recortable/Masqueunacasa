@@ -1,9 +1,0 @@
-<% if @notice %>
-  ** <%= @notice %> **
-<% end %>
-
-<%= t("announcement_mailer.intro_text", group: @message.group.name) %>
-
-<%= @message.title.upcase %>
-
-<%= strip_tags @message.body %>  

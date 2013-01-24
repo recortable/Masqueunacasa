@@ -4,11 +4,11 @@ class Group < Agent
   has_paper_trail meta: {title: :title, group_id: :id, item_type: 'Group' }
 
   attr_accessible :user_id, :memberships_count, :banner_image
-  attr_accessible :has_blog, :has_pages, :has_announcements
+  attr_accessible :has_blog, :has_pages
 
-  store :settings, accessors: [:has_blog, :has_pages, :has_announcements, :last_mail_at, :last_mailer_try_at]
+  store :settings, accessors: [:has_blog, :last_mail_at, :last_mailer_try_at]
 
-  [:has_blog, :has_pages, :has_announcements].each do |name|
+  [:has_blog].each do |name|
     define_method "#{name}?" do
       self.send(name) == '1'
     end
@@ -22,9 +22,7 @@ class Group < Agent
 
   belongs_to :user
   has_many :posts
-  has_many :pages
   has_many :messages
-  has_many :announcements
   include HasMemberships
 
   mount_uploader :banner_image, GroupBannerUploader

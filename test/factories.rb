@@ -29,9 +29,6 @@ FactoryGirl.define do
   factory :post, parent: :content, class: Post do
   end
 
-  factory :page, parent: :content, class: Page do
-  end
-
   factory :phase do
     sequence(:title_es) {|n| "Fase es #{n}"}
     sequence(:title_ca) {|n| "Fase ca #{n}"}
@@ -68,13 +65,6 @@ FactoryGirl.define do
   factory :message do
     sequence(:body) {|n| "Message body #{n}" }
     user
-  end
-
-  factory :announcement do
-    sequence(:title) {|n| "Announcement #{n}" }
-    body { "#{title} body" }
-    user
-    group
   end
 
   factory :link do

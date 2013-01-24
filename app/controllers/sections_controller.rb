@@ -2,12 +2,12 @@
 class SectionsController < ApplicationController
   respond_to :html
 
-  expose_parent :document, [:phase, :category, :proposal, :experiencie, :post, :page, :user, :group]
+  expose_parent :document, [:phase, :category, :proposal, :experiencie, :post, :user, :group]
   expose(:sections) { document.sections(:es) }
   expose(:section)
 
   expose(:with_banner) do
-    [:Page, :Group, :Post].include?(document.class.to_s.to_sym)
+    [:Group, :Post].include?(document.class.to_s.to_sym)
   end
 
   def new

@@ -3,8 +3,5 @@
   <% if group.has_blog? %>
     <tr><td><h4><%= link_to_unless_current 'Visitar el blog', posts_url(subdomain: group.subdomain) %></h4></td></tr>
   <% end %>
-  <% if group.has_pages? %>
-    <tr><td><h4><%= link_to_unless_current 'Documentos', pages_url(subdomain: group) %></h4></td></tr>
-  <% end %>
 </table>
 

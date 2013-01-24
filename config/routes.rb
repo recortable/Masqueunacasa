@@ -30,7 +30,6 @@ Masqueunacasa::Application.routes.draw do
     resources :kudos
     resources :locations
   end
-  resources :pages, concerns: [:document]
 
   resources :posts, concerns: [:document] do
     get :dashboard, on: :collection
@@ -40,11 +39,6 @@ Masqueunacasa::Application.routes.draw do
   resources :memberships, only: [:new, :create, :destroy]
 
   resource :profile, only: [:show, :edit] 
-
-  resources :announcements do
-    put :send_email, on: :member
-    put :probe, on: :member
-  end
 
   # GENERAL
   resources :images, only: [:up, :down], concerns: :position do

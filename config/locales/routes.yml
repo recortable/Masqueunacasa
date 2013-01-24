@@ -1,6 +1,5 @@
 es:
   routes:
-    announcements: 'noticias'
     categories: 'preguntas'
     community: 'comunidad'
     experiencies: 'experiencias'
@@ -30,7 +29,6 @@ es:
 
 ca:
   routes:
-    announcements: 'noticias'
     categories: 'preguntas'
     community: 'comunidad'
     experiencies: 'experiencias'
@@ -60,7 +58,6 @@ ca:
 
 en:
   routes:
-    announcements: 'noticias'
     categories: 'preguntas'
     community: 'comunidad'
     experiencies: 'experiencias'

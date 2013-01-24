@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124204514) do
+ActiveRecord::Schema.define(:version => 20130124211424) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -42,20 +42,6 @@ ActiveRecord::Schema.define(:version => 20130124204514) do
   add_index "agents", ["email"], :name => "index_agents_on_email"
   add_index "agents", ["slug"], :name => "index_agents_on_slug"
   add_index "agents", ["type"], :name => "index_agents_on_type"
-
-  create_table "announcements", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "group_id"
-    t.string   "scope",      :limit => 20
-    t.string   "title",      :limit => 300
-    t.text     "body"
-    t.datetime "sent_at"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-  end
-
-  add_index "announcements", ["group_id"], :name => "index_announcements_on_group_id"
-  add_index "announcements", ["user_id"], :name => "index_announcements_on_user_id"
 
   create_table "categories", :force => true do |t|
     t.integer  "phase_id"

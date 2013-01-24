@@ -1,7 +1,7 @@
 class KudosController < ApplicationController
   respond_to :html, :json
 
-  expose_parent :document, [:phase, :category, :proposal, :experiencie, :post, :page]
+  expose_parent :document, [:phase, :category, :proposal, :experiencie, :post]
 
 
   def update

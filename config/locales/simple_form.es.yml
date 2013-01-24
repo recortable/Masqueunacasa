@@ -25,9 +25,6 @@ es:
         title_ca: 'Título can catalán'
         url: 'Enlace'
 
-      announcement:
-        scope: 'Quién recibirá el correo'
-
       category:
         name: 'Nombre corto'
         title: 'Pregunta'

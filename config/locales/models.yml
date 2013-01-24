@@ -1,7 +1,6 @@
 es:
   activerecord:
     models:
-      announcement: 'mensaje colectivo'
       user: 'perfil'
       content: 'entrada'
       page: 'documento'
@@ -18,11 +17,6 @@ es:
       image: 'imágen'
       link: 'recurso'
       agent: 'grupo'
-
-  announcement:
-    scopes:
-      members: 'Los participantes del grupo'
-      all: 'Los participantes y los seguidores del grupo'
 
   versions:
     events:

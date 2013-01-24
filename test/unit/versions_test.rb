@@ -42,11 +42,6 @@ describe Version do
     verify(p, title: p.title, group: p.group)
   end
 
-  it 'version created by page' do
-    p = create(:page)
-    verify(p, title: p.title, group: p.group)
-  end
-
   it 'version created by group' do
     g = create(:group)
     verify(g, title: g.title, group: g)

@@ -13,10 +13,10 @@ module ExposeResource
       expose(name) do
         parent_name = names.find {|n| params["#{n}_id"].present? }
         if parent_name.present?
-        klass = parent_name.to_s.camelcase.constantize
-        klass.find(params["#{parent_name}_id"])
+          klass = parent_name.to_s.camelcase.constantize
+          klass.find(params["#{parent_name}_id"])
         else
-        instance_eval(&options[:default]) 
+          instance_eval(&options[:default]) 
         end
       end
     end
