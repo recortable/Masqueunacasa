@@ -24,6 +24,7 @@ gem 'friendly_id'
 gem 'paper_trail'
 gem 'acts_as_list'
 gem 'texticle', '~> 2.0'#, :require => 'texticle/rails'
+gem 'globalize3'
 
 # Para subir ficheros e imágenes al servidor
 gem "mini_magick" # Para modificar imágenes (lo usa carrierwave)
@@ -73,6 +74,12 @@ group :development do
   gem 'letter_opener'
   gem 'quiet_assets'
   gem 'thin'
+  gem 'hirb'  ## Nice db outputs on rails console. Enable with Hirb.enable
+
+  ## http://railscasts.com/episodes/402-better-errors-railspanel
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
 end
 
 group :test do

@@ -43,6 +43,10 @@ GEM
     arel (3.0.2)
     basic_config (0.1.0)
     bcrypt-ruby (3.0.1)
+    better_errors (0.3.2)
+      coderay (>= 1.0.0)
+      erubis (>= 2.7.0)
+    binding_of_caller (0.6.8)
     bootstrap-sass (2.2.2.0)
       sass (~> 3.2)
     bourbon (3.0.1)
@@ -72,6 +76,7 @@ GEM
       activesupport (>= 3.2.0)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
+    coderay (1.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -111,8 +116,13 @@ GEM
       sass-rails (>= 3.1.1)
     formatador (0.2.4)
     friendly_id (4.0.9)
+    globalize3 (0.3.0)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      paper_trail (~> 2)
     highline (1.6.15)
     hike (1.2.1)
+    hirb (0.7.0)
     hoptoad_notifier (2.4.11)
       activesupport
       builder
@@ -257,6 +267,8 @@ DEPENDENCIES
   acts_as_list
   basic_config
   bcrypt-ruby (~> 3.0.0)
+  better_errors
+  binding_of_caller
   bootstrap-sass
   bourbon
   breadcrumbs_on_rails
@@ -273,6 +285,8 @@ DEPENDENCIES
   fog
   font-awesome-sass-rails
   friendly_id
+  globalize3
+  hirb
   hoptoad_notifier
   hpricot
   http_accept_language
