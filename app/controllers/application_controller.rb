@@ -32,14 +32,13 @@ class ApplicationController < ActionController::Base
     path.present? ? path : root_path
   end
 
-  VALID_LOCALES = ['es', 'ca', 'en']
   def set_locale
     locale = params[:locale]
-    unless locale.present? and VALID_LOCALES.include?(locale)
+    unless locale.present? and I18n.available_locales.include?(locale.to_sym)
       location = request.fullpath
-      locale = request.compatible_language_from(VALID_LOCALES) || I18n.default_locale
+      locale = request.compatible_language_from(I18n.available_locales) || I18n.default_locale
       location = '/' + locale.to_s + location
-      redirect_to location
+      redirect_to location, status: :moved_permanently
     end
   end
 
@@ -47,12 +46,16 @@ class ApplicationController < ActionController::Base
     redirect_to url_for(subdomain: false) if request.subdomain.present?
   end
 
-  rescue_from ActionView::MissingTemplate do |exception|
-    raise ActionController::RoutingError.new "No route matches '#{request.fullpath}'"
-  end
-
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, alert: 'No puedes entrar ahí...'
   end
 
+  ## Al final de routes.rb hay una directiva que captura todas las urls y las 'mapea' al método set_locale.
+  ## Esto es para mantener el soporte a antiguas rutas sin el prefijo de idioma, pero puede que se lance la
+  ## excepción ActionView::MissingTemplate en aquellas rutas para las que no haya ningún controlador ni acción.
+  rescue_from ActionView::MissingTemplate do |exception|
+    controller_name == "application" ?
+      raise(ActionController::RoutingError.new "No route matches '#{request.fullpath}'") :
+      raise(exception)
+  end
 end
