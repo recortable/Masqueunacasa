@@ -1,3 +1,4 @@
+# encoding: utf-8
 module LayoutHelper
 
   def main_content_span_size
@@ -62,6 +63,13 @@ module LayoutHelper
 
   def active?(tab_name)
     return 'active' if tab_name == @active_tab
+  end
+
+  def language_selector
+    ca = link_to_unless_current 'cat', url_for(locale: 'ca')
+    es = link_to_unless_current 'cast', url_for(locale: 'es')
+    en = link_to_unless_current 'eng', url_for(locale: 'en')
+    "<li title='Castellano'>#{es}</li> | <li title='Català'>#{ca}</li> | <li title='English'>#{en}</li>".html_safe
   end
 
   private

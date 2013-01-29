@@ -2,6 +2,25 @@ body {
   background-color: transparent;
 }
 
+#languages {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+#language-selector {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  list-style: none;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+
+  li {
+    display: inline;
+    margin: 0.4em;
+  }
+}
+
 .corner {
   height: 30px;
   background: image-url('pl-1170.png') no-repeat;

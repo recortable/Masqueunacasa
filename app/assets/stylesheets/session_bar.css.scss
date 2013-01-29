@@ -1,117 +1,114 @@
-body {
-  padding-top: 40px;
+#session {
+  margin-bottom: 0;
+  background-color: transparent !important;
+  font-size: 12px;
 
-  #session {
-    margin-bottom: 0;
-    background-color: transparent !important;
-    font-size: 12px;
-
-    .navbar-inner {
-      min-height: 0;
-      padding: 0 2px 0 29px;
-      border: 0;
-      box-shadow: none;
-      border-radius: 0;
-      background: transparent;
-      filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
+  .navbar-inner {
+    min-height: 0;
+    padding: 0 2px 0 29px;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    background: transparent;
+    filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
 
 
-      li {
-        a {
-          margin: 0 2px;
-          padding: 0;
-          line-height: 20px;
-          color: $fondo;
-          text-transform: uppercase;
-          font-weight: normal;
-          text-shadow: none;
+    li {
+      a {
+        margin: 0 2px;
+        padding: 0;
+        line-height: 20px;
+        color: $fondo;
+        text-transform: uppercase;
+        font-weight: normal;
+        text-shadow: none;
 
-          &:hover {
-            color: $negro;
-          }
+        &:hover {
+          color: $negro;
         }
       }
+    }
 
-      .primary-links, .secondary-links {
-        a {
-          margin-right: 14px;
-          padding: 0 12px 0 2px;
-          position: relative;
-          left: 12px;
-          background: image-url('boton_about.png') repeat-x 0 -20px;
+    .primary-links, .secondary-links {
+      a {
+        margin-right: 14px;
+        padding: 0 12px 0 2px;
+        position: relative;
+        left: 12px;
+        background: image-url('boton_about.png') repeat-x 0 -20px;
+
+        &:before {
+          content: "";
+          width: 12px;
+          height: 20px;
+          display: block;
+          float: left;
+          position: absolute;
+          left: -12px;
+          background: image-url('boton_about-left.png') no-repeat 0 -20px;
+        }
+
+        &:hover {
+          background-position: 0 0;
 
           &:before {
-            content: "";
-            width: 12px;
-            height: 20px;
-            display: block;
-            float: left;
-            position: absolute;
-            left: -12px;
-            background: image-url('boton_about-left.png') no-repeat 0 -20px;
-          }
-
-          &:hover {
             background-position: 0 0;
-
-            &:before {
-              background-position: 0 0;
-            }
           }
-        }
-
-        li.active a, li.active a:before {
-          color: $negro;
-          background-position: 0 0;
-          box-shadow: none;
         }
       }
 
-      .session-links {
-        text-align: center;
+      li.active a, li.active a:before {
+        color: $negro;
+        background-position: 0 0;
+        box-shadow: none;
+      }
+    }
 
-        li {
-          margin-left: 2px;
+    .session-links {
+      text-align: center;
+
+      li {
+        margin-left: 2px;
+      }
+
+      .login, .user {
+        width: 100%;
+        float: left;
+        background: image-url('iniciarsesion-center.png') repeat-x 0 -20px;
+        @include three_parts_link(12px, 20px, 'iniciarsesion-left.png',
+        'iniciarsesion-right.png');
+
+        &:before, &:after {
+          background-position: 0 -20px;
         }
 
-        .login, .user {
-          width: 100%;
-          float: left;
-          background: image-url('iniciarsesion-center.png') repeat-x 0 -20px;
-          @include three_parts_link(12px, 20px, 'iniciarsesion-left.png',
-          'iniciarsesion-right.png');
+        &:hover {
+          background-position: 0 0;
 
-          &:before, &:after {
-            background-position: 0 -20px;
-          }
-
-          &:hover {
+          &:after, &:before {
             background-position: 0 0;
-
-            &:after, &:before {
-              background-position: 0 0;
-            }
           }
         }
+      }
 
-        .logout {
-          background: image-url('iniciarsesion-center.png') repeat-x 0 -20px;
-          @include three_parts_link(12px, 20px, 'salir-left.png',
-          'salir-right.png');
+      .logout {
+        background: image-url('iniciarsesion-center.png') repeat-x 0 -20px;
+        @include three_parts_link(12px, 20px, 'salir-left.png',
+        'salir-right.png');
 
-          &:before, &:after {
-            background-position: 0 -20px;
-          }
+        &:before, &:after {
+          background-position: 0 -20px;
+        }
 
-          &:hover {
+        &:hover {
+          background-position: 0 0;
+
+          &:after, &:before {
             background-position: 0 0;
-
-            &:after, &:before {
-              background-position: 0 0;
-            }
           }
         }
       }
     }
   }
 }
+

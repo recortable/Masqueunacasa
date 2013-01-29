@@ -20,67 +20,74 @@
 <%= yield :head %>
 </head>
 <body class="<%= controller_class %> <%= themes %> <%= subdomain_class %>">
-<%= render 'flashes' %>
-<%= render 'session' %>
+<div id="wrapper">
+  <div class="container" id="languages">
+    <ul id="language-selector">
+      <%= language_selector.html_safe %>
+    </ul>
+  </div>
+  <%= render 'flashes' %>
+  <%= render 'session' %>
 
-<div id="main" class="container">
-  <header>
-    <% if front? %>
-      <%= image_tag('logo_inicio.png', alt: 'Procesos colectivos de vivienda', class: 'responsive') %>
-  <% else %>
-      <%= header %>
-    <div class="headrow">
-      <div class="breadcrumbs">
-        <%= render_breadcrumbs :separator => ' / ' %>
+  <div id="main" class="container">
+    <header>
+      <% if front? %>
+        <%= image_tag('logo_inicio.png', alt: 'Procesos colectivos de vivienda', class: 'responsive') %>
+    <% else %>
+        <%= header %>
+      <div class="headrow">
+        <div class="breadcrumbs">
+          <%= render_breadcrumbs :separator => ' / ' %>
+        </div>
+      </div>
+    <% end %>
+    </header>
+    <div id="page_content">
+      <div class="row mainrow">
+        <% if content_for? :left %>
+          <div class="span2 sidebar left">
+            <%= yield :left %>
+          </div>
+        <% end %>
+
+        <%# CUANDO TODAS LAS VISTAS USEN CONTENT_FOR, 
+          ESTE HACK SE PUEDE BORRAR %>
+        <% size = main_content_span_size %>
+        <% if size == 12 %>
+          <%= yield %>
+        <% else %>
+          <div class="span<%= size %> main-content">
+            <%= yield %>
+          </div>
+        <% end %>
+
+        <% if content_for? :right %>
+          <div class="span4 sidebar right">
+            <%= yield :right %>
+          </div>
+        <% end %>
+      </div> <!-- mainrow -->
+
+      <div class="row ajaxrow">
+        <%= yield :ajaxrow %>
       </div>
     </div>
-  <% end %>
-  </header>
-  <div id="page_content">
-    <div class="row mainrow">
-      <% if content_for? :left %>
-        <div class="span2 sidebar left">
-          <%= yield :left %>
-        </div>
-      <% end %>
-
-      <%# CUANDO TODAS LAS VISTAS USEN CONTENT_FOR, 
-        ESTE HACK SE PUEDE BORRAR %>
-      <% size = main_content_span_size %>
-      <% if size == 12 %>
-        <%= yield %>
-      <% else %>
-        <div class="span<%= size %> main-content">
-          <%= yield %>
-        </div>
-      <% end %>
-
-      <% if content_for? :right %>
-        <div class="span4 sidebar right">
-          <%= yield :right %>
-        </div>
-      <% end %>
-    </div> <!-- mainrow -->
-
-    <div class="row ajaxrow">
-      <%= yield :ajaxrow %>
+  </div>
+  <div id="credits" class="container">
+    <div class="row">
+      <div class="span12">
+        <%= link_to image_tag('http://i.creativecommons.org/l/by-sa/3.0/80x15.png'), licencia_static_page_path %>
+        <%= link_to 'FAQ', faq_static_page_path %>
+        <%= link_to 'Créditos', creditos_static_page_path %>
+        <%= link_to icon('twitter'), 'http://twitter.com/masqueunacasa', target: '_blank' %>
+        <%= link_to icon('envelope', 'hola@masqueunacasa.org'), 'mailto:hola@masqueunacasa.org' %>
+      </div>
     </div>
   </div>
-</div>
-<div id="credits" class="container">
-  <div class="row">
-    <div class="span12">
-      <%= link_to image_tag('http://i.creativecommons.org/l/by-sa/3.0/80x15.png'), licencia_static_page_path %>
-      <%= link_to 'FAQ', faq_static_page_path %>
-      <%= link_to 'Créditos', creditos_static_page_path %>
-      <%= link_to icon('twitter'), 'http://twitter.com/masqueunacasa', target: '_blank' %>
-      <%= link_to icon('envelope', 'hola@masqueunacasa.org'), 'mailto:hola@masqueunacasa.org' %>
-    </div>
+  <%= render 'layouts/ga' %>
+  <div style="display:none">
+    Masqueunacasa version <%= ENV["RAILS_APP_VERSION"] %>. AGPL3
   </div>
-</div>
-<%= render 'layouts/ga' %>
-<div style="display:none">
-  Masqueunacasa version <%= ENV["RAILS_APP_VERSION"] %>. AGPL3
 </div>
 </body>
 </html>
