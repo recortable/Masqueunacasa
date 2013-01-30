@@ -28,11 +28,46 @@ form {
   }
 }
 
-#content-options-selector {
-  padding-bottom: 0;
+textarea {
+  max-height: 15em;
+}
 
-  label {
-    display: inline;
-    margin-right: 50px;
+fieldset {
+  border: 2px solid $negro;
+  margin: 0 0 1em;
+  padding: 0 0.625em 0.75em;
+}
+
+form .fields {
+  position: relative;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  padding-left: 2em;
+  border-radius: 5px;
+  background: #d6d6d6;
+  @include clearfix;
+
+  .remove_nested_fields {
+    float: right;
   }
+
+  input, textarea {
+    max-width: 95%;
+  }
+
+  .handle {
+    width: 1.5em;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background: transparent image-url('draggable.png') no-repeat center center;
+    border-right: 1px solid #999;
+    cursor: move;
+  }
+}
+
+.add_nested_fields_controls {
+  margin: 20px 0 0;
 }

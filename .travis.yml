@@ -9,3 +9,7 @@ script:
 before_script:
   - psql -c 'create database myapp_test' -U postgres
 bundler_args: --binstubs=./bundler_stubs
+
+branches:
+  only:
+    - master
