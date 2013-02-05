@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124211424) do
+ActiveRecord::Schema.define(:version => 20130205192518) do
 
   create_table "agents", :force => true do |t|
     t.string   "type",                 :limit => 8
@@ -158,6 +158,17 @@ ActiveRecord::Schema.define(:version => 20130124211424) do
   add_index "experiencies", ["slug_ca"], :name => "index_experiencies_on_slug_ca"
   add_index "experiencies", ["slug_es"], :name => "index_experiencies_on_slug_es"
   add_index "experiencies", ["user_id"], :name => "index_experiencies_on_user_id"
+
+  create_table "friendly_id_slugs", :force => true do |t|
+    t.string   "slug",                         :null => false
+    t.integer  "sluggable_id",                 :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
+  add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "images", :force => true do |t|
     t.string  "title",              :limit => 200

@@ -1,13 +1,15 @@
 class Category < ActiveRecord::Base
+
   include Translatable
+  translates :name, :slug, :title, :summary, :body
+  translation_required :title, :slug, :name
+
   extend FriendlyId
-  friendly_id :name, use: :simple_i18n
+  friendly_id :name, use: [:slugged, :simple_i18n, :history]
+
   acts_as_list scope: :phase_id
   has_paper_trail meta: {title: :title}
   mount_uploader :image, CategoryImageUploader
-
-  translates :name, :slug, :title, :summary, :body
-  translation_required :title, :slug, :name
 
   attr_accessible :name, :title, :summary, :body, :body_type
   attr_accessible :user_id, :user, :phase_id, :phase

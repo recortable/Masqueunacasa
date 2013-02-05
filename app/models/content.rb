@@ -2,8 +2,10 @@ class Content < ActiveRecord::Base
   include ActionView::Helpers::SanitizeHelper
   include Translatable
   include HasPopularity
+
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title, use: [:slugged, :simple_i18n, :history]
+
   has_paper_trail meta: {title: :title, group_id: :group_id }
   before_save :clean_input
 

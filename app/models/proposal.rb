@@ -1,8 +1,10 @@
 class Proposal < ActiveRecord::Base
   has_paper_trail meta: {title: :title, group_id: :group_id }
   acts_as_list scope: :category_id
+
   extend FriendlyId
-  friendly_id :title, use: :simple_i18n
+  friendly_id :title, use: [:slugged, :simple_i18n, :history]
+  
   include Translatable
   translates :title, :body, :slug, :description, :summary
   translation_required :title, :slug

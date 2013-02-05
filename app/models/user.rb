@@ -1,6 +1,6 @@
 class User < Agent
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: [:slugged, :history]
 
   attr_accessible :login_count, :last_login_at
   attr_accessible :password, :password_confirmation

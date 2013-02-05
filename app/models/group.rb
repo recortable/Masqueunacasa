@@ -1,6 +1,8 @@
 class Group < Agent
+
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: [:slugged, :history]
+
   has_paper_trail meta: {title: :title, group_id: :id, item_type: 'Group' }
 
   attr_accessible :user_id, :memberships_count, :banner_image

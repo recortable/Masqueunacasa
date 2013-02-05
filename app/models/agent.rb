@@ -1,6 +1,6 @@
 class Agent < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: [:slugged, :history]
 
   attr_accessible :name, :title, :email
   attr_accessible :admin, :avatar_image
