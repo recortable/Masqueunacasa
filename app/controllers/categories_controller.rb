@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  include SlugRedirections
+
   respond_to :html
 
   include HasListActions

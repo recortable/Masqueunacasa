@@ -2,7 +2,7 @@ class Phase < ActiveRecord::Base
   translates :title, :summary, :question
 
   extend FriendlyId
-  friendly_id :title, use: :simple_i18n
+  friendly_id :title, use: [:simple_i18n, :history]
   include HasTranslatedSlugs
 
   attr_accessible :title, :question, :summary

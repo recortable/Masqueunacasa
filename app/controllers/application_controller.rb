@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   include HasResource
   protect_from_forgery
 
+  before_filter :locale_changed?
   before_filter :set_locale
   before_filter :set_locale_from_url
 
@@ -40,6 +41,8 @@ class ApplicationController < ActionController::Base
       location = '/' + locale.to_s + location
       redirect_to location, status: :moved_permanently
     end
+
+    session[:last_locale] = locale
   end
 
   def require_root_domain
@@ -57,5 +60,11 @@ class ApplicationController < ActionController::Base
     controller_name == "application" ?
       raise(ActionController::RoutingError.new "No route matches '#{request.fullpath}'") :
       raise(exception)
+  end
+
+  private
+
+  def locale_changed?
+    @locale_changed = params[:locale] != session[:last_locale]
   end
 end

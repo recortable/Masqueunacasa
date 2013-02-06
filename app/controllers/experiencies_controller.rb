@@ -1,4 +1,6 @@
 class ExperienciesController < ApplicationController
+  include SlugRedirections
+
   respond_to :html
 
   expose(:themes) { 'textura09 negro' }
