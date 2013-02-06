@@ -13,4 +13,22 @@ module HasTranslatedSlugs
   def slug
     send("slug_#{I18n.locale}")
   end
+
 end
+
+module FriendlyId
+  module History
+
+    # Adds a finder that explictly uses slugs from the slug table.
+    module FinderMethods
+      # Search for a record in the slugs table using the specified slug.
+      def find_one(id)
+        return super(id) if id.unfriendly_id?
+        where("slug_es = ? OR slug_ca = ? OR slug_en = ?", id, id, id).first or
+        with_old_friendly_id(id) {|x| find_one_without_friendly_id(x)} or
+        find_one_without_friendly_id(id)
+      end
+    end
+  end
+end
+
