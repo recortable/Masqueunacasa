@@ -50,6 +50,7 @@ gem 'hpricot'
 gem 'jbuilder' # Para enviar json fácilmente
 gem 'ie_conditional_tag' # Para meter el html tag con clases especiales según la version de explorer
 gem 'truncate_html' # Para poder recortar un texto en html sin que se estropee la estructura
+gem 'htmlentities'
 #gem 'roadie' # P#ara meter css en los emails
 gem 'premailer-rails3'
 gem "breadcrumbs_on_rails"

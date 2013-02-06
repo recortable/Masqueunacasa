@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206010127) do
+ActiveRecord::Schema.define(:version => 20130206075656) do
 
   create_table "agent_translations", :force => true do |t|
     t.integer  "agent_id"
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(:version => 20130206010127) do
   add_index "content_translations", ["locale"], :name => "index_content_translations_on_locale"
 
   create_table "contents", :force => true do |t|
+    t.string   "slug_es"
     t.string   "type",              :limit => 32
     t.integer  "user_id"
     t.integer  "group_id"
@@ -133,7 +134,6 @@ ActiveRecord::Schema.define(:version => 20130206010127) do
     t.integer  "subscribers_count",                :default => 0
     t.integer  "view_count",                       :default => 0
     t.integer  "editorships_count",                :default => 0
-    t.string   "slug_es",           :limit => 100
     t.string   "slug_ca",           :limit => 100
     t.string   "slug_en",           :limit => 100
   end

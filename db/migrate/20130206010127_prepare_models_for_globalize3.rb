@@ -45,9 +45,7 @@ class PrepareModelsForGlobalize3 < ActiveRecord::Migration
     remove_column :experiencies, :title_ca,
                                  :body_ca,
                                  :summary_ca,
-                                 :title_en,
-                                 :summary_en,
-                                 :body_en
+                                 :summary_en
 
     rename_column :experiencies, :title_es, :title
     rename_column :experiencies, :summary_es, :summary
@@ -185,9 +183,7 @@ class PrepareModelsForGlobalize3 < ActiveRecord::Migration
     add_column :experiencies, :title_ca, :string, limit: 300
     add_column :experiencies, :summary_ca, :text
     add_column :experiencies, :body_ca, :text
-    add_column :experiencies, :title_en, :string, limit: 300
     add_column :experiencies, :summary_en, :text
-    add_column :experiencies, :body_en, :text
 
     ## CONTENTS
     add_column :contents, :title, :string, limit: 300
