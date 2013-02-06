@@ -1,4 +1,3 @@
-
 <%= simple_form_for phase do |form| %>
   <div class="row">
     <div class="span4">
@@ -7,22 +6,9 @@
   </div>
   <div class="row">
     <div class="span4">
-      <h2>Castellano</h2>
-      <%= form.input :title_es %>
-      <%= form.input :question_es %>
-      <%= form.input :summary_es %>
-    </div>
-    <div class="span4">
-      <h2>Català</h2>
-      <%= form.input :title_ca %>
-      <%= form.input :question_ca %>
-      <%= form.input :summary_ca %>
-    </div>
-    <div class="span4">
-      <h2>English</h2>
-      <%= form.input :title_en %>
-      <%= form.input :question_en %>
-      <%= form.input :summary_en %>
+      <%= form.input :title %>
+      <%= form.input :question %>
+      <%= form.input :summary, as: :text %>
     </div>
   </div>
   <%= form.submit %>
