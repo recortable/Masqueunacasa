@@ -1,12 +1,14 @@
 class Phase < ActiveRecord::Base
-  attr_accessible :title_es, :title_ca, :title_en, :title
-  attr_accessible :question_es, :question_ca, :question_en, :question
-  attr_accessible :summary_es, :summary_ca, :summary_en, :summary
-  attr_accessible :position, :color
-  include Translatable
   translates :title, :summary, :question
 
-  validates_presence_of :title_es, :title_ca
+  extend FriendlyId
+  friendly_id :title, use: :simple_i18n
+  include HasTranslatedSlugs
+
+  attr_accessible :title, :question, :summary
+  attr_accessible :position, :color
+
+  validates_presence_of :title
 
   has_many :categories, order: :position
   has_many :proposals, order: 'kudos_count DESC, view_count DESC'
@@ -15,8 +17,6 @@ class Phase < ActiveRecord::Base
 
   default_scope order: :position
 
-  extend FriendlyId
-  friendly_id :title, use: :simple_i18n
   acts_as_list
 
   ICONS = ['organizacion', 'realizacion', 'uso']

@@ -1,11 +1,9 @@
 class Category < ActiveRecord::Base
-
-  include Translatable
-  translates :name, :slug, :title, :summary, :body
-  translation_required :title, :slug, :name
+  translates :title, :name, :summary, :body
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :simple_i18n, :history]
+  include HasTranslatedSlugs
 
   acts_as_list scope: :phase_id
   has_paper_trail meta: {title: :title}

@@ -1,10 +1,12 @@
 class Content < ActiveRecord::Base
+  translates :title, :summary, :body
+
   include ActionView::Helpers::SanitizeHelper
-  include Translatable
   include HasPopularity
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
+  include HasTranslatedSlugs
 
   has_paper_trail meta: {title: :title, group_id: :group_id }
   before_save :clean_input
@@ -18,13 +20,9 @@ class Content < ActiveRecord::Base
 
   attr_accessible :user_id, :group_id
   attr_accessible :title, :body
-  attr_accessible :title_es, :title_ca, :title_en
-  attr_accessible :body_es, :body_ca, :body_en
   attr_accessible :published_at
   attr_accessible :embed, :image, :link_url
   attr_accessible :group, :user
-
-  translates :title, :body
 
   validates :user_id, presence: true
   validates :group_id, presence: true

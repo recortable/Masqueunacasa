@@ -289,6 +289,7 @@ DEPENDENCIES
   hirb
   hoptoad_notifier
   hpricot
+  htmlentities
   http_accept_language
   ie_conditional_tag
   jbuilder

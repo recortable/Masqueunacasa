@@ -1,20 +1,16 @@
 class Experiencie < ActiveRecord::Base
-
-  include Translatable
+  translates :title, :summary, :body
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
+  include HasTranslatedSlugs
 
   has_paper_trail meta: { title: :title, group_id: :group_id }
-  translates :title, :body, :slug, :summary
-  translation_required :title, :slug
 
   attr_accessible :title, :body, :slug
   attr_accessible :summary
   attr_accessible :user_id, :group_id, :user, :group
   attr_accessible :published
-  attr_accessible :title_ca, :body_ca, :slug_ca
-  attr_accessible :title_es, :body_es, :slug_es
 
   attr_accessible :related_proposal_id
   attr_accessor :related_proposal_id
@@ -31,7 +27,6 @@ class Experiencie < ActiveRecord::Base
   include HasEditors
 
   validates_presence_of :title, :user
-  validates_uniqueness_of :title_es, :title_ca
 
   scope :published, where(published: true)
 

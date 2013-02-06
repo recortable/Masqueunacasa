@@ -1,5 +1,4 @@
 class Group < Agent
-
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
 

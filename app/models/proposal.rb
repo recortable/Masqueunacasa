@@ -1,24 +1,20 @@
 class Proposal < ActiveRecord::Base
+  translates :title, :description, :body, :summary
+
   has_paper_trail meta: {title: :title, group_id: :group_id }
   acts_as_list scope: :category_id
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
-  
-  include Translatable
-  translates :title, :body, :slug, :description, :summary
-  translation_required :title, :slug
+  include HasTranslatedSlugs
 
-  attr_accessible :title_es, :body_es, :description_es
-  attr_accessible :title_ca, :body_ca, :description_ca
   attr_accessible :user_id, :phase_id, :group_id, :category_id
   attr_accessible :user, :phase, :group, :category
-  attr_accessible :title, :body, :description
-  attr_accessible :summary
+  attr_accessible :title, :body, :description, :summary
   attr_accessible :published, :body_type
   attr_accessible :position
 
-  validates_presence_of :title, :title_es, :title_ca, :user, :category_id
+  validates_presence_of :title, :user, :category_id
 
   belongs_to :user
   belongs_to :group
