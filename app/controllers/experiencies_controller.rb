@@ -1,6 +1,4 @@
 class ExperienciesController < ApplicationController
-  include SlugRedirections
-
   respond_to :html
 
   expose(:themes) { 'textura09 negro' }
@@ -56,7 +54,7 @@ class ExperienciesController < ApplicationController
   def update
     authorize! :update, experiencie
     flash[:notice] = t('experiencies.notices.updated') if experiencie.save
-    respond_with experiencie 
+    respond_with experiencie
   end
 
   def destroy
