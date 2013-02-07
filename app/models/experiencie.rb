@@ -5,8 +5,6 @@ class Experiencie < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
   include HasTranslatedSlugs
 
-  has_paper_trail meta: { title: :title, group_id: :group_id }
-
   attr_accessible :title, :body, :slug
   attr_accessible :summary
   attr_accessible :user_id, :group_id, :user, :group

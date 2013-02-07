@@ -11,7 +11,6 @@ class Image < ActiveRecord::Base
 
   acts_as_list scope: [:imageable_type, :imageable_id]
   mount_uploader :image, ImageUploader
-  has_paper_trail meta: { title: :title, parent_title: :imageable_title, document: :imageable }
 
   private
   def image_xor_external_image_url

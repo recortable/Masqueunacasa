@@ -6,7 +6,6 @@ class Category < ActiveRecord::Base
   include HasTranslatedSlugs
 
   acts_as_list scope: :phase_id
-  has_paper_trail meta: {title: :title}
   mount_uploader :image, CategoryImageUploader
 
   attr_accessible :name, :title, :summary, :body, :body_type

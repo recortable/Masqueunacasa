@@ -22,7 +22,6 @@ class Section < ActiveRecord::Base
   scope :titled, where("title <> ''")
 
   acts_as_list scope: [:document_type, :document_id]
-  has_paper_trail meta: {title: :to_anchor, parent_title: :document_title, document: :document}
   include DocumentHasEditors
 
   mount_uploader :image, ImageUploader

@@ -304,7 +304,6 @@ DEPENDENCIES
   mini_magick
   minitest
   newrelic_rpm
-  paper_trail
   pg
   premailer-rails3
   quiet_assets

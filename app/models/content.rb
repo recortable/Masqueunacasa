@@ -8,7 +8,6 @@ class Content < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
   include HasTranslatedSlugs
 
-  has_paper_trail meta: {title: :title, group_id: :group_id }
   before_save :clean_input
 
   belongs_to :user

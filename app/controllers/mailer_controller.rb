@@ -1,11 +1,10 @@
 class MailerController < ApplicationController
   before_filter :require_admin, only: [:set, :test]
-  expose(:activities) { Activities.new }
 
   def info
   end
 
-  def test 
+  def test
     UserMailer.activity_email(current_user, activities).deliver
     render action: 'info'
   end

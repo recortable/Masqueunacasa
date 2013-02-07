@@ -21,7 +21,6 @@ end
 # Cosas de modelos
 gem 'bcrypt-ruby', '~> 3.0.0' # Para encriptar cosas, p.ej: password (MD5)
 gem 'friendly_id'
-gem 'paper_trail'
 gem 'acts_as_list'
 gem 'texticle', '~> 2.0'#, :require => 'texticle/rails'
 gem 'globalize3'

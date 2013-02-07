@@ -1,5 +1,5 @@
 Masqueunacasa::Application.routes.draw do
-  # CONCERNS 
+  # CONCERNS
   concern :document do
     resource :kudos
     resources :sections, except: [:index]
@@ -38,7 +38,7 @@ Masqueunacasa::Application.routes.draw do
   resources :messages, only: [:create, :show]
   resources :memberships, only: [:new, :create, :destroy]
 
-  resource :profile, only: [:show, :edit] 
+  resource :profile, only: [:show, :edit]
 
   # GENERAL
   resources :images, only: [:up, :down], concerns: :position do
@@ -65,7 +65,7 @@ Masqueunacasa::Application.routes.draw do
   root to: 'dashboard#welcome'
   WaxMuseum::Routes.draw
 
-  # Rutas sólo accesibles desde el dominio principal 
+  # Rutas sólo accesibles desde el dominio principal
   constraints subdomain: /^$/ do
     resources :user_sessions, only: [:new, :create, :destroy]
     resources :password_recoveries
@@ -78,8 +78,6 @@ Masqueunacasa::Application.routes.draw do
       resources :memberships
       resources :locations
     end
-    resources :versions
-
 
     # HABITAPEDIA
 

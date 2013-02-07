@@ -12,12 +12,6 @@ class Link < ActiveRecord::Base
 
   before_validation :set_content_type
 
-  has_paper_trail meta: { 
-    title: :title, 
-    parent_title: :document_title, 
-    document: :document
-  }
-
   def caption
     title.present? ? title : url
   end
