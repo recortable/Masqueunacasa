@@ -5,11 +5,11 @@ class ApplicationController < ActionController::Base
   include ExposeResource
   include HasBreadcrumbs
   include HasResource
-  include SlugRedirections
   protect_from_forgery
 
   before_filter :set_locale
   before_filter :set_locale_from_url
+  include SlugRedirections ## Tiene que ir después de :set_locale_from_url
 
   expose(:themes) { 'textura02 rojo' }
   expose(:site) { Site.new }

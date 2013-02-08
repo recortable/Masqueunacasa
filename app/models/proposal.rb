@@ -21,7 +21,7 @@ class Proposal < ActiveRecord::Base
   belongs_to :category, touch: true
 
   has_many :relations, dependent: :destroy
-  has_many :experiencies, through: :relations 
+  has_many :experiencies, through: :relations
 
   include HasSections
   include HasPopularity
