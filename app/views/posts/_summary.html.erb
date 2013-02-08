@@ -8,7 +8,7 @@
       </h4>
     </div>
     <%= render_post_media(post) %>
-    <%= markdown truncate_html(post.body, length: 500) %>
+    <%#= markdown truncate_html(post.body, length: 500) # Método truncate_html provoca error %>
     <%= markdown truncate(post.sections.first.body, length: 500) if post.sections.first %>
     <div class="links">
       <%= link_to t('read_more'), post_url(post, subdomain: post.group.slug), class: 'read-more' %>

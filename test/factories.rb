@@ -30,9 +30,8 @@ FactoryGirl.define do
   end
 
   factory :phase do
-    sequence(:title_es) {|n| "Fase es #{n}"}
-    sequence(:title_ca) {|n| "Fase ca #{n}"}
-    summary { "#{title_es} summary" }
+    sequence(:title) {|n| "Fase #{n}"}
+    summary { "#{title} summary" }
   end
 
   factory :category do
