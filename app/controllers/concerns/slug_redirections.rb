@@ -19,7 +19,7 @@ module SlugRedirections
 
     # Se recorren los parámetros y se buscan los slugs
     # correctos de cada objeto, cambiándolos en la url
-    for param in params_with_slugs
+    params_with_slugs.each do |param|
       key = param[0]
       value = param[1]
       if key == 'id'
@@ -27,7 +27,7 @@ module SlugRedirections
       else
         resource = key.gsub("_id", "").classify.constantize.find(value)
       end
-      new_url.gsub!("/#{value}", "/" + resource.send("slug") )
+      new_url.sub!("/#{value}", "/" + resource.send("slug") )
     end
 
     # Redireccionamos si la url resultante es diferente de la de la
