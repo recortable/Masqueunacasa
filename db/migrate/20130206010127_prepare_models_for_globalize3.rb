@@ -1,7 +1,7 @@
 class PrepareModelsForGlobalize3 < ActiveRecord::Migration
   def up
     ## CATEGORIES
-    remove_column :categories, :title_ca, :name_ca, :summary_ca, :body_ca
+    remove_column :categories, :title_ca, :name_ca, :summary_ca, :body_ca, :summary_en
 
     rename_column :categories, :title_es, :title
     rename_column :categories, :name_es, :name
@@ -218,5 +218,6 @@ class PrepareModelsForGlobalize3 < ActiveRecord::Migration
     add_column :categories, :name_ca, :string, limit: 100
     add_column :categories, :summary_ca, :text
     add_column :categories, :body_ca, :text
+    add_column :categories, :summary_en, :text
   end
 end

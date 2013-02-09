@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(:version => 20130207171139) do
     t.integer  "position"
     t.integer  "kudos_count",                      :default => 0
     t.integer  "view_count",                       :default => 0
-    t.text     "summary_en"
     t.integer  "editorships_count",                :default => 0
     t.string   "image"
     t.string   "slug_en",           :limit => 100
