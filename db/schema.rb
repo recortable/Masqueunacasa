@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130207171139) do
+ActiveRecord::Schema.define(:version => 20130209164211) do
 
   create_table "agent_translations", :force => true do |t|
     t.integer  "agent_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20130207171139) do
     t.string   "banner_image"
     t.datetime "created_at",                                         :null => false
     t.datetime "updated_at",                                         :null => false
+    t.string   "original_locale",      :limit => 4
   end
 
   add_index "agents", ["email"], :name => "index_agents_on_email"
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20130207171139) do
     t.integer  "editorships_count",                :default => 0
     t.string   "image"
     t.string   "slug_en",           :limit => 100
+    t.string   "original_locale",   :limit => 4
   end
 
   add_index "categories", ["phase_id"], :name => "index_categories_on_phase_id"
@@ -135,6 +137,7 @@ ActiveRecord::Schema.define(:version => 20130207171139) do
     t.integer  "editorships_count",                :default => 0
     t.string   "slug_ca",           :limit => 100
     t.string   "slug_en",           :limit => 100
+    t.string   "original_locale",   :limit => 4
   end
 
   add_index "contents", ["group_id"], :name => "index_contents_on_group_id"
@@ -182,6 +185,7 @@ ActiveRecord::Schema.define(:version => 20130207171139) do
     t.integer  "view_count",                       :default => 0
     t.integer  "editorships_count",                :default => 0
     t.string   "slug_en",           :limit => 100
+    t.string   "original_locale",   :limit => 4
   end
 
   add_index "experiencies", ["group_id"], :name => "index_experiencies_on_group_id"
@@ -305,14 +309,15 @@ ActiveRecord::Schema.define(:version => 20130207171139) do
   add_index "phase_translations", ["phase_id"], :name => "index_phase_translations_on_phase_id"
 
   create_table "phases", :force => true do |t|
-    t.string   "slug_es",     :limit => 50
-    t.string   "slug_ca",     :limit => 50
+    t.string   "slug_es",         :limit => 50
+    t.string   "slug_ca",         :limit => 50
     t.integer  "position"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
-    t.integer  "kudos_count",               :default => 0
-    t.integer  "view_count",                :default => 0
-    t.string   "slug_en",     :limit => 50
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+    t.integer  "kudos_count",                   :default => 0
+    t.integer  "view_count",                    :default => 0
+    t.string   "slug_en",         :limit => 50
+    t.string   "original_locale", :limit => 4
   end
 
   add_index "phases", ["slug_ca"], :name => "index_phases_on_slug_ca"
@@ -363,6 +368,7 @@ ActiveRecord::Schema.define(:version => 20130207171139) do
     t.integer  "editorships_count",                 :default => 0
     t.integer  "experiencies_count",                :default => 0
     t.string   "slug_en"
+    t.string   "original_locale",    :limit => 4
   end
 
   add_index "proposals", ["category_id"], :name => "index_proposals_on_category_id"
