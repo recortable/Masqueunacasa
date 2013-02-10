@@ -82,11 +82,18 @@ group :development do
   gem 'meta_request'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'guard-rspec', '0.5.5'
+  gem 'rb-inotify', '~> 0.8.8'
+end
+
 group :test do
-  gem 'minitest'
+  gem 'faker'
   gem 'capybara'
-  gem 'turn'
   gem 'database_cleaner'
+  gem 'launchy'
+  gem 'spork', '0.9.0'
+  gem 'guard-spork', '0.3.2'
   gem 'factory_girl_rails'
-  #gem 'ruby-debug19', :require => 'ruby-debug'
 end

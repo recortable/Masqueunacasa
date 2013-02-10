@@ -11,6 +11,8 @@ class Content < ActiveRecord::Base
 
   before_save :clean_input
 
+  validates :title, presence: true
+
   belongs_to :user
   belongs_to :group
   include HasSections

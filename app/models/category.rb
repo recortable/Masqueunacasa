@@ -25,6 +25,10 @@ class Category < ActiveRecord::Base
 
   after_save :propagate_phases
 
+  class Translation
+    attr_accessible :title, :name, :summary, :body
+  end
+
   private
   def propagate_phases
     if phase_id_changed?
