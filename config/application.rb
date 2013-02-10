@@ -42,6 +42,7 @@ module Masqueunacasa
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :es
     config.i18n.fallbacks = true
+    config.i18n.available_locales = [:es, :ca, :en]
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -64,6 +65,6 @@ module Masqueunacasa
     config.assets.enabled = true
     config.assets.initialize_on_precompile = false
     config.assets.version = '1.0'
-    # config.assets.precompile += %w(email.css) 
+    # config.assets.precompile += %w(email.css)
   end
 end

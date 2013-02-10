@@ -1,4 +1,5 @@
 class Category < ActiveRecord::Base
+  include HasTranslations
   translates :title, :name, :summary, :body
 
   extend FriendlyId

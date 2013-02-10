@@ -1,4 +1,5 @@
 class Phase < ActiveRecord::Base
+  include HasTranslations
   translates :title, :summary, :question
 
   extend FriendlyId

@@ -1,16 +1,14 @@
 require 'test_helper'
 
 describe Proposal do
-  it 'creates titles and slugs for every lang' do
+  it 'creates slugs for every lang' do
     user = create(:user)
     category = create(:category)
     proposal = Proposal.new(title: 'Title', user: user, category: category)
     proposal.save.must_equal true
-    proposal.title.must_equal 'Title'
-    proposal.title_es.must_be :present?
-    proposal.title_ca.must_be :present?
-    proposal.slug_es.must_be :present?
-    proposal.slug_ca.must_be :present?
+    I18n.available_locales.each do |l|
+      proposal.send("slug_#{l}").must_be :present?
+    end
   end
 
   it 'scopes by published' do

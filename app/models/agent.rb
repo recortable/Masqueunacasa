@@ -1,4 +1,5 @@
 class Agent < ActiveRecord::Base
+  include HasTranslations
   translates :summary
 
   attr_accessible :name, :title, :email

@@ -1,4 +1,5 @@
 class Experiencie < ActiveRecord::Base
+  include HasTranslations
   translates :title, :summary, :body
 
   extend FriendlyId
@@ -25,6 +26,7 @@ class Experiencie < ActiveRecord::Base
   include HasEditors
 
   validates_presence_of :title, :user
+  validates :title, uniqueness: true
 
   scope :published, where(published: true)
 
@@ -48,7 +50,7 @@ class Experiencie < ActiveRecord::Base
 
   # TODO: hacer que funcione para otros idiomas
   def self.search(term)
-    Experiencie.where(Experiencie.arel_table[:title_es].matches("%#{term}%")).order('title_es ASC')
+    joins(:translations).where("locale = ? and title ILIKE ?", I18n.locale, "%#{term}").order("title ASC")
   end
 
   private

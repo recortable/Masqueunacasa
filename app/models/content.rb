@@ -1,4 +1,5 @@
 class Content < ActiveRecord::Base
+  include HasTranslations
   translates :title, :summary, :body
 
   include ActionView::Helpers::SanitizeHelper

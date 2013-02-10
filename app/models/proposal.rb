@@ -1,11 +1,12 @@
 class Proposal < ActiveRecord::Base
+  include HasTranslations
   translates :title, :description, :body, :summary
-
-  acts_as_list scope: :category_id
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
   include HasTranslatedSlugs
+
+  acts_as_list scope: :category_id
 
   attr_accessible :user_id, :phase_id, :group_id, :category_id
   attr_accessible :user, :phase, :group, :category

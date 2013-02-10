@@ -14,7 +14,7 @@ describe 'Users integration' do
     page.fill_in 'user_email', with: 'user@email.com'
     page.fill_in 'user_password', with: 'secret'
     page.fill_in 'user_password_confirmation', with: 'secret'
-    click_submit
+    click_submit 'commit_user'
 
     user = User.last
     user.name.must_equal 'NewUser'

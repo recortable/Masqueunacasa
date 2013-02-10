@@ -8,8 +8,8 @@ class RelationsController < ApplicationController
 
   expose(:experiencies) do
     eids = parent.experiencies.pluck('experiencies.id')
-    select = eids.size > 0 ? Experiencie.where(['id NOT IN (?)', parent.experiencies]) : Experiencie.scoped
-    select.order("title_#{I18n.locale} ASC")
+    select = eids.size > 0 ? Experiencie.where(['experiencies.id NOT IN (?)', parent.experiencies]).joins(:translations) : Experiencie.joins(:translations).scoped
+    select.order("title ASC")
   end
 
   expose(:valid_term?) { params[:term].present? }
