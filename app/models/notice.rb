@@ -1,5 +1,6 @@
 class Notice < ActiveRecord::Base
   attr_accessible :title, :list, :body, :embed, :image, :link, :position
+  translates :title, :body
 
   validates_presence_of :title, :list
   validates_uniqueness_of :title
