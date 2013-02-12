@@ -1,17 +1,15 @@
-<% cache ['summary', post] do %>
-  <%= div_for post, class: 'summary' do %>
-    <div class="header">
-      <%= link_to content_tag(:h2, post.title), post_url(post, subdomain: post.group.subdomain) %>
-      <h4>
-        Por <%= link_to post.user.name, user_url(post.user, subdomain: false) %>,
-        el <%= l post.published_at %>
-      </h4>
-    </div>
-    <%= render_post_media(post) %>
-    <%#= markdown truncate_html(post.body, length: 500) # Método truncate_html provoca error %>
-    <%= markdown truncate(post.sections.first.body, length: 500) if post.sections.first %>
-    <div class="links">
-      <%= link_to t('read_more'), post_url(post, subdomain: post.group.slug), class: 'read-more' %>
-    </div>
-  <% end %>
+<%= div_for post, class: 'summary' do %>
+  <div class="header">
+    <%= link_to content_tag(:h2, post.title), post_url(post, subdomain: post.group.subdomain) %>
+    <h4>
+      Por <%= link_to post.user.name, user_url(post.user, subdomain: false) %>,
+      el <%= l post.published_at %>
+    </h4>
+  </div>
+  <%= render_post_media(post) %>
+  <%#= markdown truncate_html(post.body, length: 500) # Método truncate_html provoca error %>
+  <%= markdown truncate(post.sections.first.body, length: 500) if post.sections.first %>
+  <div class="links">
+    <%= link_to t('read_more'), post_url(post, subdomain: post.group.slug), class: 'read-more' %>
+  </div>
 <% end %>

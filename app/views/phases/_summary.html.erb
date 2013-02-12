@@ -2,7 +2,6 @@
   <div class="content">
     <%= link_to t('app.edit'), [:edit, phase], 
       class: 'action', data: {action: "edit-phase-#{phase.id}" } if can? :update, phase %>
-  <% cache ['summary', phase] do %>
       <%= image_tag(phase.image_url, width: 100, height: 100,
                     alt: phase.title, 
                     class: 'fixed centered phase-image') %>
@@ -13,6 +12,5 @@
       <div class="summary markdown">
         <%= markdown phase.summary %>
       </div>
-  <% end %>
   </div>
 </div>
