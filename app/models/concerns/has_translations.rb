@@ -1,5 +1,6 @@
 module HasTranslations
   extend ActiveSupport::Concern
+  include RecordTranslator
 
   included do
     before_create :set_original_locale
@@ -15,3 +16,4 @@ module HasTranslations
     self.original_locale = I18n.locale
   end
 end
+
