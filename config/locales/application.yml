@@ -1,6 +1,6 @@
 es:
   will_paginate:
-    previous_label: '<<' 
+    previous_label: '<<'
     next_label: '>>'
 
   resource:
@@ -12,3 +12,19 @@ es:
     cancel: 'Cancelar'
     back_to: "Volver a '%{title}'"
     edit: 'Editar'
+
+ca:
+  will_paginate:
+    previous_label: '<<'
+    next_label: '>>'
+
+  resource:
+    created: 'Afegit, Gràcies!!'
+    updated: 'Modificat. Bé!'
+    destroyed: 'Esborrat... uupps...'
+
+  app:
+    cancel: 'Cancel·lar'
+    back_to: "Tornar a '%{title}'"
+    edit: 'Editar'
+

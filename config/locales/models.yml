@@ -28,3 +28,33 @@ es:
     errors:
       term_to_short: 'Lo que buscas debe tener al menos 3 letras'
 
+es:
+  activerecord:
+    models:
+      user: 'perfil'
+      content: 'entrada'
+      page: 'document'
+      post: 'entrada'
+      phase: 'fase'
+      group: 'col.lectiu'
+      proposal: 'proposta'
+      notice: 'destacat'
+      experiencie: 'experiència'
+      category: 'pregunta'
+      password_recovery: 'recuperar contrasenya'
+      post_attachment: 'adjunt'
+      section: 'secció'
+      image: 'imatge'
+      link: 'recurs'
+      agent: 'grup'
+
+  versions:
+    events:
+      create: 'creat'
+      update: 'modificat'
+      destroy: 'esborrat'
+
+  search:
+    errors:
+      term_to_short: "Has d'entrar al menys 3 lletres per fer la cerca"
+
