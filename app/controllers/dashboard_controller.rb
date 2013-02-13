@@ -24,11 +24,10 @@ class DashboardController < ApplicationController
 
   expose(:welcome_notices) { Notice.list('inicio') }
   def welcome
-    @active_tab = 'home'
   end
 
   def community
-    breadcrumb_for_community
+    add_breadcrumb 'Comunidad', community_path
   end
 
   def mailer

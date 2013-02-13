@@ -9,7 +9,6 @@ body {
     .navbar-inner {
       min-height: 0;
       padding: 0 2px 0 29px;
-      border: 0;
       box-shadow: none;
       border-radius: 0;
       background: transparent;
@@ -58,12 +57,6 @@ body {
               background-position: 0 0;
             }
           }
-        }
-
-        li.active a, li.active a:before {
-          color: $negro;
-          background-position: 0 0;
-          box-shadow: none;
         }
       }
 
