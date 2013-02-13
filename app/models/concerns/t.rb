@@ -1,4 +1,6 @@
-class T
+module T
+  extend self
+  
   def self.l
     return I18n.locale
   end
