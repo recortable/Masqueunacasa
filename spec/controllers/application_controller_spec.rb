@@ -25,8 +25,8 @@ describe ApplicationController do
       I18n.available_locales.each do |loc|
         I18n.with_locale(loc) do
           I18n.default_locale = loc
-          visit "/#{I18n.t('routes.sign_in')}"
-          expect( current_path ).to eq "/#{I18n.locale}/#{I18n.t('routes.sign_in')}"
+          visit login_path
+          expect( current_path ).to eq "/#{I18n.locale}/#{I18n.t('routes.entrar')}"
         end
       end
       I18n.default_locale = original_locale

@@ -16,11 +16,14 @@ describe Experiencie do
     results = Experiencie.search( 'prueba' )
 
     it "return matching experiencies sorted by title" do
+      exp1; exp2; exp3;
       expect( results ).to eq( [exp2, exp1] )
     end
 
     it "should not return non-matching experiencies" do
-      expect( results.include?( exp3 ) ).to_not be_true
+      exp1; exp2; exp3;
+      expect( results ).to_not be_empty
+      expect( results ).to_not include exp3
     end
   end
 

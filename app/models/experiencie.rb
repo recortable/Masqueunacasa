@@ -50,7 +50,7 @@ class Experiencie < ActiveRecord::Base
 
   # TODO: hacer que funcione para otros idiomas
   def self.search(term)
-    joins(:translations).where("locale = ? and title ILIKE ?", I18n.locale, "%#{term}").order("title ASC")
+    with_translations(T.l).where("title ILIKE ?", "%#{term}").order("title ASC")
   end
 
   private

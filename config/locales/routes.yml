@@ -23,7 +23,8 @@ es:
 
     edit: 'editar'
     new: 'nueva'
-    sign_in: 'entrar'
+    entrar: 'entrar'
+    salir: 'salir'
     sign_up: 'alta'
 
 ca:
@@ -51,7 +52,8 @@ ca:
 
     edit: 'editar'
     new: 'crear'
-    sign_in: 'entrar'
+    entrar: 'entrar'
+    salir: 'sortir'
     sign_up: 'alta'
 
 en:
@@ -79,6 +81,7 @@ en:
 
     edit: 'edit'
     new: 'new'
-    sign_in: 'sign-in'
+    entrar: 'sign-in'
+    salir: 'logout'
     sign_up: 'sign-up'
 
