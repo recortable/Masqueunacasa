@@ -1,7 +1,6 @@
 atom_feed :language => I18n.locale do |feed|
   feed.title current_group.name + "::masqueunacasa.org"
-  feed.updated posts.first.created_at
-              
+  feed.updated posts.first.created_at unless posts.empty?
   posts.each do |post|
     feed.entry post do |entry|
       entry.title post.title
