@@ -1,12 +1,20 @@
 module T
   extend self
-  
+
   def self.l
     return I18n.locale
   end
 
   def self.l=(locale)
     I18n.locale = locale
+  end
+
+  def self.dfl
+    I18n.default_locale
+  end
+
+  def self.dfl=(locale)
+    I18n.default_locale = locale
   end
 
   def self.avl

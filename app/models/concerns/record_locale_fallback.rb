@@ -1,4 +1,4 @@
-module RecordTranslator
+module RecordLocaleFallback
   extend ActiveSupport::Concern
 
   included do

@@ -32,7 +32,7 @@ describe ApplicationController do
       I18n.default_locale = original_locale
     end
 
-    it "and desn't reises a MissingTemplate error when the url does't match any route" do
+    it "and desn't reise a MissingTemplate error when the url does't match any route" do
       url = "/lkjadf/lkjjklj/lkjklj"
       expect { visit url }.to_not raise_error ActionView::MissingTemplate
     end

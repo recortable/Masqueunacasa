@@ -1,6 +1,6 @@
 module HasTranslations
   extend ActiveSupport::Concern
-  include RecordTranslator
+  include RecordLocaleFallback
 
   included do
     before_create :set_original_locale
