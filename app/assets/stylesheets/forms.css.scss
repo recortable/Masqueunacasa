@@ -33,18 +33,19 @@ textarea {
 }
 
 fieldset {
-  border: 2px solid $negro;
   margin: 0 0 1em;
   padding: 0 0.625em 0.75em;
+  border: 1px solid #e5e5e5;
+  background-color: darken($fondo, 3%);
 }
 
 form .fields {
   position: relative;
   margin-bottom: 0.5em;
   padding: 0.5em;
-  padding-left: 2em;
+  padding-left: 1.5em;
   border-radius: 5px;
-  background: #d6d6d6;
+  background: #ddd;
   @include clearfix;
 
   .remove_nested_fields {

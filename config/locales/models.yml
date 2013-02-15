@@ -9,7 +9,7 @@ es:
       group: 'colectivo'
       proposal: 'propuesta'
       notice: 'destacado'
-      experiencie: 'experiencia' 
+      experiencie: 'experiencia'
       category: 'pregunta'
       password_recovery: 'recuperar contraseña'
       post_attachment: 'adjunto'
@@ -28,7 +28,7 @@ es:
     errors:
       term_to_short: 'Lo que buscas debe tener al menos 3 letras'
 
-es:
+ca:
   activerecord:
     models:
       user: 'perfil'

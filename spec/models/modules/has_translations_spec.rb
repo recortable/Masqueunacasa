@@ -14,7 +14,7 @@ shared_examples_for HasTranslations do
     T.l = original_locale
   end
 
-  it "the locale fallback for recors is its original locale" do
+  it "the locale fallback for records is its original locale" do
     original_locale = T.l  # caches the initial locale
 
     T.avl.each do |locale|
@@ -38,7 +38,7 @@ shared_examples_for HasTranslations do
       expect( object.translations.size ).to eq 2
       expect( object.translations.with_locale( T.l ) ).to exist
 
-      # sets another locale, diferent from default locale and locale that we created the object  with,
+      # sets another locale, diferent from default locale and the locale we created the objec with,
       # the object has no translation for this locale
       T.l = T.avl.reject { |l| l == T.dfl or l == locale }.first
 
@@ -51,10 +51,12 @@ shared_examples_for HasTranslations do
   end
 end
 
-INCLUDED_MODELS = [Proposal, Category, Experiencie, Phase]
+describe "Models with translations" do
+  INCLUDED_MODELS = [Proposal, Category, Experiencie, Phase]
 
-INCLUDED_MODELS.each do |klass|
-  describe klass do
-    it_behaves_like HasTranslations
+  INCLUDED_MODELS.each do |klass|
+    describe klass do
+      it_behaves_like HasTranslations
+    end
   end
 end

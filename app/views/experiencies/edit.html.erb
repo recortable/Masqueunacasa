@@ -1,3 +1,8 @@
-<%= render_editor experiencie %>
-
+<div class='span8 offset2'>
+  <%= title "#{t('app.edit')} #{experiencie.title}" %>
+  <% if related_proposal %>
+    <h4>En <%= link_to related_proposal.title, related_proposal %></h4>
+  <% end %>
+  <%= render 'form' %>
+</div>
 

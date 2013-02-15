@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130212070404) do
+ActiveRecord::Schema.define(:version => 20130215122018) do
 
   create_table "agent_translations", :force => true do |t|
     t.integer  "agent_id"
@@ -402,21 +402,20 @@ ActiveRecord::Schema.define(:version => 20130212070404) do
   add_index "relations", ["user_id"], :name => "index_relations_on_user_id"
 
   create_table "sections", :force => true do |t|
-    t.string   "lang",          :limit => 2
+    t.string   "locale",        :limit => 2
     t.integer  "position",                     :null => false
     t.string   "title",         :limit => 200
     t.text     "body"
-    t.string   "body_type",     :limit => 16
     t.string   "image"
-    t.text     "properties"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
     t.integer  "document_id"
     t.string   "document_type", :limit => 16
     t.integer  "group_id"
+    t.string   "type",          :limit => 80
   end
 
-  add_index "sections", ["document_type", "document_id", "lang"], :name => "index_sections_on_document_type_and_document_id_and_lang"
+  add_index "sections", ["document_type", "document_id", "locale"], :name => "index_sections_on_document_type_and_document_id_and_lang"
   add_index "sections", ["document_type", "document_id"], :name => "index_sections_on_document_type_and_document_id"
   add_index "sections", ["position"], :name => "index_sections_on_position"
 

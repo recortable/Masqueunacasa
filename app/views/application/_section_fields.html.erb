@@ -1,0 +1,19 @@
+<fieldset class=sortable_fieldset>
+  <legend><%= t('app.sections') %></legend>
+  <%= form.fields_for :text_sections do |f| %>
+    <%= f.input :title %>
+    <%= f.input :body %>
+    <%= f.input :position, as: :hidden %>
+    <%= f.link_to_remove "Remove section", class: "btn" %>
+  <% end %>
+  <%= form.fields_for :image_sections do |f| %>
+    <%= f.input :title %>
+    <%= f.input :image %>
+    <%= f.input :position, as: :hidden %>
+    <%= f.link_to_remove "Remove section", class: "btn" %>
+  <% end %>
+  <p>
+    <%= form.link_to_add "Add text section", :text_sections, class: "btn" %>
+    <%= form.link_to_add "Add image section", :image_sections, class: "btn" %>
+  </p>
+</fieldset>

@@ -1,7 +1,8 @@
 module TextHelper
-  def render_body(model) 
+  def render_body(model)
     return '' if model.blank?
-    content_tag(:div, render_text(model.body, model.body_type), class: "body #{model.body_type}")
+    body_type = model.respond_to?('body_type') ? model.body_type : 'markdown'
+    content_tag(:div, render_text(model.body, body_type), class: "body #{body_type}")
   end
 
   def render_text(content, type) 

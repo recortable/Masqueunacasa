@@ -1,9 +1,10 @@
-<%= simple_form_for proposal do |form| %>
+<%= simple_nested_form_for proposal do |form| %>
   <div class="title">
-    <%= form.input :title, label: false %>
+    <%= form.input :title %>
   </div>
   <%= form.input :summary, as: :text %>
   <%= form.input :phase_id, as: :hidden %>
   <%= form.input :category_id, as: :hidden %>
-  <%= submit_button_for form %>
+  <%= render 'section_fields', form: form %>
+  <%= form.button :submit %>
 <% end %>

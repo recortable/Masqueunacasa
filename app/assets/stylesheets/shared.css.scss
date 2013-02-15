@@ -3,47 +3,6 @@ body {
   padding-bottom: 60px;
 }
 
-/* Estilos para los formularios anidados */
-
-fieldset {
-  margin-bottom: 12px;
-  padding: 10px 5px 0;
-  border: 1px solid #E5E5E5;
-  background-color: darken($fondo, 3%);
-
-  div.add-section {
-    padding: 15px 0;
-
-    .add_fields {
-      display: none;
-    }
-  }
-}
-
-legend {
-  width: auto;
-  margin-bottom: 0;
-  padding: 0 6px;
-  font-size: 18px;
-  border: none;
-}
-
-.fields {
-  padding: 15px 0 0;
-  border-top: 1px dotted lighten($negro, 10%);
-
-  textarea {
-    height: 250px;
-  }
-}
-
-
-div.rm-section {
-  padding-bottom: 15px;
-  border-bottom: 1px dotted lighten($negro, 10%);
-  text-align: right;
-}
-
 /* Anular los estilos de bootstrap para algunos elementos para que usen las mismas tipos que el restp del sitio */
 
 input, button, select, textarea {

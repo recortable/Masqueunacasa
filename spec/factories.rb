@@ -51,8 +51,7 @@ FactoryGirl.define do
   factory :section do
     sequence(:title) {|n| "Section #{n}" }
     body { "#{title} body" }
-    body_type 'markdown'
-    lang 'es'
+    locale 'es'
   end
 
   factory :experiencie do

@@ -1,7 +1,7 @@
-<div class='span6 offset2'>
-  <%= title "Añadir experiencia" %>
+<div class='span8 offset2'>
+  <%= title "#{t('app.create')} #{experiencie.class.model_name.human.capitalize}" %>
   <% if related_proposal %>
     <h4>En <%= link_to related_proposal.title, related_proposal %></h4>
-<% end %>
+  <% end %>
   <%= render 'form' %>
 </div>

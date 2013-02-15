@@ -11,6 +11,7 @@ es:
   app:
     cancel: 'Cancelar'
     back_to: "Volver a '%{title}'"
+    create: 'Crear'
     edit: 'Editar'
 
 ca:
@@ -26,5 +27,6 @@ ca:
   app:
     cancel: 'Cancel·lar'
     back_to: "Tornar a '%{title}'"
+    create: 'Crear'
     edit: 'Editar'
 

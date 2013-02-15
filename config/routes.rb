@@ -4,7 +4,6 @@ Masqueunacasa::Application.routes.draw do
     resource :kudos
     resources :sections, except: [:index]
     resource :edition
-    get 'supereditor' => "editions#edit"
   end
 
   concern :position do

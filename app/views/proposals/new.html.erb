@@ -1,8 +1,4 @@
-<div class="span6 offset2">
-  <%= title 'Añadir propuesta' %>
-  <h5>A la pregunta <%= link_to proposal.category.title, proposal.category %></h5>
+<div class='span8 offset2'>
+  <%= title "#{t('app.create')} #{proposal.class.model_name.human.capitalize}" %>
   <%= render 'form' %>
-</div>
-<div class="span4">
-  <%= markdown t('markdown.help') %>
 </div>

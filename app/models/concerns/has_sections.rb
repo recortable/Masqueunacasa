@@ -2,21 +2,15 @@ module HasSections
   extend ActiveSupport::Concern
 
   included do
-    attr_accessible :sections_attributes
-    has_many :sections, as: :document, dependent: :destroy, 
-      conditions: proc { ['lang = ?', I18n.locale] }
-    accepts_nested_attributes_for :sections, allow_destroy: true
-  end
-
-  def add_section(section, user)
-    section.document = self
-    section.lang = I18n.locale
-    section.body_type ||= 'markdown'
-    if section.save
-      self.add_editor(user) if section.document.respond_to?(:add_editor)
-      section
-    else
-      nil
-    end
+    attr_accessible :text_sections_attributes
+    attr_accessible :image_sections_attributes
+    has_many :sections, as: :document, dependent: :destroy,
+      conditions: proc { ['locale = ?', I18n.locale] }
+    has_many :text_sections, as: :document, dependent: :destroy,
+      conditions: proc { ['locale = ?', I18n.locale] }
+    has_many :image_sections, as: :document, dependent: :destroy,
+      conditions: proc { ['locale = ?', I18n.locale] }
+    accepts_nested_attributes_for :text_sections, allow_destroy: true
+    accepts_nested_attributes_for :image_sections, allow_destroy: true
   end
 end

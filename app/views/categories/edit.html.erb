@@ -1,1 +1,4 @@
-<%= render_editor category %>
+<div class='span8 offset2'>
+  <%= title "#{t('app.edit')} #{category.title}" %>
+  <%= render 'form' %>
+</div>

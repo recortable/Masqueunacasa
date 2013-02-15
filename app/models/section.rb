@@ -3,7 +3,7 @@ require 'file_size_validator'
 class Section < ActiveRecord::Base
   attr_accessible :group_id
   attr_accessible :document_id, :document_type
-  attr_accessible :lang, :title, :body, :body_type
+  attr_accessible :locale, :title, :body
   attr_accessible :image
   attr_accessible :image_position
   attr_accessible :position
@@ -11,8 +11,7 @@ class Section < ActiveRecord::Base
 
   before_validation :populate_fields
 
-  validates_presence_of :document_id, :document_type, :lang, :body_type
-  validate :image_xor_body
+  validates_presence_of :document_id, :document_type, :locale
 #  validates :image, file_size: { maximum: 1.megabytes.to_i }
 
   belongs_to :group
@@ -21,11 +20,11 @@ class Section < ActiveRecord::Base
   default_scope order: 'position ASC'
   scope :titled, where("title <> ''")
 
-  acts_as_list scope: [:document_type, :document_id]
+  acts_as_list scope: [:document_type, :document_id, :locale]
   include DocumentHasEditors
 
   mount_uploader :image, ImageUploader
-  store :properties, accessors: [:image_position]
+
   before_save :update_group_id
 
   def to_anchor
@@ -43,14 +42,7 @@ class Section < ActiveRecord::Base
     end
   end
 
-  def image_xor_body
-    if (self.image.blank? && self.body.blank?)
-      errors.add(:section, 'No puedes dejar este cammpo en blanco')
-    end
-  end
-
   def populate_fields
-    self.lang ||= I18n.locale
-    self.body_type ||= 'markdown'
+    self.locale ||= I18n.locale
   end
 end

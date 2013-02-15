@@ -1,8 +1,9 @@
-<%= simple_form_for experiencie do |form| %> <div class="title">
-    <%= form.input :title, label: false %>
+<%= simple_nested_form_for experiencie do |form| %>
+  <div class="title">
+    <%= form.input :title %>
   </div>
   <%= form.input :summary, as: :text %>
   <%= form.input :related_proposal_id, as: :hidden %>
-  <%= submit_button_for form %>
+  <%= render 'section_fields', form: form %>
+  <%= form.button :submit %>
 <% end %>
-<%= raw experiencie.body %>

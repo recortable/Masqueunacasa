@@ -32,10 +32,6 @@ module ApplicationHelper
     render partial: 'application/card', locals: {content: content}
   end
 
-  def render_editor(document)
-    render partial: 'application/editor', locals: { document: document }
-  end
-
   def hover?(action, subject, &block)
     if can? action, subject
       content_tag(:div, capture(&block), class: 'hover')
