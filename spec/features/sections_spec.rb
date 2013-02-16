@@ -3,11 +3,10 @@ require 'spec_helper'
 describe "Sections integration", require_main_group: true do
   let( :user ) { create :user }
 
-  it "proposals display sections" #do
-    #doc =  FactoryGirl.create( :proposal )
-    #section = doc.add_section( build(:section), user )
-
-    #visit polymorphic_path(doc)
-    #expect( page ).to have_content section.body
+  it "can add section fields in forms"# do
+    #user = login_user( FactoryGirl.create :user )
+    #visit new_experiencie_path
+    #save_and_open_page
+    #click_on "Add text section"
   #end
 end
