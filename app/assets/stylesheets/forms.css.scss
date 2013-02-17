@@ -28,32 +28,34 @@ form {
   }
 }
 
-textarea {
-  max-height: 15em;
-}
-
 fieldset {
   margin: 0 0 1em;
-  padding: 0 0.625em 0.75em;
+  padding: 0 0.625em 0;
   border: 1px solid #e5e5e5;
   background-color: darken($fondo, 3%);
+
+  legend {
+    margin: 0 0 0.5em;
+    border: none;
+    line-height: inherit;
+  }
+
+  .section-actions {
+    margin-top: 10px;
+  }
 }
 
 form .fields {
   position: relative;
   margin-bottom: 0.5em;
-  padding: 0.5em;
-  padding-left: 1.5em;
+  padding: 0.5em 1em;
+  padding-left: 2.5em;
   border-radius: 5px;
   background: #ddd;
   @include clearfix;
 
   .remove_nested_fields {
     float: right;
-  }
-
-  input, textarea {
-    max-width: 95%;
   }
 
   .image-preview {

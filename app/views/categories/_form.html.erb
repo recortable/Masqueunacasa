@@ -1,9 +1,10 @@
-<%= simple_nested_form_for [phase, category] do |form| %>
+<%= simple_nested_form_for [phase, category],
+  html: { multipart: true } do |form| %>
   <div class="title">
     <%= form.input :title %>
   </div>
   <%= form.input :name %>
-  <%= form.input :summary, as: :text %>
+  <%= form.input :summary, as: :text, input_html: { rows: 8 } %>
   <h4>Imágen</h4>
   <% if category.image.blank? %>
     <%= form.input :image %>

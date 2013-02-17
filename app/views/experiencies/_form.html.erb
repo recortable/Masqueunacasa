@@ -1,8 +1,9 @@
-<%= simple_nested_form_for experiencie do |form| %>
+<%= simple_nested_form_for experiencie,
+  html: { multipart: true } do |form| %>
   <div class="title">
     <%= form.input :title %>
   </div>
-  <%= form.input :summary, as: :text %>
+  <%= form.input :summary, as: :text, input_html: { rows: 8 } %>
   <%= form.input :related_proposal_id, as: :hidden %>
   <%= render 'section_fields', form: form %>
   <%= form.button :submit %>

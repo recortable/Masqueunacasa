@@ -1,4 +1,5 @@
 //= require jquery
+//= require jquery.ui.sortable
 //= require jquery_ujs
 //= require bootstrap
 // turbolinks
@@ -9,8 +10,9 @@
 //= require experiencies
 //= require galleria/galleria-1.2.9.min
 //= require galleria/galleria.classic.min
-//= require sections
 //= require jquery_nested_form
+//= require sections
+//= require sortable_fields
 //# require ckeditor/init
 //= require utils
 //= require_self
