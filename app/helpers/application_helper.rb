@@ -4,6 +4,10 @@ module ApplicationHelper
     content_tag(tag, title)
   end
 
+  def front_path
+    root_url + T.l.to_s
+  end
+
   def controller_class
     controller.class.name[0..-11].downcase.gsub(/:/, '-') + " " + controller.action_name
   end

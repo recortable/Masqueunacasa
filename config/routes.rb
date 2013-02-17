@@ -65,13 +65,12 @@ Masqueunacasa::Application.routes.draw do
     resources :categories, except: [:index], path: ''
   end
 
-  # Para dar soporte a las rutas antiguas, que no tenian el parámetro con el locale en 
-  # el idioma por defecto
-  match "*path" => 'application#set_locale'
-
   ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes.yml', {
-    prefix_on_default_locale: true, # para permitir poner el idioma de la página
-                                    # en función de las preferencias del navegador.
-    keep_untranslated_routes: true}) # para poder tener rutas sin el parámetro con el locale, soporte
-                                     # a las rutas antiguas, que no tenian locale en el idioma por defecto.
+    prefix_on_default_locale: true }) # para permitir poner el idioma de la página
+                                      # en función de las preferencias del navegador.
+
+  # Para dar soporte a las rutas antiguas, que no tenian el parámetro con el locale en
+  # el idioma por defecto
+  match ":locale/*path" => 'application#set_locale'
+  match "*path" => 'application#set_locale'
 end

@@ -35,7 +35,7 @@
         <%= image_tag('logo_inicio.png', alt: 'Procesos colectivos de vivienda', class: 'responsive') %>
     <% else %>
       <div class="headrow">
-        <%= image_tag 'logo.png', id: 'logo', width: 270 %>
+        <%= link_to (image_tag 'logo.png', width: 270), front_path, id: 'logo' %>
         <div class="breadcrumbs">
           <%= render_breadcrumbs :separator => ' / ' %>
         </div>
@@ -50,7 +50,7 @@
           </div>
         <% end %>
 
-        <%# CUANDO TODAS LAS VISTAS USEN CONTENT_FOR, 
+        <%# CUANDO TODAS LAS VISTAS USEN CONTENT_FOR,
           ESTE HACK SE PUEDE BORRAR %>
         <% size = main_content_span_size %>
         <% if size == 12 %>
