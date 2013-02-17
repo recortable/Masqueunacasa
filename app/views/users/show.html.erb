@@ -1,11 +1,10 @@
 <% google_maps %>
 <%= user_column 'span2' do %>
   <%= avatar_image(user) %>
-  <%= render_kudos user %>
 <% end %>
 
 <div class="center span6">
-  <%= render_agent_info user %>
+  <%= render 'users/info', user: user %>
   <div class="editorships">
     <h3>Ha participado en la elaboración de...</h3>
     <%= simple_list user.editorships.order('created_at DESC').limit(10) do |editorship| %>
@@ -17,7 +16,4 @@
       y <%= more %> más...
     <% end %>
   </div>
-</div>
-<div class="sidebar sidebar-right span4">
-  <%= render 'locations/bar', resource: user %>
 </div>

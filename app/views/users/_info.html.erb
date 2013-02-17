@@ -1,0 +1,10 @@
+<div class="hoverize">
+  <%= hover? :update, user do %>
+    <%= link_to 'Editar', edit_user_path %>
+  <% end %>
+  <%= title user.name %>
+</div>
+<div class="summary markdown">
+  <%= markdown user.summary %>
+</div>
+

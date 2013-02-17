@@ -1,10 +1,5 @@
-<%= user_column 'span3' do %>
+<%= user_column 'span2' do %>
   <%= avatar_image user %>
-  <h3>Cambiar imágen</h3>
-  <%= simple_form_for user do |form| %>
-    <%= form.input :avatar_image %>
-    <%= submit_button_for form, value: 'Cambiar imágen' %>
-  <% end %>
 <% end %>
 
 <div class="span5">
@@ -13,10 +8,7 @@
     <h3>Información pública</h3>
     <p>Esta información será visible para el resto de las personas</p>
     <%= form.input :name %>
-    <%= form.input :title %>
-    <%= form.input :website %>
-    <%= form.input :twitter %>
-    <%= form.input :facebook %>
+    <%= form.input :avatar_image %>
     <h3>Información privada</h3>
     <p>Esto no será visible para el resto</p>
     <%= form.input :email %>
@@ -24,7 +16,7 @@
   <% end %>
 </div>
 
-<div class="span4">
+<div class="span4 offset1">
   <h2>Cambiar contraseña</h2>
   <%= simple_form_for user do |form| %>
     <%= form.input :password %>

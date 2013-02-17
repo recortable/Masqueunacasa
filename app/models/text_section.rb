@@ -1,4 +1,4 @@
 class TextSection < Section
 
-  validates :image, presence: true
+  validates :body, presence: true
 end

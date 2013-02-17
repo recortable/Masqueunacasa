@@ -1,28 +1,32 @@
 es:
   activerecord:
     models:
-      user: 'perfil'
-      content: 'entrada'
-      page: 'documento'
-      post: 'entrada'
-      phase: 'fase'
-      group: 'colectivo'
-      proposal: 'propuesta'
-      notice: 'destacado'
-      experiencie: 'experiencia'
-      category: 'pregunta'
-      password_recovery: 'recuperar contraseña'
-      post_attachment: 'adjunto'
-      section: 'sección'
-      image: 'imágen'
-      link: 'recurso'
       agent: 'grupo'
+      category: 'pregunta'
+      content: 'entrada'
+      experiencie: 'experiencia'
+      group: 'colectivo'
+      image: 'imágen'
+      image_section: sección de imagen
+      link: 'recurso'
+      notice: 'destacado'
+      page: 'documento'
+      password_recovery: 'recuperar contraseña'
+      phase: 'fase'
+      post: 'entrada'
+      post_attachment: 'adjunto'
+      proposal: 'propuesta'
+      section:
+        one: secció
+        other: seccions
+      text_section: 'sección de texto'
+      user: 'perfil'
 
   versions:
     events:
       create: 'creado'
-      update: 'modificado'
       destroy: 'borrado'
+      update: 'modificado'
 
   search:
     errors:
@@ -31,28 +35,32 @@ es:
 ca:
   activerecord:
     models:
-      user: 'perfil'
-      content: 'entrada'
-      page: 'document'
-      post: 'entrada'
-      phase: 'fase'
-      group: 'col.lectiu'
-      proposal: 'proposta'
-      notice: 'destacat'
-      experiencie: 'experiència'
-      category: 'pregunta'
-      password_recovery: 'recuperar contrasenya'
-      post_attachment: 'adjunt'
-      section: 'secció'
-      image: 'imatge'
-      link: 'recurs'
       agent: 'grup'
+      category: 'pregunta'
+      content: 'entrada'
+      experiencie: 'experiència'
+      group: 'col.lectiu'
+      image: 'imatge'
+      image_section: "secció d'imatge"
+      link: 'recurs'
+      notice: 'destacat'
+      page: 'document'
+      password_recovery: 'recuperar contrasenya'
+      phase: 'fase'
+      post: 'entrada'
+      post_attachment: 'adjunt'
+      proposal: 'proposta'
+      section:
+        one: secció
+        other: seccions
+      text_section: 'sección de text'
+      user: 'perfil'
 
   versions:
     events:
       create: 'creat'
-      update: 'modificat'
       destroy: 'esborrat'
+      update: 'modificat'
 
   search:
     errors:

@@ -19,6 +19,7 @@ class UsersHaveTheirOwnTable < ActiveRecord::Migration
     Agent.where(type: "User").each do |a|
       u = User.new
       u.id = a.id
+      u.name = a.name
       u.email = a.email
       u.password_digest = a.password_digest
       u.admin = a.admin

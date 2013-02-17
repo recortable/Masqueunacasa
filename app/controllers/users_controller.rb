@@ -17,7 +17,6 @@ class UsersController < ApplicationController
     else
       authorize! :show, user
       breadcrumb_for_user(user)
-      user.increment_view_counter
       respond_with user
     end
   end

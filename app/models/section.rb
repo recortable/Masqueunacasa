@@ -11,10 +11,6 @@ class Section < ActiveRecord::Base
 
   before_validation :populate_fields
 
-  validates_presence_of :document_id, :document_type, :locale
-#  validates :image, file_size: { maximum: 1.megabytes.to_i }
-
-  belongs_to :group
   belongs_to :document, polymorphic: true, touch: true
 
   default_scope order: 'position ASC'
@@ -25,22 +21,11 @@ class Section < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-  before_save :update_group_id
-
   def to_anchor
     title.present? ? title : position.to_s
   end
 
   protected
-  def update_group_id
-    if document_id_changed?
-      if document_type == 'Group'
-        self.group_id = document_id
-      elsif document.respond_to?(:group_id)
-        self.group_id = document.group_id
-      end
-    end
-  end
 
   def populate_fields
     self.locale ||= I18n.locale

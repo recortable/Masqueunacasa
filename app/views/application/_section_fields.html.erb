@@ -1,5 +1,5 @@
 <fieldset class=sortable_fieldset>
-  <legend><%= t('app.sections') %></legend>
+  <legend><%= (Section.model_name.human count: 2).capitalize %></legend>
   <%= form.fields_for :text_sections do |f| %>
     <%= f.input :title %>
     <%= f.input :body %>
@@ -13,7 +13,7 @@
     <%= f.link_to_remove "Remove section", class: "btn" %>
   <% end %>
   <p>
-    <%= form.link_to_add "Add text section", :text_sections, class: "btn" %>
-    <%= form.link_to_add "Add image section", :image_sections, class: "btn" %>
+    <%= form.link_to_add t('app.add', element: TextSection.model_name.human), :text_sections, class: "btn" %>
+    <%= form.link_to_add t('app.add', element: ImageSection.model_name.human), :image_sections, class: "btn" %>
   </p>
 </fieldset>

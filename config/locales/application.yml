@@ -1,32 +1,35 @@
 es:
   will_paginate:
-    previous_label: '<<'
     next_label: '>>'
+    previous_label: '<<'
 
   resource:
     created: 'Añadido. Gracias'
-    updated: 'Modificado. ¡Bien!'
     destroyed: 'Borrado... uupps...'
+    updated: 'Modificado. ¡Bien!'
 
   app:
-    cancel: 'Cancelar'
+    add: Añadir %{element}
     back_to: "Volver a '%{title}'"
+    cancel: 'Cancelar'
     create: 'Crear'
     edit: 'Editar'
 
 ca:
   will_paginate:
-    previous_label: '<<'
     next_label: '>>'
+    previous_label: '<<'
 
   resource:
     created: 'Afegit, Gràcies!!'
-    updated: 'Modificat. Bé!'
     destroyed: 'Esborrat... uupps...'
+    updated: 'Modificat. Bé!'
 
   app:
-    cancel: 'Cancel·lar'
+    add: Afegir %{element}
     back_to: "Tornar a '%{title}'"
+    cancel: 'Cancel·lar'
     create: 'Crear'
     edit: 'Editar'
+    remove: Esborrar %{element}
 

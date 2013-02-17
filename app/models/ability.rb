@@ -32,7 +32,7 @@ class Ability
   end
 
   def social_abilities(user)
-      can(:update, User, user_id: user.id)
+      can(:update, User, id: user.id)
   end
 
   def anonymous_abilities
@@ -45,6 +45,7 @@ class Ability
     can :read, Category
     cannot :index, Category
     can :read, Agent
+    can :read, User
     can :read, Post
     can :manage, Notice
   end
