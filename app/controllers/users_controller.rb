@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   respond_to :html
-  before_filter :require_root_domain
 
   expose(:themes) { 'textura04 azul_gris' }
   expose(:users) { site.users }

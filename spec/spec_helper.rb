@@ -18,10 +18,11 @@ Spork.prefork do
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
   RSpec.configure do |config|
+    # Include FactoryGirl syntax to simplify calls to factories
     config.include FactoryGirl::Syntax::Methods
     config.include Rails.application.routes.url_helpers
     config.include Capybara::DSL
-    # Include FactoryGirl syntax to simplify calls to factories
+    Capybara.javascript_driver = :webkit
 
     # ## Mock Framework
     #
@@ -46,22 +47,16 @@ Spork.prefork do
     end
 
     config.before :each do
+      if example.metadata[:js]
+        DatabaseCleaner.strategy = :truncation
+      else
+        DatabaseCleaner.strategy = :transaction
+      end
       DatabaseCleaner.start
     end
 
     config.after(:each) do
       DatabaseCleaner.clean
-    end
-
-    config.before :each, require_main_group: true do
-      create(:group, name: 'Masqueunacasa', admin: true)
-      subdomain(nil)
-      visit logout_path
-    end
-
-    def subdomain(subdomain)
-      host = subdomain.present? ? "http://#{subdomain}.lvh.me" : "http://lvh.me"
-      Capybara.app_host = host
     end
 
     def login_user(user)
@@ -71,13 +66,6 @@ Spork.prefork do
         visit logout_path
       end
       user
-    end
-
-    def setup_group
-      group = create(:group)
-      login_user(group.user)
-      subdomain(group.subdomain)
-      group
     end
 
     def f_link(rel)

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "User sessions integration", require_main_group: true do
+describe "User sessions integration" do
   let( :user ) { create :user, password: 'secret' }
 
   it "users can sign in" do

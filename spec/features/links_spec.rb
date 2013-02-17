@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Links integration", require_main_group: true do
+describe "Links integration" do
   it "create link for experiencies" do
     create_link_probe create(:experiencie)
   end

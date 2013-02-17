@@ -3,40 +3,24 @@
     <div class="container">
       <ul class="nav pull-left primary-links">
         <li class="<%= active?('home')%>">
-          <%= link_to 'Inicio', root_url(host: request.domain) %>
+          <%= link_to 'Inicio', root_url %>
         </li>
         <li class="<%= active?('habitapedia')%>">
-          <%= link_to 'Habitapedia', phases_url(host: request.domain) %>
+          <%= link_to 'Habitapedia', phases_url %>
         </li>
         <li class="<%= active?('experiencies')%>">
-          <%= link_to 'Experiencias', experiencies_url(host: request.domain) %>
+          <%= link_to 'Experiencias', experiencies_url %>
         </li>
-        <!-- <li><%# link_to 'Mapa', locations_url(host: request.domain) %></li> -->
-        <li class="<%= active?('community')%>">
-          <%= link_to t('.community'), community_url(host: request.domain) %>
-        </li>
-      </ul>
-      <ul class="nav pull-right secondary-links">
-        <!--
-        <li><%= link_to "Sobre el proyecto", "#" %></li>
-        <li><%= link_to "Contacto", "#" %></li>
-        -->
-         <!-- TODO: implementar el cambio de idiomas 
-         <div class="lang-selector">
-           <%#= link_to 'ES', url_for(locale: 'es') %>
-           <%#= link_to 'CA', url_for(locale: 'ca') %>
-         </div>
-         -->
+        <!-- <li><%# link_to 'Mapa', locations_url %></li> -->
       </ul>
       <ul class="nav pull-right session-links">
         <% if current_user %>
-          <li><%= link_to "¡Hola #{current_user.name}!", user_url(current_user, host: request.domain), class: 'user' %></li>
-          <li><%= link_to t('.session_end'), logout_url(host: request.domain, from: request.url), class: 'logout' %></li>
+          <li><%= link_to "¡Hola #{current_user.name}!", user_url(current_user), class: 'user' %></li>
+          <li><%= link_to t('.session_end'), logout_url(from: request.url), class: 'logout' %></li>
         <% else %>
-          <li><%= link_to t('.session_start'), login_url(host: request.domain, from: request.url), class: 'login' %></li>
+          <li><%= link_to t('.session_start'), login_url(from: request.url), class: 'login' %></li>
         <% end %>
       </ul>
-      
     </div>
   </div>
 </div>

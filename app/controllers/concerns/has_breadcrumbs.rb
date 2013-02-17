@@ -50,7 +50,6 @@ module HasBreadcrumbs
   end
 
   def breadcrumb_for_users
-    breadcrumb_for_community
     add_breadcrumb 'Participantes', users_path
   end
 

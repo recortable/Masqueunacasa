@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Users integration', require_main_group: true do
+describe 'Users integration' do
   it 'list users' do
     user = FactoryGirl.create( :user )
     visit users_path
@@ -10,7 +10,6 @@ describe 'Users integration', require_main_group: true do
   it 'create users' do
     visit new_user_path
     fill_in 'user_name', with: 'NewUser'
-    fill_in 'user_title', with: 'User title'
     fill_in 'user_email', with: 'user@email.com'
     fill_in 'user_password', with: 'secret'
     fill_in 'user_password_confirmation', with: 'secret'
@@ -18,7 +17,6 @@ describe 'Users integration', require_main_group: true do
 
     user = User.last
     expect( user.name ).to eq 'NewUser'
-    expect( user.title ).to eq 'User title'
     expect( user.email ).to eq 'user@email.com'
   end
 end

@@ -1,10 +1,10 @@
-class User < Agent
+class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
 
+  attr_accessible :name, :email, :admin
   attr_accessible :login_count, :last_login_at
   attr_accessible :password, :password_confirmation
-  store :settings, accessors: [:reset_password_sent_at]
 
   validates :email, presence: true,
     uniqueness: true,
@@ -13,12 +13,9 @@ class User < Agent
   validates :password, presence: true, on: :create,
     length: {minimum: 3, maximum: 60},
     confirmation: true
+  validates :name, presence: true, length: { maximum: 50 }
 
   # RELATIONS
-  has_many :posts
-  has_many :created_groups, class_name: 'Group', foreign_key: 'user_id'
-  has_many :memberships, dependent: :destroy
-  has_many :groups, through: :memberships
   has_many :editorships
 
   # EXTENSIONS
@@ -33,10 +30,6 @@ class User < Agent
     Thread.current[:current_user] = user
   end
 
-  def member?(group)
-    Membership.where(group_id: group.id, user_id: self.id).first.present?
-  end
-  
   def build_reset_password_token
     begin
       self.reset_password_token = SecureRandom.urlsafe_base64

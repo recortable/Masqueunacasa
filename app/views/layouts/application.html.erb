@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="description" content="Másqueunacasa: procesos colectivos de vivienda">
 <meta name="viewport" content="width=device-width">
-<title><%= yield(:title) %> :: <%= current_group.name %></title>
+<title><%= yield(:title) %> :: Masqueunacasa</title>
 <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic|Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
 <link href='/favicon.png' rel='shortcut icon' type='image/png'>
 <!--[if lt IE 9]>
@@ -19,7 +19,7 @@
 <%= csrf_meta_tags %>
 <%= yield :head %>
 </head>
-<body class="<%= controller_class %> <%= themes %> <%= subdomain_class %>">
+<body class="<%= controller_class %> <%= themes %>">
 <div id="wrapper">
   <div class="container" id="languages">
     <ul id="language-selector">
@@ -34,8 +34,8 @@
       <% if front? %>
         <%= image_tag('logo_inicio.png', alt: 'Procesos colectivos de vivienda', class: 'responsive') %>
     <% else %>
-        <%= header %>
       <div class="headrow">
+        <%= image_tag 'logo.png', id: 'logo', width: 270 %>
         <div class="breadcrumbs">
           <%= render_breadcrumbs :separator => ' / ' %>
         </div>
@@ -84,7 +84,7 @@
       </div>
     </div>
   </div>
-  <%= render 'layouts/ga' %>
+  <%= render 'layouts/ga' if Rails.env == 'production' %>
   <div style="display:none">
     Masqueunacasa version <%= ENV["RAILS_APP_VERSION"] %>. AGPL3
   </div>

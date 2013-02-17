@@ -1,7 +1,7 @@
 # encoding: utf-8
 require "spec_helper"
 
-describe "Categories integration", require_main_group: true do
+describe "Categories integration" do
   let(:cat) { create( :category ) }
 
   it "show category" do

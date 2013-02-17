@@ -8,28 +8,6 @@ module LayoutHelper
     size
   end
 
-  # TODO: deprecated, use page_div
-  def page(options = {}, &block)
-    options.reverse_merge! class: '', row: true, head: true
-    page_div(options, &block)
-  end
-
-  def header
-    header_content = group_name
-    header_content += group_banner if print_banner?
-    header_content.html_safe
-  end
-
-  # CUIDADO!: row es false por defecto (al revés que page)
-  def page_div(options = {}, &block)
-    options.reverse_merge! class: '', row: false, head: true, group: true
-    content = capture(&block)
-    content = "<div class='row'>#{content}</div>" if options[:row]
-    head = options[:head] ? render('page_header', group: options[:group]) : ''
-    corner = "<div class='corner none'></div>"
-    raw "<div class='#{options[:class]}'>#{corner}</div><div class='page bloc'>#{head}#{content}</div>"
-  end
-
   def corner_span(css_class, color = :colored, &block)
     content = capture(&block)
     raw "<div class='#{css_class}'><div class='corner #{color}'></div><div class='content'>#{content}</div></div>"
@@ -71,29 +49,4 @@ module LayoutHelper
     en = link_to_unless_current 'eng', url_for(locale: 'en')
     "<li title='Castellano'>#{es}</li> | <li title='Català'>#{ca}</li> | <li title='English'>#{en}</li>".html_safe
   end
-
-  private
-
-    def group_name
-      result = "<div class='group_name'>"
-      if !current_group or current_group.admin?
-        result += image_tag 'Logo_Mquc.png', width: 271, height: 41, class: 'mquc', alt: "Masqueunacasa"
-      else
-        result += current_group.name
-      end
-      result += "</div>"
-    end
-
-    def group_banner
-      if current_group.banner_image?
-        image_tag(current_group.banner_image_url, class: 'responsive', alt: current_group.name)
-      else
-        placeholder_image_tag({text: '1170x200px', width: 1170, height: 200}, {class: 'responsive'})
-      end
-    end
-
-    def print_banner?
-      current_group and
-      with_banner
-    end
 end

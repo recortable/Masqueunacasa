@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Experiencies integration", require_main_group: true do
+describe "Experiencies integration" do
   let( :exp ) { create :experiencie }
   let( :user) { create :user }
 

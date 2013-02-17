@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Proposals integration", require_main_group: true do
+describe "Proposals integration" do
   let( :user ) { login_user create(:user) }
   let( :proposal ) { create :proposal }
 

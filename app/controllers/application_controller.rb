@@ -1,7 +1,6 @@
 # encoding: utf-8
 class ApplicationController < ActionController::Base
   include CurrentUser
-  include HasCurrentGroup
   include ExposeResource
   include HasBreadcrumbs
   include HasResource
@@ -18,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   # Sobreescribimos el current_ability https://github.com/ryanb/cancan/wiki/Changing-Defaults
   def current_ability
-    @current_ability ||= Ability.new(current_user, current_group)
+    @current_ability ||= Ability.new(current_user)
   end
 
   def path_or_default(path)
@@ -33,10 +32,6 @@ class ApplicationController < ActionController::Base
       location = '/' + locale.to_s + location
       redirect_to location, status: :moved_permanently
     end
-  end
-
-  def require_root_domain
-    redirect_to url_for(subdomain: false) if request.subdomain.present?
   end
 
   rescue_from CanCan::AccessDenied do |exception|

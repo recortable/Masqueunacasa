@@ -1,24 +1,19 @@
 require 'spec_helper'
 
-describe DashboardController do
+describe ApplicationController do
   context "adds the locale if not present" do
 
-    it "when visiting the home page without locale" do
+    it "when visiting the home" do
       original_locale = I18n.default_locale
       I18n.available_locales.each do |loc|
         I18n.with_locale(loc) do
           I18n.default_locale = loc
-          get :welcome
-          expect( response ).to redirect_to "/#{I18n.locale}/"
+          visit "/"
+          expect( current_path ).to eq "/#{I18n.locale}/"
         end
       end
       I18n.default_locale = original_locale
     end
-  end
-end
-
-describe ApplicationController do
-  context "adds the locale if not present" do
 
     it "when visiting other pages" do
       original_locale = I18n.default_locale

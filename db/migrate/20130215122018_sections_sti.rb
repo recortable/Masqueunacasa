@@ -34,7 +34,7 @@ class SectionsSti < ActiveRecord::Migration
     add_column :sections, :properties, :text
 
     TextSection.all.each do |ts|
-      ts.update_attributes body_type: 'markdown'
+      ts.update_column :body_type, 'markdown'
     end
   end
 end

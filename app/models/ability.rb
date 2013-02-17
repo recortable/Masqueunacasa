@@ -4,7 +4,7 @@ class Ability
 
   # Usemos solo :read, :create, :update, :destroy
   # NO USEMOS: :index, :view, :edit, :new
-  def initialize(user, current_group)
+  def initialize(user)
     anonymous_abilities
 
     if user.blank?
@@ -15,7 +15,7 @@ class Ability
         can? :update, section.document
       end
       habitapedia_abilities(user)
-      social_abilities(user, current_group)
+      social_abilities(user)
       admin_abilities if user.admin?
     end
   end
@@ -31,16 +31,8 @@ class Ability
       can(:destroy, Relation, user_id: user.id)
   end
 
-  def social_abilities(user, current_group)
+  def social_abilities(user)
       can(:update, User, user_id: user.id)
-
-      can :create, Group
-      can(:update, Group) {|group| participant?(group, user) }
-      can :read, Membership
-      can(:manage, Membership) {|m| participant?(m.group, user) }
-
-      can(:manage, Post) {|post| participant?(current_group, user) }
-      can(:destroy, Post, user_id: user.id)
   end
 
   def anonymous_abilities
@@ -58,7 +50,7 @@ class Ability
   end
 
   def no_user_abilities
-    can :create, UserSession 
+    can :create, UserSession
   end
 
   def admin_abilities

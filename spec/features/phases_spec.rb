@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Phases integration", require_main_group: true do
+describe "Phases integration" do
   let( :group ) { create :group, admin: true }
   let( :phase ) { create :phase }
 

@@ -40,9 +40,9 @@ shared_examples_for FriendlyFinder do |base_attribute_for_slugs|
 end
 
 describe "models with friendly finder" do
-  INCLUDED_MODELS = [Proposal, Category, Experiencie, Phase]
+  included_models = [Proposal, Category, Experiencie, Phase]
 
-  INCLUDED_MODELS.each do |klass|
+  included_models.each do |klass|
     describe klass do
       it_behaves_like FriendlyFinder, klass.friendly_id_config.base
     end
