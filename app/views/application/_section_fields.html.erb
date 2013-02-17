@@ -8,7 +8,11 @@
   <% end %>
   <%= form.fields_for :image_sections do |f| %>
     <%= f.input :title %>
+    <div class="image-preview">
+      <%= f.object.image.thumb if f.object.image.present? %>
+    </div>
     <%= f.input :image %>
+    <%= f.input :image_cache, as: :hidden %>
     <%= f.input :position, as: :hidden %>
     <%= f.link_to_remove "Remove section", class: "btn" %>
   <% end %>
