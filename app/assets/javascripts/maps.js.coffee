@@ -1,11 +1,10 @@
-
-options = (center, zoom) ->
+options = (center, zoom, street_view) ->
   mapOptions =
     center: center,
     scrollwheel: false,
     zoom: zoom,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
-    streetViewControl: false
+    streetViewControl: street_view
 
 extractLocations = (divs) ->
   locations = []
@@ -16,11 +15,11 @@ extractLocations = (divs) ->
     locations.push location
   locations
 
-createMap = (container, center, zoom = 5) ->
+createMap = (container, center, zoom = 5, street_view = false) ->
   mapCanvas = container
   mapCanvas.css({'width': '100%'}).height(mapCanvas.width())
   map = new google.maps.Map(mapCanvas.get(0),
-          options(center, zoom))
+          options(center, zoom, street_view))
 
 $.fn.extend
   showMap: ->
@@ -31,13 +30,13 @@ $.fn.extend
         center = locations[0]
         zoom = 14
 
-        map = createMap $(this).find('.map'), center, zoom
+        map = createMap $(this).find('.map'), center, zoom, true
 
         $.each locations, ->
           new google.maps.Marker
             position: this,
             map: map
-            
+
         if locations.length > 1
           bounds = new google.maps.LatLngBounds
           bounds.extend location for location in locations
@@ -63,7 +62,7 @@ $.fn.extend
 
       marker = new google.maps.Marker
         map: map
-        
+
       $.each [inputLat, inputLon], ->
         $(this).change ->
           lat = inputLat.val()
