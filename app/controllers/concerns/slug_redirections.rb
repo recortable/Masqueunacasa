@@ -2,7 +2,9 @@ module SlugRedirections
   extend ActiveSupport::Concern
 
   included do
-    before_filter only: [:index, :new, :show, :edit] { redirect_to_correct_slug }
+    before_filter only: [:index, :new, :show, :edit] do
+      redirect_to_correct_slug unless controller_name.include? 'static_pages'
+    end
   end
 
   private
