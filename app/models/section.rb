@@ -13,7 +13,7 @@ class Section < ActiveRecord::Base
 
   belongs_to :document, polymorphic: true, touch: true
 
-  default_scope order: 'position ASC'
+  default_scope where(locale: T.l.to_s).order('position ASC')
   scope :titled, where("title <> ''")
 
   acts_as_list scope: [:document_type, :document_id, :locale]
