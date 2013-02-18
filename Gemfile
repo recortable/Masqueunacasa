@@ -87,7 +87,8 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec', '0.5.5'
-  gem 'rb-inotify', '~> 0.8.8'
+  gem 'rb-inotify', '~> 0.8.8', require: RUBY_PLATFORM.include?('linux') && 'rb-inotify'
+  gem 'terminal-notifier-guard', require: RUBY_PLATFORM.include?('darwin') && 'terminal-notifier-guard'
 end
 
 group :test do
