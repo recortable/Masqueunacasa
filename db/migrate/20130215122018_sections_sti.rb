@@ -1,3 +1,9 @@
+class User < Agent
+  def self.current_user
+    nil
+  end
+end
+
 class SectionsSti < ActiveRecord::Migration
   def up
     rename_column :sections, :lang, :locale
