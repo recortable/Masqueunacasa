@@ -1,3 +1,7 @@
+class User < Agent
+
+end
+
 class PrepareModelsForGlobalize3 < ActiveRecord::Migration
   def up
     ## CATEGORIES
