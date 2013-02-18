@@ -1,3 +1,9 @@
+class User < Agent
+  def self.current_user
+    nil
+  end
+end
+
 class PopulateFriendlyIdSlugsTable < ActiveRecord::Migration
   def up
     ActiveRecord::Base.record_timestamps = false
