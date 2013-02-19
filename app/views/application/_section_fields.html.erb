@@ -1,5 +1,20 @@
 <fieldset class=sortable_fieldset>
   <legend><%= (Section.model_name.human count: 2).capitalize %></legend>
+  <%= form.fields_for :sections do |f| %>
+    <span class="handle"></span>
+    <%= f.input :title %>
+    <% if f.object.class == TextSection %>
+      <%= f.input :body, input_html: { rows: 8 } %>
+    <% elsif f.object.class == ImageSection %>
+      <div class="image-preview">
+        <%= image_tag f.object.image.thumb if f.object.image.present? %>
+      </div>
+      <%= f.input :image %>
+      <%= f.input :image_cache, as: :hidden %>
+    <% end %>
+    <%= f.input :position, as: :hidden %>
+    <%= f.link_to_remove "Remove section", class: "btn" %>
+  <% end %>
   <%= form.fields_for :text_sections do |f| %>
     <span class="handle"></span>
     <%= f.input :title %>
