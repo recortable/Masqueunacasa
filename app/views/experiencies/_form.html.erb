@@ -1,5 +1,6 @@
 <%= simple_nested_form_for experiencie,
   html: { multipart: true } do |form| %>
+  <%= form.error_notification %>
   <div class="title">
     <%= form.input :title %>
   </div>

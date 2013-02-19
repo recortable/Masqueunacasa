@@ -27,7 +27,7 @@ class SectionsSti < ActiveRecord::Migration
             locale: section.locale
           )
           new_section.save!
-          section.update_attributes body: nil
+          section.update_column :body, nil
         end
       end
     end

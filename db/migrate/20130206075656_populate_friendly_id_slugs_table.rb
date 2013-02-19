@@ -12,6 +12,8 @@ class PopulateFriendlyIdSlugsTable < ActiveRecord::Migration
         obj.save
       end
     end
+
+    ActiveRecord::Base.record_timestamps = true
   end
 
   def down

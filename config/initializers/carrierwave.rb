@@ -14,5 +14,5 @@ CarrierWave.configure do |config|
   }
   config.fog_directory = s3_bucket
   config.fog_public = true
-  config.asset_host = 'http://archivos.masqueunacasa.org'
+  config.asset_host = 'http://' + s3_bucket
 end

@@ -3,10 +3,7 @@ require 'file_size_validator'
 class Section < ActiveRecord::Base
   attr_accessible :group_id
   attr_accessible :document_id, :document_type
-  attr_accessible :locale, :title, :body
-  attr_accessible :image
-  attr_accessible :image_position
-  attr_accessible :position
+  attr_accessible :locale
   delegate :title, to: :document, prefix: true
 
   before_validation :populate_fields
@@ -18,8 +15,6 @@ class Section < ActiveRecord::Base
 
   acts_as_list scope: [:document_type, :document_id, :locale]
   include DocumentHasEditors
-
-  mount_uploader :image, ImageUploader
 
   def to_anchor
     title.present? ? title : position.to_s

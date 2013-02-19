@@ -11,7 +11,7 @@
     <span class="handle"></span>
     <%= f.input :title %>
     <div class="image-preview">
-      <%= f.object.image.thumb if f.object.image.present? %>
+      <%= image_tag f.object.image.thumb if f.object.image.present? %>
     </div>
     <%= f.input :image %>
     <%= f.input :image_cache, as: :hidden %>
