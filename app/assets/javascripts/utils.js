@@ -5,6 +5,18 @@ if (typeof console == "undefined" || typeof console.log == "undefined") {
   };
 }
 
+$.fn.extend({
+  image_cache_src: function() {
+    return this.each(function() {
+      var self = $(this);
+      if (self.attr('src').indexOf('uploads/tmp/')) {
+        new_src = self.attr('src').replace(/http:\/\/.+\/uploads\/tmp\//, "/uploads/tmp/");
+        self.attr('src', new_src);
+      }
+    });
+  }
+});
+
 window.Util = {
   /* Get URL Variables
      ================================================== */

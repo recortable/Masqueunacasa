@@ -38,6 +38,8 @@ var MqucInit = function() {
   }
   $('.slider').applySlider();
   $('.body a').mediafy();
+
+  $('form img').image_cache_src(); // Defined in utils.js
 };
 
 $(document).ready(MqucInit);
