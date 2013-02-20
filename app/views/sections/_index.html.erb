@@ -1,5 +1,5 @@
 <div class="sections">
-  <%= content_tag_for :div, document.sections do |section| %>
+  <%= content_tag_for :div, Section.with_locale_fallback_for(document) do |section| %>
     <a name="<%= section.title? ? section.title : section.id %>"></a>
     <% if section.title.blank? %>
       <p>&nbsp;</p>
