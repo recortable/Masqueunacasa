@@ -1,4 +1,7 @@
 Masqueunacasa::Application.routes.draw do
+  # Para que funcione con ip solo
+  default_url_options :host => "masqueunacasa.org"
+
   # CONCERNS 
   concern :document do
     resource :kudos
