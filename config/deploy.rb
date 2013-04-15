@@ -13,7 +13,9 @@ load "config/recipes/newrelic"
 load "config/recipes/log"
 load "config/recipes/apt"
 
-server "176.58.98.122", :web, :app, :db, primary: true
+#server "176.58.98.122", :web, :app, :db, primary: true
+server "198.199.73.200", :web, :app, :db, primary: true
+
 
 set :application, "Masqueunacasa"
 set :user, "deployer"
@@ -38,6 +40,9 @@ set :newrelic_license_key, '0a0d3776322392d64886579d8e72499290edd79a'
 # config files settings
 set :config_files, ['amazon_s3.yml', 'smtp.yml']
 
+set :default_environment, {
+  'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
+}
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
