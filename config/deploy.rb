@@ -33,5 +33,7 @@ set :default_environment, {
   'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
 }
 
+set :host, 'masqueunacasa.net'
+
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 

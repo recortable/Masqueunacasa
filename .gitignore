@@ -14,5 +14,6 @@ public/system
 *.swp
 vim
 .rvmrc
+.ruby-version
 
 Masqueunacasa.sublime-*
