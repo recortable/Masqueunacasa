@@ -10,37 +10,33 @@ class SectionsSti < ActiveRecord::Migration
     add_column :sections, :type, :string, limit: 80
     remove_column :sections, :body_type, :properties
 
+    execute "DELETE FROM sections WHERE document_type = 'Content'"
+
     Section.all.each do |section|
-      unless section.image.blank?
+      if section.image.present? and section.body.present?
+        section.type = "ImageSection"
+        new_section = section.document.text_sections.build(
+          title: section.title,
+          body: section.body,
+          group_id: section.group_id,
+          locale: section.locale
+        )
+        section.body = nil
+        section.save!
+        new_section.save!
+
+      elsif section.image.present? and section.body.blank?
         section.type = "ImageSection"
         section.save!
-      end
-      unless section.body.blank?
-        if section.image.blank?
-          section.type = "TextSection"
-          section.save!
-        else
-          new_section = section.document.text_sections.build(
-            title: section.title,
-            body: section.body,
-            group_id: section.group_id,
-            locale: section.locale
-          )
-          new_section.save!
-          section.update_column :body, nil
-        end
+
+      elsif section.image.blank? and section.body.present?
+        section.type = "TextSection"
+        section.save!
       end
     end
   end
 
   def down
-    rename_column :sections, :locale, :lang
-    remove_column :sections, :type
-    add_column :sections, :body_type, :string, limit: 16
-    add_column :sections, :properties, :text
-
-    TextSection.all.each do |ts|
-      ts.update_column :body_type, 'markdown'
-    end
+    raise ActiveRecord::IrreversibleMigration
   end
 end
