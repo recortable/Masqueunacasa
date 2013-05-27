@@ -12,6 +12,8 @@ set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
+set :host, "masqueunacasa.net"
+
 set :scm, "git"
 set :repository, "git@github.com:recortable/#{application}.git"
 set :branch, "master"
@@ -32,8 +34,6 @@ set :config_files, ['amazon_s3.yml', 'smtp.yml']
 set :default_environment, {
   'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
 }
-
-# set :host, 'masqueunacasa.net'
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
