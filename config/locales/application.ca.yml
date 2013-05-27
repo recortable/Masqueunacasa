@@ -1,20 +1,3 @@
-es:
-  will_paginate:
-    next_label: '>>'
-    previous_label: '<<'
-
-  resource:
-    created: 'Añadido. Gracias'
-    destroyed: 'Borrado... uupps...'
-    updated: 'Modificado. ¡Bien!'
-
-  app:
-    add: Añadir %{element}
-    back_to: "Volver a '%{title}'"
-    cancel: 'Cancelar'
-    create: 'Crear'
-    edit: 'Editar'
-
 ca:
   will_paginate:
     next_label: '>>'
@@ -32,4 +15,3 @@ ca:
     create: 'Crear'
     edit: 'Editar'
     remove: Esborrar %{element}
-

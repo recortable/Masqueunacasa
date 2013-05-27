@@ -1,0 +1,33 @@
+ca:
+  activerecord:
+    models:
+      agent: 'grup'
+      category: 'pregunta'
+      content: 'entrada'
+      experiencie: 'experiència'
+      group: 'col.lectiu'
+      image: 'imatge'
+      image_section: "secció d'imatge"
+      link: 'recurs'
+      notice: 'destacat'
+      page: 'document'
+      password_recovery: 'recuperar contrasenya'
+      phase: 'fase'
+      post: 'entrada'
+      post_attachment: 'adjunt'
+      proposal: 'proposta'
+      section:
+        one: secció
+        other: seccions
+      text_section: 'sección de text'
+      user: 'perfil'
+
+  versions:
+    events:
+      create: 'creat'
+      destroy: 'esborrat'
+      update: 'modificat'
+
+  search:
+    errors:
+      term_to_short: "Has d'entrar al menys 3 lletres per fer la cerca"
