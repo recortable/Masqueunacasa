@@ -2,8 +2,8 @@ require "bundler/capistrano"
 
 load "config/recipes/all"
 
-server "176.58.98.122", :web, :app, :db, primary: true
-#server "198.199.73.200", :web, :app, :db, primary: true
+#server "176.58.98.122", :web, :app, :db, primary: true # LINODE
+server "198.199.73.200", :web, :app, :db, primary: true # DIGITAL OCEAN
 
 
 set :application, "Masqueunacasa"
@@ -33,7 +33,7 @@ set :default_environment, {
   'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
 }
 
-set :host, 'masqueunacasa.net'
+# set :host, 'masqueunacasa.net'
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
