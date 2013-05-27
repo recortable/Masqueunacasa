@@ -1,3 +1,7 @@
+class User2 < ActiveRecord::Base
+  self.table_name = :users
+end
+
 class UsersHaveTheirOwnTable < ActiveRecord::Migration
   def up
     create_table :users do |t|
@@ -17,7 +21,7 @@ class UsersHaveTheirOwnTable < ActiveRecord::Migration
     end
 
     Agent.where(type: "User").each do |a|
-      u = User.new
+      u = User2.new
       u.id = a.id
       u.name = a.name
       u.email = a.email
