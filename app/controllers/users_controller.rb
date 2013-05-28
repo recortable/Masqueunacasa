@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   respond_to :html
 
   expose(:themes) { 'textura04 azul_gris' }
-  expose(:users) { site.users }
+  expose(:users) { User.all }
   expose(:user)
   expose(:message) { Message.new(resource: user) }
 

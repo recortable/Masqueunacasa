@@ -13,6 +13,7 @@ Masqueunacasa::Application.routes.draw do
 
   # PARTE SOCIAL
   resources :users
+  resources :groups
 
   # GENERAL
   resources :images, only: [:up, :down], concerns: :position do
@@ -24,6 +25,7 @@ Masqueunacasa::Application.routes.draw do
   match '/entrar' => 'user_sessions#new', as: :login
   match '/salir' => 'user_sessions#destroy', as: :logout
   match '/inicio' => 'dashboard#dashboard'
+  match '/community' => 'dashboard#community', as: :community
   match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'
   match '/quinientos' => 'dashboard#quinientos'
   match "/enter/:id" => "users#enter", as: :enter

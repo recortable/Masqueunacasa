@@ -2,7 +2,7 @@ class Group < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
   include HasTranslations
-  translates :summary
+  translates :title, :summary
 
 
   attr_accessible :name, :title, :email

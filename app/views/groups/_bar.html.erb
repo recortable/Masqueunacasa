@@ -1,7 +1,7 @@
 <%= link_to_unless_current avatar_image(group, class: 'fixed'), group %>
 <table class="table">
   <tr><td>
-      <%= group.admin? ? User.count : group.memberships_count %> participantes.
+      <%= group.memberships_count %> participantes.
   </td></tr>
 </table>
 <%= render_group_sections group %>

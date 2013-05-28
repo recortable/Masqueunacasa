@@ -9,10 +9,7 @@ class DashboardController < ApplicationController
       'textura01 azul_neon'
     end
   end
-  expose(:site) { Site.new }
-  expose(:post_list) { site.latest_posts(params[:page]) }
-  expose(:groups) { site.groups.reorder('admin DESC, title ASC') }
-  expose(:archive_posts) { Post.all }
+  expose(:groups) { Group.all }
 
   add_breadcrumb 'Mas que una casa', :root_path
 

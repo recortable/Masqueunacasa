@@ -52,7 +52,7 @@ shared_examples_for HasTranslations do
 end
 
 describe "Models with translations" do
-  included_models = [Proposal, Category, Experiencie, Phase]
+  included_models = [Proposal, Category, Experiencie, Phase, Group]
 
   included_models.each do |klass|
     describe klass do

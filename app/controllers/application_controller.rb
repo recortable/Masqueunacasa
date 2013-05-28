@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
   include SlugRedirections ## Tiene que ir después de :set_locale_from_url
 
   expose(:themes) { 'textura02 rojo' }
-  expose(:site) { Site.new }
 
   expose(:with_banner) { false }
 

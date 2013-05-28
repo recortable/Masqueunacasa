@@ -134,9 +134,10 @@ ActiveRecord::Schema.define(:version => 20130528180934) do
   create_table "group_translations", :force => true do |t|
     t.integer  "group_id"
     t.string   "locale"
+    t.string   "title",      :limit => 300
     t.text     "summary"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   add_index "group_translations", ["group_id"], :name => "index_group_translations_on_group_id"
@@ -145,18 +146,17 @@ ActiveRecord::Schema.define(:version => 20130528180934) do
   create_table "groups", :force => true do |t|
     t.string   "type",              :limit => 8
     t.string   "name",              :limit => 50
-    t.string   "title",             :limit => 100
     t.string   "slug",              :limit => 50
     t.string   "avatar_image"
     t.string   "email"
     t.text     "settings"
-    t.integer  "kudos_count",                      :default => 0
-    t.integer  "view_count",                       :default => 0
+    t.integer  "kudos_count",                     :default => 0
+    t.integer  "view_count",                      :default => 0
     t.integer  "user_id"
     t.integer  "memberships_count"
     t.string   "banner_image"
-    t.datetime "created_at",                                      :null => false
-    t.datetime "updated_at",                                      :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.string   "original_locale",   :limit => 3
   end
 
