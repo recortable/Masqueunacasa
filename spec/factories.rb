@@ -18,16 +18,6 @@ FactoryGirl.define do
     user
   end
 
-  factory :content do
-    sequence(:title) {|n| "Content #{n}" }
-    user
-    group
-    body_type 'markdown'
-  end
-
-  factory :post, parent: :content, class: Post do
-  end
-
   factory :phase do
     sequence(:title) {|n| "Fase #{n}"}
     summary { "#{title} summary" }

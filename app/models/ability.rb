@@ -46,7 +46,6 @@ class Ability
     cannot :index, Category
     can :read, Agent
     can :read, User
-    can :read, Post
     can :manage, Notice
   end
 
