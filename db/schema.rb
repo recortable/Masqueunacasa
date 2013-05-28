@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(:version => 20130216203930) do
     t.integer  "editorships_count",                :default => 0
     t.string   "image"
     t.string   "slug_en",           :limit => 100
+    t.string   "slug_it",           :limit => 100
+    t.string   "slug_fr",           :limit => 100
     t.string   "original_locale",   :limit => 4
   end
 
@@ -73,6 +75,8 @@ ActiveRecord::Schema.define(:version => 20130216203930) do
   add_index "categories", ["slug_ca"], :name => "index_categories_on_slug_ca", :unique => true
   add_index "categories", ["slug_en"], :name => "index_categories_on_slug_en"
   add_index "categories", ["slug_es"], :name => "index_categories_on_slug_es", :unique => true
+  add_index "categories", ["slug_fr"], :name => "index_categories_on_slug_fr"
+  add_index "categories", ["slug_it"], :name => "index_categories_on_slug_it"
   add_index "categories", ["user_id"], :name => "index_categories_on_user_id"
 
   create_table "category_translations", :force => true do |t|
@@ -104,49 +108,6 @@ ActiveRecord::Schema.define(:version => 20130216203930) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
-
-  create_table "content_translations", :force => true do |t|
-    t.integer  "content_id"
-    t.string   "locale"
-    t.string   "title",      :limit => 300
-    t.text     "summary"
-    t.text     "body"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-  end
-
-  add_index "content_translations", ["content_id"], :name => "index_content_translations_on_content_id"
-  add_index "content_translations", ["locale"], :name => "index_content_translations_on_locale"
-
-  create_table "contents", :force => true do |t|
-    t.string   "slug_es"
-    t.string   "type",              :limit => 32
-    t.integer  "user_id"
-    t.integer  "group_id"
-    t.date     "published_at"
-    t.integer  "comments_count",                   :default => 0
-    t.text     "embed"
-    t.string   "image"
-    t.string   "link_url"
-    t.datetime "created_at",                                      :null => false
-    t.datetime "updated_at",                                      :null => false
-    t.string   "body_type",         :limit => 16
-    t.integer  "kudos_count",                      :default => 0
-    t.integer  "subscribers_count",                :default => 0
-    t.integer  "view_count",                       :default => 0
-    t.integer  "editorships_count",                :default => 0
-    t.string   "slug_ca",           :limit => 100
-    t.string   "slug_en",           :limit => 100
-    t.string   "original_locale",   :limit => 4
-  end
-
-  add_index "contents", ["group_id"], :name => "index_contents_on_group_id"
-  add_index "contents", ["published_at"], :name => "index_contents_on_published_at"
-  add_index "contents", ["slug_ca"], :name => "index_contents_on_slug_ca"
-  add_index "contents", ["slug_en"], :name => "index_contents_on_slug_en"
-  add_index "contents", ["slug_es"], :name => "index_contents_on_slug_es"
-  add_index "contents", ["type"], :name => "index_contents_on_type"
-  add_index "contents", ["user_id"], :name => "index_contents_on_user_id"
 
   create_table "editorships", :force => true do |t|
     t.integer  "document_id"
@@ -185,6 +146,8 @@ ActiveRecord::Schema.define(:version => 20130216203930) do
     t.integer  "view_count",                       :default => 0
     t.integer  "editorships_count",                :default => 0
     t.string   "slug_en",           :limit => 100
+    t.string   "slug_it",           :limit => 100
+    t.string   "slug_fr",           :limit => 100
     t.string   "original_locale",   :limit => 4
   end
 
@@ -192,6 +155,8 @@ ActiveRecord::Schema.define(:version => 20130216203930) do
   add_index "experiencies", ["slug_ca"], :name => "index_experiencies_on_slug_ca"
   add_index "experiencies", ["slug_en"], :name => "index_experiencies_on_slug_en"
   add_index "experiencies", ["slug_es"], :name => "index_experiencies_on_slug_es"
+  add_index "experiencies", ["slug_fr"], :name => "index_experiencies_on_slug_fr"
+  add_index "experiencies", ["slug_it"], :name => "index_experiencies_on_slug_it"
   add_index "experiencies", ["user_id"], :name => "index_experiencies_on_user_id"
 
   create_table "friendly_id_slugs", :force => true do |t|
@@ -204,6 +169,29 @@ ActiveRecord::Schema.define(:version => 20130216203930) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "groups", :force => true do |t|
+    t.integer "user_id"
+    t.string  "name"
+    t.string  "slug"
+    t.string  "description_es", :limit => 1024
+    t.string  "description_ca", :limit => 1024
+    t.string  "description_en", :limit => 1024
+    t.string  "banner_image"
+    t.string  "avatar_image"
+    t.float   "latitude"
+    t.float   "longitude"
+    t.string  "city"
+    t.string  "country"
+    t.string  "lang"
+    t.string  "settings"
+    t.string  "website"
+    t.string  "twitter"
+    t.string  "facebook"
+  end
+
+  add_index "groups", ["name"], :name => "index_groups_on_name", :unique => true
+  add_index "groups", ["slug"], :name => "index_groups_on_slug", :unique => true
 
   create_table "images", :force => true do |t|
     t.string  "title",              :limit => 200
@@ -323,17 +311,21 @@ ActiveRecord::Schema.define(:version => 20130216203930) do
     t.string   "slug_es",         :limit => 50
     t.string   "slug_ca",         :limit => 50
     t.integer  "position"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
-    t.integer  "kudos_count",                   :default => 0
-    t.integer  "view_count",                    :default => 0
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.integer  "kudos_count",                    :default => 0
+    t.integer  "view_count",                     :default => 0
     t.string   "slug_en",         :limit => 50
+    t.string   "slug_it",         :limit => 100
+    t.string   "slug_fr",         :limit => 100
     t.string   "original_locale", :limit => 4
   end
 
   add_index "phases", ["slug_ca"], :name => "index_phases_on_slug_ca"
   add_index "phases", ["slug_en"], :name => "index_phases_on_slug_en"
   add_index "phases", ["slug_es"], :name => "index_phases_on_slug_es"
+  add_index "phases", ["slug_fr"], :name => "index_phases_on_slug_fr"
+  add_index "phases", ["slug_it"], :name => "index_phases_on_slug_it"
 
   create_table "post_attachments", :force => true do |t|
     t.integer  "user_id"
@@ -378,7 +370,9 @@ ActiveRecord::Schema.define(:version => 20130216203930) do
     t.integer  "view_count",                        :default => 0
     t.integer  "editorships_count",                 :default => 0
     t.integer  "experiencies_count",                :default => 0
-    t.string   "slug_en"
+    t.string   "slug_en",            :limit => 100
+    t.string   "slug_it",            :limit => 100
+    t.string   "slug_fr",            :limit => 100
     t.string   "original_locale",    :limit => 4
   end
 
@@ -386,6 +380,8 @@ ActiveRecord::Schema.define(:version => 20130216203930) do
   add_index "proposals", ["slug_ca"], :name => "index_proposals_on_slug_ca"
   add_index "proposals", ["slug_en"], :name => "index_proposals_on_slug_en"
   add_index "proposals", ["slug_es"], :name => "index_proposals_on_slug_es"
+  add_index "proposals", ["slug_fr"], :name => "index_proposals_on_slug_fr"
+  add_index "proposals", ["slug_it"], :name => "index_proposals_on_slug_it"
 
   create_table "relations", :force => true do |t|
     t.integer  "experiencie_id"
