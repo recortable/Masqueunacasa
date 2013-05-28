@@ -1,4 +1,4 @@
-class User < Agent
+class User < ActiveRecord::Base
   def self.current_user
     nil
   end

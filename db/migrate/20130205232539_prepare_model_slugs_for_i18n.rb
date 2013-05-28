@@ -15,26 +15,6 @@ class PrepareModelSlugsForI18n < ActiveRecord::Migration
       c.update_column :slug_en, c.slug_es
     end
 
-    ## CONTENTS
-    rename_column :contents, :slug, :slug_es
-    add_column :contents, :slug_ca, :string, limit: 100
-    add_column :contents, :slug_en, :string, limit: 100
-    add_column :contents, :slug_it, :string, limit: 100
-    add_column :contents, :slug_fr, :string, limit: 100
-    add_index :contents, :slug_es
-    add_index :contents, :slug_ca
-    add_index :contents, :slug_en
-    add_index :contents, :slug_it
-    add_index :contents, :slug_fr
-    remove_index :contents, :slug
-
-    Content.all.each do |c|
-      c.update_column :slug_ca, c.slug
-      c.update_column :slug_en, c.slug
-      c.update_column :slug_it, c.slug
-      c.update_column :slug_fr, c.slug
-    end
-
     ## EXPERIENCIES
     add_column :experiencies, :slug_en, :string, limit: 100
     add_column :experiencies, :slug_it, :string, limit: 100
@@ -84,14 +64,6 @@ class PrepareModelSlugsForI18n < ActiveRecord::Migration
     remove_column :categories, :slug_en
     remove_column :categories, :slug_it
     remove_column :categories, :slug_fr
-
-    ## CONTENTS
-    rename_column :contents, :slug_es, :slug
-
-    remove_column :contents, :slug_ca, :slug_en, :slug_it, :slug_fr
-
-    remove_index :contents, :slug_es
-    add_index :contents, :slug
 
     ## EXPERIENCIES
     remove_column :experiencies, :slug_en, :slug_it, :slug_fr

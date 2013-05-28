@@ -44,7 +44,6 @@ class Ability
     can [:read, :index], Experiencie
     can :read, Category
     cannot :index, Category
-    can :read, Agent
     can :read, User
     can :manage, Notice
   end

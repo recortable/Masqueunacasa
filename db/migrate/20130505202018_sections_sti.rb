@@ -1,8 +1,13 @@
-class User < Agent
+class User < ActiveRecord::Base
   def self.current_user
     nil
   end
 end
+
+class Agent < ActiveRecord::Base
+  
+end
+
 
 class SectionsSti < ActiveRecord::Migration
   def up

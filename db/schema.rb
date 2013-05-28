@@ -11,46 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130216203930) do
-
-  create_table "agent_translations", :force => true do |t|
-    t.integer  "agent_id"
-    t.string   "locale"
-    t.string   "summary",    :limit => 500
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-  end
-
-  add_index "agent_translations", ["agent_id"], :name => "index_agent_translations_on_agent_id"
-  add_index "agent_translations", ["locale"], :name => "index_agent_translations_on_locale"
-
-  create_table "agents", :force => true do |t|
-    t.string   "type",                 :limit => 8
-    t.string   "name",                 :limit => 50
-    t.string   "title",                :limit => 100
-    t.string   "slug",                 :limit => 50
-    t.boolean  "admin"
-    t.string   "avatar_image"
-    t.string   "lang",                 :limit => 8
-    t.string   "email"
-    t.text     "settings"
-    t.integer  "kudos_count",                         :default => 0
-    t.integer  "view_count",                          :default => 0
-    t.string   "password_digest"
-    t.string   "reset_password_token"
-    t.integer  "login_count"
-    t.datetime "last_login_at"
-    t.integer  "user_id"
-    t.integer  "memberships_count"
-    t.string   "banner_image"
-    t.datetime "created_at",                                         :null => false
-    t.datetime "updated_at",                                         :null => false
-    t.string   "original_locale",      :limit => 4
-  end
-
-  add_index "agents", ["email"], :name => "index_agents_on_email"
-  add_index "agents", ["slug"], :name => "index_agents_on_slug"
-  add_index "agents", ["type"], :name => "index_agents_on_type"
+ActiveRecord::Schema.define(:version => 20130506075656) do
 
   create_table "categories", :force => true do |t|
     t.integer  "phase_id"
@@ -171,27 +132,34 @@ ActiveRecord::Schema.define(:version => 20130216203930) do
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "groups", :force => true do |t|
-    t.integer "user_id"
-    t.string  "name"
-    t.string  "slug"
-    t.string  "description_es", :limit => 1024
-    t.string  "description_ca", :limit => 1024
-    t.string  "description_en", :limit => 1024
-    t.string  "banner_image"
-    t.string  "avatar_image"
-    t.float   "latitude"
-    t.float   "longitude"
-    t.string  "city"
-    t.string  "country"
-    t.string  "lang"
-    t.string  "settings"
-    t.string  "website"
-    t.string  "twitter"
-    t.string  "facebook"
+    t.string   "type",                 :limit => 8
+    t.string   "name",                 :limit => 50
+    t.string   "title",                :limit => 100
+    t.string   "slug",                 :limit => 50
+    t.boolean  "admin"
+    t.string   "avatar_image"
+    t.string   "lang",                 :limit => 8
+    t.string   "email"
+    t.text     "settings"
+    t.integer  "kudos_count",                         :default => 0
+    t.integer  "view_count",                          :default => 0
+    t.string   "password_digest"
+    t.string   "reset_password_token"
+    t.integer  "login_count"
+    t.datetime "last_login_at"
+    t.integer  "user_id"
+    t.integer  "memberships_count"
+    t.string   "banner_image"
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
+    t.string   "summary_es",           :limit => 500
+    t.string   "summary_ca",           :limit => 500
+    t.string   "summary_en",           :limit => 500
   end
 
-  add_index "groups", ["name"], :name => "index_groups_on_name", :unique => true
-  add_index "groups", ["slug"], :name => "index_groups_on_slug", :unique => true
+  add_index "groups", ["email"], :name => "index_agents_on_email"
+  add_index "groups", ["slug"], :name => "index_agents_on_slug"
+  add_index "groups", ["type"], :name => "index_agents_on_type"
 
   create_table "images", :force => true do |t|
     t.string  "title",              :limit => 200

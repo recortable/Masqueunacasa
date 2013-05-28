@@ -1,7 +1,3 @@
-class User < Agent
-
-end
-
 class PrepareModelsForGlobalize3 < ActiveRecord::Migration
   def up
     ## CATEGORIES
@@ -90,18 +86,6 @@ class PrepareModelsForGlobalize3 < ActiveRecord::Migration
     })
 
     remove_column :proposals, :title, :description, :body, :summary
-
-    ## AGENTS ##
-    remove_column :agents, :summary_ca, :summary_en
-    rename_column :agents, :summary_es, :summary
-
-    Agent.create_translation_table!({
-      summary: { type: :string, limit: 500 }
-    }, {
-      migrate_data: true
-    })
-
-    remove_column :agents, :summary
   end
 
   ####################

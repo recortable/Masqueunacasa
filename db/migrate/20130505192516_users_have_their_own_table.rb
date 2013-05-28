@@ -2,6 +2,10 @@ class User2 < ActiveRecord::Base
   self.table_name = :users
 end
 
+class Agent < ActiveRecord::Base
+
+end
+
 class UsersHaveTheirOwnTable < ActiveRecord::Migration
   def up
     create_table :users do |t|
@@ -27,16 +31,19 @@ class UsersHaveTheirOwnTable < ActiveRecord::Migration
       u.email = a.email
       u.password_digest = a.password_digest
       u.admin = a.admin
-      u.avatar_image = a.avatar_image
+      #u.avatar_image = a.avatar_image
       u.save!(validate: false)
       u.update_column :slug, a.slug
       u.update_column :login_count, a.login_count
       u.update_column :created_at, a.created_at
       u.update_column :updated_at, a.updated_at
+
+      execute "UPDATE sections SET document_type = 'User' WHERE document_type = 'Agent' AND document_id = #{a.id}"
+      execute "DELETE from agents WHERE id = #{u.id}"
     end
   end
 
   def down
-    drop_table :users
+    raise ActiveRecord::IrreversibleMigration
   end
 end

@@ -1,46 +1,32 @@
-class Group < Agent
+class Group < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
+  include HasTranslations
+  translates :summary
 
+
+  attr_accessible :name, :title, :email
+  attr_accessible :admin, :avatar_image
+  attr_accessible :summary
+  attr_accessible :lang
+  attr_accessible :city, :country, :website, :twitter, :facebook
   attr_accessible :user_id, :memberships_count, :banner_image
-  attr_accessible :has_blog, :has_pages
+  store :settings, accessors: [:city, :country, :website,
+                    :twitter, :facebook]
 
-  store :settings, accessors: [:has_blog, :last_mail_at, :last_mailer_try_at]
+  validates :name, presence: true, uniqueness: true
+  validates :title, presence: true
+  include HasSections
+  include HasLocations
+  include HasPopularity
 
-  [:has_blog].each do |name|
-    define_method "#{name}?" do
-      self.send(name) == '1'
-    end
-  end
-
-
-  #validates :user_id, presence: true
 
   default_scope order: 'updated_at ASC'
   scope :community, where(admin: false)
 
   belongs_to :user
-  has_many :posts
-  has_many :messages
   include HasMemberships
 
   mount_uploader :banner_image, GroupBannerUploader
   mount_uploader :avatar_image, GroupAvatarUploader
-  include ReceiveMessages
-
-  def self.root
-    Group.where(admin: true).first
-  end
-
-  def site?
-    false
-  end
-
-  def subdomain
-    admin? ? false : slug
-  end
-
-  def recipients
-    users
-  end
 end
