@@ -30,7 +30,7 @@ class UsersHaveTheirOwnTable < ActiveRecord::Migration
       u.name = a.name
       u.email = a.email
       u.password_digest = a.password_digest
-      u.admin = a.admin
+      u.admin = a.admin?
       #u.avatar_image = a.avatar_image
       u.save!(validate: false)
       u.update_column :slug, a.slug
