@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528180934) do
+ActiveRecord::Schema.define(:version => 20130603015108) do
 
   create_table "categories", :force => true do |t|
     t.integer  "phase_id"
@@ -144,7 +144,6 @@ ActiveRecord::Schema.define(:version => 20130528180934) do
   add_index "group_translations", ["locale"], :name => "index_group_translations_on_locale"
 
   create_table "groups", :force => true do |t|
-    t.string   "type",              :limit => 8
     t.string   "name",              :limit => 50
     t.string   "slug",              :limit => 50
     t.string   "avatar_image"
@@ -154,7 +153,6 @@ ActiveRecord::Schema.define(:version => 20130528180934) do
     t.integer  "view_count",                      :default => 0
     t.integer  "user_id"
     t.integer  "memberships_count"
-    t.string   "banner_image"
     t.datetime "created_at",                                     :null => false
     t.datetime "updated_at",                                     :null => false
     t.string   "original_locale",   :limit => 3
@@ -162,7 +160,6 @@ ActiveRecord::Schema.define(:version => 20130528180934) do
 
   add_index "groups", ["email"], :name => "index_agents_on_email"
   add_index "groups", ["slug"], :name => "index_agents_on_slug"
-  add_index "groups", ["type"], :name => "index_agents_on_type"
 
   create_table "images", :force => true do |t|
     t.string  "title",              :limit => 200

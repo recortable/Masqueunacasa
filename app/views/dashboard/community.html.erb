@@ -1,34 +1,50 @@
 <% title 'Comunidad' %>
-<div class="span8">
+<% if params[:f].blank? or params[:f] == 'groups' %>
+  <h2><%= t('activerecord.models.group.other') %>:</h2>
   <% groups.each do |group| %>
     <div class="row group">
-      <div class="span2">
-        <%= render_group_bar group %>
-      </div>
-      <div class="span4">
-        <div class="hoverize">
-          <%= hover? :update, group do %>
-            <%= link_to icon(:edit, 'Editar perfil'), edit_profile_url(subdomain: group.subdomain) %>
-          <% end %>
-          <h2><%= link_to group.title, group %></h2>
-          <%= markdown group.summary %>
+      <div class="span10">
+        <div class="row">
+          <div class="span2">
+            <%= link_to_unless_current avatar_image(group, class: 'fixed'), group %>
+          </div>
+          <div class="span8">
+            <div class="hoverize">
+              <%= hover? :update, group do %>
+                <% if can? :destroy, group %>
+                  <%= link_to t('app.remove', element: nil), group_path(group), method: :delete %> |
+                <% end %>
+                <%= link_to t('app.edit'), edit_group_path(group) %>
+              <% end %>
+              <h3><%= link_to group.title, group %></h3>
+            </div>
+          </div>
+          <div class="span7 offset-2">
+            <%= markdown group.summary %>
+          </div>
         </div>
       </div>
-      <% if group.has_blog? %>
-        <div class="span2 blog-entries">
-          <h4><%= link_to 'Últimas entradas al blog', posts_url(subdomain: group.subdomain) %></h4>
-          <ul>
-            <% group.posts.latest.each do |post| %>
-              <li>
-              <%= link_to post.title, post_url(post, subdomain: group.subdomain) %>
-              </li>
-            <% end %>
-          </ul>
-          <%= link_to 'Publicar entrada', new_post_url(subdomain: group.subdomain), class: 'publish', data: {behaviour: 'new_post'}  if can?(:edit, group) %>
-        </div>
-      <% end %>
     </div>
   <% end %>
-</div>
-<div class="span4 sidebar sidebar-right">
-</div>
+<% end %>
+
+<% if params[:f].blank? or params[:f] == 'users' %>
+  <h2><%= t('activerecord.models.user.other') %>:</h2>
+  <table class="table users">
+    <% users.each do |user| %>
+      <tr>
+        <td><%= avatar_link user, size: :small %></td>
+        <td><%= link_to user.name, user %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<% content_for :left do %>
+  <div class="filters">
+    <p class='filter'><%= t('filters.filter_by') %>:</p>
+    <p class='filter'><%= link_to t('filters.only', filter: t('activerecord.models.group.other')), '?f=groups' %></p>
+    <p class='filter'><%= link_to t('filters.only', filter: t('activerecord.models.user.other')), '?f=users' %></p>
+  </div>
+<% end %>
+

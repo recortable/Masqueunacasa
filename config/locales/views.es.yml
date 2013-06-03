@@ -12,10 +12,15 @@ es:
   application:
     session:
       home: Inicio
-      session_start: 'Iniciar sesión'
-      session_end: 'Salir'
       groups: Colectivos
       community: 'Comunidad'
+
+    main_menu:
+      habitapedia: Preguntas y propuestas
+      experiencies: Experiencias
+      community: Comunidad
+      session_start: 'Iniciar sesión'
+      session_end: 'Salir'
 
     notices:
       created: 'Mensaje colectivo preparado.'
@@ -30,12 +35,16 @@ es:
   dashboard:
     community:
       title: 'Comunidad'
-  
+
   experiencies:
     notices:
       created: 'Experiencia añadida, ¡gracias!'
       updated: 'Experiencia modificada.'
       destroyed: 'Experiencia borrada. Glups.'
+
+  filters:
+    filter_by: filtrar por
+    only: solo %{filter}
 
   groups:
     new:

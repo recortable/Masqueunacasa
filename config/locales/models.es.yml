@@ -1,11 +1,12 @@
 es:
   activerecord:
     models:
-      agent: 'grupo'
       category: 'pregunta'
       content: 'entrada'
       experiencie: 'experiencia'
-      group: 'colectivo'
+      group:
+        one: 'colectivo'
+        other: colectivos
       image: 'imágen'
       image_section: sección de imagen
       link: 'recurso'
@@ -20,7 +21,9 @@ es:
         one: secció
         other: seccions
       text_section: 'sección de texto'
-      user: 'perfil'
+      user:
+        one: persona
+        other: personas
 
   versions:
     events:

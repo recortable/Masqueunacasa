@@ -10,6 +10,7 @@ class DashboardController < ApplicationController
     end
   end
   expose(:groups) { Group.all }
+  expose(:users) { User.all }
 
   add_breadcrumb 'Mas que una casa', :root_path
 

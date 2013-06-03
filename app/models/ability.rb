@@ -53,9 +53,7 @@ class Ability
   end
 
   def admin_abilities
-    can :manage, Phase
-    can :manage, Category
-    can :manage, Notice
+    can :manage, :all
   end
 
   protected
