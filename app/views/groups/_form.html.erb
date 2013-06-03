@@ -10,10 +10,6 @@
   <%= form.input :twitter %>
   <%= form.input :facebook %>
   <br>
-  <h3>Funcionalidades</h3>
-  <% [:blog].each do |item| %>
-    <%= form.input "has_#{item}", as: :boolean %>
-  <% end %>
 
   <%= submit_button_for form %>
 <% end %>

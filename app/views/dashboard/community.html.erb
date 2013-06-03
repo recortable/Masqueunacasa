@@ -41,8 +41,12 @@
 <% end %>
 
 <% content_for :left do %>
+  <div class="actions">
+    <%= link_to t('app.create_new', element: t('activerecord.models.group.one')), new_group_path, class: 'btn' %>
+  </div>
   <div class="filters">
-    <p class='filter'><%= t('filters.filter_by') %>:</p>
+    <p><%= t('filters.filter_by') %>:</p>
+    <p class='filter'><%= link_to t('filters.all'), '?f=' %></p>
     <p class='filter'><%= link_to t('filters.only', filter: t('activerecord.models.group.other')), '?f=groups' %></p>
     <p class='filter'><%= link_to t('filters.only', filter: t('activerecord.models.user.other')), '?f=users' %></p>
   </div>
