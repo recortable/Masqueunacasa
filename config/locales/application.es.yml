@@ -4,6 +4,7 @@ es:
     back_to: "Volver a '%{title}'"
     cancel: 'Cancelar'
     create: 'Crear'
+    create_new: Crear %{element}
     edit: 'Editar'
     remove: Borrar %{element}
 

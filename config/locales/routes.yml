@@ -22,7 +22,7 @@ es:
     links: 'enlaces-relacionados'
 
     edit: 'editar'
-    new: 'nueva'
+    new: crear
     entrar: 'entrar'
     salir: 'salir'
     sign_up: 'alta'

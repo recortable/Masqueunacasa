@@ -43,8 +43,9 @@ es:
       destroyed: 'Experiencia borrada. Glups.'
 
   filters:
-    filter_by: filtrar por
-    only: solo %{filter}
+    all: Todo
+    filter_by: Filtrar por
+    only: Solo %{filter}
 
   groups:
     new:
