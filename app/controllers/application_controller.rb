@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale
   before_filter :set_locale_from_url
+  before_filter :authenticate_user
   include SlugRedirections ## Tiene que ir después de :set_locale_from_url
 
   expose(:activities) do
@@ -58,5 +59,11 @@ class ApplicationController < ActionController::Base
 
   def markitup_preview
     request.fullpath.include? "markitup/preview"
+  end
+
+  private
+
+  def authenticate_user
+    redirect_to login_path unless current_user or controller_name == 'user_sessions'
   end
 end

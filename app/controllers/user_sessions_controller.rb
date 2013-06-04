@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
       redirect_to path_or_default(request.env['HTTP_REFERER']),
         notice: t('user_sessions.notices.already_logged_in')
     else
-      respond_with user_session
+      render 'new', layout: nil
     end
   end
 

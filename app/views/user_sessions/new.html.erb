@@ -1,0 +1,8 @@
+<%= title t('.title')  %>
+<%= simple_form_for user_session, html: {class: 'clearfix'} do |form| %>
+  <%= hidden_field_tag :from, params[:from] %>
+  <%= form.input :email %>
+  <%= form.input :password %>
+  <%= form.submit %>
+<% end %>
+
