@@ -1,16 +1,11 @@
 <div class="sections">
   <%= content_tag_for :div, Section.with_locale_fallback_for(document) do |section| %>
-    <a name="<%= section.title? ? section.title : section.id %>"></a>
-    <% if section.title.blank? %>
-      <p>&nbsp;</p>
-    <% else %>
-        <h2 <%= "class='no-title'" if section.title.blank? %>><%= section.title %><small><%= link_to icon('sort-up'), '#' %></small></h2>
-    <% end %>
+    <%= content_tag 'h2', section.title if section.title.present? %>
     <% if section.image? %>
       <%= image_tag section.image_url, class: 'responsive' %>
     <% end %>
     <% if section.body? %>
-      <%= render_body section %>
+      <%= markdown section.body %>
     <% end %>
   <% end %>
 </div>

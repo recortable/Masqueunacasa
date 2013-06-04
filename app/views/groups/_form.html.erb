@@ -1,16 +1,22 @@
-<%= simple_form_for group, html: {class: 'clearfix'} do |form| %>
+<%= simple_nested_form_for group, html: {class: 'clearfix'} do |form| %>
   <h3>Información general</h3>
-  <%= form.input :name %>
-  <%= form.input :title %>
+  <%= form.input :avatar_image %>
+  <%= form.input :name, hint:
+    "#{t('simple_form.hints.non_translatable_field') unless
+       group.new_record? }" %>
+  <%= form.input :title, required: false %>
   <%= form.input :summary, as: :text %>
+  <%= render 'section_fields', form: form %>
   <br>
   <h3>Difusión</h3>
+  <%= content_tag 'p', t('simple_form.hints.non_translatable_fields'),
+    class: 'help-block' unless group.new_record? %>
   <%= form.input :email %>
   <%= form.input :website %>
   <%= form.input :twitter %>
   <%= form.input :facebook %>
   <br>
 
-  <%= submit_button_for form %>
+  <%= form.submit %>
 <% end %>
 

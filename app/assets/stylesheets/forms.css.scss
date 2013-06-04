@@ -1,6 +1,6 @@
 
 form {
-  input[type=text], input[type=email], input[type=password], 
+  input[type=text], input[type=email], input[type=password],
   input[type=url], textarea {
     width: 98%;
     border-radius: 0;
@@ -78,4 +78,8 @@ form .fields {
 
 .add_nested_fields_controls {
   margin: 20px 0 0;
+}
+
+form .help-block {
+  color: green;
 }

@@ -12,7 +12,8 @@
             <div class="hoverize">
               <%= hover? :update, group do %>
                 <% if can? :destroy, group %>
-                  <%= link_to t('app.remove', element: nil), group_path(group), method: :delete %> |
+                  <%= link_to t('app.remove', element: nil), group_path(group),
+                    method: :delete, confirm: t('confirm') %> |
                 <% end %>
                 <%= link_to t('app.edit'), edit_group_path(group) %>
               <% end %>

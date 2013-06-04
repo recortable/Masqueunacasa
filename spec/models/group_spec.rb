@@ -12,13 +12,13 @@ describe Group do
     expect( group ).not_to be_valid
   end
 
-  it 'without title is not valid' do
-    group.title = " "
-    expect( group ).not_to be_valid
-  end
-
   it 'without summary is not valid' do
     group.summary = "   "
     expect( group ).not_to be_valid
+  end
+
+  it 'title = name if title is blank' do
+    new_group = FactoryGirl.create( :group, title: " " )
+    expect( new_group.title ).to eq new_group.name
   end
 end

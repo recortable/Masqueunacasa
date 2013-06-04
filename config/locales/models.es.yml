@@ -10,6 +10,9 @@ es:
       image: 'imágen'
       image_section: sección de imagen
       link: 'recurso'
+      membership:
+        one: participante
+        other: participantes
       notice: 'destacado'
       page: 'documento'
       password_recovery: 'recuperar contraseña'

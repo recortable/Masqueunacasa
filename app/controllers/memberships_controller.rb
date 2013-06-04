@@ -1,10 +1,10 @@
 # encoding: utf-8
 class MembershipsController < ApplicationController
   respond_to :html
-  before_filter :load_subdomain_group
 
-  expose(:users) { User.where(['id NOT IN (?)', current_group.members]) }
-  expose(:memberships) { current_group.memberships }
+  expose(:group) { Group.find(params[:group_id]) }
+  expose(:users) { User.where(['id NOT IN (?)', group.members]) }
+  expose(:memberships) { group.memberships }
   expose(:membership)
 
   def index
@@ -12,21 +12,25 @@ class MembershipsController < ApplicationController
     respond_with memberships
   end
 
+  def new
+    authorize! :create, Membership
+  end
+
   def create
     user = User.find params[:u]
-    if current_group.member?(user)
-      redirect_to memberships_location, notice: 'Ya pertenecía a éste grupo'
+    if group.member?(user)
+      redirect_to group_path(group), notice: 'Ya pertenecía a éste grupo'
     else
       membership.user = user
-      membership.group = current_group 
+      membership.group = group
       flash[:notice] = 'Añadido!' if membership.save
-      respond_with membership, location: memberships_location
+      respond_with membership, location: group_path(group)
     end
   end
 
   def destroy
     membership.destroy
-    respond_with membership, location: memberships_location
+    respond_with membership, location: group_path(group)
   end
 
   private

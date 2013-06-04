@@ -30,14 +30,14 @@ es:
         title: 'Pregunta'
         image: 'Imágen o dibujo'
         remove_image: 'Borrar imágen'
-        
+
       group:
         name: 'Nombre corto'
         title: 'Nombre completo'
         slug: 'Subdominio'
         banner_image: 'Imágen de cabecera'
         avatar_image: 'Imágen de grupo'
-        description: 'Breve resúmen'
+        summary: Descripcion
         has_blog: 'Blog'
 
       post:
@@ -48,7 +48,7 @@ es:
       page:
         image: 'Imágen principal'
         embed: 'Vídeo'
-  
+
       notice:
         list: 'Lista'
         image: 'Imágen'
@@ -67,17 +67,20 @@ es:
         with-video: con un vídeo
         with-img: con una imagen
         text-only: solo texto
-        
+
       proposal:
         description: 'Resúmen'
         phase: 'Fase en la que se incluye'
         category: 'A qué pregunta responde'
-    
+
       section:
         image_position: 'Dónde quieres poner la imágen'
 
 
     hints:
+      non_translatable_field: Este campo no es traducible. Si lo editas se modificará en todos los idiomas.
+      non_translatable_fields: Estos campos no son traducibles. Si los editas se modificarán en todos los idiomas.
+
       defaults:
         summary: 'Debe ser corto e introduce el contenido. No más de un párrafo.'
 
@@ -87,7 +90,8 @@ es:
         remove_image: 'Selecciona ésto si quieres borrar la imágen actual'
 
       group:
-        has_blog: 'Márcalo si quieres tener un blog en tu grupo'
+        avatar_image: Debe ser quadrada. Aproximadamente 150x150 píxeles.
+        title: Si lo dejas en blanco se usará el nombre corto.
 
       media_item:
         url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'
@@ -103,7 +107,7 @@ es:
       post:
         title: 'Cuando más corto y preciso, mejor.'
         body: 'Se breve, por favor. No más de un párrafo.'
-      
+
       section:
         title: 'El título de esta sección. Es opcional'
         body: 'Puedes usar markdown.'
@@ -121,7 +125,8 @@ es:
   helpers:
     submit:
       group:
-        update: 'Guardar perfil'
+        new: Crear grupo
+        update: 'Actualizar grupo'
       message:
         create: 'Enviar mensaje'
       password_recovery:

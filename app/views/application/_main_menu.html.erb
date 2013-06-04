@@ -8,10 +8,9 @@
         <li class="<%= active?('experiencies')%>">
           <%= link_to t('.experiencies'), experiencies_url %>
         </li>
-        <li>
+        <li class="<%= active?('community') %>">
           <%= link_to t('.community'), community_path %>
         </li>
-        <!-- <li><%# link_to 'Mapa', locations_url %></li> -->
       </ul>
       <ul class="nav pull-right session-links">
         <% if current_user %>

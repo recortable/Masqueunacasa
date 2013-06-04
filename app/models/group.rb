@@ -4,6 +4,9 @@ class Group < ActiveRecord::Base
   include HasTranslations
   translates :title, :summary
 
+  before_validation do |group|
+    group.title = group.name if group.title.blank?
+  end
 
   attr_accessible :name,
                   :title,

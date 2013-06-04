@@ -3,7 +3,6 @@
     <div class="header">
       <%= hover? :update, resource do %>
         <% url = [:new, resource, :location] %>
-        <% url = new_location_url(subdomain: resource.subdomain) if resource.class == Group %>
         <%= link_to icon(:add, 'Añadir localización'), url %>
       <% end %>
       <h2>Dónde</h2>

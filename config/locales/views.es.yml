@@ -50,12 +50,15 @@ es:
   groups:
     new:
       title: 'Añadir colectivo'
+    edit:
+      title: Editar %{group_name}
     index:
       title: 'Colectivos'
       new_group: 'Añadir colectivo'
     notices:
       created: 'Colectivo añadido.'
       updated: 'Datos del coletivo actualizados. Gracias'
+      deleted: Se ha borrado el grupo.
     show:
       get_in_touch: Ponte en contacto
       you_can_send_message: Desde aquí puedes enviar un mensaje a este grupo

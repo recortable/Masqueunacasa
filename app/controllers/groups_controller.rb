@@ -11,20 +11,18 @@ class GroupsController < ApplicationController
   end
 
   def show
-    redirect_to_group(group)
-  end
-
-  # El root (/) con subdominio
-  def root
-    redirect_to_group(current_group)
+    breadcrumb_for_group group
+    respond_with group
   end
 
   def new
     authorize! :new, Group
+    breadcrumb_for_community
   end
 
   def edit
     authorize! :update, group
+    breadcrumb_for_group group
     respond_with group
   end
 
@@ -41,13 +39,9 @@ class GroupsController < ApplicationController
     respond_with group
   end
 
-  private
-  def redirect_to_group(group)
-    if group.has_blog?
-      redirect_to posts_url(subdomain: group.subdomain)
-    else
-      redirect_to profile_url(subdomain: group.subdomain)
-    end
+  def destroy
+    authorize! :destroy, group
+    flash[:notice] = t('groups.notices.deleted') if group.destroy
+    respond_with group, location: community_path
   end
-
 end

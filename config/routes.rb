@@ -6,14 +6,20 @@ Masqueunacasa::Application.routes.draw do
     resource :edition
   end
 
+  concern :locations do
+    resources :locations, except: [:index, :show]
+  end
+
   concern :position do
     put :up, on: :member
     put :down, on: :member
   end
 
   # PARTE SOCIAL
-  resources :users
-  resources :groups
+  resources :users, concerns: [:locations]
+  resources :groups, concerns: [:locations] do
+    resources :memberships, only: [:new, :create, :destroy]
+  end
 
   # GENERAL
   resources :images, only: [:up, :down], concerns: :position do

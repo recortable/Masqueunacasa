@@ -1,36 +1,49 @@
-<%= group_header group.title, group %>
-<div class="row">
-  <%= user_column 'span2' do %>
-    <%= link_to avatar_image(group, class: 'fixed'), profile_path %>
-    <div class="members">
-      <% group.members.limit(6).each do |user| %>
-        <%= link_to avatar_image(user, size: :small, class: 'fixed'), user_url(user, host: request.domain) %>
-      <% end %>
-      <% if group.members.count > 6 %>
-        Y <%= group.members.count - 6 %> más...
-      <% end %>
-    </div>
-  <% end %>
+<% google_maps %>
 
-  <%= corner_span('span6') do %> 
-    <%= render_agent_info group %>
-  <% end %> 
-  <div class="span4 column">
-    <%= corner_span 'span2' do %>
-      <h2>Dónde</h2>
-      <%= fake_img_fixed(310, 310, text: 'Mapa') %>
-      <%= simple_list group.locations do |location| %>
-        <%= content_tag :div, '', data: {longitude: location.longitude,
-                                    latitude: location.latitude} %>
-      <% end %>
+<div class="hoverize">
+  <%= hover? :update, group do %>
+    <% if can? :destroy, group %>
+      <%= link_to t('app.remove', element: nil), group_path(group),
+        method: :delete, confirm: t('confirm') %> |
     <% end %>
-    <%= corner_span '' do %>
-      <h2>Publicado</h2>
-      <%= simple_list group.posts do |post| %>
-        <%= link_to post.title, url_for_post(post) %>
-      <% end %>
+    <%= link_to t('app.edit'), edit_group_path(group) %>
+  <% end %>
+  <%= title group.title %>
+</div>
+
+<% if group.website.present? %>
+  <h3><%= link_to group.website, group.website %></h3>
+<% end %>
+<% if group.email.present? %>
+  <h4><small>correo </small><%= link_to group.email, "mailto:#{group.email}" %></h4>
+<% end %>
+<% if group.twitter.present? %>
+  <h4><small>twitter </small><%= link_to "#{group.twitter}", "http://twitter.com/#!#{group.twitter}", target: '_blank' %></h4>
+<% end %>
+<% if group.facebook.present? %>
+  <h4><small>facebook </small><%= link_to group.facebook, group.facebook %></h4>
+<% end %>
+
+<%= markdown group.summary %>
+<%= render_sections group %>
+
+
+<% content_for :left do %>
+  <%= image_tag group.avatar_image, class: 'fixed' %>
+  <div class="members hoverize">
+    <%= hover? :update, group do %>
+      <%= link_to icon(:plus, 'Añadir participante'),
+        new_group_membership_path(group), rel: 'new-membership' %>
+    <% end %>
+    <%= content_tag 'h3', t('activerecord.models.membership.other') + ":" %>
+    <% group.members.each do |user| %>
+      <%= link_to avatar_image(user, size: :small, class: 'fixed'), user_url(user) %>
     <% end %>
   </div>
-</div>
+<% end %>
+
+<% content_for :right do %>
+  <%= render 'locations/bar', resource: group %>
+<% end %>
 
 

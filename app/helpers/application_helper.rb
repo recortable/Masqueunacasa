@@ -27,7 +27,7 @@ module ApplicationHelper
   end
 
   def render_banner(title, path)
-    render partial: 'application/banner', locals: 
+    render partial: 'application/banner', locals:
       {title: title, path: path}
   end
 

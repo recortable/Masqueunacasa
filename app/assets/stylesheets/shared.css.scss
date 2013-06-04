@@ -3,6 +3,11 @@ body {
   padding-bottom: 60px;
 }
 
+
+.sidebar.left > div {
+  margin-top: 2em;
+}
+
 /* Anular los estilos de bootstrap para algunos elementos para que usen las mismas tipos que el restp del sitio */
 
 input, button, select, textarea {

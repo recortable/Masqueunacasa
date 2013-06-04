@@ -1,20 +1,16 @@
-<%= group_header 'Añadir participante' %>
+<%= title "#{group.name}: #{t('.title')}" %>
 
 <div class="row">
   <%= corner_span 'span6 offset2' do %>
-    <h3><%= link_to current_group.title, current_group %></h3>
-    <%= title 'Añadir participante' %>
-
     <%= simple_list users do |user| %>
       <div class="hoverize">
-        <%= hover? :update, current_group do %>
-          <%= link_to icon(:plus, 'Añadir'), memberships_path(u: user), method: :post, rel: "add-member-user-#{user.id}" %>
+        <%= hover? :update, group do %>
+          <%= link_to icon(:plus, 'Añadir'), group_memberships_path(group, u: user), method: :post, rel: "add-member-user-#{user.id}" %>
         <% end %>
         <%= avatar_link user, size: :small, class: 'fixed' %>
-        <%= user.title %>
-      <% end %>
+        <%= user.name %>
+      </div>
     <% end %>
-  </div>
-
-
+  <% end %>
+</div>
 

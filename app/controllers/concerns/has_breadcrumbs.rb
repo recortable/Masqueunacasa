@@ -46,30 +46,21 @@ module HasBreadcrumbs
 
   def breadcrumb_for_community
     @active_tab = 'community'
-    add_breadcrumb 'Comunidad', community_url(subdomain: false)
+    add_breadcrumb 'Comunidad', community_url
   end
 
   def breadcrumb_for_users
+    breadcrumb_for_community
     add_breadcrumb 'Participantes', users_path
   end
 
-  def breadcrumb_for_user(user)
+  def breadcrumb_for_user(user)    
     breadcrumb_for_users
     add_breadcrumb user.name, user_url(user, subdomain: false)
   end
 
   def breadcrumb_for_group(group)
     breadcrumb_for_community
-    add_breadcrumb group.title, profile_url(subdomain: group.subdomain)
-  end
-
-  def breadcrumb_for_posts(group)
-    breadcrumb_for_group group
-    add_breadcrumb 'Blog', posts_url(subdomain: group.subdomain)
-  end
-
-  def breadcrumb_for_post(post)
-    breadcrumb_for_posts post.group
-    add_breadcrumb post.title, post_url(post, subdomain: post.group.subdomain)
+    add_breadcrumb group.title, group_path(group)
   end
 end
