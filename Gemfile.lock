@@ -235,7 +235,7 @@ GEM
       thor (>= 0.14.6, < 2.0)
     raindrops (0.11.0)
     rake (10.0.4)
-    rb-inotify (0.8.8)
+    rb-inotify (0.9.0)
       ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
@@ -353,7 +353,7 @@ DEPENDENCIES
   quiet_assets
   rails (>= 3.2)
   rails-translate-routes
-  rb-inotify (~> 0.8.8)
+  rb-inotify (~> 0.9)
   redcarpet
   routing_concerns
   rspec-rails
