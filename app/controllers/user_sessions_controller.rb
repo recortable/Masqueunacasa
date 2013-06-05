@@ -5,6 +5,8 @@ class UserSessionsController < ApplicationController
   expose(:user) { User.new }
   expose(:themes) { 'textura_inicio negro' }
 
+  layout false
+
   def new
     if current_user
       redirect_to path_or_default(request.env['HTTP_REFERER']),
