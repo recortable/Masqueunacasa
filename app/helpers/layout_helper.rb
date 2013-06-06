@@ -42,13 +42,4 @@ module LayoutHelper
   def active?(tab_name)
     return 'active' if tab_name == @active_tab
   end
-
-  def language_selector
-    ca = link_to_unless_current 'cat', url_for(locale: 'ca')
-    es = link_to_unless_current 'cast', url_for(locale: 'es')
-    en = link_to_unless_current 'eng', url_for(locale: 'en')
-    fr = link_to_unless_current 'fr', url_for(locale: 'fr')
-    it = link_to_unless_current 'it', url_for(locale: 'it')
-    "<li title='Castellano'>#{es}</li> | <li title='Català'>#{ca}</li> | <li title='English'>#{en}</li> | <li title='Français'>#{fr}</li> | <li title='Italiano'>#{it}</li>".html_safe
-  end
 end

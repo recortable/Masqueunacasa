@@ -65,6 +65,7 @@ es:
 
   langs:
     available_translations: Este contenido también está disponible en
+    lang: Idioma
     ca: Catalán
     en: Inglés
     es: Castellano

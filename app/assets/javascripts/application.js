@@ -2,6 +2,7 @@
 //= require jquery.ui.sortable
 //= require jquery_ujs
 //= require bootstrap
+//= require bootstrap-dropdown
 // turbolinks
 //= require jquery.foundation.orbit
 //= require slider
