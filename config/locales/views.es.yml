@@ -63,6 +63,14 @@ es:
       get_in_touch: Ponte en contacto
       you_can_send_message: Desde aquí puedes enviar un mensaje a este grupo
 
+  langs:
+    available_translations: Este contenido también está disponible en
+    ca: Catalán
+    en: Inglés
+    es: Castellano
+    fr: Francés
+    it: Italiano
+
   phases:
     notices:
       created: 'Fase añadida.'

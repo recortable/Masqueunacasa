@@ -1,6 +1,6 @@
 <% if document.translations.size > 1 %>
   <div id="available-translations">
-    <%= content_tag 'h3', t('available_translations') + ":" %>
+    <%= content_tag 'strong', t('langs.available_translations') + ":" %>
     <ul>
       <% document.translations.each do |doc_translation| %>
         <%= content_tag 'li', link_to( t("langs.#{doc_translation.locale}"),
