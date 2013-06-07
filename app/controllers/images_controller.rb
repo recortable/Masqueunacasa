@@ -9,11 +9,11 @@ class ImagesController < ApplicationController
   end
 
   def new
-    
+
   end
 
   def edit
-    
+
   end
 
   def create

@@ -6,6 +6,10 @@ Masqueunacasa::Application.routes.draw do
     resource :edition
   end
 
+  concern :commentable do
+    resources :comments, only: [:create]
+  end
+
   concern :locations do
     resources :locations, except: [:index, :show]
   end
@@ -48,7 +52,7 @@ Masqueunacasa::Application.routes.draw do
 
   # HABITAPEDIA
 
-  resources :experiencies, concerns: [:document] do
+  resources :experiencies, concerns: [:document, :commentable] do
     get :dashboard, on: :collection
     resources :locations
     resources :links
@@ -56,12 +60,12 @@ Masqueunacasa::Application.routes.draw do
   end
 
 
-  resources :categories, only: [:show], concerns: [:document, :position] do
+  resources :categories, only: [:show], concerns: [:document, :position, :commentable] do
     get :dashboard, on: :collection
     resources :proposals, only: [:new]
   end
 
-  resources :proposals, except: [:new], path: '/phases/proposals', concerns: [:document, :position] do
+  resources :proposals, except: [:new], path: '/phases/proposals', concerns: [:document, :position, :commentable] do
     get :dashboard, on: :collection
     resources :relations, only: [:new, :create, :destroy]
     resources :links

@@ -22,7 +22,7 @@ end
 gem 'bcrypt-ruby', '~> 3.0.0' # Para encriptar cosas, p.ej: password (MD5)
 gem 'friendly_id'
 gem 'acts_as_list'
-gem 'textacular'
+gem 'textacular' # exposes full text search capabilities from PostgreSQL
 gem 'globalize3'
 
 # Para subir ficheros e imágenes al servidor
@@ -46,8 +46,6 @@ gem 'will_paginate-bootstrap' # Integración will_paginate - twitter bootstrap
 gem 'will_paginate', '~> 3.0'
 gem 'hpricot'
 gem 'nested_form'
-# gem "ckeditor" # Editor RTE
-#gem 'bootstrap-wysihtml5-rails'
 gem 'jbuilder' # Para enviar json fácilmente
 gem 'ie_conditional_tag' # Para meter el html tag con clases especiales según la version de explorer
 gem 'truncate_html' # Para poder recortar un texto en html sin que se estropee la estructura
