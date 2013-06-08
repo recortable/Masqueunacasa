@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   respond_to :html
 
-  expose_parent :document, [:experiencie]
+  expose_parent :document, [:proposal, :category, :experiencie]
   expose(:comments) { document.comments }
   expose(:comment)
 

@@ -6,6 +6,8 @@ class Proposal < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
   include HasTranslatedSlugs
 
+  include HasComments
+
   acts_as_list scope: :category_id
 
   attr_accessible :user_id, :phase_id, :group_id, :category_id

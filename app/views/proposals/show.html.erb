@@ -16,6 +16,7 @@
   <%= markdown proposal.summary %>
 </div>
 <%= render_sections proposal %>
+<%= render 'comments/comments', document: proposal %>
 
 <% content_for :left do %>
   <%= image_tag("habitap/propuesta_100#{proposal.phase.color}.png", alt: 'Propuesta', width: 100, height: 100, class: 'doc-icon') %>

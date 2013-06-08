@@ -6,6 +6,8 @@ class Category < ActiveRecord::Base
   friendly_id :name, use: [:slugged, :simple_i18n, :history]
   include HasTranslatedSlugs
 
+  include HasComments
+
   acts_as_list scope: :phase_id
   mount_uploader :image, CategoryImageUploader
 

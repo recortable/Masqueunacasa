@@ -1,0 +1,5 @@
+<%= simple_form_for [document, Comment.new] do |f| %>
+  <%= f.input :body, input_html: { rows: 6 }  %>
+  <%= f.submit %>
+<% end %>
+

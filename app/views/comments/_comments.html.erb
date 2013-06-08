@@ -1,9 +1,9 @@
-<h3><%= t('activerecord.models.comments') %>:</h3>
+<div id="comments" class="row">
+  <div class="span6">
+    <h3><%= t('activerecord.models.comments') %>:</h3>
 
-<%= simple_form_for [document, Comment.new] do |f| %>
-  <%= f.input :body %>
-  <%= f.submit %>
-<% end %>
-
-<%= render document.comments %>
+    <%= render document.comments %>
+    <%= render 'comments/form', document: document if can? :create, Comment %>
+  </div>
+</div>
 
