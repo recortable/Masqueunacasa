@@ -1,8 +1,14 @@
 <div class="comment">
-  <div class="comment-author">
-    <%= comment.user.name %>
-  </div>
-  <div class="comment-content">
-    <%= comment.body %>
+  <div class="hoverize">
+    <%= hover? :update, comment do %>
+      <%= link_to t('edit'), url_for([:edit, comment.document, comment]) %>
+      <%= link_to " | #{t('delete')}", url_for([comment.document, comment]), method: :delete if can? :destroy, comment %>
+    <% end %>
+    <div class="comment-author">
+      <%= comment.user.name %>
+    </div>
+    <div class="comment-content">
+      <%= comment.body %>
+    </div>
   </div>
 </div>

@@ -7,7 +7,7 @@ Masqueunacasa::Application.routes.draw do
   end
 
   concern :commentable do
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :edit, :update, :destroy]
   end
 
   concern :locations do

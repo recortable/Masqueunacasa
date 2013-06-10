@@ -33,7 +33,7 @@ class Ability
 
   def social_abilities(user)
     can :create, Comment
-    can(:update, User, id: user.id)
+    can :update, User, id: user.id
   end
 
   def anonymous_abilities

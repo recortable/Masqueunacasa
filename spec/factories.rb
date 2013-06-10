@@ -65,4 +65,10 @@ FactoryGirl.define do
     external_image_url 'http://en.com/im.jpg'
     imageable factory: :experiencie
   end
+
+  factory :comment do
+    sequence(:body) { |n| "Comment n #{n}" }
+    document factory: :experiencie
+    user
+  end
 end

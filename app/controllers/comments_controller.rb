@@ -11,4 +11,22 @@ class CommentsController < ApplicationController
     flash[:notice] = "Comentario creado, gracias!" if comment.save
     respond_with comment, location: document
   end
+
+  def edit
+    authorize! :update, comment
+    polymorphic_breadcrumb_for document
+    respond_with comment
+  end
+
+  def update
+    authorize! :update, comment
+    flash[:notice] = "Comentario editado, gracias!" if comment.save
+    respond_with comment, location: document
+  end
+
+  def destroy
+    authorize! :destroy, comment
+    flash[:notice] = "Comentario borrado, gracias!" if comment.destroy
+    respond_with comment, location: document
+  end
 end

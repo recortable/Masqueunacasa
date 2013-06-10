@@ -32,6 +32,10 @@ es:
       updated: 'Pregunta modificada.'
       destroyed: 'Pregunta borrada.'
 
+  comments:
+    edit:
+      title: Editar comentario
+
   dashboard:
     community:
       title: 'Comunidad'
