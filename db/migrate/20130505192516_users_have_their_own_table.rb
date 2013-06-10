@@ -32,7 +32,6 @@ class UsersHaveTheirOwnTable < ActiveRecord::Migration
       u.password_digest = a.password_digest
       u.admin = a.admin?
       u.save!(validate: false)
-      u.update_column :slug, a.slug
       u.update_column :login_count, a.login_count
       u.update_column :created_at, a.created_at
       u.update_column :updated_at, a.updated_at
@@ -40,6 +39,7 @@ class UsersHaveTheirOwnTable < ActiveRecord::Migration
       execute "UPDATE sections SET document_type = 'User' WHERE document_type = 'Agent' AND document_id = #{a.id}"
       execute "UPDATE users SET avatar_image = (SELECT avatar_image FROM agents WHERE id = #{a.id}) WHERE id = #{u.id}"
       execute "DELETE from agents WHERE id = #{u.id}"
+      execute "SELECT setval(pg_get_serial_sequence('users', 'id'), ( SELECT MAX(id) FROM users) + 1 )"
     end
   end
 
