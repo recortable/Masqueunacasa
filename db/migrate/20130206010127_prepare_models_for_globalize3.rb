@@ -21,6 +21,7 @@ class PrepareModelsForGlobalize3 < ActiveRecord::Migration
 
     ## CONTENTS
     drop_table :contents
+    execute "DELETE FROM editorships WHERE document_type = 'Content'"
 
     ## EXPERIENCIES
     remove_column :experiencies, :title_ca,

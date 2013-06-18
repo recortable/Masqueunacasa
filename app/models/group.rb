@@ -23,7 +23,7 @@ class Group < ActiveRecord::Base
   validates :title, presence: true
   validates :summary, presence: true
   include HasSections
-  include HasLocations
+  include HasLocation
   include HasPopularity
 
 

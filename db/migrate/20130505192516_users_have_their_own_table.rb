@@ -40,6 +40,7 @@ class UsersHaveTheirOwnTable < ActiveRecord::Migration
       execute "UPDATE users SET avatar_image = (SELECT avatar_image FROM agents WHERE id = #{a.id}) WHERE id = #{u.id}"
       execute "DELETE from agents WHERE id = #{u.id}"
       execute "SELECT setval(pg_get_serial_sequence('users', 'id'), ( SELECT MAX(id) FROM users) + 1 )"
+      execute "UPDATE locations SET resource_type = 'User', resource_id = #{u.id} WHERE resource_type = 'Agent' AND resource_id = #{a.id}"
     end
   end
 
