@@ -13,7 +13,7 @@ load "config/recipes/newrelic"
 load "config/recipes/log"
 load "config/recipes/apt"
 
-server "176.58.98.122", :web, :app, :db, primary: true
+# server "176.58.98.122", :web, :app, :db, primary: true
 
 set :application, "Masqueunacasa"
 set :user, "deployer"
