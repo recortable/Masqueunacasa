@@ -1,7 +1,9 @@
 <fieldset class=sortable_fieldset>
   <legend><%= (Section.model_name.human count: 2).capitalize %></legend>
   <%= form.fields_for :sections do |f| %>
-    <span class="handle"></span>
+    <div class="sort-fields">
+      <a href="javascript:void(0)" class="up">Up</a> | <a href="javascript:void(0)" class="down">Down</a>
+    </div>
     <%= f.input :title %>
     <% if f.object.class == TextSection %>
       <%= f.input :body, input_html: { rows: 8 } %>
@@ -16,14 +18,18 @@
     <%= f.link_to_remove "Remove section", class: "btn" %>
   <% end %>
   <%= form.fields_for :text_sections do |f| %>
-    <span class="handle"></span>
+    <div class="sort-fields">
+      <a href="javascript:void(0)" class="up">Up</a> | <a href="javascript:void(0)" class="down">Down</a>
+    </div>
     <%= f.input :title %>
     <%= f.input :body, input_html: { rows: 8 } %>
     <%= f.input :position, as: :hidden %>
     <%= f.link_to_remove "Remove section", class: "btn" %>
   <% end %>
   <%= form.fields_for :image_sections do |f| %>
-    <span class="handle"></span>
+    <div class="sort-fields">
+      <a href="javascript:void(0)" class="up">Up</a> | <a href="javascript:void(0)" class="down">Down</a>
+    </div>
     <%= f.input :title %>
     <div class="image-preview">
       <%= image_tag f.object.image.thumb if f.object.image.present? %>

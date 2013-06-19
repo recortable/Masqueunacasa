@@ -63,16 +63,8 @@ form .fields {
     margin-bottom: 0.5em;
   }
 
-  .handle {
-    width: 1.5em;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    background: transparent image-url('draggable.png') no-repeat center center;
-    border-right: 1px solid #999;
-    cursor: move;
+  .sort-fields {
+    float: right;
   }
 }
 

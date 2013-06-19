@@ -7,7 +7,9 @@ es:
       group:
         one: 'colectivo'
         other: colectivos
-      image: 'imágen'
+      image:
+        one: imagen
+        other: imágenes
       image_section: sección de imagen
       link: 'recurso'
       membership:

@@ -12,6 +12,7 @@ class Experiencie < ActiveRecord::Base
   attr_accessible :summary
   attr_accessible :user_id, :group_id, :user, :group
   attr_accessible :published
+  attr_accessible :images_attributes
 
   attr_accessible :related_proposal_id
   attr_accessor :related_proposal_id
@@ -21,6 +22,10 @@ class Experiencie < ActiveRecord::Base
   has_many :relations, dependent: :destroy
   has_many :proposals, through: :relations
   has_many :images, dependent: :destroy, as: :imageable
+  accepts_nested_attributes_for :images, allow_destroy: true,
+    reject_if: proc { |attributes| attributes['image'].blank? &&
+                      attributes['external_image_url'].blank? &&
+                      attributes['new_object'] == 'true' }
   include HasLocation
   include HasPopularity
   include HasSections

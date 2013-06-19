@@ -6,7 +6,9 @@ ca:
       content: 'entrada'
       experiencie: 'experiència'
       group: 'col.lectiu'
-      image: 'imatge'
+      image:
+        one: imatge
+        other: imatges
       image_section: "secció d'imatge"
       link: 'recurs'
       notice: 'destacat'

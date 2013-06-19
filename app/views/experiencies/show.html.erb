@@ -13,10 +13,7 @@
 <div class="summary markdown">
   <%= markdown experiencie.summary %>
 </div>
-<div class="image-gallery hoverize">
-  <%= hover? :update, experiencie do %>
-    <%= link_to icon(:pencil, 'Administrar imágenes'), [experiencie, :images] %>
-  <% end %>
+<div class="image-gallery">
   <% if !experiencie.images.empty? %>
     <div class="galleria">
       <% experiencie.images.each do |image| %>
