@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130607150255) do
+ActiveRecord::Schema.define(:version => 20130618175256) do
 
   create_table "categories", :force => true do |t|
     t.integer  "phase_id"
@@ -215,11 +215,10 @@ ActiveRecord::Schema.define(:version => 20130607150255) do
     t.string   "resource_type", :limit => 16
     t.integer  "resource_id"
     t.integer  "user_id"
-    t.string   "title",         :limit => 200
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "memberships", :force => true do |t|

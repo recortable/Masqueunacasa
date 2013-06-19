@@ -7,5 +7,6 @@
   <%= form.input :summary, as: :text, input_html: { rows: 8 } %>
   <%= form.input :related_proposal_id, as: :hidden %>
   <%= render 'section_fields', form: form %>
+  <%= render 'location_fields', form: form %>
   <%= form.button :submit %>
 <% end %>

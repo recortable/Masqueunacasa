@@ -24,13 +24,14 @@ createMap = (container, center, zoom = 5, street_view = false) ->
 $.fn.extend
   showMap: ->
     return this.each ->
-      locations = extractLocations $(this).find('.location')
+      self = $(this)
+      locations = extractLocations self.find('.location')
 
       if locations.length > 0
         center = locations[0]
         zoom = 14
 
-        map = createMap $(this).find('.map'), center, zoom, true
+        map = createMap self.find('.map'), center, zoom, true
 
         $.each locations, ->
           new google.maps.Marker

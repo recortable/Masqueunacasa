@@ -32,8 +32,7 @@ Galleria.configure({
 
 var MqucInit = function() {
   $('div.locations').showMap();
-  $('form.new_location').mapForForm();
-  $('form.edit_location').mapForForm();
+  $('fieldset.locations').mapForForm();
   if ($('.galleria').length > 0) {
     Galleria.run('.galleria');
   }

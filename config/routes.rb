@@ -10,18 +10,14 @@ Masqueunacasa::Application.routes.draw do
     resources :comments, only: [:create, :edit, :update, :destroy]
   end
 
-  concern :locations do
-    resources :locations, except: [:index, :show]
-  end
-
   concern :position do
     put :up, on: :member
     put :down, on: :member
   end
 
   # PARTE SOCIAL
-  resources :users, concerns: [:locations]
-  resources :groups, concerns: [:locations] do
+  resources :users
+  resources :groups do
     resources :memberships, only: [:new, :create, :destroy]
   end
 
@@ -29,7 +25,6 @@ Masqueunacasa::Application.routes.draw do
   resources :images, only: [:up, :down], concerns: :position do
   end
 
-  resources :locations
   resource :search
 
   match '/entrar' => 'user_sessions#new', as: :login
@@ -54,7 +49,6 @@ Masqueunacasa::Application.routes.draw do
 
   resources :experiencies, concerns: [:document, :commentable] do
     get :dashboard, on: :collection
-    resources :locations
     resources :links
     resources :images
   end
