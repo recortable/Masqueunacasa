@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130618175256) do
+ActiveRecord::Schema.define(:version => 20130620185313) do
 
   create_table "categories", :force => true do |t|
     t.integer  "phase_id"
@@ -172,6 +172,57 @@ ActiveRecord::Schema.define(:version => 20130618175256) do
 
   add_index "groups", ["email"], :name => "index_agents_on_email"
   add_index "groups", ["slug"], :name => "index_agents_on_slug"
+
+  create_table "help_page_translations", :force => true do |t|
+    t.integer  "help_page_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "summary"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "help_page_translations", ["help_page_id"], :name => "index_help_page_translations_on_help_page_id"
+  add_index "help_page_translations", ["locale"], :name => "index_help_page_translations_on_locale"
+
+  create_table "help_pages", :force => true do |t|
+    t.string   "identf",          :limit => 20, :null => false
+    t.text     "desctiption"
+    t.string   "slug_ca"
+    t.string   "slug_en"
+    t.string   "slug_es"
+    t.string   "slug_it"
+    t.string   "slug_fr"
+    t.string   "original_locale", :limit => 10, :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "help_pages", ["slug_ca"], :name => "index_help_pages_on_slug_ca"
+  add_index "help_pages", ["slug_en"], :name => "index_help_pages_on_slug_en"
+  add_index "help_pages", ["slug_es"], :name => "index_help_pages_on_slug_es"
+  add_index "help_pages", ["slug_fr"], :name => "index_help_pages_on_slug_fr"
+  add_index "help_pages", ["slug_it"], :name => "index_help_pages_on_slug_it"
+
+  create_table "help_text_translations", :force => true do |t|
+    t.integer  "help_text_id"
+    t.string   "locale"
+    t.text     "body",         :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "help_text_translations", ["help_text_id"], :name => "index_help_text_translations_on_help_text_id"
+  add_index "help_text_translations", ["locale"], :name => "index_help_text_translations_on_locale"
+
+  create_table "help_texts", :force => true do |t|
+    t.string   "identf",      :limit => 20, :null => false
+    t.string   "description"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "help_texts", ["identf"], :name => "index_help_texts_on_identf"
 
   create_table "images", :force => true do |t|
     t.string  "title",              :limit => 200
