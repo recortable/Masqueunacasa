@@ -1,10 +1,11 @@
 <% google_maps %>
 <fieldset class="locations">
   <legend>Locations</legend>
-  <div class="map" style="width:300px; height: 300px;"></div>
-  <p class="hint">
-    Clica en el mapa para establecer una localización. Las localizaciones también necesitan un nombre.
+  <p class="help-block">
+    Clica en el mapa para establecer una localización.
   </p>
+  <div class="map" style="width:300px; height: 300px;"></div>
+  <% form.object.build_location if form.object.location.blank? %>
   <%= form.fields_for :location do |f| %>
     <%= f.input :latitude %>
     <%= f.input :longitude %>
