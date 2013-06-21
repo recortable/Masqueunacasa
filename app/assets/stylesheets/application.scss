@@ -4,12 +4,13 @@
 @import "bootstrap_and_overrides";
 @import "orbit/orbit";
 
-// GENERAL 
+// GENERAL
 @import "fonts";
 @import "forms";
 @import "themes";
 
 // SHARED
+@import 'backgrounds';
 @import "shared";
 @import "shared/pagination";
 @import "sections";
@@ -17,6 +18,7 @@
 
 // LAYOUT
 @import "layout";
+@import 'header';
 @import "session_bar";
 
 // SITE
