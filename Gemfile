@@ -53,6 +53,7 @@ gem 'htmlentities'
 gem 'premailer-rails3'
 gem "breadcrumbs_on_rails"
 gem 'bourbon' #Colección de mixins para SASS
+gem 'slim-rails'
 
 gem 'simple_form'
 gem 'redcarpet' # Convierte markdown a html
