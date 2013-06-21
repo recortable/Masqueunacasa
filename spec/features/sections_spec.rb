@@ -23,7 +23,7 @@ shared_examples_for "Adding sections" do |describing, url, fields_to_fill, neste
       fill_in "#{describing}_#{field}", with: "The #{describing} #{field}"
     end
     click_on I18n.t('app.add', element: TextSection.model_name.human)
-    section = page.find('.fields')
+    section = page.find('fieldset.sections .fields')
     section.fill_in I18n.t('simple_form.labels.defaults.title'), with: "Section 1 title"
     section.fill_in I18n.t('simple_form.labels.defaults.body'), with: "Section 1 text"
     click_submit
