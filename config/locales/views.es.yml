@@ -10,6 +10,11 @@ es:
   more: 'Más...'
 
   application:
+    header:
+      session_start: Iniciar sesión
+      session_end: Salir
+      view_user: Ver perfil
+
     session:
       home: Inicio
       groups: Colectivos
@@ -21,6 +26,8 @@ es:
       community: Comunidad
       session_start: 'Iniciar sesión'
       session_end: 'Salir'
+
+    slogan: procesos colectivos de vivienda
 
     notices:
       created: 'Mensaje colectivo preparado.'

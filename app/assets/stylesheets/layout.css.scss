@@ -2,44 +2,8 @@ body {
   background-color: transparent;
 }
 
-#languages {
-  position: relative;
-  margin-bottom: 40px;
-}
-
-#language-selector {
-  position: absolute;
-  top: 0;
-  right: 20px;
-}
-
-.corner {
-  height: 30px;
-  background: image-url('pl-1170.png') no-repeat;
-  background-color: transparent !important;
-}
-
 #main {
   position: relative;
-  background: transparent image-url('pl-1170.png') no-repeat 0 0;
-  padding-top: 30px;
-
-  header {
-    padding-top: 15px;
-
-    #logo {
-      position: absolute;
-      top: 5px;
-      left: 21px;
-    }
-  }
-
-  #page_content {
-    background-color: $fondo;
-    padding-top: 30px;
-    padding-bottom: 85px;
-    overflow: hidden;
-  }
 }
 
 .headrow {

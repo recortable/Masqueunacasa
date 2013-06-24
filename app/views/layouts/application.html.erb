@@ -19,55 +19,50 @@
 <%= csrf_meta_tags %>
 <%= yield :head %>
 </head>
-<body class="<%= controller_class %> <%= themes %>">
+<body class="<%= controller_class %>">
 <div id="wrapper">
   <%= render 'header' %>
-  <div class="container" id="languages">
-    <ul id="language-selector">
-      <%= render 'lang_switcher' %>
-    </ul>
-  </div>
   <%= render 'flashes' %>
-  <%= render 'main_menu' %>
 
   <div id="main" class="container">
-    <header>
-      <% if front? %>
-        <%= image_tag('logo_inicio.png', alt: 'Procesos colectivos de vivienda', class: 'responsive') %>
-    <% else %>
-      <div class="headrow">
-        <%= link_to (image_tag 'logo.png', width: 270), front_path, id: 'logo' %>
-        <div class="breadcrumbs">
-          <%= render_breadcrumbs :separator => ' / ' %>
+    <div id="page_content" class="row">
+      <div class="span8">
+        <div class="row">
+          <div id="tabs" class="span8">
+            <%= render 'tabs' %>
+          </div>
+        </div>
+        <div class="row">
+          <div id="content" class="span8">
+            #CONTENT
+          </div>
         </div>
       </div>
-    <% end %>
-    </header>
-    <div id="page_content">
-      <div class="row mainrow">
+      <div id="right-column" class="span4">
+        #RIGHT COLUMN
+      </div>
         <% if content_for? :left %>
           <div class="span2 sidebar left">
             <%= yield :left %>
           </div>
         <% end %>
 
-        <%# CUANDO TODAS LAS VISTAS USEN CONTENT_FOR,
-          ESTE HACK SE PUEDE BORRAR %>
-        <% size = main_content_span_size %>
-        <% if size == 12 %>
+      <%# CUANDO TODAS LAS VISTAS USEN CONTENT_FOR,
+        ESTE HACK SE PUEDE BORRAR %>
+      <% size = main_content_span_size %>
+      <% if size == 12 %>
+        <%= yield %>
+      <% else %>
+        <div class="span<%= size %> main-content">
           <%= yield %>
-        <% else %>
-          <div class="span<%= size %> main-content">
-            <%= yield %>
-          </div>
-        <% end %>
+        </div>
+      <% end %>
 
-        <% if content_for? :right %>
-          <div class="span4 sidebar right">
-            <%= yield :right %>
-          </div>
-        <% end %>
-      </div> <!-- mainrow -->
+      <% if content_for? :right %>
+        <div class="span4 sidebar right">
+          <%= yield :right %>
+        </div>
+      <% end %>
 
       <div class="row ajaxrow">
         <%= yield :ajaxrow %>

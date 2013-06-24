@@ -1,3 +1,7 @@
-#header {
+html {
+  background: image-url('fondos/fondo.png');
+}
+
+#header, #content {
   background: $fondo;
 }

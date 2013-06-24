@@ -1,5 +1,11 @@
+#header {
+  margin-bottom: 18px;
+  padding: 5px 0 2px;
+}
+
 #header #logo {
   margin-left: 5px;
+  margin-right: -5px;
 
   img {
     width: 50%;
@@ -8,6 +14,29 @@
 }
 
 #header .slogan {
-  margin-left: 3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-left: 5px;
 }
 
+#lang-switcher .btn,
+#session-controls .btn,
+#session-controls > a {
+  display: block;
+  padding: 0 1em;
+  margin-top: 20px;
+  background: $fondo;
+  border-radius: 0;
+  border: 1px solid #000;
+  text-align: left;
+}
+
+#lang-switcher .btn-group,
+#session-controls .btn-group {
+  display: block;
+}
+
+#lang-switcher button,
+#session-controls button {
+  width: 100%;
+}

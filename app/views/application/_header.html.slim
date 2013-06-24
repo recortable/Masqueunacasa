@@ -3,4 +3,31 @@
     .span6
       = link_to image_tag('logo.png'), front_path, id: 'logo'
       span.slogan
-        |PROCESOS COLECTIVOS DE VIVIENDA
+        = t 'application.slogan'
+
+    .span2
+
+    #lang-switcher.span2
+      div.btn-group
+        button class="btn dropdown-toggle" data-toggle="dropdown"
+          span> class="caret"
+          = "#{t('langs.lang')}: #{t('langs.' + T.l.to_s)}"
+        ul.dropdown-menu
+          - T.avl.reject { |l| l == T.l }.each do |l|
+            li
+              = link_to t('langs.' + l.to_s), url_for(locale: l.to_s)
+
+    #session-controls.span2
+      - if current_user
+        .btn-group
+          button class="btn dropdown-toggle" data-toggle="dropdown"
+            span> class="caret"
+            = current_user.name
+          ul.dropdown-menu
+            li
+              = link_to t('.session_end'), logout_url(from: request.url)
+            li
+              = link_to t('.view_user'), user_url(current_user)
+
+      - else
+          = link_to t('.session_start'), login_url(from: request.url), class: 'btn'
