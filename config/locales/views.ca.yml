@@ -16,17 +16,15 @@ ca:
       view_user: Veure perfil
 
     session:
-      home: Inici
       session_start: 'Iniciar sessió'
       session_end: 'Sortir'
       groups: Col·lectius
 
-    main_menu:
-      habitapedia: Preguntes y propostes
+    tabs:
+      home: Inici
+      habitapedia: Preguntes y<br />propostes
       experiencies: Experiencies
       community: Comunitat
-      session_start: 'Iniciar sessió'
-      session_end: 'sortir'
 
     slogan: processos col·lectius d'habitatge
 

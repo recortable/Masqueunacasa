@@ -16,16 +16,14 @@ es:
       view_user: Ver perfil
 
     session:
-      home: Inicio
       groups: Colectivos
       community: 'Comunidad'
 
-    main_menu:
-      habitapedia: Preguntas y propuestas
+    tabs:
+      home: Inicio
+      habitapedia: Preguntas y<br />propuestas
       experiencies: Experiencias
       community: Comunidad
-      session_start: 'Iniciar sesión'
-      session_end: 'Salir'
 
     slogan: procesos colectivos de vivienda
 

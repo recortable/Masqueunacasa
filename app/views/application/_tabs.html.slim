@@ -1,1 +1,9 @@
-|#TABS
+ul#menu-tabs
+  li#home-tab class="#{ active? 'front' }"
+    = link_to t('.home'), front_path, title: t('.home')
+  li#habitapedia-tab class="#{ active? 'habitapedia' }"
+    = link_to t('.habitapedia').html_safe, phases_path
+  li#experiencies-tab class="#{ active? 'experiencies' }"
+    = link_to t('.experiencies'), experiencies_path
+  li#community-tab class="#{ active? 'community' }"
+    = link_to t('.community'), community_path
