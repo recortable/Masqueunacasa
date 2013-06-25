@@ -19,6 +19,11 @@ $font-open: 'Open Sans', sans-serif;
   font-size: 13px;
 }
 
+.right-block.help {
+  color: #FBF6F6;
+  font-style: italic;
+}
+
 /* TIPOGRAFÍAS POR DEFECTO */ 
 body { @include text_font(13px, normal);
   line-height: 17px;

@@ -1,0 +1,8 @@
+.right-block {
+  margin-top: 10px;
+}
+
+.right-block.help {
+  @include padding(8px, 8px, 8px, 8px);
+}
+

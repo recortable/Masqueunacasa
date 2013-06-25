@@ -9,7 +9,7 @@
 
     #lang-switcher.span2
       div.btn-group
-        button class="btn dropdown-toggle" data-toggle="dropdown"
+        button.btn.dropdown-toggle data-toggle="dropdown"
           span> class="caret"
           = "#{t('langs.lang')}: #{t('langs.' + T.l.to_s)}"
         ul.dropdown-menu
@@ -20,7 +20,7 @@
     #session-controls.span2
       - if current_user
         .btn-group
-          button class="btn dropdown-toggle" data-toggle="dropdown"
+          button.btn.dropdown-toggle data-toggle="dropdown"
             span> class="caret"
             = current_user.name
           ul.dropdown-menu

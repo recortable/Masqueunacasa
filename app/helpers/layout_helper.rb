@@ -42,3 +42,4 @@ module LayoutHelper
     return 'active' if tab_name == @active_tab
   end
 end
+
