@@ -15,6 +15,10 @@ $font-open: 'Open Sans', sans-serif;
   font-style: $style;
 }
 
+.btn, .btn-group > .btn, .btn-group > .dropdown-menu, .btn-group > .popover {
+  font-size: 13px;
+}
+
 /* TIPOGRAFÍAS POR DEFECTO */ 
 body { @include text_font(13px, normal);
   line-height: 17px;
