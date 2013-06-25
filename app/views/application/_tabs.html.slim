@@ -1,4 +1,4 @@
-ul#menu-tabs
+ul#menu-tabs class="active-#{@active_tab} clearfix"
   li#home-tab class="#{ active? 'front' }"
     = link_to t('.home'), front_path, title: t('.home')
   li#habitapedia-tab class="#{ active? 'habitapedia' }"
