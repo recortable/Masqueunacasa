@@ -65,6 +65,10 @@
   background-color: #000;
 }
 
+#menu-tabs.active-home:after {
+  background-color: #424242;
+}
+
 #menu-tabs.active-habitapedia:after {
   background-color: #199DB6;
 }

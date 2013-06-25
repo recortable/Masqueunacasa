@@ -33,12 +33,12 @@
     </div>
     <div class="blog">
       <div class="content">
-        <%= link_to image_tag('icon-blog.png'), posts_url(host: request.domain), class: 'icon' %>
+        <%= link_to image_tag('icon-blog.png'), "#", class: 'icon' %>
         <div class="section-question">
           <%= raw t('welcome.blog.question') %>
         </div>
         <span><%= t('welcome.blog.action') %></span>
-        <h2><%= link_to "Blog", posts_url(host: request.domain) %></h2>
+        <h2><%= link_to "Blog", "#" %></h2>
         <%= markdown t('welcome.blog.info') %>
       </div>
     </div>

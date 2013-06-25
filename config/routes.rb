@@ -37,7 +37,7 @@ Masqueunacasa::Application.routes.draw do
   match '/mail/:action/' => 'mailer'
   match '/buscar/' => 'dashboard#search', as: :seach
 
-  root to: 'phases#index'
+  root to: 'dashboard#welcome'
   WaxMuseum::Routes.draw
 
   resources :user_sessions, only: [:new, :create, :destroy]
