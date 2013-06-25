@@ -1,58 +1,8 @@
 <% title 'Procesos colectivos de vivienda' %>
-<div class='span12'>
-  <div class="slider">
-    <% welcome_notices.each do |notice| %>
-      <%= render notice %>
-      <%# render welcome_notices.first %>
-    <% end %>
-  </div>
-</div>
-<div class="info-wrapper span12">
-  <div class="info clearfix">
-    <div class="habitapedia">
-      <div class="content">
-        <%= link_to image_tag('icon-habitapedia.png'), phases_url(host: request.domain), class: 'icon' %>
-        <div class="section-question">
-          <%= raw t('welcome.habitapedia.question') %>
-        </div>
-        <span><%= t('welcome.habitapedia.action') %></span>
-        <h2><%= link_to "Habitapedia", phases_url(host: request.domain) %></h2>
-        <%= markdown t('welcome.habitapedia.info') %>
-      </div>
-    </div>
-    <div class="experiencies">
-      <div class="content">
-        <%= link_to image_tag('icon-experiencias.png'), experiencies_url(host: request.domain), class: 'icon' %>
-        <div class="section-question">
-          <%= raw t('welcome.experiencies.question') %>
-        </div>
-        <span><%= t('welcome.experiencies.action') %></span>
-        <h2><%= link_to "Experiencias", experiencies_url(host: request.domain) %></h2>
-        <%= markdown t('welcome.experiencies.info') %>
-      </div> 
-    </div>
-    <div class="blog">
-      <div class="content">
-        <%= link_to image_tag('icon-blog.png'), "#", class: 'icon' %>
-        <div class="section-question">
-          <%= raw t('welcome.blog.question') %>
-        </div>
-        <span><%= t('welcome.blog.action') %></span>
-        <h2><%= link_to "Blog", "#" %></h2>
-        <%= markdown t('welcome.blog.info') %>
-      </div>
-    </div>
-    <div class="community">
-      <div class="content">
-        <%= link_to image_tag('icon-comunidad.png'), community_url(host: request.domain), class: 'icon' %>
-        <div class="section-question">
-          <%= raw t('welcome.community.question') %>
-        </div>
-        <span><%= t('welcome.community.action') %></span>
-        <h2><%= link_to "Comunidad", community_url(host: request.domain) %></h2>
-        <%= markdown t('welcome.community.info') %>
-      </div>
-    </div>
-  </div>
-</div>
+
+#CENTER
+
+<% content_for :left do %>
+  #LEFT
+<% end %>
 

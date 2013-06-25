@@ -18,73 +18,6 @@ input, button, select, textarea {
   color: inherit;
 }
 
-#main {  
-  position: relative;
-  margin-bottom: 100px;
-
-  header {
-    background-color: $fondo;
-
-    .group_name {
-      color: $negro;
-      @include title_font(30px, bold);
-      text-decoration: none;
-
-      img.mquc {
-        position: relative;
-        top: -8px;
-      }
-    }
-  }
-
-  &:after {
-    content: "";
-    width: 100%;
-    height: 120px;
-    position: absolute;
-    bottom: -100px;
-    left: 0;
-    background-image: asset-data-url('dotted-border-double.png');
-    background-color: $fondo;
-    background-repeat: repeat-x;
-  }
-
-  .main-header {
-
-    .banner {
-      min-height: 200px;
-      position: relative;
-
-      .overlay {
-        position: absolute;
-        left: 0;
-        top: -42px;
-
-        h2 {
-          height: 32px;
-          margin: 0;
-          padding: 20px;
-          float: left;
-          background-color: $fondo;
-
-          &.black {
-            color: $fondo;
-            background-color: $negro;
-          }
-        }
-
-        .shape {
-          width: 50px;
-          height: 72px;
-          float: left;
-          background-image: image-url('esquinas.png');
-          background-position: 0 0;
-        }
-      }
-    }
-  }
-}
-
 .sidebar {
   h2 {
     font-size: 24px;
@@ -97,18 +30,6 @@ input, button, select, textarea {
   }
 }
 
-.content, .bloc {
-  background-color: $fondo;
-}
-
-.content-inner {
-  padding-left: 15px;
-}
-
-.content {
-  padding: 3px 30px 30px 30px;
-}
-
 img {
   height: auto;
 }
@@ -116,12 +37,6 @@ img {
 img.centered {
   display: block;
   margin: 0 auto;
-}
-
-.corner-opac { 
-  height: 30px;
-  position: relative;
-  background: image-url('corner-opaco.png') no-repeat; 
 }
 
 .hoverize {

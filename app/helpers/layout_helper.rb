@@ -2,9 +2,8 @@
 module LayoutHelper
 
   def main_content_span_size
-    size = 12
+    size = 8
     size = size - 2 if content_for?(:left)
-    size = size - 4 if content_for?(:right)
     size
   end
 

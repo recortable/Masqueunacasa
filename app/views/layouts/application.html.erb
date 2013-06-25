@@ -34,49 +34,31 @@
         </div>
         <div class="row">
           <div id="content" class="span8">
-            #CONTENT
+            <div class="row">
+              <% if content_for? :left %>
+                <div class="span2 sidebar left">
+                  <%= yield :left %>
+                </div>
+              <% end %>
+
+              <% size = main_content_span_size %>
+              <div class="span<%= size %> main-content">
+                <%= yield %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div id="right-column" class="span4">
         #RIGHT COLUMN
       </div>
-        <% if content_for? :left %>
-          <div class="span2 sidebar left">
-            <%= yield :left %>
-          </div>
-        <% end %>
-
-      <%# CUANDO TODAS LAS VISTAS USEN CONTENT_FOR,
-        ESTE HACK SE PUEDE BORRAR %>
-      <% size = main_content_span_size %>
-      <% if size == 12 %>
-        <%= yield %>
-      <% else %>
-        <div class="span<%= size %> main-content">
-          <%= yield %>
-        </div>
-      <% end %>
-
-      <% if content_for? :right %>
-        <div class="span4 sidebar right">
-          <%= yield :right %>
-        </div>
-      <% end %>
-
-      <div class="row ajaxrow">
-        <%= yield :ajaxrow %>
-      </div>
     </div>
   </div>
-  <div id="credits" class="container">
+
+  <div id="footer" class="container">
     <div class="row">
       <div class="span12">
-        <%= link_to image_tag('http://i.creativecommons.org/l/by-sa/3.0/80x15.png'), licencia_static_page_path %>
-        <%= link_to 'FAQ', faq_static_page_path %>
-        <%= link_to 'Créditos', creditos_static_page_path %>
-        <%= link_to icon('twitter'), 'http://twitter.com/masqueunacasa', target: '_blank' %>
-        <%= link_to icon('envelope', 'hola@masqueunacasa.org'), 'mailto:hola@masqueunacasa.org' %>
+        <%= render 'footer' %>
       </div>
     </div>
   </div>

@@ -6,22 +6,9 @@ body {
   position: relative;
 }
 
-.headrow {
-  width: 100%; overflow: hidden;
-  .breadcrumbs {
-    float: left;
-    background-color: $negro;
-    color: $fondo;
-    font-weight: bold;
-    padding: 0 5px 1px;
-
-    a { font-weight: normal; color: $fondo; }
-  }
-}
-
 .doc-icon { display: block; margin: 30px auto; }
 
-#credits { 
+#credits {
   overflow: hidden;
   border-bottom: 1px solid $fondo;
 
@@ -34,5 +21,9 @@ body {
     img { opacity: 0.2; margin-top: -3px; }
   }
   a:hover { img { opacity: 0.5; } }
+}
 
-} 
+.pad {
+  @include padding(8px, 0px, 8px);
+}
+

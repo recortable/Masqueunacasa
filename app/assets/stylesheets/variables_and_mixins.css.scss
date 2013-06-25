@@ -8,22 +8,7 @@ $rojo: #F15B5B;
 $tierra: #E18255;
 $ocre: #F1BE2D;
 
-// Para los links con tres partes:
-@mixin three_parts_link($width, $height, $image_left, $image_right) {
-  &:before, &:after {
-    content: "";
-    width: $width;
-    height: $height;
-    padding: 0;
-    display: block;
-    float: left;
-    margin-right: 6px;
-    background: image-url($image_left) no-repeat;
-  }
-
-  &:after {
-    float: right;
-    margin: 0 0 0 6px;
-    background: image-url($image_right) no-repeat;
-  }
+@mixin padding($pad_top: 0px, $pad_right: 0px, $pad_bottom: 0px, $pad_left: 8px) {
+  padding: $pad_top $pad_right $pad_bottom $pad_left;
 }
+
