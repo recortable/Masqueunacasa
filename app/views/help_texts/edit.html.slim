@@ -1,0 +1,15 @@
+= render 'form'
+
+- content_for :content_header do
+  = title "#{t('edit')} #{help_text.identf}"
+
+- content_for :content_controls
+  = link_to raw("&larr; Volver"), admin_area_path,
+  class: 'btn btn-mini'
+- content_for :left do
+  |.
+
+- content_for :right do
+  .right-block.help
+    = markdown HelpText.find_by_identf('funcion_textos_ayuda').try('body')
+

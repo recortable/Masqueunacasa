@@ -1,7 +1,7 @@
 class CreateHelpTexts < ActiveRecord::Migration
   def up
     create_table :help_texts do |t|
-      t.string :identf, limit: 20, unique: true, null: false
+      t.string :identf, limit: 30, unique: true, null: false
       t.string :description
 
       t.timestamps

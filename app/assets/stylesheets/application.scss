@@ -24,11 +24,11 @@
 
 // SITE
 @import "notices";
+@import 'welcome';
 
 
 // HABITAPEDIA
 @import "habitapedia";
-@import "phases";
 @import "categories";
 @import "proposals";
 @import "experiencies";
@@ -44,3 +44,6 @@
 @import "shared/images";
 @import "user_sessions";
 @import "responsive";
+
+// ADMIN AREA
+@import 'admin_area';

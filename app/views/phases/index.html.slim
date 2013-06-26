@@ -1,0 +1,14 @@
+- title t('.title')
+
+= render categories
+
+- content_for :left do
+  |.
+
+- content_for :right do
+  - habitapedia_notices.each do |notice|
+    - if notice.embed?
+      .right-block.help
+        .embed-container
+          = raw notice.embed
+

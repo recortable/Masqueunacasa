@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130620185313) do
+ActiveRecord::Schema.define(:version => 20130626133436) do
 
   create_table "categories", :force => true do |t|
     t.integer  "phase_id"
@@ -216,10 +216,11 @@ ActiveRecord::Schema.define(:version => 20130620185313) do
   add_index "help_text_translations", ["locale"], :name => "index_help_text_translations_on_locale"
 
   create_table "help_texts", :force => true do |t|
-    t.string   "identf",      :limit => 20, :null => false
+    t.string   "identf",      :limit => 30, :null => false
     t.string   "description"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
+    t.boolean  "blocked"
   end
 
   add_index "help_texts", ["identf"], :name => "index_help_texts_on_identf"

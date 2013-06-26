@@ -1,12 +1,14 @@
 - content_for :content_header do
   = title t('.title')
 
-.row
+.row.admin-row
   .span9
     h2 Administrar ayudas contextuales
 
+    = link_to 'Crear nueva ayuda', new_help_text_path, class: 'btn btn-mini btn-success'
+
     - if HelpText.all.size > 0
-      table.table-bordered.table-striped
+      table.table-bordered.table-striped.admin-table
         thead
           tr
             th Identf
@@ -17,13 +19,18 @@
             tr
               td = ht.identf
               td = ht.description
+              td
+                => link_to 'view', ht
+                => link_to 'edit', edit_help_text_path(ht)
+                => link_to 'delete', ht, method: :delete,
+                confirm: '¿Estás seguro?' unless ht.blocked?
 
-.row
+.row.admin-row
   .span9
     h2 Administrar páginas auxiliares
 
     - if HelpPage.all.size > 0
-      table.table-bordered.table-striped
+      table.table-bordered.table-striped.admin-table
         thead
           tr
             th Identf

@@ -93,6 +93,12 @@ es:
         avatar_image: Debe ser quadrada. Aproximadamente 150x150 píxeles.
         title: Si lo dejas en blanco se usará el nombre corto.
 
+      help_text:
+        identf: Identificable por la máquina. Sin carácteres especiales y sin espacios, solo letras sin tildes, números y guión bajo. Máximo 30 carácteres.
+        description: No es visible para los usuarios. Sirve para ayudar a identificar el texto y explicitar su función. Máximo 300 carácteres.
+        body: El texto que se mostrará al usuario.
+        blocked: Si se bloquea se impide editar el identificador o eliminar el texto de ayuda porqué se está usando en la interfaz.
+
       media_item:
         url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'
 

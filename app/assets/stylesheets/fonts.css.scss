@@ -29,21 +29,25 @@ body { @include text_font(13px, normal);
   line-height: 17px;
 }
 
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
 h1 {
   @include title_font(22px, bold);
 }
 
 h2 {
-  @include title_font(19px, bold);
+  @include title_font(18px, bold);
 }
 
 
 h3 {
-  @include title_font(17px, bold);
+  @include title_font(16px, bold);
 }
 
 h4 {
-  @include title_font(15px, normal);
+  @include title_font(14px, normal);
 }
 
 .slogan {

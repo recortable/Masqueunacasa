@@ -74,6 +74,10 @@ es:
       get_in_touch: Ponte en contacto
       you_can_send_message: Desde aquí puedes enviar un mensaje a este grupo
 
+  help_texts:
+    new:
+      title: Nueva ayuda contextual
+
   langs:
     available_translations: Este contenido también está disponible en
     lang: Idioma
@@ -116,29 +120,12 @@ es:
       title: 'Iniciar sesión'
       create_account: 'Crea una cuenta'
 
-  posts:
+  phases:
     index:
-      add_post: 'Añadir entrada'
-      prev_posts: 'Entradas más recientes'
-      next_posts: 'Entradas más antiguas'
-    notices:
-      created: 'Entrada añadida. Gracias'
-      updated: 'Entrada al blog modificada.'
-      destroyed: 'Hemos borrado esa entrada del blog.'
-
-    new:
-      title: 'Añadir entrada'
-
-    archive:
-      archive: Archivo
-
-    form:
-      change_published_on: 'Cambiar fecha de publicación'
-
-    by: Por
+      title: Preguntas y Proouestas
 
   pages:
-    index: 
+    index:
       add_page: 'Crear una página'
     new:
       title: 'Nueva página de la wiki'

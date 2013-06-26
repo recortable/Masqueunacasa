@@ -1,0 +1,21 @@
+- title 'Procesos colectivos de vivienda'
+
+#mq1c-description.pad
+  = markdown @description_mq1c.body
+
+.row
+  .span5
+    - @objectives.each_index do |index|
+      .objetivo id="obj-#{ index + 1 }"
+        = markdown @objectives[index].body
+
+  .span3
+    = image_tag 'mq1c_poster_web.jpg'
+
+- content_for :right do
+  - welcome_notices.each do |notice|
+    - if notice.embed?
+      .right-block.help
+        .embed-container
+          = raw notice.embed
+

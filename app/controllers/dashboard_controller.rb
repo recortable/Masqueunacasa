@@ -9,8 +9,6 @@ class DashboardController < ApplicationController
       'textura01 azul_neon'
     end
   end
-  expose(:groups) { Group.all }
-  expose(:users) { User.all }
 
   add_breadcrumb 'Mas que una casa', :root_path
 
@@ -23,6 +21,9 @@ class DashboardController < ApplicationController
   expose(:welcome_notices) { Notice.list('inicio') }
   def welcome
     @active_tab = 'home'
+    @description_mq1c = HelpText.find_by_identf('descripcion_mq1c_home')
+    @objectives = HelpText.where(["identf in (?)", ["objetivo1_home", "objetivo2_home", "objetivo3_home"]]).
+      order("identf")
   end
 
   def community

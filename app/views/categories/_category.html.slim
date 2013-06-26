@@ -1,0 +1,17 @@
+= div_for category
+  .row
+    .span3
+      h2
+        = link_to category.title, category
+      .category-summary
+        = truncate_html markdown( category.summary ), length: 160
+
+    .span3
+      = image_tag category.image
+
+  .row
+    .span6
+      ul.category-proposals
+      - category.proposals.each do |p|
+        li = link_to p.title, p
+

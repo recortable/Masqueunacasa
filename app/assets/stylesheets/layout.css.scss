@@ -6,22 +6,11 @@ body {
   position: relative;
 }
 
-.doc-icon { display: block; margin: 30px auto; }
-
-#credits {
-  overflow: hidden;
-  border-bottom: 1px solid $fondo;
-
-  a {
-    height: 20px;
-    display: block; float: right;
-    background-color: $negro; color: $fondo;
-    padding: 3px 5px;
-
-    img { opacity: 0.2; margin-top: -3px; }
-  }
-  a:hover { img { opacity: 0.5; } }
+#main-content {
+  padding-bottom: 80px;
 }
+
+.doc-icon { display: block; margin: 30px auto; }
 
 .pad {
   @include padding;

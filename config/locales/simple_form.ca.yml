@@ -73,9 +73,15 @@ ca:
       group:
         closed: "Marca-ho si no vols que altres usuaris s'uneixin al grup"
 
+      help_text:
+        identf: Identificable per la màquina. Sense caràcters especials ni espais, només lletres sense accents, números y guió baix. Máxim 30 caràcters.
+        description: No és visible per als usuaris. Serveix per ajudar a identificar el text i explicitar-ne la funció. Máxim 300 caràcters.
+        body: "El text que es mostrará a l'usuari."
+        blocked: Si es bloqueja s'impedeix editar l'identificador o eliminar el text d'ajuda perquè s'està usant a la interfície.
+
       media_item:
         url: "Si l'enllaç acaba en .jpg, .png o .gif serà tractat com una imatge"
-    
+
       user:
         edit:
           password: 'Deixa-ho buit si no vols canviar-la'

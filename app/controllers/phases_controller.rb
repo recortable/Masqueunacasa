@@ -3,7 +3,8 @@ class PhasesController < ApplicationController
   expose(:themes) { 'textura_habitapedia naranja' }
   expose(:phases) { Phase.all }
   expose(:phase)
-  expose(:habitapedia_notices) { Notice.scoped }
+  expose(:categories) { Category.all }
+  expose(:habitapedia_notices) { Notice.list('habitapedia') }
 
 
   def index

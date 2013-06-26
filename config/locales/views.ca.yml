@@ -51,6 +51,10 @@ ca:
       get_in_touch: "Posa't en contacte"
       you_can_send_message: Des d'aquí pots enviar un missatge a aquest grup
 
+  help_texts:
+    new:
+      title: Nova ajuda contextual
+
   user:
     new:
       title: Nuevo usuario
@@ -60,25 +64,12 @@ ca:
       title: 'Iniciar sessió'
       create_account: "Crea un compte"
 
-  posts:
+  phases:
     index:
-      add_post: 'Afegir entrada'
-      prev_posts: 'Entrades més recents'
-      next_posts: 'Entrades més antigues'
-
-    new:
-      title: 'Afegir entrada'
-
-    archive:
-      archive: Arxiu
-
-    form:
-      change_published_on: 'Canviar la data de publicació'
-
-    by: Per
+      title: Preguntes i Propostes
 
   pages:
-    index: 
+    index:
       add_page: 'Crear una pàgina'
     new:
       title: 'Nova pàgina del wiki'
