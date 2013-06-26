@@ -17,7 +17,9 @@ ca:
       phase: 'fase'
       post: 'entrada'
       post_attachment: 'adjunt'
-      proposal: 'proposta'
+      proposal:
+        one: 'proposta'
+        other: propostes
       section:
         one: secció
         other: seccions

@@ -34,20 +34,20 @@ h1, h2, h3 {
 }
 
 h1 {
-  @include title_font(22px, bold);
+  @include title_font(18px, bold);
 }
 
 h2 {
-  @include title_font(18px, bold);
+  @include title_font(15px, bold);
 }
 
 
 h3 {
-  @include title_font(16px, bold);
+  @include title_font(14px, bold);
 }
 
 h4 {
-  @include title_font(14px, normal);
+  @include title_font(13px, normal, italic);
 }
 
 .slogan {

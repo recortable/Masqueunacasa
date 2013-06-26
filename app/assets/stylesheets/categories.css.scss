@@ -1,0 +1,39 @@
+.phases.index .category {
+  margin-bottom: 10px;
+  background-color: #C5E6ED;
+
+  h2 {
+    margin: 5px 0;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .category-summary {
+    padding-bottom: 30px;
+  }
+
+  .category-proposals {
+    position: relative;
+    background-color: #E8F6F9;
+
+    .toogle-proposals-list {
+      height: 22px;
+      padding: 4px 8px;
+      position: absolute;
+      top: -30px;
+      left: 0;
+      line-height: 22px;
+      font-size: 14px;
+      font-weight: bold;
+      background-color: #E8F6F9;
+    }
+
+    ul {
+      margin-top: 4px;
+      margin-left: 0;
+      list-style-position: inside;
+    }
+  }
+}

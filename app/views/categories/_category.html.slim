@@ -1,17 +1,22 @@
-= div_for category
+= div_for category, class: category.phase.slug_es do
   .row
     .span3
-      h2
-        = link_to category.title, category
-      .category-summary
-        = truncate_html markdown( category.summary ), length: 160
+      .pad
+        h2
+          = link_to category.title, category
+        .category-summary
+          = truncate_html markdown( category.summary ), length: 160
 
     .span3
       = image_tag category.image
 
   .row
-    .span6
-      ul.category-proposals
-      - category.proposals.each do |p|
-        li = link_to p.title, p
+    .span6.category-proposals
+      .pad
+        span.toogle-proposals-list
+          = "#{ category.proposals.count } #{ t('activerecord.models.proposal',
+          count: category.proposals.count) }"
+        ul
+          - category.proposals.each do |p|
+            li = link_to p.title, p
 

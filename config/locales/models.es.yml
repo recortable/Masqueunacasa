@@ -21,7 +21,9 @@ es:
       phase: 'fase'
       post: 'entrada'
       post_attachment: 'adjunto'
-      proposal: 'propuesta'
+      proposal:
+        one: 'propuesta'
+        other: propuestas
       section:
         one: secció
         other: seccions
