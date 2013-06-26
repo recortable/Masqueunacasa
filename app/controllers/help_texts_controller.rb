@@ -1,0 +1,2 @@
+class HelpTextsController < ApplicationController
+end

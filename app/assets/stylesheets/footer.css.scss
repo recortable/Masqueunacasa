@@ -1,3 +1,7 @@
 #footer {
   margin-top: 20px;
+
+  .pad {
+    @include padding(8px, 8px, 8px, 8px)
+  }
 }

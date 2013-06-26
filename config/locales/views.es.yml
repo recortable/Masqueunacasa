@@ -42,6 +42,8 @@ es:
       title: Editar comentario
 
   dashboard:
+    admin_area:
+      title: Área de administración
     community:
       title: 'Comunidad'
 

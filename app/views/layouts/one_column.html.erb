@@ -31,17 +31,17 @@
     <div id="page_content" class="row">
 
       <%# MAIN CONTAINER %>
-      <div class="span8">
+      <div class="span12">
 
         <%# TABS %>
         <div class="row">
-          <div id="tabs" class="span8">
+          <div id="tabs" class="span12">
             <%= render 'tabs' %>
           </div>
         </div>
 
         <div class="row">
-          <div id="content" class="span8">
+          <div id="content" class="span12">
 
             <%# Optional row for the content title and content controls %>
             <% if content_for? :content_header %>
@@ -49,7 +49,7 @@
                 <div class="span2">
                   <%= yield :content_controls %>
                 </div>
-                <div class="span6">
+                <div class="span9">
                   <%= yield :content_header %>
                 </div>
               </div>
@@ -58,16 +58,13 @@
             <%# Main content %>
             <div class="row">
 
-              <%# Optional sidebar at left %>
-              <% if content_for? :left %>
-                <div class="span2 sidebar left">
-                  <%= yield :left %>
-                </div>
-              <% end %>
+              <%# Sidebar at left %>
+              <div class="span2 sidebar left">
+                <%= yield :left %>
+              </div>
 
               <%# Main column %>
-              <% size = main_content_span_size %>
-              <div class="span<%= size %> main-content">
+              <div class="span9 main-content">
                 <%= yield %>
               </div>
             </div>
@@ -75,10 +72,6 @@
         </div>
       </div>
 
-      <%# RIGHT COLUMN %>
-      <div id="right-column" class="span4">
-        <%= render 'right_column' %>
-      </div>
     </div>
   </div>
 

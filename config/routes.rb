@@ -36,6 +36,7 @@ Masqueunacasa::Application.routes.draw do
   match "/enter/:id" => "users#enter", as: :enter
   match '/mail/:action/' => 'mailer'
   match '/buscar/' => 'dashboard#search', as: :seach
+  get '/admin/' => 'dashboard#admin_area', as: :admin_area
 
   root to: 'dashboard#welcome'
   WaxMuseum::Routes.draw

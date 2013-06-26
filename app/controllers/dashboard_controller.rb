@@ -33,7 +33,10 @@ class DashboardController < ApplicationController
     redirect_to '/mailer/admin'
   end
 
-  def blog
+  def admin_area
+    authorize! :read, :admin_area
+    breadcrumb_for_admin_area
+    render layout: 'one_column'
   end
 
   def cuatrocerocuatro

@@ -32,6 +32,12 @@ ca:
       created: 'Missatge col·lectiu preparat.'
       updated: 'Missatge col·lectiu modificat.'
 
+  dashboard:
+    admin_area:
+      title: Àrea d'administració
+    community:
+      title: 'Comunidad'
+
   groups:
     new:
       title: 'Afegir col.lectiu'

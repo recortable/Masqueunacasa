@@ -30,4 +30,7 @@
               = link_to t('.view_user'), user_url(current_user)
 
       - else
-          = link_to t('.session_start'), login_url(from: request.url), class: 'btn'
+        = link_to t('.session_start'), login_url(from: request.url), class: 'btn'
+
+    - if can? :read, :admin_area
+      = link_to 'ADMIN AREA', admin_area_path, id: 'admin_area_link'

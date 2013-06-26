@@ -30,20 +30,20 @@ body { @include text_font(13px, normal);
 }
 
 h1 {
-  @include title_font(30px, bold);
+  @include title_font(22px, bold);
 }
 
 h2 {
-  @include title_font(24px, bold);
+  @include title_font(19px, bold);
 }
 
 
 h3 {
-  @include title_font(20px, bold);
+  @include title_font(17px, bold);
 }
 
 h4 {
-  @include title_font(16px, normal);
+  @include title_font(15px, normal);
 }
 
 .slogan {

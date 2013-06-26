@@ -24,6 +24,6 @@ body {
 }
 
 .pad {
-  @include padding(8px, 0px, 8px);
+  @include padding;
 }
 

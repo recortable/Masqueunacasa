@@ -1,6 +1,7 @@
 #header {
   margin-bottom: 18px;
   padding: 5px 0 2px;
+  position: relative;
 }
 
 #header #logo {
@@ -39,4 +40,15 @@
 #lang-switcher button,
 #session-controls button {
   width: 100%;
+}
+
+#admin_area_link {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#admin_area_link {
+  padding: 0 1em;
+  border: 1px solid #000;
 }

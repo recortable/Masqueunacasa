@@ -1,0 +1,39 @@
+- content_for :content_header do
+  = title t('.title')
+
+.row
+  .span9
+    h2 Administrar ayudas contextuales
+
+    - if HelpText.all.size > 0
+      table.table-bordered.table-striped
+        thead
+          tr
+            th Identf
+            th Description
+            th Actions
+        tbody
+          - HelpText.all.each do |ht|
+            tr
+              td = ht.identf
+              td = ht.description
+
+.row
+  .span9
+    h2 Administrar páginas auxiliares
+
+    - if HelpPage.all.size > 0
+      table.table-bordered.table-striped
+        thead
+          tr
+            th Identf
+            th Title
+            th Description
+            th Actions
+        tbody
+          - HelpPage.all.each do |hp|
+            tr
+              td = hp.identf
+              td = hp.title
+              td = hp.description
+

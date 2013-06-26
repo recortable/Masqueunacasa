@@ -54,7 +54,7 @@ module HasBreadcrumbs
     add_breadcrumb 'Participantes', users_path
   end
 
-  def breadcrumb_for_user(user)    
+  def breadcrumb_for_user(user)
     breadcrumb_for_users
     add_breadcrumb user.name, user_url(user, subdomain: false)
   end
@@ -62,5 +62,10 @@ module HasBreadcrumbs
   def breadcrumb_for_group(group)
     breadcrumb_for_community
     add_breadcrumb group.title, group_path(group)
+  end
+
+  def breadcrumb_for_admin_area
+    @active_tab = 'admin'
+    add_breadcrumb 'Admin area', admin_area_path
   end
 end
