@@ -24,6 +24,19 @@
   <%# HEADER %>
   <%= render 'header' %>
 
+  <noscript>
+    <div class="container">
+      <div class="row">
+        <div class="span6 offset3">
+          <div class="pad">
+            Para ver y utilizar este sitio web con todas las funcionalidades es necesario tener activado
+            el javascript en el navegador. Disculpa las molestias.
+          </div>
+        </div>
+      </div>
+    </div>
+  </noscript>
+
   <%# FLASH MESSAGES %>
   <%= render 'flashes' %>
 
@@ -60,7 +73,7 @@
 
               <%# Optional sidebar at left %>
               <% if content_for? :left %>
-                <div class="span2 sidebar left">
+                <div id="sidebar-left" class="span2 sidebar left">
                   <%= yield :left %>
                 </div>
               <% end %>
@@ -83,13 +96,8 @@
   </div>
 
   <%# FOOTER %>
-  <div id="footer" class="container">
-    <div class="row">
-      <div class="span12">
-        <%= render 'footer' %>
-      </div>
-    </div>
-  </div>
+  <%= render 'footer' %>
+
   <%= render 'layouts/ga' if Rails.env == 'production' %>
   <div style="display:none">
     Masqueunacasa version <%= ENV["RAILS_APP_VERSION"] %>. AGPL3

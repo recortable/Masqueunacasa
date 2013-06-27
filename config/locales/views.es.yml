@@ -27,10 +27,6 @@ es:
 
     slogan: procesos colectivos de vivienda
 
-    notices:
-      created: 'Mensaje colectivo preparado.'
-      updated: 'Mensaje colectivo modificado.'
-
   categories:
     notices:
       created: 'Pregunta añadida.'

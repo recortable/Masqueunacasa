@@ -28,10 +28,6 @@ ca:
 
     slogan: processos col·lectius d'habitatge
 
-    notices:
-      created: 'Missatge col·lectiu preparat.'
-      updated: 'Missatge col·lectiu modificat.'
-
   dashboard:
     admin_area:
       title: Àrea d'administració
@@ -54,6 +50,15 @@ ca:
   help_texts:
     new:
       title: Nova ajuda contextual
+
+  langs:
+    available_translations: Aquest contingut també està disponible en
+    lang: Idioma
+    ca: Català
+    en: Anglès
+    es: Castellà
+    fr: Francès
+    it: Italià
 
   user:
     new:

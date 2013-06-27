@@ -3,7 +3,7 @@ class PhasesController < ApplicationController
   expose(:themes) { 'textura_habitapedia naranja' }
   expose(:phases) { Phase.all }
   expose(:phase)
-  expose(:categories) { Category.all }
+  expose(:categories) { Category.where(filter_by).order(sort_by) }
   expose(:habitapedia_notices) { Notice.list('habitapedia') }
 
 
@@ -39,5 +39,20 @@ class PhasesController < ApplicationController
     authorize! :update, phase
     flash[:notice] = t('phases.notices.updated') if phase.update_attributes(params[:phase])
     respond_with phase
+  end
+
+  private
+
+  def filter_by
+    filter = params[:phase]
+    filter.present? ? ["phase_id = ?", filter] : nil
+  end
+
+  def sort_by
+    %w{view_count}.include?(params[:sort_by]) ? "#{params[:sort_by]} #{direction}" : 'phase_id ASC, position ASC'
+  end
+
+  def direction
+    %{asc desc}.include?(params[:d]) ? params[:d] : 'asc'
   end
 end

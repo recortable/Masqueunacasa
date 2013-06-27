@@ -12,6 +12,7 @@
 //= require galleria/galleria.classic.min
 //= require jquery_nested_form
 //= require sections
+//= require categories
 //= require sortable_fields
 //# require ckeditor/init
 //= require utils

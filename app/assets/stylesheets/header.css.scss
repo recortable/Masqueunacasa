@@ -1,7 +1,8 @@
 #header {
   margin-bottom: 18px;
-  padding: 5px 0 2px;
+  padding: 8px 6px 2px;
   position: relative;
+  box-shadow: 0 0 5px 1px #888;
 }
 
 #header #logo {
@@ -25,7 +26,7 @@
 #session-controls > a {
   display: block;
   padding: 0 1em;
-  margin-top: 20px;
+  margin-top: 16px;
   background: $fondo;
   border-radius: 0;
   border: 1px solid #000;
@@ -45,10 +46,8 @@
 #admin_area_link {
   position: absolute;
   top: 0;
-  right: 0;
-}
-
-#admin_area_link {
+  right: 6px;
   padding: 0 1em;
   border: 1px solid #000;
 }
+

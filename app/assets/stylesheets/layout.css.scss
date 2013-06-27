@@ -2,6 +2,11 @@ body {
   background-color: transparent;
 }
 
+noscript .pad {
+  padding: 10px;
+  background-color: #E8F6F9;
+}
+
 #main {
   position: relative;
 }
