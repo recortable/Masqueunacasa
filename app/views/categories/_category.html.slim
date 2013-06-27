@@ -1,10 +1,10 @@
-= div_for category, class: category.phase.slug_es do
+= div_for category, class: 'visor-elem ' + category.phase.slug_es do
   .row
     .span3
       .pad
         h2
           = link_to category.title, category
-        .category-summary
+        .category-summary.summary
           = truncate_html markdown( category.summary ), length: 160
 
     .span3

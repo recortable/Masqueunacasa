@@ -1,87 +1,12 @@
-$width: 210px;
-$glutter: 30px;
-
 .experiencies.index {
-  div.quadricula {
-    margin-top: 30px;
-    margin-left: -$glutter;
-
-    #add_image {
-      position: relative;
-
-      a {
-        display: block;
-        height: 30%;
-        padding-top: 70%;
-        text-transform: uppercase;
-        background: $azul_neon;
-
-        &:before {
-          content: "";
-          width: 68px;
-          height: 68px;
-          position: absolute;
-          top: 46px;
-          left: 69px;
-          background: image-url('add_experience.png') no-repeat;
-        }
-
-        &:hover {
-          background-color: $negro;
-          color: $azul_neon;
-
-          &:before {
-            background-position: 0 -68px;
-          }
-        }
-      }
-    }
-
-    .experiencie, #add_image {
-      background-color: darken($fondo, 20%);
-      width: $width;
-      height: $width;
-      position: relative;
-      float: left;
-      margin-left: $glutter;
-      margin-bottom: $glutter;
-      overflow: hidden;
-      text-align: center;
-      font-size: 14px;
-      line-height: 18px;
-
-      img {
-        width: $width;
-      }
-
-      .overlay {
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-
-        .transparent-bg {
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          background: #000;
-          filter: alpha(opacity=50);
-          opacity: 0.7;
-        }
-
-        .experiencie-text {
-          position: relative;
-          padding: 4px 6px 8px;
-          text-align: left;
-          color: $fondo;
-          
-          a {
-            color: inherit;
-          }
-        }
-      }
-    }
+  .left-block.controls .control {
+    background-color: #F8E0D4;
   }
-} 
+
+  .experiencie {
+    background-color: #F8E0D4;
+  }
+}
 
 .experiencies.show {
   .span6 {
@@ -118,4 +43,4 @@ $glutter: 30px;
     }
   }
 }
-  
+

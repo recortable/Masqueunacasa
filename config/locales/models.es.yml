@@ -4,6 +4,9 @@ es:
       category: 'pregunta'
       content: 'entrada'
       experiencie: 'experiencia'
+      experiencie:
+        one: experiencia
+        other: esperiencias
       group:
         one: 'colectivo'
         other: colectivos

@@ -1,0 +1,15 @@
+= div_for experiencie, class: 'visor-elem' do
+  .row
+    .span3
+      .pad
+        h2
+          = link_to experiencie.title, experiencie
+        .experiencie-summary.summary
+          = truncate_html markdown( experiencie.summary ), length: 160
+
+    .span3
+      - unless experiencie.images.empty?
+        = link_to image_tag( experiencie.image ), experiencie
+      - else
+        p: br No hay imagen disponible
+

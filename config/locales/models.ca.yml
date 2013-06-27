@@ -1,11 +1,14 @@
 ca:
   activerecord:
     models:
-      agent: 'grup'
       category: 'pregunta'
       content: 'entrada'
-      experiencie: 'experiència'
-      group: 'col.lectiu'
+      experiencie:
+        one: 'experiència'
+        other: experiències
+      group:
+        one: 'col.lectiu'
+        other: 'col·lectius'
       image:
         one: imatge
         other: imatges

@@ -1,0 +1,11 @@
+- title t('activerecord.models.experiencie.other')
+
+.lista-visor
+  = render experiencies
+
+- content_for :left do
+  .fixed-block
+    .left-block.controls
+      .control.block-row
+        => link_to "#{t('app.add', element: t('activerecord.models.experiencie.one'))}"
+        = icon :'plus-sign'
