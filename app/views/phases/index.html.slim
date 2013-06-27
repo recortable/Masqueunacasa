@@ -3,24 +3,25 @@
 = render categories
 
 - content_for :left do
-  .left-block.filters
-    .block-header
-      => icon :filter
-      = t('fiter_by')
-    .filter.block-row
-      = link_to t('all'), url_for(request.params.merge(phase: nil))
-    - phases.each do |phase|
+  .fixed-block
+    .left-block.filters
+      .block-header
+        => icon :filter
+        = t('fiter_by')
       .filter.block-row
-        = link_to phase.title, url_for(request.params.merge(phase: phase.id))
+        = link_to t('all'), url_for(request.params.merge(phase: nil))
+      - phases.each do |phase|
+        .filter.block-row
+          = link_to phase.title, url_for(request.params.merge(phase: phase.id))
 
-  .left-block.order
-    .block-header
-      => icon :'arrow-down'
-      = t('order_by')
-    .order.block-row
-      = link_to "Por fase", url_for(request.params.merge(sort_by: nil, d: nil))
-    .order.block-row
-      = link_to "Más visitada", url_for(request.params.merge(sort_by: 'view_count', d: 'desc'))
+    .left-block.order
+      .block-header
+        => icon :'arrow-down'
+        = t('order_by')
+      .order.block-row
+        = link_to "Por fase", url_for(request.params.merge(sort_by: nil, d: nil))
+      .order.block-row
+        = link_to "Más visitada", url_for(request.params.merge(sort_by: 'view_count', d: 'desc'))
 
 - content_for :right do
   - habitapedia_notices.each do |notice|

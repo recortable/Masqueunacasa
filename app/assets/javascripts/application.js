@@ -40,6 +40,14 @@ var MqucInit = function() {
   $('.body a').mediafy();
 
   $('form img').image_cache_src(); // Defined in utils.js
+
+  // http://twitter.github.io/bootstrap/javascript.html#affix
+  // usado en columna de la izquierda
+  var fixed = $('#sidebar-left .fixed-block')
+  var offsetFn = function() {
+    return fixed.parent().offset().top
+  };
+  fixed.affix( {offset: {top: offsetFn} } );
 };
 
 $(document).ready(MqucInit);
