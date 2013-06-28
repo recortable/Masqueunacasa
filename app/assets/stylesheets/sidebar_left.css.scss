@@ -22,12 +22,18 @@
     }
 
     .block-row.control {
+      margin-bottom: 10px;
       padding-top: 3px;
       padding-bottom: 3px;
+      text-align: right;
 
       a {
         margin-right: 5px;
       }
     }
+  }
+
+  .left-block.controls {
+    margin-bottom: 20px;
   }
 }

@@ -1,6 +1,6 @@
 - title t('.title')
 
-.lista-visor
+.lista-visor.categories
   = render categories
 
 - content_for :left do
@@ -8,7 +8,7 @@
     .left-block.filters
       .block-header
         => icon :filter
-        = t('fiter_by')
+        = t('filter_by')
       .filter.block-row
         = link_to t('all'), url_for(request.params.merge(phase: nil))
       - phases.each do |phase|

@@ -3,7 +3,7 @@ class ExperienciesController < ApplicationController
 
   expose(:themes) { 'textura09 negro' }
   expose(:related_proposal) { Proposal.find(params[:p]) if params[:p].present? }
-  expose(:experiencies) { Experiencie.order('updated_at DESC') }
+  expose(:experiencies) { Experiencie.order(sort_by) }
   expose(:experiencie)
 
   def index
@@ -61,5 +61,15 @@ class ExperienciesController < ApplicationController
     authorize! :destroy, experiencie
     flash[:notice] = t('experiencies.notices.destroyed') if experiencie.destroy
     respond_with experiencie, location: experiencies_path
+  end
+
+  private
+
+  def sort_by
+    %w{view_count}.include?(params[:sort_by]) ? "#{params[:sort_by]} #{direction}" : "updated_at desc"
+  end
+
+  def direction
+    %{asc desc}.include?(params[:d]) ? params[:d] : 'asc'
   end
 end

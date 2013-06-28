@@ -1,5 +1,6 @@
 .lista-visor .visor-elem {
   margin-bottom: 10px;
+  overflow: hidden;
 
   h2 {
     margin: 5px 0;
@@ -7,6 +8,10 @@
     a {
       color: inherit;
     }
+  }
+
+  .image-container {
+    position: relative;
   }
 }
 

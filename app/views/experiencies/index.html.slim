@@ -1,6 +1,6 @@
 - title t('activerecord.models.experiencie.other')
 
-.lista-visor
+.lista-visor.experiencies
   = render experiencies
 
 - content_for :left do
@@ -9,3 +9,12 @@
       .control.block-row
         => link_to "#{t('app.add', element: t('activerecord.models.experiencie.one'))}"
         = icon :'plus-sign'
+
+    .left-block.order
+      .block-header
+        => icon :'arrow-down'
+        = t('order_by')
+      .order.block-row
+        = link_to "Más visitada", url_for(request.params.merge(sort_by: 'view_count', d: 'desc'))
+      .order.block-row
+        = link_to "Últimas añadidas", url_for(request.params.merge(sort_by: 'updated_at', d: 'desc'))

@@ -3,11 +3,11 @@
     .span3
       .pad
         h2
-          = link_to category.title, category
+          = link_to raw(category.title + " " + icon(:'arrow-right')), category
         .category-summary.summary
           = truncate_html markdown( category.summary ), length: 160
 
-    .span3
+    .span3.image-container
       = image_tag category.image
 
   .row

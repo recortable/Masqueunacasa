@@ -7,14 +7,14 @@
 //= require slider
 //= require maps
 //= require mediafy
-//= require experiencies
 //= require galleria/galleria-1.2.9.min
 //= require galleria/galleria.classic.min
 //= require jquery_nested_form
 //= require sections
 //= require categories
 //= require sortable_fields
-//# require ckeditor/init
+//= require imagesloaded.min
+//= require resize_images
 //= require utils
 //= require_self
 

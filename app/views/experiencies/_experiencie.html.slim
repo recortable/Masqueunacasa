@@ -3,11 +3,11 @@
     .span3
       .pad
         h2
-          = link_to experiencie.title, experiencie
+          = link_to raw(experiencie.title + " " + icon(:'arrow-right')), experiencie
         .experiencie-summary.summary
-          = truncate_html markdown( experiencie.summary ), length: 160
+          = truncate_html markdown( experiencie.summary ), length: 200
 
-    .span3
+    .span3.image-container
       - unless experiencie.images.empty?
         = link_to image_tag( experiencie.image ), experiencie
       - else

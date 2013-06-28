@@ -1,0 +1,21 @@
+- title t('application.tabs.community')
+
+.lista-visor.community
+  ul.nav.nav-tabs
+    li.active
+      = link_to t('activerecord.models.group.other').upcase, '#groups', data: {toggle: 'tab'}
+    li
+      = link_to t('activerecord.models.user.other').upcase, '#users', data: {toggle: 'tab'}
+  .tab-content
+    #groups.tab-pane.active
+      = render groups
+    #users.tab-pane
+      = render users
+
+- content_for :left do
+  .fixed-block
+    .left-block.controls
+      .block-row.control
+        => link_to t('app.create_new', element: t('activerecord.models.group.one')), new_group_path
+        = icon :'plus-sign'
+
