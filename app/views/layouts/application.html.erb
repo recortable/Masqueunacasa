@@ -60,7 +60,9 @@
             <% if content_for? :content_header %>
               <div class="row">
                 <div class="span2">
-                  <%= yield :content_controls %>
+                  <div class="content-controls">
+                    <%= yield :content_controls %>
+                  </div>
                 </div>
                 <div class="span6">
                   <%= yield :content_header %>

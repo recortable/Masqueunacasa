@@ -1,0 +1,21 @@
+- content_for :content_header do
+  = title category.title
+
+- content_for :content_controls do
+  - if can? :edit, category
+    .control
+      => link_to t('edit'), [:edit, phase, category]
+      = icon :edit
+  - if can? :destroy, category
+      => link_to t('delete'), [phase, category], method: :delete, confirm: "¿Seguro?"
+      = icon :trash
+
+= image_tag category.image
+= markdown category.summary
+= render_sections category
+
+- content_for :left
+  .left-block
+    .block-row
+      = render_kudos category
+      = render_social_links category
