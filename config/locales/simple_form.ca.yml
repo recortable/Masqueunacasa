@@ -97,5 +97,7 @@ ca:
       group:
         create: 'Crear grup'
         update: 'Desar perfil'
-      
+
+      user_session:
+        create: entrar
 

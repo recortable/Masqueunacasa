@@ -138,5 +138,6 @@ es:
       password_recovery:
         create: 'Enviar instrucciones'
         update: 'Modificar contraseña'
+      user_session: entrar
 
 
