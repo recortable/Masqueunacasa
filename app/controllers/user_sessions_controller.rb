@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def create
@@ -34,7 +34,7 @@ class UserSessionsController < ApplicationController
       session[:user_id] = nil
       flash[:notice] = "Adiós"
       path = params[:from].present? ? params[:from] : root_path
-      redirect_to path 
+      redirect_to path
     end
   end
 

@@ -34,7 +34,8 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_url, alert: 'No puedes entrar ahí...'
+    flash[:alert] = "Antes tienes que identificarte o crear una cuenta de usuario..."
+    redirect_to controller: 'user_sessions', action: 'new', locale: T.l.to_s, from: request.url
   end
 
   ## Al final de routes.rb hay una directiva que captura todas las urls y las 'mapea' al método set_locale.
