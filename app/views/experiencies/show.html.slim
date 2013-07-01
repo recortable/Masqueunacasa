@@ -1,0 +1,39 @@
+= title experiencie.title
+
+#summary
+  = markdown experiencie.summary
+
+.image-gallery
+  - unless experiencie.images.empty?
+    .galleria
+      - experiencie.images.each do |image|
+        - if image.image?
+          = link_to image_tag(image.image.thumb.to_s, title: image.title, alt: image.credits), image.image.to_s
+        - if image.external_image_url?
+          = image_tag(image.external_image_url, title: image.title, alt: image.credits)
+
+= render 'sections/index', document: experiencie
+
+= render 'comments/comments', document: experiencie
+
+- content_for :left do
+  .fixed-block
+    .left-block.controls.pull-right
+      - if can? :edit, experiencie
+        .control.block-row
+          = link_to icon_after(:edit, t('edit')), edit_experiencie_path(experiencie)
+      - if can? :destroy, experiencie
+        .control.block-row
+          = link_to icon_after(:trash, t('delete')), experiencie, method: :delete, confirm: "¿Seguro?"
+    .left-block.social
+      .block-row
+        = link_to icon(:twitter, 'Tweet'), "https://twitter.com/share?url=#{request.url}"
+      .block-row
+        = comments_link experiencie
+      .block-row.editors
+        p = icon :pencil, "#{experiencie.editors.count} #{Editorship.model_name.human(count: experiencie.editors.count)}:"
+        - experiencie.editors.each do |user|
+          = link_to avatar_image(user, size: :small), user, title: user.name
+
+    = render 'available_translations', document: experiencie
+
