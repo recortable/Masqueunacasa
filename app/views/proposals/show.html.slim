@@ -1,0 +1,31 @@
+= title proposal.title
+
+#summary
+  = markdown proposal.summary
+
+= render 'sections/index', document: proposal
+
+#comments
+  = render 'comments/comments', document: proposal
+
+- content_for :left do
+  .fixed-block
+    .left-block.controls.pull-right
+      - if can? :edit, proposal
+        .control.block-row
+          = link_to icon_after(:edit, t('edit')), edit_proposal_path(proposal)
+      - if can? :destroy, proposal
+        .control.block-row
+          = link_to icon_after(:trash, t('delete')), proposal, method: :delete
+    .left-block.social
+      .block-row
+        = link_to icon(:twitter, 'Tweet'), "https://twitter.com/share?url=#{request.url}"
+      .block-row
+        = comments_link proposal
+      .block-row.editors
+        p = icon :pencil, "#{proposal.editors.count} #{Editorship.model_name.human(count: proposal.editors.count)}:"
+        - proposal.editors.each do |user|
+          = link_to avatar_image(user, size: :small), user, title: user.name
+
+    = render 'available_translations', document: proposal
+

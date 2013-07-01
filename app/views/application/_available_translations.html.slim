@@ -1,0 +1,9 @@
+- if document.translations.size > 1
+  .left-block.available-translations
+    .block-header
+      = t('langs.available_translations') + ":"
+    = div_for document.translations, class: 'block-row' do |translation|
+      = link_to( t("langs.#{translation.locale}"),
+        url_for(locale: translation.locale.to_s)) unless \
+        translation.locale == T.l
+

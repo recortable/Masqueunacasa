@@ -1,8 +1,13 @@
 = title category.title
 
+#category-image
 = image_tag category.image
-= markdown category.summary
+
+#summary
+  = markdown category.summary
+
 = render 'sections/index', document: category
+
 = render 'comments/comments', document: category
 
 - content_for :left
@@ -23,3 +28,4 @@
         p = icon :pencil, "#{category.editors.count} #{Editorship.model_name.human(count: category.editors.count)}:"
         - category.editors.each do |user|
           = link_to avatar_image(user, size: :small), user, title: user.name
+

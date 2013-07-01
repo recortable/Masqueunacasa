@@ -1,0 +1,8 @@
+#sections
+  = content_tag_for :div, Section.with_locale_fallback_for(document) do |section|
+    = content_tag 'h2', section.title if section.title.present?
+    - if section.image?
+      = image_tag section.image_url, class: 'responsive'
+    - if section.body?
+      = markdown section.body
+
