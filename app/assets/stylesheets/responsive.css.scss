@@ -29,7 +29,8 @@
     min-height: 315px;
   }
 
-  #sidebar-left .fixed-block {
+  #sidebar-left .fixed-block,
+  .content-controls .fixed-block {
     width: 140px;
   }
 }

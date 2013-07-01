@@ -2,7 +2,12 @@ ca:
   activerecord:
     models:
       category: 'pregunta'
-      content: 'entrada'
+      comment:
+        one: comentari
+        other: comentaris
+      editorship:
+        one: editor
+        other: editors
       experiencie:
         one: 'experiència'
         other: experiències

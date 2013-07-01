@@ -27,13 +27,12 @@
     </div>
   <% end %>
 </div>
-<%= render_sections experiencie %>
+<%= render 'sections/index', document: experiencie %>
 <%= render 'comments/comments', document: experiencie %>
 
 <% content_for :left do %>
   <%= image_tag "habitap/experiencias_100n.png", alt: 'Experiencia', width: 100, height: 100, class: 'breadcrumb-image' %>
   <%= render_kudos experiencie %>
-  <%= render_social_links experiencie %>
   <%= render 'available_translations', document: experiencie %>
 <% end %>
 

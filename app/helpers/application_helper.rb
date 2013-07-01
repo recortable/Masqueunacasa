@@ -59,6 +59,11 @@ module ApplicationHelper
     raw("<i class='icon-#{icon}'></i>#{label}")
   end
 
+  def icon_after(icon, label = nil)
+    label = label.present? ? h("#{label} ") : ''
+    raw("#{label} <i class='icon-#{icon}'></i>")
+  end
+
   def simple_debug(model)
     debug(model) if Rails.env.development?
   end

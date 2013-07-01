@@ -1,21 +1,25 @@
-- content_for :content_header do
-  = title category.title
-
-- content_for :content_controls do
-  - if can? :edit, category
-    .control
-      => link_to t('edit'), [:edit, phase, category]
-      = icon :edit
-  - if can? :destroy, category
-      => link_to t('delete'), [phase, category], method: :delete, confirm: "¿Seguro?"
-      = icon :trash
+= title category.title
 
 = image_tag category.image
 = markdown category.summary
-= render_sections category
+= render 'sections/index', document: category
+= render 'comments/comments', document: category
 
 - content_for :left
-  .left-block
-    .block-row
-      = render_kudos category
-      = render_social_links category
+  .fixed-block
+    .left-block.controls.pull-right
+      - if can? :edit, category
+        .control.block-row
+          = link_to icon_after(:edit, t('edit')), [:edit, phase, category]
+      - if can? :destroy, category
+        .control.block-row
+          = link_to icon_after(:trash, t('delete')), [phase, category], method: :delete, confirm: "¿Seguro?"
+    .left-block.social
+      .block-row
+        = link_to icon(:twitter, 'Tweet'), "https://twitter.com/share?url=#{request.url}"
+      .block-row
+        = comments_link category
+      .block-row.editors
+        p = icon :pencil, "#{category.editors.count} #{Editorship.model_name.human(count: category.editors.count)}:"
+        - category.editors.each do |user|
+          = link_to avatar_image(user, size: :small), user, title: user.name

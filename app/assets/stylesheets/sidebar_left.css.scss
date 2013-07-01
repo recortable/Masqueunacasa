@@ -1,5 +1,4 @@
 #sidebar-left {
-
   .fixed-block {
     width: 170px;
   }
@@ -10,8 +9,9 @@
 
   .left-block {
     margin-bottom: 10px;
+    clear: both;
 
-    .block-header {
+    .block-header, .block-row.control {
       background-color: #D9D9D9;
     }
 
@@ -22,7 +22,6 @@
     }
 
     .block-row.control {
-      margin-bottom: 10px;
       padding-top: 3px;
       padding-bottom: 3px;
       text-align: right;
@@ -36,4 +35,15 @@
   .left-block.controls {
     margin-bottom: 20px;
   }
+
+  .left-block.social .block-row {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #AAA;
+
+    &.editors {
+      border-bottom: 0;
+    }
+  }
 }
+

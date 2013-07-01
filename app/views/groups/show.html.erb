@@ -25,7 +25,7 @@
 <% end %>
 
 <%= markdown group.summary %>
-<%= render_sections group %>
+<%= render  'sections/index', document: group %>
 
 
 <% content_for :left do %>

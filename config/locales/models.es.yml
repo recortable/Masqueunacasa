@@ -2,11 +2,15 @@ es:
   activerecord:
     models:
       category: 'pregunta'
-      content: 'entrada'
-      experiencie: 'experiencia'
+      comment:
+        one: comentario
+        other: comentarios
+      editorship:
+        one: editor
+        other: editores
       experiencie:
         one: experiencia
-        other: esperiencias
+        other: experiencias
       group:
         one: 'colectivo'
         other: colectivos
