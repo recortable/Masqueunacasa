@@ -1,0 +1,44 @@
+= title group.title
+
+- if group.website.present?
+  h3 = link_to group.website, group.website
+
+- if group.email.present?
+  h4
+    small correo
+  = link_to group.email, "mailto:#{group.email}"
+
+- if group.twitter.present?
+  h4
+    small twitter
+  = link_to "#{group.twitter}", "http://twitter.com/#!#{group.twitter}", target: '_blank'
+
+- if group.facebook.present?
+  h4
+    small facebook
+  = link_to group.facebook, group.facebook
+
+#summary
+  = markdown group.summary
+
+= render  'sections/index', document: group
+
+
+- content_for :left do
+  .fixed-block
+    .left-block.group-avatar-image
+      = image_tag group.avatar_image, class: 'fixed'
+
+    .left-block.group-members
+      .block-header
+        = t('activerecord.models.membership.other') + ":"
+      - if can? :update, group
+        .block-row
+          = link_to icon(:plus, 'Añadir participante'),
+            new_group_membership_path(group), rel: 'new-membership'
+      .block-row
+        - group.members.each do |user|
+          = link_to avatar_image(user, size: :small, class: 'fixed'), user_url(user)
+
+    = render 'available_translations', document: group
+

@@ -34,6 +34,10 @@ class Ability
   def social_abilities(user)
     can :create, Comment
     can :update, User, id: user.id
+    can :create, Group
+    can :update, Group do |group|
+      participant?(group, user)
+    end
   end
 
   def anonymous_abilities
