@@ -15,7 +15,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass'
-  gem 'font-awesome-sass-rails'
+  gem 'font-awesome-rails'
 end
 
 # Cosas de modelos

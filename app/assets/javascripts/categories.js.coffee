@@ -7,8 +7,8 @@ init = ->
 
     self.find('.toggle-proposals-list').css('cursor', 'pointer').on 'click', ->
       $(this).next('ul').slideToggle().end().
-        find('i').toggleClass('icon-chevron-down icon-chevron-up')
-    .append(" <i class='icon-chevron-down'></i>")
+        find('i').toggleClass('icon-expand icon-collapse')
+    .append(" <i class='icon-expand'></i>")
 
     self.find('.category-proposals ul').hide()
 

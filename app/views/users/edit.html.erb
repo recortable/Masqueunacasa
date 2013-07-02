@@ -12,7 +12,7 @@
     <h3>Información privada</h3>
     <p>Esto no será visible para el resto</p>
     <%= form.input :email %>
-    <%= submit_button_for form %>
+    <%= form.submit %>
   <% end %>
 </div>
 
@@ -22,6 +22,6 @@
     <%= form.input :password %>
     <%= form.input :password_confirmation %>
     <%= form.input :admin, wrapper: :checkbox if current_user && current_user.admin? %>
-    <%= submit_button_for form, value: 'Cambiar contraseña' %>
+    <%= form.submit, label: 'Cambiar contraseña' %>
   <% end %>
 </div>

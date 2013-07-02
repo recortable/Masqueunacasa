@@ -21,7 +21,7 @@
     <h4>... o poner un código de embed</h4>
     <%= form.input :embed, as: :text, input_html: { rows: 4 } %>
   <% end %>
-  <%= submit_button_for form %>
+  <%= form.submit %>
 <% end %>
 
 <% content_for :left do %>

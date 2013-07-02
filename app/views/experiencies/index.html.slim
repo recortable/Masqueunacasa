@@ -12,7 +12,7 @@
 
     .left-block.order
       .block-header
-        => icon :'arrow-down'
+        => icon :sort
         = t('order_by')
       .order.block-row
         = link_to "Más visitada", url_for(request.params.merge(sort_by: 'view_count', d: 'desc'))
