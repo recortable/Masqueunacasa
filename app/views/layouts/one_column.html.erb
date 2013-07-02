@@ -43,18 +43,6 @@
         <div class="row">
           <div id="content" class="span12">
 
-            <%# Optional row for the content title and content controls %>
-            <% if content_for? :content_header %>
-              <div class="row">
-                <div class="span2">
-                  <%= yield :content_controls %>
-                </div>
-                <div class="span9">
-                  <%= yield :content_header %>
-                </div>
-              </div>
-            <% end %>
-
             <%# Main content %>
             <div class="row">
 
@@ -64,7 +52,7 @@
               </div>
 
               <%# Main column %>
-              <div class="span9 main-content">
+              <div class="span10 main-content">
                 <%= yield %>
               </div>
             </div>
@@ -76,13 +64,8 @@
   </div>
 
   <%# FOOTER %>
-  <div id="footer" class="container">
-    <div class="row">
-      <div class="span12">
-        <%= render 'footer' %>
-      </div>
-    </div>
-  </div>
+  <%= render 'footer' %>
+
   <%= render 'layouts/ga' if Rails.env == 'production' %>
   <div style="display:none">
     Masqueunacasa version <%= ENV["RAILS_APP_VERSION"] %>. AGPL3
