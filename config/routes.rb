@@ -75,6 +75,7 @@ Masqueunacasa::Application.routes.draw do
   # ADMINISTRACIÓN
 
   resources :help_texts, except: [:index]
+  resources :help_pages, except: [:index]
 
   ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes.yml', {
     prefix_on_default_locale: true }) # para permitir poner el idioma de la página

@@ -14,9 +14,11 @@ es:
         body: 'Texto'
         body_ca: 'Texto en catalán'
         content_type: 'Tipo de texto'
+        description: Descripción
         email: 'Correo'
-        name: 'Nombre'
+        identf: Identificador único
         map: Si quieres puedes ubicarte clicando sobre el mapa
+        name: 'Nombre'
         published_at: 'Fecha de publicación'
         password: 'Contraseña'
         password_confirmation: 'Repite la contraseña'

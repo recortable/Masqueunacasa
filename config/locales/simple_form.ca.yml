@@ -10,16 +10,22 @@ ca:
 
     labels:
       defaults:
-        title: 'Títol'
-        name: 'Nom'
         author: 'Autors o autores'
-        published_at: 'Data de publicació'
+        bloqued: Bloquejat
         body: 'Text'
-        content_type: 'Tipus de text'
-        url: 'Enllaç'
-        title_ca: 'Títol en català'
         body_ca: 'Text en català'
+        content_type: 'Tipus de text'
+        description: Descripció
+        email: Correu electrònic
+        identf: Identificador únic
         map: Si vols pots ubicar-te clicant sobre el mapa
+        name: 'Nom'
+        password: Contrassenya
+        password_confirmation: Repeteix la contrasenya
+        published_at: 'Data de publicació'
+        summary: Resum
+        title: 'Títol'
+        url: 'Enllaç'
 
       group:
         slug: 'Subdomini'

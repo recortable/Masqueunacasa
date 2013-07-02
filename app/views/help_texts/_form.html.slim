@@ -1,5 +1,7 @@
 = simple_form_for help_text do |f|
-  = f.input :identf, input_html: { class: 'span3', maxlength: 30, disabled: f.object.blocked? }
+  = f.input :identf, input_html: { class: 'span3',
+                                   maxlength: 30,
+                                   disabled: f.object.blocked? }
   = f.input :description, as: :text, input_html: { class: 'span5', rows: 3 }
   - T.avl.each do |l|
     = f.input :"body_#{l}", as: :text, input_html: { class: 'span5', rows: 8 }

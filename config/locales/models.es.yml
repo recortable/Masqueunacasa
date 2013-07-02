@@ -23,17 +23,14 @@ es:
         one: participante
         other: participantes
       notice: 'destacado'
-      page: 'documento'
       password_recovery: 'recuperar contraseña'
       phase: 'fase'
-      post: 'entrada'
-      post_attachment: 'adjunto'
       proposal:
         one: 'propuesta'
         other: propuestas
       section:
-        one: secció
-        other: seccions
+        one: sección
+        other: secciones
       text_section: 'sección de texto'
       user:
         one: persona

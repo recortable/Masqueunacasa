@@ -70,6 +70,10 @@ es:
       get_in_touch: Ponte en contacto
       you_can_send_message: Desde aquí puedes enviar un mensaje a este grupo
 
+  help_pages:
+    new:
+      title: Nueva página auxiliar
+
   help_texts:
     new:
       title: Nueva ayuda contextual

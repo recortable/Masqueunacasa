@@ -1,0 +1,12 @@
+= simple_nested_form_for help_page do |f|
+  = f.error_messages
+
+  = f.input :title, input_html: { class: 'span5' }
+  = f.input :identf, input_html: { class: 'span3',
+                                   maxlength: 30,
+                                   disabled: help_page.blocked? }
+  = f.input :description, input_html: { class: 'span5', rows: 3 }
+  = f.input :summary, as: :text, input_html: { class: 'span5', rows: 5 }
+  = f.submit
+
+  = render 'section_fields', form: f

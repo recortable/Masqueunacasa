@@ -1,7 +1,7 @@
 = title t('.title')
 
-.row.admin-row
-  .span9
+#admin-help-texts.row.admin-row
+  .span10
     h2 Administrar ayudas contextuales
 
     = link_to 'Crear nueva ayuda', new_help_text_path, class: 'btn btn-mini btn-success'
@@ -35,9 +35,11 @@
                     => link_to 'delete', ht, method: :delete,
                     confirm: '¿Estás seguro?', class: 'btn btn-mini btn-danger' unless ht.blocked?
 
-.row.admin-row
+#admin-help-pages.row.admin-row
   .span9
     h2 Administrar páginas auxiliares
+
+    = link_to 'Crear nueva página auxiliar', new_help_page_path, class: 'btn btn-mini btn-success'
 
     - if HelpPage.all.size > 0
       table.table-bordered.table-striped.admin-table
@@ -53,4 +55,6 @@
               td = hp.identf
               td = hp.title
               td = hp.description
+              td
+                |.
 

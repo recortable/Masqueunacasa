@@ -1,6 +1,7 @@
 class HelpPage < ActiveRecord::Base
   attr_accessible :title,
-                  :desctiption,
+                  :identf,
+                  :description,
                   :summary
 
   extend FriendlyId
@@ -15,6 +16,6 @@ class HelpPage < ActiveRecord::Base
   validates :title, presence: true
   validates :summary, presence: true
   validates :identf, presence: true, format: { with: /\A\w+\z/ },
-    length: { maximum: 20 }
+    length: { maximum: 30 }
 
 end

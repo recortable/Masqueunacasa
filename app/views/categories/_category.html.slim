@@ -5,7 +5,7 @@
         h2
           = link_to raw(category.title + " " + icon(:'arrow-right')), category
         .category-summary.summary
-          = truncate_html markdown( category.summary ), length: 160
+          = markdown truncate(category.summary, length: 160, separator: ' ')
 
     .span3.image-container
       = image_tag category.image
