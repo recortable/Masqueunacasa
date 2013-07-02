@@ -30,6 +30,10 @@
                     h3 = ht.identf
                   .modal-body
                     = markdown ht.body
+                  .modal-footer
+                    = link_to t('edit_or_translate'), edit_help_text_path(ht), class: 'btn btn-mini btn-success'
+                    => link_to 'delete', ht, method: :delete,
+                    confirm: '¿Estás seguro?', class: 'btn btn-mini btn-danger' unless ht.blocked?
 
 .row.admin-row
   .span9
