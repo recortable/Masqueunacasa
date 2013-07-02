@@ -1,5 +1,4 @@
 class HelpTextsController < ApplicationController
-  #layout 'one_column'
 
   respond_to :html
 
@@ -15,7 +14,7 @@ class HelpTextsController < ApplicationController
 
   def create
     if help_text.save
-      flash[:notice] = "Texto de ayuda guardado correctamente!"
+      flash[:notice] = "Texto de ayuda creado correctamente!"
       respond_with help_text, location: admin_area_path
     else
       render 'new'
@@ -32,11 +31,17 @@ class HelpTextsController < ApplicationController
       flash[:notice] = "Texto de ayuda guardado correctamente!"
       respond_with help_text, location: admin_area_path
     else
-      render 'new'
+      render 'edit'
     end
   end
 
   def destroy
     authorize! :destroy, help_text
+    if help_text.destroy
+      flash[:notice] = "El texto de ayuda ha sido borrado."
+    else
+      flash[:notice] = "No se ha podido borrar el texto de ayuda"
+    end
+    respond_with help_text, location: admin_area_path
   end
 end

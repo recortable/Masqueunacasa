@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130626133436) do
+ActiveRecord::Schema.define(:version => 20130702134020) do
 
   create_table "categories", :force => true do |t|
     t.integer  "phase_id"
@@ -207,7 +207,7 @@ ActiveRecord::Schema.define(:version => 20130626133436) do
   create_table "help_text_translations", :force => true do |t|
     t.integer  "help_text_id"
     t.string   "locale"
-    t.text     "body",         :null => false
+    t.text     "body"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

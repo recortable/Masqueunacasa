@@ -19,10 +19,17 @@
               td = ht.identf
               td = ht.description
               td
-                => link_to 'view', ht
+                => link_to 'view', "##{ht.identf}-body", data: { toggle: 'modal' }
                 => link_to 'edit', edit_help_text_path(ht)
                 => link_to 'delete', ht, method: :delete,
                 confirm: '¿Estás seguro?' unless ht.blocked?
+
+                .modal.hide.fade id="#{ht.identf}-body"
+                  .modal-header
+                    button.close data-dismiss="modal" type="button" &times;
+                    h3 = ht.identf
+                  .modal-body
+                    = markdown ht.body
 
 .row.admin-row
   .span9
