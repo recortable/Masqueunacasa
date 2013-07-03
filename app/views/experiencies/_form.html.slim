@@ -1,0 +1,11 @@
+= simple_nested_form_for experiencie,
+  html: { multipart: true } do |form|
+  = form.error_notification
+  = form.input :title
+  = form.input :summary, as: :text, input_html: { rows: 8, class: 'rte' }
+  = form.input :related_proposal_id, as: :hidden
+  = render 'image_fields', form: form
+  = render 'section_fields', form: form
+  = render 'location_fields', form: form
+  = form.button :submit
+
