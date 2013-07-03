@@ -6,7 +6,7 @@
     </div>
     <%= f.input :title %>
     <% if f.object.class == TextSection %>
-      <%= f.input :body, input_html: { rows: 8 } %>
+      <%= f.input :body, input_html: { rows: 8, class: 'rte' } %>
     <% elsif f.object.class == ImageSection %>
       <div class="image-preview">
         <%= image_tag f.object.image.thumb if f.object.image.present? %>
@@ -22,7 +22,7 @@
       <a href="javascript:void(0)" class="up">Up</a> | <a href="javascript:void(0)" class="down">Down</a>
     </div>
     <%= f.input :title %>
-    <%= f.input :body, input_html: { rows: 8 } %>
+    <%= f.input :body, input_html: { rows: 8, class: 'rte' } %>
     <%= f.input :position, as: :hidden %>
     <%= f.link_to_remove "Remove section", class: "btn" %>
   <% end %>

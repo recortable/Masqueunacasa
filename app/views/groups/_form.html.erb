@@ -5,7 +5,7 @@
     "#{t('simple_form.hints.non_translatable_field') unless
        group.new_record? }" %>
   <%= form.input :title, required: false %>
-  <%= form.input :summary, as: :text %>
+  <%= form.input :summary, as: :text, input_html: { rows: 8, class: 'rte' } %>
   <%= render 'section_fields', form: form %>
   <br>
   <h3>Difusión</h3>

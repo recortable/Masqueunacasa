@@ -4,7 +4,7 @@
     <%= form.input :title %>
   </div>
   <%= form.input :name %>
-  <%= form.input :summary, as: :text, input_html: { rows: 8 } %>
+  <%= form.input :summary, as: :text, input_html: { rows: 8, class: 'rte' } %>
   <h4>Imágen</h4>
   <% if category.image.blank? %>
     <%= form.input :image %>

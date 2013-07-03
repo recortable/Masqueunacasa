@@ -4,7 +4,6 @@ myMarkItUpSettings = {
     onShiftEnter:       {keepDefault:false, openWith:'\n\n'},
     markupSet: [
         {name:'Heading 3', openWith:'### ', placeHolder:'Your title here...', className:'markItUpButton3' },
-        {name:'Heading 4', openWith:'#### ', placeHolder:'Your title here...', className:'markItUpButton4' },
         {separator:'---------------' },
         {name:'Bold', key:"B", openWith:'**', closeWith:'**', className:'markItUpButton7'},
         {name:'Italic', key:"I", openWith:'_', closeWith:'_', className:'markItUpButton8'},

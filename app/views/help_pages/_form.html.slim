@@ -6,7 +6,8 @@
                                    maxlength: 30,
                                    disabled: help_page.blocked? }
   = f.input :description, input_html: { class: 'span5', rows: 3 }
-  = f.input :summary, as: :text, input_html: { class: 'span5', rows: 5 }
-  = f.submit
+  = f.input :summary, as: :text, input_html: { class: 'span5 rte', rows: 5 }
 
   = render 'section_fields', form: f
+  
+  = f.submit

@@ -8,7 +8,7 @@
     <div class="span4">
       <%= form.input :title %>
       <%= form.input :question %>
-      <%= form.input :summary, as: :text %>
+      <%= form.input :summary, as: :text, input_html: { rows: 8, class: 'rte' } %>
     </div>
   </div>
   <%= form.submit %>
