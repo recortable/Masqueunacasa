@@ -15,7 +15,7 @@ class Category < ActiveRecord::Base
   attr_accessible :user_id, :user, :phase_id, :phase
   attr_accessible :image, :remove_image
 
-  validates_presence_of :user_id, :phase_id, :title, :name
+  validates_presence_of :user_id, :phase_id, :title, :name, :summary
 
   belongs_to :user
   belongs_to :phase, touch: true

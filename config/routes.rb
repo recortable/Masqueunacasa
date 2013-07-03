@@ -55,7 +55,7 @@ Masqueunacasa::Application.routes.draw do
   end
 
 
-  resources :categories, only: [:show], concerns: [:document, :position, :commentable] do
+  resources :categories, only: [:show, :new, :create], concerns: [:document, :position, :commentable] do
     get :dashboard, on: :collection
     resources :proposals, only: [:new]
   end
@@ -69,7 +69,7 @@ Masqueunacasa::Application.routes.draw do
   resources :phases, except: [:show, :update, :destroy]
 
   resources :phases, only: [:show, :update, :destroy], concerns: [:document] do
-    resources :categories, except: [:index], path: ''
+    resources :categories, except: [:index, :new, :create], path: ''
   end
 
   # ADMINISTRACIÓN

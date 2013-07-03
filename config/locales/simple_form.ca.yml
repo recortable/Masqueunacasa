@@ -27,6 +27,13 @@ ca:
         title: 'Títol'
         url: 'Enllaç'
 
+      category:
+        name: 'Nom curt'
+        title: 'Pregunta'
+        image: 'Imatge o dibuix'
+        remove_image: 'Esborrar imatge'
+        phase_id: Fase
+
       group:
         slug: 'Subdomini'
         banner_image: 'Imatge de capçalera'

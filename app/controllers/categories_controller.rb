@@ -3,12 +3,9 @@ class CategoriesController < ApplicationController
 
   include HasListActions
   expose(:phase) { Phase.find params[:phase_id] }
-  expose(:parent) { params[:phase_id].present? ? phase : Site.new }
-  expose(:categories) { parent.categories }
+  expose(:parent) { params[:phase_id].present? ? phase : nil }
+  expose(:categories) { parent.present? ? parent.categories : Category.scoped }
   expose(:category)
-  expose(:themes) do
-    "#{phase.textura} #{phase.color_name}" if params[:phase_id]
-  end
 
   def dahsboard
     respond_with categories
@@ -21,8 +18,6 @@ class CategoriesController < ApplicationController
 
   def new
     authorize! :create, Category
-    breadcrumb_for_phase(phase)
-    add_breadcrumb 'Nueva pregunta', polymorphic_path([:new, phase, :category])
     respond_with category
   end
 
@@ -49,10 +44,14 @@ class CategoriesController < ApplicationController
 
   def create
     category.user = current_user
-    category.phase = phase
     authorize! :create, category
-    flash[:notice] = t('categories.notices.created') if category.save
-    respond_with [phase, category]
+
+    if category.save
+      flash[:notice] = t('categories.notices.created') if category.save
+      respond_with [category.phase, category]
+    else
+      render 'new'
+    end
   end
 
   def update

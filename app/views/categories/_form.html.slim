@@ -1,8 +1,11 @@
-= simple_nested_form_for [phase, category],
+= simple_nested_form_for [category.phase, category],
   html: { multipart: true } do |form|
+
+  = form.error_notification
 
   = form.input :title, input_html: { class: 'span5' }
   = form.input :name
+  = form.input :phase_id, collection: Phase.all
   = form.input :summary, as: :text, input_html: { rows: 8, class: 'rte' }
   fieldset
     - if category.image.blank?

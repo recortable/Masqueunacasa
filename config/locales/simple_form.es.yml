@@ -32,6 +32,7 @@ es:
         title: 'Pregunta'
         image: 'Imágen o dibujo'
         remove_image: 'Borrar imágen'
+        phase_id: Fase
 
       group:
         name: 'Nombre corto'

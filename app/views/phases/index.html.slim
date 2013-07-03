@@ -5,6 +5,10 @@
 
 - content_for :left do
   .fixed-block
+    - if can? :create, Category
+      .left-block.controls.pull-right
+        .control.block-row
+          = link_to icon_after(:'plus-sign', t('app.add', element: Category.model_name.human(count: 1))), new_category_path
     .left-block.filters
       .block-header
         => icon :filter
