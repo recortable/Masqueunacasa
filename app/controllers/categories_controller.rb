@@ -58,7 +58,7 @@ class CategoriesController < ApplicationController
     authorize! :update, category
     category.attributes = params[:category]
     flash[:notice] = t('categories.notices.updated') if category.save
-    respond_with [phase, category]
+    respond_with category
   end
 
   def destroy
