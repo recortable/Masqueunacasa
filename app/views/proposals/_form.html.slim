@@ -1,0 +1,9 @@
+= simple_nested_form_for proposal,
+  html: { multipart: true } do |form|
+  = form.input :title, input_html: { class: 'span5' }
+  = form.input :summary, as: :text, input_html: { rows: 8, class: 'rte' }
+  = form.input :phase_id, as: :hidden
+  = form.input :category_id, as: :hidden
+  = render 'section_fields', form: form
+  = form.button :submit
+
