@@ -1,0 +1,16 @@
+= simple_nested_form_for [phase, category],
+  html: { multipart: true } do |form|
+
+  = form.input :title, input_html: { class: 'span5' }
+  = form.input :name
+  = form.input :summary, as: :text, input_html: { rows: 8, class: 'rte' }
+  fieldset
+    - if category.image.blank?
+      = form.input :image
+    - else
+      = image_tag category.image, class: 'responsive'
+      = form.input :remove_image, as: :boolean, wrapper: :checkbox
+      = form.input :image
+  = render 'section_fields', form: form
+  = form.button :submit
+
