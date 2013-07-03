@@ -5,7 +5,7 @@
         h2
           = link_to raw(experiencie.title + " " + icon(:'arrow-right')), experiencie
         .experiencie-summary.summary
-          = truncate_html markdown( experiencie.summary ), length: 200
+          = markdown truncate( experiencie.summary, length: 200, separator: ' ' )
 
     .span3.image-container
       - unless experiencie.images.empty?
