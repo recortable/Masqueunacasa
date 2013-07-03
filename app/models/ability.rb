@@ -21,7 +21,6 @@ class Ability
   end
 
   def habitapedia_abilities(user)
-      can :update, Category
       can :manage, Proposal
       can :destroy, Proposal do |proposal|
         proposal.user_id == user.id

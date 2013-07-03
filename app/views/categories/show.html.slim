@@ -1,7 +1,8 @@
 = title category.title
 
-#category-image
-= image_tag category.image
+- if category.image.present?
+  #category-image
+    = image_tag category.image
 
 #summary
   = markdown category.summary
@@ -12,8 +13,8 @@
 
 - content_for :left
   .fixed-block
-    .left-block.controls.pull-right
-      - if can? :edit, category
+    - if can? :update, category
+      .left-block.controls.pull-right
         .control.block-row
           = link_to icon_after(:edit, t('edit')), [:edit, phase, category]
       - if can? :destroy, category

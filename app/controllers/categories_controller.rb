@@ -35,7 +35,7 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    authorize! :edit, category
+    authorize! :update, category
 
     breadcrumb_for_category(category)
     add_breadcrumb 'Editar', polymorphic_path([:edit, phase, category])
