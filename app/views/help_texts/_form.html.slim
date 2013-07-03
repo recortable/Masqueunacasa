@@ -4,6 +4,6 @@
                                    disabled: f.object.blocked? }
   = f.input :description, as: :text, input_html: { class: 'span5', rows: 3 }
   - T.avl.each do |l|
-    = f.input :"body_#{l}", as: :text, input_html: { class: 'span5', rows: 8 }
+    = f.input :"body_#{l}", as: :text, input_html: { class: 'span5 rte', rows: 8 }
   = f.input :blocked unless help_text.new_record?
   = f.submit

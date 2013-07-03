@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   include HasResource
   protect_from_forgery
 
-  before_filter :set_locale
+  before_filter { |c| :set_locale unless markitup_preview }
   before_filter :set_locale_from_url
   include SlugRedirections ## Tiene que ir después de :set_locale_from_url
 
@@ -45,5 +45,11 @@ class ApplicationController < ActionController::Base
     controller_name == "application" ?
       raise(ActionController::RoutingError.new "No route matches '#{request.fullpath}'") :
       raise(exception)
+  end
+
+  private
+
+  def markitup_preview
+    request.fullpath.include? "markitup/preview"
   end
 end

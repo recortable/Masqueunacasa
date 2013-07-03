@@ -53,6 +53,9 @@ gem 'simple_form'
 gem 'redcarpet' # Convierte markdown a html
 gem 'cambelt' # Genera imágenes de prueba
 
+# Editor de texto enriquecido
+gem 'markitup-rails'
+
 # Internacionalización
 gem 'globalize3'
 gem 'rails-translate-routes'

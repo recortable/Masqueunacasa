@@ -16,6 +16,8 @@
 //= require imagesloaded.min
 //= require resize_images
 //= require utils
+//= require markitup
+//= require markitup_settings
 //= require_self
 
 Galleria.configure({
@@ -48,6 +50,8 @@ var MqucInit = function() {
     return fixed.parent().offset().top
   };
   fixed.affix( {offset: {top: offsetFn} } );
+
+  $('textarea.rte').markItUp(myMarkItUpSettings);
 };
 
 $(document).ready(MqucInit);

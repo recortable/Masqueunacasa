@@ -1,0 +1,22 @@
+@import 'markitup/skins/markitup/style';
+@import 'markitup/sets/markdown/style';
+
+.control-group.text .controls .markdown .markItUp {
+  width: auto;
+  border: none;
+
+  .markItUpContainer {
+    font: inherit;
+    background: transparent;
+  }
+
+  .markItUpEditor {
+    width: 100%;
+    background-image: none;
+    font: inherit;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}

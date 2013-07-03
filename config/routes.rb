@@ -81,6 +81,9 @@ Masqueunacasa::Application.routes.draw do
     prefix_on_default_locale: true }) # para permitir poner el idioma de la página
                                       # en función de las preferencias del navegador.
 
+  # Rutas para el preview del editor de texto enriquecido
+  mount Markitup::Rails::Engine, at: "markitup", as: "markitup"
+
   # Para dar soporte a las rutas antiguas, que no tenian el parámetro con el locale en
   # el idioma por defecto
   match ":locale/*path" => 'application#set_locale'
