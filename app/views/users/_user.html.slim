@@ -5,7 +5,7 @@
         h2
           = link_to raw(user.name + " " + icon(:'arrow-right')), user
     .span3
-      = truncate_html markdown( user.summary )
+      = markdown truncate( user.summary, length: 80, separator: ' ' )
     .span1
       = link_to avatar_image(user), user
 
