@@ -23,14 +23,11 @@ gem 'bcrypt-ruby', '~> 3.0.0' # Para encriptar cosas, p.ej: password (MD5)
 gem 'friendly_id'
 gem 'acts_as_list'
 gem 'textacular' # exposes full text search capabilities from PostgreSQL
-gem 'globalize3'
 
 # Para subir ficheros e imágenes al servidor
 gem "mini_magick" # Para modificar imágenes (lo usa carrierwave)
 gem 'fog'
 gem 'carrierwave'
-#gem 'cloudinary'
-gem 'mini_magick'
 
 # Cosas de controladores
 gem 'decent_exposure', '1.0.2'
@@ -48,18 +45,16 @@ gem 'nested_form'
 gem 'jbuilder' # Para enviar json fácilmente
 gem 'ie_conditional_tag' # Para meter el html tag con clases especiales según la version de explorer
 gem 'html_truncator'
-#gem 'roadie' # P#ara meter css en los emails
 gem 'premailer-rails3'
 gem "breadcrumbs_on_rails"
 gem 'bourbon' #Colección de mixins para SASS
 gem 'slim-rails'
-
 gem 'simple_form'
 gem 'redcarpet' # Convierte markdown a html
 gem 'cambelt' # Genera imágenes de prueba
-gem 'basic_config' # https://github.com/stephan778/basic_config 
-gem 'turbolinks'
 
+# Internacionalización
+gem 'globalize3'
 gem 'rails-translate-routes'
 gem 'http_accept_language'
 
@@ -68,6 +63,8 @@ gem 'hoptoad_notifier'
 gem 'unicorn'
 gem 'capistrano'
 gem 'newrelic_rpm'
+
+gem 'basic_config' # https://github.com/stephan778/basic_config
 
 group :development do
   gem 'letter_opener'
