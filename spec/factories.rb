@@ -26,6 +26,7 @@ FactoryGirl.define do
   factory :category do
     sequence(:name) {|n| "Category #{n}" }
     title { "#{name} title" }
+    summary { "#{name} summary" }
     user
     phase
   end
