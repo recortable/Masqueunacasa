@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   include HasResource
   protect_from_forgery
 
-  before_filter { |c| :set_locale unless markitup_preview }
+  before_filter :set_locale
   before_filter :set_locale_from_url
   include SlugRedirections ## Tiene que ir después de :set_locale_from_url
 
@@ -24,12 +24,14 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    locale = params[:locale]
-    unless locale.present? and I18n.available_locales.include?(locale.to_sym)
-      location = request.fullpath
-      locale = request.compatible_language_from(I18n.available_locales) || I18n.default_locale
-      location = '/' + locale.to_s + location
-      redirect_to location, status: :moved_permanently
+    unless markitup_preview
+      locale = params[:locale]
+      unless locale.present? and I18n.available_locales.include?(locale.to_sym)
+        location = request.fullpath
+        locale = request.compatible_language_from(I18n.available_locales) || I18n.default_locale
+        location = '/' + locale.to_s + location
+        redirect_to location, status: :moved_permanently
+      end
     end
   end
 
