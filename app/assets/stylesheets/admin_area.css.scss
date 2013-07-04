@@ -5,4 +5,16 @@
   td {
     padding: 8px;
   }
+
+  td.translations {
+    text-align: center;
+
+    &.true {
+      color: #0f0;
+    }
+
+    &.false {
+      color: #f00;
+    }
+  }
 }

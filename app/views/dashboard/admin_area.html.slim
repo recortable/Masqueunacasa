@@ -12,12 +12,15 @@
           tr
             th Identf
             th Description
+            th All translations?
             th Actions
         tbody
           - HelpText.all.each do |ht|
             tr
               td = ht.identf
               td = ht.description
+              td.translations class="#{ht.has_all_translations?}"
+                = ht.has_all_translations? ? icon(:ok) : icon(:'warning-sign')
               td
                 => link_to 'view', "##{ht.identf}-body", data: { toggle: 'modal' }
                 => link_to 'edit', edit_help_text_path(ht)
