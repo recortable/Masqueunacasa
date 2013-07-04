@@ -1,0 +1,12 @@
+= title "#{group.name}: #{t('app.add', element: Membership.model_name.human(count: 1))}"
+
+= simple_list users do |user|
+  .hoverize
+    = hover? :update, group do
+      = link_to icon(:plus, 'Añadir'), group_memberships_path(group, u: user), method: :post, rel: "add-member-user-#{user.id}"
+    => avatar_link user, size: :small, class: 'fixed'
+    = user.name
+
+- content_for :left do
+  |.
+
