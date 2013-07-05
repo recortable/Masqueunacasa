@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     authorize! :create, Comment
     comment.user = current_user
     flash[:notice] = "Comentario creado, gracias!" if comment.save
-    respond_with comment, location: document
+    respond_with comment, location: polymorphic_url(document, anchor: 'comments')
   end
 
   def edit
@@ -21,12 +21,12 @@ class CommentsController < ApplicationController
   def update
     authorize! :update, comment
     flash[:notice] = "Comentario editado, gracias!" if comment.save
-    respond_with comment, location: document
+    respond_with comment, location: polymorphic_url(document, anchor: 'comments')
   end
 
   def destroy
     authorize! :destroy, comment
     flash[:notice] = "Comentario borrado, gracias!" if comment.destroy
-    respond_with comment, location: document
+    respond_with comment, location: polymorphic_url(document, anchor: 'comments')
   end
 end
