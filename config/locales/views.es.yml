@@ -79,7 +79,8 @@ es:
       title: Nueva ayuda contextual
 
   langs:
-    available_translations: Este contenido también está disponible en
+    available_translations: Otros idiomas
+    translate_to: Traducir a
     lang: Idioma
     ca: Catalán
     en: Inglés

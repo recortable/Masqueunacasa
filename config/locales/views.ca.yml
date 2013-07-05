@@ -56,7 +56,8 @@ ca:
       title: Nova ajuda contextual
 
   langs:
-    available_translations: Aquest contingut també està disponible en
+    available_translations: Altres idiomes
+    translate_to: Traduir a
     lang: Idioma
     ca: Català
     en: Anglès
