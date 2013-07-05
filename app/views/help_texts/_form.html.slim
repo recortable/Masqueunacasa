@@ -1,4 +1,6 @@
 = simple_form_for help_text do |f|
+  = f.error_notification
+
   = f.input :identf, input_html: { class: 'span3',
                                    maxlength: 30,
                                    disabled: f.object.blocked? }
