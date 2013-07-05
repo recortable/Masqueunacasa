@@ -39,16 +39,6 @@
 
 - content_for :right do
   - unless experiencie.has_all_translations?
-    .right-block.help.clearfix
-      = markdown HelpText.find_by_identf('let_translate').try('body')
-      .btn-group.pull-right
-        = link_to raw("#{t('langs.translate_to')}:  <span class='caret'></span>"),
-          edit_experiencie_path(experiencie), class: 'btn dropdown-toggle btn-small',
-          data: { toggle: 'dropdown' }
-        ul.dropdown-menu
-          - T.avl.each do |l|
-            - unless experiencie.translated_to?(l)
-              li
-                = link_to t("langs.#{l.to_s}"), controller: 'experiencies', action: 'edit',
-                  id: experiencie.slug, locale: l.to_s
+    = render 'help_texts/pending_translations',
+      document: experiencie
 

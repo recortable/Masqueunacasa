@@ -1,0 +1,14 @@
+.right-block.help.clearfix
+  = markdown HelpText.find_by_identf('let_translate').try('body')
+  .btn-group.pull-right
+    = link_to raw("#{t('langs.translate_to')}:  <span class='caret'></span>"),
+      { controller: document.class.to_s.tableize, action: 'edit', id: document.slug },
+      class: 'btn dropdown-toggle btn-small',
+      data: { toggle: 'dropdown' }
+    ul.dropdown-menu
+      - T.avl.each do |l|
+        - unless document.translated_to?(l)
+          li
+            = link_to t("langs.#{l.to_s}"), controller: document.class.to_s.tableize,
+              action: 'edit', id: document.slug, locale: l.to_s
+
