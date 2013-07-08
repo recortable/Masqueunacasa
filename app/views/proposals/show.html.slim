@@ -28,3 +28,8 @@
 
     = render 'available_translations', document: proposal
 
+- content_for :right do
+  - unless proposal.has_all_translations?
+    = render 'help_texts/pending_translations',
+      document: proposal
+
