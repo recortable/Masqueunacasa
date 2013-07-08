@@ -33,7 +33,7 @@
     = render 'available_translations', document: category
 
 - content_for :right do
-  - unless category.has_all_translations?
+  - if can?(:update, category) and not category.has_all_translations?
     = render 'help_texts/pending_translations',
       document: category
 
