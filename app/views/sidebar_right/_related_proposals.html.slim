@@ -1,0 +1,14 @@
+.right-block.relation.category-proposals
+  .block-header
+    - if controller.controller_name == 'categories'
+      = t('categories.related_proposals.block_title') + ":"
+    - elsif controller.controller_name == 'proposals'
+      = t('proposals.related_proposals.block_title') + ":"
+    span
+  - category.proposals.each do |proposal|
+    .block-row.proposal
+      = link_to proposal.title, proposal
+  .block-row.control
+    = link_to icon_after(:'plus-sign', t('app.add', element: Proposal.model_name.human(count: 1))),
+      new_category_proposal_path(category)
+

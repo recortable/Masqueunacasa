@@ -6,3 +6,24 @@
   @include padding(8px, 8px, 8px, 8px);
 }
 
+.right-block.relation {
+  .block-header, .block-row {
+    padding: 4px 8px;
+  }
+}
+
+.right-block.relation.category-proposals {
+  .block-header {
+    background-color: #c5e6ed;
+    font-weight: bold;
+  }
+
+  .block-row.proposal {
+    border-bottom: 1px solid #c5e6ed;
+  }
+
+  .block-row.control {
+    text-align: right;
+  }
+}
+

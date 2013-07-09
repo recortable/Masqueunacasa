@@ -34,6 +34,8 @@
 
 - content_for :right do
   - if can?(:update, category) and not category.has_all_translations?
-    = render 'help_texts/pending_translations',
+    = render 'sidebar_right/pending_translations',
       document: category
+
+  = render 'sidebar_right/related_proposals'
 

@@ -33,6 +33,9 @@ es:
       updated: 'Pregunta modificada.'
       destroyed: 'Pregunta borrada.'
 
+    related_proposals:
+      block_title: Ante esta pregunta se han planteado las siguientes propuestas
+
   comments:
     edit:
       title: Editar comentario
@@ -125,17 +128,6 @@ es:
     index:
       title: Preguntas y Proouestas
 
-  pages:
-    index:
-      add_page: 'Crear una página'
-    new:
-      title: 'Nueva página de la wiki'
-    edit:
-      title: 'Editar %{title}'
-    notices:
-      created: 'Documento guardado.'
-      updated: 'Documento guardado.'
-
   proposals:
     index:
       title: 'Propuestas'
@@ -144,3 +136,7 @@ es:
     notices:
       updated: 'Propuesta actualizada. ¡Gracias!'
       created: 'Tenemos una nueva propuesta, ¡gracias!'
+
+    related_proposals:
+      block_title: Otras propuestas ante la misma pregunta
+

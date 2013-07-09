@@ -30,6 +30,8 @@
 
 - content_for :right do
   - unless proposal.has_all_translations?
-    = render 'help_texts/pending_translations',
+    = render 'sidebar_right/pending_translations',
       document: proposal
+
+  = render 'sidebar_right/related_proposals', category: proposal.category
 

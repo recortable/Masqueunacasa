@@ -28,6 +28,15 @@ ca:
 
     slogan: processos col·lectius d'habitatge
 
+  categories:
+    notices:
+      created: 'Pregunta afegida.'
+      updated: 'Pregunta modificada.'
+      destroyed: 'Pregunta esborrada.'
+
+    related_proposals:
+      block_title: "Davant d'aquesta pregunta s'han plantejat les propostes següents"
+
   dashboard:
     admin_area:
       title: Àrea d'administració
@@ -78,10 +87,15 @@ ca:
     index:
       title: Preguntes i Propostes
 
-  pages:
+  proposals:
     index:
-      add_page: 'Crear una pàgina'
-    new:
-      title: 'Nova pàgina del wiki'
-    edit:
-      title: Editar %{page_title}
+      title: 'Propostes'
+    show:
+      title: 'Proposta'
+    notices:
+      updated: 'Proposta actualitzada. ¡Gràcies!'
+      created: 'Tenim una nova proposta, gràcies!'
+
+    related_proposals:
+      block_title: "Altres propostes davant la mateixa pregunta"
+

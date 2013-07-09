@@ -6,9 +6,6 @@ class ProposalsController < ApplicationController
   expose(:proposals) { Proposal.published }
   expose(:proposal)
   expose(:phase) { proposal.phase }
-  expose(:themes) do
-    "#{phase.textura} #{phase.color_name}" if proposal.phase
-  end
 
   def index
     redirect_to phases_path
