@@ -1,5 +1,9 @@
 html {
-  background: image-url('fondos/fondo.png');
+  background: #484848;
+}
+
+#wrapper {
+  background: #fff image-url('fondos/fondo.png');
 }
 
 #header, #content {

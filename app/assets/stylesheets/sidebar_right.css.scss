@@ -8,7 +8,45 @@
 
 .right-block.relation {
   .block-header, .block-row {
-    padding: 4px 8px;
+    padding: 6px 8px;
+  }
+
+  .block-header {
+    $icon-width: 65px;
+
+    min-height: 2em;
+    position: relative;
+    padding-right: $icon-width + 10px;
+
+    span {
+      display: block;
+      position: absolute;
+      width: $icon-width;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background-position: 85% center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .block-row.relation {
+    $icon-width: 40px;
+
+    min-height: 1.5em;
+    position: relative;
+    padding-right: $icon-width + 10px;
+
+    span {
+      display: block;
+      position: absolute;
+      width: $icon-width;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background-position: 85% center;
+      background-repeat: no-repeat;
+    }
   }
 }
 
@@ -16,6 +54,15 @@
   .block-header {
     background-color: #c5e6ed;
     font-weight: bold;
+
+    span {
+      background-color: #199db6;
+      background-image: image-url('icons/habitapedia_icon-small.png');
+    }
+  }
+
+  .block-row.relation span {
+    background-image: image-url('icons/proposal_icon-small-black.png');
   }
 
   .block-row.proposal {
