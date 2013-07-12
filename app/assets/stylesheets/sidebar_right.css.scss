@@ -12,6 +12,8 @@
   }
 
   .block-header {
+    font-weight: bold;
+
     $icon-width: 65px;
 
     min-height: 2em;
@@ -48,12 +50,15 @@
       background-repeat: no-repeat;
     }
   }
+
+  .block-row.control {
+    text-align: right;
+  }
 }
 
 .right-block.relation.category-proposals {
   .block-header {
     background-color: #c5e6ed;
-    font-weight: bold;
 
     span {
       background-color: #199db6;
@@ -68,9 +73,41 @@
   .block-row.proposal {
     border-bottom: 1px solid #c5e6ed;
   }
+}
 
-  .block-row.control {
-    text-align: right;
+.right-block.relation.proposal-experiencies {
+  .block-header {
+    background-color: #f0c0a9;
+
+    span {
+      background-color: #e18254;
+      background-image: image-url('icons/experiencies_icon-small.png');
+    }
+  }
+
+  .block-row.relation span {
+    background-image: none;
+  }
+
+  .block-row.experiencie {
+    border-bottom: 1px solid #f0c0a9;
+
+    span a {
+      img {
+        width: 100%;
+        max-width: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include transition(width 0.5s ease);
+      }
+
+      img:hover {
+        width: 150%;
+        z-index: 1;
+        @include transition(width 0.5s ease);
+      }
+    }
   }
 }
 

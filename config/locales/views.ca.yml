@@ -99,3 +99,7 @@ ca:
     related_proposals:
       block_title: "Altres propostes davant la mateixa pregunta"
 
+    related_experiencies:
+      block_title: Experiències relacionades
+      add_related_experiencie: Afegir experiència relacionada
+

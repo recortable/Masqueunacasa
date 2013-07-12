@@ -1,0 +1,12 @@
+.right-block.relation.proposal-experiencies
+  .block-header
+    = t('proposals.related_experiencies.block_title') + ':'
+    span
+  -proposal.experiencies.each do |exp|
+    .block-row.relation.experiencie
+      = link_to exp.title, exp
+      span
+        = link_to image_tag(exp.image), exp
+  .block-row.control
+    = link_to icon_after(:'plus-sign', t('proposals.related_experiencies.add_related_experiencie')),
+      new_proposal_relation_path(proposal)

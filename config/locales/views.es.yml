@@ -140,3 +140,7 @@ es:
     related_proposals:
       block_title: Otras propuestas ante la misma pregunta
 
+    related_experiencies:
+      block_title: Experiencias relacionadas
+      add_related_experiencie: Añadir experiencia relacionada
+

@@ -1,0 +1,19 @@
+h2
+  = raw "En #{link_to parent.title, parent}"
+= title 'Añadir experiencia relacionada'
+
+h3 Añadir una experiencia nueva
+= link_to icon(:plus, "Crear experiencia"), new_experiencie_path(p: parent)
+br
+br
+
+h3 Relacionar con una experiencia existente
+= simple_list experiencies do |experiencie|
+  .hoverize
+    = hover? :create, Relation do
+      = link_to 'Relacionar', proposal_relations_path(parent, e: experiencie.id), method: :post, rel: 'new-relation'
+    = link_to experiencie.title, experiencie
+
+- content_for :left do
+  |.
+
