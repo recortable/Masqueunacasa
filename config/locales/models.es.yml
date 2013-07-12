@@ -19,6 +19,9 @@ es:
         other: imágenes
       image_section: sección de imagen
       link: 'recurso'
+      location:
+        one: localización
+        other: localizaciones
       membership:
         one: participante
         other: participantes

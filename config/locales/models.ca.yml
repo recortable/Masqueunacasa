@@ -19,6 +19,9 @@ ca:
         other: imatges
       image_section: "secció d'imatge"
       link: 'recurs'
+      location:
+        one: localització
+        other: localitzacions
       membership:
         one: participant
         other: participants
