@@ -144,3 +144,7 @@ es:
       block_title: Experiencias relacionadas
       add_related_experiencie: Añadir experiencia relacionada
 
+  sidebar_right:
+    related_links:
+      block_title: Recursos online relacionados
+

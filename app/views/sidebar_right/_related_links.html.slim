@@ -1,0 +1,14 @@
+.right-block.relation.related-links
+  .block-header
+    = t('.block_title')
+    span
+  - document.links.each do |link|
+    .block-row.relation.link
+      = link_to link.caption, link.url, target: '_blank'
+      span
+        i.icon-external-link
+  .block-row.control
+    /*= link_to icon_after(:'plus-sign', t('app.add', element: Proposal.model_name.human(count: 1))),*/
+      new_category_proposal_path(category)
+
+

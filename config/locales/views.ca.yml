@@ -103,3 +103,7 @@ ca:
       block_title: Experiències relacionades
       add_related_experiencie: Afegir experiència relacionada
 
+  sidebar_right:
+    related_links:
+      block_title: Recursos online relacionats
+
