@@ -18,7 +18,9 @@ ca:
         one: imatge
         other: imatges
       image_section: "secció d'imatge"
-      link: 'recurs'
+      link:
+        one: recurs
+        other: recursos
       location:
         one: localització
         other: localitzacions

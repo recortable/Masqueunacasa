@@ -1,0 +1,9 @@
+fieldset.sortable-fieldset.links#links
+  legend = (Link.model_name.human count: 2).capitalize
+  = form.fields_for :links do |f|
+    = f.input :title
+    = f.input :url
+    = f.link_to_remove "Remove link", class: 'btn'
+
+  p.link-actions
+    = form.link_to_add t('app.add', element: Link.model_name.human), :links, class: 'btn'

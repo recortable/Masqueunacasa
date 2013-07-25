@@ -7,7 +7,7 @@ class Link < ActiveRecord::Base
 
   validates :url, presence: true
   validates :document, presence: true
-  validates :user, presence: true
+  #validates :user, presence: true
   #validates :content_type, presence: true
 
   before_validation :set_content_type

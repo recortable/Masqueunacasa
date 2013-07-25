@@ -18,7 +18,9 @@ es:
         one: imagen
         other: imágenes
       image_section: sección de imagen
-      link: 'recurso'
+      link:
+        one: 'recurso'
+        other: recursos
       location:
         one: localización
         other: localizaciones
