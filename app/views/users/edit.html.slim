@@ -1,0 +1,15 @@
+= title t('.title') + ": #{user.name}"
+= simple_form_for user, html: {class: 'pad'} do |form|
+  = form.input :name
+  = form.input :email
+  .image-preview
+    = avatar_image user
+  = form.input :avatar_image
+  = form.input :summary, as: :text, input_html: { class: 'rte' }
+  = form.input :password, input_html: { value: '' }
+  = form.input :password_confirmation
+  = form.input :admin, wrapper: :checkbox if current_user && current_user.admin?
+  = form.submit
+
+- content_for :left do
+  |.

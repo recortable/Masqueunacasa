@@ -35,7 +35,6 @@ ca:
         phase_id: Fase
 
       group:
-        slug: 'Subdomini'
         banner_image: 'Imatge de capçalera'
         avatar_image: 'Imatge de grup'
         description: 'Breu resum'
@@ -54,10 +53,10 @@ ca:
         embed: 'Vídeo'
 
       user:
-        role: 'rol'
+        name: "Nom d'usuari"
         password: 'Contrasenya'
         password_confirmation: 'Repeteix la contrasenya'
-        description: 'Breu biografia'
+        summary: 'Breu descripció'
         avatar_image: 'Imatge'
 
       media_item:
@@ -97,8 +96,10 @@ ca:
 
       user:
         edit:
+          email: "No és visible para a la resta d'usuaris"
           password: 'Deixa-ho buit si no vols canviar-la'
           password_confirmation: 'Deixa-ho buit si no vols canviar la contrasenya'
+          summary: Máxim 500 caràcters
 
       proposal:
         phase: 'A quina fase es podria aplicar aquesta proposta'

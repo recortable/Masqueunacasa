@@ -59,10 +59,11 @@ es:
         embed: 'Código'
 
       user:
-        name: 'Nombre corto'
+        name: 'Nombre de usuario'
         title: 'Nombre completo'
-        role: 'rol'
         avatar_image: 'Imágen'
+        summary: 'Descripción breve'
+
       user_session:
         password: Contraseña
 
@@ -123,8 +124,10 @@ es:
 
       user:
         edit:
+          email: No es visible para el resto de usuarios
           password: 'Déjalo vacío si no quieres cambiarla'
           password_confirmation: 'Déjalo vacío si no quieres cambiar la contraseña'
+          summary: Máximo 500 carácteres
 
       proposal:
         phase: 'En qué fase se podría aplicar ésta propuesta'

@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
 
-  attr_accessible :name, :email, :admin
+  attr_accessible :name, :email, :summary, :admin
   attr_accessible :login_count, :last_login_at
   attr_accessible :password, :password_confirmation
 
@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
     length: {minimum: 3, maximum: 60},
     confirmation: true
   validates :name, presence: true, length: { maximum: 50 }
+  validates :summary, length: { maximum: 500 }
 
   # RELATIONS
   has_many :editorships

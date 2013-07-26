@@ -92,18 +92,11 @@ es:
     it: Italiano
 
   phases:
+    index:
+      title: Preguntas y Proouestas
     notices:
       created: 'Fase añadida.'
       updated: 'Fase modificada.'
-
-  post_attachments:
-    notices:
-      created: 'Fichero adjunto subido'
-      destroyed: 'Fichero adjunto borrado'
-
-  messages:
-    notices:
-      created: 'Mensaje enviado. ¡Gracias!'
 
   relations:
     notices:
@@ -111,6 +104,8 @@ es:
       destroyed: 'Relación borrada.'
 
   users:
+    edit:
+      title: Editar perfil de usuario
     index:
       title: 'Personas'
     new:
@@ -123,10 +118,6 @@ es:
     new:
       title: 'Iniciar sesión'
       create_account: 'Crea una cuenta'
-
-  phases:
-    index:
-      title: Preguntas y Proouestas
 
   proposals:
     index:

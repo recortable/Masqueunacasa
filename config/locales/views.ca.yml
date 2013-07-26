@@ -74,18 +74,33 @@ ca:
     fr: Francès
     it: Italià
 
-  user:
+  phases:
+    index:
+      title: Preguntes i Propostes
+    notices:
+      created: 'Fase afegida.'
+      updated: 'Fase modificada.'
+
+  relations:
+    notices:
+      created: 'Relació creada'
+      destroyed: 'Relació el·liminada.'
+
+  users:
+    edit:
+      title: "Editar perfil d'usuari"
+    index:
+      title: 'Personas'
     new:
-      title: Nuevo usuario
+      title: 'Usuari nou'
+    notices:
+      created: '¡Benvingut a Masqueunacasa!'
+      updated: "Les teves dades s'han desat correctament. Gràcies!!"
 
   user_sessions:
     new:
       title: 'Iniciar sessió'
       create_account: "Crea un compte"
-
-  phases:
-    index:
-      title: Preguntes i Propostes
 
   proposals:
     index:

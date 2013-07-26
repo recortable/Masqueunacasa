@@ -2,7 +2,7 @@ $(document).on "nested:fieldAdded", (event) ->
   event.field.parent('p').before(event.field)
 
 init = ->
-  $("fieldset").on "change", "input[type='file']", ->
+  $("form").on "change", "input[type='file']", ->
     thumb_container = $(this).closest('div.control-group').siblings('.image-preview')
     img_tag = $("<img />")
     file = @files[0]

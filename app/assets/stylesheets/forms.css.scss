@@ -20,6 +20,11 @@ form {
       height: 1.2em;
     }
   }
+
+  .image-preview {
+    max-width: 160px;
+    margin-bottom: 0.5em;
+  }
 }
 
 fieldset {
@@ -50,11 +55,6 @@ form .fields {
 
   .remove_nested_fields {
     float: right;
-  }
-
-  .image-preview {
-    max-width: 160px;
-    margin-bottom: 0.5em;
   }
 
   .sort-fields {
