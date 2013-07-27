@@ -1,5 +1,8 @@
 = simple_nested_form_for group, html: {class: 'clearfix'} do |form|
   h3 Información general
+  
+  = form.error_notification
+
   = form.input :avatar_image
   = form.input :name, hint: \
     "#{t('simple_form.hints.non_translatable_field') unless \
