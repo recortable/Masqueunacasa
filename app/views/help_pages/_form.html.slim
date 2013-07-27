@@ -5,9 +5,10 @@
   = f.input :identf, input_html: { class: 'span3',
                                    maxlength: 30,
                                    disabled: help_page.blocked? }
+  = f.input :blocked unless help_page.new_record?
   = f.input :description, input_html: { class: 'span5', rows: 3 }
   = f.input :summary, as: :text, input_html: { class: 'span5 rte', rows: 5 }
 
   = render 'section_fields', form: f
-  
+
   = f.submit

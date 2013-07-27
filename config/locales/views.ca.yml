@@ -59,6 +59,8 @@ ca:
   help_pages:
     new:
       title: Nova pàgina auxiliar
+    edit:
+      title: Editar pàgina auxiliar
 
   help_texts:
     new:

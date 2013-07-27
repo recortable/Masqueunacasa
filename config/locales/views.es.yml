@@ -76,6 +76,8 @@ es:
   help_pages:
     new:
       title: Nueva página auxiliar
+    edit:
+      title: Editar página auxiliar
 
   help_texts:
     new:

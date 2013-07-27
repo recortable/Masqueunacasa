@@ -27,7 +27,13 @@ class HelpPagesController < ApplicationController
   end
 
   def update
-
+    authorize! :update, help_page
+    if help_page.save
+      flash[:notice] = "Se ha actualizado correctamente"
+      respond_with help_page, location: admin_area_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy

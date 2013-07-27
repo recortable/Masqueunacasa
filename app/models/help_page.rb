@@ -2,7 +2,8 @@ class HelpPage < ActiveRecord::Base
   attr_accessible :title,
                   :identf,
                   :description,
-                  :summary
+                  :summary,
+                  :blocked
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :simple_i18n, :history]
