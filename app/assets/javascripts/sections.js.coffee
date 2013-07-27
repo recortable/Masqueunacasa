@@ -1,5 +1,6 @@
 $(document).on "nested:fieldAdded", (event) ->
   event.field.parent('p').before(event.field)
+  event.field.find('textarea.rte').markItUp(myMarkItUpSettings)
 
 init = ->
   $("form").on "change", "input[type='file']", ->

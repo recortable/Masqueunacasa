@@ -2,6 +2,17 @@
 <html>
 <head>
 <title>markItUp! preview template</title>
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic|Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+<%= stylesheet_link_tag "application", :media => "all" %>
+<style>
+	html {
+		background-color: transparent;
+	}
+
+	body {
+		padding: 5px;
+	}
+</style>
 </head>
 <body>
   <%= yield %>
