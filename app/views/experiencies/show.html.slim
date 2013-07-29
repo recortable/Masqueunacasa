@@ -26,7 +26,7 @@
 - content_for :left do
   .fixed-block
     .left-block.controls.pull-right
-      - if can? :edit, experiencie
+      - if can? :update, experiencie
         .control.block-row
           = link_to icon_after(:edit, t('edit')), edit_experiencie_path(experiencie)
       - if can? :destroy, experiencie
