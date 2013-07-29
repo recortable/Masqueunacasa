@@ -1,0 +1,10 @@
+- unless experiencie.proposals.empty?
+  .right-block.relation.experiencie-proposals
+    .block-header
+      = t('experiencies.related_proposals.block_title') + ":"
+      span
+    - experiencie.proposals.each do |proposal|
+      .block-row.relation.proposal
+        = link_to proposal.title, proposal
+        span
+

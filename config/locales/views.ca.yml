@@ -43,6 +43,14 @@ ca:
     community:
       title: 'Comunidad'
 
+  experiencies:
+    notices:
+      created: 'Experiència afegida, gracies!'
+      updated: 'Experiència modificada.'
+      destroyed: 'Experiència esborrada. Glups...'
+    related_proposals:
+      block_title: "En aquesta experiència s'hi han aplicat les propostes següesnts"
+
   groups:
     new:
       title: 'Afegir col.lectiu'

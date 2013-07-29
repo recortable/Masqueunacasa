@@ -51,6 +51,8 @@ es:
       created: 'Experiencia añadida, ¡gracias!'
       updated: 'Experiencia modificada.'
       destroyed: 'Experiencia borrada. Glups.'
+    related_proposals:
+      block_title: En esta experiencia se han aplicado las siguientes propuestas
 
   filters:
     all: Todo
