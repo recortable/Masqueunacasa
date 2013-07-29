@@ -41,8 +41,12 @@ class Experiencie < ActiveRecord::Base
 
   def image
     img = images.first
-    return img.external_image_url if !img.external_image_url.blank?
-    return img.image.small
+    unless img.nil?
+      return img.external_image_url if !img.external_image_url.blank?
+      return img.image.small
+    else
+      nil
+    end
   end
 
   def image_thumb

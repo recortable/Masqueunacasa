@@ -6,7 +6,7 @@
     .block-row.relation.experiencie
       = link_to exp.title, exp
       span
-        = link_to image_tag(exp.image), exp
+        = link_to image_tag(exp.image_thumb), exp if exp.image_thumb.present?
   .block-row.control
     = link_to icon_after(:'plus-sign', t('proposals.related_experiencies.add_related_experiencie')),
       new_proposal_relation_path(proposal)
