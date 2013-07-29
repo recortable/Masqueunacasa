@@ -65,6 +65,7 @@ ca:
   help_texts:
     new:
       title: Nova ajuda contextual
+      delete_membership: Esborrar del grup
 
   langs:
     available_translations: Altres idiomes
@@ -75,6 +76,10 @@ ca:
     es: Castellà
     fr: Francès
     it: Italià
+
+  memberships:
+    index:
+      title: Participants a %{group}
 
   phases:
     index:

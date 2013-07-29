@@ -8,7 +8,6 @@ class MembershipsController < ApplicationController
   expose(:membership)
 
   def index
-    authorize! :index, Membership
     respond_with memberships
   end
 
@@ -24,13 +23,13 @@ class MembershipsController < ApplicationController
       membership.user = user
       membership.group = group
       flash[:notice] = 'Añadido!' if membership.save
-      respond_with membership, location: group_path(group)
+      respond_with membership, location: group_memberships_path(group)
     end
   end
 
   def destroy
     membership.destroy
-    respond_with membership, location: group_path(group)
+    respond_with membership, location: group_memberships_path(group)
   end
 
   private

@@ -93,6 +93,11 @@ es:
     fr: Francés
     it: Italiano
 
+  memberships:
+    index:
+      title: Participantes en %{group}
+      delete_membership: Borrar del grupo
+
   phases:
     index:
       title: Preguntas y Proouestas

@@ -41,8 +41,9 @@
         = t('activerecord.models.membership.other') + ":"
       - if can? :update, group
         .block-row
-          = link_to icon(:plus, 'Añadir participante'),
-            new_group_membership_path(group), rel: 'new-membership'
+          = link_to icon(:plus, t('app.add', element: Membership.model_name.human)),
+            group_memberships_path(group, anchor: 'add_member'),
+            rel: 'new-membership'
       .block-row
         - group.members.each do |user|
           = link_to avatar_image(user, size: :small, class: 'fixed'), user_url(user)

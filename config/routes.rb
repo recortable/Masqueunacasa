@@ -18,7 +18,7 @@ Masqueunacasa::Application.routes.draw do
   # PARTE SOCIAL
   resources :users
   resources :groups do
-    resources :memberships, only: [:new, :create, :destroy]
+    resources :memberships, only: [:index, :new, :create, :destroy]
   end
 
   # GENERAL

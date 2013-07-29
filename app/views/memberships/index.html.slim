@@ -1,0 +1,35 @@
+= title t('.title', group: group.name)
+
+.users.cards
+  - memberships.each do |member|
+    .row
+      .span2
+        h2
+          = link_to member.user.name, member.user
+        = link_to avatar_image(member.user, size: :small), member.user
+        div
+          = link_to icon(:'minus-sign', t('.delete_membership')), [group, member], method: :delete,
+            confirm: '¿Seguro?' if can? :update, group
+      .span3
+        = markdown truncate( member.user.summary, length: 80, separator: ' ' )
+
+- if can? :update, group
+  #add_member
+    h2 = t('app.add', element: Membership.model_name.human)
+    = simple_list users do |user|
+      .hoverize
+        = hover? :update, group do
+          = link_to icon(:plus, 'Añadir'), group_memberships_path(group, u: user), method: :post, rel: "add-member-user-#{user.id}"
+        => avatar_link user, size: :small, class: 'fixed'
+        = user.name
+
+
+- content_for :left do
+  .fixed-block
+    .left-block.controls
+      - if can? :update, group
+        .control.block-row
+          = link_to icon_after(:'plus-sign', t('app.add',
+              element: Membership.model_name.human)),
+            '#add_member'
+
