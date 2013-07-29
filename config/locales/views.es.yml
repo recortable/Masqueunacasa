@@ -120,6 +120,11 @@ es:
     notices:
       created: '¡Bienvenidx a Masqueunacasa!'
       updated: 'Tus datos han sido guardados. Gracias'
+    show:
+      memberships: Forma parte de los colectivos
+      editorships: Ha participado en
+      editorship_time: hace %{time}
+      more_editorships: y %{count} más...
 
   user_sessions:
     new:

@@ -18,7 +18,7 @@ class MembershipsController < ApplicationController
   def create
     user = User.find params[:u]
     if group.member?(user)
-      redirect_to group_path(group), notice: 'Ya pertenecía a éste grupo'
+      redirect_to group_memberships_path(group), notice: 'Ya pertenecía a éste grupo'
     else
       membership.user = user
       membership.group = group

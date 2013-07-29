@@ -103,6 +103,11 @@ ca:
     notices:
       created: '¡Benvingut a Masqueunacasa!'
       updated: "Les teves dades s'han desat correctament. Gràcies!!"
+    show:
+      memberships: Forma part dels col·lectius
+      editorships: Ha participat en
+      editorship_time: fa %{time}
+      more_editorships: i %{count} més...
 
   user_sessions:
     new:

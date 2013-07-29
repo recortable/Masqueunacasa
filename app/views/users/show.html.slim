@@ -1,0 +1,39 @@
+= title user.name
+
+#summary
+  = markdown user.summary
+
+- unless user.memberships.empty?
+  #memberships
+    h2 = "#{t('.memberships')}:"
+    ul
+      - user.memberships.each do |membership|
+        li = link_to membership.group.name, membership.group
+
+- unless user.editorships.empty?
+  #editorships
+    h2 = "#{ t('.editorships') }:"
+    ul
+      - user.editorships.order('created_at DESC').limit(10).each do |editorship|
+        li
+          => link_to editorship.document.title, editorship.document
+          = t '.editorship_time', time: time_ago_in_words( editorship.created_at )
+    - more = user.editorships.count -10
+    = t '.more_editorships', count: more if more > 0
+
+
+
+- content_for :left do
+  .fixed-block
+    .left-block.controls.pull-right
+      - if can? :update, user
+        .control.block-row
+          = link_to icon_after(:edit, t('edit')), edit_user_path(user)
+      - if can? :destroy, user
+        .control.block-row
+          = link_to icon_after(:trash, t('app.remove',
+              element: User.model_name.human(count: 1))),
+            user, method: :delete, confirm: "¿Seguro?"
+    .left-block.user-avatar-image
+      = avatar_image user
+

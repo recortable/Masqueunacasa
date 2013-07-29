@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
 
   # RELATIONS
   has_many :editorships
+  has_many :memberships
 
   # EXTENSIONS
   has_secure_password
