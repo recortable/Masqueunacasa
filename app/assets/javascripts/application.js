@@ -18,6 +18,7 @@
 //= require utils
 //= require markitup
 //= require markitup_settings
+//= require forms
 //= require_self
 
 Galleria.configure({
