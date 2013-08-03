@@ -39,7 +39,7 @@ var MqucInit = function() {
     Galleria.run('.galleria');
   }
   $('.slider').applySlider();
-  $('.body a').mediafy();
+  $('body a').mediafy();
 
   $('form img').image_cache_src(); // Defined in utils.js
 

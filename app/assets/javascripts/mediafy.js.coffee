@@ -6,15 +6,16 @@ class Mediafy
     @renders.push render
 
   getMedia: (link) ->
-    console.log link
-    for render in @renders
-      media = render.getMedia(link)
-      if media
-        console.log media
-        media.renderer = render
-        media.type = render.name
-        return media
-    
+    # console.log link
+    if link?
+      for render in @renders
+        media = render.getMedia(link)
+        if media
+          # console.log media
+          media.renderer = render
+          media.type = render.name
+          return media
+
 # Create the Mediafy object
 mediafy = new Mediafy
 
