@@ -112,6 +112,10 @@ es:
       created: 'Relación creada'
       destroyed: 'Relación borrada.'
 
+  sidebar_left:
+    form_links:
+      basic_info: Información básica
+
   users:
     edit:
       title: Editar perfil de usuario

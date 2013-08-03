@@ -1,4 +1,4 @@
-<fieldset class="sortable_fieldset sections">
+<fieldset class="sortable_fieldset sections" id="sections">
   <legend><%= (Section.model_name.human count: 2).capitalize %></legend>
   <%= form.fields_for :sections do |f| %>
     <div class="sort-fields">

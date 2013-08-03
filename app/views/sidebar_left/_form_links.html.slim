@@ -1,0 +1,12 @@
+.left-block.form-links
+  ul
+    li = link_to t('.basic_info'),
+      "##{document.class.model_name.underscore}_title"
+    - if document.respond_to?('images')
+      li = link_to t(Image.model_name.human(count: 2)), '#images'
+    - if document.respond_to?('sections')
+      li = link_to t(Section.model_name.human(count: 2)), '#sections'
+    - if document.respond_to?('links')
+      li = link_to t(Link.model_name.human(count: 2)), '#links'
+    - if document.respond_to?('location')
+      li = link_to t(Location.model_name.human(count: 1)), '#location'
