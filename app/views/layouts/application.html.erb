@@ -90,10 +90,11 @@
   <%# FOOTER %>
   <%= render 'footer' %>
 
-  <%= render 'layouts/ga' if Rails.env == 'production' %>
   <div style="display:none">
     Masqueunacasa version <%= ENV["RAILS_APP_VERSION"] %>. AGPL3
   </div>
 </div>
+<%= render 'layouts/ga' if Rails.env == 'production' %>
+<%= yield :scripts %>
 </body>
 </html>

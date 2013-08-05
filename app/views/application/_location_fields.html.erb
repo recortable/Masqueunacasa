@@ -1,6 +1,6 @@
 <% google_maps %>
 <fieldset class="locations" id="location">
-  <legend>Locations</legend>
+  <legend><%= Location.model_name.human(count: 1) %></legend>
   <p class="help-block">
     Clica en el mapa para establecer una localización.
   </p>

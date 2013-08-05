@@ -23,6 +23,7 @@ gem 'bcrypt-ruby', '~> 3.0.0' # Para encriptar cosas, p.ej: password (MD5)
 gem 'friendly_id'
 gem 'acts_as_list'
 gem 'textacular' # exposes full text search capabilities from PostgreSQL
+gem 'gmaps4rails'
 
 # Para subir ficheros e imágenes al servidor
 gem "mini_magick" # Para modificar imágenes (lo usa carrierwave)
