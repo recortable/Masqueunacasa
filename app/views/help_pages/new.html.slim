@@ -3,4 +3,6 @@
 = render 'form'
 
 - content_for :left do
-  |.
+  .fixed-block
+    = render 'sidebar_left/form_links', document: help_page
+
