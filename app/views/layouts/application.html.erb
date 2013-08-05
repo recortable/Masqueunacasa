@@ -78,7 +78,11 @@
 
       <%# RIGHT COLUMN %>
       <div id="right-column" class="span4">
-        <%= render 'right_column' %>
+        <% if content_for? :right %>
+          <%= yield :right %>
+        <% else %>
+          <%= render 'sidebar_right/default_content' %>
+        <% end %>
       </div>
     </div>
   </div>

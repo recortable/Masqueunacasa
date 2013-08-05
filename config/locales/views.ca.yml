@@ -96,6 +96,22 @@ ca:
       created: 'Fase afegida.'
       updated: 'Fase modificada.'
 
+  proposals:
+    index:
+      title: 'Propostes'
+    show:
+      title: 'Proposta'
+    notices:
+      updated: 'Proposta actualitzada. ¡Gràcies!'
+      created: 'Tenim una nova proposta, gràcies!'
+
+    related_proposals:
+      block_title: "Altres propostes davant la mateixa pregunta"
+
+    related_experiencies:
+      block_title: Experiències relacionades
+      add_related_experiencie: Afegir experiència relacionada
+
   relations:
     notices:
       created: 'Relació creada'
@@ -104,6 +120,13 @@ ca:
   sidebar_left:
     form_links:
       basic_info: Informació bàsica
+
+  sidebar_right:
+    other_translations_help:
+      text: "Estàs editant la versió en %{current_locale} d'aquest contingut, també pots"
+      translation: "%{action} la versió en %{lang}"
+    related_links:
+      block_title: Recursos online relacionats
 
   users:
     edit:
@@ -125,24 +148,4 @@ ca:
     new:
       title: 'Iniciar sessió'
       create_account: "Crea un compte"
-
-  proposals:
-    index:
-      title: 'Propostes'
-    show:
-      title: 'Proposta'
-    notices:
-      updated: 'Proposta actualitzada. ¡Gràcies!'
-      created: 'Tenim una nova proposta, gràcies!'
-
-    related_proposals:
-      block_title: "Altres propostes davant la mateixa pregunta"
-
-    related_experiencies:
-      block_title: Experiències relacionades
-      add_related_experiencie: Afegir experiència relacionada
-
-  sidebar_right:
-    related_links:
-      block_title: Recursos online relacionats
 

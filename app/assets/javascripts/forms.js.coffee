@@ -1,6 +1,6 @@
 formsInit = ->
   form = $('form.edit_category, form.new_category, form.edit_proposal, form.new_proposal,
-    form.edit_experiencie, form.new_experiencie')
+    form.edit_experiencie, form.new_experiencie, form.edit_help_page, form.new_help_page')
 
   if form.length
     container = $('.sidebar.left .fixed-block')

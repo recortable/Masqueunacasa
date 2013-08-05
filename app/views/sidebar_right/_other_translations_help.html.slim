@@ -1,0 +1,22 @@
+p
+  = t 'sidebar_right.other_translations_help.text',
+    current_locale: t("langs.#{T.l.to_s}").mb_chars.upcase.to_s
+
+ul
+  - T.avl.reject{ |l| l == T.l}.each do |l|
+    li
+      - if document.translated_to?(l)
+        - link_text = t('.translation',
+                          lang: t("langs.#{l.to_s}"),
+                          action: t('app.edit'))
+
+      - else
+        - link_text = t('.translation',
+                          lang: t("langs.#{l.to_s}"),
+                          action: t('app.create'))
+
+      = link_to link_text,
+        controller: document.class.to_s.tableize,
+        action: 'edit', id: document.slug,
+        locale: l.to_s
+

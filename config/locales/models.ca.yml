@@ -14,6 +14,9 @@ ca:
       group:
         one: 'col.lectiu'
         other: 'col·lectius'
+      help_page:
+        one: pàgina auxiliar
+        other: pàgines auxiliars
       image:
         one: imatge
         other: imatges

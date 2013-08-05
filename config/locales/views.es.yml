@@ -107,6 +107,22 @@ es:
       created: 'Fase añadida.'
       updated: 'Fase modificada.'
 
+  proposals:
+    index:
+      title: 'Propuestas'
+    show:
+      title: 'Propuesta'
+    notices:
+      updated: 'Propuesta actualizada. ¡Gracias!'
+      created: 'Tenemos una nueva propuesta, ¡gracias!'
+
+    related_proposals:
+      block_title: Otras propuestas ante la misma pregunta
+
+    related_experiencies:
+      block_title: Experiencias relacionadas
+      add_related_experiencie: Añadir experiencia relacionada
+
   relations:
     notices:
       created: 'Relación creada'
@@ -115,6 +131,13 @@ es:
   sidebar_left:
     form_links:
       basic_info: Información básica
+
+  sidebar_right:
+    other_translations_help:
+      text: "Estás editando la versión en %{current_locale} de este contenido, también puedes"
+      translation: "%{action} la versión en %{lang}"
+    related_links:
+      block_title: Recursos online relacionados
 
   users:
     edit:
@@ -136,24 +159,4 @@ es:
     new:
       title: 'Iniciar sesión'
       create_account: 'Crea una cuenta'
-
-  proposals:
-    index:
-      title: 'Propuestas'
-    show:
-      title: 'Propuesta'
-    notices:
-      updated: 'Propuesta actualizada. ¡Gracias!'
-      created: 'Tenemos una nueva propuesta, ¡gracias!'
-
-    related_proposals:
-      block_title: Otras propuestas ante la misma pregunta
-
-    related_experiencies:
-      block_title: Experiencias relacionadas
-      add_related_experiencie: Añadir experiencia relacionada
-
-  sidebar_right:
-    related_links:
-      block_title: Recursos online relacionados
 
