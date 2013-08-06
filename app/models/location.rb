@@ -10,5 +10,12 @@ class Location < ActiveRecord::Base
   validates :latitude, presence: true
   validates :longitude, presence: true
 
+  acts_as_gmappable process_geocoding: :geocode?, address: 'address',
+                    normalized_address: 'address'
+
   scope :of_experiencies, where(resource_type: 'Expeiencie')
+
+  def geocode?
+    (address.present? && (latitude.blank? || longitude.blank? )) || address_changed?
+  end
 end

@@ -19,6 +19,8 @@
 //= require markitup
 //= require markitup_settings
 //= require forms
+//= require gmaps4rails/gmaps4rails.base
+//= require gmaps4rails/gmaps4rails.googlemaps
 //= require_self
 
 Galleria.configure({
@@ -34,7 +36,6 @@ Galleria.configure({
 });
 
 var MqucInit = function() {
-  $('div.locations').showMap();
   $('fieldset.locations').mapForForm();
   if ($('.galleria').length > 0) {
     Galleria.run('.galleria');

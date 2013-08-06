@@ -85,6 +85,10 @@ ca:
     fr: Francès
     it: Italià
 
+  locations:
+    index:
+      title: Mapa
+
   memberships:
     index:
       title: Participants a %{group}

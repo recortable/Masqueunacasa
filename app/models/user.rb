@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
   has_secure_password
   mount_uploader :avatar_image, UserAvatarUploader
 
+  def title
+    name
+  end
+
   def self.current_user
     Thread.current[:current_user]
   end
