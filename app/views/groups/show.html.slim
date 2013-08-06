@@ -33,8 +33,9 @@
       - if can? :destroy, group
         .control.block-row
           = link_to icon_after(:trash, t('delete')), group, method: :delete, confirm: "¿Seguro?"
-    .left-block.group-avatar-image
-      = image_tag group.avatar_image, class: 'fixed'
+    - if group.avatar_image?
+      .left-block.group-avatar-image
+        = image_tag group.avatar_image, class: 'fixed'
 
     .left-block.group-members
       .block-header
