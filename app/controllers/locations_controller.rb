@@ -4,11 +4,14 @@ class LocationsController  < ApplicationController
   expose(:locations) { Location.all }
 
   def index
+    breadcrumb_for_locations
     @json4map = locations.to_gmaps4rails do |location, marker|
       marker.json({ id: location.id })
       marker.title location.resource.title
-      marker.infowindow location.resource.title
+      marker.infowindow render_to_string( partial: 'map_infowindow',
+                                         locals: { location: location } )
     end
+    respond_with locations
   end
 end
 

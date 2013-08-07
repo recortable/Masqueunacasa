@@ -57,6 +57,16 @@
   background: #F1BF2C image-url('icons/community_tab.png') no-repeat right 50%;
 }
 
+#menu-tabs #map-tab {
+  float: right;
+  margin-right: 0;
+  background: #ADADAD image-url('icons/map_tab.png') no-repeat right 50%;
+
+  a {
+    padding-right: 38px;
+  }
+}
+
 #menu-tabs:after {
   content:" ";
   width: 100%;
@@ -83,5 +93,9 @@
 
 #menu-tabs.active-habitapedia:after {
   background-color: #199DB6;
+}
+
+#menu-tabs.active-map:after {
+  background-color: #ADADAD;
 }
 

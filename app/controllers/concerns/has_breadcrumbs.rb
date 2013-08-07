@@ -3,7 +3,6 @@ module HasBreadcrumbs
 
   protected
 
-  # HABITAPEDIA
   def breadcrumb_for_root
     add_breadcrumb 'Mas que una casa', root_path
   end
@@ -67,5 +66,10 @@ module HasBreadcrumbs
   def breadcrumb_for_admin_area
     @active_tab = 'admin'
     add_breadcrumb 'Admin area', admin_area_path
+  end
+
+  def breadcrumb_for_locations
+    @active_tab = 'map'
+    add_breadcrumb t('routes.locations'), locations_path
   end
 end
