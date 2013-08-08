@@ -2,7 +2,7 @@ module HasMemberships
   extend ActiveSupport::Concern
 
   included do
-    has_many :memberships
+    has_many :memberships, dependent: :destroy
     has_many :users, through: :memberships
     has_many :members, through: :memberships, source: :user
     after_create :create_owner_membership

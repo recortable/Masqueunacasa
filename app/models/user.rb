@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
   # RELATIONS
   has_many :editorships
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
   include HasLocation
 
   # EXTENSIONS
