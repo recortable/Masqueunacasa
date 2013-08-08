@@ -99,23 +99,40 @@ ca:
       media_item:
         url: "Si l'enllaç acaba en .jpg, .png o .gif serà tractat com una imatge"
 
+      non_translatable_field: "Aquest camp no és traduïble. Si l'edites es modificarà en tots els idiomes."
+      non_translatable_fields: "Aquests camps no sén traduïbles. Si els edites es modificaran eb tots els idiomes."
+
+      notice:
+        image: 'Ha de tenir 570x320 pixels.'
+        link: 'Opcional. Url en fer click sobre la imatge. Ha de ser http://...'
+        embed: 'Codi html. Alguna cosa tipus &lt;iframe&gt...'
+
+      password_recovery:
+        email: "Escriu el correun electrònic amb el que et vas registrar i t'enviarem les instruccions"
+
+      proposal:
+        phase: "En quina fase es podria aplicar aquesta proposta"
+
+      section:
+        title: "El títol d'aquesta secció. És opcional"
+        body: 'Pots fer servir markdown.'
+
       user:
         edit:
           email: "No és visible para a la resta d'usuaris"
           password: 'Deixa-ho buit si no vols canviar-la'
           password_confirmation: 'Deixa-ho buit si no vols canviar la contrasenya'
-          summary: Máxim 500 caràcters
-
-      proposal:
-        phase: 'A quina fase es podria aplicar aquesta proposta'
-
-      longitude: 'Graus amb decimals i signe (DDD.dddd). Ex: "-2.1463", "41.0732"'
+          summary: Màxim 500 caràcters
 
   helpers:
     submit:
       group:
         create: 'Crear grup'
         update: 'Desar perfil'
+
+      password_recovery:
+        create: 'Enviar instruccions'
+        update: 'Modificar contrassenya'
 
       user_session:
         create: entrar
