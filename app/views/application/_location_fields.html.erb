@@ -1,13 +1,7 @@
-<% google_maps %>
 <fieldset class="locations" id="location">
-  <legend>Locations</legend>
-  <p class="help-block">
-    Clica en el mapa para establecer una localización.
-  </p>
-  <div class="map" style="width:300px; height: 300px;"></div>
+  <legend><%= Location.model_name.human(count: 1).capitalize %></legend>
   <% form.object.build_location if form.object.location.blank? %>
   <%= form.fields_for :location do |f| %>
-    <%= f.input :latitude %>
-    <%= f.input :longitude %>
+    <%= f.input :address %>
   <% end %>
 </fieldset>

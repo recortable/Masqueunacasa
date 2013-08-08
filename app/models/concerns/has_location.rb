@@ -7,8 +7,7 @@ module HasLocation
     has_one :location, as: :resource, dependent: :destroy
 
     accepts_nested_attributes_for :location, allow_destroy: true,
-      reject_if: proc { |attributes| attributes['latitude'].blank? &&
-                        attributes['longitude'].blank? }
+      reject_if: proc { |attributes| attributes['address'].blank? }
   end
 
 end

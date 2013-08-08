@@ -7,3 +7,5 @@ ul#menu-tabs class="active-#{@active_tab} clearfix"
     = link_to t('.experiencies'), experiencies_path
   li#community-tab class="#{ active? 'community' }"
     = link_to t('.community'), community_path
+  li#map-tab class="#{ active? 'map' }"
+    = link_to t('routes.locations'), locations_path

@@ -1,0 +1,7 @@
+= title t('.title')
+
+.map
+  = gmaps({ \
+      "map_options" => { "type" => "SATELLITE", "auto_adjust" => true },
+      "markers" => { "data" => @json4map } \
+    })

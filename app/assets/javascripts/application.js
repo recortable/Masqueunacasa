@@ -5,7 +5,6 @@
 // turbolinks
 //= require jquery.foundation.orbit
 //= require slider
-//= require maps
 //= require mediafy
 //= require galleria/galleria-1.2.9.min
 //= require galleria/galleria.classic.min
@@ -19,6 +18,8 @@
 //= require markitup
 //= require markitup_settings
 //= require forms
+//= require gmaps4rails/gmaps4rails.base
+//= require gmaps4rails/gmaps4rails.googlemaps
 //= require_self
 
 Galleria.configure({
@@ -34,8 +35,6 @@ Galleria.configure({
 });
 
 var MqucInit = function() {
-  $('div.locations').showMap();
-  $('fieldset.locations').mapForForm();
   if ($('.galleria').length > 0) {
     Galleria.run('.galleria');
   }

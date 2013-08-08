@@ -1,0 +1,14 @@
+.map
+  h2 = t Location.model_name.human(count: 1)
+  = gmaps({ \
+      "map_options" => { \
+        "auto_adjust" => false,
+        "zoom" => 16,
+        "center_latitude" => location.latitude,
+        "center_longitude" => location.longitude \
+      },
+      "markers" => { \
+        "data" => location.to_gmaps4rails,
+        "options" => marker_picture(location) \
+       } \
+    })

@@ -25,6 +25,8 @@ Masqueunacasa::Application.routes.draw do
   resources :images, only: [:up, :down], concerns: :position do
   end
 
+  resources :locations, only: [:index]
+
   resource :search
 
   match '/entrar' => 'user_sessions#new', as: :login

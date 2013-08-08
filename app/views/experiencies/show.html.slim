@@ -15,11 +15,7 @@
 = render 'sections/index', document: experiencie
 
 - if experiencie.location.present?
-  - google_maps
-  .locations
-    h2 = Location.model_name.human(count: 1) + ':'
-    .map style="width: 0px; height: 0px;"
-    .location data-longitude="#{experiencie.location.longitude}" data-latitude="#{experiencie.location.latitude}"
+  = render 'locations/resource_location', location: experiencie.location
 
 = render 'comments/comments', document: experiencie
 

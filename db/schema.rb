@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130702183356) do
+ActiveRecord::Schema.define(:version => 20130807195410) do
 
   create_table "categories", :force => true do |t|
     t.integer  "phase_id"
@@ -265,13 +265,18 @@ ActiveRecord::Schema.define(:version => 20130702183356) do
   add_index "links", ["user_id"], :name => "index_links_on_user_id"
 
   create_table "locations", :force => true do |t|
-    t.string   "resource_type", :limit => 16
+    t.string   "resource_type",      :limit => 16
     t.integer  "resource_id"
     t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "country"
+    t.string   "region"
+    t.string   "locality"
+    t.string   "address"
+    t.string   "normalized_address"
   end
 
   create_table "memberships", :force => true do |t|

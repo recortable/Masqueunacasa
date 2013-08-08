@@ -20,10 +20,15 @@ class User < ActiveRecord::Base
   # RELATIONS
   has_many :editorships
   has_many :memberships
+  include HasLocation
 
   # EXTENSIONS
   has_secure_password
   mount_uploader :avatar_image, UserAvatarUploader
+
+  def title
+    name
+  end
 
   def self.current_user
     Thread.current[:current_user]

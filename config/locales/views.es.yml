@@ -95,6 +95,10 @@ es:
     fr: Francés
     it: Italiano
 
+  locations:
+    index:
+      title: Mapa
+
   memberships:
     index:
       title: Participantes en %{group}
