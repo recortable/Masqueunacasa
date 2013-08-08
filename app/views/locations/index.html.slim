@@ -5,3 +5,29 @@
       "map_options" => { "type" => "SATELLITE", "auto_adjust" => true },
       "markers" => { "data" => @json4map } \
     })
+
+  = link_to 'toggle markers', '#', id: 'toggle-markers'
+
+- content_for :scripts do
+  javascript:
+    Gmaps.map.callback = function() {
+      var markersVisibles = true;
+      var markers = Gmaps.map.markers
+      $('#toggle-markers').click(function(event) {
+        if (markersVisibles) {
+          markersVisibles = false;
+          for (var i = 0; i < markers.length; i++) {
+            if (markers[i].type == "experiencie") {
+              markers[i].serviceObject.setVisible(false);
+            }
+          }
+        } else {
+          markersVisibles = true;
+          for (var i = 0; i < markers.length; i++) {
+            markers[i].serviceObject.setVisible(true);
+          }
+        }
+        event.preventDefault();
+      });
+    };
+

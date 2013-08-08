@@ -2,6 +2,7 @@
   h2 = t Location.model_name.human(count: 1)
   = gmaps({ \
       "map_options" => { \
+        language: T.l.to_s,
         "auto_adjust" => false,
         "zoom" => 16,
         "center_latitude" => location.latitude,
