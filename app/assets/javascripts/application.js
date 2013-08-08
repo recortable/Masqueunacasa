@@ -5,7 +5,6 @@
 // turbolinks
 //= require jquery.foundation.orbit
 //= require slider
-//= require maps
 //= require mediafy
 //= require galleria/galleria-1.2.9.min
 //= require galleria/galleria.classic.min
@@ -36,7 +35,6 @@ Galleria.configure({
 });
 
 var MqucInit = function() {
-  $('fieldset.locations').mapForForm();
   if ($('.galleria').length > 0) {
     Galleria.run('.galleria');
   }

@@ -1,8 +1,23 @@
 module LocationsHelper
-  def google_maps
-    content_for :head do
-      url = "http://maps.googleapis.com/maps/api/js?sensor=false&language=#{I18n.locale}&region=ES"
-      raw "<script type='text/javascript' src='#{url}'></script>"
+  def marker_picture(location)
+    if location.resource.class == User
+      return {
+        picture: image_path('icons/map-usuario.png'),
+        width: 18,
+        height: 28
+      }
+    elsif location.resource.class == Group
+      return {
+        picture: image_path('icons/map-colectivo.png'),
+        width: 31,
+        height: 31
+      }
+    elsif location.resource.class == Experiencie
+      return {
+        picture: image_path('icons/map-experiencia.png'),
+        width: 22,
+        height: 33
+      }
     end
   end
 end

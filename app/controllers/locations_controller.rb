@@ -10,6 +10,7 @@ class LocationsController  < ApplicationController
       marker.title location.resource.title
       marker.infowindow render_to_string( partial: 'map_infowindow',
                                          locals: { location: location } )
+      marker.picture view_context.marker_picture(location)
     end
     respond_with locations
   end

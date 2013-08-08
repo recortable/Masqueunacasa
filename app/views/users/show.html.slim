@@ -21,7 +21,8 @@
     - more = user.editorships.count -10
     = t '.more_editorships', count: more if more > 0
 
-
+- if user.location.present?
+  = render 'locations/resource_location', location: user.location
 
 - content_for :left do
   .fixed-block

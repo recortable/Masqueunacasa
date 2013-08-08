@@ -10,6 +10,7 @@ es:
 
     labels:
       defaults:
+        address: Dirección
         author: 'Autorxs'
         body: 'Texto'
         body_ca: 'Texto en catalán'
@@ -82,10 +83,9 @@ es:
 
 
     hints:
-      non_translatable_field: Este campo no es traducible. Si lo editas se modificará en todos los idiomas.
-      non_translatable_fields: Estos campos no son traducibles. Si los editas se modificarán en todos los idiomas.
-
       defaults:
+        address: Se usa el servicio de geocodificación de Google para encontrar las coordenadas a partir de la
+          dirección. Escribela lo más detalladamente possible y comprueba después que sea correcta.
         summary: 'Debe ser corto e introduce el contenido. No más de un párrafo.'
 
       category:
@@ -106,6 +106,9 @@ es:
       media_item:
         url: 'Si el enlace acaba con .jpg, .png o .gif se tratará como una imágen'
 
+      non_translatable_field: Este campo no es traducible. Si lo editas se modificará en todos los idiomas.
+      non_translatable_fields: Estos campos no son traducibles. Si los editas se modificarán en todos los idiomas.
+
       notice:
         image: 'Debe tener 570x320 pixels.'
         link: 'Opcional. Url al hacer click sobre la imágen. Debe ser http://...'
@@ -118,6 +121,9 @@ es:
         title: 'Cuando más corto y preciso, mejor.'
         body: 'Se breve, por favor. No más de un párrafo.'
 
+      proposal:
+        phase: 'En qué fase se podría aplicar ésta propuesta'
+
       section:
         title: 'El título de esta sección. Es opcional'
         body: 'Puedes usar markdown.'
@@ -128,11 +134,6 @@ es:
           password: 'Déjalo vacío si no quieres cambiarla'
           password_confirmation: 'Déjalo vacío si no quieres cambiar la contraseña'
           summary: Máximo 500 carácteres
-
-      proposal:
-        phase: 'En qué fase se podría aplicar ésta propuesta'
-
-      longitude: 'Grados con decimales y signo (DDD.dddd). Ej: "-2.1463", "41.0732"'
 
   helpers:
     submit:
