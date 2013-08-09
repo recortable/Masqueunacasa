@@ -3,20 +3,20 @@ module LocationsHelper
     if location.resource.class == User
       return {
         picture: image_path('icons/map-usuario.png'),
-        width: 18,
-        height: 28
+        width: 15,
+        height: 30
       }
     elsif location.resource.class == Group
       return {
         picture: image_path('icons/map-colectivo.png'),
-        width: 31,
-        height: 31
+        width: 15,
+        height: 30
       }
     elsif location.resource.class == Experiencie
       return {
         picture: image_path('icons/map-experiencia.png'),
-        width: 22,
-        height: 33
+        width: 15,
+        height: 30
       }
     end
   end
