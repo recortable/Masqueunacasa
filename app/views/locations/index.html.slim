@@ -6,8 +6,6 @@
       "markers" => { "data" => @json4map } \
     })
 
-  = link_to 'toggle markers', '#', id: 'toggle-markers'
-
 - content_for :scripts do
   javascript:
     var markers = {};
@@ -19,32 +17,22 @@
         }
         markers[marker.type].push(marker);
       }
-      $('#toggle-markers').click(function(event) {
-        if (markersVisibles) {
-          markersVisibles = false;
-          for (var i = 0; i < markers.length; i++) {
-            if (markers[i].type == "experiencie") {
-              markers[i].serviceObject.setVisible(false);
-            }
-          }
-        } else {
-          markersVisibles = true;
-          for (var i = 0; i < markers.length; i++) {
-            markers[i].serviceObject.setVisible(true);
-          }
-        }
-        event.preventDefault();
-      });
     };
 
     $('#main-map').append(' \
       <form id="extra-controls"> \
-        <input type="checkbox" name="toggle-experiencies" id="toggle-experiencies" checked="checked" data-toggle="experiencie"> \
-        <label for="toggle-experiencies">#{Experiencie.model_name.human(count: 2)}</label> \
-        <input type="checkbox" name="toggle-groups" id="toggle-groups" checked="checked" data-toggle="group"> \
-        <label for="toggle-groups">#{Group.model_name.human(count: 2)}</label> \
-        <input type="checkbox" name="toggle-users" id="toggle-users" checked="checked" data-toggle="user"> \
-        <label for="toggle-users">#{User.model_name.human(count: 2)}</label> \
+        <div> \
+          <input type="checkbox" name="toggle-experiencies" id="toggle-experiencies" checked="checked" data-toggle="experiencie"> \
+          <label for="toggle-experiencies">#{Experiencie.model_name.human(count: 2)}</label> \
+        </div> \
+        <div> \
+          <input type="checkbox" name="toggle-groups" id="toggle-groups" checked="checked" data-toggle="group"> \
+          <label for="toggle-groups">#{Group.model_name.human(count: 2)}</label> \
+        </div> \
+        <div> \
+          <input type="checkbox" name="toggle-users" id="toggle-users" checked="checked" data-toggle="user"> \
+          <label for="toggle-users">#{User.model_name.human(count: 2)}</label> \
+        </div> \
       </form> \
     ')
 
