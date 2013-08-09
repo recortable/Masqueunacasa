@@ -1,7 +1,46 @@
 = title t('.title')
 
-.map
+#main-map.map
   = gmaps({ \
       "map_options" => { "type" => "SATELLITE", "auto_adjust" => true },
       "markers" => { "data" => @json4map } \
     })
+
+- content_for :scripts do
+  javascript:
+    var markers = {};
+    Gmaps.map.callback = function() {
+      for (var i = 0; i < Gmaps.map.markers.length; i++) {
+        var marker = Gmaps.map.markers[i];
+        if (!markers.hasOwnProperty(marker.type)) {
+          markers[marker.type] = [];
+        }
+        markers[marker.type].push(marker);
+      }
+    };
+
+    $('#main-map').append(' \
+      <form id="extra-controls"> \
+        <div> \
+          <input type="checkbox" name="toggle-experiencies" id="toggle-experiencies" checked="checked" data-toggle="experiencie"> \
+          <label for="toggle-experiencies">#{Experiencie.model_name.human(count: 2)}</label> \
+        </div> \
+        <div> \
+          <input type="checkbox" name="toggle-groups" id="toggle-groups" checked="checked" data-toggle="group"> \
+          <label for="toggle-groups">#{Group.model_name.human(count: 2)}</label> \
+        </div> \
+        <div> \
+          <input type="checkbox" name="toggle-users" id="toggle-users" checked="checked" data-toggle="user"> \
+          <label for="toggle-users">#{User.model_name.human(count: 2)}</label> \
+        </div> \
+      </form> \
+    ')
+
+    $('#main-map #extra-controls').on('change', 'input', function(event) {
+      var type = event.target.getAttribute("data-toggle");
+      var visible = event.target.checked;
+      for (var i = 0; i < markers[type].length; i++) {
+        markers[type][i].serviceObject.setVisible(visible);
+      }
+    });
+

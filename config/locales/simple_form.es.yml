@@ -117,10 +117,6 @@ es:
       password_recovery:
         email: 'Escribe el email con el que te registraste, y te enviaremos las instrucciones'
 
-      post:
-        title: 'Cuando más corto y preciso, mejor.'
-        body: 'Se breve, por favor. No más de un párrafo.'
-
       proposal:
         phase: 'En qué fase se podría aplicar ésta propuesta'
 
@@ -140,11 +136,11 @@ es:
       group:
         new: Crear grupo
         update: 'Actualizar grupo'
-      message:
-        create: 'Enviar mensaje'
+
       password_recovery:
         create: 'Enviar instrucciones'
         update: 'Modificar contraseña'
+
       user_session: entrar
 
 

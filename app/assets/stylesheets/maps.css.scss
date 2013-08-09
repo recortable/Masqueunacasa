@@ -1,0 +1,25 @@
+#main-map {
+  position: relative;
+
+  #extra-controls {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 14px;
+    background: rgba(0, 0, 0, 0.75);
+
+    input, label {
+      display: inline;
+      vertical-align: middle;
+    }
+
+    label {
+      color: $fondo;
+      margin-left: 4px;
+    }
+
+    div {
+      padding: 6px 0;
+    }
+  }
+}
