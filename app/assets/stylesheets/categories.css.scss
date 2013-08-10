@@ -11,20 +11,28 @@
 
     .toggle-proposals-list {
       height: 22px;
-      padding: 4px 8px;
+      padding: 4px 8px 4px 38px;
       position: absolute;
       top: -30px;
       left: 0;
       line-height: 22px;
       font-size: 14px;
       font-weight: bold;
-      background-color: #E8F6F9;
+      background: #E8F6F9 image-url('icons/proposal_icon-small-black.png') no-repeat;
+      background-position: 3px center;
+      transition: background-position 0.5s;
+    }
+
+    .toggle-proposals-list.expanded {
+      background-position: -12px center;
+      transition: background-position 0.5s;
     }
 
     ul {
       margin-top: 4px;
       margin-left: 0;
       list-style-position: inside;
+      list-style-image: image-url('icons/proposal-list_item.png');
     }
   }
 }
