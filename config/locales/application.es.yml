@@ -8,6 +8,9 @@ es:
     edit: 'Editar'
     remove: Borrar %{element}
 
+    filter_by: Filtrar por
+    remove_filters: Mostrar todo
+
   resource:
     created: 'Añadido. Gracias'
     destroyed: 'Borrado... uupps...'

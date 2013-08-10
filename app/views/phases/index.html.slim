@@ -12,12 +12,12 @@
     .left-block.filters
       .block-header
         => icon :filter
-        = t('filter_by')
+        = t('app.filter_by')
       .filter.block-row
-        = link_to t('all'), url_for(request.params.merge(phase: nil))
+        = link_to t('app.remove_filters'), url_for(request.params.merge(phase: nil))
       - phases.each do |phase|
         .filter.block-row
-          = link_to phase.title, url_for(request.params.merge(phase: phase.id))
+          = link_to t('.phase_filter', phase: phase.title.downcase), url_for(request.params.merge(phase: phase.id))
 
     .left-block.order
       .block-header

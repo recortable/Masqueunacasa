@@ -96,6 +96,7 @@ ca:
   phases:
     index:
       title: Preguntes i Propostes
+      phase_filter: Fase de %{phase}
     notices:
       created: 'Fase afegida.'
       updated: 'Fase modificada.'

@@ -107,6 +107,7 @@ es:
   phases:
     index:
       title: Preguntas y Proouestas
+      phase_filter: Fase de %{phase}
     notices:
       created: 'Fase añadida.'
       updated: 'Fase modificada.'

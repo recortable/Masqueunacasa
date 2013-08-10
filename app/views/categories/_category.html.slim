@@ -1,9 +1,10 @@
-= div_for category, class: 'visor-elem ' + category.phase.slug_es do
+= div_for category, class: "visor-elem #{category.phase.slug_es}" do
   .row
     .span3
       .pad
         h2
-          = link_to raw(category.title + " " + icon(:'arrow-right')), category
+          span.phase-icon title="#{category.phase.title}"
+          = link_to category.title, category
         .category-summary.summary
           = markdown truncate(category.summary, length: 160, separator: ' ')
 
