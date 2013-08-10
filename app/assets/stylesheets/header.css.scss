@@ -18,24 +18,32 @@
 #header .slogan {
   text-transform: uppercase;
   white-space: nowrap;
-  margin-left: 5px;
+  margin-left: 15px;
 }
 
 #lang-switcher .btn,
 #session-controls .btn,
 #session-controls > a {
   display: block;
-  padding: 0 1em;
+  padding: 0 0.5em;
   margin-top: 16px;
   background: $fondo;
   border-radius: 0;
-  border: 1px solid #000;
+  border: 1px solid #999;
   text-align: left;
+
+  .caret {
+    margin-right: 0.25em;
+  }
 }
 
 #lang-switcher .btn-group,
-#session-controls .btn-group {
+#session-controls .btn-group,
+#session-controls > a {
   display: block;
+  position: relative;
+  top: 2px;
+  left: 6px;
 }
 
 #lang-switcher button,
