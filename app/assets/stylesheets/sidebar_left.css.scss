@@ -1,7 +1,6 @@
 #sidebar-left {
   .fixed-block {
     width: 170px;
-    border-right: 1px solid #f3f3f3;
     padding-bottom: 15px;
   }
 
@@ -12,6 +11,11 @@
   .left-block {
     margin-bottom: 10px;
     clear: both;
+
+    .block-row.filter, .block-row.order {
+      padding-top: 2px;
+      padding-bottom: 1px;
+    }
 
     .block-header, .block-row.control {
       background-color: #D9D9D9;
@@ -39,8 +43,6 @@
   }
 
   .left-block.social .block-row {
-    padding-top: 5px;
-    padding-bottom: 5px;
     border-bottom: 1px solid #AAA;
 
     &.editors {

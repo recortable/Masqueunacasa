@@ -67,6 +67,44 @@
   }
 }
 
+.phases.index #sidebar-left .phase-filter {
+  padding-left: 25px;
+  position: relative;
+
+  span.phase-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    margin-top: -10px;
+
+    &.organizacion {
+      background: image-url('icons/f-organizacion-off-mini.png') no-repeat left top;
+
+      &.active {
+        background: image-url('icons/f-organizacion-on-mini.png') no-repeat left top;
+      }
+    }
+
+    &.realizacion {
+      background: image-url('icons/f-realizacion-off-mini.png') no-repeat left top;
+
+      &.active {
+        background: image-url('icons/f-realizacion-on-mini.png') no-repeat left top;
+      }
+    }
+
+    &.uso-y-vida-util {
+      background: image-url('icons/f-uso-off-mini.png') no-repeat left top;
+
+      &.active {
+        background: image-url('icons/f-uso-on-mini.png') no-repeat left top;
+      }
+    }
+  }
+}
+
 .categories.show {
   #category-image {
     margin-bottom: 10px;

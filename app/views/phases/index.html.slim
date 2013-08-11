@@ -16,8 +16,10 @@
       .filter.block-row
         = link_to t('app.remove_filters'), url_for(request.params.merge(phase: nil))
       - phases.each do |phase|
-        .filter.block-row
-          = link_to t('.phase_filter', phase: phase.title.downcase), url_for(request.params.merge(phase: phase.id))
+        .filter.block-row.phase-filter
+          span.phase-icon class="#{phase.slug_es} #{"active" if params["phase"] == phase.id.to_s}"
+          = link_to_unless_current t('.phase_filter', phase: phase.title.downcase),
+            url_for(request.params.merge(phase: phase.id))
 
     .left-block.order
       .block-header
