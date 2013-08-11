@@ -2,9 +2,6 @@
 
 = render 'form'
 
-- content_for :content_header do
-  = title t('.title')
-
 - content_for :content_controls
   = link_to raw("&larr; Volver"), admin_area_path,
   class: 'btn btn-mini'

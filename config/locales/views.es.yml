@@ -84,6 +84,8 @@ es:
   help_texts:
     new:
       title: Nueva ayuda contextual
+    edit:
+      title: Editar ayuda contextual
 
   langs:
     available_translations: Otros idiomas

@@ -1,11 +1,9 @@
-.right-block.help
-  |SAMPLE HELP TEXT
-.right-block.help
-  |SAMPLE HELP TEXT
-.right-block.help
-  |SAMPLE HELP TEXT
-.right-block.help
-  |SAMPLE HELP TEXT
-.right-block.help
-  |SAMPLE HELP TEXT
+- if not current_user
+  .right-block.help.clearfix
+    = markdown HelpText.find_by_identf('ayuda_registro_home').try('body')
+    = link_to t('user_sessions.new.create_account'), login_path,
+      class: "btn pull-right"
+- else
+  .right-block.help
+    |SAMPLE HELP TEXT
 
