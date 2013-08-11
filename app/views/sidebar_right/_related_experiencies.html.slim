@@ -3,7 +3,7 @@
     = t('proposals.related_experiencies.block_title') + ':'
     span
   -proposal.experiencies.each do |exp|
-    .block-row.relation.experiencie
+    .block-row.relation.experiencie.clearfix
       = link_to exp.title, exp
       span
         = link_to image_tag(exp.image_thumb), exp if exp.image_thumb.present?

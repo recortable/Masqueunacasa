@@ -92,21 +92,20 @@
 
   .block-row.experiencie {
     border-bottom: 1px solid #f0c0a9;
+    padding-right: 0;
 
-    span a {
-      img {
+    & > a {
+      float: left;
+    }
+
+    span {
+      width: 65px;
+      position: static;
+      float: right;
+
+      a img {
         width: 100%;
         max-width: none;
-        position: absolute;
-        top: 0;
-        right: 0;
-        @include transition(width 0.5s ease);
-      }
-
-      img:hover {
-        width: 150%;
-        z-index: 1;
-        @include transition(width 0.5s ease);
       }
     }
   }
