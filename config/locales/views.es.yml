@@ -106,7 +106,7 @@ es:
 
   phases:
     index:
-      title: Preguntas y Proouestas
+      title: Preguntas y Propuestas
       phase_filter: Fase de %{phase}
     notices:
       created: 'Fase añadida.'

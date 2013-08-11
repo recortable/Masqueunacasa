@@ -9,6 +9,7 @@ es:
     remove: Borrar %{element}
 
     filter_by: Filtrar por
+    order_by: Ordenar por
     remove_filters: Mostrar todo
 
   resource:

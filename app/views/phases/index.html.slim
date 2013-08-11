@@ -22,7 +22,7 @@
     .left-block.order
       .block-header
         => icon :sort
-        = t('order_by')
+        = t('app.order_by')
       .order.block-row
         = link_to "Por fase", url_for(request.params.merge(sort_by: nil, d: nil))
       .order.block-row

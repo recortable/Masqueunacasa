@@ -1,12 +1,14 @@
 = div_for category, class: "visor-elem #{category.phase.slug_es}" do
   .row
+    .span6
+      h2
+        span.phase-icon title="#{category.phase.title}"
+        = link_to category.title, category
+  .row
     .span3
       .pad
-        h2
-          span.phase-icon title="#{category.phase.title}"
-          = link_to category.title, category
         .category-summary.summary
-          = markdown truncate(category.summary, length: 160, separator: ' ')
+          = markdown truncate(category.summary, length: 180, separator: ' ')
 
     .span3.image-container
       = image_tag category.image

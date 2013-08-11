@@ -8,6 +8,7 @@ ca:
     remove: Esborrar %{element}
 
     filter_by: Filtrar per
+    order_by: Ordenar per
     remove_filters: Mostra-ho tot
 
   resource:

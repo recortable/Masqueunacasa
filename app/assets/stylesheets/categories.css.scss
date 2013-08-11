@@ -1,9 +1,12 @@
 .phases.index .category {
   background-color: #C5E6ED;
+  overflow: visible;
 
   h2 {
     position: relative;
-    padding-left: 33px;
+    min-height: 33px;
+    padding-left: 28px;
+    padding-right: 10px;
 
     span.phase-icon {
       display: block;
@@ -11,21 +14,21 @@
       width: 30px;
       height: 30px;
       top: 50%;
-      left: 0;
+      left: -8px;
       margin-top: -15px;
     }
   }
 
   &.organizacion h2 span.phase-icon {
-    background: image-url('icons/f-organizacion-off.png') no-repeat left top;
+    background: image-url('icons/f-organizacion-on.png') no-repeat left top;
   }
 
   &.realizacion h2 span.phase-icon {
-    background: image-url('icons/f-realizacion-off.png') no-repeat left top;
+    background: image-url('icons/f-realizacion-on.png') no-repeat left top;
   }
 
   &.uso-y-vida-util h2 span.phase-icon {
-    background: image-url('icons/f-uso-off.png') no-repeat left top;
+    background: image-url('icons/f-uso-on.png') no-repeat left top;
   }
 
   .category-summary {
