@@ -1,71 +1,91 @@
-
-form {
-  .help-block {
-    display: block;
-    margin: -5px 0 5px 0;
-    font-size: 90%;
-    font-style: italic;
+body.edit, body.new {
+  h1 {
+    color: #8e8e8e;
   }
 
-  .help-inline {
-    font-size: 16px;
-    padding: 0;
-    margin: 0 0 10px 0;
-  }
-
-  div.title {
-    margin-top: 20px;
-    input {
-      font-size: 200%;
-      height: 1.2em;
+  form {
+    .help-block {
+      display: block;
+      font-size: 90%;
+      font-style: italic;
+      color: green;
     }
-  }
 
-  .image-preview {
-    max-width: 160px;
-    margin-bottom: 0.5em;
+    .help-inline {
+      font-size: 16px;
+      padding: 0;
+      margin: 0 0 10px 0;
+    }
   }
 }
 
 fieldset {
-  margin: 0 0 1em;
-  padding: 0 0.625em 0;
-  border: 1px solid #e5e5e5;
-  background-color: darken($fondo, 3%);
-
-  legend {
-    margin: 0 0 0.5em;
-    border: none;
-    line-height: inherit;
-  }
-
-  .section-actions {
-    margin-top: 10px;
-  }
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
 }
 
-form .fields {
-  position: relative;
-  margin-bottom: 0.5em;
-  padding: 0.5em 1em;
-  padding-left: 2.5em;
-  border-radius: 5px;
-  background: #ddd;
-  @include clearfix;
+fieldset.basic-info, fieldset .fields {
+  background-color: #cacaca;
+}
 
-  .remove_nested_fields {
-    float: right;
+fieldset {
+  .pad {
+    padding: 0 10px;
   }
 
-  .sort-fields {
-    float: right;
+  .fields {
+    margin-bottom: 4px;
+
+    .pad {
+      padding-right: 0;
+    }
   }
 }
 
-.add_nested_fields_controls {
-  margin: 20px 0 0;
+legend {
+  margin-bottom: 10px;
+  @include title_font(16px, bold);
+  background-color: #8e8e8e;
+  border-bottom: 0;
+  color: $fondo;
+  line-height: 30px;
+  text-indent: 10px;
 }
 
-form .help-block {
-  color: green;
+.fields .sort-fields {
+  margin-top: 8px;
+  text-align: right;
+  padding-right: 4px;
+
+  a {
+    margin-left: 6px;
+  }
 }
+
+.control-group {
+  margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-inputt,
+textarea {
+  padding: 2px 5px;
+  border-color: #000;
+  @include border-radius(0);
+  font-size: inherit;
+}
+

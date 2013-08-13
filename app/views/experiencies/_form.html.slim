@@ -1,9 +1,12 @@
 = simple_nested_form_for experiencie,
   html: { multipart: true } do |form|
   = form.error_notification
-  = form.input :title, input_html: { class: 'span5' }
-  = form.input :summary, as: :text, input_html: { rows: 4, class: 'rte' }
   = form.input :related_proposal_id, as: :hidden
+  fieldset.basic-info
+    legend = t('sidebar_left.form_links.basic_info')
+    div.pad
+      = form.input :title, input_html: { class: 'span5' }
+      = form.input :summary, as: :text, input_html: { rows: 4, class: 'rte' }
   = render 'image_fields', form: form
   = render 'section_fields', form: form
   = render 'link_fields', form: form
