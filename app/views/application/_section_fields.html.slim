@@ -1,0 +1,84 @@
+fieldset#sections.sortable_fieldset.sections
+  legend = Section.model_name.human(count: 2).capitalize
+  = form.fields_for :sections do |f|
+    .row
+      .span4
+        .pad
+          = f.input :title
+          - if f.object.class == ImageSection
+            = f.input :image
+            = f.input :image_cache, as: :hidden
+      .span2
+        .control-group.remove-fields
+          = f.link_to_remove icon_after(:'remove-sign',
+              t('app.remove', element: Section.model_name.human)),
+            class: "btn btn-block btn-clear"
+        - if f.object.class == ImageSection
+          .image-preview
+            = image_tag f.object.image.thumb if f.object.image.present?
+    - if f.object.class == TextSection
+      .row
+        .span6
+          .pad
+            = f.input :body, input_html: { rows: 5, class: 'rte' }
+    .row
+      .span2.offset4
+        .sort-fields.pull-right
+          a.up href="javascript:void(0)"
+            i.icon-arrow-up
+          a.down href="javascript:void(0)"
+            i.icon-arrow-down
+          p.help-block Cambia el orden de visualización
+    = f.input :position, as: :hidden
+  = form.fields_for :text_sections do |f|
+    .row
+      .span4
+        .pad
+          = f.input :title
+      .span2
+        .control-group.remove-fields
+          = f.link_to_remove icon_after(:'remove-sign',
+              t('app.remove', element: Section.model_name.human)),
+            class: "btn btn-block btn-clear"
+    .row
+      .span6
+        .pad
+          = f.input :body, input_html: { rows: 8, class: 'rte' }
+    .row
+      .span2.offset4
+        .sort-fields.pull-right
+          a.up href="javascript:void(0)"
+            i.icon-arrow-up
+          a.down href="javascript:void(0)"
+            i.icon-arrow-down
+          p.help-block Cambia el orden de visualización
+    = f.input :position, as: :hidden
+  = form.fields_for :image_sections do |f|
+    .row
+      .span4
+        .pad
+          = f.input :title
+          = f.input :image
+          = f.input :image_cache, as: :hidden
+      .span2
+        .control-group.remove-fields
+          = f.link_to_remove icon_after(:'remove-sign',
+              t('app.remove', element: Section.model_name.human)),
+            class: "btn btn-block btn-clear"
+        .image-preview
+          = image_tag f.object.image.thumb if f.object.image.present?
+        .sort-fields.pull-right
+          a.up href="javascript:void(0)"
+            i.icon-arrow-up
+          a.down href="javascript:void(0)"
+            i.icon-arrow-down
+          p.help-block Cambia el orden de visualización
+    = f.input :position, as: :hidden
+  .row
+    .fields-actions.span2.offset2
+      = form.link_to_add icon_after(:'plus-sign', t('app.add', element: TextSection.model_name.human)),
+        :text_sections, class: "btn"
+    .fields-actions.span2
+      = form.link_to_add icon_after(:'plus-sign', t('app.add', element: ImageSection.model_name.human)),
+        :image_sections, class: "btn"
+

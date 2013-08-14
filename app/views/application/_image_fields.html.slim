@@ -10,7 +10,10 @@ fieldset.sortable_fieldset.images#images
           = f.input :image_cache, as: :hidden
           = f.input :credits
       .span2
-        = f.link_to_remove "Remove image", class: 'btn pull-right'
+        .control-group.remove-fields
+          = f.link_to_remove icon_after(:'remove-sign',
+              t('app.remove', element: Image.model_name.human(count: 1))),
+            class: 'btn btn-block btn-clear'
         .image-preview
           = image_tag f.object.image.thumb.to_s if f.object.image.present?
           = image_tag f.object.external_image_url if f.object.external_image_url.present?
@@ -22,7 +25,8 @@ fieldset.sortable_fieldset.images#images
           p.help-block Cambia el orden de visualización
     = f.input :position, as: :hidden
     = f.input :new_object, as: :hidden, value: 'true' if f.object.new_record?
-  p.section-actions
-    = form.link_to_add t('app.add', element: Image.model_name.human),
-      :images, class: "btn"
+  .row
+    .fields-actions.span2.offset4
+      = form.link_to_add icon_after(:'plus-sign', t('app.add', element: Image.model_name.human)),
+        :images, class: "btn btn-block"
 

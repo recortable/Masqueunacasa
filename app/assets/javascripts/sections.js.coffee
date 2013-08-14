@@ -1,5 +1,5 @@
 $(document).on "nested:fieldAdded", (event) ->
-  event.field.parent('p').before(event.field)
+  event.field.closest('.row').before(event.field)
   event.field.find('textarea.rte').markItUp(myMarkItUpSettings)
 
 init = ->

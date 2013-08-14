@@ -36,6 +36,7 @@ fieldset {
 
   .fields {
     margin-bottom: 4px;
+    padding-top: 4px;
 
     .pad {
       padding-right: 0;
@@ -60,11 +61,21 @@ legend {
 
   a {
     margin-left: 6px;
+
+    [class^="icon"] {
+      font-size: 1.2em;
+    }
   }
 }
 
 .control-group {
   margin-bottom: 4px;
+}
+
+.control-group.remove-fields {
+  margin-top: 5px;
+  margin-bottom: 8px;
+  text-align: right;
 }
 
 input[type="text"],

@@ -1,0 +1,32 @@
+$base-color: #d9d9d9;
+$inverse-color: $fondo;
+
+.btn {
+  padding: 2px 8px;
+  background-color: $base-color;
+  background-image: none;
+  @include border-radius(0);
+  border: 1px solid #000;
+}
+
+.btn.btn-clear {
+  background-color: $inverse-color;
+}
+
+.btn:hover {
+  background-color: $inverse-color;
+}
+
+.btn.btn-clear:hover {
+  background-color: $base-color;
+}
+
+.btn.btn-block {
+  text-align: left;
+
+  [class^="icon-"] {
+    float: right;
+    margin-top: 3px;
+  }
+}
+
