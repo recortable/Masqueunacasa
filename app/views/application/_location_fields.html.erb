@@ -1,7 +1,9 @@
 <fieldset class="locations" id="location">
-  <legend><%= Location.model_name.human(count: 1).capitalize %></legend>
+  <legend><%= Location.model_name.human.capitalize %></legend>
   <% form.object.build_location if form.object.location.blank? %>
   <%= form.fields_for :location do |f| %>
-    <%= f.input :address %>
+    <div class="pad">
+      <%= f.input :address, input_html: { class: 'span5' } %>
+    </div>
   <% end %>
 </fieldset>

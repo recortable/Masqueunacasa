@@ -75,10 +75,9 @@ fieldset#sections.sortable_fieldset.sections
           p.help-block Cambia el orden de visualización
     = f.input :position, as: :hidden
   .row
-    .fields-actions.span2.offset2
+    .fields-actions.span6
       = form.link_to_add icon_after(:'plus-sign', t('app.add', element: TextSection.model_name.human)),
-        :text_sections, class: "btn"
-    .fields-actions.span2
+        :text_sections, class: "btn pull-right add-fields"
       = form.link_to_add icon_after(:'plus-sign', t('app.add', element: ImageSection.model_name.human)),
-        :image_sections, class: "btn"
+        :image_sections, class: "btn pull-right add-fields"
 

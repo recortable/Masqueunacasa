@@ -1,9 +1,20 @@
 fieldset.sortable-fieldset.links#links
-  legend = (Link.model_name.human count: 2).capitalize
+  legend = Link.model_name.human(count: 2).capitalize
   = form.fields_for :links do |f|
-    = f.input :title
-    = f.input :url
-    = f.link_to_remove "Remove link", class: 'btn'
+    .row
+      .span4
+        .pad
+          = f.input :title
+          = f.input :url
+      .span2
+        .control-group.remove-fields
+          = f.link_to_remove icon_after(:'remove-sign',
+              t('app.remove', element: Link.model_name.human)),
+            class: 'btn btn-block btn-clear'
 
-  p.link-actions
-    = form.link_to_add t('app.add', element: Link.model_name.human), :links, class: 'btn'
+  .row
+    .fields-actions.span2.offset4
+      = form.link_to_add icon_after(:'plus-sign',
+          t('app.add', element: Link.model_name.human)),
+        :links, class: 'btn btn-block'
+

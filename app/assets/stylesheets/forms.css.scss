@@ -44,6 +44,10 @@ fieldset {
   }
 }
 
+fieldset.locations .pad {
+  padding-bottom: 1px;
+}
+
 legend {
   margin-bottom: 10px;
   @include title_font(16px, bold);
@@ -76,6 +80,10 @@ legend {
   margin-top: 5px;
   margin-bottom: 8px;
   text-align: right;
+}
+
+.fields-actions .add-fields.pull-right {
+  margin-left: 6px;
 }
 
 input[type="text"],
