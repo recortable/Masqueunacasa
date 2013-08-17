@@ -141,6 +141,7 @@ es:
         create: 'Enviar instrucciones'
         update: 'Modificar contraseña'
 
-      user_session: entrar
+      user_session:
+        create: Entrar
 
 
