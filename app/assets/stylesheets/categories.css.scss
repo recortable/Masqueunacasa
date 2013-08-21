@@ -3,18 +3,13 @@
   overflow: visible;
 
   h2 {
-    position: relative;
-    min-height: 33px;
-    padding-left: 28px;
-    padding-right: 10px;
-
     span.phase-icon {
       display: block;
       position: absolute;
       width: 30px;
       height: 30px;
       top: 50%;
-      left: -8px;
+      left: 4px;
       margin-top: -15px;
     }
   }

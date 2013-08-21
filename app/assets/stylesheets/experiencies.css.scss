@@ -11,5 +11,16 @@
     min-height: 156px;
     max-height: 200px;
   }
+
+  span.experiencie-icon {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 4px;
+    margin-top: -15px;
+    background: image-url('icons/experiencies_icon-black.png') no-repeat left top;
+  }
 }
 

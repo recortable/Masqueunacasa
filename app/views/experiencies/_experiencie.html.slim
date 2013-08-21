@@ -1,9 +1,10 @@
 = div_for experiencie, class: 'visor-elem' do
   .row
     .span3
+      h2
+        span.experiencie-icon
+        = link_to experiencie.title, experiencie
       .pad
-        h2
-          = link_to raw(experiencie.title + " " + icon(:'arrow-right')), experiencie
         .experiencie-summary.summary
           = markdown truncate( experiencie.summary, length: 200, separator: ' ' )
 
