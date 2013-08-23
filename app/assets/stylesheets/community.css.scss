@@ -5,6 +5,26 @@
 
   .group, .user {
     background-color: #FBEFC9;
+
+    h2 {
+      span.user-icon, span.group-icon {
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 50%;
+        left: 4px;
+        margin-top: -15px;
+      }
+
+      span.user-icon {
+        background: image-url('icons/user_icon.png') no-repeat left top;
+      }
+
+      span.group-icon {
+        background: image-url('icons/group_icon.png') no-repeat left top;
+      }
+    }
   }
 }
 

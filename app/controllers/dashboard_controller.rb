@@ -2,6 +2,12 @@ class DashboardController < ApplicationController
   #before_filter :authenticate_user!
   expose(:groups) { Group.all }
   expose(:users) { User.all }
+  expose(:agents) do
+    agents = []
+    agents += groups unless params[:agents] == 'users'
+    agents += users unless params[:agents] == 'groups'
+    agents
+  end
 
   add_breadcrumb 'Mas que una casa', :root_path
 

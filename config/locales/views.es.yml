@@ -45,6 +45,8 @@ es:
       title: Área de administración
     community:
       title: 'Comunidad'
+      groups_filter: Sólo grupos
+      users_filter: Sólo usuarios
 
   experiencies:
     notices:

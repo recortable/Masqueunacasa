@@ -1,9 +1,9 @@
 = div_for user, class: "visor-elem" do
   .row
     .span2
-      .pad
-        h2
-          = link_to raw(user.name + " " + icon(:'arrow-right')), user
+      h2
+        span.user-icon
+        = link_to raw(user.name + " " + icon(:'arrow-right')), user
     .span3
       = markdown truncate( user.summary, length: 80, separator: ' ' )
     .span1

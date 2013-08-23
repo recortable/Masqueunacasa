@@ -41,7 +41,9 @@ ca:
     admin_area:
       title: Àrea d'administració
     community:
-      title: 'Comunidad'
+      title: 'Comunitat'
+      groups_filter: Només grups
+      users_filter: Només usuaris
 
   experiencies:
     notices:

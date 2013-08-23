@@ -53,6 +53,6 @@ class PhasesController < ApplicationController
   end
 
   def direction
-    %{asc desc}.include?(params[:d]) ? params[:d] : 'asc'
+    %w{asc desc}.include?(params[:d]) ? params[:d] : 'asc'
   end
 end

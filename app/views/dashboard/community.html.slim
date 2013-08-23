@@ -1,16 +1,7 @@
 - title t('application.tabs.community')
 
 .lista-visor.community
-  ul.nav.nav-tabs
-    li.active
-      = link_to t('activerecord.models.group.other').upcase, '#groups', data: {toggle: 'tab'}
-    li
-      = link_to t('activerecord.models.user.other').upcase, '#users', data: {toggle: 'tab'}
-  .tab-content
-    #groups.tab-pane.active
-      = render groups
-    #users.tab-pane
-      = render users
+  = render agents
 
 - content_for :left do
   .fixed-block
@@ -18,4 +9,21 @@
       .block-row.control
         => link_to t('app.create_new', element: t('activerecord.models.group.one')), new_group_path
         = icon :'plus-sign'
+
+    .left-block.filters
+      .block-header
+        => icon :filter
+        = t('app.filter_by')
+      .filter.block-row
+        = link_to_if request.params[:agents].present?,
+           t('app.remove_filters'),
+           url_for(request.params.merge(agents: nil))
+      .filter.block-row
+        span.groups-icon class="#{"active" if params["agents"] == 'groups' }"
+        = link_to_unless_current t('.groups_filter'),
+          url_for(request.params.merge(agents: 'groups'))
+      .filter.block-row
+        span.users-icon class="#{"active" if params["agents"] == 'users' }"
+        = link_to_unless_current t('.users_filter'),
+          url_for(request.params.merge(agents: 'users'))
 

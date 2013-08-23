@@ -1,9 +1,9 @@
 = div_for group, class: 'visor-elem' do
   .row
     .span2
-      .pad
-        h2
-          = link_to raw(group.title + " " + icon(:'arrow-right')), group
+      h2
+        span.group-icon
+        = link_to group.title, group
     .span3
       = markdown truncate( group.summary, length: 120, separator: ' ' )
     .span1
