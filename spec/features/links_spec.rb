@@ -17,14 +17,6 @@ describe "Links integration" do
     update_link_probe(create(:proposal))
   end
 
-  it 'delete links from experiencies' do
-    delete_link_probe(create(:experiencie))
-  end
-
-  it 'delete links from proposals' do
-    delete_link_probe(create(:experiencie))
-  end
-
   def create_link_probe(model)
     user = login_user( create(:user) )
 
@@ -53,17 +45,7 @@ describe "Links integration" do
     click_submit
 
     link.reload
-    expect( link.title).to eq 'new title'
+    expect( link.title ).to eq 'new title'
     expect( link.url ).to eq 'http://newurl.com'
-  end
-
-  def delete_link_probe(model)
-    user = login_user( create(:user) )
-    link = model.add_link( build(:link), user )
-
-    visit polymorphic_path(model, only_path: true)
-
-    f_link("delete-link-#{link.id} nofollow").click
-    expect( model.links.count ).to eq 0
   end
 end

@@ -5,7 +5,7 @@ formsInit = ->
   if form.length
     container = $('.sidebar.left .fixed-block .controls')
     button_text = form.find('input[type="submit"]').hide().attr('value')
-    new_button = $('<button class="btn btn-block">' + button_text + ' <i class="icon-save"></i></button>')
+    new_button = $('<button class="btn btn-block" id="commit-form">' + button_text + ' <i class="icon-save"></i></button>')
     container.prepend new_button
     new_button.on 'click', ->
       form.submit()

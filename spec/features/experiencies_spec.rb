@@ -28,12 +28,6 @@ describe "Experiencies integration" do
     should have_text link.caption
   end
 
-  it "can create link if current user" do
-    login_user( user )
-    visit experiencie_path(exp)
-    f_link 'new-link'
-  end
-
   it "can create experiencie if user" do
     login_user( user )
     visit experiencies_path

@@ -7,7 +7,8 @@
   .fixed-block
     .left-block.controls
       .control.block-row
-        => link_to "#{t('app.add', element: t('activerecord.models.experiencie.one'))}", new_experiencie_path
+        => link_to "#{t('app.add', element: t('activerecord.models.experiencie.one'))}",
+          new_experiencie_path, rel: 'new-experiencie'
         = icon :'plus-sign'
 
     .left-block.order

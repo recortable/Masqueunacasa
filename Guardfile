@@ -28,6 +28,6 @@ guard 'rspec', :version => 2, all_after_pass: false, :cli => '--color --format n
   watch('config/routes.rb')                           { "spec/routing" }
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
   # Capybara request specs
-  watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/features/#{m[1]}_spec.rb" }
+  watch(%r{^app/views/(.+)/.*\.(erb|haml|slim)$})          { |m| "spec/features/#{m[1]}_spec.rb" }
 end
 

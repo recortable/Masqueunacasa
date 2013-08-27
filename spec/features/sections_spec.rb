@@ -18,7 +18,7 @@ shared_examples_for "Adding sections" do |describing, url, fields_to_fill, neste
 
   it "text sections presist" do
     user
-    visit  url_path
+    visit url_path
     fields_to_fill.each do |field|
       fill_in "#{describing}_#{field}", with: "The #{describing} #{field}"
     end
@@ -26,7 +26,7 @@ shared_examples_for "Adding sections" do |describing, url, fields_to_fill, neste
     section = page.find('fieldset.sections .fields')
     section.fill_in I18n.t('simple_form.labels.defaults.title'), with: "Section 1 title"
     section.fill_in I18n.t('simple_form.labels.defaults.body'), with: "Section 1 text"
-    click_submit
+    find('#commit-form').click
     expect( page ).to have_content "Section 1 title"
     expect( page ).to have_content "Section 1 text"
   end
@@ -40,6 +40,6 @@ describe "Proposal sections", js: true do
   it_behaves_like "Adding sections", :proposal, :new_category_proposal_path, %w(title summary), :category
 end
 
-describe "Category sections", js: true do
-  it_behaves_like "Adding sections", :category, :new_phase_category_path, %w(title name summary), :phase
-end
+#describe "Category sections", js: true do
+  #it_behaves_like "Adding sections", :category, :new_category_path, %w(title name summary)
+#end
