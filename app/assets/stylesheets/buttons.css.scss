@@ -1,12 +1,16 @@
 $base-color: #d9d9d9;
 $inverse-color: $fondo;
 
+$font-color: #333;
+
 .btn {
   padding: 2px 6px;
   background-color: $base-color;
   background-image: none;
   @include border-radius(0);
   border: 1px solid #000;
+  color: $font-color;
+  text-shadow: none;
 }
 
 .btn.btn-clear {
@@ -15,6 +19,8 @@ $inverse-color: $fondo;
 
 .btn:hover {
   background-color: $inverse-color;
+  color: $font-color;
+  text-shadow: none;
 }
 
 .btn.btn-clear:hover {

@@ -19,3 +19,10 @@
         = link_to "Más visitada", url_for(request.params.merge(sort_by: 'view_count', d: 'desc'))
       .order.block-row
         = link_to "Últimas añadidas", url_for(request.params.merge(sort_by: 'updated_at', d: 'desc'))
+
+- content_for :right do
+  .right-block.help.clearfix
+    = markdown HelpText.find_by_identf('ayuda1_experiencias').try('body')
+    = link_to "#{t('app.add', element: t('activerecord.models.experiencie.one'))}",
+        new_experiencie_path, class: 'btn pull-right'
+
