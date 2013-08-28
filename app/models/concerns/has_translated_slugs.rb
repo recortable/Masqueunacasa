@@ -20,6 +20,5 @@ module HasTranslatedSlugs
       config.use :friendly_finder
     end
   end
-
 end
 

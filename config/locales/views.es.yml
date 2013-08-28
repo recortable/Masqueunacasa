@@ -122,6 +122,8 @@ es:
     notices:
       created: 'Fase añadida.'
       updated: 'Fase modificada.'
+    show:
+      title: Fase de %{phase}
 
   proposals:
     index:

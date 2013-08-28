@@ -111,6 +111,8 @@ ca:
     notices:
       created: 'Fase afegida.'
       updated: 'Fase modificada.'
+    show:
+      title: "Fase: %{phase}"
 
   proposals:
     index:
