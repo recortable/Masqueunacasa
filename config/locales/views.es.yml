@@ -15,6 +15,13 @@ es:
       session_end: Salir
       view_user: Ver perfil
 
+    internal_link_code:
+      how_to: "Usa el siguiente código para crear un enlace a esta página desde otro contenido de la plataforma.
+        Lo puedes insertar en todos los campos donde se puede usar markdown. Sustituye el texto del enlace que está
+        entre corchetes"
+      label: Enlace interno
+      link_text: texto del enlace
+
     session:
       groups: Colectivos
       community: 'Comunidad'

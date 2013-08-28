@@ -80,4 +80,23 @@ module ApplicationHelper
     end
     link_to(name, '#', class: "btn add_fields", data: {id: id, fields: fields.gsub("\n", "")})
   end
+
+  def intern_link_code?
+    %w{index show}.include? controller.action_name
+  end
+
+  def link_code
+    code = "[#{t('application.internal_link_code.link_text')}]"
+    code += "(::" + controller.controller_name
+    code += "::" + object_id.to_s if object_id
+    code += "::)"
+  end
+
+private
+
+  def object_id
+    params[:id].present? ?
+      controller.controller_name.classify.constantize.find(params[:id]).id :
+      nil
+  end
 end

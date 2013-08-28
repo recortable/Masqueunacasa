@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrap-dropdown
+//= require bootstrap-tooltip
 // turbolinks
 //= require jquery.foundation.orbit
 //= require slider
@@ -52,6 +53,7 @@ var MqucInit = function() {
   fixed.affix( {offset: {top: offsetFn} } );
 
   $('textarea.rte').markItUp(myMarkItUpSettings);
+  $('span.with-tooltip').tooltip();
 };
 
 $(document).ready(MqucInit);

@@ -1,0 +1,6 @@
+- if intern_link_code?
+  #internal-link-code
+    p
+      span.with-tooltip data-toggle="tooltip" data-original-title="#{t('.how_to')}" = t('.label') + ": "
+      span.link-code = link_code
+

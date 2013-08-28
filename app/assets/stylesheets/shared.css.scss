@@ -49,3 +49,14 @@ h2.no-title:before, h2.no-title:after {
 .map img {
   max-width: none;
 }
+
+#internal-link-code {
+  margin-top: 30px;
+  margin-bottom: -35px;
+  padding-right: 8px;
+  color: green;
+
+  .link-code {
+    color: #333;
+  }
+}

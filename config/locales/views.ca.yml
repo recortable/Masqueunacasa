@@ -15,6 +15,13 @@ ca:
       session_end: Sortir
       view_user: Veure perfil
 
+    internal_link_code:
+      how_to: "Usa el codi següent per crear un enllaç a aquesta pàgina des d'un
+        altre contingut de la plataforma. El pots inserir en tots els camps on es pot usar
+        markdown. Substitueix el text que hi ha entre claudàtors"
+      label: Enllaç intern
+      link_text: texto del enlace
+
     session:
       session_start: 'Iniciar sessió'
       session_end: 'Sortir'
