@@ -82,7 +82,7 @@ module ApplicationHelper
   end
 
   def intern_link_code?
-    %w{index show}.include? controller.action_name
+    %w{index show}.include? controller.action_name && current_user
   end
 
   def link_code
