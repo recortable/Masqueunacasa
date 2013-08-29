@@ -2,7 +2,6 @@ Masqueunacasa::Application.routes.draw do
   # CONCERNS
   concern :document do
     resource :kudos
-    resources :sections, except: [:index]
     resource :edition
   end
 
@@ -52,10 +51,7 @@ Masqueunacasa::Application.routes.draw do
 
   resources :experiencies, concerns: [:document, :commentable] do
     get :dashboard, on: :collection
-    resources :links
-    resources :images
   end
-
 
   resources :categories, only: [:show, :new, :create], concerns: [:document, :position, :commentable] do
     get :dashboard, on: :collection
@@ -65,12 +61,9 @@ Masqueunacasa::Application.routes.draw do
   resources :proposals, except: [:new], path: '/phases/proposals', concerns: [:document, :position, :commentable] do
     get :dashboard, on: :collection
     resources :relations, only: [:new, :create, :destroy]
-    resources :links
   end
 
-  resources :phases, except: [:show, :update, :destroy]
-
-  resources :phases, only: [:show, :update, :destroy], concerns: [:document] do
+  resources :phases, concerns: [:document] do
     resources :categories, except: [:index, :new, :create], path: ''
   end
 
