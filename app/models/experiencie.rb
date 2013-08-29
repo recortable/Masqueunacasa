@@ -25,6 +25,7 @@ class Experiencie < ActiveRecord::Base
   accepts_nested_attributes_for :images, allow_destroy: true,
     reject_if: proc { |attributes| attributes['image'].blank? &&
                       attributes['external_image_url'].blank? &&
+                      attributes['image_cache'].blank? &&
                       attributes['new_object'] == 'true' }
   include HasLocation
   include HasPopularity

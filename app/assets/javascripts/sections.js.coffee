@@ -4,7 +4,7 @@ $(document).on "nested:fieldAdded", (event) ->
 
 init = ->
   $("form").on "change", "input[type='file']", ->
-    thumb_container = $(this).closest('div.control-group').siblings('.image-preview')
+    thumb_container = $(this).closest('div.fields').find('.image-preview')
     img_tag = $("<img />")
     file = @files[0]
     reader = new FileReader()
