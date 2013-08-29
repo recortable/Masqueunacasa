@@ -6,7 +6,6 @@ class Link < ActiveRecord::Base
   belongs_to :document, polymorphic: true
 
   validates :url, presence: true
-  validates :document, presence: true
   #validates :user, presence: true
   #validates :content_type, presence: true
 
@@ -17,7 +16,7 @@ class Link < ActiveRecord::Base
   end
 
   def set_content_type
-    if self.url =~ /youtube/ 
+    if self.url =~ /youtube/
       self.content_type = 'video'
     else
       self.content_type = 'link'
