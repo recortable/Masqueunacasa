@@ -3,7 +3,7 @@ module SlugRedirections
 
   included do
     before_filter only: [:index, :new, :show, :edit] do
-      redirect_to_correct_slug unless controller_name.include? 'static_pages'
+      redirect_to_correct_slug
     end
   end
 

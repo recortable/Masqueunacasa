@@ -40,7 +40,6 @@ Masqueunacasa::Application.routes.draw do
   get '/admin/' => 'dashboard#admin_area', as: :admin_area
 
   root to: 'dashboard#welcome'
-  WaxMuseum::Routes.draw
 
   resources :user_sessions, only: [:new, :create, :destroy]
   resources :password_recoveries
