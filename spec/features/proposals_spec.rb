@@ -20,11 +20,7 @@ describe "Proposals integration" do
     should have_text proposal.summary
   end
 
-  it "shows proposal links" do
-    link = proposal.add_link( build(:link), user )
-    visit proposal_path(proposal)
-    should have_text link.caption
-  end
+  it "shows proposal links"
 
   it "shows proposal relations" do
     exp = FactoryGirl.create( :experiencie )

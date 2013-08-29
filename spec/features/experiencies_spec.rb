@@ -19,14 +19,7 @@ describe "Experiencies integration" do
   end
 
   # EXTERNAL LINKS
-  it "shows the related links" do
-    login_user( user )
-    link = FactoryGirl.build( :link )
-    exp.add_link( link, user )
-
-    visit experiencie_path(exp)
-    should have_text link.caption
-  end
+  it "shows the related links"
 
   it "can create experiencie if user" do
     login_user( user )
