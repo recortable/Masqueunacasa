@@ -20,8 +20,8 @@ module TextHelper
 
   def markdowner
     @markdown ||= Redcarpet::Markdown.new(
-      Redcarpet::Render::HTML,
-      hard_wrap: true, autolink: true,
+      Redcarpet::Render::HTML.new(hard_wrap: true),
+      autolink: true,
       fenced_code_blocks: true)
   end
 
