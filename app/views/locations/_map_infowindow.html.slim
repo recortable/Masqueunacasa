@@ -1,2 +1,8 @@
-.infowindow-header
-  = link_to location.resource.title, location.resource
+.infowindow-wrapper style="max-width: 300px;"
+  .infowindow-icon class="#{location.resource.class.to_s.downcase}"
+  .infowindow-header
+    h2 = link_to location.resource.title, location.resource
+
+  .infowindow-body
+    = markdown truncate(location.resource.summary, length: 150, separator: ' ')
+
