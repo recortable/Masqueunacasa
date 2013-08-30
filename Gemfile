@@ -24,6 +24,7 @@ gem 'friendly_id'
 gem 'acts_as_list'
 gem 'textacular' # exposes full text search capabilities from PostgreSQL
 gem 'gmaps4rails'
+gem 'public_activity'
 
 # Para subir ficheros e imágenes al servidor
 gem "mini_magick" # Para modificar imágenes (lo usa carrierwave)
