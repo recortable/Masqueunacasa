@@ -3,6 +3,7 @@ require 'spec_helper'
 shared_examples_for "track" do |resource_type|
 
   let(:user) { login_user create(:user) }
+  let(:admin) { login_user create(:user, admin: true) }
   let(:resource) { create(resource_type) }
 
   it "creation" do
@@ -45,6 +46,14 @@ shared_examples_for "track" do |resource_type|
     expect( last_activity.key ).to eq("#{resource_type}.translate")
     expect( trackable.title ).to eq(title)
     expect( trackable.summary ).to eq(summary)
+  end
+
+  it "destroy" do
+    admin
+    resource
+    visit send("#{resource_type}_path", resource)
+    click_link "Borrar"
+    expect( last_activity.key ).to eq("#{resource_type}.destroy")
   end
 
   def last_activity

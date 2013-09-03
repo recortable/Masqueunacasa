@@ -5,25 +5,33 @@ class ActivityTracker
     @new_translation = action == :update &&
       trackable.respond_to?('new_translation') &&
       trackable.new_translation == "true"
-    @key = key(action)
+    @key = @new_translation ? :translate : action
   end
 
   def track
     @key = :translate if @new_translation
-    @trackable.create_activity @key, owner: @owner, params: parameters
+    if @key == :destroy
+      track_destroy
+    else
+      @trackable.create_activity @key, owner: @owner, params: parameters
+    end
   end
 
   private
 
-  def key(action)
-    if @new_translation
-      :translate
-    else
-      action
-    end
+  def parameters
+    { locale: T.l.to_s, attributes: @trackable.attributes }
   end
 
-  def parameters
-    { locale: T.l.to_s }
+  def track_destroy
+    activity = PublicActivity::Activity.new
+    activity.owner = @owner
+    activity.assign_attributes({
+      key: "#{@trackable.class.name.downcase}.destroy",
+      trackable_id: @trackable.id,
+      trackable_type: @trackable.class.name,
+      parameters: parameters
+    }, without_protection: true)
+    activity.save
   end
 end
