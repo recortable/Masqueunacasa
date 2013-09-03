@@ -14,8 +14,7 @@ class Location < ActiveRecord::Base
   scope :of_experiencies, where(resource_type: 'Expeiencie')
 
   def geocode?
-    #(address.present? && (latitude.blank? || longitude.blank? )) || address_changed?
-    true
+    (address.present? && (latitude.blank? || longitude.blank? )) || address_changed?
   end
 
   def save_address_components(data)
