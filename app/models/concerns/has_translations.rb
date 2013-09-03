@@ -4,6 +4,9 @@ module HasTranslations
 
   included do
     before_create :set_original_locale
+
+    attr_accessible :new_translation
+    attr_accessor :new_translation
   end
 
   def translated_to?(locale)

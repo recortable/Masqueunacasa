@@ -88,13 +88,13 @@ module ApplicationHelper
   def link_code
     code = "[#{t('application.internal_link_code.link_text')}]"
     code += "(::" + controller.controller_name
-    code += "::" + object_id.to_s if object_id
+    code += "::" + object_identifier.to_s if object_identifier
     code += "::)"
   end
 
 private
 
-  def object_id
+  def object_identifier
     params[:id].present? ?
       controller.controller_name.classify.constantize.find(params[:id]).id :
       nil

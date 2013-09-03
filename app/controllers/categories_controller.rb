@@ -47,7 +47,7 @@ class CategoriesController < ApplicationController
     authorize! :create, category
 
     if category.save
-      flash[:notice] = t('categories.notices.created') if category.save
+      flash[:notice] = t('categories.notices.created')
       respond_with [category.phase, category]
     else
       render 'new'

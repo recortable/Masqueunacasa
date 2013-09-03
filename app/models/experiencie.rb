@@ -1,4 +1,6 @@
 class Experiencie < ActiveRecord::Base
+  include PublicActivity::Common
+
   include HasTranslations
   translates :title, :summary, :body
 

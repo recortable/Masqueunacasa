@@ -47,19 +47,25 @@ class ExperienciesController < ApplicationController
   def create
     experiencie.user = current_user
     authorize! :create, experiencie
-    flash[:notice] = t('experiencies.notices.created') if experiencie.save
+    if track_action(experiencie) { save }
+      flash[:notice] = t('experiencies.notices.created')
+    end
     respond_with experiencie
   end
 
   def update
     authorize! :update, experiencie
-    flash[:notice] = t('experiencies.notices.updated') if experiencie.save
+    if track_action(experiencie) { save }
+      flash[:notice] = t('experiencies.notices.updated')
+    end
     respond_with experiencie
   end
 
   def destroy
     authorize! :destroy, experiencie
-    flash[:notice] = t('experiencies.notices.destroyed') if experiencie.destroy
+    if track_action(experiencie) { destroy }
+      flash[:notice] = t('experiencies.notices.destroyed')
+    end
     respond_with experiencie, location: experiencies_path
   end
 

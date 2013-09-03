@@ -141,6 +141,18 @@ es:
       block_title: Experiencias relacionadas
       add_related_experiencie: Añadir experiencia relacionada
 
+  public_activity:
+    block_title: "Actividad reciente:"
+
+    experiencie:
+      create:
+        action: ha creado la experiencia
+      translate:
+        action: ha traducido la experiencia
+        to_locale: al %{lang}
+      update:
+        action: ha actualizado la versión en %{lang} de la experiencia
+
   relations:
     notices:
       created: 'Relación creada'
@@ -155,7 +167,7 @@ es:
       text: "Estás editando la versión en %{current_locale} de este contenido, también puedes"
       translation: "%{action} la versión en %{lang}"
     related_links:
-      block_title: Recursos online relacionados
+      block_title: "Recursos online relacionados:"
 
   users:
     edit:

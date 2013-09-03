@@ -10,9 +10,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale_from_url
   include SlugRedirections ## Tiene que ir después de :set_locale_from_url
 
-  expose(:themes) { 'textura02 rojo' }
-
-  expose(:with_banner) { false }
+  expose(:activities) { PublicActivity::Activity.order("created_at DESC") }
 
   # Sobreescribimos el current_ability https://github.com/ryanb/cancan/wiki/Changing-Defaults
   def current_ability
@@ -44,14 +42,26 @@ class ApplicationController < ActionController::Base
   ## Esto es para mantener el soporte a antiguas rutas sin el prefijo de idioma, pero puede que se lance la
   ## excepción ActionView::MissingTemplate en aquellas rutas para las que no haya ningún controlador ni acción.
   rescue_from ActionView::MissingTemplate do |exception|
-    controller_name == "application" ?
-      raise(ActionController::RoutingError.new "No route matches '#{request.fullpath}'") :
+    if controller_name == "application"
+      raise(ActionController::RoutingError.new "No route matches '#{request.fullpath}'")
+    else
       raise(exception)
+    end
   end
 
   private
 
   def markitup_preview
     request.fullpath.include? "markitup/preview"
+  end
+
+  def track_action(model, action = action_name.to_sym, &block)
+    tracker = ActivityTracker.new(model, current_user, action)
+    if model.instance_eval(&block)
+      tracker.track(action)
+      true
+    else
+      false
+    end
   end
 end

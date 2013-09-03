@@ -1,0 +1,6 @@
+.right-block.activities-block
+  .block-header
+    = t 'public_activity.block_title'
+  - activities.each do |activity|
+    = render_activity activity if activity.trackable
+

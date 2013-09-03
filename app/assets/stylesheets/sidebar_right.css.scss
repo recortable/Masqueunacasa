@@ -136,3 +136,23 @@
   }
 }
 
+.right-block.activities-block {
+  .block-header {
+    background-color: #adadad;
+    font-weight: bold;
+  }
+
+  .block-header, .block-row {
+    padding: 6px 8px;
+    min-height: 2em;
+  }
+
+  .block-row {
+    border-bottom: 1px solid #adadad;
+  }
+
+  .block-row:last-child {
+    border-bottom: none;
+  }
+}
+

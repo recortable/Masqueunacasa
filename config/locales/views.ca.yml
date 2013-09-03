@@ -130,6 +130,18 @@ ca:
       block_title: Experiències relacionades
       add_related_experiencie: Afegir experiència relacionada
 
+  public_activity:
+    block_title: "Activitat recent:"
+
+    experiencie:
+      create:
+        action: "ha creat l'experiència"
+      translate:
+        action: "ha traduït l'experiència"
+        to_locale: al %{lang}
+      update:
+        action: "ha actualitzat la versió en %{lang} de l'experiència"
+
   relations:
     notices:
       created: 'Relació creada'
@@ -144,7 +156,7 @@ ca:
       text: "Estàs editant la versió en %{current_locale} d'aquest contingut, també pots"
       translation: "%{action} la versió en %{lang}"
     related_links:
-      block_title: Recursos online relacionats
+      block_title: "Recursos online relacionats:"
 
   users:
     edit:
