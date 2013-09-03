@@ -31,8 +31,12 @@ shared_examples_for "track" do |resource_type|
 
   it "translation" do
     user
+    resource
     locale = T.avl.reject { |l| l == T.dfl }.first
     visit T.w_l(locale) { send("edit_#{resource_type}_path", resource) }
+
+    expect( resource.translated_to?(locale) ).not_to be_true
+
     title = "The #{resource_type} translated title"
     summary = "The #{resource_type} translated summary"
     fill_in "#{resource_type}_title", with: title
@@ -43,21 +47,12 @@ shared_examples_for "track" do |resource_type|
     expect( trackable.summary ).to eq(summary)
   end
 
-  it "only if resource have changes"#do
-    #ActiveRecord::Base.connection().execute("delete from activities")
-    #user
-
-    #visit send("edit_#{resource_type}_path", resource)
-    #click_button "commit"
-    #expect( trackable ).not_to eq(resource)
-  #end
-
   def last_activity
     PublicActivity::Activity.order("created_at DESC").first
   end
 
   def trackable
-    last_activity.trackable
+    last_activity.try('trackable')
   end
 end
 

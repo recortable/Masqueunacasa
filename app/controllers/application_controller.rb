@@ -58,7 +58,7 @@ class ApplicationController < ActionController::Base
   def track_action(model, action = action_name.to_sym, &block)
     tracker = ActivityTracker.new(model, current_user, action)
     if model.instance_eval(&block)
-      tracker.track(action)
+      tracker.track
       true
     else
       false
