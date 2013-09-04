@@ -29,19 +29,25 @@ class GroupsController < ApplicationController
   def create
     group.user = current_user
     authorize! :create, group
-    flash[:notice] = t('.created') if group.save
+    if track_action(group) { save }
+      flash[:notice] = t('.created')
+    end
     respond_with group
   end
 
   def update
     authorize! :update, group
-    flash[:notice] = t('groups.notices.updated') if group.update_attributes(params[:group])
+    if track_action(group) { save }
+      flash[:notice] = t('groups.notices.updated')
+    end
     respond_with group
   end
 
   def destroy
     authorize! :destroy, group
-    flash[:notice] = t('groups.notices.deleted') if group.destroy
+    if track_action(group) { destroy }
+      flash[:notice] = t('groups.notices.deleted')
+    end
     respond_with group, location: community_path
   end
 end

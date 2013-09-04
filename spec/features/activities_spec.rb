@@ -12,6 +12,7 @@ shared_examples_for "track" do |resource_type|
     summary = "The #{resource_type} summary"
     fill_in "#{resource_type}_title", with: title
     fill_in "#{resource_type}_summary", with: summary
+    fill_in "group_name", with: "The group name" if resource_type == 'group'
     click_submit
     expect( trackable.title ).to eq(title)
     expect( trackable.summary ).to eq(summary)
@@ -87,5 +88,9 @@ end
 
 describe "Proposal activities" do
   it_behaves_like "track", 'proposal'
+end
+
+describe "Groups activities" do
+  it_behaves_like "track", 'group'
 end
 

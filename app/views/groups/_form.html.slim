@@ -3,6 +3,9 @@
 
   = form.error_notification
 
+  = form.input :new_translation, as: :hidden,
+      input_html: { value: !group.translated_to?(T.l) }
+
   = form.input :avatar_image
   = form.input :name, hint: \
     "#{t('simple_form.hints.non_translatable_field') unless \
