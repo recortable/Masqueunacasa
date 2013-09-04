@@ -153,6 +153,33 @@ es:
       update:
         action: ha actualizado la versión en %{lang} de la experiencia
 
+    proposal:
+      create:
+        action: ha creado la propuesta
+      translate:
+        action: ha traducido la propuesta
+        to_locale: al %{lang}
+      update:
+        action: ha actualizado la versión en %{lang} de la propuesta
+
+    category:
+      create:
+        action: ha creado la prgunta
+      translate:
+        action: ha traducido la prgunta
+        to_locale: al %{lang}
+      update:
+        action: ha actualizado la versión en %{lang} de la prgunta
+
+    group:
+      create:
+        action: ha creado el grupo
+      translate:
+        action: ha traducido el grupo
+        to_locale: al %{lang}
+      update:
+        action: ha actualizado la versión en %{lang} del grupo
+
   relations:
     notices:
       created: 'Relación creada'

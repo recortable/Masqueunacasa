@@ -142,6 +142,33 @@ ca:
       update:
         action: "ha actualitzat la versió en %{lang} de l'experiència"
 
+    proposal:
+      create:
+        action: "ha creat la proposta"
+      translate:
+        action: "ha traduït la proposta"
+        to_locale: al %{lang}
+      update:
+        action: "ha actualitzat la versió en %{lang} de la proposta"
+
+    category:
+      create:
+        action: "ha creat la pregunta"
+      translate:
+        action: "ha traduït la pregunta"
+        to_locale: al %{lang}
+      update:
+        action: "ha actualitzat la versió en %{lang} de la pregunta"
+
+    group:
+      create:
+        action: "ha creat el grup"
+      translate:
+        action: "ha traduït el grup"
+        to_locale: al %{lang}
+      update:
+        action: "ha actualitzat la versió en %{lang} del grup"
+
   relations:
     notices:
       created: 'Relació creada'
