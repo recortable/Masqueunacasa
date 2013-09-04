@@ -2,13 +2,12 @@ require 'spec_helper'
 
 shared_examples_for "track" do |resource_type|
 
-  let(:user) { login_user create(:user) }
-  let(:admin) { login_user create(:user, admin: true) }
+  let(:user) { login_user create(:user, admin: true) }
   let(:resource) { create(resource_type) }
 
   it "creation" do
     user
-    visit send("new_#{resource_type}_path")
+    visit get_url(resource_type, :new)
     title = "The #{resource_type} title"
     summary = "The #{resource_type} summary"
     fill_in "#{resource_type}_title", with: title
@@ -20,7 +19,7 @@ shared_examples_for "track" do |resource_type|
 
   it "update" do
     user
-    visit send("edit_#{resource_type}_path", resource)
+    visit get_url(resource_type, :edit, resource)
     title = "The #{resource_type} updated title"
     summary = "The #{resource_type} updated summary"
     fill_in "#{resource_type}_title", with: title
@@ -34,7 +33,7 @@ shared_examples_for "track" do |resource_type|
     user
     resource
     locale = T.avl.reject { |l| l == T.dfl }.first
-    visit T.w_l(locale) { send("edit_#{resource_type}_path", resource) }
+    visit T.w_l(locale) { get_url(resource_type, :edit, resource) }
 
     expect( resource.translated_to?(locale) ).not_to be_true
 
@@ -49,7 +48,7 @@ shared_examples_for "track" do |resource_type|
   end
 
   it "destroy" do
-    admin
+    user
     resource
     visit send("#{resource_type}_path", resource)
     click_link "Borrar"
@@ -63,9 +62,30 @@ shared_examples_for "track" do |resource_type|
   def trackable
     last_activity.try('trackable')
   end
+
+  def get_url(resource_type, action, object = nil)
+    components = []
+    components << action
+    if resource_type == 'proposal' && action == :new
+      category = FactoryGirl.create(:category)
+      components << category
+    end
+
+    components << if action == :new
+      resource_type
+    else
+      object
+    end
+
+    url_for(components)
+  end
 end
 
 describe "Experiencies activities" do
   it_behaves_like "track", 'experiencie'
+end
+
+describe "Proposal activities" do
+  it_behaves_like "track", 'proposal'
 end
 

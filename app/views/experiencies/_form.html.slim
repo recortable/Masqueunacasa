@@ -2,7 +2,7 @@
   html: { multipart: true } do |form|
   = form.error_notification
   = form.input :new_translation, as: :hidden,
-    input_html: { value: !experiencie.translated_to?(T.l) }
+      input_html: { value: !experiencie.translated_to?(T.l) }
   = form.input :related_proposal_id, as: :hidden
   fieldset.basic-info
     legend = t('sidebar_left.form_links.basic_info')

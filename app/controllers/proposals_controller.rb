@@ -47,20 +47,26 @@ class ProposalsController < ApplicationController
   def create
     proposal.user = current_user
     authorize! :create, proposal
-    flash[:notice] = t('proposals.notices.created') if proposal.save
+    if track_action(proposal) { save }
+      flash[:notice] = t('proposals.notices.created')
+    end
 
     respond_with proposal
   end
 
   def update
     authorize! :update, proposal
-    flash[:notice] = t('proposals.notices.updated') if proposal.save
+    if track_action(proposal) { save }
+      flash[:notice] = t('proposals.notices.updated')
+    end
     respond_with proposal
   end
 
   def destroy
     authorize! :destroy, proposal
-    flash[:notice] = t('proposals.notices.destroyed') if proposal.destroy
+    if track_action(proposal) { destroy }
+      flash[:notice] = t('proposals.notices.destroyed')
+    end
     respond_with proposal, location: [proposal.phase, proposal.category]
   end
 

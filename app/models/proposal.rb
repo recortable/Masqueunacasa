@@ -1,4 +1,6 @@
 class Proposal < ActiveRecord::Base
+  include PublicActivity::Common
+
   include HasTranslations
   translates :title, :description, :body, :summary
 
@@ -42,11 +44,6 @@ class Proposal < ActiveRecord::Base
 
   before_save :add_phase
   after_save :propagate_category
-
-  # TODO: a la espera de subir imágenes
-  def avatar_image?
-    false
-  end
 
   def add_relation(experiencie, user)
     Relation.create(user: user, proposal: self, experiencie: experiencie)
