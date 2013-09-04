@@ -1,7 +1,11 @@
-= simple_nested_form_for [category.phase, category],
+- url_components = (controller.action_name == 'new') ? [category] : [phase, category]
+
+= simple_nested_form_for url_components,
   html: { multipart: true } do |form|
 
   = form.error_notification
+  = form.input :new_translation, as: :hidden,
+      input_html: { value: !category.translated_to?(T.l) }
 
   = form.input :title, input_html: { class: 'span5' }
   = form.input :name

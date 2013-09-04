@@ -7,12 +7,22 @@ shared_examples_for "track" do |resource_type|
 
   it "creation" do
     user
+
+    phase = create(:phase) if resource_type == 'category'
+
     visit get_url(resource_type, :new)
     title = "The #{resource_type} title"
     summary = "The #{resource_type} summary"
     fill_in "#{resource_type}_title", with: title
     fill_in "#{resource_type}_summary", with: summary
+
     fill_in "group_name", with: "The group name" if resource_type == 'group'
+
+    if resource_type == 'category'
+      fill_in "category_name", with: "The category name"
+      select phase.title, from: 'Fase'
+    end
+
     click_submit
     expect( trackable.title ).to eq(title)
     expect( trackable.summary ).to eq(summary)
@@ -56,6 +66,8 @@ shared_examples_for "track" do |resource_type|
     expect( last_activity.key ).to eq("#{resource_type}.destroy")
   end
 
+  private
+
   def last_activity
     PublicActivity::Activity.order("created_at DESC").first
   end
@@ -68,8 +80,9 @@ shared_examples_for "track" do |resource_type|
     components = []
     components << action
     if resource_type == 'proposal' && action == :new
-      category = FactoryGirl.create(:category)
-      components << category
+      components << create(:category)
+    elsif resource_type == 'category' && action == :edit
+      components << object.phase
     end
 
     components << if action == :new
@@ -80,6 +93,10 @@ shared_examples_for "track" do |resource_type|
 
     url_for(components)
   end
+end
+
+describe "Categories activities" do
+  it_behaves_like "track", 'category'
 end
 
 describe "Experiencies activities" do

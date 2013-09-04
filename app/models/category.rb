@@ -1,4 +1,6 @@
 class Category < ActiveRecord::Base
+  include PublicActivity::Common
+
   include HasTranslations
   translates :title, :name, :summary, :body
 

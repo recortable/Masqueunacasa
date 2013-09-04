@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   respond_to :html
 
   include HasListActions
-  expose(:phase) { Phase.find params[:phase_id] }
+  expose(:phase) { Phase.find params[:phase_id] if params[:phase_id] }
   expose(:parent) { params[:phase_id].present? ? phase : nil }
   expose(:categories) { parent.present? ? parent.categories : Category.scoped }
   expose(:category)
@@ -46,7 +46,7 @@ class CategoriesController < ApplicationController
     category.user = current_user
     authorize! :create, category
 
-    if category.save
+    if track_action(category) { save }
       flash[:notice] = t('categories.notices.created')
       respond_with [category.phase, category]
     else
@@ -56,15 +56,18 @@ class CategoriesController < ApplicationController
 
   def update
     authorize! :update, category
-    category.attributes = params[:category]
-    flash[:notice] = t('categories.notices.updated') if category.save
-    respond_with category
+    if track_action(category) { save }
+      flash[:notice] = t('categories.notices.updated')
+    end
+    respond_with [category.phase, category]
   end
 
   def destroy
     authorize! :destroy, category
-    flash[:notice] = t('categories.notices.destroyed') if category.destroy
-    respond_with [phase, category], location: phase
+    if track_action(category) { destroy }
+      flash[:notice] = t('categories.notices.destroyed')
+    end
+    respond_with [phase, category], location: phases_url
   end
 
   def up
