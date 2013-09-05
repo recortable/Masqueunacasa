@@ -9,11 +9,6 @@ Masqueunacasa::Application.routes.draw do
     resources :comments, only: [:create, :edit, :update, :destroy]
   end
 
-  concern :position do
-    put :up, on: :member
-    put :down, on: :member
-  end
-
   # PARTE SOCIAL
   resources :users
   resources :groups do
@@ -21,8 +16,6 @@ Masqueunacasa::Application.routes.draw do
   end
 
   # GENERAL
-  resources :images, only: [:up, :down], concerns: :position do
-  end
 
   resources :locations, only: [:index]
 
@@ -44,7 +37,7 @@ Masqueunacasa::Application.routes.draw do
   resources :user_sessions, only: [:new, :create, :destroy]
   resources :password_recoveries
 
-  resources :notices, concerns: [:position]
+  resources :notices
 
   # HABITAPEDIA
 
@@ -52,12 +45,12 @@ Masqueunacasa::Application.routes.draw do
     get :dashboard, on: :collection
   end
 
-  resources :categories, only: [:show, :new, :create], concerns: [:document, :position, :commentable] do
+  resources :categories, only: [:show, :new, :create], concerns: [:document, :commentable] do
     get :dashboard, on: :collection
     resources :proposals, only: [:new]
   end
 
-  resources :proposals, except: [:new], path: '/phases/proposals', concerns: [:document, :position, :commentable] do
+  resources :proposals, except: [:new], path: '/phases/proposals', concerns: [:document, :commentable] do
     get :dashboard, on: :collection
     resources :relations, only: [:new, :create, :destroy]
   end
