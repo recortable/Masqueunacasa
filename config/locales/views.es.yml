@@ -46,6 +46,10 @@ es:
   comments:
     edit:
       title: Editar comentario
+    comment:
+      time_ago: Hace %{time}
+    comments:
+      new_comment: "Envia un comentario:"
 
   dashboard:
     admin_area:

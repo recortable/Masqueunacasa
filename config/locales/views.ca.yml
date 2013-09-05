@@ -44,6 +44,14 @@ ca:
     related_proposals:
       block_title: "Davant d'aquesta pregunta s'han plantejat les propostes següents"
 
+  comments:
+    edit:
+      title: Editar comentari
+    comment:
+      time_ago: Fa %{time}
+    comments:
+      new_comment: "Envia un comentari:"
+
   dashboard:
     admin_area:
       title: Àrea d'administració

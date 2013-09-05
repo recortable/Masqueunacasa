@@ -1,18 +1,33 @@
-#comments .comment {
-  margin-bottom: 1.5em;
-}
+#comments {
+  margin-top: 20px;
 
-#comments .comment-author {
-  padding: 0.5em 1.5em 0.5em 0.5em;
-  float: left;
-  font-weight: bold;
-  border-left: 1px solid #000;
-  border-top: 1px solid #000;
-}
+  .comment {
+    margin-bottom: 1.5em;
+    background: #f6f6f6;
 
-#comments .comment-content {
-  padding: 0.5em;
-  border: 1px solid #000;
-  clear: both;
+    .comment-data {
+      background: #eee;
+
+      .user-avatar {
+        float: left;
+        margin-right: 8px;
+      }
+
+      .comment-author {
+        margin-top: 4px;
+        font-size: 110%;
+        font-weight: bold;
+      }
+
+      .comment-time {
+        font-size: 75%;
+      }
+    }
+
+    .comment-content {
+      padding: 0.5em;
+      clear: both;
+    }
+  }
 }
 

@@ -1,0 +1,11 @@
+#comments.comments.row
+  .span6
+    h3 = Comment.model_name.human(count: 2).titleize
+
+    - if can? :create, Comment
+      .new-comment
+        h4 = t '.new_comment'
+        = render 'comments/form', document: document, comment: Comment.new
+
+    = render document.comments
+

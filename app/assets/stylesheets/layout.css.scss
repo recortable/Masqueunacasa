@@ -18,7 +18,8 @@ noscript .pad {
 }
 
 #main-content {
-  padding-bottom: 80px;
+  margin-bottom: 80px;
+  border-bottom: 2px dashed #999;
 }
 
 .doc-icon { display: block; margin: 30px auto; }
