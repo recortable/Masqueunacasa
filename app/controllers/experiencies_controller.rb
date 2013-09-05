@@ -1,4 +1,6 @@
 class ExperienciesController < ApplicationController
+  include ActionTracker
+
   respond_to :html
 
   expose(:themes) { 'textura09 negro' }
@@ -47,7 +49,7 @@ class ExperienciesController < ApplicationController
   def create
     experiencie.user = current_user
     authorize! :create, experiencie
-    if track_action(experiencie) { save }
+    if track_action(experiencie, :save)
       flash[:notice] = t('experiencies.notices.created')
     end
     respond_with experiencie
@@ -55,7 +57,7 @@ class ExperienciesController < ApplicationController
 
   def update
     authorize! :update, experiencie
-    if track_action(experiencie) { save }
+    if track_action(experiencie, :save)
       flash[:notice] = t('experiencies.notices.updated')
     end
     respond_with experiencie
@@ -63,7 +65,7 @@ class ExperienciesController < ApplicationController
 
   def destroy
     authorize! :destroy, experiencie
-    if track_action(experiencie) { destroy }
+    if track_action(experiencie, :destroy)
       flash[:notice] = t('experiencies.notices.destroyed')
     end
     respond_with experiencie, location: experiencies_path

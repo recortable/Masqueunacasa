@@ -54,14 +54,4 @@ class ApplicationController < ActionController::Base
   def markitup_preview
     request.fullpath.include? "markitup/preview"
   end
-
-  def track_action(model, action = action_name.to_sym, &block)
-    tracker = ActivityTracker.new(model, current_user, action)
-    if model.instance_eval(&block)
-      tracker.track
-      true
-    else
-      false
-    end
-  end
 end

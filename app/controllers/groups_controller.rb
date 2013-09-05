@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  include ActionTracker
+
   respond_to :html
 
   expose(:groups) { Group.all }
@@ -29,7 +31,7 @@ class GroupsController < ApplicationController
   def create
     group.user = current_user
     authorize! :create, group
-    if track_action(group) { save }
+    if track_action(group, :save)
       flash[:notice] = t('.created')
     end
     respond_with group
@@ -37,7 +39,7 @@ class GroupsController < ApplicationController
 
   def update
     authorize! :update, group
-    if track_action(group) { save }
+    if track_action(group, :save)
       flash[:notice] = t('groups.notices.updated')
     end
     respond_with group
@@ -45,7 +47,7 @@ class GroupsController < ApplicationController
 
   def destroy
     authorize! :destroy, group
-    if track_action(group) { destroy }
+    if track_action(group, :destroy)
       flash[:notice] = t('groups.notices.deleted')
     end
     respond_with group, location: community_path

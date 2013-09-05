@@ -1,5 +1,7 @@
 # encoding: utf-8
 class ProposalsController < ApplicationController
+  include ActionTracker
+
   respond_to :html
 
   include HasListActions
@@ -47,7 +49,7 @@ class ProposalsController < ApplicationController
   def create
     proposal.user = current_user
     authorize! :create, proposal
-    if track_action(proposal) { save }
+    if track_action(proposal, :save)
       flash[:notice] = t('proposals.notices.created')
     end
 
@@ -56,7 +58,7 @@ class ProposalsController < ApplicationController
 
   def update
     authorize! :update, proposal
-    if track_action(proposal) { save }
+    if track_action(proposal, :save)
       flash[:notice] = t('proposals.notices.updated')
     end
     respond_with proposal
@@ -64,18 +66,9 @@ class ProposalsController < ApplicationController
 
   def destroy
     authorize! :destroy, proposal
-    if track_action(proposal) { destroy }
+    if track_action(proposal, :destroy)
       flash[:notice] = t('proposals.notices.destroyed')
     end
     respond_with proposal, location: [proposal.phase, proposal.category]
   end
-
-  def up
-    respond_with move_up(proposal), location: proposal.category
-  end
-
-  def down
-    respond_with move_down(proposal), location: proposal.category
-  end
-
 end

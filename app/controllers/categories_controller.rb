@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  include ActionTracker
+
   respond_to :html
 
   include HasListActions
@@ -46,7 +48,7 @@ class CategoriesController < ApplicationController
     category.user = current_user
     authorize! :create, category
 
-    if track_action(category) { save }
+    if track_action(category, :save)
       flash[:notice] = t('categories.notices.created')
       respond_with [category.phase, category]
     else
@@ -56,7 +58,7 @@ class CategoriesController < ApplicationController
 
   def update
     authorize! :update, category
-    if track_action(category) { save }
+    if track_action(category, :save)
       flash[:notice] = t('categories.notices.updated')
     end
     respond_with [category.phase, category]
@@ -64,17 +66,9 @@ class CategoriesController < ApplicationController
 
   def destroy
     authorize! :destroy, category
-    if track_action(category) { destroy }
+    if track_action(category, :destroy)
       flash[:notice] = t('categories.notices.destroyed')
     end
     respond_with [phase, category], location: phases_url
-  end
-
-  def up
-    respond_with move_up(category), location: category.phase
-  end
-
-  def down
-    respond_with move_down(category), location: category.phase
   end
 end
