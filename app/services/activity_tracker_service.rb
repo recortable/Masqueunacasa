@@ -41,8 +41,7 @@ class ActivityTrackerService
         trackable_id: @activity.trackable_id,
         trackable_type: @activity.trackable_type,
         owner_id: @activity.owner_id,
-        owner_type: @activity.owner_type,
-        key: @activity.key
+        owner_type: @activity.owner_type
       ).where("created_at > ?", 1.hour.ago).exists?
   end
 end
