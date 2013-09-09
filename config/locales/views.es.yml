@@ -148,24 +148,6 @@ es:
   public_activity:
     block_title: "Actividad reciente:"
 
-    experiencie:
-      create:
-        action: ha creado la experiencia
-      translate:
-        action: ha traducido la experiencia
-        to_locale: al %{lang}
-      update:
-        action: ha actualizado la versión en %{lang} de la experiencia
-
-    proposal:
-      create:
-        action: ha creado la propuesta
-      translate:
-        action: ha traducido la propuesta
-        to_locale: al %{lang}
-      update:
-        action: ha actualizado la versión en %{lang} de la propuesta
-
     category:
       create:
         action: ha creado la prgunta
@@ -175,6 +157,20 @@ es:
       update:
         action: ha actualizado la versión en %{lang} de la prgunta
 
+    comment:
+      create:
+        action: ha añadido un
+        to: en
+
+    experiencie:
+      create:
+        action: ha creado la experiencia
+      translate:
+        action: ha traducido la experiencia
+        to_locale: al %{lang}
+      update:
+        action: ha actualizado la versión en %{lang} de la experiencia
+
     group:
       create:
         action: ha creado el grupo
@@ -183,6 +179,15 @@ es:
         to_locale: al %{lang}
       update:
         action: ha actualizado la versión en %{lang} del grupo
+
+    proposal:
+      create:
+        action: ha creado la propuesta
+      translate:
+        action: ha traducido la propuesta
+        to_locale: al %{lang}
+      update:
+        action: ha actualizado la versión en %{lang} de la propuesta
 
   relations:
     notices:

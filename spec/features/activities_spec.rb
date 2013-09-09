@@ -95,6 +95,25 @@ shared_examples_for "track" do |resource_type|
   end
 end
 
+describe "Comments activities" do
+  let(:document) { create :experiencie }
+  let(:user) { login_user(create :user, admin: true) }
+  let(:comment) { create :comment }
+
+  it "tracks creation" do
+    user
+    visit url_for(document)
+
+    within('#comments') do
+      fill_in 'comment_body', with: "some text"
+      click_submit
+    end
+    activity = PublicActivity::Activity.order("created_at DESC").first
+    expect( activity.key ).to eq('comment.create')
+    expect( activity.recipient ).to eq(document)
+  end
+end
+
 describe "Categories activities" do
   it_behaves_like "track", 'category'
 end

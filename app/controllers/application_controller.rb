@@ -10,7 +10,13 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale_from_url
   include SlugRedirections ## Tiene que ir después de :set_locale_from_url
 
-  expose(:activities) { PublicActivity::Activity.order("created_at DESC") }
+  expose(:activities) do
+    PublicActivity::Activity.
+      where("key not like ?", '%destroy%').
+      order("created_at DESC").
+      limit(20).
+      includes(:owner, :trackable, :recipient)
+  end
 
   # Sobreescribimos el current_ability https://github.com/ryanb/cancan/wiki/Changing-Defaults
   def current_ability

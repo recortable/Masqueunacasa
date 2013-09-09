@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  include ActionTracker
+
   respond_to :html
 
   expose_parent :document, [:proposal, :category, :experiencie]
@@ -8,7 +10,9 @@ class CommentsController < ApplicationController
   def create
     authorize! :create, Comment
     comment.user = current_user
-    flash[:notice] = "Comentario creado, gracias!" if comment.save
+    if track_action(comment, :save)
+      flash[:notice] = "Comentario creado, gracias!"
+    end
     respond_with comment, location: polymorphic_url(document, anchor: 'comments')
   end
 

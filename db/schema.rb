@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130830173444) do
+ActiveRecord::Schema.define(:version => 20130905175525) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -92,8 +92,9 @@ ActiveRecord::Schema.define(:version => 20130830173444) do
     t.integer  "user_id"
     t.integer  "document_id"
     t.string   "document_type"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.string   "locale",        :limit => 6
   end
 
   add_index "comments", ["document_id", "document_type"], :name => "index_comments_on_document_id_and_document_type"

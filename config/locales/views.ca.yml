@@ -141,24 +141,6 @@ ca:
   public_activity:
     block_title: "Activitat recent:"
 
-    experiencie:
-      create:
-        action: "ha creat l'experiència"
-      translate:
-        action: "ha traduït l'experiència"
-        to_locale: al %{lang}
-      update:
-        action: "ha actualitzat la versió en %{lang} de l'experiència"
-
-    proposal:
-      create:
-        action: "ha creat la proposta"
-      translate:
-        action: "ha traduït la proposta"
-        to_locale: al %{lang}
-      update:
-        action: "ha actualitzat la versió en %{lang} de la proposta"
-
     category:
       create:
         action: "ha creat la pregunta"
@@ -168,6 +150,20 @@ ca:
       update:
         action: "ha actualitzat la versió en %{lang} de la pregunta"
 
+    comment:
+      create:
+        action: ha afegit un
+        to: a
+
+    experiencie:
+      create:
+        action: "ha creat l'experiència"
+      translate:
+        action: "ha traduït l'experiència"
+        to_locale: al %{lang}
+      update:
+        action: "ha actualitzat la versió en %{lang} de l'experiència"
+
     group:
       create:
         action: "ha creat el grup"
@@ -176,6 +172,15 @@ ca:
         to_locale: al %{lang}
       update:
         action: "ha actualitzat la versió en %{lang} del grup"
+
+    proposal:
+      create:
+        action: "ha creat la proposta"
+      translate:
+        action: "ha traduït la proposta"
+        to_locale: al %{lang}
+      update:
+        action: "ha actualitzat la versió en %{lang} de la proposta"
 
   relations:
     notices:
