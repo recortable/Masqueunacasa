@@ -9,7 +9,7 @@ class ActivityTrackerService
   end
 
   def track
-    @activity.save
+    @activity.save unless duplicated_activity?
   end
 
   private
@@ -33,5 +33,16 @@ class ActivityTrackerService
     if @activity.trackable.class == Comment
       @activity.trackable.document
     end
+  end
+
+  def duplicated_activity?
+    @activity.key == :update &&
+      PublicActivity::Activity.where(
+        trackable_id: @activity.trackable_id,
+        trackable_type: @activity.trackable_type,
+        owner_id: @activity.owner_id,
+        owner_type: @activity.owner_type,
+        key: @activity.key
+      ).where("created_at > ?", 1.hour.ago).exists?
   end
 end
