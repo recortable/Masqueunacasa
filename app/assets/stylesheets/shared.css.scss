@@ -2,6 +2,12 @@ body {
   background: transparent;
 }
 
+#main-content {
+  #summary, .text_section {
+    padding-right: 12px;
+  }
+}
+
 /* Anular los estilos de bootstrap para algunos elementos para que usen las mismas tipos que el restp del sitio */
 
 input, button, select, textarea {
