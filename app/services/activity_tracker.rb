@@ -1,3 +1,7 @@
+# Molaría cambiar el nombre a ActivityTrackerService
+# o ActivityService para
+# seguir una convención y para que funcione con Rails.vim
+# (ver config/projections.json)
 class ActivityTracker
   def initialize(trackable, owner, action)
     @activity = PublicActivity::Activity.new

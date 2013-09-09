@@ -18,6 +18,7 @@ development:
   database: Masqueunacasa
   pool: 5
   username: postgres
+  host: localhost
   password: 
 
 production:
@@ -25,6 +26,7 @@ production:
   encoding: unicode
   database: Masqueunacasa
   pool: 5
+  host: localhost
   username: postgres
   password: 
 
@@ -33,6 +35,7 @@ test:
   encoding: unicode
   database: Masqueunacasa_test
   pool: 5
+  host: localhost
   username: postgres
   password: 
 
