@@ -1,0 +1,44 @@
+{
+  "app/models/*.rb": {
+    "command": "model",
+    "affinity": "model",
+    "alternate": ["spec/models/%s_test.rb"],
+    "related": "db/schema.rb#%s",
+    "template": "class %S\nend"
+  },
+ 
+  "spec/factories/*_factory.rb": {
+    "command": "factory",
+    "affinity": "model",
+    "related": "app/models/%s.rb",
+    "template": "FactoryGirl.define do\n  factory :%s do\n  end\nend"
+  },
+ 
+  "app/services/*_service.rb": {
+    "command": "srv",
+    "affinity": "model",
+    "alternate": ["spec/services/%s_service_test.rb"],
+    "related": "app/models/%s.rb",
+    "template": "class %SService\nend"
+  },
+
+  "app/workers/*_worker.rb": {
+    "command": "worker",
+    "affinity": "model",
+    "alternate": ["spec/workers/%s_worker_spec.rb"],
+    "related": "app/models/%s.rb",
+    "template": "class %SWorker\nend"
+  },
+
+  "app/presenters/*_presenter.rb": {
+    "command": "presenter",
+    "affinity": "model",
+    "alternate": ["spec/presenters/%s_presenter_test.rb"],
+    "related": "app/models/%s.rb",
+    "template": "class %SPresenter\nend"
+  },
+  "app/presenters/application_presenter.rb": { "command": "presenter" },
+ 
+  "lib/*.rb": { "alternate": "spec/lib/%s_spec.rb" },
+  "spec/lib/*_test.rb": { "alternate": "lib/%s.rb" },
+}
