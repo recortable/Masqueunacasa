@@ -70,6 +70,10 @@ gem 'newrelic_rpm'
 
 gem 'basic_config' # https://github.com/stephan778/basic_config
 
+# Scheduled jobs. Sidekiq extension
+gem 'sidetiq'
+gem 'sinatra', require: false # Required by Sidekiq::Web
+
 group :development do
   gem 'letter_opener'
   gem 'quiet_assets'
