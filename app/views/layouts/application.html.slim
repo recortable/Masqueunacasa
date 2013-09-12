@@ -1,0 +1,72 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+    meta name="description" content="Másqueunacasa: procesos colectivos de vivienda"
+    meta name="viewport" content="width=device-width"
+
+    title = yield(:title) + " :: Masqueunacasa"
+    link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic|Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'
+    link href='/favicon.png' rel='shortcut icon' type='image/png'
+
+    /[if lt IE 9]
+      script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"
+
+    /[if lte IE 8]
+      = javascript_include_tag 'respond.min'
+
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+
+    = csrf_meta_tags
+    = yield :head
+
+    body class="#{controller_class}"
+      #wrapper
+        = render 'header'
+
+        noscript
+          .container
+            .row
+              .span6.offset3
+                .pad
+                  = t '.no_script_message'
+
+        = render 'flashes'
+
+        #main.container
+          #page_content.row
+            .span8
+
+              // TABS //
+              .row
+                #tabs.span8
+                  = render 'tabs'
+
+              .row
+                #content.span8
+                  .row
+
+                    // Optional sidebar at left //
+                    - if content_for? :left
+                      #sidebar-left.span2.sidebar.left
+                        = yield :left
+
+                    // Main column //
+                    - size = main_content_span_size
+                    #main-content class="span#{ size }"
+                      = yield
+                      = render 'internal_link_code'
+
+            // RIGHT COLUMN //
+            #right-column.span4
+              = render 'sidebar_right/sidebar_right'
+
+        = render 'footer'
+
+        div style="display:none" = "Masqueunacasa version #{ ENV["RAILS_APP_VERSION"] }. AGPL3"
+
+      = yield :scripts
+      = render 'layouts/ga' if Rails.env == 'production'
+
