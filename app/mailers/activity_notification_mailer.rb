@@ -5,6 +5,7 @@ class ActivityNotificationMailer < ActionMailer::Base
 
   def email_for_admins(user, activities)
     @activities = activities
-    mail to: user.email, subject: "Bon dia"
+    mail to: user.email,
+         subject: "Notificacion de actividad en masqueunacasa.org"
   end
 end
