@@ -151,6 +151,8 @@ es:
     category:
       create:
         action: ha creado la prgunta
+      destroy:
+        action: "ha borrado la pregunta titulada \"%{trackable_title}\""
       translate:
         action: ha traducido la prgunta
         to_locale: al %{lang}
@@ -161,10 +163,14 @@ es:
       create:
         action: ha añadido un
         to: en
+      destroy:
+        action: ha borrado un comentario con el siguiente contenido
 
     experiencie:
       create:
         action: ha creado la experiencia
+      destroy:
+        action: "ha borrado la experiencia titulada \"%{trackable_title}\""
       translate:
         action: ha traducido la experiencia
         to_locale: al %{lang}
@@ -174,6 +180,8 @@ es:
     group:
       create:
         action: ha creado el grupo
+      destroy:
+        action: "ha borrado el grupo con nombre \"%{trackable_title}\""
       translate:
         action: ha traducido el grupo
         to_locale: al %{lang}
@@ -183,6 +191,8 @@ es:
     proposal:
       create:
         action: ha creado la propuesta
+      destroy:
+        action: "ha borrado la propuesta titulada \"%{trackable_title}\""
       translate:
         action: ha traducido la propuesta
         to_locale: al %{lang}

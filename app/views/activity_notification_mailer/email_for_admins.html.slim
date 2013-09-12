@@ -1,0 +1,7 @@
+h1 Actividad reciente en MASQUEUNACASA
+
+ul
+  - @activities.each do |activity|
+    - if activity.trackable || activity.key.include?('destroy')
+      li = render_activity activity
+

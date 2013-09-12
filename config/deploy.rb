@@ -1,4 +1,5 @@
 require "bundler/capistrano"
+require 'sidekiq/capistrano'
 
 load "config/recipes/base"
 load "config/recipes/nginx"

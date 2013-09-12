@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130905175525) do
+ActiveRecord::Schema.define(:version => 20130911223224) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(:version => 20130905175525) do
     t.text     "parameters"
     t.integer  "recipient_id"
     t.string   "recipient_type"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.boolean  "notified",       :default => false
   end
 
   add_index "activities", ["owner_id", "owner_type"], :name => "index_activities_on_owner_id_and_owner_type"

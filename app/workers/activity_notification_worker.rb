@@ -6,9 +6,16 @@ class ActivityNotificationWorker
 
   def perform
     users = User.where(id: 34)
+    activities = PublicActivity::Activity.where(notified: false).
+      order('created_at DESC')
 
-    users.each do |user|
-      ActivityNotificationMailer.activity_email(user).deliver
+    unless activities.empty?
+      users.each do |user|
+        ActivityNotificationMailer.email_for_admins(user, activities).deliver
+      end
     end
+
+    activities.update_all notified: true
   end
 end
+

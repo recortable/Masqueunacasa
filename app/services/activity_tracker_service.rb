@@ -26,7 +26,12 @@ class ActivityTrackerService
   end
 
   def parameters
-    { locale: T.l.to_s, attributes: @activity.trackable.changes }
+    params = { locale: T.l.to_s }
+    if @activity.key == :updatw
+      params.merge changes: @activity.trackable.changes.to_hash
+    else
+      params.merge attributes: @activity.trackable.attributes.to_hash
+    end
   end
 
   def recipient
@@ -45,3 +50,4 @@ class ActivityTrackerService
       ).where("created_at > ?", 1.hour.ago).exists?
   end
 end
+

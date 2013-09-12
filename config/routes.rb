@@ -1,3 +1,7 @@
+require 'sidekiq/web'
+require 'sidetiq/web'
+require 'admin_constraint'
+
 Masqueunacasa::Application.routes.draw do
   # CONCERNS
   concern :document do
@@ -70,6 +74,9 @@ Masqueunacasa::Application.routes.draw do
 
   # Rutas para el preview del editor de texto enriquecido
   mount Markitup::Rails::Engine, at: "markitup", as: "markitup"
+
+  # Ruta para la interfaz web de sidekiq
+  mount Sidekiq::Web, at: '/sidekiq', constraints: AdminConstraint.new
 
   # Para dar soporte a las rutas antiguas, que no tenian el parámetro con el locale en
   # el idioma por defecto

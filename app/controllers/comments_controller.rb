@@ -30,7 +30,8 @@ class CommentsController < ApplicationController
 
   def destroy
     authorize! :destroy, comment
-    flash[:notice] = "Comentario borrado, gracias!" if comment.destroy
+    flash[:notice] = "Comentario borrado, gracias!" if track_action(comment, :destroy)
     respond_with comment, location: polymorphic_url(document, anchor: 'comments')
   end
 end
+

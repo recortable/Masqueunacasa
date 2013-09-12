@@ -16,9 +16,9 @@ module CommentsHelper
 
   def parent_url(document)
     if document.class == Category
-      url_for [document.phase, document]
+      polymorphic_url [document.phase, document]
     else
-      url_for document
+      polymorphic_url document
     end
   end
 end

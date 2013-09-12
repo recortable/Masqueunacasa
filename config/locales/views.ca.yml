@@ -144,6 +144,8 @@ ca:
     category:
       create:
         action: "ha creat la pregunta"
+      destroy:
+        action: "ha esborrat la pregunta titulada \"%{trackable_title}\""
       translate:
         action: "ha traduït la pregunta"
         to_locale: al %{lang}
@@ -158,6 +160,8 @@ ca:
     experiencie:
       create:
         action: "ha creat l'experiència"
+      destroy:
+        action: "ha esborrat l'experiència titulada \"%{trackable_title}\""
       translate:
         action: "ha traduït l'experiència"
         to_locale: al %{lang}
@@ -167,6 +171,8 @@ ca:
     group:
       create:
         action: "ha creat el grup"
+      destroy:
+        action: "ha esborrat el grup de nom \"%{trackable_title}\""
       translate:
         action: "ha traduït el grup"
         to_locale: al %{lang}
@@ -176,6 +182,8 @@ ca:
     proposal:
       create:
         action: "ha creat la proposta"
+      destroy:
+        action: "ha esborrat la proposta titulada \"%{trackable_title}\""
       translate:
         action: "ha traduït la proposta"
         to_locale: al %{lang}

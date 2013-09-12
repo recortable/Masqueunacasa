@@ -1,3 +1,4 @@
 .activity.block-row
-  = "#{ link_to activity.owner.name, activity.owner } #{ t '.action' } \
-    #{ link_to activity.trackable.title, activity.trackable }.".html_safe
+  => link_to activity.owner.name, user_url(activity.owner)
+  => t '.action'
+  = link_to activity.trackable.title, polymorphic_url(activity.trackable)
