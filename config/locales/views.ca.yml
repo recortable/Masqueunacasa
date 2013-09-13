@@ -22,11 +22,6 @@ ca:
       label: Enllaç intern
       link_text: texto del enlace
 
-    session:
-      session_start: 'Iniciar sessió'
-      session_end: 'Sortir'
-      groups: Col·lectius
-
     tabs:
       home: Inici
       habitapedia: Preguntes y<br />propostes
@@ -68,18 +63,23 @@ ca:
     related_proposals:
       block_title: "En aquesta experiència s'han aplicat les següents propostes"
 
+  filters:
+    all: Tot
+    filter_by: Filtrar per
+    only: Només %{filter}
+
   groups:
     new:
       title: 'Afegir col.lectiu'
+    edit:
+      title: Editar %{group_name}
     index:
       title: 'Col·lectius'
       new_group: 'Afegir col·lectiu'
     notices:
       created: 'Col·lectiu afegit.'
       updated: 'Dades del col·lectiu actualitzades. Gràcies!'
-    show:
-      get_in_touch: "Posa't en contacte"
-      you_can_send_message: Des d'aquí pots enviar un missatge a aquest grup
+      deleted: Grup esborrat
 
   help_pages:
     new:
@@ -102,6 +102,12 @@ ca:
     es: Castellà
     fr: Francès
     it: Italià
+
+  layouts:
+    application:
+      no_script_message: "Per a veure i usar aquest lloc web amb totes les
+        funcionalitats és necessari tenir activat el javascript del navegador.
+        Disculpa les molèsties."
 
   locations:
     index:
@@ -156,6 +162,8 @@ ca:
       create:
         action: ha afegit un
         to: a
+      destroy:
+        action: ha esborrat un comentari amb el següent contingut
 
     experiencie:
       create:

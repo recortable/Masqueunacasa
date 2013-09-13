@@ -22,10 +22,6 @@ es:
       label: Enlace interno
       link_text: texto del enlace
 
-    session:
-      groups: Colectivos
-      community: 'Comunidad'
-
     tabs:
       home: Inicio
       habitapedia: Preguntas y<br />propuestas
@@ -84,9 +80,6 @@ es:
       created: 'Colectivo añadido.'
       updated: 'Datos del coletivo actualizados. Gracias'
       deleted: Se ha borrado el grupo.
-    show:
-      get_in_touch: Ponte en contacto
-      you_can_send_message: Desde aquí puedes enviar un mensaje a este grupo
 
   help_pages:
     new:
