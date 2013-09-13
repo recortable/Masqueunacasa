@@ -20,22 +20,19 @@ class UserSessionsController < ApplicationController
   def create
     if user_session.create
       login_user(user_session.user)
-      redirect_to path_or_default(params[:from]), notice: 'Bienvenidx'
+      redirect_to path_or_default(params[:from]),
+        notice: t('user_sessions.notices.created', user: user_session.user.name)
     else
-      flash.now[:error] = "Los datos no corresponden con nadie."
+      flash.now[:error] = t('user_sessions.notices.error')
       render "new"
     end
   end
 
   def destroy
-    if request.subdomain.present?
-      redirect_to logout_url(host: request.domain)
-    else
-      session[:user_id] = nil
-      flash[:notice] = "Adiós"
-      path = params[:from].present? ? params[:from] : root_path
-      redirect_to path
-    end
+    session[:user_id] = nil
+    flash[:notice] = t('user_sessions.notices.destroyed')
+    path = params[:from].present? ? params[:from] : root_path
+    redirect_to path
   end
 
   # Este método es una puerta de entrada que no está disponible en

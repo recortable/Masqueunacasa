@@ -3,7 +3,6 @@ class CategoriesController < ApplicationController
 
   respond_to :html
 
-  include HasListActions
   expose(:phase) { Phase.find params[:phase_id] if params[:phase_id] }
   expose(:parent) { params[:phase_id].present? ? phase : nil }
   expose(:categories) { parent.present? ? parent.categories : Category.scoped }

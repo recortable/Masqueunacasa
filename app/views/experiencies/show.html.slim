@@ -27,7 +27,7 @@
           = link_to icon_after(:edit, t('edit')), edit_experiencie_path(experiencie)
       - if can? :destroy, experiencie
         .control.block-row
-          = link_to icon_after(:trash, t('delete')), experiencie, method: :delete, confirm: "¿Seguro?"
+          = link_to icon_after(:trash, t('delete')), experiencie, method: :delete, confirm: t('app.confirm')
     .left-block.social
       .block-row
         = link_to icon(:twitter, 'Tweet'), "https://twitter.com/share?url=#{request.url}"

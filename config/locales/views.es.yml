@@ -46,6 +46,10 @@ es:
       time_ago: Hace %{time}
     comments:
       new_comment: "Envia un comentario:"
+    notices:
+      created: "Comentario creado. Gracias!!"
+      updated: "Comentario actualizado. Gracias!!"
+      destroyed: Comentario borrado.
 
   dashboard:
     admin_area:
@@ -85,13 +89,21 @@ es:
     new:
       title: Nueva página auxiliar
     edit:
-      title: Editar página auxiliar
+      title: Editar página auxiliar      
+    notices:
+      created: Página auxiliar creada correctamente. Gracias!!
+      updated: Página auxiliar actualizada correctamente. Gracias!!
+      destroyed: Página auxiliar eliminada.
 
   help_texts:
     new:
       title: Nueva ayuda contextual
     edit:
       title: Editar ayuda contextual
+    notices:
+      created: Texto de ayuda creado correctamente. Gracias!!
+      updated: Texto de ayuda actualizado correctamente. Gracias!!
+      destroyed: Texto de ayuda eliminado.
 
   langs:
     available_translations: Otros idiomas
@@ -111,6 +123,20 @@ es:
     index:
       title: Participantes en %{group}
       delete_membership: Borrar del grupo
+    notices:
+      added: Se ha añadido %{user} al grupo %{group}
+      already_member: Ya pertenecía al grupo
+
+  password_recoveries:
+    new:
+      title: Recuperar contraseña
+    show:
+      title: Cambiar contraseña
+    notices:
+      create: Hemos enviado las instrucciones a tu correo
+      user_not_found: 'No hemos encontrado nadie registrado con este email'
+      updated: 'Tu contraseña ha sido cambiada'
+      update_failed: 'Lo sentimos, no se ha podido cambiar tu contraseña. Inténtalo de nuevo.'
 
   phases:
     index:
@@ -193,6 +219,9 @@ es:
         action: ha actualizado la versión en %{lang} de la propuesta
 
   relations:
+    new:
+      title: Añadir experiencia relacionada
+      add_relation: Relacionar
     notices:
       created: 'Relación creada'
       destroyed: 'Relación borrada.'
@@ -228,4 +257,9 @@ es:
     new:
       title: 'Iniciar sesión'
       create_account: 'Crea una cuenta'
+      forgotten_password: Olvidé mi contraseña
+    notices:
+      created: Hola %{user}!!
+      destroyed: Hasta pronto!!
+      error: El correo o la contraseña no son correctos
 

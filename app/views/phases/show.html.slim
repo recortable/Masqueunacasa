@@ -9,7 +9,7 @@
         - if can? :destroy, phase
           .control.block-row
             = link_to icon_after(:trash, t('delete')), phase_path(phase),
-                method: :delete, confirm: '¿Seguro?'
+                method: :delete, confirm: t('app.confirm')
 
 #summary
   = markdown phase.summary

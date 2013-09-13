@@ -4,12 +4,17 @@ ca:
     back_to: "Tornar a '%{title}'"
     cancel: 'Cancel·lar'
     create: 'Crear'
+    create_new: Crear %{element}
     edit: 'Editar'
     remove: Esborrar %{element}
 
     filter_by: Filtrar per
     order_by: Ordenar per
     remove_filters: Mostra-ho tot
+
+    require_user: "Cal que t'identifiquis o que creïs un compte d'usuari..."
+
+    confirm: "Atenció, aquesta acció no es pot desfer. Vols continuar?"
 
   resource:
     created: 'Afegit, Gràcies!!'
@@ -19,4 +24,3 @@ ca:
   will_paginate:
     next_label: '>>'
     previous_label: '<<'
-

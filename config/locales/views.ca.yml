@@ -46,6 +46,10 @@ ca:
       time_ago: Fa %{time}
     comments:
       new_comment: "Envia un comentari:"
+    notices:
+      created: "Comentari creat. Gràcies!!"
+      updated: "Comentari actualitzat. Gràcies!!"
+      destroyed: Comentari esborrat.
 
   dashboard:
     admin_area:
@@ -86,12 +90,20 @@ ca:
       title: Nova pàgina auxiliar
     edit:
       title: Editar pàgina auxiliar
+    notices:
+      created: Pàgina auxiliar creada correctament. Gràcies!!
+      updated: Pàgina auxiliar actualitzada correctament. Gràcies!!
+      destroyed: Pàgina auxiliar eliminada.
 
   help_texts:
     new:
       title: Nova ajuda contextual
     edit:
       title: Editar ajuda contextual
+    notices:
+      created: "Text d'ajuda creat correctament. Gràcies!!"
+      updated: "Text d'ajuda actualitzat correctament. Gràcies!!"
+      destroyed: "Text d'ajuda eliminat."
 
   langs:
     available_translations: Altres idiomes
@@ -117,6 +129,20 @@ ca:
     index:
       title: Participants a %{group}
       delete_membership: Esborrar del grup
+    notices:
+      added: "S'ha afegit %{user} al grup %{group}"
+      already_member: Ja pertanyia al grup
+
+  password_recoveries:
+    new:
+      title: Recuperar contrasenya
+    show:
+      title: Canviar contrasenya
+    notices:
+      create: Hem enviat les instruccions al teu correu
+      user_not_found: 'No hem trobat a ningú registrat amb aquest correu'
+      updated: 'Contrasenya cambiada!!'
+      update_failed: 'Ho sentim, no hem pogut canviar la contrasenya. Torna-ho a intentar.'
 
   phases:
     index:
@@ -199,6 +225,9 @@ ca:
         action: "ha actualitzat la versió en %{lang} de la proposta"
 
   relations:
+    new:
+      title: Afegir experiència relacionada
+      add_relation: Relacionar
     notices:
       created: 'Relació creada'
       destroyed: 'Relació el·liminada.'
@@ -234,4 +263,8 @@ ca:
     new:
       title: 'Iniciar sessió'
       create_account: "Crea un compte"
-
+      forgotten_password: He oblidat la meva contrassenya
+    notices:
+      created: Hola %{user}!!
+      destroyed: Fins aviat!!
+      error: El correu o la contrasenya no són correctes

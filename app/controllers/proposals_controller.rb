@@ -4,7 +4,6 @@ class ProposalsController < ApplicationController
 
   respond_to :html
 
-  include HasListActions
   expose(:proposals) { Proposal.published }
   expose(:proposal)
   expose(:phase) { proposal.phase }

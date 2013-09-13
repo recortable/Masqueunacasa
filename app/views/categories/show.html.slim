@@ -19,7 +19,7 @@
           = link_to icon_after(:edit, t('edit')), [:edit, phase, category]
         - if can? :destroy, category
           .control.block-row
-            = link_to icon_after(:trash, t('delete')), [phase, category], method: :delete, confirm: "¿Seguro?"
+            = link_to icon_after(:trash, t('delete')), [phase, category], method: :delete, confirm: t('app.confirm')
     .left-block.social
       .block-row
         = link_to icon(:twitter, 'Tweet'), "https://twitter.com/share?url=#{request.url}"

@@ -12,6 +12,10 @@ es:
     order_by: Ordenar por
     remove_filters: Mostrar todo
 
+    require_user: "Antes tienes que identificarte o crear una cuenta de usuario..."
+
+    confirm: "Atención, esta acción no se puede deshacer. Quieres continuar?"
+
   resource:
     created: 'Añadido. Gracias'
     destroyed: 'Borrado... uupps...'

@@ -11,17 +11,20 @@ class PasswordRecoveriesController < ApplicationController
 
   def create
     if recovery.send_email(params[:password_recovery][:email])
-      redirect_to root_path, notice: 'Hemos enviado las instrucciones a tu correo'
+      redirect_to root_path, notice: t('password_recoveries.notices.created')
     else
-     redirect_to new_password_recovery_path, notice: 'No hemos encontrado nadie registrado con este email'
+     redirect_to new_password_recovery_path,
+       notice: t('password_recoveries.notices.user_not_found')
     end 
   end
 
   def update
     if recovery.update_password(params[:password_recovery])
-      redirect_to login_path, notice: 'Tu contraseña ha sido cambiada' 
+      redirect_to login_path,
+        notice: t('password_recoveries.notices.updated')
     else
-      redirect_to recovery, notice: 'Lo sentimos, no se ha podido cambiar tu contraseña. Inténtalo de nuevo.'
+      redirect_to recovery,
+        notice: t('password_recoveries.notices.update_failed')
     end
   end
 end

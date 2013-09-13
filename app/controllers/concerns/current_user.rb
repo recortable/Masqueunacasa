@@ -21,7 +21,7 @@ module CurrentUser
       true
     else
       store_location
-      flash[:notice] = 'Es necesario que te identifiques primero.'
+      flash[:notice] = t 'app.require_user'
       redirect_to login_path(from: request.fullpath)
       false
     end

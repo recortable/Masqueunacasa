@@ -18,11 +18,14 @@ class MembershipsController < ApplicationController
   def create
     user = User.find params[:u]
     if group.member?(user)
-      redirect_to group_memberships_path(group), notice: 'Ya pertenecía a éste grupo'
+      redirect_to group_memberships_path(group),
+        notice: t('memberships.notices.already_member')
     else
       membership.user = user
       membership.group = group
-      flash[:notice] = 'Añadido!' if membership.save
+      if membership.save
+        flash[:notice] = t 'memberships.notices.added', group: group.title, user: user.name
+      end
       respond_with membership, location: group_memberships_path(group)
     end
   end

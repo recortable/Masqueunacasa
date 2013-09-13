@@ -24,8 +24,10 @@ html
 
     body class="#{controller_class}"
       #wrapper
+        // Header //
         = render 'header'
 
+        // No-script message //
         noscript
           .container
             .row
@@ -33,6 +35,7 @@ html
                 .pad
                   = t '.no_script_message'
 
+        // Flash messages //
         = render 'flashes'
 
         #main.container
@@ -63,6 +66,7 @@ html
             #right-column.span4
               = render 'sidebar_right/sidebar_right'
 
+        // Footer //
         = render 'footer'
 
         div style="display:none" = "Masqueunacasa version #{ ENV["RAILS_APP_VERSION"] }. AGPL3"

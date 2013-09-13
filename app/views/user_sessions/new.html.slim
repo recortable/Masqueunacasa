@@ -7,7 +7,7 @@
       = form.input :email
       = form.input :password
       = form.submit class: 'btn'
-    = link_to 'Olvidé mi contraseña', new_password_recovery_path
+    = link_to t('.forgotten_password'), new_password_recovery_path
 
   .span3
     h2 = t('.create_account')

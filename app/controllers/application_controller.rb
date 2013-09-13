@@ -40,7 +40,7 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:alert] = "Antes tienes que identificarte o crear una cuenta de usuario..."
+    flash[:alert] = t 'app.require_user'
     redirect_to controller: 'user_sessions', action: 'new', locale: T.l.to_s, from: request.url
   end
 

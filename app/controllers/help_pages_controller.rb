@@ -15,7 +15,7 @@ class HelpPagesController < ApplicationController
   def create
     authorize! :create, HelpPage
     if help_page.save
-      flash[:notice] = "Se ha creado correctamente"
+      flash[:notice] = t 'help_pages.notices.created'
       respond_with help_page, location: admin_area_path
     else
       render 'new'
@@ -29,7 +29,7 @@ class HelpPagesController < ApplicationController
   def update
     authorize! :update, help_page
     if help_page.save
-      flash[:notice] = "Se ha actualizado correctamente"
+      flash[:notice] = t 'help_pages.notices.updated'
       respond_with help_page, location: admin_area_path
     else
       render 'edit'
@@ -37,6 +37,9 @@ class HelpPagesController < ApplicationController
   end
 
   def destroy
-
+    authorize! :destroy, help_page
+    if help_page.destroy
+      flash[:notice] = t 'help_pages.notices.destroyed'
+    end
   end
 end

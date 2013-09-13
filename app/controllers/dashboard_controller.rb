@@ -11,13 +11,8 @@ class DashboardController < ApplicationController
 
   add_breadcrumb 'Mas que una casa', :root_path
 
-  def dashboard
-  end
-
-  def search
-  end
-
   expose(:welcome_notices) { Notice.list('inicio') }
+  
   def welcome
     @active_tab = 'home'
     @description_mq1c = HelpText.find_by_identf('descripcion_mq1c_home')

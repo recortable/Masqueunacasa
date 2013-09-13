@@ -1,7 +1,0 @@
-<table class="table">
-  <tr><td><h4><%= link_to_unless_current 'Ver perfil', profile_url(subdomain: group.subdomain) %></h4></td></tr>
-  <% if group.has_blog? %>
-    <tr><td><h4><%= link_to_unless_current 'Visitar el blog', posts_url(subdomain: group.subdomain) %></h4></td></tr>
-  <% end %>
-</table>
-

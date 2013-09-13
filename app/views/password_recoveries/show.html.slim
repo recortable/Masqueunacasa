@@ -1,0 +1,8 @@
+.row
+  .span4.offset2
+    = title t('.title')
+    = simple_form_for recovery do |form|
+      = form.input :password
+      = form.input :password_confirmation
+      = form.submit
+

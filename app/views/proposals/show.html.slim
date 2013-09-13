@@ -15,7 +15,7 @@
           = link_to icon_after(:edit, t('edit')), edit_proposal_path(proposal)
       - if can? :destroy, proposal
         .control.block-row
-          = link_to icon_after(:trash, t('delete')), proposal, method: :delete
+          = link_to icon_after(:trash, t('delete')), proposal, method: :delete, confirm: t('app.confirm')
     .left-block.social
       .block-row
         = link_to icon(:twitter, 'Tweet'), "https://twitter.com/share?url=#{request.url}"

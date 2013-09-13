@@ -1,12 +1,6 @@
 require 'spec_helper'
 
 describe 'Users integration' do
-  it 'list users' do
-    user = FactoryGirl.create( :user )
-    visit users_path
-    expect( page ).to have_text user.name
-  end
-
   it 'create users' do
     visit new_user_path
     fill_in 'user_name', with: 'NewUser'

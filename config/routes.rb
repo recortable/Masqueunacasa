@@ -14,8 +14,8 @@ Masqueunacasa::Application.routes.draw do
   end
 
   # PARTE SOCIAL
-  resources :users
-  resources :groups do
+  resources :users, except: [:index]
+  resources :groups, except: [:index] do
     resources :memberships, only: [:index, :create, :destroy]
   end
 
@@ -27,13 +27,10 @@ Masqueunacasa::Application.routes.draw do
 
   match '/entrar' => 'user_sessions#new', as: :login
   match '/salir' => 'user_sessions#destroy', as: :logout
-  match '/inicio' => 'dashboard#dashboard'
   match '/community' => 'dashboard#community', as: :community
   match '/cuatrocerocuatro' => 'dashboard#cuatrocerocuatro'
   match '/quinientos' => 'dashboard#quinientos'
   match "/enter/:id" => "users#enter", as: :enter
-  match '/mail/:action/' => 'mailer'
-  match '/buscar/' => 'dashboard#search', as: :seach
   get '/admin/' => 'dashboard#admin_area', as: :admin_area
 
   root to: 'dashboard#welcome'
