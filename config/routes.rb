@@ -38,8 +38,6 @@ Masqueunacasa::Application.routes.draw do
   resources :user_sessions, only: [:new, :create, :destroy]
   resources :password_recoveries
 
-  resources :notices
-
   # HABITAPEDIA
 
   resources :experiencies, concerns: [:document, :commentable]
