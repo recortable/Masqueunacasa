@@ -1,14 +1,4 @@
 module TextHelper
-  def render_body(model)
-    return '' if model.blank?
-    body_type = model.respond_to?('body_type') ? model.body_type : 'markdown'
-    content_tag(:div, render_text(model.body, body_type), class: "body #{body_type}")
-  end
-
-  def render_text(content, type) 
-    type == 'html' ? raw(content) : markdown(content)
-  end
-
   def markdown(text)
     return '' unless text.present?
     text.gsub!(/^#+/, '### ')

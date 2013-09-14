@@ -12,28 +12,8 @@ module ApplicationHelper
     controller.class.name[0..-11].downcase.gsub(/:/, '-') + " " + controller.action_name
   end
 
-  def subdomain_class
-    request.subdomain.present? ? 'subdomain' : 'main_domain'
-  end
-
   def current_user_admin?
     current_user && current_user.admin?
-  end
-
-  # Translate collection
-  # Used in forms (see views/memberships/edit)
-  def tc(prefix, collection)
-    collection.map {|item| [I18n.t("#{prefix}.#{item}"), item] }
-  end
-
-  def render_banner(title, path)
-    render partial: 'application/banner', locals:
-      {title: title, path: path}
-  end
-
-  def render_card(&block)
-    content = block_given? ? capture(&block) : ''
-    render partial: 'application/card', locals: {content: content}
   end
 
   def hover?(action, subject, &block)
@@ -64,21 +44,8 @@ module ApplicationHelper
     raw("#{label} <i class='icon-#{icon}'></i>")
   end
 
-  def simple_debug(model)
-    debug(model) if Rails.env.development?
-  end
-
   def front?
     controller.controller_name == "dashboard" && controller.action_name == "welcome"
-  end
-
-  def link_to_add_fields(name, f, association, type)
-    new_object = f.object.send(association).klass.new
-    id = new_object.object_id
-    fields = f.fields_for(association, new_object, child_index: id) do |builder|
-      render(type.to_s + "_" + association.to_s.singularize + "_fields", f: builder)
-    end
-    link_to(name, '#', class: "btn add_fields", data: {id: id, fields: fields.gsub("\n", "")})
   end
 
   def intern_link_code?

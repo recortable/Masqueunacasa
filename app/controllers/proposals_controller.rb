@@ -3,19 +3,9 @@ class ProposalsController < ApplicationController
   include ActionTracker
 
   respond_to :html
-
-  expose(:proposals) { Proposal.published }
+  
   expose(:proposal)
   expose(:phase) { proposal.phase }
-
-  def index
-    redirect_to phases_path
-  end
-
-  def dashboard
-    authorize! :index, Proposal
-    respond_with proposals
-  end
 
   def show
     authorize! :read, proposal

@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   include CurrentUser
   include ExposeResource
   include HasBreadcrumbs
-  include HasResource
   protect_from_forgery
 
   before_filter :set_locale

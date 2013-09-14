@@ -6,14 +6,6 @@ describe "Proposals integration" do
 
   subject { page }
 
-  it "dashboard proposals" do
-    user.update_attributes admin: true
-    proposal
-    visit dashboard_proposals_path
-    should have_text proposal.title
-    should have_text proposal.summary
-  end
-
   it "shows proposal" do
     visit proposal_path(proposal)
     should have_text proposal.title

@@ -7,11 +7,6 @@ module LayoutHelper
     size
   end
 
-  def user_column(css_class, color = :none, &block)
-    content = capture(&block)
-    raw "<div class='user-column #{css_class}'>#{content}</div>"
-  end
-
   def active?(tab_name)
     return 'active' if tab_name == @active_tab
   end

@@ -42,17 +42,13 @@ Masqueunacasa::Application.routes.draw do
 
   # HABITAPEDIA
 
-  resources :experiencies, concerns: [:document, :commentable] do
-    get :dashboard, on: :collection
-  end
+  resources :experiencies, concerns: [:document, :commentable]
 
   resources :categories, only: [:show, :new, :create], concerns: [:document, :commentable] do
-    get :dashboard, on: :collection
     resources :proposals, only: [:new]
   end
 
-  resources :proposals, except: [:new], path: '/phases/proposals', concerns: [:document, :commentable] do
-    get :dashboard, on: :collection
+  resources :proposals, except: [:index, :new], path: '/phases/proposals', concerns: [:document, :commentable] do
     resources :relations, only: [:new, :create, :destroy]
   end
 
