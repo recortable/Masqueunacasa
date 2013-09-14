@@ -1,4 +1,14 @@
 = title t('.title', phase: phase.title)
+h2 = phase.question
+= untranslated_content_message_for(phase)
+
+#summary
+  = markdown phase.summary
+
+- content_for :right do
+  - if can?(:update, phase) and not phase.has_all_translations?
+    = render 'sidebar_right/pending_translations',
+      document: phase
 
 - content_for :left do
   .fixed-block
@@ -10,12 +20,4 @@
           .control.block-row
             = link_to icon_after(:trash, t('delete')), phase_path(phase),
                 method: :delete, confirm: t('app.confirm')
-
-#summary
-  = markdown phase.summary
-
-- content_for :right do
-  - if can?(:update, phase) and not phase.has_all_translations?
-    = render 'sidebar_right/pending_translations',
-      document: phase
 

@@ -59,6 +59,15 @@ module ApplicationHelper
     code += "::)"
   end
 
+  def untranslated_content_message_for(object)
+    unless object.translated_to?(T.l)
+      content_tag :div, id: 'no-translation-msg', class: 'alert' do
+        (link_to '×', '#', class: 'close', data: { dismiss: "alert" }) +
+        t('app.untranslated_content', lang: t('langs.' + T.l.to_s))
+      end
+    end
+  end
+
 private
 
   def object_identifier

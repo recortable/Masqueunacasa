@@ -16,6 +16,8 @@ ca:
 
     confirm: "Atenció, aquesta acció no es pot desfer. Vols continuar?"
 
+    untranslated_content: "Aquest contingut encara no s'ha traduït al %{lang}. El presentem en l'idioma en el que es va crear."
+
   resource:
     created: 'Afegit, Gràcies!!'
     destroyed: 'Esborrat... uupps...'

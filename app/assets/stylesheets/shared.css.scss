@@ -8,6 +8,14 @@ body {
   }
 }
 
+#no-translation-msg {
+  width: 85%;
+  margin: 6px auto;
+  background: #e6e6e6;
+  color: inherit;
+  border: none;
+}
+
 /* Anular los estilos de bootstrap para algunos elementos para que usen las mismas tipos que el restp del sitio */
 
 input, button, select, textarea {

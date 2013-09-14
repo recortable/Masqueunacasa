@@ -16,6 +16,8 @@ es:
 
     confirm: "Atención, esta acción no se puede deshacer. Quieres continuar?"
 
+    untranslated_content: Este contenido aun no ha sido traducido al %{lang}. Lo presentamos en el idioma en el que fue creado.
+
   resource:
     created: 'Añadido. Gracias'
     destroyed: 'Borrado... uupps...'
