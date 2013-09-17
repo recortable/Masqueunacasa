@@ -4,7 +4,6 @@
 //= require bootstrap-dropdown
 //= require bootstrap-tooltip
 // turbolinks
-//= require jquery.foundation.orbit
 //= require slider
 //= require mediafy
 //= require galleria/galleria-1.2.9.min
@@ -39,7 +38,6 @@ var MqucInit = function() {
   if ($('.galleria').length > 0) {
     Galleria.run('.galleria');
   }
-  $('.slider').applySlider();
   $('body a').mediafy();
 
   $('form img').image_cache_src(); // Defined in utils.js
