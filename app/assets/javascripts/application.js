@@ -4,7 +4,6 @@
 //= require bootstrap-dropdown
 //= require bootstrap-tooltip
 // turbolinks
-//= require slider
 //= require mediafy
 //= require galleria/galleria-1.2.9.min
 //= require galleria/galleria.classic.min
