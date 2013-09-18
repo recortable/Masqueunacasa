@@ -1,11 +1,20 @@
 h2 = raw "En #{link_to parent.title, parent}"
 = title t('.title')
 
-= simple_list experiencies do |experiencie|
-  .hoverize
-    = hover? :create, Relation do
-      = link_to t('.add_relation'), proposal_relations_path(parent, e: experiencie.id), method: :post, rel: 'new-relation'
-    = link_to experiencie.title, experiencie
+= simple_form_for [parent, relation] do |f|
+  = f.input :experiencie_id, collection: experiencies,
+      value_method: :id, label: Experiencie.model_name.human.titleize,
+      input_html: { class: 'select2',
+                    data: { placeholder: t('.choose_experiencie') } }
+  = f.button :submit
+
+- if current_user.admin
+  = simple_list relations do |rel|
+    - unless rel.new_record?
+      .hoverize
+        = hover? :destroy, Relation do
+          = link_to t('.remove_relation'), [parent, rel], method: :delete
+        = link_to rel.experiencie.title, rel.experiencie
 
 - content_for :left do
   |.

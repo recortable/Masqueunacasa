@@ -1,4 +1,9 @@
 formsInit = ->
+  $('form .select2').each ->
+    select = $(this)
+    placeholder = select.data('placeholder')
+    select.select2({placeholder: placeholder})
+
   form = $('form.edit_category, form.new_category, form.edit_proposal, form.new_proposal,
     form.edit_experiencie, form.new_experiencie, form.edit_help_page, form.new_help_page')
 

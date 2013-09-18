@@ -1,13 +1,10 @@
 require 'spec_helper'
 
 describe Relation do
-  it "has phase and category" do
-    p = FactoryGirl.create( :proposal )
-    e = FactoryGirl.create( :experiencie )
-    u = FactoryGirl.create( :user )
+  let( :relation ) { create :relation }
 
-    r = Relation.create( proposal: p, experiencie: e, user: u )
-    expect( r.phase ).to eq( p.phase )
-    expect( r.category ).to eq( p.category )
+  it "has phase and category" do
+    expect( relation.phase ).to eq( relation.proposal.phase )
+    expect( relation.category ).to eq( relation.proposal.category )
   end
 end

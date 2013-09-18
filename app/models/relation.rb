@@ -5,7 +5,7 @@ class Relation < ActiveRecord::Base
   belongs_to :phase
   belongs_to :category
 
-  attr_accessible :experiencie, :proposal, :user
+  attr_accessible :experiencie_id, :proposal, :user
 
   validates_presence_of :proposal_id, :experiencie_id, :user_id
 

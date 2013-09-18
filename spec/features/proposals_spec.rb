@@ -3,6 +3,7 @@ require 'spec_helper'
 describe "Proposals integration" do
   let( :user ) { login_user create(:user) }
   let( :proposal ) { create :proposal }
+  let( :relation ) { create :relation }
 
   subject { page }
 
@@ -15,10 +16,8 @@ describe "Proposals integration" do
   it "shows proposal links"
 
   it "shows proposal relations" do
-    exp = FactoryGirl.create( :experiencie )
-    relation = proposal.add_relation( exp, user )
-    visit proposal_path(proposal)
-    should have_text exp.title
+    visit proposal_path(relation.proposal)
+    should have_text relation.experiencie.title
   end
 
   it "can create relation" do

@@ -72,4 +72,10 @@ FactoryGirl.define do
     document factory: :experiencie
     user
   end
+
+  factory :relation do
+    user
+    experiencie
+    proposal
+  end
 end

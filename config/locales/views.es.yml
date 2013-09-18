@@ -220,8 +220,10 @@ es:
 
   relations:
     new:
-      title: Añadir experiencia relacionada
       add_relation: Relacionar
+      choose_experiencie: Elige una experiencia
+      remove_relation: Borrar relación
+      title: Añadir experiencia relacionada
     notices:
       created: 'Relación creada'
       destroyed: 'Relación borrada.'

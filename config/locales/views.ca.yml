@@ -226,8 +226,10 @@ ca:
 
   relations:
     new:
-      title: Afegir experiència relacionada
       add_relation: Relacionar
+      choose_experiencie: Escull una experiència
+      remove_relation: Esborrar relació
+      title: Afegir experiència relacionada
     notices:
       created: 'Relació creada'
       destroyed: 'Relació el·liminada.'
@@ -268,3 +270,4 @@ ca:
       created: Hola %{user}!!
       destroyed: Fins aviat!!
       error: El correu o la contrasenya no són correctes
+

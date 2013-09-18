@@ -28,18 +28,15 @@ describe Experiencie do
   end
 
   context "proposals counter" do
-    let( :p1 ) { create( :proposal ) }
-
     it "sums 1 when adding a preposal" do
-      p1.add_relation( exp, p1.user )
-      exp.reload
-      expect( exp.proposals_count ).to eq( 1 )
+      expect{ create :relation, experiencie: exp }.to change{ exp.reload.proposals_count }.
+        from(0).to(1)
     end
 
     it "substract 1 when deleting a proposal" do
-      p1.destroy
-      exp.reload
-      expect( exp.proposals_count ).to eq( 0 )
+      relation = create(:relation, experiencie: exp)
+      expect{ relation.proposal.destroy }.to change{ exp.reload.proposals_count }.
+        from(1).to(0)
     end
   end
 end

@@ -86,6 +86,12 @@ legend {
   margin-left: 6px;
 }
 
+form.new_relation {
+  .select2-container {
+    width: 85%;
+  }
+}
+
 input[type="text"],
 input[type="password"],
 input[type="datetime"],

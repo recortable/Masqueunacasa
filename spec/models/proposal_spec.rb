@@ -22,17 +22,14 @@ describe Proposal do
   end
 
   it "it can be related to a experience" do
-    user = FactoryGirl.create( :user )
-    exp = FactoryGirl.create( :experiencie )
-    proposal.add_relation( exp, user )
+    exp = create(:experiencie)
+    FactoryGirl.create(:relation, proposal: proposal, experiencie: exp)
     expect( proposal.relations.count ).to eq( 1 )
     expect( proposal.experiencies.first ).to eq( exp )
   end
 
   it "has experiencies counter" do
-    proposal.add_relation( create( :experiencie ), proposal.user )
-    proposal.add_relation( create( :experiencie ), proposal.user )
-    proposal.reload
-    expect( proposal.experiencies_count ).to eq( 2 )
+    expect{ create :relation, proposal: proposal }.to change{ proposal.reload.experiencies_count }.
+      from(0).to(1)
   end
 end

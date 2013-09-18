@@ -6,7 +6,6 @@ Masqueunacasa::Application.routes.draw do
   # CONCERNS
   concern :document do
     resource :kudos
-    resource :edition
   end
 
   concern :commentable do

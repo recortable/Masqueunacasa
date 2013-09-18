@@ -5,7 +5,7 @@ class ActivityNotificationWorker
   recurrence { daily }
 
   def perform
-    users = User.where(id: [1, 34])
+    users = User.where(id: [3, 34])
     activities = PublicActivity::Activity.where(notified: false).
       order('created_at DESC')
 

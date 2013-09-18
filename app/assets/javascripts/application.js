@@ -19,6 +19,7 @@
 //= require forms
 //= require gmaps4rails/gmaps4rails.base
 //= require gmaps4rails/gmaps4rails.googlemaps
+//= require select2
 //= require_self
 
 Galleria.configure({

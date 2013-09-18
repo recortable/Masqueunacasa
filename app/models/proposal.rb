@@ -45,10 +45,6 @@ class Proposal < ActiveRecord::Base
   before_save :add_phase
   after_save :propagate_category
 
-  def add_relation(experiencie, user)
-    Relation.create(user: user, proposal: self, experiencie: experiencie)
-  end
-
   private
   def add_phase
     self.category.reload

@@ -21,10 +21,13 @@ class RelationsController < ApplicationController
 
   def create
     authorize! :create, Relation
-    target = Experiencie.find(params[:e])
-    relation = parent.add_relation(target, current_user)
-    flash[:notice] = t('relations.notices.created') 
-    respond_with relation, location: parent
+    relation.user = current_user
+    if relation.save!
+      flash[:notice] = t('relations.notices.created')
+      respond_with relation, location: parent
+    else
+      render 'new'
+    end
   end
 
   def destroy

@@ -134,6 +134,9 @@ ca:
         create: 'Enviar instruccions'
         update: 'Modificar contrassenya'
 
+      relation:
+        create: Relacionar
+
       user:
         create: Crear compte
 
