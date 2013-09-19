@@ -24,7 +24,9 @@ ca:
 
     tabs:
       home: Inici
-      habitapedia: Preguntes y<br />propostes
+      habitapedia:
+        html: Preguntes i<br />propostes
+        text: Preguntes i propostes
       experiencies: Experiencies
       community: Comunitat
 

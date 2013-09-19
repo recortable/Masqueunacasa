@@ -59,6 +59,9 @@ html
                     // Main column //
                     - size = main_content_span_size
                     #main-content class="span#{ size }"
+                      - if render_breadcrumbs.present?
+                        #breadcrumbs.clearfix
+                          = render_breadcrumbs separator: ''
                       = yield
                       = render 'internal_link_code'
 

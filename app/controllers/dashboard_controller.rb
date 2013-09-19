@@ -9,10 +9,8 @@ class DashboardController < ApplicationController
     agents
   end
 
-  add_breadcrumb 'Mas que una casa', :root_path
-
   expose(:welcome_notices) { Notice.list('inicio') }
-  
+
   def welcome
     @active_tab = 'home'
     @description_mq1c = HelpText.find_by_identf('descripcion_mq1c_home')
@@ -21,7 +19,7 @@ class DashboardController < ApplicationController
   end
 
   def community
-    breadcrumb_for_community
+
   end
 
   def mailer
@@ -30,7 +28,7 @@ class DashboardController < ApplicationController
 
   def admin_area
     authorize! :read, :admin_area
-    breadcrumb_for_admin_area
+    @active_tab = 'admin'
     render layout: 'one_column'
   end
 

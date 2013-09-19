@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     PublicActivity::Activity.
       where("key not like ?", '%destroy%').
       order("created_at DESC").
-      limit(20).
+      limit(10).
       includes(:owner, :trackable, :recipient)
   end
 

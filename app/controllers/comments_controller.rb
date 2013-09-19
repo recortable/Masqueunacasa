@@ -18,7 +18,6 @@ class CommentsController < ApplicationController
 
   def edit
     authorize! :update, comment
-    polymorphic_breadcrumb_for document
     respond_with comment
   end
 
