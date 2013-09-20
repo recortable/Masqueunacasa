@@ -24,3 +24,4 @@ class Phase < ActiveRecord::Base
     es.map {|e| e.experiencie }
   end
 end
+
