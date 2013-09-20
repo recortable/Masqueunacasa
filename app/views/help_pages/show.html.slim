@@ -7,5 +7,9 @@
   = render 'sections/index', document: help_page
 
 - content_for :left do
-  |.
+  .fixed-block
+    .left-block.controls.pull-right
+      - if can? :update, help_page
+        .control.block-row
+          = link_to icon_after(:edit, t('edit')), edit_help_page_path(help_page)
 
