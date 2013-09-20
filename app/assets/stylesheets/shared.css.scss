@@ -68,11 +68,15 @@ img {
     display: block;
     float: left;
     clear: left;
+    width: 90%;
     height: 30px;
     padding-left: 35px;
     line-height: 30px;
     background-repeat: no-repeat;
     background-position: left top;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   a.level-1 {
