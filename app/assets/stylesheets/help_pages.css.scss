@@ -1,3 +1,7 @@
-.helppages.show #main-content > .pad {
-  padding-right: 8px;
+body.helppages.show {
+  h1 {
+    padding-left: 35px;
+    background: image-url('icons/helppages_title.png') no-repeat left top;
+  }
 }
+

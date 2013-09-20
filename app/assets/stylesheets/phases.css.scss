@@ -1,0 +1,20 @@
+body.phases.show {
+  #main-content {
+    h1 {
+      padding-left: 35px;
+    }
+
+    .phase-organizacion h1 {
+      background: image-url('icons/f-organizacion-on.png') no-repeat left top;
+    }
+
+    .phase-realizacion h1 {
+      background: image-url('icons/f-realizacion-on.png') no-repeat left top;
+    }
+
+    .phase-uso-y-vida-util h1 {
+      background: image-url('icons/f-uso-on.png') no-repeat left top;
+    }
+  }
+}
+

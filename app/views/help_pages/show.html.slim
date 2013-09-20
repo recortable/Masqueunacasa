@@ -1,10 +1,9 @@
-.pad
-  = title help_page.title
+= title help_page.title
 
-  #summary
-    = markdown help_page.summary
+#summary
+  = markdown help_page.summary
 
-  = render 'sections/index', document: help_page
+= render 'sections/index', document: help_page
 
 - content_for :left do
   .fixed-block

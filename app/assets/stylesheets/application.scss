@@ -2,7 +2,6 @@
 @import "bourbon";
 @import "variables_and_mixins";
 @import "bootstrap_and_overrides";
-@import "orbit/orbit";
 
 // GENERAL
 @import "fonts";
@@ -36,12 +35,11 @@
 
 
 // HABITAPEDIA
-@import "habitapedia";
+@import 'phases';
 @import "categories";
 @import "proposals";
 @import "experiencies";
 @import "links";
-@import "habitapedia_sidebar";
 
 // COMMUNITY
 @import "community";

@@ -100,7 +100,12 @@
   }
 }
 
-.categories.show {
+body.categories.show {
+  #main-content h1 {
+    padding-left: 35px;
+    background: image-url('icons/categories_title.png') no-repeat left top;
+  }
+
   #category-image {
     margin-bottom: 10px;
   }

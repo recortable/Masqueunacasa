@@ -1,12 +1,13 @@
-= title t('.title', phase: phase.title)
-h2 = phase.question
-= untranslated_content_message_for(phase)
+div[class="phase-#{phase.slug_es}"]
+  = title t('.title', phase: phase.title)
+  h2 = phase.question
+  = untranslated_content_message_for(phase)
 
-.embed-container
-  = raw phase.video
+  .embed-container
+    = raw phase.video
 
-#summary
-  = markdown phase.summary
+  #summary
+    = markdown phase.summary
 
 - content_for :right do
   - if can?(:update, phase) and not phase.has_all_translations?

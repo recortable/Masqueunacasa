@@ -14,6 +14,7 @@ class PhasesController < ApplicationController
   def show
     authorize! :read, phase
     phase.increment_view_counter
+    breadcrumb_for_phase
     respond_with phase
   end
 
