@@ -19,10 +19,13 @@ private
 
   def url_internal(code)
     kontroller, id = code.split('::')
-    if id
+    if kontroller == 'user_sessions'
+      url_for controller: kontroller, action: :new
+    elsif id
       url_for kontroller.classify.constantize.find(id)
     else
       url_for controller: kontroller, action: 'index'
     end
   end
 end
+

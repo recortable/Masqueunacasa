@@ -263,6 +263,7 @@ es:
       create_account: 'Crea una cuenta'
       forgotten_password: Olvidé mi contraseña
     notices:
+      already_logged_in: Ya has iniciado sesión.
       created: Hola %{user}!!
       destroyed: Hasta pronto!!
       error: El correo o la contraseña no son correctos

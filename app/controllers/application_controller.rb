@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def path_or_default(path)
-    path.present? ? path : root_path
+    path.present? ? path : root_path + T.l.to_s
   end
 
   def set_locale

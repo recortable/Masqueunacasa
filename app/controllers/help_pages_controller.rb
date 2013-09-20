@@ -23,17 +23,16 @@ class HelpPagesController < ApplicationController
   end
 
   def edit
-
+    authorize! :update, help_page
+    respond_with help_page
   end
 
   def update
     authorize! :update, help_page
     if help_page.save
       flash[:notice] = t 'help_pages.notices.updated'
-      respond_with help_page, location: admin_area_path
-    else
-      render 'edit'
     end
+    respond_with help_page
   end
 
   def destroy
@@ -43,3 +42,4 @@ class HelpPagesController < ApplicationController
     end
   end
 end
+

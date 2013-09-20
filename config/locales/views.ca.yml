@@ -269,6 +269,7 @@ ca:
       create_account: "Crea un compte"
       forgotten_password: He oblidat la meva contrassenya
     notices:
+      already_logged_in: Ja has iniciat la sessió.
       created: Hola %{user}!!
       destroyed: Fins aviat!!
       error: El correu o la contrasenya no són correctes

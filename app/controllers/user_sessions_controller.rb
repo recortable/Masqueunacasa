@@ -6,10 +6,11 @@ class UserSessionsController < ApplicationController
   expose(:themes) { 'textura_inicio negro' }
 
   def new
-    if request.subdomain.present?
-      redirect_to login_url(host: request.domain)
+    if current_user
+      redirect_to path_or_default(request.env['HTTP_REFERER']),
+        notice: t('user_sessions.notices.already_logged_in')
     else
-      authorize! :new, user_session
+      respond_with user_session
     end
   end
 
