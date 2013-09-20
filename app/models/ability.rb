@@ -49,7 +49,6 @@ class Ability
     can :read, Category
     cannot :index, Category
     can :read, User
-    can :manage, Notice
   end
 
   def no_user_abilities

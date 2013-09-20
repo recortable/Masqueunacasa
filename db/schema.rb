@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130920161153) do
+ActiveRecord::Schema.define(:version => 20130920163600) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -323,32 +323,6 @@ ActiveRecord::Schema.define(:version => 20130920161153) do
   add_index "messages", ["reply_to_id"], :name => "index_messages_on_reply_to_id"
   add_index "messages", ["resource_id", "resource_type"], :name => "index_messages_on_resource_id_and_resource_type"
   add_index "messages", ["user_id"], :name => "index_messages_on_user_id"
-
-  create_table "notice_translations", :force => true do |t|
-    t.integer  "notice_id"
-    t.string   "locale"
-    t.string   "title",      :limit => 200
-    t.string   "body",       :limit => 1000
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-  end
-
-  add_index "notice_translations", ["locale"], :name => "index_notice_translations_on_locale"
-  add_index "notice_translations", ["notice_id"], :name => "index_notice_translations_on_notice_id"
-
-  create_table "notices", :force => true do |t|
-    t.string   "embed",           :limit => 1000
-    t.string   "image",           :limit => 200
-    t.integer  "position"
-    t.string   "list",            :limit => 16
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
-    t.string   "link",            :limit => 400
-    t.string   "original_locale", :limit => 4
-  end
-
-  add_index "notices", ["list"], :name => "index_notices_on_list"
-  add_index "notices", ["position"], :name => "index_notices_on_position"
 
   create_table "phase_translations", :force => true do |t|
     t.integer  "phase_id"

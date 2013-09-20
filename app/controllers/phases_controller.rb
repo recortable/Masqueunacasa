@@ -4,8 +4,6 @@ class PhasesController < ApplicationController
   expose(:phases) { Phase.all }
   expose(:phase)
   expose(:categories) { Category.where(filter_by).order(sort_by) }
-  expose(:habitapedia_notices) { Notice.list('habitapedia') }
-
 
   def index
     authorize! :index, Phase

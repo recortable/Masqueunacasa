@@ -11,11 +11,3 @@
 
   .span3
     = image_tag 'mq1c_poster_web.jpg'
-
-- content_for :right do
-  - welcome_notices.each do |notice|
-    - if notice.embed?
-      .right-block.help
-        .embed-container
-          = raw notice.embed
-
