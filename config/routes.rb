@@ -41,16 +41,16 @@ Masqueunacasa::Application.routes.draw do
 
   resources :experiencies, concerns: [:document, :commentable]
 
+  resources :phases, concerns: [:document] do
+    resources :categories, except: [:index, :new, :create]
+  end
+
   resources :categories, only: [:show, :new, :create], concerns: [:document, :commentable] do
     resources :proposals, only: [:new]
   end
 
   resources :proposals, except: [:index, :new], path: '/phases/proposals', concerns: [:document, :commentable] do
     resources :relations, only: [:new, :create, :destroy]
-  end
-
-  resources :phases, concerns: [:document] do
-    resources :categories, except: [:index, :new, :create], path: ''
   end
 
   # ADMINISTRACIÓN
@@ -73,3 +73,4 @@ Masqueunacasa::Application.routes.draw do
   match ":locale/*path" => 'application#set_locale'
   match "*path" => 'application#set_locale'
 end
+
