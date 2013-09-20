@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130911223224) do
+ActiveRecord::Schema.define(:version => 20130920161153) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -375,6 +375,7 @@ ActiveRecord::Schema.define(:version => 20130911223224) do
     t.string   "slug_it",         :limit => 100
     t.string   "slug_fr",         :limit => 100
     t.string   "original_locale", :limit => 4
+    t.string   "video"
   end
 
   add_index "phases", ["slug_ca"], :name => "index_phases_on_slug_ca"

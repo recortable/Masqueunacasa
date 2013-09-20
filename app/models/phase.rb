@@ -6,8 +6,7 @@ class Phase < ActiveRecord::Base
   friendly_id :title, use: [:simple_i18n, :history]
   include HasTranslatedSlugs
 
-  attr_accessible :title, :question, :summary
-  attr_accessible :position, :color
+  attr_accessible :title, :question, :summary, :video
 
   validates_presence_of :title
 
@@ -18,11 +17,6 @@ class Phase < ActiveRecord::Base
   default_scope order: :position
 
   acts_as_list
-
-  # TODO: convertir en un campo de la db
-  def image_url
-    "habitap/#{icon}_100.png"
-  end
 
   def experiencies
     pids = Proposal.where(phase_id: self.id).map(&:id)

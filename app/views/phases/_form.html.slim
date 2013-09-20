@@ -1,0 +1,13 @@
+= simple_form_for phase do |form|
+  = form.error_notification
+  .row
+    .span4
+      = form.input :position
+  .row
+    .span4
+      = form.input :title
+      = form.input :question
+      = form.input :video
+      = form.input :summary, as: :text, input_html: { rows: 8, class: 'rte' }
+  = form.submit
+

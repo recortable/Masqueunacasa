@@ -41,7 +41,7 @@ Masqueunacasa::Application.routes.draw do
 
   resources :experiencies, concerns: [:document, :commentable]
 
-  resources :phases, concerns: [:document] do
+  resources :phases, except: [:destroy] do
     resources :categories, except: [:index, :new, :create]
   end
 
