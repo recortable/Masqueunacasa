@@ -31,9 +31,9 @@
         = link_to "Más visitada", url_for(request.params.merge(sort_by: 'view_count', d: 'desc'))
 
 - content_for :right do
-  - habitapedia_notices.each do |notice|
-    - if notice.embed?
-      .right-block.help
-        .embed-container
-          = raw notice.embed
+  .right-block.help
+    = markdown HelpText.find_by_identf('explicacion_habitapedia').try('body')
+
+  .right-block.help
+    = markdown HelpText.find_by_identf('fases_habitapedia').try('body')
 
