@@ -2,6 +2,8 @@
   .container
     .row
       .span12
+        => link_to image_tag('MQUC.png'), front_path, id: 'logo-footer'
         => link_to "FAQ", HelpPage.find_by_identf('faqs')
         => link_to icon('twitter'), 'http://twitter.com/masqueunacasa', target: '_blank'
         => link_to icon('envelope', 'hola@masqueunacasa.org'), 'mailto:hola@masqueunacasa.org'
+
