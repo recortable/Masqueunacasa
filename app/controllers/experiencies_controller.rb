@@ -10,6 +10,7 @@ class ExperienciesController < ApplicationController
 
   def index
     authorize! :index, Experiencie
+    breadcrumb_for_experiencies
     respond_with experiencies
   end
 
