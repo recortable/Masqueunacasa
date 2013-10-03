@@ -30,22 +30,22 @@ es:
 
 en:
   routes:
-    categories: 'categories'
+    categories: 'questions'
     community: 'community'
-    experiencies: 'experiencies'
-    groups: 'groups'
+    experiencies: 'experiences'
+    groups: 'collectives'
     help_pages: info
-    memberships: 'members'
+    memberships: 'participants'
     messages: 'messages'
-    notices: 'notices'
+    notices: 'highlights'
     pages: 'docs'
-    password_recoveries: 'password-recovery'
+    password_recoveries: 'recover-password'
     phases: 'habitapedia'
     posts: 'blog'
     profile: 'who'
     proposals: 'proposals'
-    relations: 'relations'
-    users: 'users'
+    relations: 'related'
+    users: 'people'
     sections: 'sections'
     locations: 'map'
     edition: 'edition'
@@ -53,9 +53,9 @@ en:
     links: 'related-links'
 
     edit: 'edit'
-    new: 'new'
-    entrar: 'sign-in'
-    salir: 'logout'
+    new: create
+    entrar: 'enter'
+    salir: 'exit'
     sign_up: 'sign-up'
 
 ca:
@@ -90,60 +90,61 @@ ca:
 
 it:
   routes:
-    categories: 'categories'
-    community: 'community'
-    experiencies: 'experiencies'
-    groups: 'groups'
-    help_pages: info
-    memberships: 'members'
-    messages: 'messages'
-    notices: 'notices'
-    pages: 'docs'
-    password_recoveries: 'password-recovery'
-    phases: 'habitapedia'
-    posts: 'blog'
-    profile: 'who'
-    proposals: 'proposals'
-    relations: 'relations'
-    users: 'users'
-    sections: 'sections'
-    locations: 'map'
-    edition: 'edition'
-    images: 'images'
-    links: 'related-links'
+    categories:
+    community:
+    experiencies:
+    groups:
+    help_pages:
+    memberships:
+    messages:
+    notices:
+    pages:
+    password_recoveries:
+    phases:
+    posts:
+    profile:
+    proposals:
+    relations:
+    users:
+    sections:
+    locations:
+    edition:
+    images:
+    links:
 
-    edit: 'edit'
-    new: 'new'
-    entrar: 'sign-in'
-    salir: 'logout'
-    sign_up: 'sign-up'
+    edit:
+    new:
+    entrar:
+    salir:
+    sign_up:
 
 fr:
   routes:
-    categories: 'categories'
-    community: 'community'
-    experiencies: 'experiencies'
-    groups: 'groups'
-    help_pages: info
-    memberships: 'members'
-    messages: 'messages'
-    notices: 'notices'
-    pages: 'docs'
-    password_recoveries: 'password-recovery'
-    phases: 'habitapedia'
-    posts: 'blog'
-    profile: 'who'
-    proposals: 'proposals'
-    relations: 'relations'
-    users: 'users'
-    sections: 'sections'
-    locations: 'map'
-    edition: 'edition'
-    images: 'images'
-    links: 'related-links'
+    categories:
+    community:
+    experiencies:
+    groups:
+    help_pages:
+    memberships:
+    messages:
+    notices:
+    pages:
+    password_recoveries:
+    phases:
+    posts:
+    profile:
+    proposals:
+    relations:
+    users:
+    sections:
+    locations:
+    edition:
+    images:
+    links:
 
-    edit: 'edit'
-    new: 'new'
-    entrar: 'sign-in'
-    salir: 'logout'
-    sign_up: 'sign-up'
+    edit:
+    new:
+    entrar:
+    salir:
+    sign_up:
+

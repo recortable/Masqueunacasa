@@ -1,0 +1,27 @@
+en:
+  app:
+    add: Add %{element}
+    back_to: "Back to '%{title}'"
+    cancel: 'Cancel'
+    create: 'Create'
+    create_new: Create %{element}
+    edit: 'Edit'
+    remove: Erase %{element}
+
+    filter_by: Filter by
+    order_by: Order by
+    remove_filters: Show all
+
+    require_user: "Before proceeding you have to identify yourself or create a user account..."
+
+    confirm: "Watch out, this action cannot be undone. Do you want to proceed?"
+
+  resource:
+    created: 'Added. Thank you'
+    destroyed: 'Erased... oops...'
+    updated: 'Changed. ¡Great!'
+
+  will_paginate:
+    next_label: '>>'
+    previous_label: '<<'
+

@@ -1,0 +1,56 @@
+en:
+  activerecord:
+    models:
+      category: 'question'
+      comment:
+        one: comment
+        other: commments
+      editorship:
+        one: editor
+        other: editors
+      experiencie:
+        one: experience
+        other: experiences
+      group:
+        one: 'collective'
+        other: collectives
+      help_page:
+        one: help page
+        other: help pages
+      image:
+        one: image
+        other: images
+      image_section: image section
+      link:
+        one: 'resource'
+        other: resources
+      location:
+        one: location
+        other: locations
+      membership:
+        one: participant
+        other: participants
+      notice: 'highlight'
+      password_recovery: 'recover password'
+      phase: 'phase'
+      proposal:
+        one: 'proposal'
+        other: proposals
+      section:
+        one: section
+        other: sections
+      text_section: 'text section'
+      user:
+        one: person
+        other: peolpe
+
+  versions:
+    events:
+      create: 'created'
+      destroy: 'erased'
+      update: 'changed'
+
+  search:
+    errors:
+      term_to_short: 'What you are looking for has to have al least 3 letters'
+

@@ -5,20 +5,142 @@ en:
     required:
       text: 'required'
       mark: '*'
-      # You can uncomment the line below if you need to overwrite the whole required html.
-      # When using html, text and mark won't be used.
-      # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Some errors were found, please take a look:"
-    # Labels and hints examples
-    # labels:
-    #   password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail para efetuar o sign in.'
-    #     edit:
-    #       email: 'E-mail.'
-    # hints:
-    #   username: 'User name to sign in.'
-    #   password: 'No special characters, please.'
+      default_message: "There are erros in the form, please take a look at it"
+
+    labels:
+      defaults:
+        address: Address
+        author: 'Author'
+        body: 'Text'
+        body_ca: 'Text in Catalan'
+        content_type: 'Text type'
+        description: Description
+        email: 'Email'
+        identf: Unique identifier
+        map: If you like you can locate yourself by clicking on the map
+        name: 'Name'
+        published_at: 'Publication date'
+        password: 'Password'
+        password_confirmation: 'Repeat password'
+        summary: 'Summary'
+        title: 'Title'
+        title_ca: 'Title in Catalan'
+        url: 'Link'
+
+      category:
+        name: 'Short name'
+        title: 'Cuestion'
+        image: 'Image or drawing'
+        remove_image: 'Erase image'
+        phase_id: Phase
+
+      group:
+        name: 'Short name'
+        title: 'Full name'
+        slug: 'Subdomain'
+        banner_image: 'Header image'
+        avatar_image: 'Group image'
+        summary: Description
+        has_blog: 'Blog'
+
+      post:
+        body: 'Summary'
+        image: 'Main image'
+        embed: 'Video'
+
+      page:
+        image: 'Main image'
+        embed: 'Video'
+
+      notice:
+        list: 'List'
+        image: 'Image'
+        link: 'Image link'
+        embed: 'Code'
+
+      user:
+        name: 'User name'
+        title: 'Full name'
+        avatar_image: 'Image'
+        summary: 'Brief description'
+
+      user_session:
+        password: Password
+
+      content-options-selector:
+        with-video: with a video
+        with-img: with an image
+        text-only: text only
+
+      proposal:
+        description: 'Summary'
+        phase: 'Phase to which it belongs'
+        category: 'Question it answers to'
+
+      section:
+        image_position: 'Where do you want to place the image'
+
+
+    hints:
+      defaults:
+        address: Google's geocodification system is used in order to find the coordinates using the given
+          address. Introduce it as detailed as possible and make sure that it is correct.
+        summary: 'It must be short and introduce the content. No more than a paragraph long.'
+
+      category:
+        name: 'It will be used in the URL. Try to make it short and descriptive.'
+        image: 'It has to be 800 pixels wide, no more and no less.'
+        remove_image: 'Select this if you want to remove the current image'
+
+      group:
+        avatar_image: It has to be square. Approximately 150x150 pixels.
+        title: If left blank the short name will be used.
+
+      help_text:
+        identf: Identifiable by the machine. Do not use special characters or spaces, only letters without accents, numbers and the under score. A maximum of 30 characters.
+        description: This is not visible to other users. It helps to identify the text and to make its function explicit. A maximum of 300 characters.
+        body: This is the text that will be shown to other users.
+        blocked: If blocked the identifier cannot be edited and the help text cannot be deleted becasue it is being used in the interface.
+
+      media_item:
+        url: 'If the link ends in .jpg, .png o .gif it will be treated as an image'
+
+      non_translatable_field: This field cannot be translated. If edited it will be changed in all languages.
+      non_translatable_fields: These fields cannot be translated. If edited they will be changed in all languages.
+      notice:
+        image: 'Its size should be 570x320 pixels.'
+        link: 'Optional. Url when clicking upon the image. It should be http://...'
+        embed: 'Html code. Something like &lt;iframe&gt...'
+
+      password_recovery:
+        email: 'Introduce the email address you used when you registered, and we will send you instructions'
+
+      proposal:
+        phase: 'In which phase could this proposal be applied'
+
+      section:
+        title: 'The title of this sections. Optional'
+        body: 'You can use markdown.'
+
+      user:
+        edit:
+          email: It is not visible to other users
+          password: 'Leave blank if you do not want to change it'
+          password_confirmation: 'Leave blank if you do not want change the password'
+          summary: A maximum of 500 characters
+
+  helpers:
+    submit:
+      group:
+        new: Create group
+        update: 'Update group'
+
+      password_recovery:
+        create: 'Send instructions'
+        update: 'Change password'
+
+      user_session:
+        create: Enter
+
 

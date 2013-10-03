@@ -1,0 +1,270 @@
+en:
+  who: Who
+  go_back: Back
+  view: Edit
+  edit: See
+  cancel: 'Cancel'
+  delete: Delete
+  confirm: 'Are you sure? This action cannot be undone'
+  more: 'Read more...'
+  read_more: 'More...'
+
+  application:
+    header:
+      session_start: Log in
+      session_end: Log out
+      view_user: View profile
+
+    internal_link_code:
+      how_to: "Use the following code to create a link to this page from another content of the platform.
+        You can insert it in all fields where markdown is used. Replace the text of the link within
+        brackets"
+      label: Internal link
+      link_text: Link text
+
+    tabs:
+      home: Home
+      habitapedia: Questions and<br />proposals
+      experiencies: Experiences
+      community: Community
+
+    slogan: collective processes for housing projects
+
+  categories:
+    notices:
+      created: 'Question added.'
+      updated: 'Question changed.'
+      destroyed: 'Question deleted.'
+
+    related_proposals:
+      block_title: Given this question the following proposals have been put forward
+
+  comments:
+    edit:
+      title: Edit comment
+    comment:
+      time_ago: Since %{time}
+    comments:
+      new_comment: "Send a comment:"
+    notices:
+      created: "Comment created. Thanks!!"
+      updated: "Comment updated. Thanks!!"
+      destroyed: Comment deleted.
+
+  dashboard:
+    admin_area:
+      title: Admin area
+    community:
+      title: 'Community'
+      groups_filter: Groups only
+      users_filter: Users only
+
+  experiencies:
+    notices:
+      created: 'Experience added, thanks!'
+      updated: 'Experience changed.'
+      destroyed: 'Experience deleted. Gulp!'
+    related_proposals:
+      block_title: For this experience the following proposals have been applied
+
+  filters:
+    all: All
+    filter_by: Filter by
+    only: Only %{filter}
+
+  groups:
+    new:
+      title: 'Add collective'
+    edit:
+      title: Edit %{group_name}
+    index:
+      title: 'Collectives'
+      new_group: 'Add collective'
+    notices:
+      created: 'Collective added.'
+      updated: "Collective's data updated. Thanks"
+      deleted: The group has been deleted.
+
+  help_pages:
+    new:
+      title: New help page
+    edit:
+      title: Edit help page
+    notices:
+      created: Help page created correctly. Thanks!!
+      updated: Help page updated correctly. Thanks!!
+      destroyed: Help page deleted.
+
+  help_texts:
+    new:
+      title: New contextual help
+    edit:
+      title: Edit contextual help
+    notices:
+      created: Help text created correctly. Thanks!!
+      updated: Help text updated correctly. Thanks!!
+      destroyed: Help text deleted.
+
+  langs:
+    available_translations: Other languages
+    translate_to: Translate to
+    lang: Language
+    ca: Catalan
+    en: English
+    es: Spanish
+    fr: French
+    it: Italian
+
+  layouts:
+    application:
+      no_script_message:
+
+  locations:
+    index:
+      title: Map
+
+  memberships:
+    index:
+      title: Participants in %{group}
+      delete_membership: Delete from the group
+    notices:
+      added: "%{user} has been added to the group %{group}"
+      already_member: already a member of the group
+
+  password_recoveries:
+    new:
+      title: Recover password
+    show:
+      title: Change password
+    notices:
+      create: We have sent intructions to your email account
+      user_not_found: "We haven't found anybody registered with this account"
+      updated: 'Your password has been changed'
+      update_failed: "We are sorry, your password couldn't be changed. Try again."
+
+  phases:
+    index:
+      title: Questions and proposals
+      phase_filter: Phase %{phase}
+    notices:
+      created: 'Phase added.'
+      updated: 'Phase changed.'
+    show:
+      title: Phase %{phase}
+
+  proposals:
+    index:
+      title: 'Proposals'
+    show:
+      title: 'Proposal'
+    notices:
+      updated: 'Proposal updated. Thanks!'
+      created: 'We have a new proposal, thanks!'
+
+    related_proposals:
+      block_title: Other proposals given the same question
+
+    related_experiencies:
+      block_title: Related experiences
+      add_related_experiencie: Add related experience
+
+  public_activity:
+    block_title: "Recent activity:"
+
+    category:
+      create:
+        action: has created the questions
+      destroy:
+        action: "has deleted the question titled \"%{trackable_title}\""
+      translate:
+        action: has translated the question
+        to_locale: to %{lang}
+      update:
+        action: has updated the %{lang} version of the question
+
+    comment:
+      create:
+        action: has added a
+        to: to
+      destroy:
+        action: has deleted a comment with the following content
+
+    experiencie:
+      create:
+        action: has created the experience
+      destroy:
+        action: "has deleted the experience titled \"%{trackable_title}\""
+      translate:
+        action: has translated the experience
+        to_locale: to %{lang}
+      update:
+        action: has updated the %{lang} version of the experience
+
+    group:
+      create:
+        action: has created the group
+      destroy:
+        action: "has deleted the group called \"%{trackable_title}\""
+      translate:
+        action: has translated the group
+        to_locale: to %{lang}
+      update:
+        action: has updated the %{lang} version of the group
+
+    proposal:
+      create:
+        action: has created the proposal
+      destroy:
+        action: "has deleted the proposal titled\"%{trackable_title}\""
+      translate:
+        action: has translated the proposal
+        to_locale: to %{lang}
+      update:
+        action: has updated the %{lang} version of the proposal
+
+
+  relations:
+    new:
+      title: Add related experience
+      add_relation: Relate
+    notices:
+      created: 'Relation created'
+      destroyed: 'Relation deleted.'
+
+  sidebar_left:
+    form_links:
+      basic_info: Basic info
+
+  sidebar_right:
+    other_translations_help:
+      text: "You are editing the version in %{current_locale} of this content, you can also"
+      translation: "%{action} the version in %{lang}"
+    related_links:
+      block_title: "Related online resources:"
+
+  users:
+    edit:
+      title: Edit user profile
+    index:
+      title: 'People'
+    new:
+      title: 'Sign up'
+    notices:
+      created: 'Welcome to Masqueunacasa!'
+      updated: 'Your information has been saved. Thank you'
+    show:
+      memberships: belongs to the following collectives
+      editorships: has participated in
+      editorship_time: since %{time}
+      more_editorships: and %{count} more...
+
+  user_sessions:
+    new:
+      title: 'Sign in'
+      create_account: 'Create an account'
+      forgotten_password: I forgot my password
+    notices:
+      created: Hello %{user}!!
+      destroyed: See you soon!!
+      error: The email address or the password are not correct
+
