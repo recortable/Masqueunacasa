@@ -24,7 +24,9 @@ en:
 
     tabs:
       home: Home
-      habitapedia: Questions and<br />proposals
+      habitapedia:
+        html: Questions & <br />proposals
+        text: Questions and proposals
       experiencies: Experiences
       community: Community
 
