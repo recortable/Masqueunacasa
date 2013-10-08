@@ -22,6 +22,8 @@ set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
+set :host, "agilw.com"
+
 set :scm, "git"
 set :repository, "git@github.com:recortable/#{application}.git"
 set :branch, "transicion"
