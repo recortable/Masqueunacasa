@@ -62,6 +62,8 @@ ca:
       users_filter: Només usuaris
 
   experiencies:
+    experiencie:
+      no_image: No hi ha imatge disponible
     notices:
       created: 'Experiència afegida, gracies!'
       updated: 'Experiència modificada.'

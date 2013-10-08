@@ -3,15 +3,17 @@
   overflow: hidden;
 
   h2 {
-    margin: 5px 0;
+    margin: 0;
     position: relative;
-    min-height: 33px;
-    padding-left: 38px;
-    padding-right: 10px;
+    padding: 5px 10px 7px 38px;
 
     a {
       color: inherit;
     }
+  }
+
+  .summary {
+    padding-top: 6px;
   }
 
   .image-container {

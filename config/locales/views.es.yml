@@ -62,6 +62,8 @@ es:
       users_filter: Sólo usuarios
 
   experiencies:
+    experiencie:
+      no_image: No hay imagen disponible
     notices:
       created: 'Experiencia añadida, ¡gracias!'
       updated: 'Experiencia modificada.'

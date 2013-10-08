@@ -2,7 +2,7 @@
   .row
     .span3
       h2
-        span.experiencie-icon
+        span.experiencie-icon.elem-icon
         = link_to experiencie.title, experiencie
       .pad
         .experiencie-summary.summary
@@ -12,5 +12,5 @@
       - unless experiencie.images.empty?
         = link_to image_tag( experiencie.image ), experiencie
       - else
-        p: br No hay imagen disponible
+        p.no-image = t('.no_image')
 

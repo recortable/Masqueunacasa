@@ -10,6 +10,18 @@
   .lista-visor .visor-elem {
     min-height: 156px;
     max-height: 200px;
+
+    h2 {
+      margin-right: -30px;
+      background-color: #edbaa1;
+    }
+
+    p.no-image {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      text-align: center;
+    }
   }
 
   span.experiencie-icon {
@@ -17,9 +29,8 @@
     position: absolute;
     width: 30px;
     height: 30px;
-    top: 50%;
+    top: 0;
     left: 4px;
-    margin-top: -15px;
     background: image-url('icons/experiencies_icon-black.png') no-repeat left top;
   }
 }
