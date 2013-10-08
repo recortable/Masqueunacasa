@@ -10,6 +10,15 @@
     a {
       color: inherit;
     }
+
+    span.elem-icon {
+      display: block;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 0;
+      left: 4px;
+    }
   }
 
   .summary {

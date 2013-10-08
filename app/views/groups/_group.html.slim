@@ -1,11 +1,12 @@
 = div_for group, class: 'visor-elem' do
   .row
-    .span2
+    .span3.elem-header
       h2
-        span.group-icon
+        span.group-icon.elem-icon
         = link_to group.title, group
-    .span3
-      = markdown truncate( group.summary, length: 120, separator: ' ' )
+    .span2
+      .summary
+        = markdown truncate( group.summary, length: 90, separator: ' ' )
     .span1
       = link_to avatar_image(group), group
 
