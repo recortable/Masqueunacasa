@@ -246,6 +246,8 @@ es:
     other_translations_help:
       text: "Estás editando la versión en %{current_locale} de este contenido, también puedes"
       translation: "%{action} la versión en %{lang}"
+    phase_categories:
+      block_title: En esta fase nos hemos hecho las siguientes preguntas
     related_links:
       block_title: "Recursos online relacionados:"
 

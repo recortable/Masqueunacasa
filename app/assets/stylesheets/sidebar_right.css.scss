@@ -56,6 +56,25 @@
   }
 }
 
+.right-block.relation.phase-categories {
+  .block-header {
+    background-color: #c5e6ed;
+
+    span {
+      background-color: #199db6;
+      background-image: image-url('icons/habitapedia_icon-small.png');
+    }
+  }
+
+  .block-row.category {
+    border-bottom: 1px solid #c5e6ed;
+
+    span {
+      background-image: image-url('icons/pregunta-off.png');
+    }
+  }
+}
+
 .right-block.relation.category-proposals,
 .right-block.relation.experiencie-proposals {
   .block-header {
@@ -137,18 +156,32 @@
 }
 
 .right-block.activities-block {
-  .block-header {
-    background-color: #adadad;
-    font-weight: bold;
-  }
-
   .block-header, .block-row {
     padding: 6px 8px;
+  }
+
+  .block-header {
+    position: relative;
+    background-color: #adadad;
+    font-weight: bold;
     min-height: 2em;
+
+    span {
+      background: #494949 image-url('icons/activity_icon.png') no-repeat;
+      display: block;
+      position: absolute;
+      width: 65px;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background-position: 75% center;
+      background-repeat: no-repeat;
+    }
   }
 
   .block-row {
     border-bottom: 1px solid #adadad;
+    min-height: 1.5em;
   }
 
   .block-row:last-child {

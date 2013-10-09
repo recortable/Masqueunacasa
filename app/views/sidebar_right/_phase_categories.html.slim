@@ -1,0 +1,8 @@
+.right-block.relation.phase-categories class="#{phase.slug_es}"
+  .block-header
+    = t('.block_title') + ':'
+    span
+  - phase.categories.each do |category|
+    .block-row.relation.category
+      = link_to category.title, category
+      span

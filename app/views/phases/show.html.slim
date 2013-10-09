@@ -14,10 +14,16 @@ div[class="phase-#{phase.slug_es}"]
     = render 'sidebar_right/pending_translations',
       document: phase
 
+  = render 'sidebar_right/phase_categories'
+
 - content_for :left do
   .fixed-block
     - if can? :update, phase
       .left-block.controls.pull-right
         .control.block-row
           = link_to icon_after(:edit, t('edit')), url_for([:edit, phase])
+
+    .left-block.social
+      .block-row
+        = link_to icon(:twitter, 'Tweet'), "https://twitter.com/share?url=#{request.url}"
 

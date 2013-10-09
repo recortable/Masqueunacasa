@@ -252,6 +252,8 @@ ca:
     other_translations_help:
       text: "Estàs editant la versió en %{current_locale} d'aquest contingut, també pots"
       translation: "%{action} la versió en %{lang}"
+    phase_categories:
+      block_title: En aquesta fase ens hem fet les preguntes següents
     related_links:
       block_title: "Recursos online relacionats:"
 
