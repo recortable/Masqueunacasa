@@ -1,9 +1,19 @@
 #footer
   .container
     .row
-      .span12
+      .span3
         => link_to image_tag('MQUC.png'), front_path, id: 'logo-footer'
-        => link_to "FAQ", HelpPage.find_by_identf('faqs')
-        => link_to icon('twitter'), 'http://twitter.com/masqueunacasa', target: '_blank'
-        => link_to icon('envelope', 'hola@masqueunacasa.org'), 'mailto:hola@masqueunacasa.org'
+      .span3
+        .footer-block
+          => link_to t('.about_us'), HelpPage.find_by_identf('quienes')
+        .footer-block
+          => link_to t('.contact'), HelpPage.find_by_identf('contacto')
+      .span3
+        .footer-block
+          => link_to t('.faqs'), HelpPage.find_by_identf('faqs')
+        .footer-block
+          => link_to t('.license'), HelpPage.find_by_identf('licencias')
+      .span3
+        .footer-block.social
+          => link_to icon('twitter'), 'http://twitter.com/masqueunacasa', target: '_blank', id: 'twitter'
 

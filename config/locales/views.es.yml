@@ -15,6 +15,12 @@ es:
       session_end: Salir
       view_user: Ver perfil
 
+    footer:
+      about_us: ¿Quienes somos?
+      contact: Contacto
+      faqs: Preguntes frecuentes
+      license: Licencia i créditos
+
     internal_link_code:
       how_to: "Usa el siguiente código para crear un enlace a esta página desde otro contenido de la plataforma.
         Lo puedes insertar en todos los campos donde se puede usar markdown. Sustituye el texto del enlace que está

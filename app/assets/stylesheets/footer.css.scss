@@ -1,4 +1,30 @@
 #footer {
-  margin-top: 20px;
-  padding: 10px 0;
+  margin-top: 50px;
+
+  & > .container {
+    padding-bottom: 10px;
+    box-shadow: 0 0 10px 0 #999;
+  }
+}
+
+#logo-footer img {
+  margin: 5px;
+}
+
+.footer-block {
+  padding: 5px 8px;
+  border-bottom: 1px solid $fondo;
+
+  a {
+    color: $fondo;
+  }
+}
+
+.footer-block.social {
+  text-align: right;
+
+  #twitter {
+    font-size: 20px;
+    margin-bottom: -3px;
+  }
 }
