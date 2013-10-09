@@ -17,7 +17,7 @@ class DashboardController < ApplicationController
   end
 
   def community
-
+    @active_tab = 'community'
   end
 
   def mailer
