@@ -1,0 +1,146 @@
+fr:
+  simple_form:
+    "yes": 'Oui'
+    "no": 'Non'
+    required:
+      text: 'requis'
+      mark: '*'
+    error_notification:
+      default_message: "Il y a des erreurs dans le formulaire, vérifie-le s'il te plait :"
+
+    labels:
+      defaults:
+        address: Adresse
+        author: 'Auteurs'
+        body: 'Texte'
+        body_ca: 'Texte en catalan'
+        content_type: 'Type de texte'
+        description: Description
+        email: 'Mail'
+        identf: Identifiant unique
+        map: Si tu le veux, tu peux te localiser en cliquant sur la carte
+        name: 'Nom'
+        published_at: 'Date de publication'
+        password: 'Mot de passe'
+        password_confirmation: 'Répète le mot de passe'
+        summary: 'Résumé'
+        title: 'Titre'
+        title_ca: 'Titre en catalan'
+        url: 'Lien'
+
+      category:
+        name: 'Nom'
+        title: 'Question'
+        image: 'Image ou dessin'
+        remove_image: "Supprimer l'image"
+        phase_id: Étape
+
+      group:
+        name: 'Nom court'
+        title: 'Nom complet'
+        slug: 'Sous-domaine'
+        banner_image: "Image d'en-tête"
+        avatar_image: 'Image de groupe'
+        summary: Description
+        has_blog: 'Blog'
+
+      post:
+        body: 'Résumé'
+        image: 'Image principale'
+        embed: 'Vidéo'
+
+      page:
+        image: 'Image principale'
+        embed: 'Vidéo'
+
+      notice:
+        list: 'Liste'
+        image: 'Image'
+        link: "Lien de l'image"
+        embed: 'Code'
+
+      user:
+        name: "Nom d'utilisateur"
+        title: 'Nom complet'
+        avatar_image: 'Image'
+        summary: 'Brève description'
+
+      user_session:
+        password: Mot de passe
+
+      content-options-selector:
+        with-video: avec une vidéo
+        with-img: avec une image
+        text-only: seulement du texte
+
+      proposal:
+        description: 'Résumé'
+        phase: 'Étape dans laquelle cela entre'
+        category: 'A quelle question cela répond-il'
+
+      section:
+        image_position: "Où veux-tu placer l'image"
+
+
+    hints:
+      defaults:
+        address: "On utilise le service de géocodification de Google pour trouver les coordonnées à partir de 
+l'adresse. Écris la avec le plus d'exactitude possible et vérifie ensuite qu'elle soit correcte."
+        summary: "Il doit être court et introduire le contenu. Pas plus d'un paragraphe."
+
+      category:
+        name: "Il sera utilisé dans l'URL. Fais en sorte qu'il soit court et descriptif."
+        image: "Elle doit avoir une largeur de 800 pixels, ni plus ni moins."
+        remove_image: "Sélectionne ceci si tu veux supprimer l'image actuelle."
+
+      group:
+        avatar_image: Elle doit être carrée. Approximativement 150x150 pixels.
+        title: Si tu ne le remplis pas, le nom court sera utilisé.
+
+      help_text:
+        identf: "Identifiable par la machine. Sans caractères spéciaux et sans espaces, seulement les lettres sans accents, numéros et tirets-bas. Maximum 30 caractères."
+        description: "Invisible pour les utilisateurs. Sert pour aider à identifier le texte et expliciter sa fonction. Maximum 300 caractères."
+        body: "Le texte sera montré à l'utilisateur."
+        blocked: "En le bloquant cela empêche d'éditer l'identifiant ou d'éliminer le texte d'aide parce qu'il est utilisé dans l'interface."
+
+      media_item:
+        url: 'Si le lien finit par .jpg, .png ou .gif il sera traité comme une image'
+
+      non_translatable_field: "Ce champ ne peut pas se traduire. Si tu l'édites il se modifiera dans toutes les langues."
+      non_translatable_fields: "Ces champs ne peuvent pas se traduire. Si tu les édites il se modifieront dans toutes les langues."
+
+      notice:
+        image: 'Doit faire 570x320 pixels.'
+        link: "Optionnel. Url en cliquant sur l'image. Doit être en http://..."
+        embed: 'Code html. Quelque chose comme &lt;iframe&gt...'
+
+      password_recovery:
+        email: "Écris le mail avec lequel tu t'es enregistré et on t'enverra les instructions"
+
+      proposal:
+        phase: "A quelle étape pourrait s'appliquer cette proposition"
+
+      section:
+        title: 'Le titre de cette section. Est optionnel'
+        body: 'Tu peux utiliser markdown.'
+
+      user:
+        edit:
+          email: Il n'est pas visible par le reste des utilisateurs
+          password: 'Laisse le vide si tu ne veux pas le changer'
+          password_confirmation: 'Laisse le vide si tu ne veux pas changer le mot de passe'
+          summary: Maximum 500 caractères
+
+  helpers:
+    submit:
+      group:
+        new: Créer un groupe
+        update: 'Actualiser le groupe'
+
+      password_recovery:
+        create: 'Envoyer les instructions'
+        update: 'Modifier le mot de passe'
+
+      user_session:
+        create: Entrer
+

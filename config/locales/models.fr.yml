@@ -1,0 +1,55 @@
+fr:
+  activerecord:
+    models:
+      category: 'questions'
+      comment:
+        one: commentaire
+        other: commentaires
+      editorship:
+        one: éditeur
+        other: éditeurs
+      experiencie:
+        one: expérience
+        other: expériences
+      group:
+        one: 'collectif'
+        other: collectifs
+      help_page:
+        one: page auxiliaire
+        other: pages auxiliaires
+      image:
+        one: image
+        other: images
+      image_section: section de l'image
+      link:
+        one: 'ressource'
+        other: ressources
+        one: localisation
+        other: localisations
+      membership:
+        one: participant
+        other: participants
+      notice: 'signalé'
+      password_recovery: 'récupérer mot de passe'
+      phase: 'Etape'
+      proposal:
+        one: 'proposition'
+        other: propositions
+      section:
+        one: section
+        other: sections
+      text_section: 'section de texte'
+      user:
+        one: personne
+        other: personnes
+
+  versions:
+    events:
+      create: 'créé'
+      destroy: 'supprimé'
+      update: 'modifié'
+
+  search:
+    errors:
+      term_to_short: 'Ce que tu recherches doit contenir au moins 3 caractères'
+

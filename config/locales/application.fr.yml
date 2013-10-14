@@ -1,0 +1,26 @@
+fr:
+  app:
+    add: Ajouter %{element}
+    back_to: "Revenir à '%{title}'"
+    cancel: 'Fermer'
+    create: 'Créer'
+    create_new: Créer %{element}
+    edit: 'Éditer'
+    remove: Supprimer %{element}
+
+    filter_by: Filtrer par
+    order_by: Organiser par
+    remove_filters: Tout montrer
+
+    require_user: "Tu dois t'identifier ou créer un compte d'utilisateur..."
+
+    confirm: "Attention, cette action est définitive. Veux-tu continuer?"
+
+  resource:
+    created: 'Ajouté. Merci'
+    destroyed: 'Supprimé... Oups...'
+    updated: 'Modifié. Bien!'
+
+  will_paginate:
+    next_label: '>>'
+    previous_label: '<<'
