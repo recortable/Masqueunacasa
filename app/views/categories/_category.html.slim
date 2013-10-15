@@ -11,7 +11,7 @@
           = markdown truncate(category.summary, length: 180, separator: ' ')
 
     .span3.image-container
-      = image_tag category.image
+      = image_tag category.image.to_s if category.image?
 
   .row
     .span6.category-proposals
