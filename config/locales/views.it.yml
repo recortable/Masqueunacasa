@@ -184,7 +184,7 @@ it:
         action: ha tradotto la domanda
         to_locale: in %{lang}
       update:
-        action: ha aggiornato la versione in %{lang} dela domanda
+        action: ha aggiornato la versione in %{lang} della domanda
 
     comment:
       create:

@@ -15,7 +15,10 @@ ca:
         bloqued: Bloquejat
         body: 'Text'
         body_ca: 'Text en català'
-        content_type: 'Tipus de text'
+        body_en: Text en anglès
+        body_es: Text en castellà
+        body_fr: Text en francès
+        body_it: Text en italià
         description: Descripció
         email: Correu electrònic
         identf: Identificador únic
