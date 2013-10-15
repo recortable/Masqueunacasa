@@ -1,0 +1,278 @@
+es:
+  who: Chi
+  go_back: Tornare
+  edit: Modificare
+  view: Vedere
+  cancel: 'Cancellare'
+  delete: Sopprimere
+  confirm: 'Sei sicuro? Questa azione non può essere annullata.'
+  read_more: 'Leggi tutto...'
+  more: 'di più...'
+
+  application:
+    header:
+      session_start: Accedi
+      session_end: Uscire
+      view_user: Vedere il profilo
+
+    footer:
+      about_us: Chi siamo?
+      contact: Contatto
+      faqs: Domande frequenti
+      license: Licenzaa e credits
+
+    internal_link_code:
+      how_to: "Usa questo codice per creare un link a questa pagina da un altro contenuto della piattaforma. È possibile inserire in tutti i campi in cui viene utilizzato Markdown. Sostituire il testo del collegamento tra parentesi"
+      label: Link interno
+      link_text: testo del enlace
+
+    tabs:
+      home: Home
+      habitapedia:
+        html: Domande e<br />proposte
+        text: Domande e proposte
+      experiencies: Esperienze
+      community: Comunità
+
+    slogan: processi collettivi delle abitazioni
+
+  categories:
+    notices:
+      created: 'Domanda aggiunta.'
+      updated: 'Domanda modificata.'
+      destroyed: 'Domanda eliminata.'
+
+    related_proposals:
+      block_title: Le proposte a questa domanda
+
+  comments:
+    edit:
+      title: Modificare commento
+    comment:
+      time_ago: "%{time} fa"
+    comments:
+      new_comment: "Posta un commento:"
+    notices:
+      created: "Commento creato. Grazie!!"
+      updated: "Commento modificato. Grazie!!"
+      destroyed: Commento eliminato.
+
+  dashboard:
+    admin_area:
+      title: Area di amministrazione
+    community:
+      title: 'Comunità'
+      groups_filter: Solo gruppi
+      users_filter: Solo persone
+
+  experiencies:
+    experiencie:
+      no_image: Nessuna immagine disponibile
+    notices:
+      created: 'Esperienza aggiunta, grazie!!'
+      updated: 'Esperienza modificata.'
+      destroyed: 'Esperienza eliminata. Glups.'
+    related_proposals:
+      block_title: In questa esperienza sono state implementate le seguenti proposte
+
+  filters:
+    all: Tuto
+    filter_by: Filtrare per
+    only: Solamente %{filter}
+
+  groups:
+    new:
+      title: 'Aggiungere collettivo'
+    edit:
+      title: Modificare %{group_name}
+    index:
+      title: 'Collettivi'
+      new_group: 'Aggiungere collettivo'
+    notices:
+      created: 'Collettivo aggiunto.'
+      updated: 'Dati del collettivo aggiornati, grazie!'
+      deleted: Il gruppo è stato eliminato.
+
+  help_pages:
+    new:
+      title: Nuova pagina informativa
+    edit:
+      title: Modificare la pagina informativa
+    notices:
+      created: Pagina informativa creata. Grazie!!
+      updated: Pagina informativa aggiornata correttamente. Grazie!!
+      destroyed: Pagina informativa eliminata.
+
+  help_texts:
+    new:
+      title: Nuovo ayuto contestuale
+    edit:
+      title: Modificare ayuto contestuale
+    notices:
+      created: Testo informativo creato correttamente. Grazie!!
+      updated: Testo informativo aggiornato correttamente. Gracias!!
+      destroyed: Testo informativo eliminato.
+
+  langs:
+    available_translations: Altre lingue
+    translate_to: Tradurre a
+    lang: Lingua
+    ca: Catalano
+    en: Inglese
+    es: Spagnolo
+    fr: Francese
+    it: Italiano
+
+  locations:
+    index:
+      title: mappa
+
+  memberships:
+    index:
+      title: Partecipanti in %{group}
+      delete_membership: Eliminare dal gruppo
+    notices:
+      added: "%{user} è stato aggiunto al gruppo %{group}"
+      already_member: Già membro del gruppo
+
+  password_recoveries:
+    new:
+      title: Recuperare la password
+    show:
+      title: Modificare la password
+    notices:
+      create: Abbiamo inviato le istruzioni alla tua email
+      user_not_found: 'Non abbiamo trovato nessuno registrato con questa e-mail'
+      updated: 'La password è stata cambiata'
+      update_failed: 'Siamo spiacenti, non è stato possibile modificare la tua password. Per favore, prova di nuovo.'
+
+  phases:
+    index:
+      title: Domande e proposte
+      phase_filter: Fase di %{phase}
+    notices:
+      created: 'Fase aggiunta.'
+      updated: 'Fase modificata.'
+    show:
+      title: Fase di %{phase}
+
+  proposals:
+    index:
+      title: 'Proposte'
+    show:
+      title: 'Proposta'
+    notices:
+      updated: 'Proposta aggiornata. Grazie!'
+      created: 'Abbiamo una nuova proposta. Grazie!'
+
+    related_proposals:
+      block_title: Altre proposte alla stessa dommanda
+
+    related_experiencies:
+      block_title: Esperienze legate
+      add_related_experiencie: Aggiungi esperienza riferita
+
+  public_activity:
+    block_title: "Attività recenti:"
+
+    category:
+      create:
+        action: ha creato la domanda
+      destroy:
+        action: "ha cancelato la domanda intitolata \"%{trackable_title}\""
+      translate:
+        action: ha tradotto la domanda
+        to_locale: in %{lang}
+      update:
+        action: ha aggiornato la versione in %{lang} dela domanda
+
+    comment:
+      create:
+        action: ha aggiunto un
+        to: a
+      destroy:
+        action: ha cancellato il commento con il contenuto
+
+    experiencie:
+      create:
+        action: ha creato l'esperienza
+      destroy:
+        action: "ha cancellato l'esperienza intitolata \"%{trackable_title}\""
+      translate:
+        action: "ha tradotto l'esperienza"
+        to_locale: in %{lang}
+      update:
+        action: "ha aggiornato la versione in %{lang} dell'esperienza"
+
+    group:
+      create:
+        action: ha creato il gruppo
+      destroy:
+        action: "ha rimosso il grupo con il nome \"%{trackable_title}\""
+      translate:
+        action: ha traddotto il gruppo
+        to_locale: al %{lang}
+      update:
+        action: ha aggiornato la versione in %{lang} del gruppo
+
+    proposal:
+      create:
+        action: ha creato la proposta
+      destroy:
+        action: "ha rimosso la proposta intitolata \"%{trackable_title}\""
+      translate:
+        action: ha tradotto la proposta
+        to_locale: al %{lang}
+      update:
+        action: ha aggiornato la versione in %{lang} della proposta
+
+  relations:
+    new:
+      add_relation: Collegare
+      choose_experiencie: Scegli una esperienza
+      remove_relation: Rimuovere relazione
+      title: Aggiungi esperienza riferita
+    notices:
+      created: 'Relazione creata'
+      destroyed: 'Relazione rimossa'
+
+  sidebar_left:
+    form_links:
+      basic_info: Informazione di base
+
+  sidebar_right:
+    other_translations_help:
+      text: "Stai modificando la versione in %{current_locale} di questo contenuto, puòi anche"
+      translation: "%{action} la versione in %{lang}"
+    phase_categories:
+      block_title: In questa fase ci siamo fatti le seguenti domande
+    related_links:
+      block_title: "Risorsi online correlati:"
+
+  users:
+    edit:
+      title: Modifica profilo
+    index:
+      title: 'Persone'
+    new:
+      title: 'Registrarsi'
+    notices:
+      created: '¡Benvenuto a Masqueunacasa!'
+      updated: 'La tua informazione è stata salvata. Grazie!'
+    show:
+      memberships: Fa parte dei seguenti gruppi
+      editorships: Ha partecipato a
+      editorship_time: "%{time} fa"
+      more_editorships: e altri %{count}...
+
+  user_sessions:
+    new:
+      title: 'Accedi'
+      create_account: 'Creare un account'
+      forgotten_password: Ho dimenticato la password
+    notices:
+      already_logged_in: Già loggato.
+      created: Ciao %{user}!!
+      destroyed: Arrivederci!!
+      error: L'indirizzo di posta elettronica o la password non sono corretti
+

@@ -1,0 +1,49 @@
+es:
+  activerecord:
+    models:
+      category: 'domanda'
+      comment:
+        one: commento
+        other: commenti
+      editorship:
+        one: redattore
+        other: redattori
+      experiencie:
+        one: esperienza
+        other: esperienze
+      group:
+        one: 'gruppo'
+        other: gruppi
+      help_page:
+        one: pagina informativa
+        other: pagine informative
+      image:
+        one: immagine
+        other: immagini
+      image_section: sezione di immagine
+      link:
+        one: 'risorsa'
+        other: risorse
+      location:
+        one: localizzazione
+        other: localizzazioni
+      membership:
+        one: partecipante
+        other: partecipanti
+      password_recovery: 'recuperare la password'
+      phase: 'fase'
+      proposal:
+        one: 'proposta'
+        other: proposte
+      section:
+        one: sezione
+        other: sezioni
+      text_section: 'sezione di testo'
+      user:
+        one: persona
+        other: persone
+
+  search:
+    errors:
+      term_to_short: 'Lo que buscas debe tener al menos 3 letras'
+

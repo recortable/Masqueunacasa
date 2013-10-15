@@ -99,7 +99,7 @@ es:
     new:
       title: Nueva página auxiliar
     edit:
-      title: Editar página auxiliar      
+      title: Editar página auxiliar
     notices:
       created: Página auxiliar creada correctamente. Gracias!!
       updated: Página auxiliar actualizada correctamente. Gracias!!
@@ -179,14 +179,14 @@ es:
 
     category:
       create:
-        action: ha creado la prgunta
+        action: ha creado la pregunta
       destroy:
         action: "ha borrado la pregunta titulada \"%{trackable_title}\""
       translate:
-        action: ha traducido la prgunta
+        action: ha traducido la pregunta
         to_locale: al %{lang}
       update:
-        action: ha actualizado la versión en %{lang} de la prgunta
+        action: ha actualizado la versión en %{lang} de la pregunta
 
     comment:
       create:

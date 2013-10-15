@@ -16,7 +16,6 @@ es:
     proposals: 'propuestas'
     relations: 'relacionadas'
     users: 'personas'
-    sections: 'secciones'
     locations: 'mapa'
     edition: 'edicion'
     images: 'imagenes'
@@ -37,8 +36,6 @@ en:
     help_pages: info
     memberships: 'participants'
     messages: 'messages'
-    notices: 'highlights'
-    pages: 'docs'
     password_recoveries: 'recover-password'
     phases: 'habitapedia'
     posts: 'blog'
@@ -46,7 +43,6 @@ en:
     proposals: 'proposals'
     relations: 'related'
     users: 'people'
-    sections: 'sections'
     locations: 'map'
     edition: 'edition'
     images: 'images'
@@ -66,9 +62,6 @@ ca:
     groups: 'collectius'
     help_pages: info
     memberships: 'participants'
-    messages: 'missatges'
-    notices: 'destacats'
-    pages: 'docs'
     password_recoveries: 'recuperar-constrassenya'
     phases: 'habitapedia'
     posts: 'blog'
@@ -76,11 +69,7 @@ ca:
     proposals: 'propostes'
     relations: 'relacionades'
     users: 'persones'
-    sections: 'seccions'
     locations: 'mapa'
-    edition: 'edicio'
-    images: 'imatges'
-    links: 'enllacos-relacionats'
 
     edit: 'editar'
     new: 'crear'
@@ -90,61 +79,45 @@ ca:
 
 it:
   routes:
-    categories:
-    community:
-    experiencies:
-    groups:
-    help_pages:
-    memberships:
-    messages:
-    notices:
-    pages:
-    password_recoveries:
-    phases:
-    posts:
-    profile:
-    proposals:
-    relations:
-    users:
-    sections:
-    locations:
-    edition:
-    images:
-    links:
+    categories: domande
+    community: comunita
+    experiencies: esperienze
+    groups: gruppi
+    help_pages: info
+    memberships: partecipanti
+    assword_recoveries: recuperare-la-password
+    phases: habitapedia
+    profile: profilo
+    proposals: proposta
+    relations: correlate
+    users: persone
+    locations: mappa
 
-    edit:
-    new:
-    entrar:
-    salir:
-    sign_up:
+    edit: editare
+    new: creare
+    entrar: entrare
+    salir: sortire
+    sign_up: inscriviti
 
 fr:
   routes:
-    categories:
-    community:
-    experiencies:
-    groups:
-    help_pages:
-    memberships:
-    messages:
-    notices:
-    pages:
-    password_recoveries:
-    phases:
-    posts:
-    profile:
-    proposals:
-    relations:
-    users:
-    sections:
-    locations:
-    edition:
-    images:
-    links:
+    categories: questions
+    community: communaute
+    experiencies: experiences
+    groups: collective
+    help_pages: info
+    memberships: participants
+    password_recoveries: recuperer-mot-de-passe
+    phases: habitapedia
+    profile: profil
+    proposals: propositions
+    relations: relations
+    users: utilisateur
+    locations: carte
 
-    edit:
-    new:
-    entrar:
-    salir:
-    sign_up:
+    edit: editer
+    new: creer
+    entrar: entrer
+    salir: sortir
+    sign_up: inscrivez-vous
 

@@ -6,15 +6,13 @@ en:
       text: 'required'
       mark: '*'
     error_notification:
-      default_message: "There are erros in the form, please take a look at it"
+      default_message: "There are errors in the form, please take a look at it"
 
     labels:
       defaults:
         address: Address
         author: 'Author'
         body: 'Text'
-        body_ca: 'Text in Catalan'
-        content_type: 'Text type'
         description: Description
         email: 'Email'
         identf: Unique identifier
@@ -42,22 +40,6 @@ en:
         banner_image: 'Header image'
         avatar_image: 'Group image'
         summary: Description
-        has_blog: 'Blog'
-
-      post:
-        body: 'Summary'
-        image: 'Main image'
-        embed: 'Video'
-
-      page:
-        image: 'Main image'
-        embed: 'Video'
-
-      notice:
-        list: 'List'
-        image: 'Image'
-        link: 'Image link'
-        embed: 'Code'
 
       user:
         name: 'User name'
@@ -67,11 +49,6 @@ en:
 
       user_session:
         password: Password
-
-      content-options-selector:
-        with-video: with a video
-        with-img: with an image
-        text-only: text only
 
       proposal:
         description: 'Summary'
@@ -108,10 +85,6 @@ en:
 
       non_translatable_field: This field cannot be translated. If edited it will be changed in all languages.
       non_translatable_fields: These fields cannot be translated. If edited they will be changed in all languages.
-      notice:
-        image: 'Its size should be 570x320 pixels.'
-        link: 'Optional. Url when clicking upon the image. It should be http://...'
-        embed: 'Html code. Something like &lt;iframe&gt...'
 
       password_recovery:
         email: 'Introduce the email address you used when you registered, and we will send you instructions'
@@ -142,5 +115,4 @@ en:
 
       user_session:
         create: Enter
-
 

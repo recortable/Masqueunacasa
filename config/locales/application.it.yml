@@ -1,0 +1,28 @@
+es:
+  app:
+    add: Añadir %{element}
+    back_to: "Volver a '%{title}'"
+    cancel: 'Cancelar'
+    create: 'Crear'
+    create_new: Crear %{element}
+    edit: 'Editar'
+    remove: Borrar %{element}
+
+    filter_by: Filtrar por
+    order_by: Ordenar por
+    remove_filters: Mostrar todo
+
+    require_user: "Antes tienes que identificarte o crear una cuenta de usuario..."
+
+    confirm: "Atención, esta acción no se puede deshacer. Quieres continuar?"
+
+    untranslated_content: Este contenido aun no ha sido traducido al %{lang}. Lo presentamos en el idioma en el que fue creado.
+
+  resource:
+    created: 'Añadido. Gracias'
+    destroyed: 'Borrado... uupps...'
+    updated: 'Modificado. ¡Bien!'
+
+  will_paginate:
+    next_label: '>>'
+    previous_label: '<<'

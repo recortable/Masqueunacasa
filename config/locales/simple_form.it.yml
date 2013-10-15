@@ -1,0 +1,111 @@
+es:
+  simple_form:
+    "yes": 'Sà'
+    "no": 'No'
+    required:
+      text: 'obbligatorio'
+      mark: '*'
+    error_notification:
+      default_message: "Ci sono errori sulla forma, si prega di controllare il formato:"
+
+    labels:
+      defaults:
+        address: Indirrizzo
+        author: 'Autore'
+        body: 'toto'
+        description: Descrizione
+        email: 'E-mail'
+        identf: Identificatore univoco
+        name: 'Nome'
+        password: 'Password'
+        password_confirmation: 'Conferma de la password'
+        summary: 'Riepilogo'
+        title: 'Titolo'
+        url: 'URL'
+
+      category:
+        name: 'Nome breve'
+        title: 'Domanda'
+        image: 'immagine o disegno'
+        remove_image: "Eliminare l'immagine"
+        phase_id: Fase
+
+      group:
+        name: 'Nome corto'
+        title: 'Nome completo'
+        avatar_image: 'immagine del gruppo'
+        summary: Descrizione
+
+      user:
+        name: 'Nickname'
+        title: 'Nome completo'
+        avatar_image: 'Immagine'
+        summary: 'Breve descrizione'
+
+      user_session:
+        password: Password
+
+      proposal:
+        description: 'Riepilogo'
+        phase: 'Fase a cui appartiene'
+        category: 'Domanda a cui rispondere'
+
+
+    hints:
+      defaults:
+        address: "Usiamo il servizio di geocoding di Google per trovare le coordinate dall'indirizzo.
+                  Scrivilo nel miglior modo possibile e quindi verificare che sia corretta."
+        summary: 'Deve essere breve e introduce il contenuto. Non più di un paragrafo.'
+
+      category:
+        name: 'Sarà usato nella URL. Cercate di farla breve e descrittivo.'
+        image: 'Deve essere larga 800 pixel, niente di più e niente di meno.'
+        remove_image: "Selezionare questa opzione se si desidera rimuovere l'immagine attuale"
+
+      group:
+        avatar_image: Deve essere quadrata. Circa 150x150 pixel.
+        title: Se si lascia il campo vuoto verrà utillizzato il nome breve.
+
+      help_text:
+        identf: Identificabile dalla macchina. Non usare spazi o caratteri speciali, ma solo lettere senza accenti, numeri e il trattino basso. Un massimo di 30 caratteri.
+        description: Non è visibile agli utenti. Usato per aiutare a identificare il testo e spiegare la sua funzione. Un massimo di 300 caratteri.
+        body: Il testo che verrà mostrato agli utenti.
+        blocked: "Se bloccato l'identificatore non può essere modificato e il testo di aiuto non può essere soppresso in quanto è utilizzato nell'interfaccia."
+
+      non_translatable_field: Questo campo non è traducibile. Se si modifica cambierà in tutte le lingue.
+      non_translatable_fields: Questi campi non sono traducibili. Se sono modificati sarrano cambiati in tutte le lingue.
+
+      password_recovery:
+        email: "Introdurre l'indirizzo email che hai utilizzato al momento della registrazione e ti invieremo le istruzioni."
+
+      proposal:
+        phase: 'In quale fase si potrebbe applicare questa proposta'
+
+      section:
+        title: 'Il titolo di questa sezione. Opzionale.'
+        body: 'Puoi usare markdown.'
+
+      user:
+        edit:
+          email: Non è visibile ad altri utenti
+          password: 'Lasciare vuoto se non si desidera modificare'
+          password_confirmation: 'Lasciare vuoto se non si desidera modificare la password'
+          summary: Massimo 500 caratteri
+
+  helpers:
+    submit:
+      group:
+        new: Creare un gruppo
+        update: 'Modificare grupo'
+
+      password_recovery:
+        create: 'Inviare istruzioni'
+        update: 'Modificare la password'
+
+      relation:
+        create: Collegamento
+
+      user_session:
+        create: Entrare
+
+

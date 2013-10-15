@@ -1,8 +1,8 @@
 en:
   who: Who
   go_back: Back
-  view: Edit
-  edit: See
+  view: See
+  edit: Edit
   cancel: 'Cancel'
   delete: Delete
   confirm: 'Are you sure? This action cannot be undone'
@@ -62,6 +62,8 @@ en:
       users_filter: Users only
 
   experiencies:
+    experience:
+      no_image: No picture available
     notices:
       created: 'Experience added, thanks!'
       updated: 'Experience changed.'
@@ -139,8 +141,8 @@ en:
     show:
       title: Change password
     notices:
-      create: We have sent intructions to your email account
-      user_not_found: "We haven't found anybody registered with this account"
+      create: We have sent instructions to your email account
+      user_not_found: "We haven't found anybody registered with this email account"
       updated: 'Your password has been changed'
       update_failed: "We are sorry, your password couldn't be changed. Try again."
 
@@ -175,7 +177,7 @@ en:
 
     category:
       create:
-        action: has created the questions
+        action: has created the question
       destroy:
         action: "has deleted the question titled \"%{trackable_title}\""
       translate:
@@ -227,8 +229,10 @@ en:
 
   relations:
     new:
-      title: Add related experience
       add_relation: Relate
+      choose_experiencie: Choose an experience
+      remove_relation: Remove relation
+      title: Add related experience
     notices:
       created: 'Relation created'
       destroyed: 'Relation deleted.'
@@ -241,6 +245,7 @@ en:
     other_translations_help:
       text: "You are editing the version in %{current_locale} of this content, you can also"
       translation: "%{action} the version in %{lang}"
+    phase_categories:
     related_links:
       block_title: "Related online resources:"
 
@@ -266,6 +271,7 @@ en:
       create_account: 'Create an account'
       forgotten_password: I forgot my password
     notices:
+      already_logged_in: Already logged in
       created: Hello %{user}!!
       destroyed: See you soon!!
       error: The email address or the password are not correct
