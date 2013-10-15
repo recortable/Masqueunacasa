@@ -1,4 +1,4 @@
-es:
+it:
   app:
     add: Añadir %{element}
     back_to: "Volver a '%{title}'"
