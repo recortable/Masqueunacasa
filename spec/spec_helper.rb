@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'spork'
+require "capybara/poltergeist"
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
@@ -22,7 +23,7 @@ Spork.prefork do
     config.include FactoryGirl::Syntax::Methods
     config.include Rails.application.routes.url_helpers
     config.include Capybara::DSL
-    Capybara.javascript_driver = :webkit
+    Capybara.javascript_driver = :poltergeist
 
     # ## Mock Framework
     #

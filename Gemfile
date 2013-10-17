@@ -97,7 +97,7 @@ end
 group :test do
   gem 'faker'
   gem 'capybara'
-  gem 'capybara-webkit'
+  gem 'poltergeist'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'spork', '0.9.0'
