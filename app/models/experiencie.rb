@@ -72,7 +72,7 @@ class Experiencie < ActiveRecord::Base
     if related_proposal_id.present?
       puts "JOEDR #{related_proposal_id}"
       proposal = Proposal.find_by_id(related_proposal_id.to_i)
-      proposal.add_relation(self, self.user) 
+      proposal.add_relation(self, self.user)
     end
   end
 end
