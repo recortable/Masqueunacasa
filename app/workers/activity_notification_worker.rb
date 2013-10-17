@@ -1,11 +1,12 @@
 class ActivityNotificationWorker
   include Sidekiq::Worker
   include Sidetiq::Schedulable
+  sidekiq_options retry: false
 
   recurrence { daily }
 
   def perform
-    users = User.where(id: [3, 34])
+    users = User.where(admin: true)
     activities = PublicActivity::Activity.where(notified: false).
       order('created_at DESC')
 
