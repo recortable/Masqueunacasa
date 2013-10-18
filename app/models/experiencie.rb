@@ -35,8 +35,7 @@ class Experiencie < ActiveRecord::Base
   include HasLinks
   include HasEditors
 
-  validates_presence_of :title, :user
-  validates :title, uniqueness: true
+  validates :title, presence: true, uniqueness: true
 
   scope :published, where(published: true)
 

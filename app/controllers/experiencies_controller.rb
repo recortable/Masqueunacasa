@@ -26,7 +26,6 @@ class ExperienciesController < ApplicationController
     authorize! :update, experiencie
 
     breadcrumb_for_experiencie(experiencie)
-    add_breadcrumb "Editar", edit_experiencie_path(experiencie)
     respond_with experiencie
   end
 

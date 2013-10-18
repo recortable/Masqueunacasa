@@ -78,4 +78,14 @@ FactoryGirl.define do
     experiencie
     proposal
   end
+
+  factory :location do
+    sequence(:address) { |n| "Calle Portaferrisa #{n}, Barcelona" }
+    resource factory: :group
+  end
+
+  factory :exp_location, class: Location do
+    sequence(:address) { |n| "Calle Portaferrisa #{n}, Barcelona" }
+    resource factory: :experiencie
+  end
 end

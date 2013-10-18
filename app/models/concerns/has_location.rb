@@ -11,3 +11,4 @@ module HasLocation
   end
 
 end
+
