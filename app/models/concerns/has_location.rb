@@ -9,6 +9,5 @@ module HasLocation
     accepts_nested_attributes_for :location, allow_destroy: true,
       reject_if: proc { |attributes| attributes['address'].blank? }
   end
-
 end
 

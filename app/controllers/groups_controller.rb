@@ -53,3 +53,4 @@ class GroupsController < ApplicationController
     respond_with group, location: community_path
   end
 end
+
