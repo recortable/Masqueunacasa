@@ -6,6 +6,10 @@
   @include padding(8px, 8px, 8px, 8px);
 }
 
+.right-block .block-header {
+  @include title_font(1em, bold);
+}
+
 .right-block.relation {
   .block-header, .block-row {
     padding: 6px 8px;
@@ -163,7 +167,6 @@
   .block-header {
     position: relative;
     background-color: #adadad;
-    font-weight: bold;
     min-height: 2em;
 
     span {
