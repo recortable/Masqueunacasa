@@ -41,7 +41,7 @@ class ActivityTrackerService
   end
 
   def duplicated_activity?
-    @activity.key == :update &&
+    @activity.key.include?("update") &&
       PublicActivity::Activity.where(
         trackable_id: @activity.trackable_id,
         trackable_type: @activity.trackable_type,
