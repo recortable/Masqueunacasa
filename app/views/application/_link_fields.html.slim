@@ -5,7 +5,7 @@ fieldset.sortable-fieldset.links#links
       .span4
         .pad
           = f.input :title
-          = f.input :url
+          = f.input :url, required: false
       .span2
         .control-group.remove-fields
           = f.link_to_remove icon_after(:'remove-sign',

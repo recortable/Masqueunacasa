@@ -6,7 +6,7 @@ fieldset#sections.sortable_fieldset.sections
         .pad
           = f.input :title
           - if f.object.class == ImageSection
-            = f.input :image
+            = f.input :image, required: false
             = f.input :image_cache, as: :hidden
       .span2
         .control-group.remove-fields
@@ -58,7 +58,7 @@ fieldset#sections.sortable_fieldset.sections
       .span4
         .pad
           = f.input :title
-          = f.input :image
+          = f.input :image, required: false
           = f.input :image_cache, as: :hidden
       .span2
         .control-group.remove-fields

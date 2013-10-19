@@ -2,6 +2,9 @@ $(document).on "nested:fieldAdded", (event) ->
   event.field.closest('.row').before(event.field)
   event.field.find('textarea.rte').markItUp(myMarkItUpSettings)
 
+$(document).on "nested:fieldRemoved", (event) ->
+  event.field.find('input').removeAttr('required')
+
 init = ->
   $("form").on "change", "input[type='file']", ->
     thumb_container = $(this).closest('div.fields').find('.image-preview')
