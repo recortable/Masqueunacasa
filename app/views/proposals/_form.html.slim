@@ -9,5 +9,7 @@
   = form.input :category_id, as: :hidden
   = render 'section_fields', form: form
   = render 'link_fields', form: form
-  = form.button :submit
+  .row
+    .span2
+      = form.button :submit
 

@@ -3,7 +3,7 @@ $(document).on "nested:fieldAdded", (event) ->
   event.field.find('textarea.rte').markItUp(myMarkItUpSettings)
 
 $(document).on "nested:fieldRemoved", (event) ->
-  event.field.find('input').removeAttr('required')
+  event.field.find('[required]').removeAttr('required')
 
 init = ->
   $("form").on "change", "input[type='file']", ->

@@ -4,5 +4,4 @@ class ImageSection < Section
   mount_uploader :image, ImageUploader
 
   validates :image, presence: true
-  default_scope where('1 = 2')
 end

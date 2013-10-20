@@ -17,4 +17,12 @@ module HasSections
       reject_if: proc { |attributes| attributes['title'].blank? && attributes['image'].blank? &&
                         attributes['image_cache'].blank? }
   end
+
+  def text_sections
+    []
+  end
+
+  def image_sections
+    []
+  end
 end
