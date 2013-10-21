@@ -10,8 +10,6 @@
       - experiencie.images.each do |image|
         - if image.image?
           = link_to image_tag(image.image.thumb.to_s, title: image.title, alt: image.credits), image.image.to_s
-        - if image.external_image_url?
-          = image_tag(image.external_image_url, title: image.title, alt: image.credits)
 
 = render 'sections/index', document: experiencie
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130920163600) do
+ActiveRecord::Schema.define(:version => 20131021035033) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -246,14 +246,13 @@ ActiveRecord::Schema.define(:version => 20130920163600) do
   add_index "help_texts", ["identf"], :name => "index_help_texts_on_identf"
 
   create_table "images", :force => true do |t|
-    t.string  "title",              :limit => 200
+    t.string  "title",          :limit => 200
     t.string  "image"
     t.integer "user_id"
     t.integer "imageable_id"
     t.string  "imageable_type"
     t.integer "position"
-    t.string  "external_image_url"
-    t.string  "credits",            :limit => 300
+    t.string  "credits",        :limit => 300
   end
 
   add_index "images", ["imageable_type", "imageable_id"], :name => "index_images_on_imageable_type_and_imageable_id"

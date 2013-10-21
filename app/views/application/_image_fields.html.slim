@@ -6,7 +6,7 @@ fieldset.sortable_fieldset.images#images
         .pad
           p.help-block Puedes subir una imagen o indicar una url
           = f.input :image
-          = f.input :external_image_url
+          = f.input :remote_image_url
           = f.input :image_cache, as: :hidden
           = f.input :credits
       .span2
@@ -16,7 +16,6 @@ fieldset.sortable_fieldset.images#images
             class: 'btn btn-block btn-clear'
         .image-preview
           = image_tag f.object.image.thumb.to_s if f.object.image.present?
-          = image_tag f.object.external_image_url if f.object.external_image_url.present?
         .sort-fields.pull-right
           a.up href="javascript:void(0)"
             i.icon-arrow-up

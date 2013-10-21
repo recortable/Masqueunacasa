@@ -42,31 +42,21 @@ class Experiencie < ActiveRecord::Base
   after_create :add_relations
 
   def image
-    img = images.first
-    unless img.nil?
-      return img.external_image_url if !img.external_image_url.blank?
-      return img.image.small
-    else
-      nil
-    end
+    img = first_image
+    return img.image.small unless img.nil?
   end
 
   def image_thumb
-    img = images.first
-    unless img.nil?
-      return img.external_image_url if !img.external_image_url.blank?
-      return img.image.thumb
-    else
-      nil
-    end
-  end
-
-  # TODO: hacer que funcione para otros idiomas
-  def self.search(term)
-    with_translations(T.l).where("title ILIKE ?", "%#{term}").order("title ASC")
+    img = first_image
+    return img.image.thumb unless img.nil?
   end
 
   private
+
+  def first_image
+    images.first
+  end
+
   def add_relations
     if related_proposal_id.present?
       puts "JOEDR #{related_proposal_id}"

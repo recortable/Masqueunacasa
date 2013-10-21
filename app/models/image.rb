@@ -2,7 +2,7 @@ class Image < ActiveRecord::Base
   attr_accessible :title,
                   :image,
                   :image_cache,
-                  :external_image_url,
+                  :remote_image_url,
                   :credits,
                   :new_object
   delegate :title, to: :imageable, prefix: true
@@ -22,3 +22,4 @@ class Image < ActiveRecord::Base
     nil
   end
 end
+

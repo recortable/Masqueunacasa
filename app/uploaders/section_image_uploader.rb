@@ -12,6 +12,10 @@ class SectionImageUploader < CarrierWave::Uploader::Base
     return "image_#{model.id}"
   end
 
+  version :thumb do
+    process resize_to_fit: [100, 100]
+  end
+
   # Process files as they are uploaded:
   process resize_to_limit: [1200, 900]
 
