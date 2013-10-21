@@ -18,7 +18,7 @@
       .order.block-row
         = link_to "Más visitada", url_for(request.params.merge(sort_by: 'view_count', d: 'desc'))
       .order.block-row
-        = link_to "Últimas añadidas", url_for(request.params.merge(sort_by: 'updated_at', d: 'desc'))
+        = link_to "Últimas añadidas", url_for(request.params.merge(sort_by: 'created_at', d: 'desc'))
 
 - content_for :right do
   .right-block.help.clearfix

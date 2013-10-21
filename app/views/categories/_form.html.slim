@@ -19,5 +19,7 @@
       = form.input :remove_image, as: :boolean, wrapper: :checkbox
       = form.input :image
   = render 'section_fields', form: form
-  = form.button :submit
+  .row
+    .span2
+      = form.button :submit
 

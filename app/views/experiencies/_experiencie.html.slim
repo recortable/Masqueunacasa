@@ -10,7 +10,7 @@
 
     .span3.image-container
       - unless experiencie.images.empty?
-        = link_to image_tag( experiencie.image ), experiencie
+        = link_to image_tag( experiencie.image.try('to_s') ), experiencie
       - else
         p.no-image = t('.no_image')
 

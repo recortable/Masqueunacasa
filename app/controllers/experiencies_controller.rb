@@ -68,7 +68,7 @@ class ExperienciesController < ApplicationController
   private
 
   def sort_by
-    %w{view_count}.include?(params[:sort_by]) ? "#{params[:sort_by]} #{direction}" : "updated_at desc"
+    %w{view_count}.include?(params[:sort_by]) ? "#{params[:sort_by]} #{direction}" : "created_at desc"
   end
 
   def direction
