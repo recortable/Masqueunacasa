@@ -16,7 +16,7 @@ module SlugRedirections
     # contiene '_id' y en los que el valor contenga un carácter no
     # numérico
     params_with_slugs = params.select do |k, v|
-      ( k == 'id' || k.include?('_id') ) and v.match('\D+').present?
+      ( k == 'id' || k.include?('_id') ) and v.match('\S+').present?
     end
 
     # Se recorren los parámetros y se buscan los slugs
@@ -29,7 +29,7 @@ module SlugRedirections
       else
         resource = key.gsub('_id', '').classify.constantize.find(value)
       end
-      new_url.sub!("/#{value}", "/" + resource.send('slug') ) if resource.respond_to?('slug')
+      new_url.sub!("/#{value}", "/" + resource.send('slug') ) if resource.respond_to?('slug') and resource.slug.present?
     end
 
     # Redireccionamos si la url resultante es diferente de la de la

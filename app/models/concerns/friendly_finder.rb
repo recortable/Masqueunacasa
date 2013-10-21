@@ -24,3 +24,4 @@ module FriendlyFinder
     end
   end
 end
+
