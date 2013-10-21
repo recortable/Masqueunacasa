@@ -51,3 +51,4 @@ describe "Proposals integration" do
     should have_text 'New title'
   end
 end
+

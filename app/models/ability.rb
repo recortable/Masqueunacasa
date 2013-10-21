@@ -22,10 +22,13 @@ class Ability
 
   def habitapedia_abilities(user)
       can :manage, Proposal
-      can :destroy, Proposal do |proposal|
-        proposal.user_id == user.id
+      cannot :destroy, Proposal do |proposal|
+        proposal.user_id != user.id
       end
       can [:create, :update], Experiencie
+      can :destroy, Proposal do |experience|
+        experience.user_id == user.id
+      end
       can :create, Relation
       can(:destroy, Relation, user_id: user.id)
   end
@@ -64,3 +67,4 @@ class Ability
     group.member?(user)
   end
 end
+
