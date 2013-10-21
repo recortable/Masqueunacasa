@@ -31,7 +31,8 @@ Galleria.configure({
   responsive: true,
   easing: 'swing',
   autoplay: 7000,
-  showInfo: true
+  showInfo: true,
+  debug: false
 });
 
 var MqucInit = function() {
