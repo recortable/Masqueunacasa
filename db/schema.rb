@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131021035033) do
+ActiveRecord::Schema.define(:version => 20131021045915) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -446,9 +446,9 @@ ActiveRecord::Schema.define(:version => 20131021035033) do
   add_index "sections", ["position"], :name => "index_sections_on_position"
 
   create_table "users", :force => true do |t|
-    t.string   "name",                 :limit => 50
-    t.string   "summary",              :limit => 500
-    t.string   "slug",                 :limit => 50
+    t.string   "name",                   :limit => 50
+    t.string   "summary",                :limit => 500
+    t.string   "slug",                   :limit => 50
     t.boolean  "admin"
     t.string   "email"
     t.string   "avatar_image"
@@ -456,8 +456,9 @@ ActiveRecord::Schema.define(:version => 20131021035033) do
     t.string   "reset_password_token"
     t.integer  "login_count"
     t.datetime "last_login_at"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.datetime "reset_password_sent_at"
   end
 
 end
