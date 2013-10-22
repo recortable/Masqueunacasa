@@ -39,3 +39,4 @@ module SlugRedirections
     end
   end
 end
+

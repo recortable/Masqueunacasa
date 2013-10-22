@@ -6,7 +6,8 @@
       span.slogan
         = t 'application.slogan'
 
-    .span2
+  .row.header-controls
+    .span2.offset6
 
     #lang-switcher.span2
       div.btn-group
@@ -35,3 +36,4 @@
 
     - if can? :read, :admin_area
       = link_to 'ADMIN AREA', admin_area_path, id: 'admin_area_link'
+
