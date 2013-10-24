@@ -5,6 +5,11 @@
   box-shadow: 0 0 10px 0px #999;
 }
 
+#logo-and-slogan {
+  position: relative;
+  z-index: 2;
+}
+
 #header #logo {
   margin-left: 5px;
   margin-right: -5px;
@@ -21,7 +26,7 @@
   margin-left: 9px;
 }
 
-.header-controls {
+#header-controls {
   position: absolute;
   bottom: 0;
 }
