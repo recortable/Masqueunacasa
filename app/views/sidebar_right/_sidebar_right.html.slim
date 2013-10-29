@@ -1,10 +1,10 @@
+= yield :right
+
 - unless current_user || current_page?(login_path)
   .right-block.help.clearfix
     = markdown HelpText.find_by_identf('ayuda_registro_home').try('body')
     = link_to t('user_sessions.new.create_account'), login_path,
       class: "btn pull-right"
-
-= yield :right
 
 = render 'sidebar_right/recent_activity'
 

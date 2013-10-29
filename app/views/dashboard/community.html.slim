@@ -27,3 +27,7 @@
         = link_to_unless_current t('.users_filter'),
           url_for(request.params.merge(agents: 'users'))
 
+- content_for :right do
+  .right-block.help.clearfix
+    = markdown HelpText.find_by_identf('ayuda1_comunidad').try('body')
+
