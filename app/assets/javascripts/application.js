@@ -39,7 +39,9 @@ var MqucInit = function() {
   if ($('.galleria').length > 0) {
     Galleria.run('.galleria');
   }
-  $('body a').mediafy();
+
+  $("div.no-mediafy a").addClass("no-mediafy")
+  $("body a:not(.no-mediafy)").mediafy();
 
   $('form img').image_cache_src(); // Defined in utils.js
 

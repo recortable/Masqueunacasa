@@ -67,5 +67,4 @@ $.fn.extend
               $(element).toggle()
             else
               element = $(embed).appendTo($(this))
-          
 
