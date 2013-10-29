@@ -53,6 +53,8 @@ ca:
     comment:
       time_ago: Fa %{time}
     comments:
+      login_to_comment_part_1: Entra o registra't
+      login_to_comment_part_2: per a poder enviar comentaris
       new_comment: "Envia un comentari:"
     notices:
       created: "Comentari creat. Gràcies!!"

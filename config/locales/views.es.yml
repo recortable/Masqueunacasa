@@ -53,6 +53,8 @@ es:
     comment:
       time_ago: Hace %{time}
     comments:
+      login_to_comment_part_1: Entra o registrate
+      login_to_comment_part_2: pera poder enviar comentarios
       new_comment: "Envia un comentario:"
     notices:
       created: "Comentario creado. Gracias!!"

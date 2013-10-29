@@ -47,6 +47,8 @@ en:
     comment:
       time_ago: Since %{time}
     comments:
+      login_to_comment_part_1: Login or register
+      login_to_comment_part_2: to post comments
       new_comment: "Send a comment:"
     notices:
       created: "Comment created. Thanks!!"
