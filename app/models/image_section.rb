@@ -5,3 +5,4 @@ class ImageSection < Section
 
   validates :image, presence: true
 end
+

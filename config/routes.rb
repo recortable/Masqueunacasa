@@ -22,8 +22,6 @@ Masqueunacasa::Application.routes.draw do
 
   resources :locations, only: [:index]
 
-  resource :search
-
   match '/entrar' => 'user_sessions#new', as: :login
   match '/salir' => 'user_sessions#destroy', as: :logout
   match '/community' => 'dashboard#community', as: :community
@@ -31,6 +29,7 @@ Masqueunacasa::Application.routes.draw do
   match '/quinientos' => 'dashboard#quinientos'
   match "/enter/:id" => "users#enter", as: :enter
   get '/admin/' => 'dashboard#admin_area', as: :admin_area
+  get '/search' => 'searches#show', as: :search
 
   root to: 'dashboard#welcome'
 

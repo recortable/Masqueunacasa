@@ -3,7 +3,6 @@ class ExperienciesController < ApplicationController
 
   respond_to :html
 
-  expose(:themes) { 'textura09 negro' }
   expose(:related_proposal) { Proposal.find(params[:p]) if params[:p].present? }
   expose(:experiencies) { Experiencie.order(sort_by) }
   expose(:experiencie)

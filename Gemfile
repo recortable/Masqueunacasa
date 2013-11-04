@@ -23,7 +23,7 @@ end
 gem 'bcrypt-ruby', '~> 3.0.0' # Para encriptar cosas, p.ej: password (MD5)
 gem 'friendly_id'
 gem 'acts_as_list'
-gem 'textacular' # exposes full text search capabilities from PostgreSQL
+gem 'pg_search' # builds named scopes that take advantage of PostgreSQL's full text search.
 gem 'gmaps4rails'
 gem 'public_activity'
 
