@@ -1,4 +1,4 @@
-class RemoveUnusedTables < ActiveRecord::Migration
+class DropUnusedTables < ActiveRecord::Migration
   def up
     drop_table :post_attachments
     drop_table :messages
