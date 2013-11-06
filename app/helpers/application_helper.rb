@@ -49,7 +49,8 @@ module ApplicationHelper
   end
 
   def intern_link_code?
-    %w{index show}.include?(controller.action_name) && current_user
+    %w{index show}.include?(controller.action_name) && current_user and
+      !controller.controller_name == 'searches'
   end
 
   def link_code

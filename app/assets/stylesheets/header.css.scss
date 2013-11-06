@@ -31,6 +31,32 @@
   bottom: 0;
 }
 
+#search form {
+  position: relative;
+  bottom: 1px;
+  margin: 0;
+
+  .input-append {
+    width: 100%;
+    margin: 0;
+  }
+
+  input {
+    padding: 0;
+    width: 83%;
+    font-size: 12px;
+  }
+
+  .btn {
+    width: auto;
+    padding: 0 5px;
+  }
+
+  input, .btn {
+    border-color: #999;
+  }
+}
+
 #lang-switcher .btn,
 #session-controls .btn,
 #session-controls > a {

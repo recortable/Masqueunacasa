@@ -1,0 +1,6 @@
+ul
+  - @search.results.each do |result|
+    - unless result.blank?
+      li
+        = link_to result.title, result
+
