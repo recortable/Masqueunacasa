@@ -10,6 +10,7 @@ ca:
 
     filter_by: Filtrar per
     order_by: Ordenar per
+    most_visited: Més visitada
     remove_filters: Mostra-ho tot
 
     require_user: "Cal que t'identifiquis o que creïs un compte d'usuari..."
@@ -26,3 +27,4 @@ ca:
   will_paginate:
     next_label: '>>'
     previous_label: '<<'
+

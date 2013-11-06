@@ -32,7 +32,9 @@ ca:
         other: participants
       notice: 'destacat'
       password_recovery: 'recuperar contrasenya'
-      phase: 'fase'
+      phase:
+        one: fase
+        other: fases
       proposal:
         one: 'proposta'
         other: propostes

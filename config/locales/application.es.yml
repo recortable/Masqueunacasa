@@ -10,6 +10,7 @@ es:
 
     filter_by: Filtrar por
     order_by: Ordenar por
+    most_visited: Más visitada
     remove_filters: Mostrar todo
 
     require_user: "Antes tienes que identificarte o crear una cuenta de usuario..."

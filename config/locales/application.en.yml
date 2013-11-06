@@ -10,6 +10,7 @@ en:
 
     filter_by: Filter by
     order_by: Order by
+    most_visited: Most visited
     remove_filters: Show all
 
     require_user: "Before proceeding you have to identify yourself or create a user account..."

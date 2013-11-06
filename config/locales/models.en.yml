@@ -42,7 +42,7 @@ en:
       text_section: 'text section'
       user:
         one: person
-        other: peolpe
+        other: people
 
   versions:
     events:

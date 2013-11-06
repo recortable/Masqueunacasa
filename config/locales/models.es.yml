@@ -32,7 +32,9 @@ es:
         other: participantes
       notice: 'destacado'
       password_recovery: 'recuperar contraseña'
-      phase: 'fase'
+      phase:
+        one: fase
+        other: fases
       proposal:
         one: 'propuesta'
         other: propuestas

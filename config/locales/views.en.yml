@@ -248,6 +248,7 @@ en:
       text: "You are editing the version in %{current_locale} of this content, you can also"
       translation: "%{action} the version in %{lang}"
     phase_categories:
+      block_title: For this phase we have considered the following questions
     related_links:
       block_title: "Related online resources:"
 

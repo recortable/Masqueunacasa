@@ -26,9 +26,9 @@
         => icon :sort
         = t('app.order_by')
       .order.block-row
-        = link_to "Por fase", url_for(request.params.merge(sort_by: nil, d: nil))
+        = link_to Phase.model_name.human, url_for(request.params.merge(sort_by: nil, d: nil))
       .order.block-row
-        = link_to "Más visitada", url_for(request.params.merge(sort_by: 'view_count', d: 'desc'))
+        = link_to t('app.most_visited'), url_for(request.params.merge(sort_by: 'view_count', d: 'desc'))
 
 - content_for :right do
   .right-block.help
