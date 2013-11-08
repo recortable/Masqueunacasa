@@ -243,6 +243,7 @@ es:
   searches:
     show:
       title: "Resultados de búsqueda para "
+      new_search: Nueva búsqueda
 
   sidebar_left:
     form_links:

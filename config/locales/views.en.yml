@@ -242,6 +242,7 @@ en:
   searches:
     show:
       title: "Search results for "
+      new_search: New search
 
   sidebar_left:
     form_links:

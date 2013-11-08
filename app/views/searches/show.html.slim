@@ -1,5 +1,8 @@
 .pad
   = title (t('.title') + "<span>#{@search.query}</span>").html_safe
+  = link_to t('.new_search'), "javascript:void(0);", id: "new-search-link"
+  #new-search-form
+    = render "searches/form"
   ul#search-results
     - @search.results.each do |result|
       - unless result.blank?
