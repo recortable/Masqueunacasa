@@ -10,4 +10,7 @@
           h2 = link_to result.title.html_safe, result
           .excerpts
             = sanitize markdown(result["excerpts"]), tags: %w(span), attributes: %w(class)
+            - if result["excerpts"].blank? and not result.summary.blank?
+              = sanitize markdown(truncate(result.summary,
+                  length: 120, separator: ' ')), tags: []
 

@@ -1,8 +1,8 @@
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
 //= require bootstrap-dropdown
 //= require bootstrap-tooltip
+//= require jquery.stickem
 // turbolinks
 //= require mediafy
 //= require galleria/galleria-1.2.9.min
@@ -46,16 +46,15 @@ var MqucInit = function() {
 
   $('form img').image_cache_src(); // Defined in utils.js
 
-  // http://twitter.github.io/bootstrap/javascript.html#affix
-  // usado en columna de la izquierda
-  var fixed = $('.fixed-block')
-  var offsetFn = function() {
-    return fixed.parent().offset().top
-  };
-  fixed.affix( {offset: {top: offsetFn} } );
-
   $('textarea.rte').markItUp(myMarkItUpSettings);
   $('span.with-tooltip').tooltip();
+
+  $('#sidebar-left').stickem({
+    item: '.fixed-block',
+    container: '#content',
+    stickClass: 'affix',
+    endStickClass: 'affix-bottom'
+  });
 };
 
 $(document).ready(MqucInit);
