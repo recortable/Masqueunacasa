@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require bootstrap-dropdown
 //= require bootstrap-tooltip
+//= require bootstrap-alert
 //= require jquery.stickem
 // turbolinks
 //= require mediafy

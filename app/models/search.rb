@@ -39,6 +39,8 @@ class Search < ActiveRecord::Base
       'french'
     when :it
       'italian'
+    when :ca
+      'catalan'
     else
       'simple'
     end

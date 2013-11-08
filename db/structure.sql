@@ -38,6 +38,80 @@ COMMENT ON EXTENSION unaccent IS 'text search dictionary that removes accents';
 
 SET search_path = public, pg_catalog;
 
+--
+-- Name: catalan; Type: TEXT SEARCH DICTIONARY; Schema: public; Owner: -
+--
+
+CREATE TEXT SEARCH DICTIONARY catalan (
+    TEMPLATE = pg_catalog.ispell,
+    dictfile = 'ca_es', afffile = 'ca_es' );
+
+
+--
+-- Name: catalan; Type: TEXT SEARCH CONFIGURATION; Schema: public; Owner: -
+--
+
+CREATE TEXT SEARCH CONFIGURATION catalan (
+    PARSER = pg_catalog."default" );
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR asciiword WITH catalan, simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR word WITH catalan, simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR numword WITH simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR email WITH simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR url WITH simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR host WITH simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR sfloat WITH simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR version WITH simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR hword_numpart WITH simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR hword_part WITH catalan, simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR hword_asciipart WITH catalan, simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR numhword WITH simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR asciihword WITH catalan, simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR hword WITH catalan, simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR url_path WITH simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR file WITH simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR "float" WITH simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR "int" WITH simple;
+
+ALTER TEXT SEARCH CONFIGURATION catalan
+    ADD MAPPING FOR uint WITH simple;
+
+
 SET default_tablespace = '';
 
 SET default_with_oids = false;
@@ -2079,3 +2153,5 @@ INSERT INTO schema_migrations (version) VALUES ('20131030150023');
 INSERT INTO schema_migrations (version) VALUES ('20131030175857');
 
 INSERT INTO schema_migrations (version) VALUES ('20131105134959');
+
+INSERT INTO schema_migrations (version) VALUES ('20131108204457');
