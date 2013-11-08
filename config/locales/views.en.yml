@@ -239,6 +239,10 @@ en:
       created: 'Relation created'
       destroyed: 'Relation deleted.'
 
+  searches:
+    show:
+      title: "Search results for "
+
   sidebar_left:
     form_links:
       basic_info: Basic info

@@ -22,6 +22,14 @@ noscript .pad {
   border-bottom: 2px dashed #999;
 }
 
+#main-content > .pad {
+  padding-right: 8px;
+}
+
+#content > .row {
+  position: relative;
+}
+
 .doc-icon { display: block; margin: 30px auto; }
 
 .pad {

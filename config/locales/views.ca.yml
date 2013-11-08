@@ -246,6 +246,10 @@ ca:
       created: 'Relació creada'
       destroyed: 'Relació el·liminada.'
 
+  searches:
+    show:
+      title: "Resultats de cerca per "
+
   sidebar_left:
     form_links:
       basic_info: Informació bàsica

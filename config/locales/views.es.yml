@@ -240,6 +240,10 @@ es:
       created: 'Relación creada'
       destroyed: 'Relación borrada.'
 
+  searches:
+    show:
+      title: "Resultados de búsqueda para "
+
   sidebar_left:
     form_links:
       basic_info: Información básica
