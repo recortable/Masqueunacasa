@@ -1,6 +1,6 @@
 module ApplicationHelper
   def title(title, tag = :h1)
-    content_for(:title) { title }
+    content_for(:title) { sanitize title, tags: [] }
     content_tag(tag, title)
   end
 
