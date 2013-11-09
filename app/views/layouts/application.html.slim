@@ -22,58 +22,58 @@ html
     = csrf_meta_tags
     = yield :head
 
-    body class="#{controller_class}"
-      #wrapper
-        // Header //
-        = render 'header'
+  body class="#{controller_class}"
+    #wrapper
+      // Header //
+      = render 'header'
 
-        // No-script message //
-        noscript
-          .container
+      // No-script message //
+      noscript
+        .container
+          .row
+            .span6.offset3
+              .pad
+                = t '.no_script_message'
+
+      // Flash messages //
+      = render 'flashes'
+
+      #main.container
+        #page_content.row
+          .span8
+
+            // TABS //
             .row
-              .span6.offset3
-                .pad
-                  = t '.no_script_message'
+              #tabs.span8
+                = render 'tabs'
 
-        // Flash messages //
-        = render 'flashes'
+            .row
+              #content.span8
+                .row
 
-        #main.container
-          #page_content.row
-            .span8
+                  // Optional sidebar at left //
+                  - if content_for? :left
+                    #sidebar-left.span2.sidebar.left
+                      = yield :left
 
-              // TABS //
-              .row
-                #tabs.span8
-                  = render 'tabs'
+                  // Main column //
+                  - size = main_content_span_size
+                  #main-content class="span#{ size }"
+                    - if render_breadcrumbs.present?
+                      #breadcrumbs.clearfix
+                        = render_breadcrumbs separator: ''
+                    = yield
+                    = render 'internal_link_code'
 
-              .row
-                #content.span8
-                  .row
+          // RIGHT COLUMN //
+          #right-column.span4
+            = render 'sidebar_right/sidebar_right'
 
-                    // Optional sidebar at left //
-                    - if content_for? :left
-                      #sidebar-left.span2.sidebar.left
-                        = yield :left
+      // Footer //
+      = render 'footer'
 
-                    // Main column //
-                    - size = main_content_span_size
-                    #main-content class="span#{ size }"
-                      - if render_breadcrumbs.present?
-                        #breadcrumbs.clearfix
-                          = render_breadcrumbs separator: ''
-                      = yield
-                      = render 'internal_link_code'
+      div style="display:none" = "Masqueunacasa version #{ ENV["RAILS_APP_VERSION"] }. AGPL3"
 
-            // RIGHT COLUMN //
-            #right-column.span4
-              = render 'sidebar_right/sidebar_right'
-
-        // Footer //
-        = render 'footer'
-
-        div style="display:none" = "Masqueunacasa version #{ ENV["RAILS_APP_VERSION"] }. AGPL3"
-
-      = yield :scripts
-      = render 'layouts/ga' if Rails.env == 'production'
+    = yield :scripts
+    = render 'layouts/ga' if Rails.env == 'production'
 
