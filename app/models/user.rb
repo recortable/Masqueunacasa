@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
     name
   end
 
+  def title=(new_title)
+    self.name = new_title
+  end
+
   def self.current_user
     Thread.current[:current_user]
   end
