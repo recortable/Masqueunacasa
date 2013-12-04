@@ -45,7 +45,7 @@ en:
     edit:
       title: Edit comment
     comment:
-      time_ago: Since %{time}
+      time_ago: "%{time} ago"
     comments:
       login_to_comment_part_1: Login or register
       login_to_comment_part_2: to post comments
