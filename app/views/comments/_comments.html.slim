@@ -6,9 +6,6 @@
       .new-comment
         h4 = t '.new_comment'
         = render 'comments/form', document: document, comment: Comment.new
-    - else
-      => link_to t('.login_to_comment_part_1'), login_path
-      = t('.login_to_comment_part_2')
 
     = render document.comments
 

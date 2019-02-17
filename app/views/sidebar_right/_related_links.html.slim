@@ -8,7 +8,8 @@
       span
         i.icon-external-link
   .block-row.control
-    = link_to icon_after(:'plus-sign', t('app.add', element: Link.model_name.human(count: 1))),
-      controller: document.class.to_s.tableize, action: 'edit',
-      id: document.slug, anchor: 'links'
+    - if can? :create, Link
+      = link_to icon_after(:'plus-sign', t('app.add', element: Link.model_name.human(count: 1))),
+        controller: document.class.to_s.tableize, action: 'edit',
+        id: document.slug, anchor: 'links'
 

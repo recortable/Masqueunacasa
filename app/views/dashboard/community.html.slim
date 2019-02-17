@@ -6,9 +6,10 @@
 - content_for :left do
   .fixed-block
     .left-block.controls
-      .block-row.control
-        => link_to t('app.create_new', element: t('activerecord.models.group.one')), new_group_path
-        = icon :'plus-sign'
+      - if can? :create, Group
+        .block-row.control
+          => link_to t('app.create_new', element: t('activerecord.models.group.one')), new_group_path
+          = icon :'plus-sign'
 
     .left-block.filters
       .block-header

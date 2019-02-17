@@ -9,7 +9,8 @@
     .block-row.relation.proposal
       = link_to proposal.title, proposal
       span
-  .block-row.control
-    = link_to icon_after(:'plus-sign', t('app.add', element: Proposal.model_name.human(count: 1))),
-      new_category_proposal_path(category)
+  - if can? :create, Proposal
+    .block-row.control
+      = link_to icon_after(:'plus-sign', t('app.add', element: Proposal.model_name.human(count: 1))),
+        new_category_proposal_path(category)
 

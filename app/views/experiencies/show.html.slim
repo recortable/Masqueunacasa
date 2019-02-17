@@ -40,9 +40,10 @@
     = render 'available_translations', document: experiencie
 
 - content_for :right do
-  - unless experiencie.has_all_translations?
-    = render 'sidebar_right/pending_translations',
-      document: experiencie
+  - if can? :update, experiencie
+    - unless experiencie.has_all_translations?
+      = render 'sidebar_right/pending_translations',
+        document: experiencie
 
   = render 'sidebar_right/experiencie_related_proposals'
   = render 'sidebar_right/related_links', document: experiencie

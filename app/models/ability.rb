@@ -1,7 +1,6 @@
 class Ability
   include CanCan::Ability
 
-
   # Usemos solo :read, :create, :update, :destroy
   # NO USEMOS: :index, :view, :edit, :new
   def initialize(user)
@@ -11,26 +10,26 @@ class Ability
       no_user_abilities
     else
       cannot :update, UserSession
-      can :manage, Section do |section|
-        can? :update, section.document
-      end
-      habitapedia_abilities(user)
-      social_abilities(user)
+      # can :manage, Section do |section|
+        # can? :update, section.document
+      # end
+      # habitapedia_abilities(user)
+      # social_abilities(user)
       admin_abilities if user.admin?
     end
   end
 
   def habitapedia_abilities(user)
-      can :manage, Proposal
-      cannot :destroy, Proposal do |proposal|
-        proposal.user_id != user.id
-      end
-      can [:create, :update], Experiencie
-      can :destroy, Proposal do |experience|
-        experience.user_id == user.id
-      end
-      can :create, Relation
-      can(:destroy, Relation, user_id: user.id)
+    can :manage, Proposal
+    cannot :destroy, Proposal do |proposal|
+      proposal.user_id != user.id
+    end
+    can [:create, :update], Experiencie
+    can :destroy, Proposal do |experience|
+      experience.user_id == user.id
+    end
+    can :create, Relation
+    can(:destroy, Relation, user_id: user.id)
   end
 
   def social_abilities(user)
